@@ -1,0 +1,61 @@
+{
+	"code": "creature",
+	"class": "ItemCreature",
+	"maxStackSize": 1,
+	"variantgroups": [
+		{
+			"code": "type",
+			"states": ["direwolf-male", "direwolf-female", "direwolf-pup"]	
+		}
+	],
+	"shapeByType": {
+		"*-direwolf-male": { "base": "entity/land/direwolf-male" },
+		"*-direwolf-female": { "base": "entity/land/direwolf-female" },
+		"*-direwolf-pup": { "base": "entity/land/direwolf-pup" }
+		},
+	"texturesByType": {
+		"*-direwolf-male": { "skin": { "base": "entity/direwolf/direwolf1" } },
+		"*-direwolf-female": { "skin": { "base": "entity/direwolf/direwolf2" } },
+		"*-direwolf-pup": {"skin": { "base": "entity/direwolf-pup/direwolf-pup1" } }
+		},
+		
+	"creativeinventory": {
+		"general": ["*"],
+		"items": ["*"],
+		"creatures": ["*"]
+		},
+		
+	"guiTransformByType": {
+		"creature-direwolf-male": {
+			"rotate": "true",
+			"translation": { "x": 0, "y": 15, "z": 0 },
+			"rotation": { "x": 180, "y": -115, "z": 6 },
+			"origin": { "x": 0.5, "y": 0.5, "z": 0.5 },
+			"scale": 0.6
+		},
+		"creature-direwolf-female": {
+			"rotate": "true",
+			"translation": { "x": 0, "y": 15, "z": 0 },
+			"rotation": { "x": 180, "y": -115, "z": 6 },
+			"origin": { "x": 0.5, "y": 0.5, "z": 0.5 },
+			"scale": 0.6
+		},
+		"creature-direwolf-pup": {
+			"rotate": "true",
+			"translation": { "x": 0, "y": 15, "z": 0 },
+			"rotation": { "x": 180, "y": -115, "z": 6 },
+			"origin": { "x": 0.5, "y": 0.5, "z": 0.5 },
+			"scale": 1.2
+		}
+	},
+	"fpHandTransform": {
+		"translation": { "x": 0.2, "y": 0, "z": 0 },
+		"rotation": { "x": -8, "y": -63, "z": -7 }
+	},
+	"tpHandTransform": {
+		"translation": { "x": -0.9, "y": -0.9, "z": -0.7 },
+		"rotation": { "x": -180, "y": 0, "z": -156 },
+		"scale": 0.4
+	}
+	
+}

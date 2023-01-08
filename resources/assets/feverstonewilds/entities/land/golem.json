@@ -1,0 +1,180 @@
+{
+    "code": "golem",
+    "variantgroups": [ { "code": "rock", "states": ["andesite", "granite", "basalt", "limestone"] }, 
+                       { "code": "ore", "states": ["nativecopper", "cassiterite", "hematite" ] } ],
+                    
+    "class": "EntityAgent",
+	"hitboxSize": { "x": 1, "y": 2.8, "z": 2.5 },
+    "deadHitboxSize": { "x": 3, "y": 2.1, "z": 2.5 },
+    "eyeHeight": 2.6, 
+    "knockbackresistance": 0.8,
+    "attributes": {
+        "killedByInfoText": "deadcreature-vile",
+        "spawnDamageParticles": true,
+        "reckless": true
+    },
+    
+    "drops": [
+            { "type": "block", "code": "game:rock-{rock}", "quantity": { "avg": 6, "var": 2} },
+            { "type": "item", "code": "game:stone-{rock}", "quantity": { "avg": 12, "var": 4} },
+            { "type": "item", "code": "game:ore-medium-{ore}-{rock}", "quantity": { "avg": 3, "var": 1 } }
+             ],
+
+    "client": {
+        "renderer": "Shape",
+        "shape": { "base": "entity/land/golem" },
+        "texturesByType": {
+            "*-andesite-nativecopper": { "skin": { "base": "entity/golem/golemandesitecopper" } },
+            "*-andesite-cassiterite": { "skin": { "base": "entity/golem/golemandesitetin" } },
+            "*-andesite-hematite": { "skin": { "base": "entity/golem/golemandesiteiron" } },
+            "*-granite-nativecopper": { "skin": { "base": "entity/golem/golemgranitecopper" } },
+            "*-granite-cassiterite": { "skin": { "base": "entity/golem/golemgranitetin" } },
+            "*-granite-hematite": { "skin": { "base": "entity/golem/golemgraniteiron" } },
+            "*-basalt-nativecopper": { "skin": { "base": "entity/golem/golembasaltcopper" } },
+            "*-basalt-cassiterite": { "skin": { "base": "entity/golem/golembasalttin" } },
+            "*-basalt-hematite": { "skin": { "base": "entity/golem/golembasaltiron" } },
+            "*-limestone-nativecopper": { "skin": { "base": "entity/golem/golemlimestonecopper" } },
+            "*-limestone-hematite": { "skin": { "base": "entity/golem/golemlimestoneiron" } }
+        },
+        "behaviors": [
+			{ "code": "repulseagents" }, 
+			{ "code": "controlledphysics", "stepHeight": 1.1251 }, 
+			{ "code": "floatupwhenstuck", "onlyWhenDead": false },
+			{ "code": "interpolateposition" },
+			{ "code": "harvestable" },
+			{ "code": "despawn", "minPlayerDistance": 8, "belowLightLevel": 8, "minSeconds": 300 }
+		],
+        "animations": [
+			{
+				"code": "move",
+				"animation": "move",
+				"blendMode": "AddAverage" 
+			},
+            {
+				"code": "dead",
+				"animation": "dead", 
+				"animationSpeed": 1.0,
+				"weight": 10,
+				"blendMode": "Average",
+                "triggeredBy": { "onControls": ["dead"] }
+			}
+        ]
+    },
+    
+    "server": {
+		"behaviors": [
+			{ "code": "repulseagents" },
+			{ "code": "controlledphysics", "stepHeight": 1.1251 },
+			{ "code": "despawn", "minPlayerDistance": 8, "belowLightLevel": 8, "minSeconds": 300 },
+			{ "code": "health", "currenthealth": 40, "maxhealth": 40 },
+			{ "code": "deaddecay", "hoursToDecay": 10 },
+			{ "code": "floatupwhenstuck", "onlyWhenDead": false },
+			{ "code": "harvestable",  "drops": [
+
+                { "type": "item", "code": "game:nugget-{ore}", "quantity": { "avg": 24, "var": 4} },
+                { "type": "item", "code": "game:stone-{rock}", "quantity": { "avg": 8, "var": 4} },
+                { "type": "item", "code": "game:ore-medium-{ore}-{rock}", "quantity": { "avg": 14, "var": 4 } }
+
+                ] },
+            
+			{ 
+				"code": "emotionstates",
+				"states": [
+					{ "code": "aggressiveondamage", "duration": 60, "chance": 1, "slot": 2, "priority": 2, "accumType": "noaccum" },
+					{ "code": "alarmherdondamage", "chance": 1, "slot": 1, "priority": 1, "accumType": "max" }
+				]
+			},
+        {
+        "code": "taskai",
+        "aitasks": [
+            {
+                "code": "meleeattack",
+                "entityCodes": [ "player" ],
+                "priority": 3,
+                "slot": 1,
+                "damage": 20,
+                "damageTier": 4,
+                "mincooldown": 2000,
+                "maxcooldown": 3000,
+                "attackDurationMs": 900,
+                "damagePlayerAtMs": 800,
+                "animation": "smash",
+                "animationSpeed": 1.2,
+                "whenInEmotionState": "aggressiveondamage"
+            },
+            {
+                "code": "seekentity",
+                "entityCodes": [ "player" ],
+                "priority": 1.5,
+                "mincooldown": 1000,
+                "maxcooldown": 1500,
+                "seekingRange": 20,
+                "movespeed": 0.030,
+                "animation": "move",
+                "animationSpeed": 1.8,
+                "whenInEmotionState": "aggressiveondamage"
+            },
+            {
+                "code": "getoutofwater",
+                "priority": 1.4,
+                "movespeed": 0.02,
+                "animation": "move",
+                "animationSpeed": 0.8
+            },
+            {
+                "code": "wander",
+                "priority": 1.0,
+                "priorityForCancel": 1.2,
+                "movespeed": 0.004,
+                "animationSpeed": 0.6,
+                "animation": "move",
+                "preferredLightLevel": 10
+            }
+        ]
+    }
+    ],
+
+    "spawnconditions": {
+        "worldgen": {
+            "TriesPerChunk": { "avg": 0.006, "var": 0.005 },
+            "maxQuantityByType": { "*": 1, "*-limestone-cassiterite": 0 },
+            "mindistancetoplayer": 180,
+            "tryOnlySurface": true,
+            "groupSizeByType": {
+                "*": { "dist": "uniform", "avg": 1, "var": 0 }
+            },
+            "insideBlockCodesByType": {
+                "*-andesite-*": [ "game:air" ],
+                "*-granite-*": [ "game:air" ],
+                "*-basalt-*": [ "game:air" ],
+                "*-limestone-*": [ "game:air" ]
+            },
+            "minYByType": { "*": 0.85 },
+            "maxYByType": { "*": 2 },
+            "maxForest": 0.1,
+            "maxShrubs": 0.3
+        },
+        "runtime": {
+            "group": "neutral",
+            "maxQuantityByType": { "*": 1, "*-limestone-cassiterite": 0 },
+            "mindistancetoplayer": 120,
+            "tryOnlySurface": true,
+            "chance": 0.00001,
+            "groupSizeByType": {
+                "*": { "dist": "uniform", "avg": 1, "var": 0 }
+            },
+            "insideBlockCodesByType": {
+                "*-andesite-*": [ "game:air" ],
+                "*-granite-*": [ "game:air" ],
+                "*-basalt-*": [ "game:air" ],
+                "*-limestone-*": [ "game:air" ]
+            },
+            "minYByType": { "*": 0.85 },
+            "maxYByType": { "*": 2 },
+            "maxForest": 0.1,
+            "maxShrubs": 0.3
+        }
+    }
+}
+
+}
