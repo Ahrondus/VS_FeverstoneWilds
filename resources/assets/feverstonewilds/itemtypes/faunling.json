@@ -1,17 +1,20 @@
 {
 	"code": "creature",
 	"class": "ItemCreature",
-	"maxstackssize": 1,
+	"maxStackSize": 1,
 	"variantgroups": [
 			{
 				"code": "type",
-				"states": ["faunling",
-						   "malefaunling"]
+				"states": ["faunling-female", "faunling-male"]
 			}
 		],
 	"shapeByType": {
-		"*-faunling": { "base": "entity/land/faunling" },
-		"*-malefaunling": { "base": "entity/land/malefaunling" }
+		"*-faunling-female": { "base": "entity/land/faunling" },
+		"*-faunling-male": { "base": "entity/land/malefaunling" }
+		},
+	"texturesByType": {
+		"*-faunling-female": { "skin": { "base": "entity/faunling/faunling1" } },
+		"*-faunling-male": { "skin": { "base": "entity/faunling/faunling7" } }
 		},
 		
 	"creativeinventory": {
