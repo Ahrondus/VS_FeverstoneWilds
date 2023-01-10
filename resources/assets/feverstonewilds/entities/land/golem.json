@@ -15,7 +15,7 @@
     },
     
     "drops": [
-            { "type": "block", "code": "game:rock-{rock}", "quantity": { "avg": 6, "var": 2} },
+            { "type": "block", "code": "game:rock-{rock}", "quantity": { "avg": 8, "var": 2} },
             { "type": "item", "code": "game:stone-{rock}", "quantity": { "avg": 12, "var": 4} },
             { "type": "item", "code": "game:ore-medium-{ore}-{rock}", "quantity": { "avg": 3, "var": 1 } }
              ],
@@ -53,26 +53,31 @@
             {
 				"code": "dead",
 				"animation": "dead", 
-				"animationSpeed": 1.0,
+				"animationSpeed": 0.8,
 				"weight": 10,
 				"blendMode": "Average",
                 "triggeredBy": { "onControls": ["dead"] }
 			}
         ]
     },
+    
     "server": {
 		"behaviors": [
 			{ "code": "repulseagents" },
 			{ "code": "controlledphysics", "stepHeight": 1.1251 },
 			{ "code": "despawn", "minPlayerDistance": 8, "belowLightLevel": 8, "minSeconds": 300 },
-			{ "code": "health", "currenthealth": 40, "maxhealth": 40 },
+            { "code": "health",  "maxhealthByType": { 
+                "*-nativecopper": 65,
+                "*-cassiterite": 50,
+                "*-hematite": 100
+            } },
 			{ "code": "deaddecay", "hoursToDecay": 10 },
 			{ "code": "floatupwhenstuck", "onlyWhenDead": false },
 			{ "code": "harvestable",  "drops": [
 
-                { "type": "item", "code": "game:nugget-{ore}", "quantity": { "avg": 24, "var": 4} },
+                { "type": "item", "code": "game:nugget-{ore}", "quantity": { "avg": 12, "var": 2} },
                 { "type": "item", "code": "game:stone-{rock}", "quantity": { "avg": 8, "var": 4} },
-                { "type": "item", "code": "game:ore-medium-{ore}-{rock}", "quantity": { "avg": 14, "var": 4 } }
+                { "type": "item", "code": "game:ore-medium-{ore}-{rock}", "quantity": { "avg": 3, "var": 1 } }
 
                 ] },
             
