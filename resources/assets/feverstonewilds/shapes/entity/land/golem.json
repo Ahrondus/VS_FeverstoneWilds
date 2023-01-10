@@ -8,7 +8,6 @@
 	"textureSizes": {
 	},
 	"textures": {
-		"skin": "entity/golem/golemandesitecopper"
 	},
 	"elements": [
 		{
@@ -1727,8 +1726,8 @@
 			"name": "attack",
 			"code": "smash",
 			"quantityframes": 40,
-			"onActivityStopped": "Rewind",
-			"onAnimationEnd": "Repeat",
+			"onActivityStopped": "PlayTillEnd",
+			"onAnimationEnd": "EaseOut",
 			"keyframes": [
 				{
 					"frame": 0,
@@ -1855,9 +1854,9 @@
 		{
 			"name": "dead",
 			"code": "dead",
-			"quantityframes": 55,
-			"onActivityStopped": "Rewind",
-			"onAnimationEnd": "Repeat",
+			"quantityframes": 41,
+			"onActivityStopped": "PlayTillEnd",
+			"onAnimationEnd": "Hold",
 			"keyframes": [
 				{
 					"frame": 0,
@@ -2054,7 +2053,7 @@
 			"code": "look",
 			"quantityframes": 170,
 			"onActivityStopped": "Rewind",
-			"onAnimationEnd": "Repeat",
+			"onAnimationEnd": "Stop",
 			"keyframes": [
 				{
 					"frame": 0,
