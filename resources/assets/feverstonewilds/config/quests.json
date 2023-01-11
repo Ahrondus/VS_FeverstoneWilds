@@ -914,30 +914,30 @@
     },
     {
         "id": "feverstonewilds:gamblequestfaunling1",
-        "cooldown": 50,
+        "cooldown": -1,
         "perPlayer": true,
         "onAcceptedActions": [
             {
+                "id": "completequest",
+                "args": [ ]
+            }
+        ],
+            "actionRewards": [
+            {
                 "id": "despawnquestgiver",
-                "args": [
-                    "0"
-                ]
+                "args": [ "0" ]
+            },
+            {
+                "id": "spawnsmoke",
+                "args": [ ]
             },
             {
                 "id": "spawnany",
                 "args": [
-                    "game:wolf-male",
-                    "game:wolf-female",
-                    "game:hare-male-darkbrown",
-                    "game:hare-female-darkbrown",
+                    "game:beemob",
+                    "game:beemob",
                     "game:hare-male-gold",
-                    "game:hare-female-gold",
-                    "game:hare-male-ashgrey",
-                    "game:hare-female-ashgrey",
-                    "game:hare-male-lightbrown",
-                    "game:hare-female-lightbrown",
-                    "game:hare-male-darkgrey",
-                    "game:hare-female-darkgrey"
+                    "game:hare-female-gold"
                 ]
             },
             {
