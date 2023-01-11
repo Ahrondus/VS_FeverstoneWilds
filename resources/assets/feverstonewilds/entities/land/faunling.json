@@ -39,18 +39,32 @@
             "*-male": { "base": "entity/land/malefaunling" },
             "*-female": { "base": "entity/land/faunling" }
         },
-        "texture": { "base": "entity/faunling/faunling1", 
-					 "alternates": [ { "base": "entity/faunling/faunling2" }, { "base": "entity/faunling/faunling3" }, 
-									 { "base": "entity/faunling/faunling4" }, { "base": "entity/faunling/faunling5" }, 
-									 { "base": "entity/faunling/faunling6" }, { "base": "entity/faunling/faunling7" }, 
-									 { "base": "entity/faunling/faunling8" }, { "base": "entity/faunling/faunling9" }, 
-									 { "base": "entity/faunling/faunling10" }, { "base": "entity/faunling/faunling11" }, 
-									 { "base": "entity/faunling/faunling12" }, { "base": "entity/faunling/faunling13" }, 
-									 { "base": "entity/faunling/faunling14" }, { "base": "entity/faunling/faunling15" }, 
-									 { "base": "entity/faunling/faunling16" }, { "base": "entity/faunling/faunling17" }, 
-									 { "base": "entity/faunling/faunling18" }
-									] 
-		},
+        "textureByType": {
+            "faunling-male":    
+            { "base": "entity/malefaunling/malefaunling1",
+            "alternates": [ { "base": "entity/malefaunling/malefaunling2" }, { "base": "entity/malefaunling/malefaunling3" }, 
+                { "base": "entity/malefaunling/malefaunling4" }, { "base": "entity/malefaunling/malefaunling5" }, 
+                { "base": "entity/malefaunling/malefaunling6" }, { "base": "entity/malefaunling/malefaunling7" }, 
+                { "base": "entity/malefaunling/malefaunling8" }, { "base": "entity/malefaunling/malefaunling9" }, 
+                { "base": "entity/malefaunling/malefaunling10" }, { "base": "entity/malefaunling/malefaunling11" }, 
+                { "base": "entity/malefaunling/malefaunling12" }, { "base": "entity/malefaunling/malefaunling13" }, 
+                { "base": "entity/malefaunling/malefaunling14" }, { "base": "entity/malefaunling/malefaunling15" }
+            ]
+        },
+            "faunling-female":    
+            { "base": "entity/faunling/faunling1",
+            "alternates": [ { "base": "entity/faunling/faunling2" }, { "base": "entity/faunling/faunling3" }, 
+                { "base": "entity/faunling/faunling4" }, { "base": "entity/faunling/faunling5" }, 
+                { "base": "entity/faunling/faunling6" }, { "base": "entity/faunling/faunling7" }, 
+                { "base": "entity/faunling/faunling8" }, { "base": "entity/faunling/faunling9" }, 
+                { "base": "entity/faunling/faunling10" }, { "base": "entity/faunling/faunling11" }, 
+                { "base": "entity/faunling/faunling12" }, { "base": "entity/faunling/faunling13" }, 
+                { "base": "entity/faunling/faunling14" }, { "base": "entity/faunling/faunling15" }, 
+                { "base": "entity/faunling/faunling16" }, { "base": "entity/faunling/faunling17" }, 
+                { "base": "entity/faunling/faunling18" }
+            ] 
+		}
+    },
         "behaviors": [
             { "code": "repulseagents" },
             { "code": "controlledphysics", "stepHeight": 1.1251 },
