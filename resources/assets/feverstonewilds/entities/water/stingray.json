@@ -1,9 +1,9 @@
 {
-	code: "stingray",
-	class: "EntityFish",
-	hitboxSize: { x: 1.2, y: 1 },
-	eyeHeight: 0.9,
-	drops: [],
+	"code": "stingray",
+	"class": "EntityFish",
+	"hitboxSize": { "x": 1.2, "y": 1 },
+	"eyeHeight": 0.9,
+	"drops": [],
 	"habitat": "Underwater",
 	"client": {
 		"renderer": "Shape",
@@ -17,216 +17,175 @@
 									]
 	},
 		"behaviors": [
-			{ code: "repulseagents" }, 
-			{ code: "controlledphysics", stepHeight: 0 }, 
-			{ code: "interpolateposition" },
-			{ code: "floatupwhenstuck", onlyWhenDead: true },
-			{ code: "harvestable" },
-			{ code: "despawn", minPlayerDistance: 8, belowLightLevel: 8, minSeconds: 300 },
+			{ "code": "repulseagents" }, 
+			{ "code": "controlledphysics", "stepHeight": 0 }, 
+			{ "code": "interpolateposition" },
+			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
+			{ "code": "harvestable" },
+			{ "code": "despawn", "minPlayerDistance": 8, "belowLightLevel": 8, "minSeconds": 300 }
 		],
-		animations: [
+		"animations": [
 			{
-				code: "hurt",
-				animation: "hurt", 
-				animationSpeed: 1,
-				weight: 10,
-				blendMode: "AddAverage" 
+				"code": "hurt",
+				"animation": "hurt", 
+				"animationSpeed": 1,
+				"weight": 10,
+				"blendMode": "AddAverage" 
 			},
 			{
-				code: "swim",
-				animation: "swim"
+				"code": "swim",
+				"animation": "swim"
 			},
 			{
-				code: "swimfast",
-				animation: "swim"
+				"code": "swimfast",
+				"animation": "swim"
 			},
 			{
-				code: "dead",
-				animation: "death",
+				"code": "dead",
+				"animation": "death"
 			},
 			{
-				code: "flop",
-				animation: "flopping"
+				"code": "flop",
+				"animation": "flopping"
 			},
 			{ 
-				code: "idle", 
-				animation: "idle",
-				blendMode: "AddAverage",
-				easeOutSpeed: 4,
-				triggeredBy: { defaultAnim: true },
+				"code": "idle", 
+				"animation": "idle",
+				"blendMode": "AddAverage",
+				"easeOutSpeed": 4,
+				"triggeredBy": { "defaultAnim": true }
 			}
 		]
 	},
-	server: {
-		behaviors: [
-			{ code: "repulseagents" }, 
-			{ code: "controlledphysics", stepHeight: 0 }, 
-			{ code: "despawn", minPlayerDistance: 12, belowLightLevel: 8, minSeconds: 200 },
-			{ code: "health", currenthealth: 15, maxhealth: 15, },
-			{ code: "deaddecay", hoursToDecay: 96, decayedBlock: "carcass-medium" },
-			{ code: "floatupwhenstuck", onlyWhenDead: true },
-			{ code: "harvestable", drops: [
+	"server": {
+		"behaviors": [
+			{ "code": "repulseagents" }, 
+			{ "code": "controlledphysics", "stepHeight": 0 }, 
+			{ "code": "despawn", "minPlayerDistance": 12, "belowLightLevel": 8, "minSeconds": 200 },
+			{ "code": "health", "maxhealth": 15 },
+			{ "code": "deaddecay", "hoursToDecay": 96, "decayedBlock": "carcass-medium" },
+			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
+			{ "code": "harvestable", "drops": [
 					{
-						type: "item", 
-						code: "fish-raw", 
-						quantity: { avg: 5, var: 3 } 
+						"type": "item", 
+						"code": "fish-raw", 
+						"quantity": { "avg": 5, "var": 3 } 
 					}
 				]
 			},
 			{ 
-				code: "emotionstates",
-				states: [
-					{ code: "fleeondamage", duration: 10, chance: 1, slot: 0, priority: 1, accumType: "max" },
+				"code": "emotionstates",
+				"states": [
+					{ "code": "fleeondamage", "duration": 10, "chance": 1, "slot": 0, "priority": 1, "accumType": "max" },
 					{ 
-						code: "saturated", duration: 1200, chance: 1, slot: 0, priority: 1, accumType: "sum",
-						belowTempDuration: 600,
-						belowTempThreshold: -5
+						"code": "saturated", "duration": 1200, "chance": 1, "slot": 0, "priority": 1, "accumType": "sum",
+						"belowTempDuration": 600,
+						"belowTempThreshold": -5
 					}
 				]
 			},
 			{ 
-				code: "taskai",
-				aitasks: [
+				"code": "taskai",
+				"aitasks": [
 				{
-						code: "meleeattack",
-						entityCodes: ["discus"],
-						priority: 2,
-						damage: 8,
-						damageTier: 2,
-						damageType: "SlashingAttack",
-						slot: 1,
-						mincooldown: 1500, 
-						maxcooldown: 1500, 
-						attackDurationMs: 800,
-						damagePlayerAtMs: 500,
-						animation: "attack",
-						animationSpeed: 2.5,
-						sound: "creature/attack"
+						"code": "meleeattack",
+						"entityCodes": ["discus, player"],
+						"priority": 2,
+						"damage": 8,
+						"damageTier": 2,
+						"damageType": "SlashingAttack",
+						"slot": 1,
+						"mincooldown": 1500, 
+						"maxcooldown": 1500, 
+						"attackDurationMs": 800,
+						"damagePlayerAtMs": 500,
+						"animation": "attack",
+						"animationSpeed": 2.5,
+						"sound": ""
 					},
 					
 					{
-						code: "fleeentity",
-						entityCodes: ["x"],
-						priority: 1.6,
-						movespeed: 0.052,
-						seekingRange: 20,
-						animation: "swim",
-						animationSpeed: 3,
-						whenInEmotionState: "fleeondamage"
+						"code": "fleeentity",
+						"entityCodes": ["player"],
+						"priority": 1.6,
+						"movespeed": 0.052,
+						"seekingRange": 20,
+						"animation": "swim",
+						"animationSpeed": 3,
+						"whenInEmotionState": "fleeondamage"
 					},
 					{
-						code: "seekentity",
-						entityCodes: ["discus"],
-						priority: 1.51,
-						movespeed: 0.025,
-						seekingRange: 9,
-						
-						belowTempSeekingRange: 25,
-						belowTempThreshold: -5,
-						
-						animation: "swim",
-						leapAtTarget: false,
-						leapAnimation: null,
-						animationSpeed: 2.2,
-						leapChance: 0.01,
-						sound: "creature/growl",
-						whenNotInEmotionState: "saturated"
-					},
-					{
-						code: "seekentity",
+						"code": "seekentity",
 						"entityCodes": ["discus"],
-						priority: 1.5,
-						movespeed: 0.1,
-						seekingRange: 15,
+						"priority": 1.51,
+						"movespeed": 0.025,
+						"seekingRange": 9,
 						
-						belowTempSeekingRange: 25,
-						belowTempThreshold: -5,
+						"belowTempSeekingRange": 25,
+						"belowTempThreshold": -5,
 						
-						animation: "swim",
-						leapAtTarget: false,
-						leapAnimation: null,
-						animationSpeed: 2.2,
-						leapChance: 0.01,
-						sound: "creature/",
-						whenNotInEmotionState: "saturated"
+						"animation": "swim",
+						"leapAtTarget": false,
+						"leapAnimation": null,
+						"animationSpeed": 2.2,
+						"leapChance": 0.01,
+						"sound": "creature/growl",
+						"whenNotInEmotionState": "saturated"
 					},
 					{
-						code: "seekentity",
-						entityCodes: ["discus"],
-						priority: 1.49,
-						movespeed: 0.1,
-						seekingRange: 15,
-						animation: "swim",
-						leapAtTarget: false,
-						leapAnimation: null,
-						animationSpeed: 2.2,
-						leapChance: 0,
-						sound: "creature/",
-						whenInEmotionState: "aggressiveondamage"
+						"code": "fishoutofwater", 
+						"priority": 2.5, 
+						"priorityForCancel": 2.6,
+						"movespeed": 0.005,
+						"animation": "idle-land",
+						"animationSpeed": 2
 					},
 					{
-						code: "fishoutofwater", 
-						priority: 2.5, 
-						priorityForCancel: 2.6,
-						movespeed: 0.005,
-						animation: "idle-land",
-						animationSpeed: 2
+						"code": "wander", 
+						"priority": 1.2, 
+						"priorityForCancel": 1.35,
+						"movespeed": 0.01,
+						"animation": "swim"
 					},
 					{
-						code: "wander", 
-						priority: 1.2, 
-						priorityForCancel: 1.35,
-						movespeed: 0.01,
-						animation: "swim"
+						"code": "fishmovefast", 
+						"priority": 1.0, 
+						"priorityForCancel": 1.35,
+						"movespeed": 0.045,
+						"animation": "swim",
+						"animationSpeed": 2.3
 					},
 					{
-						code: "fishmovefast", 
-						priority: 1.0, 
-						priorityForCancel: 1.35,
-						movespeed: 0.045,
-						animation: "swim",
-						animationSpeed: 2.3
-					},
-					{
-						code: "idle",
-						priority: 0.9,
-						minduration: 500,
-						maxduration: 2000,
-						mincooldown: 2000,
-						maxcooldown: 30000,
-						animation: "idle"
-					},
-					{
-						code: "idle",
-						priority: 0.9,
-						minduration: 500,
-						maxduration: 1000,
-						mincooldown: 2000,
-						maxcooldown: 30000,
-						animation: "idle"
+						"code": "idle",
+						"priority": 0.9,
+						"minduration": 500,
+						"maxduration": 2000,
+						"mincooldown": 2000,
+						"maxcooldown": 30000,
+						"animation": "idle"
 					}
 				]
 			}
 		],
-		spawnconditions: {
-			worldgen: {
-				TriesPerChunk: { avg: 0.05, var: 0 },
-				tryOnlySurface: true,
-				minLightLevel: 8,
-				groupSize: { dist: "verynarrowgaussian", avg: 1, var: 0 },
-				insideBlockCodes: ["game:water-*"],
-				minTemp: -10,
-				maxTemp: 30
+		"spawnconditions": {
+			"worldgen": {
+				"TriesPerChunk": { "avg": 0.05, "var": 0 },
+				"tryOnlySurface": true,
+				"minLightLevel": 8,
+				"groupSize": { "dist": "verynarrowgaussian", "avg": 1, "var": 0 },
+				"insideBlockCodes": ["game:water-*"],
+				"minTemp": -10,
+				"maxTemp": 30
 			},
-			runtime: {
-				group: "neutral",
-				chance: 0.0001,
-				tryOnlySurface: true,
-				minLightLevel: 8,
-				groupSize: { dist: "verynarrowgaussian", avg: 1, var: 0 },
-				insideBlockCodes: ["game:water-*"],
-				minTemp: -10,
-				maxTemp: 30
+			"runtime": {
+				"group": "neutral",
+				"chance": 0.0001,
+				"tryOnlySurface": true,
+				"minLightLevel": 8,
+				"groupSize": { "dist": "verynarrowgaussian", "avg": 1, "var": 0 },
+				"insideBlockCodes": ["game:water-*"],
+				"minTemp": -10,
+				"maxTemp": 30
 			}
 		}
 	}
