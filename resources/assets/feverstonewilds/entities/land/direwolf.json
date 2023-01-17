@@ -106,6 +106,12 @@
         ]
     },
     "server": {
+        "attributes": {
+            "pathfinder": {
+                "minTurnAnglePerSec": 125,
+                "maxTurnAnglePerSec": 210
+            }
+        },
         "behaviorsByType": {
             "*": [
                 {   "code": "multiply",

@@ -24,7 +24,7 @@
         "*-male": 0.15,
         "*-female": 0.10
     },
-    "eyeHeight": 0.9,
+    "eyeHeight": 1.1,
     "drops": [],
 	"attributes": {
         "killedByInfoText": "deadcreature-eaten-large",
@@ -169,20 +169,14 @@
                 "animationSpeed": 1.25,
                 "weight": 10,
                 "blendMode": "average",
-                "triggeredBy": {
-                    "onControls": [
-                        "dead"
-                    ]
-                }
+                "triggeredBy": { "onControls": [ "dead" ] }
             },
             {
                 "code": "idle",
                 "animation": "idle",
                 "blendMode": "addAverage",
                 "easeOutSpeed": 4,
-                "triggeredBy": {
-                    "defaultAnim": true
-                }
+                "triggeredBy": { "defaultAnim": true }
             },
             {
                 "code": "sleep",
@@ -217,11 +211,14 @@
         ]
     },
     "server": {
+        "attributes": {
+            "pathfinder": {
+                "minTurnAnglePerSec": 125,
+                "maxTurnAnglePerSec": 210
+            }
+        },
         "behaviors": [
-            {
-                "code": "nametag",
-                "showtagonlywhentargeted": true
-            },
+            { "code": "nametag", "showtagonlywhentargeted": true },
             { "code": "tameable", "size": "medium",
                 "treat": [
                     { "code": "bone", "progress": 0.1, "cooldown": 1 },
@@ -272,8 +269,7 @@
                 "multiplyCooldownDaysMax": 11,
                 "portionsEatenForMultiply": 10
             },
-            {
-                "code": "emotionstates",
+            { "code": "emotionstates",
                 "states": [
                     {
                         "code": "fleeondamage",
@@ -318,7 +314,7 @@
                         ],
                         "isCommandable": true,
                         "priority": 3,
-                        "damage": 5,
+                        "damage": 8,
                         "damageTier": 2,
                         "damageType": "SlashingAttack",
                         "slot": 1,
@@ -427,14 +423,8 @@
                         "code": "seeknest",
                         "priority": 1.56,
                         "duringDayTimeFrames": [
-                            {
-                                "fromHour": 10,
-                                "toHour": 18
-                            },
-                            {
-                                "fromHour": 1,
-                                "toHour": 3
-                            }
+                            { "fromHour": 10, "toHour": 18 },
+                            { "fromHour": 1, "toHour": 3 }
                         ],
                         "movespeed": 0.006,
                         "animation": "Walk"
@@ -450,18 +440,10 @@
                         "animation": "Sleep",
                         "whenNotInEmotionState": "aggressiveondamage",
                         "duringDayTimeFrames": [
-                            {
-                                "fromHour": 10,
-                                "toHour": 18
-                            },
-                            {
-                                "fromHour": 1,
-                                "toHour": 3
-                            }
+                            { "fromHour": 10, "toHour": 18 },
+                            { "fromHour": 1, "toHour": 3 }
                         ],
-                        "stopOnNearbyEntityCodes": [
-                            "drifter-*"
-                        ],
+                        "stopOnNearbyEntityCodes": [ "drifter-*" ],
                         "stopRange": 10,
                         "stopOnHurt": true
                     },
