@@ -106,6 +106,12 @@
         ]
     },
     "server": {
+        "attributes": {
+            "pathfinder": {
+                "minTurnAnglePerSec": 125,
+                "maxTurnAnglePerSec": 210
+            }
+        },
         "behaviorsByType": {
             "*": [
                 {   "code": "multiply",
@@ -120,7 +126,6 @@
                 { "code": "repulseagents" },
                 { "code": "controlledphysics", "stepHeight": 1.1251 },
                 { "code": "floatupwhenstuck", "onlyWhenDead": true },
-                { "code": "interpolateposition" },
                 { "code": "harvestable",
                     "drops": [
                         { "type": "item", "code": "bushmeat-raw", "quantity": { "avg": 8, "var": 2 } },
@@ -292,7 +297,7 @@
                     ]
                 },
                 { "code": "ropetieable", "minGeneration": 2 },
-                { "code": "pettable" }
+                { "code": "pettableextended" }
             ],
             "spawnconditionsByType": {
                 "direwolf-male": {

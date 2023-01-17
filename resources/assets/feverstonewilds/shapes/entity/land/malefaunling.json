@@ -8,7 +8,7 @@
 	"textureSizes": {
 	},
 	"textures": {
-		"MFaunling": "entity/faunling/faunling6"
+		"MFaunling": "entity/malefaunling/malefaunling6"
 	},
 	"elements": [
 		{
@@ -1304,7 +1304,7 @@
 			"name": "walk",
 			"code": "walk",
 			"quantityframes": 80,
-			"onActivityStopped": "Rewind",
+			"onActivityStopped": "EaseOut",
 			"onAnimationEnd": "Repeat",
 			"keyframes": [
 				{

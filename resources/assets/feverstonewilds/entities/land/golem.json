@@ -1,9 +1,9 @@
 {
-    "code": "golem",
+    "code": "golem",                    
+    "class": "EntityAgent",
     "variantgroups": [ { "code": "rock", "states": ["andesite", "granite", "basalt", "limestone"] }, 
                        { "code": "ore", "states": ["nativecopper", "cassiterite", "hematite" ] } ],
-                    
-    "class": "EntityAgent",
+    "skipVariants": ["*-limestone-cassiterite"],
 	"hitboxSize": { "x": 1, "y": 2.8, "z": 2.5 },
     "deadHitboxSize": { "x": 3, "y": 2.1, "z": 2.5 },
     "eyeHeight": 2.6, 
@@ -13,13 +13,28 @@
         "spawnDamageParticles": true,
         "reckless": true
     },
-    
-    "drops": [
+    "dropsByType": {
+        "*-limestone-nativecopper": [
+            { "type": "block", "code": "game:rock-{rock}", "quantity": { "avg": 8, "var": 2} },
+            { "type": "item", "code": "game:stone-{rock}", "quantity": { "avg": 12, "var": 4} },
+            { "type": "item", "code": "game:ore-medium-malachite-limestone", "quantity": { "avg": 3, "var": 1 } }
+        ],
+        "*-andesite-hematite": [
+            { "type": "block", "code": "game:rock-{rock}", "quantity": { "avg": 8, "var": 2} },
+            { "type": "item", "code": "game:stone-{rock}", "quantity": { "avg": 12, "var": 4} },
+            { "type": "item", "code": "game:ore-medium-magnetite-andesite", "quantity": { "avg": 3, "var": 1 } }
+        ],
+        "*-basalt-hematite": [
+            { "type": "block", "code": "game:rock-{rock}", "quantity": { "avg": 8, "var": 2} },
+            { "type": "item", "code": "game:stone-{rock}", "quantity": { "avg": 12, "var": 4} },
+            { "type": "item", "code": "game:ore-medium-limonite-basalt", "quantity": { "avg": 3, "var": 1 } }
+        ],
+        "*": [
             { "type": "block", "code": "game:rock-{rock}", "quantity": { "avg": 8, "var": 2} },
             { "type": "item", "code": "game:stone-{rock}", "quantity": { "avg": 12, "var": 4} },
             { "type": "item", "code": "game:ore-medium-{ore}-{rock}", "quantity": { "avg": 3, "var": 1 } }
-             ],
-
+        ]
+    },
     "client": {
         "renderer": "Shape",
         "shape": { "base": "entity/land/golem" },
@@ -45,15 +60,11 @@
 			{ "code": "despawn", "minPlayerDistance": 8, "belowLightLevel": 8, "minSeconds": 300 }
 		],
         "animations": [
-			{
-				"code": "move",
-				"animation": "move",
-				"blendMode": "AddAverage" 
-			},
             {
-				"code": "dead",
+				"code": "die",
 				"animation": "dead", 
 				"animationSpeed": 0.8,
+				"easeInSpeed": 2,
 				"weight": 10,
 				"blendMode": "Average",
                 "triggeredBy": { "onControls": ["dead"] }
@@ -73,14 +84,29 @@
             } },
 			{ "code": "deaddecay", "hoursToDecay": 10 },
 			{ "code": "floatupwhenstuck", "onlyWhenDead": false },
-			{ "code": "harvestable",  "drops": [
-
-                { "type": "item", "code": "game:nugget-{ore}", "quantity": { "avg": 12, "var": 2} },
-                { "type": "item", "code": "game:stone-{rock}", "quantity": { "avg": 8, "var": 4} },
-                { "type": "item", "code": "game:ore-medium-{ore}-{rock}", "quantity": { "avg": 3, "var": 1 } }
-
-                ] },
-            
+			{ "code": "harvestable",  "dropsByType": {
+                "*-limestone-nativecopper": [
+                    { "type": "block", "code": "game:rock-{rock}", "quantity": { "avg": 8, "var": 2} },
+                    { "type": "item", "code": "game:stone-{rock}", "quantity": { "avg": 12, "var": 4} },
+                    { "type": "item", "code": "game:ore-medium-malachite-limestone", "quantity": { "avg": 3, "var": 1 } }
+                ],
+                "*-andesite-hematite": [
+                    { "type": "block", "code": "game:rock-{rock}", "quantity": { "avg": 8, "var": 2} },
+                    { "type": "item", "code": "game:stone-{rock}", "quantity": { "avg": 12, "var": 4} },
+                    { "type": "item", "code": "game:ore-medium-magnetite-andesite", "quantity": { "avg": 3, "var": 1 } }
+                ],
+                "*-basalt-hematite": [
+                    { "type": "block", "code": "game:rock-{rock}", "quantity": { "avg": 8, "var": 2} },
+                    { "type": "item", "code": "game:stone-{rock}", "quantity": { "avg": 12, "var": 4} },
+                    { "type": "item", "code": "game:ore-medium-limonite-basalt", "quantity": { "avg": 3, "var": 1 } }
+                ],
+                "*": [
+                    { "type": "block", "code": "game:rock-{rock}", "quantity": { "avg": 8, "var": 2} },
+                    { "type": "item", "code": "game:stone-{rock}", "quantity": { "avg": 12, "var": 4} },
+                    { "type": "item", "code": "game:ore-medium-{ore}-{rock}", "quantity": { "avg": 3, "var": 1 } }
+                     ]
+                }
+            },            
 			{ 
 				"code": "emotionstates",
 				"states": [
@@ -141,7 +167,7 @@
     "spawnconditions": {
         "worldgen": {
             "TriesPerChunk": { "avg": 0.006, "var": 0.005 },
-            "maxQuantityByType": { "*": 1, "*-limestone-cassiterite": 0 },
+            "maxQuantityByType": {  "*-limestone-cassiterite": 0, "*": 1 },
             "mindistancetoplayer": 180,
             "tryOnlySurface": true,
             "groupSizeByType": {
@@ -160,7 +186,7 @@
         },
         "runtime": {
             "group": "neutral",
-            "maxQuantityByType": { "*": 1, "*-limestone-cassiterite": 0 },
+            "maxQuantityByType": { "*-limestone-cassiterite": 0, "*": 1 },
             "mindistancetoplayer": 120,
             "tryOnlySurface": true,
             "chance": 0.00001,

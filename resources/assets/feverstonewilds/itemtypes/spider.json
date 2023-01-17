@@ -3,15 +3,9 @@
 	"class": "ItemCreature",
 	"maxstackssize": 1,
 	"variantgroups": [
-			{
-				"code": "type",
-				"states": ["spider"]
-			}
+			{ "code": "type", "states": ["spider"] }
 		],
-	"shapeByType": {
-		"spider": { "base": "entity/land/spider" }
-		},
-		
+	"shape": { "base": "entity/land/spider" },		
 	"creativeinventory": {
 		"general": ["*"],
 		"items": ["*"],
@@ -22,7 +16,7 @@
 		"translation": { "x": 0, "y": 2, "z": 0 },
 		"rotation": { "x": 0, "y": -120, "z": -163 },
 		"origin": { "x": 0.5, "y": 0.8, "z": 0.5 },
-		"scale": 0.8
+		"scale": 2.0
 	},
 	"fpHandTransform": {
 		"translation": { "x": 0.9, "y": 0.9, "z": 0.7 },
@@ -36,3 +30,4 @@
 		"origin": { "x": 0.5, "y": 0.8, "z": 0.5 },
 		"scale": 1.25
 	}
+}

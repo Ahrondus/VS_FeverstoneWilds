@@ -1,137 +1,52 @@
 {
     "code": "tame-direwolf-pup",
     "class": "EntityPet",
-    "hitboxSize": {
-        "x": 0.85,
-        "y": 0.5
-    },
-    "deadHitboxSize": {
-        "x": 0.75,
-        "y": 0.4
-    },
+    "hitboxSize": { "x": 0.85, "y": 0.5 },
+    "deadHitboxSize": { "x": 0.75, "y": 0.4 },
     "eyeHeight": 0.4,
     "drops": [],
     "client": {
         "renderer": "Shape",
-        "shape": {
-            "base": "entity/land/direwolf-pup"
-        },
+        "shape": { "base": "entity/land/direwolf-pup" },
         "texture": {
             "base": "entity/direwolf/direwolf-pup1",
-            "alternates": [
-                {
-                    "base": "entity/direwolf/direwolf-pup2"
-                }
-            ]
+            "alternates": [ { "base": "entity/direwolf/direwolf-pup2" } ]
         },
         "size": 0.9,
         "sizeGrowthFactor": 0.2,
         "behaviors": [
-            {
-                "code": "nametag",
-                "showtagonlywhentargeted": true
-            },
-            {
-                "code": "receivecommand",
+            { "code": "nametag", "showtagonlywhentargeted": true },
+            { "code": "receivecommand",
                 "availableCommands": [
-                    {
-                        "commandName": "sit",
-                        "commandType": "SIMPLE",
-                        "minObedience": 0.2
-                    },
-                    {
-                        "commandName": "lay",
-                        "commandType": "SIMPLE",
-                        "minObedience": 0.4
-                    },
-                    {
-                        "commandName": "speak",
-                        "commandType": "SIMPLE",
-                        "minObedience": 0.6
-                    }
+                    { "commandName": "sit", "commandType": "SIMPLE", "minObedience": 0.2 },
+                    { "commandName": "lay", "commandType": "SIMPLE", "minObedience": 0.4 },
+                    { "commandName": "speak", "commandType": "SIMPLE", "minObedience": 0.6 }
                 ]
             },
-            {
-                "code": "tameable",
+            { "code": "tameable", "size": "small",
                 "treat": [
-                    {
-                        "code": "bone",
-                        "progress": 0.1,
-                        "cooldown": 1
-                    },
-                    {
-                        "code": "bushmeat-raw",
-                        "progress": 0.15,
-                        "cooldown": 2
-                    },
-                    {
-                        "code": "redmeat-raw",
-                        "progress": 0.3,
-                        "cooldown": 3
-                    },
-                    {
-                        "code": "poultry-raw",
-                        "progress": 0.3,
-                        "cooldown": 3
-                    },
-                    {
-                        "code": "petcookie-meat-perfect",
-                        "domain": "petai",
-                        "progress": 0.8,
-                        "cooldown": 3
-                    }
+                    { "code": "bone", "progress": 0.1, "cooldown": 1 },
+                    { "code": "bushmeat-raw", "progress": 0.15, "cooldown": 2 },
+                    { "code": "redmeat-raw", "progress": 0.3, "cooldown": 3 },
+                    { "code": "poultry-raw", "progress": 0.3, "cooldown": 3 },
+                    { "code": "petcookie-meat-perfect", "domain": "petai", "progress": 0.8, "cooldown": 3 }
                 ]
             },
-            {
-                "code": "mouthinventory",
+            { "code": "mouthinventory",
                 "acceptStacks": [
-                    {
-                        "type": "item",
-                        "code": "bone"
-                    },
-                    {
-                        "type": "item",
-                        "code": "bushmeat-raw"
-                    },
-                    {
-                        "type": "item",
-                        "code": "redmeat-raw"
-                    },
-                    {
-                        "type": "item",
-                        "code": "poultry-raw"
-                    },
-                    {
-                        "type": "item",
-                        "code": "wolftaming:dogtoy"
-                    },
-                    {
-                        "type": "item",
-                        "code": "petai:petcookie-meat-perfect"
-                    }
+                    { "type": "item", "code": "bone" },
+                    { "type": "item", "code": "bushmeat-raw" },
+                    { "type": "item", "code": "redmeat-raw" },
+                    { "type": "item", "code": "poultry-raw" },
+                    { "type": "item", "code": "wolftaming:dogtoy" },
+                    { "type": "item", "code": "petai:petcookie-meat-perfect" }
                 ]
             },
-            {
-                "code": "repulseagents"
-            },
-            {
-                "code": "controlledphysics",
-                "stepHeight": 1.1251
-            },
-            {
-                "code": "floatupwhenstuck",
-                "onlyWhenDead": true
-            },
-            {
-                "code": "interpolateposition"
-            },
-            {
-                "code": "harvestable"
-            },
-            {
-                "code": "ropetieable",
-                "minGeneration": 2
-            }
+            { "code": "repulseagents" },
+            { "code": "controlledphysics", "stepHeight": 1.1251 },
+            { "code": "floatupwhenstuck", "onlyWhenDead": true },
+            { "code": "interpolateposition" },
+            { "code": "ropetieable", "minGeneration": 2 }
         ],
         "animations": [
             {
@@ -147,20 +62,14 @@
                 "animationSpeed": 1.5,
                 "weight": 10,
                 "blendMode": "average",
-                "triggeredBy": {
-                    "onControls": [
-                        "dead"
-                    ]
-                }
+                "triggeredBy": { "onControls": [ "dead" ] }
             },
             {
                 "code": "idle",
                 "animation": "idle",
                 "blendMode": "addAverage",
                 "easeOutSpeed": 4,
-                "triggeredBy": {
-                    "defaultAnim": true
-                }
+                "triggeredBy": { "defaultAnim": true }
             },
             {
                 "code": "sleep",
@@ -180,122 +89,40 @@
     },
     "server": {
         "behaviors": [
-            {
-                "code": "nametag",
-                "showtagonlywhentargeted": true
-            },
-            {
-                "code": "receivecommand",
+            { "code": "nametag", "showtagonlywhentargeted": true },
+            { "code": "receivecommand",
                 "availableCommands": [
-                    {
-                        "commandName": "sit",
-                        "commandType": "SIMPLE",
-                        "minObedience": 0.2
-                    },
-                    {
-                        "commandName": "lay",
-                        "commandType": "SIMPLE",
-                        "minObedience": 0.4
-                    },
-                    {
-                        "commandName": "speak",
-                        "commandType": "SIMPLE",
-                        "minObedience": 0.6
-                    }
+                    { "commandName": "sit", "commandType": "SIMPLE", "minObedience": 0.2 },
+                    { "commandName": "lay", "commandType": "SIMPLE", "minObedience": 0.4 },
+                    { "commandName": "speak", "commandType": "SIMPLE", "minObedience": 0.6 }
                 ]
             },
-            {
-                "code": "tameable",
-                "size": "small",
-                "disobediencePerDay": 0.1,
+            { "code": "tameable", "size": "small",
                 "treat": [
-                    {
-                        "code": "bone",
-                        "progress": 0.1,
-                        "cooldown": 1
-                    },
-                    {
-                        "code": "bushmeat-raw",
-                        "progress": 0.15,
-                        "cooldown": 2
-                    },
-                    {
-                        "code": "redmeat-raw",
-                        "progress": 0.3,
-                        "cooldown": 3
-                    },
-                    {
-                        "code": "poultry-raw",
-                        "progress": 0.3,
-                        "cooldown": 3
-                    },
-                    {
-                        "code": "petcookie-meat-perfect",
-                        "domain": "petai",
-                        "progress": 0.8,
-                        "cooldown": 3
-                    }
+                    { "code": "bone", "progress": 0.1, "cooldown": 1 },
+                    { "code": "bushmeat-raw", "progress": 0.15, "cooldown": 2 },
+                    { "code": "redmeat-raw", "progress": 0.3, "cooldown": 3 },
+                    { "code": "poultry-raw", "progress": 0.3, "cooldown": 3 },
+                    { "code": "petcookie-meat-perfect", "domain": "petai", "progress": 0.8, "cooldown": 3 }
                 ]
             },
-            {
-                "code": "mouthinventory",
+            { "code": "mouthinventory",
                 "acceptStacks": [
-                    {
-                        "type": "item",
-                        "code": "bone"
-                    },
-                    {
-                        "type": "item",
-                        "code": "bushmeat-raw"
-                    },
-                    {
-                        "type": "item",
-                        "code": "redmeat-raw"
-                    },
-                    {
-                        "type": "item",
-                        "code": "poultry-raw"
-                    },
-                    {
-                        "type": "item",
-                        "code": "wolftaming:dogtoy"
-                    },
-                    {
-                        "type": "item",
-                        "code": "petai:petcookie-meat-perfect"
-                    }
+                    { "type": "item", "code": "bone" },
+                    { "type": "item", "code": "bushmeat-raw" },
+                    { "type": "item", "code": "redmeat-raw" },
+                    { "type": "item", "code": "poultry-raw" },
+                    { "type": "item", "code": "wolftaming:dogtoy" },
+                    { "type": "item", "code": "petai:petcookie-meat-perfect" }
                 ]
             },
-            {
-                "code": "repulseagents"
-            },
-            {
-                "code": "controlledphysics",
-                "stepHeight": 1.1251
-            },
-            {
-                "code": "health",
-                "currenthealth": 5,
-                "maxhealth": 5
-            },
-            {
-                "code": "deaddecay",
-                "hoursToDecay": 96,
-                "decayedBlock": "carcass-small"
-            },
-            {
-                "code": "floatupwhenstuck",
-                "onlyWhenDead": true
-            },
-            {
-                "code": "harvestable",
-                "drops": []
-            },
-            {
-                "code": "breathe"
-            },
-            {
-                "code": "emotionstates",
+            { "code": "repulseagents" },
+            { "code": "controlledphysics", "stepHeight": 1.1251 },
+            { "code": "health", "maxhealth": 5 },
+            { "code": "deaddecay", "hoursToDecay": 96, "decayedBlock": "carcass-small" },
+            { "code": "floatupwhenstuck", "onlyWhenDead": true },
+            { "code": "breathe" },
+            { "code": "emotionstates",
                 "states": [
                     {
                         "code": "alarmherdondamage",
@@ -306,16 +133,8 @@
                     }
                 ]
             },
-            {
-                "hoursToGrow": 100,
-                "adultEntityCodes": [
-                    "feverstonewilds:tame-direwolf-male",
-                    "feverstonewilds:tame-direwolf-female"
-                ],
-                "code": "raisable"
-            },
-            {
-                "code": "taskai",
+            {"code": "raisable", "hoursToGrow": 100, "adultEntityCodes": [ "feverstonewilds:tame-direwolf-*" ] },
+            { "code": "taskai",
                 "aitasks": [
                     {
                         "code": "simplecommand",
@@ -384,14 +203,8 @@
                         "code": "seeknest",
                         "priority": 1.4,
                         "duringDayTimeFrames": [
-                            {
-                                "fromHour": 10,
-                                "toHour": 18
-                            },
-                            {
-                                "fromHour": 1,
-                                "toHour": 3
-                            }
+                            { "fromHour": 10, "toHour": 18 },
+                            { "fromHour": 1, "toHour": 3 }
                         ],
                         "movespeed": 0.004,
                         "animationSpeed": 2,
@@ -408,18 +221,10 @@
                         "animation": "Sleep",
                         "whenNotInEmotionState": "aggressiveondamage",
                         "duringDayTimeFrames": [
-                            {
-                                "fromHour": 10,
-                                "toHour": 18
-                            },
-                            {
-                                "fromHour": 1,
-                                "toHour": 3
-                            }
+                            { "fromHour": 10, "toHour": 18 },
+                            { "fromHour": 1, "toHour": 3 }
                         ],
-                        "stopOnNearbyEntityCodes": [
-                            "drifter-*"
-                        ],
+                        "stopOnNearbyEntityCodes": [ "drifter-*" ],
                         "stopRange": 6,
                         "stopOnHurt": true
                     },
@@ -502,14 +307,8 @@
                     }
                 ]
             },
-            {
-                "code": "ropetieable",
-                "minGeneration": 2
-            },
-            {
-                "code": "pettableextended",
-                "minGeneration": 0
-            }
+            { "code": "ropetieable", "minGeneration": 2 },
+            { "code": "pettableextended" }
         ]
     },
     "sounds": {
