@@ -14,12 +14,28 @@
         "reckless": true
     },
     
-    "drops": [
+    "dropsByType": {
+        "*": [
             { "type": "block", "code": "game:rock-{rock}", "quantity": { "avg": 8, "var": 2} },
             { "type": "item", "code": "game:stone-{rock}", "quantity": { "avg": 12, "var": 4} },
             { "type": "item", "code": "game:ore-medium-{ore}-{rock}", "quantity": { "avg": 3, "var": 1 } }
              ],
-
+        "*-limestone-nativecopper": [
+            { "type": "block", "code": "game:rock-{rock}", "quantity": { "avg": 8, "var": 2} },
+            { "type": "item", "code": "game:stone-{rock}", "quantity": { "avg": 12, "var": 4} },
+            { "type": "item", "code": "game:ore-medium-malachite-{rock}", "quantity": { "avg": 3, "var": 1 } }
+        ],
+        "*-hematite-andesite": [
+            { "type": "block", "code": "game:rock-{rock}", "quantity": { "avg": 8, "var": 2} },
+            { "type": "item", "code": "game:stone-{rock}", "quantity": { "avg": 12, "var": 4} },
+            { "type": "item", "code": "game:ore-medium-magnetite-{rock}", "quantity": { "avg": 3, "var": 1 } }
+        ],
+        "*-hematite-basalt": [
+            { "type": "block", "code": "game:rock-{rock}", "quantity": { "avg": 8, "var": 2} },
+            { "type": "item", "code": "game:stone-{rock}", "quantity": { "avg": 12, "var": 4} },
+            { "type": "item", "code": "game:ore-medium-limonite-{rock}", "quantity": { "avg": 3, "var": 1 } }
+        ]
+    },
     "client": {
         "renderer": "Shape",
         "shape": { "base": "entity/land/golem" },
@@ -73,14 +89,29 @@
             } },
 			{ "code": "deaddecay", "hoursToDecay": 10 },
 			{ "code": "floatupwhenstuck", "onlyWhenDead": false },
-			{ "code": "harvestable",  "drops": [
-
-                { "type": "item", "code": "game:nugget-{ore}", "quantity": { "avg": 12, "var": 2} },
-                { "type": "item", "code": "game:stone-{rock}", "quantity": { "avg": 8, "var": 4} },
-                { "type": "item", "code": "game:ore-medium-{ore}-{rock}", "quantity": { "avg": 3, "var": 1 } }
-
-                ] },
-            
+			{ "code": "harvestable",  "dropsByType": {
+                    "*": [
+                        { "type": "block", "code": "game:rock-{rock}", "quantity": { "avg": 8, "var": 2} },
+                        { "type": "item", "code": "game:stone-{rock}", "quantity": { "avg": 12, "var": 4} },
+                        { "type": "item", "code": "game:ore-medium-{ore}-{rock}", "quantity": { "avg": 3, "var": 1 } }
+                        ],
+                    "*-limestone-nativecopper": [
+                        { "type": "block", "code": "game:rock-{rock}", "quantity": { "avg": 8, "var": 2} },
+                        { "type": "item", "code": "game:stone-{rock}", "quantity": { "avg": 12, "var": 4} },
+                        { "type": "item", "code": "game:ore-medium-malachite-{rock}", "quantity": { "avg": 3, "var": 1 } }
+                    ],
+                    "*-hematite-andesite": [
+                        { "type": "block", "code": "game:rock-{rock}", "quantity": { "avg": 8, "var": 2} },
+                        { "type": "item", "code": "game:stone-{rock}", "quantity": { "avg": 12, "var": 4} },
+                        { "type": "item", "code": "game:ore-medium-magnetite-{rock}", "quantity": { "avg": 3, "var": 1 } }
+                    ],
+                    "*-hematite-basalt": [
+                        { "type": "block", "code": "game:rock-{rock}", "quantity": { "avg": 8, "var": 2} },
+                        { "type": "item", "code": "game:stone-{rock}", "quantity": { "avg": 12, "var": 4} },
+                        { "type": "item", "code": "game:ore-medium-limonite-{rock}", "quantity": { "avg": 3, "var": 1 } }
+                    ]
+                }
+            },            
 			{ 
 				"code": "emotionstates",
 				"states": [
