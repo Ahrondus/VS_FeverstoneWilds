@@ -33,7 +33,7 @@
             { "type": "block", "code": "game:rock-{rock}", "quantity": { "avg": 8, "var": 2} },
             { "type": "item", "code": "game:stone-{rock}", "quantity": { "avg": 12, "var": 4} },
             { "type": "item", "code": "game:ore-medium-{ore}-{rock}", "quantity": { "avg": 3, "var": 1 } }
-             ]
+        ]
     },
     "client": {
         "renderer": "Shape",
@@ -60,15 +60,11 @@
 			{ "code": "despawn", "minPlayerDistance": 8, "belowLightLevel": 8, "minSeconds": 300 }
 		],
         "animations": [
-			{
-				"code": "move",
-				"animation": "move",
-				"blendMode": "AddAverage" 
-			},
             {
-				"code": "dead",
+				"code": "die",
 				"animation": "dead", 
 				"animationSpeed": 0.8,
+				"easeInSpeed": 2,
 				"weight": 10,
 				"blendMode": "Average",
                 "triggeredBy": { "onControls": ["dead"] }
