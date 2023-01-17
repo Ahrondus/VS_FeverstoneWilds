@@ -1,9 +1,9 @@
 {
-    "code": "golem",
+    "code": "golem",                    
+    "class": "EntityAgent",
     "variantgroups": [ { "code": "rock", "states": ["andesite", "granite", "basalt", "limestone"] }, 
                        { "code": "ore", "states": ["nativecopper", "cassiterite", "hematite" ] } ],
-                    
-    "class": "EntityAgent",
+    "skipVariants": ["*-limestone-cassiterite"],
 	"hitboxSize": { "x": 1, "y": 2.8, "z": 2.5 },
     "deadHitboxSize": { "x": 3, "y": 2.1, "z": 2.5 },
     "eyeHeight": 2.6, 
@@ -167,7 +167,7 @@
     "spawnconditions": {
         "worldgen": {
             "TriesPerChunk": { "avg": 0.006, "var": 0.005 },
-            "maxQuantityByType": { "*": 1, "*-limestone-cassiterite": 0 },
+            "maxQuantityByType": {  "*-limestone-cassiterite": 0, "*": 1 },
             "mindistancetoplayer": 180,
             "tryOnlySurface": true,
             "groupSizeByType": {
@@ -186,7 +186,7 @@
         },
         "runtime": {
             "group": "neutral",
-            "maxQuantityByType": { "*": 1, "*-limestone-cassiterite": 0 },
+            "maxQuantityByType": { "*-limestone-cassiterite": 0, "*": 1 },
             "mindistancetoplayer": 120,
             "tryOnlySurface": true,
             "chance": 0.00001,
