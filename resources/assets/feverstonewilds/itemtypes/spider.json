@@ -3,15 +3,9 @@
 	"class": "ItemCreature",
 	"maxstackssize": 1,
 	"variantgroups": [
-			{
-				"code": "type",
-				"states": ["spider"]
-			}
+			{ "code": "type", "states": ["spider"] }
 		],
-	"shapeByType": {
-		"spider": { "base": "entity/land/spider" }
-		},
-		
+	"shape": { "base": "entity/land/spider" },		
 	"creativeinventory": {
 		"general": ["*"],
 		"items": ["*"],
