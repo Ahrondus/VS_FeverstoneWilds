@@ -66,8 +66,8 @@
 			{ "code": "repulseagents" }, 
 			{ "code": "controlledphysics", "stepHeight": 1.1251 },
 			{ "code": "despawn", "minPlayerDistance": 8, "belowLightLevel": 8, "minSeconds": 300 },
-			{ "code": "health", "currenthealth": 3, "maxhealth": 3 },
-			{ "code": "deaddecay", "hoursToDecay": 96, "decayedBlock": "carcass-small" },
+			{ "code": "health", "maxhealth": 3 },
+			{ "code": "deaddecay", "hoursToDecay": 96 },
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
 			{ "code": "harvestable", "drops": [
 				{ "type": "item", "code": "bushmeat-raw", "quantity": { "avg": 1, "var": 1 } }

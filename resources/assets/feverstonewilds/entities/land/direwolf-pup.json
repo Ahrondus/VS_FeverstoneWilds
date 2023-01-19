@@ -1,5 +1,8 @@
 {
 	"code": "direwolf-pup",
+	"variantgroups": [
+		{ "code": "gender", "states": ["male", "female"] }
+	],
 	"class": "EntityAgent",
 	"hitboxSize": { "x": 0.85, "y": 0.5 },
 	"deadHitboxSize": { "x": 0.75, "y": 0.4 },
@@ -84,8 +87,7 @@
 	},
 	"server": {
 		"behaviors": [
-		{ "code": "nametag" },
-            { "code": "multiply" },
+			{ "code": "nametag" },
             { "code": "receivecommand",
                 "availableCommands": [
 					{ "commandName": "followmaster", "commandType": "COMPLEX", "minObedience": 0.6 },
@@ -93,7 +95,7 @@
 				]
             },
             { "code": "tameable",
-				"tameEntityCode": "feverstonewilds:tame-direwolf-pup",
+				"tameEntityCode": "feverstonewilds:tame-direwolf-pup-{gender}",
                 "treat": [
 					{ "code": "redmeat-raw", "progress": 0.125, "cooldown": 0.75 },
 					{ "code": "bushmeat-raw", "progress": 0.05, "cooldown": 0.5 },
@@ -114,12 +116,11 @@
 			{ "code": "health", "currenthealth": 5, "maxhealth": 5 },
 			{ "code": "deaddecay", "hoursToDecay": 96, "decayedBlock": "carcass-small" },
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
-			{ "code": "harvestable", "drops": []
-			},
+			{ "code": "harvestable", "drops": [] },
 			{ "code": "breathe" },
 			{ "code": "emotionstates",
 				"states": [ { "code": "alarmherdondamage", "chance": 1, "slot": 1, "priority": 1, "accumType": "max" } ] },
-			{  "code": "raisable", "hoursToGrow": 300, "adultEntityCodes": [ "feverstonewilds:direwolf-male", "feverstonewilds:direwolf-female" ] },
+			{  "code": "raisable", "hoursToGrow": 300, "adultEntityCodes": [ "feverstonewilds:direwolf-{gender}" ] },
 			{ 
 				"code": "taskai",
 				"aitasks": [
@@ -237,7 +238,7 @@
 				]
 			},
 			{ "code": "ropetieable", "minGeneration": 2 },
-			{ "code": "pettable" }
+			{ "code": "pettableextended", "minGeneration": 1 }
 		]
 	},
 	"sounds": {
@@ -245,6 +246,6 @@
 		"death": "game:creature/pup/pup-hurt",
 		"idle": "game:creature/pup/pup-bark"
 	},
-	"idleSoundChance": 0.15,
+	"idleSoundChance": 0.015,
 	"hurtSoundChance": 0.25
 }
