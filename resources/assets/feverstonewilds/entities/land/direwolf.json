@@ -44,7 +44,7 @@
             "direwolf-female": [
                 { "code": "multiply" },
                 { "code": "repulseagents" },
-                { "code": "controlledphysics", "stepHeight": 1.1251 },
+                { "code": "controlledphysics", "stepHeight": 1.15 },
                 { "code": "floatupwhenstuck", "onlyWhenDead": true },
                 { "code": "interpolateposition" },
                 { "code": "harvestable" },
@@ -297,7 +297,7 @@
                     ]
                 },
                 { "code": "ropetieable", "minGeneration": 2 },
-                { "code": "pettableextended" }
+                { "code": "pettableextended", "minGeneration": 1 }
             ],
             "spawnconditionsByType": {
                 "direwolf-male": {
@@ -340,13 +340,13 @@
                     }
                 }                
             }
-        },
-        "sounds": {
-            "hurt": "game:creature/wolf/hurt",
-            "death": "game:creature/wolf/hurt",
-            "idle": "game:creature/wolf/howl"
-        },
-        "idleSoundChance": 0.015,
-        "hurtSoundChance": 0.25
-    }
+        }
+    },
+    "sounds": {
+        "hurt": "game:creature/wolf/hurt",
+        "death": "game:creature/wolf/hurt",
+        "idle": "game:creature/wolf/howl"
+    },
+    "idleSoundChance": 0.015,
+    "hurtSoundChance": 0.25
 }
