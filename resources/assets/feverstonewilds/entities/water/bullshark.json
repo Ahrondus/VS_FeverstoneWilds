@@ -56,18 +56,18 @@
 				"triggeredBy": { "defaultAnim": true }
 			},
 			{
-				code: "seekfoodandeat",
-				movespeed: 0.010,
-				priority: 1.25,
-				eatTime: 2.3,
-				eatLooseItems: true,
-				eatItemCodes: ["game:redmeat-*", "game:fish-*", "game:poultry-*", "game:bushmeat-*"],
+				"code": "seekfoodandeat",
+				"movespeed": 0.010,
+				"priority": 1.25,
+				"eatTime": 2.3,
+				"eatLooseItems": true,
+				"eatItemCodes": ["game:redmeat-*", "game:fish-*", "game:poultry-*", "game:bushmeat-*"],
 				"eatItemCatagories": ["Protein"],
-				animationSpeed: 1.4,
-				animation: "swim",
-				eatAnimation: "attack",
-				mincooldownHours: 1,
-				maxcooldownHours: 4,
+				"animationSpeed": 1.4,
+				"animation": "swim",
+				"eatAnimation": "attack",
+				"mincooldownHours": 1,
+				"maxcooldownHours": 4
 			}
 		]
 	},
@@ -231,6 +231,8 @@
 				"minLightLevel": 8,
 				"groupSize": { "dist": "verynarrowgaussian", "avg": 1, "var": 0 },
 				"insideBlockCodes": ["game:water-*"],
+				"maxForest": 0.05,
+				"maxShrubs": 0.05,
 				"minTemp": -10,
 				"maxTemp": 30
 			},
@@ -242,6 +244,8 @@
 				"minLightLevel": 8,
 				"groupSize": { "dist": "verynarrowgaussian", "avg": 1, "var": 0 },
 				"insideBlockCodes": ["game:water-*"],
+				"maxForest": 0.01,
+				"maxShrubs": 0.05,
 				"minTemp": -10,
 				"maxTemp": 30
 			}

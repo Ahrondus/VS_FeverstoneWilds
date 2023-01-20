@@ -166,8 +166,6 @@
     "spawnconditions": {
         "worldgen": {
             "TriesPerChunk": { "avg": 0.006, "var": 0.005 },
-            "maxQuantityByType": {  "*-limestone-cassiterite": 0, "*": 1 },
-            "mindistancetoplayer": 180,
             "tryOnlySurface": true,
             "groupSizeByType": {
                 "*": { "dist": "uniform", "avg": 1, "var": 0 }
@@ -185,7 +183,7 @@
         },
         "runtime": {
             "group": "neutral",
-            "maxQuantityByType": { "*-limestone-cassiterite": 0, "*": 1 },
+            "maxQuantity": 1,
             "mindistancetoplayer": 120,
             "tryOnlySurface": true,
             "chance": 0.00001,
