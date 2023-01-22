@@ -137,7 +137,7 @@
 		],
 		"spawnconditions": {
 			"worldgen": {
-				"TriesPerChunk": { "avg": 0.5, "var": 0 },
+				"TriesPerChunk": { "avg": 0.25, "var": 0 },
 				"tryOnlySurface": true,
 				"minLightLevel": 3,
 				"groupSize": { "dist": "verynarrowgaussian", "avg": 5, "var": 1 },
@@ -147,7 +147,7 @@
 			},
 			"runtime": {
 				"group": "neutral",
-				"chance": 0.01,
+				"chance": 0.004,
 				"tryOnlySurface": true,
 				"minLightLevel": 3,
 				"groupSize": { "dist": "verynarrowgaussian", "avg": 5, "var": 1 },
