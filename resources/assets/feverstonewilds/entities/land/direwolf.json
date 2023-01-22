@@ -44,7 +44,7 @@
             "direwolf-female": [
                 { "code": "multiply" },
                 { "code": "repulseagents" },
-                { "code": "controlledphysics", "stepHeight": 1.1251 },
+                { "code": "controlledphysics", "stepHeight": 1.15 },
                 { "code": "floatupwhenstuck", "onlyWhenDead": true },
                 { "code": "interpolateposition" },
                 { "code": "harvestable" },
@@ -137,6 +137,7 @@
                 { "code": "despawn", "minPlayerDistance": 15, "belowLightLevel": 7, "minSeconds": 300 },
                 { "code": "health", "maxHealth": 18 },
                 { "code": "breathe" },
+                { "code": "deaddecay", "hoursToDecay": 96, "decayedBlock": "carcass-medium" },
                 { "code": "emotionstates",
                     "states": [
                         { "code": "fleeondamage", "duration": 60, "chance": 0.75, "slot": 2, "priority": 5, "accumType": "max", "whenHealthRelBelow": 0.3 },
@@ -153,7 +154,7 @@
                     "aitasks": [
                         {
                             "code": "meleeattack",
-                            "entityCodes": ["player", "chicken-*", "horse-*-*", "wolf-*", "drifter-*", "bear-*", "hare-*"],
+                            "entityCodes": ["player", "chicken-*", "horse-*", "wolf-*", "drifter-*", "bear-*", "hare-*"],
                             "priority": 2,
                             "damage": 8,
                             "damageTier": 2,
@@ -195,7 +196,7 @@
                         },
                         {
                             "code": "seekentity",
-                            "entityCodes": ["chicken-*", "horse-*-*", "wolf-*", "drifter-*", "bear-*", "hare-*"],
+                            "entityCodes": ["chicken-*", "horse-*", "wolf-*", "drifter-*", "bear-*", "hare-*"],
                             "priority": 1.5,
                             "movespeed": 0.045,
                             "seekingRange": 15,
@@ -298,7 +299,7 @@
                     ]
                 },
                 { "code": "ropetieable", "minGeneration": 2 },
-                { "code": "pettableextended" }
+                { "code": "pettableextended", "minGeneration": 1 }
             ],
             "spawnconditionsByType": {
                 "direwolf-male": {

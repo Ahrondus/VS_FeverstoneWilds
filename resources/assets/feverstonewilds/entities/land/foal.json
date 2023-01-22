@@ -259,7 +259,7 @@
             },
 			{
 				"hoursToGrow": 336,
-				"adultEntityCodes": [ "feverstonehorses:horse-male-{type}", "feverstonehorses:horse-female-{type}" ],
+				"adultEntityCodes": [ "feverstonehorses:horse-{gender}-{type}", "feverstonehorses:horse-{gender}-{type}" ],
 				"code": "raisable"
 			},
             {
@@ -391,7 +391,8 @@
                     { "code": "lookaround", "priority": 0.5 }
                 ]
             },
-            { "code": "ropetieable", "minGeneration": 2 }
+            { "code": "ropetieable", "minGeneration": 2 },
+            { "code": "pettableextended", "minGeneration": 1 }
         ]
     },
     "sounds": {

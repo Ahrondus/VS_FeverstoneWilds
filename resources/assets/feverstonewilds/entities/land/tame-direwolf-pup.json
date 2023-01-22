@@ -133,7 +133,7 @@
                     }
                 ]
             },
-            {"code": "raisable", "hoursToGrow": 100, "adultEntityCodes": [ "feverstonewilds:tame-direwolf-male", "feverstonewilds:tame-direwolf-female" ] },
+            {"code": "raisable", "hoursToGrow": 100, "adultEntityCodes": [ "feverstonewilds:tame-direwolf-{gender}" ] },
             { "code": "taskai",
                 "aitasks": [
                     {
@@ -308,7 +308,7 @@
                 ]
             },
             { "code": "ropetieable", "minGeneration": 2 },
-            { "code": "pettableextended" }
+            { "code": "pettableextended", "minGeneration": 1 }
         ]
     },
     "sounds": {

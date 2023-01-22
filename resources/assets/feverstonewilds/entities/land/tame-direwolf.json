@@ -106,7 +106,7 @@
                     ]
                 },
                 { "code": "repulseagents" },
-                { "code": "controlledphysics", "stepHeight": 1.1251 },
+                { "code": "controlledphysics", "stepHeight": 1.15 },
                 { "code": "floatupwhenstuck", "onlyWhenDead": true },
                 { "code": "interpolatemount" },
                 { "code": "harvestable" },
@@ -548,7 +548,7 @@
                 ]
             },
             { "code": "ropetieable", "minGeneration": 2 },
-            { "code": "pettableextended" }
+            { "code": "pettableextended", "minGeneration": 1 }
         ]
     },
     "sounds": {

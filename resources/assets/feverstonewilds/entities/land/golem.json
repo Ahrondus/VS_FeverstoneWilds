@@ -17,22 +17,22 @@
         "*-limestone-nativecopper": [
             { "type": "block", "code": "game:rock-{rock}", "quantity": { "avg": 8, "var": 2} },
             { "type": "item", "code": "game:stone-{rock}", "quantity": { "avg": 12, "var": 4} },
-            { "type": "item", "code": "game:ore-medium-malachite-limestone", "quantity": { "avg": 3, "var": 1 } }
+            { "type": "item", "code": "game:ore-medium-malachite-limestone", "quantity": { "avg": 2, "var": 1 } }
         ],
         "*-andesite-hematite": [
             { "type": "block", "code": "game:rock-{rock}", "quantity": { "avg": 8, "var": 2} },
             { "type": "item", "code": "game:stone-{rock}", "quantity": { "avg": 12, "var": 4} },
-            { "type": "item", "code": "game:ore-medium-magnetite-andesite", "quantity": { "avg": 3, "var": 1 } }
+            { "type": "item", "code": "game:ore-medium-magnetite-andesite", "quantity": { "avg": 2, "var": 1 } }
         ],
         "*-basalt-hematite": [
             { "type": "block", "code": "game:rock-{rock}", "quantity": { "avg": 8, "var": 2} },
             { "type": "item", "code": "game:stone-{rock}", "quantity": { "avg": 12, "var": 4} },
-            { "type": "item", "code": "game:ore-medium-limonite-basalt", "quantity": { "avg": 3, "var": 1 } }
+            { "type": "item", "code": "game:ore-medium-limonite-basalt", "quantity": { "avg": 2, "var": 1 } }
         ],
         "*": [
             { "type": "block", "code": "game:rock-{rock}", "quantity": { "avg": 8, "var": 2} },
             { "type": "item", "code": "game:stone-{rock}", "quantity": { "avg": 12, "var": 4} },
-            { "type": "item", "code": "game:ore-medium-{ore}-{rock}", "quantity": { "avg": 3, "var": 1 } }
+            { "type": "item", "code": "game:ore-medium-{ore}-{rock}", "quantity": { "avg": 2, "var": 1 } }
         ]
     },
     "client": {
@@ -88,22 +88,22 @@
                 "*-limestone-nativecopper": [
                     { "type": "block", "code": "game:rock-{rock}", "quantity": { "avg": 8, "var": 2} },
                     { "type": "item", "code": "game:stone-{rock}", "quantity": { "avg": 12, "var": 4} },
-                    { "type": "item", "code": "game:ore-medium-malachite-limestone", "quantity": { "avg": 3, "var": 1 } }
+                    { "type": "item", "code": "game:ore-medium-malachite-limestone", "quantity": { "avg": 6, "var": 1 } }
                 ],
                 "*-andesite-hematite": [
                     { "type": "block", "code": "game:rock-{rock}", "quantity": { "avg": 8, "var": 2} },
                     { "type": "item", "code": "game:stone-{rock}", "quantity": { "avg": 12, "var": 4} },
-                    { "type": "item", "code": "game:ore-medium-magnetite-andesite", "quantity": { "avg": 3, "var": 1 } }
+                    { "type": "item", "code": "game:ore-medium-magnetite-andesite", "quantity": { "avg": 6, "var": 1 } }
                 ],
                 "*-basalt-hematite": [
                     { "type": "block", "code": "game:rock-{rock}", "quantity": { "avg": 8, "var": 2} },
                     { "type": "item", "code": "game:stone-{rock}", "quantity": { "avg": 12, "var": 4} },
-                    { "type": "item", "code": "game:ore-medium-limonite-basalt", "quantity": { "avg": 3, "var": 1 } }
+                    { "type": "item", "code": "game:ore-medium-limonite-basalt", "quantity": { "avg": 6, "var": 1 } }
                 ],
                 "*": [
                     { "type": "block", "code": "game:rock-{rock}", "quantity": { "avg": 8, "var": 2} },
                     { "type": "item", "code": "game:stone-{rock}", "quantity": { "avg": 12, "var": 4} },
-                    { "type": "item", "code": "game:ore-medium-{ore}-{rock}", "quantity": { "avg": 3, "var": 1 } }
+                    { "type": "item", "code": "game:ore-medium-{ore}-{rock}", "quantity": { "avg": 6, "var": 1 } }
                      ]
                 }
             },            
@@ -114,56 +114,55 @@
 					{ "code": "alarmherdondamage", "chance": 1, "slot": 1, "priority": 1, "accumType": "max" }
 				]
 			},
-        {
-        "code": "taskai",
-        "aitasks": [
             {
-                "code": "meleeattack",
-                "entityCodes": [ "player" ],
-                "priority": 3,
-                "slot": 1,
-                "damage": 20,
-                "damageTier": 4,
-                "mincooldown": 2000,
-                "maxcooldown": 3000,
-                "attackDurationMs": 900,
-                "damagePlayerAtMs": 800,
-                "animation": "smash",
-                "animationSpeed": 1.2,
-                "whenInEmotionState": "aggressiveondamage"
-            },
-            {
-                "code": "seekentity",
-                "entityCodes": [ "player" ],
-                "priority": 1.5,
-                "mincooldown": 1000,
-                "maxcooldown": 1500,
-                "seekingRange": 20,
-                "movespeed": 0.030,
-                "animation": "move",
-                "animationSpeed": 1.8,
-                "whenInEmotionState": "aggressiveondamage"
-            },
-            {
-                "code": "getoutofwater",
-                "priority": 1.4,
-                "movespeed": 0.02,
-                "animation": "move",
-                "animationSpeed": 0.8
-            },
-            {
-                "code": "wander",
-                "priority": 1.0,
-                "priorityForCancel": 1.2,
-                "movespeed": 0.004,
-                "animationSpeed": 0.6,
-                "animation": "move",
-                "preferredLightLevel": 10
-            }
-        ]
-    }
+            "code": "taskai",
+            "aitasks": [
+                {
+                    "code": "meleeattack",
+                    "entityCodes": [ "player" ],
+                    "priority": 3,
+                    "slot": 1,
+                    "damage": 20,
+                    "damageTier": 4,
+                    "mincooldown": 2000,
+                    "maxcooldown": 3000,
+                    "attackDurationMs": 900,
+                    "damagePlayerAtMs": 800,
+                    "animation": "smash",
+                    "animationSpeed": 1.2,
+                    "whenInEmotionState": "aggressiveondamage"
+                },
+                {
+                    "code": "seekentity",
+                    "entityCodes": [ "player" ],
+                    "priority": 1.5,
+                    "mincooldown": 1000,
+                    "maxcooldown": 1500,
+                    "seekingRange": 20,
+                    "movespeed": 0.030,
+                    "animation": "move",
+                    "animationSpeed": 1.8,
+                    "whenInEmotionState": "aggressiveondamage"
+                },
+                {
+                    "code": "getoutofwater",
+                    "priority": 1.4,
+                    "movespeed": 0.02,
+                    "animation": "move",
+                    "animationSpeed": 0.8
+                },
+                {
+                    "code": "wander",
+                    "priority": 1.0,
+                    "priorityForCancel": 1.2,
+                    "movespeed": 0.004,
+                    "animationSpeed": 0.6,
+                    "animation": "move",
+                    "preferredLightLevel": 10
+                }
+            ]
+        }
     ],
-
     "spawnconditions": {
         "worldgen": {
             "TriesPerChunk": { "avg": 0.006, "var": 0.005 },
