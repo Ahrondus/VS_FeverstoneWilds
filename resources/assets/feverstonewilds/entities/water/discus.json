@@ -142,7 +142,7 @@
 				"minLightLevel": 3,
 				"groupSize": { "dist": "verynarrowgaussian", "avg": 5, "var": 1 },
 				"insideBlockCodes": ["game:water-*"],
-				"minTemp": -4,
+				"minTemp": 0,
 				"maxTemp": 30
 			},
 			"runtime": {
@@ -152,8 +152,8 @@
 				"minLightLevel": 3,
 				"groupSize": { "dist": "verynarrowgaussian", "avg": 5, "var": 1 },
 				"insideBlockCodes": ["game:water-*"],
-				"minTemp": 4,
-				"maxTemp": 20
+				"minTemp": 0,
+				"maxTemp": 30
 			}
 		}
 	}
