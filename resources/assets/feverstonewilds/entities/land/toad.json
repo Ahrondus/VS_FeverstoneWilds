@@ -258,7 +258,8 @@
 				"tryOnlySurface": true,
 				"chance": 0.0006,
 				"maxQuantity": 3,
-				"minLightLevel": 6,
+				"maxLightLevel": 6,
+				"lightLevelType": "onlyBlockLight",
 				"groupSize": {
 					"dist": "verynarrowgaussian",
 					"avg": 3,

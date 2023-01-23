@@ -159,6 +159,19 @@
                     "animationSpeed": 0.6,
                     "animation": "move",
                     "preferredLightLevel": 10
+                },
+                {
+                    "code": "throwatentity",
+                    "entityCodes": ["player"],
+                    "priority": 1.5,
+                    "priorityForCancel": 9,
+                    "mincooldown": 1000, 
+                    "maxcooldown": 10000, 
+                    "durationMs": 1200,
+                    "releaseAtMs": 700,
+                    "seekingRange": 15,
+                    "animationSpeed": 1.5,
+                    "animation": "throw"
                 }
             ]
         }
@@ -167,6 +180,8 @@
         "worldgen": {
             "TriesPerChunk": { "avg": 0.006, "var": 0.005 },
             "tryOnlySurface": true,
+            "maxLightLevel": 10,
+            "lightLevelType": "onlyBlockLight",
             "groupSizeByType": {
                 "*": { "dist": "uniform", "avg": 1, "var": 0 }
             },
@@ -185,6 +200,8 @@
             "group": "neutral",
             "maxQuantity": 1,
             "mindistancetoplayer": 120,
+            "maxLightLevel": 10,
+            "lightLevelType": "onlyBlockLight",
             "tryOnlySurface": true,
             "chance": 0.00001,
             "groupSizeByType": {
