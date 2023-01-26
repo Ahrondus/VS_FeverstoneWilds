@@ -1,6 +1,9 @@
 {
     "code": "tame-direwolf-pup",
     "class": "EntityPet",
+	"variantgroups": [
+		{ "code": "gender", "states": ["male", "female"] }
+	],
     "hitboxSize": { "x": 0.85, "y": 0.5 },
     "deadHitboxSize": { "x": 0.75, "y": 0.4 },
     "eyeHeight": 0.4,
