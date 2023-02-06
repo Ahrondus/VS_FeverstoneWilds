@@ -228,7 +228,7 @@
 			"worldgen": {
 				"TriesPerChunk": { "avg": 0.015, "var": 0 },
 				"tryOnlySurface": true,
-				"minLightLevel": 8,
+				"maxLightLevel": 8,
 				"groupSize": { "dist": "verynarrowgaussian", "avg": 1, "var": 0 },
 				"insideBlockCodes": ["game:water-*"],
 				"maxY": 0.96,
@@ -241,7 +241,7 @@
 				"maxQuantity": 2,
 				"chance": 0.00001,
 				"tryOnlySurface": true,
-				"minLightLevel": 8,
+				"maxLightLevel": 8,
 				"groupSize": { "dist": "verynarrowgaussian", "avg": 1, "var": 0 },
 				"insideBlockCodes": ["game:water-*"],
 				"maxY": 0.96,
