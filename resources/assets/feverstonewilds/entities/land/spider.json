@@ -208,6 +208,8 @@
 				"tryOnlySurface": true,
 				"groupSize": { "dist": "verynarrowgaussian", "avg": 3, "var": 1 },
 				"insideBlockCodes": ["game:air", "game:tallgrass-*", "game:snowlayer-1"],
+				"maxLightLevel": 7,
+				"lightLevelType": "onlyBlockLight",	
 				"minTemp": -5,
 				"maxTemp": 30,
 				"minRain": 0.25,
