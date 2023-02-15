@@ -174,7 +174,7 @@
                 {
                     "itemCode": "game:bowl-fired",
                     "minAmount": 4,
-                    "maxAmount": 8
+                    "maxAmount": 4
                 },
                 {
                     "itemCode": "game:claypot-burned",
@@ -184,7 +184,7 @@
                 {
                     "itemCode": "game:crock-burned-east",
                     "minAmount": 4,
-                    "maxAmount": 8
+                    "maxAmount": 4
                 }
             ]
         }
@@ -416,7 +416,7 @@
                 {
                     "itemCode": "game:gear-rusty",
                     "minAmount": 4,
-                    "maxAmount": 6
+                    "maxAmount": 8
                 },
                 {
                     "itemCode": "game:gem-diamond-rough",
@@ -590,32 +590,32 @@
             "selectAmount": 1,
             "items": [
                 {
-                    "itemCode": "game:loostvessel-seed",
+                    "itemCode": "game:lootvessel-seed",
                     "minAmount": 1,
                     "maxAmount": 1
                 },
                 {
-                    "itemCode": "game:loostvessel-food",
+                    "itemCode": "game:lootvessel-food",
                     "minAmount": 1,
                     "maxAmount": 1
                 },
                 {
-                    "itemCode": "game:loostvessel-forage",
+                    "itemCode": "game:lootvessel-forage",
                     "minAmount": 1,
                     "maxAmount": 1
                 },
                 {
-                    "itemCode": "game:loostvessel-ore",
+                    "itemCode": "game:lootvessel-ore",
                     "minAmount": 1,
                     "maxAmount": 1
                 },
                 {
-                    "itemCode": "game:loostvessel-tool",
+                    "itemCode": "game:lootvessel-tool",
                     "minAmount": 1,
                     "maxAmount": 1
                 },
                 {
-                    "itemCode": "game:loostvessel-farming",
+                    "itemCode": "game:lootvessel-farming",
                     "minAmount": 1,
                     "maxAmount": 1
                 }
@@ -675,8 +675,8 @@
         "killObjectives": [
             {
                 "validCodes": [
-                    "game:wolf-male",
-                    "game:wolf-female"
+                    "wolf-male",
+                    "wolf-female"
                 ],
                 "demand": 2
             }
@@ -707,16 +707,16 @@
         "killObjectives": [
             {
                 "validCodes": [
-                    "game:creature-bear-male-black",
-                    "game:creature-bear-female-black",
-                    "game:creature-bear-male-brown",
-                    "game:creature-bear-female-brown",
-                    "game:creature-bear-male-sun",
-                    "game:creature-bear-female-sun",
-                    "game:creature-bear-male-polar",
-                    "game:creature-bear-female-polar",
-                    "game:creature-bear-male-panda",
-                    "game:creature-bear-female-panda"
+                    "bear-male-black",
+                    "bear-female-black",
+                    "bear-male-brown",
+                    "bear-female-brown",
+                    "bear-male-sun",
+                    "bear-female-sun",
+                    "bear-male-polar",
+                    "bear-female-polar",
+                    "bear-male-panda",
+                    "bear-female-panda"
                 ],
                 "demand": 1
             }
@@ -762,8 +762,8 @@
         "killObjectives": [
             {
                 "validCodes": [
-                    "feverstonewilds:direwolf-male",
-                    "feverstonewilds:direwolf-female"
+                    "direwolf-male",
+                    "direwolf-female"
                 ],
                 "demand": 1
             }
@@ -799,7 +799,7 @@
         "killObjectives": [
             {
                 "validCodes": [
-                    "feverstonewilds:bullshark"
+                    "bullshark"
                 ],
                 "demand": 1
             }
@@ -833,10 +833,10 @@
             {
                 "id": "spawnany",
                 "args": [
-                    "game:beemob",
-                    "game:beemob",
-                    "game:hare-male-gold",
-                    "game:hare-female-gold"
+                    "beemob",
+                    "beemob",
+                    "hare-male-gold",
+                    "hare-female-gold"
                 ]
             },
             {
