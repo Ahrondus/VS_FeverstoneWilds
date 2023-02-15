@@ -241,7 +241,8 @@
 					"var": 0
 				},
 				"tryOnlySurface": true,
-				"minLightLevel": 6,
+				"maxLightLevel": 6,
+				"lightLevelType": "onlyBlockLight",
 				"groupSize": {
 					"dist": "verynarrowgaussian",
 					"avg": 1,
