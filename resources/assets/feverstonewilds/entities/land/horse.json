@@ -157,7 +157,7 @@
             {
                 "code": "idle",
                 "animation": "idle",
-                "blendMode": "AddAverage",
+                "blendMode": "addAverage",
                 "easeOutSpeed": 3,
                 "triggeredBy": { "defaultAnim": true },
                 "animationSpeed": 0.5
@@ -167,7 +167,7 @@
                 "animation": "dead",
                 "easeInSpeed": 2,
                 "weight": 10,
-                "blendMode": "Average",
+                "blendMode": "average",
                 "triggeredBy": { "onControls": [ "dead" ] }
             },
             {
@@ -176,7 +176,7 @@
                 "blendMode": "average",
                 "mulWithWalkSpeed": true,
                 "animationSpeed": 0.8,
-				"triggeredBy": {"onControls": ["Move"], "matchExact": true }
+				"triggeredBy": {"onControls": ["move"], "matchExact": true }
             },
             {
                 "code": "run",
@@ -184,7 +184,7 @@
                 "blendMode": "average",
                 "mulWithWalkSpeed": true,
                 "animationSpeed": 1.1,
-				"triggeredBy": {"onControls": ["Move", "SprintMode"], "matchExact": true }
+				"triggeredBy": {"onControls": ["move", "sprintMode"], "matchExact": true }
             },
 			{
 				"code": "jump",
@@ -192,7 +192,7 @@
 				"blendMode": "average",
 				"easeInSpeed": 3,
 				"easeOutSpeed": 3,
-				"triggeredBy": { "onControls": ["Jump"] }
+				"triggeredBy": { "onControls": ["jump"] }
 			}
         ]
     },
