@@ -1,0 +1,38 @@
+{
+	"code": "creature",
+	"class": "ItemCreature",
+	"maxstackssize": 1,
+	"variantgroups": [
+			{ "code": "type", "states": ["demigryph-male-adult-wild", "demigryph-male-adult-tamed", 
+										 "demigryph-female-adult-wild", "demigryph-female-adult-tamed",
+										 "demigryph-male-young-wild", "demigryph-male-young-tamed", 
+										 "demigryph-female-young-wild", "demigryph-female-young-tamed"] }
+		],
+	"shape": { "base": "entity/land/demigryph" },
+	"texture": {"base": "entity/demigryph/demigryphskin1" },
+	"creativeinventory": {
+		"general": ["*"],
+		"items": ["*"],
+		"creatures": ["*"]
+		},
+	
+	"guiTransform": {
+		"translation": { "x": 0, "y": 7, "z": 0 },
+		"rotation": { "x": 15, "y": -120, "z": -163 },
+		"origin": { "x": 0.5, "y": 0.8, "z": 0.5 },
+		"scale": 0.39
+	},
+	"fpHandTransform": {
+		"translation": { "x": 0.9, "y": 0.9, "z": 0.7 },
+		"rotation": { "x": -0, "y": 0, "z": -0 },
+		"origin": { "x": 0.5, "y": 0.8, "z": 0.5 },
+		"scale": 1.25
+	},
+	"tpHandTransform": {
+		"translation": { "x": 0.2, "y": 0, "z": 0 },
+		"rotation": { "x": -175, "y": 53, "z": -107 },
+		"origin": { "x": 0.5, "y": 0.8, "z": 0.5 },
+		"scale": 0.62
+	}
+	
+}

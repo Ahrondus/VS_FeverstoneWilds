@@ -1,0 +1,38 @@
+{
+	"code": "creature",
+	"class": "ItemCreature",
+	"maxstackssize": 1,
+	"variantgroups": [
+			{
+				"code": "type",
+				"states": ["largecockatrice"]
+			}
+		],
+	"shape": {
+		"base": "entity/land/largecockatrice"
+		},
+	"creativeinventory": {
+		"general": ["*"],
+		"items": ["*"],
+		"creatures": ["*"]
+		},
+	
+	"guiTransform": {
+		"translation": { "x": 5, "y": 24, "z": 3 },
+		"rotation": { "x": -3, "y": -29, "z": -13 },
+		"origin": { "x": 0.5, "y": 0.8, "z": 0.5 },
+		"scale": 1.32
+	},
+	"fpHandTransform": {
+		"translation": { "x": 0.9, "y": 0.9, "z": 0.7 },
+		"rotation": { "x": -0, "y": 0, "z": -0 },
+		"origin": { "x": 0.5, "y": 0.8, "z": 0.5 },
+		"scale": 1.25
+	},
+	"tpHandTransform": {
+		"translation": { "x": -0.5, "y": -0.56, "z": 0 },
+		"rotation": { "x": 23, "y": -161, "z": -3 },
+		"origin": { "x": 0.5, "y": 1.5, "z": 0.5 },
+		"scale": 0.76
+	}
+}

@@ -1,0 +1,58 @@
+{
+	"code": "largeegg",
+	"behaviors": [{"name": "UnstableFalling"}, {"name": "RightClickPickup", "properties": { "dropsPickupMode": true}} ],
+	"entityClass": "Transient",
+	"attributes": {
+		"transientProps": {
+			"convertFrom": "*", 
+			"convertTo": "air", 
+			"inGameHours": "72"
+		},
+		"handbook": {
+			"groupBy": ["largeegg-*"]
+		}
+	},
+	"variantgroups": [
+		{ "code":"creature", "states": ["ostrich"] },
+		{ "code":"amount", "states": ["1", "2", "3", "broken"] }
+	],	
+	"creativeinventory": { "general": ["*"], "decorative": ["*"] },
+	"blockmaterial": "Soil",
+	"drawtype": "json",
+	"shapebytype": {
+		"*-1": { 
+			"base": "block/largeegg/1largeegg",
+			"alternates": [ { "base": "block/largeegg/1largeegg", "rotateY": 90 }, { "base": "block/largeegg/1largeegg", "rotateY": 180 }, { "base": "block/largeegg/1largeegg", "rotateY": 270 } ]
+		},
+		"*-2": { 
+			"base": "block/largeegg/2largeeggs",
+			"alternates": [ { "base": "block/largeegg/2largeeggs", "rotateY": 90 }, { "base": "block/largeegg/2largeeggs", "rotateY": 180 }, { "base": "block/largeegg/2largeeggs", "rotateY": 270 } ]
+		},
+		"*-3": { 
+			"base": "block/largeegg/3largeeggs",
+			"alternates": [ { "base": "block/largeegg/3largeeggs", "rotateY": 90 }, { "base": "block/largeegg/3largeeggs", "rotateY": 180 }, { "base": "block/largeegg/3largeeggs", "rotateY": 270 } ]
+		},
+		"*-broken": { 
+			"base": "block/largeegg/brokenlargeegg",
+			"alternates": [ { "base": "block/largeegg/brokenlargeegg", "rotateY": 90 }, { "base": "block/largeegg/brokenlargeegg", "rotateY": 180 }, { "base": "block/largeegg/brokenlargeegg", "rotateY": 270 } ]
+		}
+	},
+	"doNotRenderAtLod2": true,
+	"lightAbsorption": 0,
+	"sidesolid": { "all": false },
+	"sideopaque": { "all": false },
+	"replaceable": 100,
+	"resistance": 0.25,
+	"selectionbox": { "x1": 0, "y1": 0, "x2": 1, "y2": 0.125, "z2": 1 },
+	"collisionbox": null,
+	"dropsByType": {
+		"*-1": [ { "type": "item", "code": "largeegg-ostrich-raw", "quantity": { "avg": 1 }  } ],
+		"*-2": [ { "type": "item", "code": "largeegg-ostrich-raw", "quantity": { "avg": 2 }  } ],
+		"*-3": [ { "type": "item", "code": "largeegg-ostrich-raw", "quantity": { "avg": 3 }  } ]
+	},
+	"materialDensity": 300,
+	"guiTransform": {
+		"origin": { "x": 0.5, "y": 0.15, "z": 0.5 },
+		"scale": 2.5
+	}
+}

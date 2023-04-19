@@ -1,0 +1,157 @@
+{
+	"code": "ghostfish",
+	"class": "EntityFish",
+	"hitboxSize": { "x": 0.5, "y": 0.25 },
+	"eyeHeight": 0.2,
+	"drops": [],
+	"habitat": "Underwater",
+	"client": {
+		"renderer": "Shape",
+		"size": 0.7,
+		"shape": { "base": "entity/water/ghostfish" },
+		"texture": { "base": "entity/fish/ghostfish/ghostfish" },
+		"behaviors": [
+			{ "code": "repulseagents" }, 
+			{ "code": "controlledphysics", "stepHeight": 0 }, 
+			{ "code": "interpolateposition" },
+			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
+			{ "code": "harvestable" },
+			{ "code": "despawn", "minPlayerDistance": 8, "belowLightLevel": 8, "minSeconds": 300 }
+		],
+		"animations": [
+			{
+				"code": "hurt",
+				"animation": "hurt", 
+				"animationSpeed": 1,
+				"weight": 10,
+				"blendMode": "AddAverage" 
+			},
+			{
+				"code": "swim",
+				"animation": "swim"
+			},
+			{
+				"code": "swimfast",
+				"animation": "swim"
+			},
+			{
+				"code": "die",
+				"animation": "dead"
+			},
+			{
+				"code": "flop",
+				"animation": "flopping"
+			},
+			{ 
+				"code": "idle", 
+				"animation": "idle",
+				"blendMode": "AddAverage",
+				"animationSpeed": 0.33,
+				"easeOutSpeed": 4,
+				"triggeredBy": { "defaultAnim": true }
+			}
+		]
+	},
+	"server": {
+		"behaviors": [
+			{ "code": "repulseagents" }, 
+			{ "code": "controlledphysics", "stepHeight": 1.1251 }, 
+			{ "code": "despawn", "minPlayerDistance": 12, "belowLightLevel": 8, "minSeconds": 200 },
+			{ "code": "health", "currenthealth": 2, "maxhealth": 2 },
+			{ "code": "deaddecay", "hoursToDecay": 96, "decayedBlock": "carcass-tiny" },
+			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
+			{ "code": "harvestable", "drops": [
+					{
+						"type": "item", 
+						"code": "fish-raw", 
+						"quantity": { "avg": 1, "var": 0 } 
+					}
+				]
+			},
+			{ 
+				"code": "emotionstates",
+				"states": [
+					{ "code": "fleeondamage", "duration": 10, "chance": 1, "slot": 0, "priority": 1, "accumType": "max" }
+				]
+			},
+			{ 
+				"code": "taskai",
+				"aitasks": [
+					{
+						"code": "fishoutofwater", 
+						"priority": 2.5, 
+						"priorityForCancel": 2.6,
+						"movespeed": 0.005,
+						"animation": "flop",
+						"animationSpeed": 2
+					},
+					{
+						"code": "fleeentity",
+						"entityCodes": ["player", "wolf-male", "wolf-female", "fox-*", "hyena-male", "bullshark", "stingray", "orca", "eel", "hyena-female"],
+						"priority": 2,
+						"movespeed": 0.06,
+						"seekingRange": 14,
+						"animation": "swim",
+						"animationSpeed": 2
+					},
+					{
+						"code": "wander", 
+						"priority": 1.2, 
+						"priorityForCancel": 1.35,
+						"movespeed": 0.015,
+						"animationSpeed": 0.9,
+						"animation": "swim"
+					},
+					{
+						"code": "fishmovefast", 
+						"priority": 1.0, 
+						"priorityForCancel": 1.5,
+						"movespeed": 0.045,
+						"animation": "swimfast",
+						"animationSpeed": 2.3
+					},
+					{
+						"code": "idle",
+						"priority": 0.9,
+						"priorityForCancel": 1.5,
+						"minduration": 1000,
+						"maxduration": 6000,
+						"mincooldown": 2000,
+						"maxcooldown": 20000,
+						"animation": "eat"
+					},
+					{
+						"code": "idle",
+						"priority": 0.9,
+						"minduration": 500,
+						"maxduration": 1000,
+						"mincooldown": 2000,
+						"maxcooldown": 30000,
+						"animation": "idle"
+					}
+				]
+			}
+		],
+		"spawnconditions": {
+			"worldgen": {
+				"TriesPerChunk": { "avg": 0.5, "var": 0 },
+				"tryOnlySurface": true,
+				"minLightLevel": 3,
+				"groupSize": { "dist": "verynarrowgaussian", "avg": 2, "var": 3 },
+				"insideBlockCodes": ["water-*"],
+				"minTemp": 4,
+				"maxTemp": 20
+			},
+			"runtime": {
+				"group": "neutral",
+				"chance": 0.01,
+				"tryOnlySurface": true,
+				"minLightLevel": 3,
+				"groupSize": { "dist": "verynarrowgaussian", "avg": 2, "var": 3 },
+				"insideBlockCodes": ["water-*"],
+				"minTemp": 4,
+				"maxTemp": 20
+			}
+		}
+	}
+}
