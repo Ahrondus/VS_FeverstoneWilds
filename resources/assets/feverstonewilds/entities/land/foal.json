@@ -82,7 +82,7 @@
             {
                 "code": "idle",
                 "animation": "idle",
-                "blendMode": "AddAverage",
+                "blendMode": "addAverage",
                 "easeOutSpeed": 3,
                 "triggeredBy": { "defaultAnim": true },
                 "animationSpeed": 0.5
@@ -92,7 +92,7 @@
                 "animation": "dead",
                 "easeInSpeed": 2,
                 "weight": 10,
-                "blendMode": "Average",
+                "blendMode": "average",
                 "triggeredBy": {  "onControls": [ "dead" ] }
             },
             {

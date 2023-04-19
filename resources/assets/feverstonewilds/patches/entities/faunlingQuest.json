@@ -4,7 +4,8 @@
     "path": "/client/behaviors/0",
     "value": { "code": "questgiver" },
     "file": "feverstonewilds:entities/land/faunling",
-    "dependsOn": [{"modid": "vsquest"}]
+    "dependsOn": [{"modid": "vsquest"}],
+    "condition": { "when": "FaunlingEnabled", "isValue": "true" }
   },
   {
     "op": "add",
@@ -36,6 +37,7 @@
       "selectrandomcount": 1
     },
     "file":"feverstonewilds:entities/land/faunling",
-    "dependsOn":[{"modid":"vsquest"}]
+    "dependsOn":[{"modid":"vsquest"}],
+    "condition": { "when": "FaunlingEnabled", "isValue": "true" }
   }
 ]
