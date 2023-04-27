@@ -137,20 +137,22 @@
 		],
 		"spawnconditions": {
 			"worldgen": {
-				"TriesPerChunk": { "avg": 0.5, "var": 0 },
+				"TriesPerChunk": { "avg": 0.05, "var": 0 },
 				"tryOnlySurface": true,
+				"maxQuantity": 5,
 				"maxLightLevel": 8,
-				"groupSize": { "dist": "verynarrowgaussian", "avg": 5, "var": 3 },
+				"groupSize": { "dist": "verynarrowgaussian", "avg": 4, "var": 1 },
 				"insideBlockCodes": ["game:water-*"],
 				"minTemp": 0,
 				"maxTemp": 30
 			},
 			"runtime": {
 				"group": "neutral",
-				"chance": 0.01,
+				"chance": 0.001,
+				"maxQuantity": 5,
 				"tryOnlySurface": true,
 				"maxLightLevel": 8,
-				"groupSize": { "dist": "verynarrowgaussian", "avg": 5, "var": 3 },
+				"groupSize": { "dist": "verynarrowgaussian", "avg": 4, "var": 1 },
 				"insideBlockCodes": ["game:water-*"],
 				"minTemp": 0,
 				"maxTemp": 30
