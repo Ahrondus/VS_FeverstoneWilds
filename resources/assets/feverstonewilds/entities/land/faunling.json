@@ -66,6 +66,7 @@
 		}
     },
         "behaviors": [
+            { "code": "nametag", "showtagonlywhentargeted": true },
             { "code": "repulseagents" },
             { "code": "controlledphysics", "stepHeight": 1.1251 },
             { "code": "floatupwhenstuck", "onlyWhenDead": true },
@@ -107,6 +108,12 @@
             }
         },
         "behaviors": [
+            { "code": "nametag", "showtagonlywhentargeted": true, "selectFromRandomNameByType": 
+                {
+                "*-female": ["Nadia", "Alina", "Della", "Ximuku", "Kelta", "Udemya", "Nabafae", "Shiva", "Edith", "Cara", "Midoris", "Honwish", "Eriza", "Aris", "Edel"],
+                "*-male": ["Merzost", "Valsgo", "Malafes", "Xibo", "Xival", "Samsuro", "Asubos", "Debino", "Zane", "Cedric", "Vathiel", "Vero", "Vorin", "Kain", "Knudson"]
+                }
+            },
             { "code": "repulseagents" },
             { "code": "controlledphysics", "stepHeight": 1.1251 },
             { "code": "despawn", "minPlayerDistance": 20, "belowLightLevel": 6, "minSeconds": 300 },
