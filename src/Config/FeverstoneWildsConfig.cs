@@ -17,7 +17,7 @@ namespace FeverstoneWilds.Config
         public bool ToadEnabled = true;
         public bool BuromenfishEnabled = true;
         public bool DiscusFishEnabled = true;
-        public bool SharkEnabled = true;
+        public bool BullsharkEnabled = true;
         public bool OrcaEnabled = true;
         public bool StingrayEnabled = true;
 
@@ -40,7 +40,7 @@ namespace FeverstoneWilds.Config
             ToadEnabled = previousConfig.ToadEnabled;
             BuromenfishEnabled = previousConfig.BuromenfishEnabled;
             DiscusFishEnabled = previousConfig.DiscusFishEnabled;
-            SharkEnabled = previousConfig.SharkEnabled;
+            BullsharkEnabled = previousConfig.BullsharkEnabled;
             OrcaEnabled = previousConfig.OrcaEnabled;
             StingrayEnabled = previousConfig.StingrayEnabled;
         }

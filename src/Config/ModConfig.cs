@@ -44,7 +44,7 @@ namespace FeverstoneWilds.Config
         api.World.Config.SetBool("ToadEnabled", config.ToadEnabled);
         api.World.Config.SetBool("BuromenfishEnabled", config.BuromenfishEnabled);
         api.World.Config.SetBool("DiscusFishEnabled", config.DiscusFishEnabled);
-        api.World.Config.SetBool("SharkEnabled", config.SharkEnabled);
+        api.World.Config.SetBool("BullsharkEnabled", config.BullsharkEnabled);
         api.World.Config.SetBool("OrcaEnabled", config.OrcaEnabled);
         api.World.Config.SetBool("StingrayEnabled", config.StingrayEnabled);
     }
