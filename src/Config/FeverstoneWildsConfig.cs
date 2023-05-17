@@ -9,13 +9,16 @@ namespace FeverstoneWilds.Config
         public bool TameDirewolfPupEnabled = true;
         public bool HorseEnabled = true;
         public bool FoalEnabled = true;
+        public bool BisonEnabled = true;
+        public bool BisonCalfEnabled = true;
         public bool GolemEnabled = true;
         public bool GeodeCrabEnabled = true;
         public bool SpiderEnabled = true;
         public bool ToadEnabled = true;
         public bool BuromenfishEnabled = true;
         public bool DiscusFishEnabled = true;
-        public bool BullsharkEnabled = true;
+        public bool SharkEnabled = true;
+        public bool OrcaEnabled = true;
         public bool StingrayEnabled = true;
 
         public FeverstoneWildsConfig() { }
@@ -29,13 +32,16 @@ namespace FeverstoneWilds.Config
             TameDirewolfPupEnabled = previousConfig.TameDirewolfPupEnabled;
             HorseEnabled = previousConfig.HorseEnabled;
             FoalEnabled = previousConfig.FoalEnabled;
+            BisonEnabled = previousConfig.BisonEnabled;
+            BisonCalfEnabled = previousConfig.BisonCalfEnabled;
             GolemEnabled = previousConfig.GolemEnabled;
             GeodeCrabEnabled = previousConfig.GeodeCrabEnabled;
             SpiderEnabled = previousConfig.SpiderEnabled;
             ToadEnabled = previousConfig.ToadEnabled;
             BuromenfishEnabled = previousConfig.BuromenfishEnabled;
             DiscusFishEnabled = previousConfig.DiscusFishEnabled;
-            BullsharkEnabled = previousConfig.BullsharkEnabled;
+            SharkEnabled = previousConfig.SharkEnabled;
+            OrcaEnabled = previousConfig.OrcaEnabled;
             StingrayEnabled = previousConfig.StingrayEnabled;
         }
     }
