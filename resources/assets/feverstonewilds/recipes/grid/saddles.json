@@ -5,7 +5,7 @@
             "L": {
                 "type": "item",
                 "code": "game:leather-plain",
-                "quantity": 1
+                "quantity": 2
             },
             "C": {
                 "type": "item",
@@ -19,15 +19,15 @@
             },
             "M": {
                 "type": "item",
-                "code": "game:metalbit-copper",
-                "quantity": 1
+                "code": "game:metalbit-*",
+                "quantity": 2
             }
         },
         "width": 3,
         "height": 3,
         "output": {
             "type": "item",
-            "code": "feverstonewilds:horsesaddle-draft",
+            "code": "feverstonewilds:saddle-draft",
             "quantity": 1
         }
     },
@@ -37,7 +37,7 @@
             "L": {
                 "type": "item",
                 "code": "game:leather-plain",
-                "quantity": 1
+                "quantity": 2
             },
             "C": {
                 "type": "item",
@@ -51,15 +51,47 @@
             },
             "M": {
                 "type": "item",
-                "code": "game:metalbit-copper",
-                "quantity": 1
+                "code": "game:metalbit-*",
+                "quantity": 2
             }
         },
         "width": 3,
         "height": 3,
         "output": {
             "type": "item",
-            "code": "feverstonewilds:horsesaddle-arabian",
+            "code": "feverstonewilds:saddle-arabian",
+            "quantity": 1
+        }
+    },
+    {
+        "ingredientPattern": "BLB,MLM,_C_",
+        "ingredients": {
+            "L": {
+                "type": "item",
+                "code": "game:leather-plain",
+                "quantity": 2
+            },
+            "C": {
+                "type": "item",
+                "code": "game:cloth-plain",
+                "quantity": 2
+            },
+            "B": {
+                "type": "item",
+                "code": "game:backpack",
+                "quantity": 1
+            },
+            "M": {
+                "type": "item",
+                "code": "game:metalbit-*",
+                "quantity": 4
+            }
+        },
+        "width": 3,
+        "height": 3,
+        "output": {
+            "type": "item",
+            "code": "feverstonewilds:saddle-bison",
             "quantity": 1
         }
     }

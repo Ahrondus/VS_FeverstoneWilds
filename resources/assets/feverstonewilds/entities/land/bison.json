@@ -1,7 +1,9 @@
 {
 	"code": "bison",
 	"class": "EntityMount",
-	"variantgroups": [ {"code": "type", "states": [ "male", "female" ] } ],
+	"variantgroups": [ 
+		{ "code": "gender", "states": [ "male", "female" ] } 
+	],
 	"collisionBoxSizeByType": {
         "bison-male": { "x": 2.15, "y": 2.4 },
         "bison-female": { "x":2.10, "y": 2.3 }
@@ -30,11 +32,11 @@
         "killedbyInfoText": "deadcreature-bisongored",
         "riderIdleAnimation": "rideidle",
         "mountHeightByType": {
-			"*-male": 1.0,
-			"*-female": 0.975
+			"*-male": 1.5,
+			"*-female": 1.475
 		},
         "mountRunningSpeed": 0.04,
-        "mountWalkingSpeedByType": 0.01,
+        "mountWalkingSpeed": 0.01,
         "mountAnimations": {
             "walk": {
                 "code": "idle",
@@ -62,8 +64,8 @@
 	"client": {
 		"renderer": "Shape",
 		"shapeByType": {
-			"*-male": { "base": "entity/land/bisonmale" },
-			"*-female": { "base": "entity/land/bisonfemale" }
+			"*-male": { "base": "entity/land/bison-male" },
+			"*-female": { "base": "entity/land/bison-female" }
 		},
 		"textureByType": {
 			"*-male": { "base": "entity/bison/bisonskin1",
@@ -154,7 +156,23 @@
 				"easeInSpeed": 4,
 				"easeOutSpeed": 4,
 				"blendMode": "average" 
-			}
+			},
+            {
+                "code": "walk",
+                "animation": "walk",
+                "blendMode": "average",
+                "mulWithWalkSpeed": true,
+                "animationSpeed": 0.8,
+				"triggeredBy": {"onControls": ["move"], "matchExact": true }
+            },
+            {
+                "code": "run",
+                "animation": "run",
+                "blendMode": "average",
+                "mulWithWalkSpeed": true,
+                "animationSpeed": 1.1,
+				"triggeredBy": {"onControls": ["move", "sprintMode"], "matchExact": true }
+            }
 		]
 	},
 	"server": {
@@ -251,10 +269,7 @@
 				"aitasks": [
 					{
 						"code": "meleeattack",
-						"entityCodesByType": {
-							"*-calf": [],
-							"*": ["player", "hyena-male", "hyena-female"]
-						} ,
+						"entityCodes": ["player", "hyena-male", "hyena-female"],
 						"knockbackStrength": 2.65,
 						"priority": 2,
 						"slot": 1,
@@ -483,7 +498,7 @@
 					"minForestOrShrubs": 0.25,
 					"maxForest": 0.75,
 					"maxShrubs": 0.75,
-					"companions": ["bison-female", "bison-calf"]
+					"companions": ["bison-female", "feverstonewilds:bison-calf"]
 				},
 				"runtime": {
 					"group": "neutral",
@@ -499,7 +514,7 @@
 					"minForestOrShrubs": 0.25,
 					"maxForest": 0.75,
 					"maxShrubs": 0.75,
-					"companions": ["bison-female", "bison-calf"]
+					"companions": ["bison-female", "feverstonewilds:bison-calf"]
 				}
 			}
 		}

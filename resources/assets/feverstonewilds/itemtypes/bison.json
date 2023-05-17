@@ -9,10 +9,12 @@
 			}
 		],
 	"shapeByType": {
-		"bison-male": { "base": "entity/land/bisonmale" },
-		"bison-female": { "base": "entity/land/bisonfemale" },
-		"bison-calf": { "base": "entity/land/bisoncalf" }
-	
+		"*-male": { "base": "entity/land/bison-male" },
+		"*-female": { "base": "entity/land/bison-female" },
+		"*-calf": { "base": "entity/land/bison-calf" }
+	},
+	"texturesByType": {
+		"*": { "skin": { "base": "entity/bison/bisonskin1" } }
 	},
 	"creativeinventory": {
 		"general": ["*"],
