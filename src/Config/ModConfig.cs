@@ -36,13 +36,16 @@ namespace FeverstoneWilds.Config
         api.World.Config.SetBool("TameDirewolfPupEnabled", config.TameDirewolfPupEnabled);
         api.World.Config.SetBool("HorseEnabled", config.HorseEnabled);
         api.World.Config.SetBool("FoalEnabled", config.FoalEnabled);
+        api.World.Config.SetBool("BisonEnabled", config.BisonEnabled);
+        api.World.Config.SetBool("BisonCalfEnabled", config.BisonCalfEnabled);
         api.World.Config.SetBool("GolemEnabled", config.GolemEnabled);
         api.World.Config.SetBool("GeodeCrabEnabled", config.GeodeCrabEnabled);
         api.World.Config.SetBool("SpiderEnabled", config.SpiderEnabled);
         api.World.Config.SetBool("ToadEnabled", config.ToadEnabled);
         api.World.Config.SetBool("BuromenfishEnabled", config.BuromenfishEnabled);
         api.World.Config.SetBool("DiscusFishEnabled", config.DiscusFishEnabled);
-        api.World.Config.SetBool("BullsharkEnabled", config.BullsharkEnabled);
+        api.World.Config.SetBool("SharkEnabled", config.SharkEnabled);
+        api.World.Config.SetBool("OrcaEnabled", config.OrcaEnabled);
         api.World.Config.SetBool("StingrayEnabled", config.StingrayEnabled);
     }
 

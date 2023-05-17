@@ -10,7 +10,7 @@ namespace FeverstoneWilds
 			base.Start(api);
 
 			ModConfig.ReadConfig(api);
-			api.World.Logger.Event("Reading 'FeverstoneWilds' Config");
+			api.World.Logger.Event("Reading 'Feverstone Wilds' Config");
 		}
 	}
 }
