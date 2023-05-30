@@ -4,7 +4,7 @@
 	"hitboxSize": { "x": 4.2, "y": 3 },
 	"eyeHeight": 0.9,
 	"drops": [],
-	"habitat": "Underwater",
+	"habitat": "underwater",
 	"client": {
 		"renderer": "Shape",
 		"size": 0.7,
@@ -30,7 +30,7 @@
 				"animation": "hurt", 
 				"animationSpeed": 1,
 				"weight": 10,
-				"blendMode": "AddAverage" 
+				"blendMode": "addAverage" 
 			},
 			{
 				"code": "swim",
@@ -51,7 +51,7 @@
 			{ 
 				"code": "idle", 
 				"animation": "idle",
-				"blendMode": "AddAverage",
+				"blendMode": "addAverage",
 				"easeOutSpeed": 4,
 				"triggeredBy": { "defaultAnim": true }
 			},
