@@ -76,7 +76,7 @@
 			{ "code": "repulseagents" }, 
 			{ "code": "controlledphysics", "stepHeight": 0 }, 
 			{ "code": "despawn", "minPlayerDistance": 12, "belowLightLevel": 0, "minSeconds": 200 },
-			{ "code": "health", "maxhealth": 65 },
+			{ "code": "health", "maxhealth": 85 },
 			{ "code": "deaddecay", "hoursToDecay": 96, "decayedBlock": "carcass-large" },
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
 			{ "code": "harvestable", "drops": [
@@ -111,7 +111,7 @@
 						"entityCodes": ["shark-*", "dolphin", "drifter-*", "chicken-rooster", "chicken-hen", "chicken-baby", "buromenfish", "discus", "pink-salmon", "wolf-female", "wolf-male", 
 						"bear-*", "hare-*"],
 						"priority": 2,
-						"damage": 20,
+						"damage": 25,
 						"damageTier": 3,
 						"damageType": "SlashingAttack",
 						"slot": 1,
@@ -182,16 +182,6 @@
 						"whenInEmotionState": "aggressiveondamage"
 					},
 					{
-						"code": "stayclosetoentity",
-						"priority": 2.3,
-						"entityCode": "orca",
-						"maxDistance": 60,
-						"searchRange": 45,
-						"movespeed": 0.035,
-						"animation": "swim",
-						"animationSpeed": 4
-					},
-					{
 						"code": "fishoutofwater", 
 						"priority": 2.5, 
 						"priorityForCancel": 2.6,
@@ -201,10 +191,11 @@
 					},
 					{
 						"code": "wander", 
-						"priority": 1.2, 
+						"priority": 1.6, 
 						"priorityForCancel": 1.35,
 						"movespeed": 0.01,
-						"animation": "swim"
+						"animation": "swim",
+						"preferredLightLevel": "22"
 					},
 					{
 						"code": "fishmovefast", 
@@ -237,27 +228,25 @@
 		],
 		"spawnconditions": {
 			"worldgen": {
-				"TriesPerChunk": { "avg": 0.055, "var": 0 },
+				"TriesPerChunk": { "avg": 0.015, "var": 0 },
 				"tryOnlySurface": true,
+				"maxLightLevel":22,
 				"groupSize": { "dist": "verynarrowgaussian", "avg": 3, "var": 2 },
 				"maxQuantity": 6,
 				"insideBlockCodes": ["game:saltwater-*", "game:saltwater-still-*"],
 				"minTemp": -30,
-				"maxTemp": 50,
-				"LightLevelType":"onlyBlockLight",
-				"maxLightLevel": 8
+				"maxTemp": 40
 			},
 			"runtime": {
 				"group": "neutral",
 				"maxQuantity": 6,
 				"chance": 0.00001,
 				"tryOnlySurface": true,
+				"maxLightLevel":22,
 				"groupSize": { "dist": "verynarrowgaussian", "avg": 3, "var": 2 },
 				"insideBlockCodes": ["game:saltwater-*", "game:saltwater-still-*"],
 				"minTemp": -30,
-				"maxTemp": 50,
-				"LightLevelType":"onlyBlockLight",
-				"maxLightLevel": 8
+				"maxTemp": 40
 			}
 		}
 	}

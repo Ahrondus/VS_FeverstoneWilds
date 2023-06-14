@@ -16,9 +16,10 @@
 	"drops": [],
 	"attributes": {
 		"killedByInfoText": "game:deadcreature-vile",
-		"physics": {
-			"airMovingStrength": 0.05
-		}
+		"physics": {"airMovingStrength": 0.05},
+		"lightHsv": [ 34, 7, 5 ],
+    	"strobeFrequency": 0,
+    	"minLightLevel": 1.0
 	},
 	"client": {
 		"renderer": "Shape",
@@ -26,11 +27,12 @@
 		"shape": { "base": "entity/air/sulfurbug" },
 		"texture": { "base": "entity/sulfurbug" },
 		"behaviors": [
-			{
-				"code": "controlledphysics",
-				"stepHeight": 1.0001
-			},
-			{ "code": "interpolateposition" }
+				{"code": "repulseagents" }, 
+				{"code": "controlledphysics", "stepHeight": 2.0001},
+				{ "code": "floatupwhenstuck", "onlyWhenDead": true },
+				{ "code": "interpolateposition" },
+				{ "code": "harvestable" },
+				{ "code": "despawn", "minPlayerDistance": 8, "belowLightLevel": 8, "minSeconds": 300 }
 		],
 		"animations": [
 			{
@@ -73,16 +75,20 @@
 			}
 		},
 		"behaviors": [
-			{
-				"code": "health",
-				"maxHealth": 10
-			},
-			{ "code": "controlledphysics", "stepHeight": 1.0001 },
+			{ "code": "repulseagents" },
+			{ "code": "controlledphysics", "stepHeight": 2.0001 },
+			{ "code": "health", "currenthealth": 15, "maxhealth": 15 },
 			{ "code": "despawn", "minPlayerDistance": 8, "minSeconds": 120 },
+			{ "code": "deaddecay", "hoursToDecay": 16, "decayedBlock": "-" },
 			{ "code": "breathe" },
-			{
-				"code": "deaddecay",
-				"hoursToDecay": 16
+			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
+			{ "code": "harvestable", "drops": [
+				{
+					"type": "item", 
+					"code": "powderedsulfur", 
+					"quantity": { "avg": 2, "var": 0 } 
+				}
+				]
 			},
 			{
 				"code": "emotionstates",
@@ -166,24 +172,6 @@
 				"code": "taskai",
 				"aitasks": [
 					{
-						"code": "butterflywander",
-						"priority": 1.4,
-						"movespeed": 0.009,
-						"maxHeight": 8,
-						"targetDistance": 0.15,
-						"animation": "fly"
-					},
-					{
-						"code": "butterflychase",
-						"priority": 1.3,
-						"movespeed": 0.01,
-						"maxHeight": 10,
-						"targetDistance": 0.15,
-						"mincooldownHours": 1,
-						"maxcooldownHours": 2,
-						"animation": "chase"
-					},
-					{
 						"code": "meleeattack",
 						"entityCodes": [ "player", "chicken-*", "horse-*", "wolf-*", "drifter-*", "bear-*", "hare-*" ],
 						"priority": 4,
@@ -203,7 +191,7 @@
 					{
 						"code": "seekentity",
 						"entityCodes": [ "player" ],
-						"priority": 1.5,
+						"priority": 3.85,
 						"mincooldown": 1000,
 						"maxcooldown": 1500,
 						"seekingRange": 20,
@@ -211,7 +199,43 @@
 						"animation": "fly",
 						"animationSpeed": 3,
 						"whenInEmotionState": "aggressiveondamage"
-					}
+					},
+					{
+						"code": "seekentity",
+						"entityCodes": [ "player" ],
+						"priority": 3.75,
+						"mincooldown": 1000,
+						"maxcooldown": 1500,
+						"seekingRange": 20,
+						"movespeed": 0.055,
+						"animation": "fly",
+						"animationSpeed": 3,
+						"whenInEmotionState": "aggressiveondamage"
+					},
+					{
+                        "code": "wander",
+                        "priority": 1.1,
+                        "priorityForCancel": 1.2,
+                        "movespeedByType": {
+                            "-normal": 0.0075,
+                            "-tainted": 0.0015,
+                            "-corrupt": 0.00175,
+                            "-abomination": 0.00225
+                        },
+                        "animation": "fly",
+                        "animationSpeed": 0.5
+                    },
+					{
+                        "code": "idle",
+                        "priority": 1.2,
+                        "priorityForCancel": 1.25,
+                        "minduration": 2500,
+                        "maxduration": 2500,
+                        "mincooldown": 6000,
+                        "maxcooldown": 20000,
+                        "animation": "idle",
+                        "animationSpeed": 1.25
+                    }
 				]
 			}
 		],
@@ -227,7 +251,7 @@
 					"avg": 1,
 					"var": 3
 				},
-				"minTemp": 5,
+				"minTemp": 15,
 				"maxTemp": 40,
 				"minRain": 0.35,
 				"maxY": 2,

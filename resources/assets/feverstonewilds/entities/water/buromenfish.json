@@ -22,7 +22,7 @@
 			{ "code": "interpolateposition" },
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
 			{ "code": "harvestable" },
-			{ "code": "despawn", "minPlayerDistance": 8, "belowLightLevel": 8, "minSeconds": 300 }
+			{ "code": "despawn", "minPlayerDistance": 8, "minSeconds": 300 }
 		],
 		"animations": [
 			{
@@ -61,9 +61,9 @@
 		"behaviors": [
 			{ "code": "repulseagents" }, 
 			{ "code": "controlledphysics", "stepHeight": 1.1251 }, 
-			{ "code": "despawn", "minPlayerDistance": 12, "belowLightLevel": 8, "minSeconds": 200 },
+			{ "code": "despawn", "minPlayerDistance": 12, "minSeconds": 200 },
 			{ "code": "health", "maxhealth": 4 },
-			{ "code": "deaddecay", "hoursToDecay": 96, "decayedBlock": "carcass-tiny" },
+			{ "code": "deaddecay", "hoursToDecay": 96, "decayedBlock": "-" },
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
 			{ "code": "harvestable", "drops": [
 					{
@@ -142,7 +142,7 @@
 				"maxQuantity": 4,
 				"maxLightLevel": 8,
 				"groupSize": { "dist": "verynarrowgaussian", "avg": 3, "var": 1 },
-				"insideBlockCodes": ["game:water-*"],
+				"insideBlockCodes": ["game:water-*", "game:saltwater-*", "game:saltwater-still-*"],
 				"minTemp": -4,
 				"maxTemp": 30
 			},
@@ -153,7 +153,7 @@
 				"tryOnlySurface": true,
 				"maxLightLevel": 8,
 				"groupSize": { "dist": "verynarrowgaussian", "avg": 3, "var": 1 },
-				"insideBlockCodes": ["game:water-*"],
+				"insideBlockCodes": ["game:water-*", "game:saltwater-*", "game:saltwater-still-*"],
 				"minTemp": -4,
 				"maxTemp": 30
 			}
