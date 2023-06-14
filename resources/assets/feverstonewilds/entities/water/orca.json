@@ -22,7 +22,7 @@
 			{ "code": "interpolateposition" },
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
 			{ "code": "harvestable" },
-			{ "code": "despawn", "minPlayerDistance": 8, "belowLightLevel":0, "minSeconds": 300 }
+			{ "code": "despawn", "minPlayerDistance": 8, "minSeconds": 300 }
 		],
 		"animations": [
 			{
@@ -76,7 +76,7 @@
 			{ "code": "repulseagents" }, 
 			{ "code": "controlledphysics", "stepHeight": 0 }, 
 			{ "code": "despawn", "minPlayerDistance": 12, "belowLightLevel": 0, "minSeconds": 200 },
-			{ "code": "health", "maxhealth": 45 },
+			{ "code": "health", "maxhealth": 65 },
 			{ "code": "deaddecay", "hoursToDecay": 96, "decayedBlock": "carcass-large" },
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
 			{ "code": "harvestable", "drops": [
@@ -108,10 +108,10 @@
 				"aitasks": [
 				{
 						"code": "meleeattack",
-						"entityCodes": ["bullshark", "dolphin", "drifter-*", "chicken-rooster", "chicken-hen", "chicken-baby", "buromenfish", "discus", "pink-salmon", "wolf-female", "wolf-male", 
+						"entityCodes": ["shark-*", "dolphin", "drifter-*", "chicken-rooster", "chicken-hen", "chicken-baby", "buromenfish", "discus", "pink-salmon", "wolf-female", "wolf-male", 
 						"bear-*", "hare-*"],
 						"priority": 2,
-						"damage": 16,
+						"damage": 20,
 						"damageTier": 3,
 						"damageType": "SlashingAttack",
 						"slot": 1,
@@ -152,7 +152,7 @@
 					},
 					{
 						"code": "seekentity",
-						"entityCodes": ["bullshark", "dolphin", "drifter-*", "chicken-rooster", "chicken-hen", "chicken-baby", "fox", "buromenfish", "discus", "pink-salmon", "wolf-female", "wolf-male", "wolf-pup", 
+						"entityCodes": ["shark-*", "dolphin", "drifter-*", "chicken-rooster", "chicken-hen", "chicken-baby", "fox", "buromenfish", "discus", "pink-salmon", "wolf-female", "wolf-male", "wolf-pup", 
 						"bear-*", "horse-*", "hare-*"],
 						"priority": 1.5,
 						"movespeed": 0.1,
@@ -180,6 +180,16 @@
 						"leapChance": 0.01,
 						"sound": "",
 						"whenInEmotionState": "aggressiveondamage"
+					},
+					{
+						"code": "stayclosetoentity",
+						"priority": 2.3,
+						"entityCode": "orca",
+						"maxDistance": 60,
+						"searchRange": 45,
+						"movespeed": 0.035,
+						"animation": "swim",
+						"animationSpeed": 4
 					},
 					{
 						"code": "fishoutofwater", 
@@ -211,7 +221,7 @@
 						"maxduration": 2000,
 						"mincooldown": 2000,
 						"maxcooldown": 30000,
-						"animation": "attack"
+						"animation": "idle"
 					},
 					{
 						"code": "idle",
@@ -227,28 +237,27 @@
 		],
 		"spawnconditions": {
 			"worldgen": {
-				"TriesPerChunk": { "avg": 0.015, "var": 0 },
+				"TriesPerChunk": { "avg": 0.055, "var": 0 },
 				"tryOnlySurface": true,
-				"maxLightLevel":22,
-				"groupSize": { "dist": "verynarrowgaussian", "avg": 3, "var": 0 },
-				"insideBlockCodes": ["game:water-*"],
-				"maxY": 0.96,
-				"minY": 0.92,
-				"minTemp": -10,
-				"maxTemp": 30
+				"groupSize": { "dist": "verynarrowgaussian", "avg": 3, "var": 2 },
+				"maxQuantity": 6,
+				"insideBlockCodes": ["game:saltwater-*", "game:saltwater-still-*"],
+				"minTemp": -30,
+				"maxTemp": 50,
+				"LightLevelType":"onlyBlockLight",
+				"maxLightLevel": 8
 			},
 			"runtime": {
 				"group": "neutral",
-				"maxQuantity": 2,
+				"maxQuantity": 6,
 				"chance": 0.00001,
 				"tryOnlySurface": true,
-				"maxLightLevel":22,
-				"groupSize": { "dist": "verynarrowgaussian", "avg": 3, "var": 0 },
-				"insideBlockCodes": ["game:water-*"],
-				"maxY": 0.96,
-				"minY": 0.92,
+				"groupSize": { "dist": "verynarrowgaussian", "avg": 3, "var": 2 },
+				"insideBlockCodes": ["game:saltwater-*", "game:saltwater-still-*"],
 				"minTemp": -30,
-				"maxTemp": 30
+				"maxTemp": 50,
+				"LightLevelType":"onlyBlockLight",
+				"maxLightLevel": 8
 			}
 		}
 	}
