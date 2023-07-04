@@ -19,7 +19,7 @@
 		"size": 0.95,
 		"sizeGrowthFactor": 0.2,
 		"behaviors": [
-            { "code": "nametag" },
+			{ "code": "nametag", "showtagonlywhentargeted": true },
             { "code": "receivecommand",
                 "availableCommands": [
                     { "commandName": "followmaster", "commandType": "COMPLEX", "minObedience": 0.6 },
@@ -116,7 +116,6 @@
 			}
 		},
 		"behaviors": [
-            { "code": "nametag" },
             {
                 "code": "tameable",
                 "disobediencePerDay": 0.1,

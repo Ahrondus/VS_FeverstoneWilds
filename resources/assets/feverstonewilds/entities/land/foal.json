@@ -35,7 +35,7 @@
             "foal-arabian": 0.55
         },
         "behaviors": [
-            { "code": "nametag" },
+			{ "code": "nametag", "showtagonlywhentargeted": true },
             { "code": "receivecommand",
                 "availableCommands": [
                     { "commandName": "followmaster", "commandType": "COMPLEX", "minObedience": 0.6 },
@@ -118,8 +118,7 @@
                 "maxTurnAnglePerSec": 175
             }
         },
-        "behaviors": [
-            { "code": "nametag" },
+        "behaviors": [ 
             {
                 "code": "tameable",
                 "disobediencePerDay": 0.1,

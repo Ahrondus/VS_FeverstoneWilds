@@ -104,7 +104,7 @@
         "behaviors": [ 
                 { "code": "multiply",
                     "enabledByType": { "*-male-*": false, "*-female-*": true } },
-                { "code": "nametag" },
+                { "code": "nametag", "showtagonlywhentargeted": true },
                 { "code": "receivecommand",
                     "availableCommands": [
                         {
@@ -204,7 +204,6 @@
             }
         },
         "behaviors": [
-                { "code": "nametag" },
                 {
                     "code": "multiply",
                     "enabledByType": { "*-male-*": false, "*-female-draft": true, "*-female-arabian": true },
