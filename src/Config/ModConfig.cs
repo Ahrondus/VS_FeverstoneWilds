@@ -28,24 +28,29 @@ namespace FeverstoneWilds.Config
         GenerateConfig(api);
         config = LoadConfig(api);
       }
-
-        api.World.Config.SetBool("FaunlingEnabled", config.FaunlingEnabled);
+        // Land Creatures
+        api.World.Config.SetBool("BisonEnabled", config.BisonEnabled);
+        api.World.Config.SetBool("BisonCalfEnabled", config.BisonCalfEnabled);
+        api.World.Config.SetBool("CockatriceEnabled", config.CockatriceEnabled);
         api.World.Config.SetBool("WildDirewolfEnabled", config.WildDirewolfEnabled);
         api.World.Config.SetBool("TameDirewolfEnabled", config.TameDirewolfEnabled);
         api.World.Config.SetBool("WildDirewolfPupEnabled", config.WildDirewolfPupEnabled);
         api.World.Config.SetBool("TameDirewolfPupEnabled", config.TameDirewolfPupEnabled);
-        api.World.Config.SetBool("HorseEnabled", config.HorseEnabled);
+        api.World.Config.SetBool("FaunlingEnabled", config.FaunlingEnabled);
         api.World.Config.SetBool("FoalEnabled", config.FoalEnabled);
-        api.World.Config.SetBool("BisonEnabled", config.BisonEnabled);
-        api.World.Config.SetBool("BisonCalfEnabled", config.BisonCalfEnabled);
-        api.World.Config.SetBool("GolemEnabled", config.GolemEnabled);
         api.World.Config.SetBool("GeodeCrabEnabled", config.GeodeCrabEnabled);
+        api.World.Config.SetBool("GiraffeEnabled", config.GiraffeEnabled);
+        api.World.Config.SetBool("GolemEnabled", config.GolemEnabled);
+        api.World.Config.SetBool("HorseEnabled", config.HorseEnabled);
         api.World.Config.SetBool("SpiderEnabled", config.SpiderEnabled);
         api.World.Config.SetBool("ToadEnabled", config.ToadEnabled);
+        
+        // Water Creatures
         api.World.Config.SetBool("BuromenfishEnabled", config.BuromenfishEnabled);
         api.World.Config.SetBool("DiscusFishEnabled", config.DiscusFishEnabled);
-        api.World.Config.SetBool("BullsharkEnabled", config.BullsharkEnabled);
+        api.World.Config.SetBool("EelEnabled", config.EelEnabled);
         api.World.Config.SetBool("OrcaEnabled", config.OrcaEnabled);
+        api.World.Config.SetBool("SharksEnabled", config.SharksEnabled);
         api.World.Config.SetBool("StingrayEnabled", config.StingrayEnabled);
     }
 
