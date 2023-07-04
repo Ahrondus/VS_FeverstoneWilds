@@ -64,12 +64,12 @@
         }
     },
     {
-        "ingredientPattern": "BLB,MLM,_C_",
+        "ingredientPattern": "BHB,MLM,CLC",
         "ingredients": {
             "L": {
                 "type": "item",
                 "code": "game:leather-plain",
-                "quantity": 2
+                "quantity": 8
             },
             "C": {
                 "type": "item",
@@ -79,12 +79,17 @@
             "B": {
                 "type": "item",
                 "code": "game:backpack",
-                "quantity": 1
+                "quantity": 3
             },
             "M": {
                 "type": "item",
                 "code": "game:metalbit-*",
-                "quantity": 4
+                "quantity": 20
+            },
+            "H": {
+                "type": "item",
+                "code": "game:chest-*",
+                "quantity": 1
             }
         },
         "width": 3,
