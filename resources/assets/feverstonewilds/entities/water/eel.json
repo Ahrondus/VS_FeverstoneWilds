@@ -54,20 +54,6 @@
 				"blendMode": "AddAverage",
 				"easeOutSpeed": 4,
 				"triggeredBy": { "defaultAnim": true }
-			},
-			{
-				"code": "seekfoodandeat",
-				"movespeed": 0.010,
-				"priority": 1.25,
-				"eatTime": 2.3,
-				"eatLooseItems": true,
-				"eatItemCodes": ["game:redmeat-*", "game:fish-*", "game:poultry-*", "game:bushmeat-*"],
-				"eatItemCatagories": ["Protein"],
-				"animationSpeed": 1.4,
-				"animation": "swim",
-				"eatAnimation": "attack",
-				"mincooldownHours": 1,
-				"maxcooldownHours": 4
 			}
 		]
 	},
@@ -129,22 +115,6 @@
 					},
 					{
 						"code": "seekentity",
-						"entityCodes": [],
-						"priority": 1.51,
-						"movespeed": 0.025,
-						"seekingRange": 9,
-						"belowTempSeekingRange": 25,
-						"belowTempThreshold": -5,
-						"animation": "swim",
-						"leapAtTarget": true,
-						"leapAnimation": null,
-						"animationSpeed": 2.2,
-						"leapChance": 0.01,
-						"sound": "",
-						"whenNotInEmotionState": "saturated"
-					},
-					{
-						"code": "seekentity",
 						"entityCodes": ["chicken-baby", "discus"],
 						"priority": 1.5,
 						"movespeed": 0.1,
@@ -161,10 +131,10 @@
 					},
 					{
 						"code": "seekentity",
-						"entityCodes": [],
+						"entityCodes": ["player"],
 						"priority": 1.49,
 						"movespeed": 0.1,
-						"seekingRange": 15,
+						"seekingRange": 8,
 						"animation": "swim",
 						"leapAtTarget": true,
 						"leapAnimation": null,
@@ -197,6 +167,20 @@
 						"animationSpeed": 2.3
 					},
 					{
+						"code": "seekfoodandeat",
+						"movespeed": 0.010,
+						"priority": 1.25,
+						"eatTime": 2.3,
+						"eatLooseItems": true,
+						"eatItemCodes": ["game:redmeat-*", "game:fish-*", "game:poultry-*", "game:bushmeat-*"],
+						"eatItemCatagories": ["Protein"],
+						"animationSpeed": 1.4,
+						"animation": "swim",
+						"eatAnimation": "attack",
+						"mincooldownHours": 1,
+						"maxcooldownHours": 4
+					},
+					{
 						"code": "idle",
 						"priority": 0.9,
 						"minduration": 500,
@@ -223,7 +207,7 @@
 				"tryOnlySurface": true,
 				"minLightLevel": 8,
 				"groupSize": { "dist": "verynarrowgaussian", "avg": 1, "var": 0 },
-				"insideBlockCodes": ["game:water-*"],
+				"insideBlockCodes": ["game:saltwater-*", "game:saltwater-still-*"],
 				"maxY": 0.96,
 				"minY": 0.92,
 				"minTemp": -10,
@@ -236,7 +220,7 @@
 				"tryOnlySurface": true,
 				"minLightLevel": 8,
 				"groupSize": { "dist": "verynarrowgaussian", "avg": 1, "var": 0 },
-				"insideBlockCodes": ["game:water-*"],
+				"insideBlockCodes": ["game:saltwater-*", "game:saltwater-still-*"],
 				"maxY": 0.96,
 				"minY": 0.92,
 				"minTemp": -10,

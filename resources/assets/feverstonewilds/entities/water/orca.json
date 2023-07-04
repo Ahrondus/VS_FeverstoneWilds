@@ -54,20 +54,6 @@
 				"blendMode": "addAverage",
 				"easeOutSpeed": 4,
 				"triggeredBy": { "defaultAnim": true }
-			},
-			{
-				"code": "seekfoodandeat",
-				"movespeed": 0.010,
-				"priority": 1.25,
-				"eatTime": 2.3,
-				"eatLooseItems": true,
-				"eatItemCodes": ["game:redmeat-*", "game:fish-*", "game:poultry-*", "game:bushmeat-*"],
-				"eatItemCatagories": ["Protein"],
-				"animationSpeed": 1.4,
-				"animation": "swim",
-				"eatAnimation": "attack",
-				"mincooldownHours": 1,
-				"maxcooldownHours": 4
 			}
 		]
 	},
@@ -108,8 +94,8 @@
 				"aitasks": [
 				{
 						"code": "meleeattack",
-						"entityCodes": ["shark-*", "dolphin", "drifter-*", "chicken-rooster", "chicken-hen", "chicken-baby", "buromenfish", "discus", "pink-salmon", "wolf-female", "wolf-male", 
-						"bear-*", "hare-*"],
+						"entityCodes": ["shark-*", "dolphin", "drifter-*", "chicken-*", "fox", "buromenfish", "discus", "pink-salmon", "wolf-*",
+						"bear-*", "horse-*", "hare-*"],
 						"priority": 2,
 						"damage": 25,
 						"damageTier": 3,
@@ -147,12 +133,11 @@
 						"leapAnimation": null,
 						"animationSpeed": 2.2,
 						"leapChance": 0.01,
-						"sound": "",
-						"whenNotInEmotionState": "saturated"
+						"sound": ""
 					},
 					{
 						"code": "seekentity",
-						"entityCodes": ["shark-*", "dolphin", "drifter-*", "chicken-rooster", "chicken-hen", "chicken-baby", "fox", "buromenfish", "discus", "pink-salmon", "wolf-female", "wolf-male", "wolf-pup", 
+						"entityCodes": ["shark-*", "dolphin", "drifter-*", "chicken-*", "fox", "buromenfish", "discus", "pink-salmon", "wolf-*", 
 						"bear-*", "horse-*", "hare-*"],
 						"priority": 1.5,
 						"movespeed": 0.1,
@@ -196,6 +181,20 @@
 						"movespeed": 0.01,
 						"animation": "swim",
 						"preferredLightLevel": "22"
+					},
+					{
+						"code": "seekfoodandeat",
+						"movespeed": 0.010,
+						"priority": 1.25,
+						"eatTime": 2.3,
+						"eatLooseItems": true,
+						"eatItemCodes": ["game:redmeat-*", "game:fish-*", "game:poultry-*", "game:bushmeat-*"],
+						"eatItemCatagories": ["Protein"],
+						"animationSpeed": 1.4,
+						"animation": "swim",
+						"eatAnimation": "attack",
+						"mincooldownHours": 1,
+						"maxcooldownHours": 4
 					},
 					{
 						"code": "fishmovefast", 
