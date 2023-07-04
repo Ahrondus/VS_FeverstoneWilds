@@ -5,11 +5,13 @@
 	"variantgroups": [
 			{
 				"code": "type",
-				"states": ["bullshark"]
+				"states": ["shark-freshwater", "shark-saltwater", "shark-hammerhead"]
 			}
 		],
-	"shape": {
-		"base": "entity/water/bullshark"
+	"shapeByType": {
+		"*-freshwater": { "base": "entity/water/bullshark" },
+		"*-saltwater": { "base": "entity/water/bullshark" },
+		"*-hammerhead": { "base": "entity/water/hammerhead"} 
 		},
 	"creativeinventory": {
 		"general": ["*"],

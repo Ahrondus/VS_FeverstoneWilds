@@ -1,14 +1,24 @@
 {
-	"code": "bullshark",
+	"code": "shark",
 	"class": "EntityFish",
+	"variantgroups": [
+		{"code": "type", "states": ["freshwater", "saltwater", "hammerhead"] }
+	],
 	"hitboxSize": { "x": 1.2, "y": 1 },
 	"eyeHeight": 0.9,
 	"drops": [],
-	"habitat": "underwater",
+	"habitat": "Underwater",
+	"attributes": {
+		"killedByInfoText": "Became sharkbait."
+	},
 	"client": {
 		"renderer": "Shape",
+        "shapeByType": {
+            "*-saltwater": { "base": "entity/water/bullshark" },
+			"*-freshwater": { "base": "entity/water/bullshark" },
+            "*-hammerhead": { "base": "entity/water/hammerhead" }
+        },
 		"size": 0.7,
-		"shape": { "base": "entity/water/bullshark" },
 		"texture": { "base": "entity/fish/bullshark/bullshark1",
 		            "alternates": [ { "base": "entity/fish/bullshark/bullshark2" },
 									  { "base": "entity/fish/bullshark/bullshark3" },
@@ -18,11 +28,11 @@
 	},
 		"behaviors": [
 			{ "code": "repulseagents" }, 
-			{ "code": "controlledphysics", "stepHeight": 3 }, 
+			{ "code": "controlledphysics", "stepHeight": 5 }, 
 			{ "code": "interpolateposition" },
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
 			{ "code": "harvestable" },
-			{ "code": "despawn", "minPlayerDistance": 8, "belowLightLevel": 8, "minSeconds": 300 }
+			{ "code": "despawn", "minPlayerDistance": 8, "minSeconds": 300 }
 		],
 		"animations": [
 			{
@@ -30,7 +40,7 @@
 				"animation": "hurt", 
 				"animationSpeed": 1,
 				"weight": 10,
-				"blendMode": "addAverage" 
+				"blendMode": "AddAverage" 
 			},
 			{
 				"code": "swim",
@@ -51,32 +61,23 @@
 			{ 
 				"code": "idle", 
 				"animation": "idle",
-				"blendMode": "addAverage",
+				"blendMode": "AddAverage",
 				"easeOutSpeed": 4,
 				"triggeredBy": { "defaultAnim": true }
-			},
-			{
-				"code": "seekfoodandeat",
-				"movespeed": 0.010,
-				"priority": 1.25,
-				"eatTime": 2.3,
-				"eatLooseItems": true,
-				"eatItemCodes": ["game:redmeat-*", "game:fish-*", "game:poultry-*", "game:bushmeat-*"],
-				"eatItemCatagories": ["Protein"],
-				"animationSpeed": 1.4,
-				"animation": "swim",
-				"eatAnimation": "attack",
-				"mincooldownHours": 1,
-				"maxcooldownHours": 4
 			}
 		]
 	},
 	"server": {
 		"behaviors": [
 			{ "code": "repulseagents" }, 
-			{ "code": "controlledphysics", "stepHeight": 0 }, 
-			{ "code": "despawn", "minPlayerDistance": 12, "belowLightLevel": 8, "minSeconds": 200 },
-			{ "code": "health", "maxhealth": 15 },
+			{ "code": "controlledphysics", "stepHeight": 5 }, 
+			{ "code": "despawn", "minPlayerDistance": 12, "minSeconds": 200 },
+			{ "code": "health", "maxhealthByType": {
+				"*-freshwater": 40,
+				"*-saltwater": 40,
+				"*-hammerhead": 65
+			}
+			},
 			{ "code": "deaddecay", "hoursToDecay": 96, "decayedBlock": "carcass-large" },
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
 			{ "code": "harvestable", "drops": [
@@ -189,7 +190,8 @@
 						"priority": 1.2, 
 						"priorityForCancel": 1.35,
 						"movespeed": 0.01,
-						"animation": "swim"
+						"animation": "swim",
+						"preferredLightLevel": "17"
 					},
 					{
 						"code": "fishmovefast", 
@@ -216,36 +218,101 @@
 						"mincooldown": 2000,
 						"maxcooldown": 30000,
 						"animation": "idle"
+					},
+					{
+						"code": "seekfoodandeat",
+						"movespeed": 0.010,
+						"priority": 1.25,
+						"eatTime": 2.3,
+						"eatLooseItems": true,
+						"eatItemCodes": ["game:redmeat-*", "game:fish-*", "game:poultry-*", "game:bushmeat-*"],
+						"eatItemCatagories": ["Protein"],
+						"animationSpeed": 1.4,
+						"animation": "swim",
+						"eatAnimation": "attack",
+						"mincooldownHours": 1,
+						"maxcooldownHours": 4
 					}
 				]
 			}
 		],
-		"spawnconditions": {
-			"worldgen": {
-				"TriesPerChunk": { "avg": 0.015, "var": 0 },
-				"tryOnlySurface": true,
-				"maxQuantity": 2,
-				"maxLightLevel": 8,
-				"groupSize": { "dist": "verynarrowgaussian", "avg": 1, "var": 0 },
-				"insideBlockCodes": ["game:saltwater-*"],
-				"maxY": 0.95,
-				"minY": 0.90,
-				"minTemp": -10,
-				"maxTemp": 30
+		"spawnconditionsbyType": {
+			"shark-freshwater": {
+				"worldgen": {
+					"TriesPerChunk": { "avg": 0.035, "var": 0 },
+					"tryOnlySurface": true,
+					"maxQuantity": 2,
+					"groupSize": { "dist": "verynarrowgaussian", "avg": 1, "var": 0 },
+					"insideBlockCodes": ["game:water-*"],
+					"minTemp": -20,
+					"maxTemp": 50,
+					"LightLevelType":"onlyBlockLight", 
+					"maxLightLevel": 8
+				},
+				"runtime": {
+					"group": "neutral",
+					"maxQuantity": 2,
+					"chance": 0.00001,
+					"tryOnlySurface": true,
+					"groupSize": { "dist": "verynarrowgaussian", "avg": 1, "var": 0 },
+					"insideBlockCodes": ["game:water-*"],
+					"minTemp": -20,
+					"maxTemp": 50,
+					"LightLevelType":"onlyBlockLight", 
+					"maxLightLevel": 8
+				}
 			},
-			"runtime": {
-				"group": "neutral",
-				"maxQuantity": 2,
-				"chance": 0.00001,
-				"tryOnlySurface": true,
-				"maxLightLevel": 8,
-				"groupSize": { "dist": "verynarrowgaussian", "avg": 1, "var": 0 },
-				"insideBlockCodes": ["game:saltwater-*"],
-				"maxY": 0.95,
-				"minY": 0.90,
-				"minTemp": -10,
-				"maxTemp": 30
+			"shark-saltwater": {
+				"worldgen": {
+					"TriesPerChunk": { "avg": 0.055, "var": 0 },
+					"tryOnlySurface": true,
+					"maxQuantity": 5,
+					"groupSize": { "dist": "verynarrowgaussian", "avg": 2, "var": 3 },
+					"insideBlockCodes": ["game:saltwater-*", "game:saltwater-still-*"],
+					"minTemp": -20,
+					"maxTemp": 50,
+					"LightLevelType":"onlyBlockLight", 
+					"maxLightLevel": 8
+				},
+				"runtime": {
+					"group": "neutral",
+					"maxQuantity": 5,
+					"chance": 0.00001,
+					"tryOnlySurface": true,
+					"groupSize": { "dist": "verynarrowgaussian", "avg": 2, "var": 3 },
+					"insideBlockCodes": ["game:saltwater-*", "game:saltwater-still-*"],
+					"minTemp": -20,
+					"maxTemp": 50,
+					"LightLevelType":"onlyBlockLight", 
+					"maxLightLevel": 8
+				}
+			},
+			"*-hammerhead": {
+				"worldgen": {
+					"TriesPerChunk": { "avg": 0.055, "var": 0 },
+					"tryOnlySurface": true,
+					"maxQuantity": 5,
+					"groupSize": { "dist": "verynarrowgaussian", "avg": 2, "var": 3 },
+					"insideBlockCodes": ["game:saltwater-*", "game:saltwater-still-*"],
+					"minTemp": -20,
+					"maxTemp": 50,
+					"LightLevelType":"onlyBlockLight", 
+					"maxLightLevel": 8
+				},
+				"runtime": {
+					"group": "neutral",
+					"maxQuantity": 5,
+					"chance": 0.00001,
+					"tryOnlySurface": true,
+					"groupSize": { "dist": "verynarrowgaussian", "avg": 2, "var": 3 },
+					"insideBlockCodes": ["game:saltwater-*", "game:saltwater-still-*"],
+					"minTemp": -20,
+					"maxTemp": 50,
+					"LightLevelType":"onlyBlockLight", 
+					"maxLightLevel": 8
+				}
 			}
+
 		}
 	}
 }
