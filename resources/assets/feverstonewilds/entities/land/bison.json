@@ -184,6 +184,7 @@
 			}
 		},
 		"behaviors": [
+            { "code": "nametag", "showtagonlywhentargeted": true },
 			{ "code": "repulseagents" }, 
 			{ "code": "controlledphysics", "stepHeight": 1.1251 },
 			{ "code": "despawn", "minPlayerDistance": 8, "belowLightLevel": 8, "minSeconds": 300 },
