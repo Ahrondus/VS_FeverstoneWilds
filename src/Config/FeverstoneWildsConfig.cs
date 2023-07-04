@@ -2,6 +2,7 @@ namespace FeverstoneWilds.Config
 {
     public class FeverstoneWildsConfig
     {
+        // Land Creatures
         public bool BisonEnabled = true;
         public bool BisonCalfEnabled = true;
         public bool CockatriceEnabled = true;
@@ -18,6 +19,7 @@ namespace FeverstoneWilds.Config
         public bool SpiderEnabled = true;
         public bool ToadEnabled = true;
 
+        // Water Creatures
         public bool BuromenfishEnabled = true;
         public bool DiscusFishEnabled = true;
         public bool EelEnabled = true;
@@ -29,6 +31,7 @@ namespace FeverstoneWilds.Config
 
         public FeverstoneWildsConfig(FeverstoneWildsConfig previousConfig)
         {
+            // Land Creatures
             CockatriceEnabled = previousConfig.CockatriceEnabled;
             FaunlingEnabled = previousConfig.FaunlingEnabled;
             WildDirewolfEnabled = previousConfig.WildDirewolfEnabled;
@@ -45,6 +48,7 @@ namespace FeverstoneWilds.Config
             SpiderEnabled = previousConfig.SpiderEnabled;
             ToadEnabled = previousConfig.ToadEnabled;
 
+            // Water Creatures
             BuromenfishEnabled = previousConfig.BuromenfishEnabled;
             DiscusFishEnabled = previousConfig.DiscusFishEnabled;
             EelEnabled = previousConfig.EelEnabled;
