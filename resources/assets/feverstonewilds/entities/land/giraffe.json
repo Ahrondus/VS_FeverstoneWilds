@@ -255,7 +255,8 @@
 						"stopOnNearbyEntityCodes": ["player"],
 						"stopRange": 5,
 						"stopOnHurt": true,
-						"animation": "Sit"
+						"animation": "idle",
+						"sound": "giraffe/giraffeidle"
 					},
 					{ 
 						"code": "lookaround", 
@@ -302,7 +303,7 @@
 	"sounds": {
 		"hurt": "game:creature/sheep/hurt",
 		"death": "game:creature/sheep/hurt",
-		"idle": "game:creature/sheep/idle"
+		"idle": "feverstonewilds:giraffe/giraffeidle"
 	},
 	"idleSoundChance": 0.001
 }
