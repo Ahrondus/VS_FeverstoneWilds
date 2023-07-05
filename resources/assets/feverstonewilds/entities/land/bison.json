@@ -380,7 +380,8 @@
 						"soundStartMs": 950,
 						"useTime": 3.2,
 						"mincooldownHours": 1,
-						"maxcooldownHours": 1.5
+						"maxcooldownHours": 1.5,
+						"sound": "bison/bisoneating"
 					},
 					{
 						"code": "idle",
@@ -474,7 +475,8 @@
 						"stopOnNearbyEntityCodes": ["player"],
 						"stopRange": 5,
 						"stopOnHurt": true,
-						"animation": "Sit"
+						"animation": "Sit",
+						"sound": "bison/bisonidle"
 					},
 					{ 
 						"code": "lookaround", 
@@ -521,10 +523,10 @@
 		}
 	},
 	"sounds": {
-		"hurt": "game:creature/sheep/hurt",
-		"death": "game:creature/sheep/hurt",
-		"idle": "game:creature/sheep/idle"
+		"hurt": "feverstonewilds:bison/bisonhurt",
+		"death": "feverstonewilds:bison/bisonhurt",
+		"idle": "feverstonewilds:bison/bisonidle"
 	},
-	"idleSoundChance": 0.001,
+	"idleSoundChance": 0.0001,
 	"hurtSoundChance": 0.005
 }

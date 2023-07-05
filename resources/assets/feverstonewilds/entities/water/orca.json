@@ -202,7 +202,8 @@
 						"priorityForCancel": 1.35,
 						"movespeed": 0.055,
 						"animation": "swimfast",
-						"animationSpeed": 2.3
+						"animationSpeed": 2.3,
+						"sound": "orca/orcaswim"
 					},
 					{
 						"code": "idle",
@@ -248,5 +249,12 @@
 				"maxTemp": 40
 			}
 		}
-	}
+	},
+"sounds": {
+	"hurt": "feverstonewilds:orca/orcahurt",
+	"death": "",
+	"idle": "feverstonewilds:orca/orcaidle"
+},
+"idleSoundChance": 0.0001,
+"hurtSoundChance": 0.005
 }
