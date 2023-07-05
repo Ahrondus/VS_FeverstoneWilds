@@ -9,11 +9,11 @@
 	"client": {
 		"renderer": "Shape",
 		"shape": { "base": "entity/land/cockatrice" },
-		"texture": { "base": "entity/cockatrice/cockatriceskin1",
-		"alternates": [ { "base": "entity/cockatrice/cockatriceskin2" }, { "base": "entity/cockatrice/cockatriceskin3" }, 
-                                    { "base": "entity/cockatrice/cockatriceskin4" }, { "base": "entity/cockatrice/cockatriceskin5" }, 
-                                    { "base": "entity/cockatrice/cockatriceskin6" }, { "base": "entity/cockatrice/cockatriceskin7" },
-									{ "base": "entity/cockatrice/cockatriceskin8" }, { "base": "entity/cockatrice/cockatriceskin9" } ] },
+		"texture": { "base": "entity/land/cockatrice/cockatriceskin1",
+		"alternates": [ { "base": "entity/land/cockatrice/cockatriceskin2" }, { "base": "entity/land/cockatrice/cockatriceskin3" }, 
+                                    { "base": "entity/land/cockatrice/cockatriceskin4" }, { "base": "entity/land/cockatrice/cockatriceskin5" }, 
+                                    { "base": "entity/land/cockatrice/cockatriceskin6" }, { "base": "entity/land/cockatrice/cockatriceskin7" },
+									{ "base": "entity/land/cockatrice/cockatriceskin8" }, { "base": "entity/land/cockatrice/cockatriceskin9" } ] },
 		"behaviors": [
 			{ "code": "repulseagents" }, 
 			{ "code": "controlledphysics", "stepHeight": 1.1251 }, 
@@ -29,20 +29,20 @@
 				"animation": "hurt", 
 				"animationSpeed": 2.2,
 				"weight": 10,
-				"blendMode": "AddAverage" 
+				"blendMode": "addAverage" 
 			},
 			{
 				"code": "die",
 				"animation": "die", 
 				"animationSpeed": 1.25,
 				"weight": 10,
-				"blendMode": "Average",
+				"blendMode": "average",
 				"triggeredBy": { "onControls": ["dead"] }
 			},
 			{ 
 				"code": "idle", 
 				"animation": "idle",
-				"blendMode": "AddAverage",
+				"blendMode": "addAverage",
 				"easeOutSpeed": 4,
 				"triggeredBy": { "defaultAnim": true }
 			},
@@ -51,14 +51,14 @@
 				"animation": "sleep",
 				"easeInSpeed": 4,
 				"easeOutSpeed": 4,
-				"blendMode": "Average"
+				"blendMode": "average"
 			},
 			{
 				"code": "idlelook", 
 				"animation": "idlelook",
 				"easeInSpeed": 4,
 				"easeOutSpeed": 4,
-				"blendMode": "Average"
+				"blendMode": "average"
 			}
 		]
 	},

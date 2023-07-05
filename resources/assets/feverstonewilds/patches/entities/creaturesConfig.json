@@ -96,6 +96,20 @@
         "op": "add",
         "path": "/enabled",
         "value": false,
+        "file": "feverstonewilds:entities/land/ostrich.json",
+        "condition": { "when": "OstrichEnabled", "isValue": "false" }
+    },
+    {
+        "op": "add",
+        "path": "/enabled",
+        "value": false,
+        "file": "feverstonewilds:entities/land/ostrich-chick.json",
+        "condition": { "when": "OstrichEnabled", "isValue": "false" }
+    },
+    {
+        "op": "add",
+        "path": "/enabled",
+        "value": false,
         "file": "feverstonewilds:entities/land/spider.json",
         "condition": { "when": "SpiderEnabled", "isValue": "false" }
     },

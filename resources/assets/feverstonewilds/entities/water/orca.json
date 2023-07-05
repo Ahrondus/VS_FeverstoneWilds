@@ -9,11 +9,11 @@
 		"renderer": "Shape",
 		"size": 0.7,
 		"shape": { "base": "entity/water/orca" },
-		"texture": { "base": "entity/fish/orca/orcaskin1",
-		            "alternates": [ { "base": "entity/fish/orca/orcaskin2" },
-									  { "base": "entity/fish/orca/orcaskin3" },
-									  { "base": "entity/fish/orca/orcaskin4" },
-									  { "base": "entity/fish/orca/orcaskin5" }
+		"texture": { "base": "entity/water/orca/orcaskin1",
+		            "alternates": [ { "base": "entity/water/orca/orcaskin2" },
+									  { "base": "entity/water/orca/orcaskin3" },
+									  { "base": "entity/water/orca/orcaskin4" },
+									  { "base": "entity/water/orca/orcaskin5" }
 									]
 	},
 		"behaviors": [
@@ -22,7 +22,7 @@
 			{ "code": "interpolateposition" },
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
 			{ "code": "harvestable" },
-			{ "code": "despawn", "minPlayerDistance": 8, "minSeconds": 300 }
+			{ "code": "despawn", "minPlayerDistance": 28, "minSeconds": 300 }
 		],
 		"animations": [
 			{
@@ -61,7 +61,7 @@
 		"behaviors": [
 			{ "code": "repulseagents" }, 
 			{ "code": "controlledphysics", "stepHeight": 0 }, 
-			{ "code": "despawn", "minPlayerDistance": 12, "belowLightLevel": 0, "minSeconds": 200 },
+			{ "code": "despawn", "minPlayerDistance": 28, "minSeconds": 300 },
 			{ "code": "health", "maxhealth": 85 },
 			{ "code": "deaddecay", "hoursToDecay": 96, "decayedBlock": "carcass-large" },
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },

@@ -41,27 +41,27 @@
         },
         "textureByType": {
             "faunling-male":    
-            { "base": "entity/malefaunling/malefaunling1",
-            "alternates": [ { "base": "entity/malefaunling/malefaunling2" }, { "base": "entity/malefaunling/malefaunling3" }, 
-                { "base": "entity/malefaunling/malefaunling4" }, { "base": "entity/malefaunling/malefaunling5" }, 
-                { "base": "entity/malefaunling/malefaunling6" }, { "base": "entity/malefaunling/malefaunling7" }, 
-                { "base": "entity/malefaunling/malefaunling8" }, { "base": "entity/malefaunling/malefaunling9" }, 
-                { "base": "entity/malefaunling/malefaunling10" }, { "base": "entity/malefaunling/malefaunling11" }, 
-                { "base": "entity/malefaunling/malefaunling12" }, { "base": "entity/malefaunling/malefaunling13" }, 
-                { "base": "entity/malefaunling/malefaunling14" }, { "base": "entity/malefaunling/malefaunling15" }
+            { "base": "entity/land/malefaunling/malefaunling1",
+            "alternates": [ { "base": "entity/land/malefaunling/malefaunling2" }, { "base": "entity/land/malefaunling/malefaunling3" }, 
+                { "base": "entity/land/malefaunling/malefaunling4" }, { "base": "entity/land/malefaunling/malefaunling5" }, 
+                { "base": "entity/land/malefaunling/malefaunling6" }, { "base": "entity/land/malefaunling/malefaunling7" }, 
+                { "base": "entity/land/malefaunling/malefaunling8" }, { "base": "entity/land/malefaunling/malefaunling9" }, 
+                { "base": "entity/land/malefaunling/malefaunling10" }, { "base": "entity/land/malefaunling/malefaunling11" }, 
+                { "base": "entity/land/malefaunling/malefaunling12" }, { "base": "entity/land/malefaunling/malefaunling13" }, 
+                { "base": "entity/land/malefaunling/malefaunling14" }, { "base": "entity/land/malefaunling/malefaunling15" }
             ]
         },
             "faunling-female":    
-            { "base": "entity/faunling/faunling1",
-            "alternates": [ { "base": "entity/faunling/faunling2" }, { "base": "entity/faunling/faunling3" }, 
-                { "base": "entity/faunling/faunling4" }, { "base": "entity/faunling/faunling5" }, 
-                { "base": "entity/faunling/faunling6" }, { "base": "entity/faunling/faunling7" }, 
-                { "base": "entity/faunling/faunling8" }, { "base": "entity/faunling/faunling9" }, 
-                { "base": "entity/faunling/faunling10" }, { "base": "entity/faunling/faunling11" }, 
-                { "base": "entity/faunling/faunling12" }, { "base": "entity/faunling/faunling13" }, 
-                { "base": "entity/faunling/faunling14" }, { "base": "entity/faunling/faunling15" }, 
-                { "base": "entity/faunling/faunling16" }, { "base": "entity/faunling/faunling17" }, 
-                { "base": "entity/faunling/faunling18" }
+            { "base": "entity/land/faunling/faunling1",
+            "alternates": [ { "base": "entity/land/faunling/faunling2" }, { "base": "entity/land/faunling/faunling3" }, 
+                { "base": "entity/land/faunling/faunling4" }, { "base": "entity/land/faunling/faunling5" }, 
+                { "base": "entity/land/faunling/faunling6" }, { "base": "entity/land/faunling/faunling7" }, 
+                { "base": "entity/land/faunling/faunling8" }, { "base": "entity/land/faunling/faunling9" }, 
+                { "base": "entity/land/faunling/faunling10" }, { "base": "entity/land/faunling/faunling11" }, 
+                { "base": "entity/land/faunling/faunling12" }, { "base": "entity/land/faunling/faunling13" }, 
+                { "base": "entity/land/faunling/faunling14" }, { "base": "entity/land/faunling/faunling15" }, 
+                { "base": "entity/land/faunling/faunling16" }, { "base": "entity/land/faunling/faunling17" }, 
+                { "base": "entity/land/faunling/faunling18" }
             ] 
 		}
     },
@@ -77,7 +77,7 @@
 			{
 				"code": "idle",
 				"animation": "idle",
-				"blendMode": "AddAverage",
+				"blendMode": "addAverage",
 				"easeOutSpeed": 3,
 				"triggeredBy": { "defaultAnim": true },
 				"animationSpeed": 0.5
@@ -87,14 +87,14 @@
 				"animation": "sit",
 				"easeInSpeed": 4,
 				"easeOutSpeed": 3,
-				"blendMode": "Average"
+				"blendMode": "average"
 			},
 			{
 				"code": "die",
 				"animation": "dead",
 				"easeInSpeed": 2,
 				"weight": 10,
-				"blendMode": "Average",
+				"blendMode": "average",
 				"triggeredBy": { "onControls": ["dead"] }
 			}
         ]

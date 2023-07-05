@@ -4,16 +4,16 @@
 	"hitboxSize": { "x": 1.2, "y": 1 },
 	"eyeHeight": 0.9,
 	"drops": [],
-	"habitat": "Underwater",
+	"habitat": "underwater",
 	"client": {
 		"renderer": "Shape",
 		"size": 0.7,
 		"shape": { "base": "entity/water/stingray" },
-		"texture": { "base": "entity/fish/stingray/stingrayskin1",
-		            "alternates": [ { "base": "entity/fish/stingray/stingrayskin2" },
-									  { "base": "entity/fish/stingray/stingrayskin3" },
-									  { "base": "entity/fish/stingray/stingrayskin4" },
-									  { "base": "entity/fish/stingray/stingrayskin5" }
+		"texture": { "base": "entity/water/stingray/stingrayskin1",
+		            "alternates": [ { "base": "entity/water/stingray/stingrayskin2" },
+									  { "base": "entity/water/stingray/stingrayskin3" },
+									  { "base": "entity/water/stingray/stingrayskin4" },
+									  { "base": "entity/water/stingray/stingrayskin5" }
 									]
 	},
 		"behaviors": [
@@ -30,7 +30,7 @@
 				"animation": "hurt", 
 				"animationSpeed": 1,
 				"weight": 10,
-				"blendMode": "AddAverage" 
+				"blendMode": "addAverage" 
 			},
 			{
 				"code": "swim",
@@ -51,7 +51,7 @@
 			{ 
 				"code": "idle", 
 				"animation": "idle",
-				"blendMode": "AddAverage",
+				"blendMode": "addAverage",
 				"easeOutSpeed": 4,
 				"triggeredBy": { "defaultAnim": true }
 			}

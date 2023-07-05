@@ -42,6 +42,7 @@ namespace FeverstoneWilds.Config
         api.World.Config.SetBool("GiraffeEnabled", config.GiraffeEnabled);
         api.World.Config.SetBool("GolemEnabled", config.GolemEnabled);
         api.World.Config.SetBool("HorseEnabled", config.HorseEnabled);
+        api.World.Config.SetBool("OstrichEnabled", config.OstrichEnabled);
         api.World.Config.SetBool("SpiderEnabled", config.SpiderEnabled);
         api.World.Config.SetBool("ToadEnabled", config.ToadEnabled);
         

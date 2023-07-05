@@ -16,7 +16,7 @@
 	"client": {
 		"renderer": "Shape",
 		"shape": { "base": "entity/land/spider" },
-		"texture": { "base": "entity/spider/spider1" },
+		"texture": { "base": "entity/land/spider/spider1" },
 		"behaviors": [
 			{ "code": "repulseagents" }, 
 			{ "code": "controlledphysics", "stepHeight": 1.1251 }, 
@@ -31,20 +31,20 @@
 				"animation": "hurt", 
 				"animationSpeed": 2.2,
 				"weight": 10,
-				"blendMode": "AddAverage" 
+				"blendMode": "addAverage" 
 			},
 			{
 				"code": "die",
 				"animation": "death", 
 				"animationSpeed": 1.25,
 				"weight": 10,
-				"blendMode": "Average",
+				"blendMode": "average",
 				"triggeredBy": { "onControls": ["dead"] }
 			},
 			{ 
 				"code": "idle", 
 				"animation": "idle",
-				"blendMode": "AddAverage",
+				"blendMode": "addAverage",
 				"easeOutSpeed": 4,
 				"triggeredBy": { "defaultAnim": true }
 			},
@@ -53,14 +53,14 @@
 				"animation": "sleep",
 				"easeInSpeed": 4,
 				"easeOutSpeed": 4,
-				"blendMode": "Average" 
+				"blendMode": "average" 
 			},
 			{
 				"code": "sit", 
 				"animation": "sit",
 				"easeInSpeed": 4,
 				"easeOutSpeed": 4,
-				"blendMode": "Average" 
+				"blendMode": "average" 
 			}
 		]
 	},

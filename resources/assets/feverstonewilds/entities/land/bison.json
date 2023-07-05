@@ -68,14 +68,14 @@
 			"*-female": { "base": "entity/land/bison-female" }
 		},
 		"textureByType": {
-			"*-male": { "base": "entity/bison/bisonskin1",
-                    "alternates": [ { "base": "entity/bison/bisonskin2" }, { "base": "entity/bison/bisonskin3" }, 
-                                    { "base": "entity/bison/bisonskin4" }, { "base": "entity/bison/bisonskin5" },
-									{ "base": "entity/bison/bisonskin6" } ] },
-			"*-female": { "base": "entity/bison/bisonskin1",
-					"alternates": [ { "base": "entity/bison/bisonskin2" }, { "base": "entity/bison/bisonskin3" }, 
-							 		{ "base": "entity/bison/bisonskin4" }, { "base": "entity/bison/bisonskin5" },
-									{ "base": "entity/bison/bisonskin6" } ] }
+			"*-male": { "base": "entity/land/bison/bisonskin1",
+                    "alternates": [ { "base": "entity/land/bison/bisonskin2" }, { "base": "entity/land/bison/bisonskin3" }, 
+                                    { "base": "entity/land/bison/bisonskin4" }, { "base": "entity/land/bison/bisonskin5" },
+									{ "base": "entity/land/bison/bisonskin6" } ] },
+			"*-female": { "base": "entity/land/bison/bisonskin1",
+					"alternates": [ { "base": "entity/land/bison/bisonskin2" }, { "base": "entity/land/bison/bisonskin3" }, 
+							 		{ "base": "entity/land/bison/bisonskin4" }, { "base": "entity/land/bison/bisonskin5" },
+									{ "base": "entity/land/bison/bisonskin6" } ] }
 		},
 		"behaviors": [
 			{ "code": "nametag", "showtagonlywhentargeted": true },

@@ -16,6 +16,7 @@ namespace FeverstoneWilds.Config
         public bool GiraffeEnabled = true;
         public bool GolemEnabled = true;
         public bool HorseEnabled = true;
+        public bool OstrichEnabled = true;
         public bool SpiderEnabled = true;
         public bool ToadEnabled = true;
 
@@ -45,6 +46,7 @@ namespace FeverstoneWilds.Config
             GiraffeEnabled = previousConfig.GiraffeEnabled;
             GolemEnabled = previousConfig.GolemEnabled;
             GeodeCrabEnabled = previousConfig.GeodeCrabEnabled;
+            OstrichEnabled = previousConfig.OstrichEnabled;
             SpiderEnabled = previousConfig.SpiderEnabled;
             ToadEnabled = previousConfig.ToadEnabled;
 

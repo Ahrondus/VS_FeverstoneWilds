@@ -4,16 +4,16 @@
 	"hitboxSize": { "x": 1.2, "y": 1 },
 	"eyeHeight": 0.9,
 	"drops": [],
-	"habitat": "Underwater",
+	"habitat": "underwater",
 	"client": {
 		"renderer": "Shape",
 		"size": 0.7,
 		"shape": { "base": "entity/water/eel" },
-		"texture": { "base": "entity/fish/eel/eelskin1",
-		            "alternates": [ { "base": "entity/fish/eel/eelskin2" },
-									  { "base": "entity/fish/eel/eelskin3" },
-									  { "base": "entity/fish/eel/eelskin4" },
-									  { "base": "entity/fish/eel/eelskin5" }
+		"texture": { "base": "entity/water/eel/eelskin1",
+		            "alternates": [ { "base": "entity/water/eel/eelskin2" },
+									  { "base": "entity/water/eel/eelskin3" },
+									  { "base": "entity/water/eel/eelskin4" },
+									  { "base": "entity/water/eel/eelskin5" }
 									]
 		},
 		"behaviors": [
@@ -30,7 +30,7 @@
 				"animation": "hurt", 
 				"animationSpeed": 1,
 				"weight": 10,
-				"blendMode": "AddAverage" 
+				"blendMode": "addAverage" 
 			},
 			{
 				"code": "swim",
@@ -51,7 +51,7 @@
 			{ 
 				"code": "idle", 
 				"animation": "idle",
-				"blendMode": "AddAverage",
+				"blendMode": "addAverage",
 				"easeOutSpeed": 4,
 				"triggeredBy": { "defaultAnim": true }
 			}

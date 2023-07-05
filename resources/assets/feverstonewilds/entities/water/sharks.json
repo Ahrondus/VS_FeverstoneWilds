@@ -7,7 +7,7 @@
 	"hitboxSize": { "x": 1.2, "y": 1 },
 	"eyeHeight": 0.9,
 	"drops": [],
-	"habitat": "Underwater",
+	"habitat": "underwater",
 	"attributes": {
 		"killedByInfoText": "Became sharkbait."
 	},
@@ -19,11 +19,11 @@
             "*-hammerhead": { "base": "entity/water/hammerhead" }
         },
 		"size": 0.7,
-		"texture": { "base": "entity/fish/bullshark/bullshark1",
-		            "alternates": [ { "base": "entity/fish/bullshark/bullshark2" },
-									  { "base": "entity/fish/bullshark/bullshark3" },
-									  { "base": "entity/fish/bullshark/bullshark4" },
-									  { "base": "entity/fish/bullshark/bullshark5" }
+		"texture": { "base": "entity/water/bullshark/bullshark1",
+		            "alternates": [ { "base": "entity/water/bullshark/bullshark2" },
+									  { "base": "entity/water/bullshark/bullshark3" },
+									  { "base": "entity/water/bullshark/bullshark4" },
+									  { "base": "entity/water/bullshark/bullshark5" }
 									]
 	},
 		"behaviors": [
@@ -40,7 +40,7 @@
 				"animation": "hurt", 
 				"animationSpeed": 1,
 				"weight": 10,
-				"blendMode": "AddAverage" 
+				"blendMode": "addAverage" 
 			},
 			{
 				"code": "swim",
@@ -61,7 +61,7 @@
 			{ 
 				"code": "idle", 
 				"animation": "idle",
-				"blendMode": "AddAverage",
+				"blendMode": "addAverage",
 				"easeOutSpeed": 4,
 				"triggeredBy": { "defaultAnim": true }
 			}

@@ -9,10 +9,10 @@
 	"client": {
 		"renderer": "Shape",
 		"shape": { "base": "entity/land/giraffe" },
-		"texture": { "base": "entity/giraffe/giraffeskin1",
-                    "alternates": [ { "base": "entity/giraffe/giraffeskin2" }, { "base": "entity/giraffe/giraffeskin3" }, 
-                                    { "base": "entity/giraffe/giraffeskin4" }, { "base": "entity/giraffe/giraffeskin5" },
-									{ "base": "entity/giraffe/giraffeskin6" }, { "base": "entity/giraffe/giraffeskin7" }
+		"texture": { "base": "entity/land/giraffe/giraffeskin1",
+                    "alternates": [ { "base": "entity/land/giraffe/giraffeskin2" }, { "base": "entity/land/giraffe/giraffeskin3" }, 
+                                    { "base": "entity/land/giraffe/giraffeskin4" }, { "base": "entity/land/giraffe/giraffeskin5" },
+									{ "base": "entity/land/giraffe/giraffeskin6" }, { "base": "entity/land/giraffe/giraffeskin7" }
                                     ] },
 		"behaviors": [
 			{ "code": "repulseagents" }, 
@@ -29,20 +29,20 @@
 				"animation": "hurt", 
 				"animationSpeed": 2.2,
 				"weight": 10,
-				"blendMode": "AddAverage" 
+				"blendMode": "addAverage" 
 			},
 			{
 				"code": "die",
 				"animation": "death", 
 				"animationSpeed": 1.25,
 				"weight": 10,
-				"blendMode": "Average",
+				"blendMode": "average",
 				"triggeredBy": { "onControls": ["dead"] }
 			},
 			{ 
 				"code": "idle", 
 				"animation": "idle",
-				"blendMode": "AddAverage",
+				"blendMode": "addAverage",
 				"easeOutSpeed": 4,
 				"triggeredBy": { "defaultAnim": true }
 			},
@@ -51,14 +51,14 @@
 				"animation": "sleep",
 				"easeInSpeed": 4,
 				"easeOutSpeed": 4,
-				"blendMode": "Average" 
+				"blendMode": "average" 
 			},
 			{
 				"code": "sit", 
 				"animation": "sit",
 				"easeInSpeed": 4,
 				"easeOutSpeed": 4,
-				"blendMode": "Average" 
+				"blendMode": "average" 
 			}
 		]
 	},
