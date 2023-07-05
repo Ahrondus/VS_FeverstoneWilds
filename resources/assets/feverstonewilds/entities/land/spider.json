@@ -10,6 +10,9 @@
 	"deadHitboxSize": { "x": 0.2, "y": 0.12 },
 	"eyeHeight": 0.1,
 	"drops": [],
+	"attributes": {
+		"netCaughtItemCode": "feverstonewilds:creature-spider"
+	},
 	"client": {
 		"renderer": "Shape",
 		"shape": { "base": "entity/land/spider" },
@@ -67,10 +70,10 @@
 			{ "code": "controlledphysics", "stepHeight": 1.1251 },
 			{ "code": "despawn", "minPlayerDistance": 8, "belowLightLevel": 8, "minSeconds": 300 },
 			{ "code": "health", "maxhealth": 3 },
-			{ "code": "deaddecay", "hoursToDecay": 96 },
+			{ "code": "deaddecay", "hoursToDecay": 0 },
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
 			{ "code": "harvestable", "drops": [
-				{ "type": "item", "code": "bushmeat-raw", "quantity": { "avg": 1, "var": 1 } }
+				{ "type": "item", "code": "bushmeat-raw", "quantity": { "avg": 0, "var": 0 } }
 				]
 			},
 			{ "code": "breathe" },
