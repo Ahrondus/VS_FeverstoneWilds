@@ -32,7 +32,7 @@
 			{ "code": "interpolateposition" },
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
 			{ "code": "harvestable" },
-			{ "code": "despawn", "minPlayerDistance": 18, "minSeconds": 300 }
+			{ "code": "despawn", "minPlayerDistance": 18, "minSeconds": 300, "belowLightLevel": 0 }
 		],
 		"animations": [
 			{
@@ -71,7 +71,7 @@
 		"behaviors": [
 			{ "code": "repulseagents" }, 
 			{ "code": "controlledphysics", "stepHeight": 5 }, 
-			{ "code": "despawn", "minPlayerDistance": 18, "minSeconds": 300 },
+			{ "code": "despawn", "minPlayerDistance": 18, "minSeconds": 300, "belowLightLevel": 0 },
 			{ "code": "health", "maxhealthByType": {
 				"*-freshwater": 40,
 				"*-saltwater": 45,
