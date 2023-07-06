@@ -9,10 +9,10 @@
 	"client": {
 		"renderer": "Shape",
 		"shape": { "base": "entity/land/giraffe" },
-		"texture": { "base": "entity/giraffe/giraffeskin1",
-                    "alternates": [ { "base": "entity/giraffe/giraffeskin2" }, { "base": "entity/giraffe/giraffeskin3" }, 
-                                    { "base": "entity/giraffe/giraffeskin4" }, { "base": "entity/giraffe/giraffeskin5" },
-									{ "base": "entity/giraffe/giraffeskin6" }, { "base": "entity/giraffe/giraffeskin7" }
+		"texture": { "base": "entity/land/giraffe/giraffeskin1",
+                    "alternates": [ { "base": "entity/land/giraffe/giraffeskin2" }, { "base": "entity/land/giraffe/giraffeskin3" }, 
+                                    { "base": "entity/land/giraffe/giraffeskin4" }, { "base": "entity/land/giraffe/giraffeskin5" },
+									{ "base": "entity/land/giraffe/giraffeskin6" }, { "base": "entity/land/giraffe/giraffeskin7" }
                                     ] },
 		"behaviors": [
 			{ "code": "repulseagents" }, 
@@ -29,20 +29,20 @@
 				"animation": "hurt", 
 				"animationSpeed": 2.2,
 				"weight": 10,
-				"blendMode": "AddAverage" 
+				"blendMode": "addAverage" 
 			},
 			{
 				"code": "die",
 				"animation": "death", 
 				"animationSpeed": 1.25,
 				"weight": 10,
-				"blendMode": "Average",
+				"blendMode": "average",
 				"triggeredBy": { "onControls": ["dead"] }
 			},
 			{ 
 				"code": "idle", 
 				"animation": "idle",
-				"blendMode": "AddAverage",
+				"blendMode": "addAverage",
 				"easeOutSpeed": 4,
 				"triggeredBy": { "defaultAnim": true }
 			},
@@ -51,14 +51,14 @@
 				"animation": "sleep",
 				"easeInSpeed": 4,
 				"easeOutSpeed": 4,
-				"blendMode": "Average" 
+				"blendMode": "average" 
 			},
 			{
 				"code": "sit", 
 				"animation": "sit",
 				"easeInSpeed": 4,
 				"easeOutSpeed": 4,
-				"blendMode": "Average" 
+				"blendMode": "average" 
 			}
 		]
 	},
@@ -242,8 +242,7 @@
 						"movespeed": 0.006,
 						"animationSpeed": 1.68,
 						"animation": "Walk",
-						"preferredLightLevel": 24,
-						"priorityForCancel": 1.37
+						"preferredLightLevel": 24
 					},
 					{
 						"code": "idle",
@@ -256,7 +255,8 @@
 						"stopOnNearbyEntityCodes": ["player"],
 						"stopRange": 5,
 						"stopOnHurt": true,
-						"animation": "Sit"
+						"animation": "idle",
+						"sound": "giraffe/giraffeidle"
 					},
 					{ 
 						"code": "lookaround", 
@@ -269,7 +269,7 @@
 		],
 		"spawnconditions": {
 			"worldgen": {
-				"TriesPerChunk": { "avg": 0.075, "var": 0 },
+				"TriesPerChunk": { "avg": 0.045, "var": 0 },
 				"tryOnlySurface": true,
 				"minLightLevel": 8,
 				"groupSize": { "dist": "verynarrowgaussian", "avg": 3, "var": 4 },
@@ -280,13 +280,13 @@
 				"minForestOrShrubs": 0.25,
 					"maxForest": 0.75,
 					"maxShrubs": 0.75,
-				"companions": ["giraffe", "giraffecalf"]
+				"companions": ["giraffe"]
 			},
 			"runtime": {
 				"group": "neutral",
 				"tryOnlySurface": true,
-				"chance": 0.0006,
-				"maxQuantity": 4,
+				"chance": 0.0005,
+				"maxQuantity": 3,
 				"minLightLevel": 10,
 				"groupSize": { "dist": "verynarrowgaussian", "avg": 3, "var": 4 },
 				"insideBlockCodes": ["game:air", "game:tallgrass-*", "game:snowlayer-1"],
@@ -296,14 +296,14 @@
 				"minForestOrShrubs": 0.25,
 					"maxForest": 0.75,
 					"maxShrubs": 0.75,
-				"companions": ["giraffe", "giraffecalf"]
+				"companions": ["giraffe"]
 			}
 		}
 	},
 	"sounds": {
 		"hurt": "game:creature/sheep/hurt",
 		"death": "game:creature/sheep/hurt",
-		"idle": "game:creature/sheep/idle"
+		"idle": "feverstonewilds:giraffe/giraffeidle"
 	},
 	"idleSoundChance": 0.001
 }

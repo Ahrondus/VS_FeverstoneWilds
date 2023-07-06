@@ -4,16 +4,16 @@
 	"hitboxSize": { "x": 0.5, "y": 0.25 },
 	"eyeHeight": 0.2,
 	"drops": [],
-	"habitat": "Underwater",
+	"habitat": "underwater",
 	"client": {
 		"renderer": "Shape",
 		"size": 0.7,
 		"shape": { "base": "entity/water/discus" },
-		"texture": { "base": "entity/fish/discus/discus1",
-		            "alternates": [ { "base": "entity/fish/discus/discus2" },
-									  { "base": "entity/fish/discus/discus3" },
-									  { "base": "entity/fish/discus/discus4" },
-									  { "base": "entity/fish/discus/discus5" }
+		"texture": { "base": "entity/water/discus/discus1",
+		            "alternates": [ { "base": "entity/water/discus/discus2" },
+									  { "base": "entity/water/discus/discus3" },
+									  { "base": "entity/water/discus/discus4" },
+									  { "base": "entity/water/discus/discus5" }
 									]
 	},
 		"behaviors": [
@@ -22,7 +22,7 @@
 			{ "code": "interpolateposition" },
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
 			{ "code": "harvestable" },
-			{ "code": "despawn", "minPlayerDistance": 8, "minSeconds": 300 }
+			{ "code": "despawn", "minPlayerDistance": 18,  "minSeconds": 300 }
 		],
 		"animations": [
 			{
@@ -30,7 +30,7 @@
 				"animation": "hurt", 
 				"animationSpeed": 1,
 				"weight": 10,
-				"blendMode": "AddAverage" 
+				"blendMode": "addAverage" 
 			},
 			{
 				"code": "swim",
@@ -51,7 +51,7 @@
 			{ 
 				"code": "idle", 
 				"animation": "idle",
-				"blendMode": "AddAverage",
+				"blendMode": "addAverage",
 				"easeOutSpeed": 4,
 				"triggeredBy": { "defaultAnim": true }
 			}
@@ -61,9 +61,9 @@
 		"behaviors": [
 			{ "code": "repulseagents" }, 
 			{ "code": "controlledphysics", "stepHeight": 1.1251 }, 
-			{ "code": "despawn", "minPlayerDistance": 12, "minSeconds": 200 },
+			{ "code": "despawn", "minPlayerDistance": 18,  "minSeconds": 300 },
 			{ "code": "health", "maxhealth": 1 },
-			{ "code": "deaddecay", "hoursToDecay": 96, "decayedBlock": "-" },
+			{ "code": "deaddecay", "hoursToDecay": 96, "decayedBlock": "carcass-tiny" },
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
 			{ "code": "harvestable", "drops": [
 					{
@@ -142,7 +142,7 @@
 				"maxQuantity": 5,
 				"maxLightLevel": 8,
 				"groupSize": { "dist": "verynarrowgaussian", "avg": 4, "var": 1 },
-				"insideBlockCodes": ["game:water-*", "game:saltwater-*", "game:saltwater-still-*"],
+				"insideBlockCodes": ["game:water-*"],
 				"minTemp": 0,
 				"maxTemp": 30
 			},
@@ -153,7 +153,7 @@
 				"tryOnlySurface": true,
 				"maxLightLevel": 8,
 				"groupSize": { "dist": "verynarrowgaussian", "avg": 4, "var": 1 },
-				"insideBlockCodes": ["game:water-*", "game:saltwater-*", "game:saltwater-still-*"],
+				"insideBlockCodes": ["game:water-*"],
 				"minTemp": 0,
 				"maxTemp": 30
 			}

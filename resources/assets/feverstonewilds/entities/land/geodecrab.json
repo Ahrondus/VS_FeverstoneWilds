@@ -19,7 +19,7 @@
 	"client": {
 		"renderer": "Shape",
 		"shape": { "base": "entity/land/oregeodecrab" },
-		"texture": { "base": "entity/geodecrab" },
+		"texture": { "base": "entity/land/geodecrab/geodecrab" },
 		"behaviors": [
 			{ "code": "repulseagents" },
 			{ "code": "controlledphysics", "stepHeight": 1.1251 },
@@ -32,7 +32,7 @@
 			{
 				"code": "idle",
 				"animation": "idle",
-				"blendMode": "AddAverage",
+				"blendMode": "addAverage",
 				"easeOutSpeed": 3,
 				"triggeredBy": { "defaultAnim": true },
 				"animationSpeed": 0.5
@@ -40,7 +40,7 @@
 			{
 				"code": "die",
 				"animation": "dead",
-				"blendMode": "Average",
+				"blendMode": "average",
 				"animationSpeed": 0.8,
 				"weight": 10,
 				"triggeredBy": { "onControls": ["dead"] }

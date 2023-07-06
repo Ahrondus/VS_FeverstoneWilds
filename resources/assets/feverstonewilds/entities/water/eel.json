@@ -4,16 +4,16 @@
 	"hitboxSize": { "x": 1.2, "y": 1 },
 	"eyeHeight": 0.9,
 	"drops": [],
-	"habitat": "Underwater",
+	"habitat": "underwater",
 	"client": {
 		"renderer": "Shape",
 		"size": 0.7,
 		"shape": { "base": "entity/water/eel" },
-		"texture": { "base": "entity/fish/eel/eelskin1",
-		            "alternates": [ { "base": "entity/fish/eel/eelskin2" },
-									  { "base": "entity/fish/eel/eelskin3" },
-									  { "base": "entity/fish/eel/eelskin4" },
-									  { "base": "entity/fish/eel/eelskin5" }
+		"texture": { "base": "entity/water/eel/eelskin1",
+		            "alternates": [ { "base": "entity/water/eel/eelskin2" },
+									  { "base": "entity/water/eel/eelskin3" },
+									  { "base": "entity/water/eel/eelskin4" },
+									  { "base": "entity/water/eel/eelskin5" }
 									]
 		},
 		"behaviors": [
@@ -22,7 +22,7 @@
 			{ "code": "interpolateposition" },
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
 			{ "code": "harvestable" },
-			{ "code": "despawn", "minPlayerDistance": 8, "belowLightLevel": 8, "minSeconds": 300 }
+			{ "code": "despawn", "minPlayerDistance": 18, "minSeconds": 300 }
 		],
 		"animations": [
 			{
@@ -30,7 +30,7 @@
 				"animation": "hurt", 
 				"animationSpeed": 1,
 				"weight": 10,
-				"blendMode": "AddAverage" 
+				"blendMode": "addAverage" 
 			},
 			{
 				"code": "swim",
@@ -51,23 +51,9 @@
 			{ 
 				"code": "idle", 
 				"animation": "idle",
-				"blendMode": "AddAverage",
+				"blendMode": "addAverage",
 				"easeOutSpeed": 4,
 				"triggeredBy": { "defaultAnim": true }
-			},
-			{
-				"code": "seekfoodandeat",
-				"movespeed": 0.010,
-				"priority": 1.25,
-				"eatTime": 2.3,
-				"eatLooseItems": true,
-				"eatItemCodes": ["game:redmeat-*", "game:fish-*", "game:poultry-*", "game:bushmeat-*"],
-				"eatItemCatagories": ["Protein"],
-				"animationSpeed": 1.4,
-				"animation": "swim",
-				"eatAnimation": "attack",
-				"mincooldownHours": 1,
-				"maxcooldownHours": 4
 			}
 		]
 	},
@@ -75,7 +61,7 @@
 		"behaviors": [
 			{ "code": "repulseagents" }, 
 			{ "code": "controlledphysics", "stepHeight": 3 }, 
-			{ "code": "despawn", "minPlayerDistance": 12, "belowLightLevel": 8, "minSeconds": 200 },
+			{ "code": "despawn", "minPlayerDistance": 18, "minSeconds": 300 },
 			{ "code": "health", "maxhealth": 15 },
 			{ "code": "deaddecay", "hoursToDecay": 96 },
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
@@ -129,22 +115,6 @@
 					},
 					{
 						"code": "seekentity",
-						"entityCodes": [],
-						"priority": 1.51,
-						"movespeed": 0.025,
-						"seekingRange": 9,
-						"belowTempSeekingRange": 25,
-						"belowTempThreshold": -5,
-						"animation": "swim",
-						"leapAtTarget": true,
-						"leapAnimation": null,
-						"animationSpeed": 2.2,
-						"leapChance": 0.01,
-						"sound": "",
-						"whenNotInEmotionState": "saturated"
-					},
-					{
-						"code": "seekentity",
 						"entityCodes": ["chicken-baby", "discus"],
 						"priority": 1.5,
 						"movespeed": 0.1,
@@ -161,10 +131,10 @@
 					},
 					{
 						"code": "seekentity",
-						"entityCodes": [],
+						"entityCodes": ["player"],
 						"priority": 1.49,
 						"movespeed": 0.1,
-						"seekingRange": 15,
+						"seekingRange": 8,
 						"animation": "swim",
 						"leapAtTarget": true,
 						"leapAnimation": null,
@@ -197,6 +167,20 @@
 						"animationSpeed": 2.3
 					},
 					{
+						"code": "seekfoodandeat",
+						"movespeed": 0.010,
+						"priority": 1.25,
+						"eatTime": 2.3,
+						"eatLooseItems": true,
+						"eatItemCodes": ["game:redmeat-*", "game:fish-*", "game:poultry-*", "game:bushmeat-*"],
+						"eatItemCatagories": ["Protein"],
+						"animationSpeed": 1.4,
+						"animation": "swim",
+						"eatAnimation": "attack",
+						"mincooldownHours": 1,
+						"maxcooldownHours": 4
+					},
+					{
 						"code": "idle",
 						"priority": 0.9,
 						"minduration": 500,
@@ -219,26 +203,20 @@
 		],
 		"spawnconditions": {
 			"worldgen": {
-				"TriesPerChunk": { "avg": 0.015, "var": 0 },
+				"TriesPerChunk": { "avg": 0.035, "var": 0 },
 				"tryOnlySurface": true,
-				"minLightLevel": 8,
-				"groupSize": { "dist": "verynarrowgaussian", "avg": 1, "var": 0 },
+				"groupSize": { "dist": "verynarrowgaussian", "avg": 3, "var": 1 },
 				"insideBlockCodes": ["game:water-*"],
-				"maxY": 0.96,
-				"minY": 0.92,
 				"minTemp": -10,
 				"maxTemp": 30
 			},
 			"runtime": {
 				"group": "neutral",
-				"maxQuantity": 2,
+				"maxQuantity": 8,
 				"chance": 0.00001,
 				"tryOnlySurface": true,
-				"minLightLevel": 8,
-				"groupSize": { "dist": "verynarrowgaussian", "avg": 1, "var": 0 },
+				"groupSize": { "dist": "verynarrowgaussian", "avg": 3, "var": 1 },
 				"insideBlockCodes": ["game:water-*"],
-				"maxY": 0.96,
-				"minY": 0.92,
 				"minTemp": -10,
 				"maxTemp": 30
 			}

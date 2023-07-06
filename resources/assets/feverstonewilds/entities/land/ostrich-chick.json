@@ -8,16 +8,12 @@
 	"client": {
 		"renderer": "Shape",
 		"shape": { "base": "entity/land/ostrich-chick" },
-		"texture": { "base": "entity/ostrich/ostrichskin1", "alternates": 
-		[ { "base": "entity/ostrich/ostrichskin2" }, 
-		{ "base": "entity/ostrich/ostrichskin3" }, 
-		{ "base": "entity/ostrich/ostrichskin4" }, 
-		{ "base": "entity/ostrich/ostrichskin5" }, 
-		{ "base": "entity/ostrich/ostrichskin6" }, 
-		{ "base": "entity/ostrich/ostrichskin7" },
-		{ "base": "entity/ostrich/ostrichskin8" },
-		{ "base": "entity/ostrich/ostrichskin9" }, 
-		{ "base": "entity/ostrich/ostrichskin10" } ] },
+		"texture": { "base": "entity/land/ostrich/ostrichskin1",
+			"alternates": [ { "base": "entity/land/ostrich/ostrichskin2" }, { "base": "entity/land/ostrich/ostrichskin3" }, 
+							{ "base": "entity/land/ostrich/ostrichskin4" }, { "base": "entity/land/ostrich/ostrichskin5" }, 
+							{ "base": "entity/land/ostrich/ostrichskin6" }, { "base": "entity/land/ostrich/ostrichskin7" },
+							{ "base": "entity/land/ostrich/ostrichskin8" }, { "base": "entity/land/ostrich/ostrichskin9" }, 
+							{ "base": "entity/land/ostrich/ostrichskin10" } ] },
 		"sizeGrowthFactor": 0.3,
 		"behaviors": [
 			{ "code": "controlledphysics", "stepHeight": 1.1251 }, 
@@ -32,7 +28,7 @@
 				"animation": "hurt", 
 				"animationSpeed": 2.2,
 				"weight": 10,
-				"blendMode": "AddAverage" 
+				"blendMode": "addAverage" 
 			},
 			{
 				"code": "eat",
@@ -41,20 +37,20 @@
 				"weight": 4,
 				"easeOutSpeed": 8,
 				"easeInSpeed": 5,
-				"blendMode": "AddAverage" 
+				"blendMode": "addAverage" 
 			},			
 			{
 				"code": "die",
 				"animation": "death", 
 				"animationSpeed": 1.25,
 				"weight": 10,
-				"blendMode": "Average",
+				"blendMode": "average",
 				"triggeredBy": { "onControls": ["dead"] }
 			},
 			{ 
 				"code": "idle", 
 				"animation": "idle",
-				"blendMode": "AddAverage",
+				"blendMode": "addAverage",
 				"easeOutSpeed": 4,
 				"triggeredBy": { "defaultAnim": true }
 			},
@@ -63,14 +59,14 @@
 				"animation": "sleep",
 				"easeInSpeed": 4,
 				"easeOutSpeed": 4,
-				"blendMode": "Average"
+				"blendMode": "average"
 			},
 			{
 				"code": "sit", 
 				"animation": "sit",
 				"easeInSpeed": 4,
 				"easeOutSpeed": 4,
-				"blendMode": "Average" 
+				"blendMode": "average" 
 			}
 		]
 	},
@@ -95,7 +91,7 @@
 			{ 
 				"code": "grow",
 				"hoursToGrow": 128,
-				"adultEntityCodes": ["feverstonewilds:ostrich-female", "feverstonewilds:ostrich-male", "feverstonewilds:ostrich-*"]
+				"adultEntityCodes": ["feverstonewilds:ostrich-female", "feverstonewilds:ostrich-male"]
 			},
 			{ "code": "breathe" },
 			{
@@ -125,7 +121,7 @@
 					{
 						"code": "stayclosetoentity",
 						"priority": 1.3,
-						"entityCode": "ostrich-female",
+						"entityCode": "feverstonewilds:ostrich-female",
 						"movespeed": 0.01,
 						"maxDistance": 2,
 						"searchRange": 12,
@@ -181,7 +177,7 @@
 						"maxduration": 40000,
 						"mincooldown": 2000,
 						"maxcooldown": 120000,
-						"priorityForCancel": 1.28,
+						"priorityForCancel": 1.1,
 						"animation": "Sit"
 					},
 					{ 
@@ -198,6 +194,6 @@
 		"death": "game:creature/chick/chick*",
 		"idle": "game:creature/chick/chick*"
 	},
-	"idleSoundRange": 14,
-	"idleSoundChance": 1
+	"idleSoundRange": 12,
+	"idleSoundChance": 0.01
 }
