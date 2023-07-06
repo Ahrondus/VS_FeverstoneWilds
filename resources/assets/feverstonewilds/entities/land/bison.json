@@ -270,7 +270,7 @@
 				"aitasks": [
 					{
 						"code": "meleeattack",
-						"entityCodes": ["player", "hyena-male", "hyena-female"],
+						"entityCodes": ["player", "hyena-male", "hyena-female", "wolf-*", "bear-*"],
 						"knockbackStrength": 2.65,
 						"priority": 3,
 						"slot": 1,
@@ -286,7 +286,7 @@
 					},
 					{
 						"code": "meleeattack",
-						"entityCodes": ["hyena-male", "hyena-female"],
+						"entityCodes": ["hyena-male", "hyena-female", "wolf-*", "bear-*"],
 						"knockbackStrength": 2.65,
 						"priority": 3,
 						"slot": 1,
@@ -313,7 +313,7 @@
 					},
 					{
 						"code": "seekentity",
-						"entityCodes": ["hyena-female", "hyena-male"],
+						"entityCodes": ["hyena-female", "hyena-male", "wolf-*", "bear-*"],
 						"priority": 1.5,
 						"mincooldown": 1000, 
 						"maxcooldown": 1500, 
@@ -532,7 +532,7 @@
 					"minLightLevel": 10,
 					"groupSize": { "dist": "verynarrowgaussian", "avg": 3, "var": 4 },
 					"insideBlockCodes": ["game:air", "game:tallgrass-*", "game:snowlayer-1"],
-					"minTemp": 22,
+					"minTemp": 20,
 					"maxTemp": 50,
 					"minRain": 0.2,
 					"minForestOrShrubs": 0.25,

@@ -74,17 +74,17 @@
 			{ "code": "controlledphysics", "stepHeight": 1.1251 },
 			{ "code": "despawn", "minPlayerDistance": 8, "belowLightLevel": 8, "minSeconds": 300 },
 			{ "code": "health", "currenthealth": 19, "maxhealth": 19 },
-			{ "code": "deaddecay", "hoursToDecay": 96, "decayedBlock": "carcass-medium" },
+			{ "code": "deaddecay", "hoursToDecay": 56, "decayedBlock": "carcass-medium" },
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
 			{ "code": "harvestable", "drops": [
 				{
 					"type": "item", 
 					"code": "poultry-raw", 
-					"quantity": { "avg": 13, "var": 3 } 
+					"quantity": { "avg": 10, "var": 3 } 
 				},
 				{
 					"type": "item", 
-					"code": "hide-raw-large", 
+					"code": "hide-raw-medium", 
 					"quantity": { "avg": 1.2, "var": 0.2 } 
 				},
 				{
@@ -114,7 +114,7 @@
 				"aitasks": [
 					{
 						"code": "meleeattack",
-						"entityCodes": ["player", "drifter-*", "toad-*", "spider-*", "hare-*"],
+						"entityCodes": ["player", "drifter-*", "toad-*", "spider-*", "hare-*", "raccoon-*", "fox-*"],
 						"knockbackStrength": 2.65,
 						"priority": 2,
 						"slot": 1,
@@ -129,7 +129,7 @@
 					},
 					{
 						"code": "seekentity",
-						"entityCodes": [ "drifter-*", "toad-*", "spider-*", "hare-*" ],
+						"entityCodes": [ "drifter-*", "toad-*", "spider-*", "hare-*", "raccoon-*", "fox-*" ],
 						"priority": 1.5,
 						"mincooldown": 1000,
 						"maxcooldown": 1500,
@@ -166,7 +166,7 @@
 						"code": "getoutofwater",
 						"priority": 1.4,
 						"movespeed": 0.02,
-						"animation": "Walk",
+						"animation": "Run",
 						"animationSpeed": 4
 					},
 					{
@@ -274,10 +274,10 @@
 		],
 		"spawnconditions": {
 			"worldgen": {
-				"TriesPerChunk": { "avg": 0.08, "var": 0 },
+				"TriesPerChunk": { "avg": 0.004, "var": 0 },
 				"tryOnlySurface": true,
 				"minLightLevel": 10,
-				"groupSize": { "dist": "verynarrowgaussian", "avg": 3, "var": 4 },
+				"groupSize": { "dist": "verynarrowgaussian", "avg": 2, "var": 4 },
 				"insideBlockCodes": ["game:air", "game:tallgrass-*", "game:snowlayer-1"],
 				"minTemp": -10,
 				"maxTemp": 20,
@@ -290,7 +290,7 @@
 				"chance": 0.0006,
 				"maxquantity": 4,
 				"minLightLevel": 10,
-				"groupSize": { "dist": "verynarrowgaussian", "avg": 3, "var": 4 },
+				"groupSize": { "dist": "verynarrowgaussian", "avg": 2, "var": 4 },
 				"insideBlockCodes": ["game:air", "game:tallgrass-*", "game:snowlayer-1"],
 				"minTemp": -10,
 				"maxTemp": 20,

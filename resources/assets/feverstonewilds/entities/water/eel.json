@@ -203,26 +203,20 @@
 		],
 		"spawnconditions": {
 			"worldgen": {
-				"TriesPerChunk": { "avg": 0.015, "var": 0 },
+				"TriesPerChunk": { "avg": 0.035, "var": 0 },
 				"tryOnlySurface": true,
-				"minLightLevel": 8,
-				"groupSize": { "dist": "verynarrowgaussian", "avg": 1, "var": 0 },
-				"insideBlockCodes": ["game:saltwater-*", "game:saltwater-still-*"],
-				"maxY": 0.96,
-				"minY": 0.92,
+				"groupSize": { "dist": "verynarrowgaussian", "avg": 3, "var": 1 },
+				"insideBlockCodes": ["game:water-*"],
 				"minTemp": -10,
 				"maxTemp": 30
 			},
 			"runtime": {
 				"group": "neutral",
-				"maxQuantity": 2,
+				"maxQuantity": 8,
 				"chance": 0.00001,
 				"tryOnlySurface": true,
-				"minLightLevel": 8,
-				"groupSize": { "dist": "verynarrowgaussian", "avg": 1, "var": 0 },
-				"insideBlockCodes": ["game:saltwater-*", "game:saltwater-still-*"],
-				"maxY": 0.96,
-				"minY": 0.92,
+				"groupSize": { "dist": "verynarrowgaussian", "avg": 3, "var": 1 },
+				"insideBlockCodes": ["game:water-*"],
 				"minTemp": -10,
 				"maxTemp": 30
 			}
