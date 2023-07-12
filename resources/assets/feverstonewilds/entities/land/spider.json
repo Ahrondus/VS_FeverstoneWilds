@@ -10,10 +10,13 @@
 	"deadHitboxSize": { "x": 0.2, "y": 0.12 },
 	"eyeHeight": 0.1,
 	"drops": [],
+	"attributes": {
+		"netCaughtItemCode": "feverstonewilds:creature-spider"
+	},
 	"client": {
 		"renderer": "Shape",
 		"shape": { "base": "entity/land/spider" },
-		"texture": { "base": "entity/spider/spider1" },
+		"texture": { "base": "entity/land/spider/spider1" },
 		"behaviors": [
 			{ "code": "repulseagents" }, 
 			{ "code": "controlledphysics", "stepHeight": 1.1251 }, 
@@ -28,20 +31,20 @@
 				"animation": "hurt", 
 				"animationSpeed": 2.2,
 				"weight": 10,
-				"blendMode": "AddAverage" 
+				"blendMode": "addAverage" 
 			},
 			{
 				"code": "die",
 				"animation": "death", 
 				"animationSpeed": 1.25,
 				"weight": 10,
-				"blendMode": "Average",
+				"blendMode": "average",
 				"triggeredBy": { "onControls": ["dead"] }
 			},
 			{ 
 				"code": "idle", 
 				"animation": "idle",
-				"blendMode": "AddAverage",
+				"blendMode": "addAverage",
 				"easeOutSpeed": 4,
 				"triggeredBy": { "defaultAnim": true }
 			},
@@ -50,14 +53,14 @@
 				"animation": "sleep",
 				"easeInSpeed": 4,
 				"easeOutSpeed": 4,
-				"blendMode": "Average" 
+				"blendMode": "average" 
 			},
 			{
 				"code": "sit", 
 				"animation": "sit",
 				"easeInSpeed": 4,
 				"easeOutSpeed": 4,
-				"blendMode": "Average" 
+				"blendMode": "average" 
 			}
 		]
 	},
@@ -67,10 +70,10 @@
 			{ "code": "controlledphysics", "stepHeight": 1.1251 },
 			{ "code": "despawn", "minPlayerDistance": 8, "belowLightLevel": 8, "minSeconds": 300 },
 			{ "code": "health", "maxhealth": 3 },
-			{ "code": "deaddecay", "hoursToDecay": 96 },
+			{ "code": "deaddecay", "hoursToDecay": 0 },
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
 			{ "code": "harvestable", "drops": [
-				{ "type": "item", "code": "bushmeat-raw", "quantity": { "avg": 1, "var": 1 } }
+				{ "type": "item", "code": "bushmeat-raw", "quantity": { "avg": 0, "var": 0 } }
 				]
 			},
 			{ "code": "breathe" },

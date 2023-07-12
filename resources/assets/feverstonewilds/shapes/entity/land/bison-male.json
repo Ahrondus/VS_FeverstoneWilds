@@ -8,7 +8,7 @@
 	"textureSizes": {
 	},
 	"textures": {
-		"bisonskin1": "entity/bison/bisonskin1"
+		"bisonskin1": "entity/land/bison/bisonskin1"
 	},
 	"elements": [
 		{
@@ -349,6 +349,13 @@
 												"up": { "texture": "#bisonskin1", "uv": [ 0.0, 4.4444, 4.4444, 6.4444 ], "autoUv": false },
 												"down": { "texture": "#bisonskin1", "uv": [ 9.7778, 5.7778, 13.3333, 7.7778 ], "autoUv": false }
 											},
+											"attachmentpoints": [
+												{
+													"code": "LeftHand",
+													"posX": "2.0","posY": "1.0","posZ": "3.0",
+													"rotationX": "0.0","rotationY": "0.0","rotationZ": "90.0"
+												}
+											],
 											"children": [
 												{
 													"name": "beard",

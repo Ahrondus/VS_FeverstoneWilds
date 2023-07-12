@@ -5,12 +5,15 @@
 	"deadHitboxSize": { "x": 1.7, "y": 0.5 },
 	"eyeHeight": 1.6,
 	"drops": [	],
+	"attributes": {
+		"netCaughtItemCode": "feverstonewilds:creature-toad"
+	},
 	"client": {
 		"renderer": "Shape",
 		"shape": { "base": "entity/land/toad" },
-		"texture": { "base": "entity/toad/toad1", 
-					 "alternates": [ { "base": "entity/toad/toad2" }, 
-									 { "base": "entity/toad/toad3" }
+		"texture": { "base": "entity/land/toad/toad1", 
+					 "alternates": [ { "base": "entity/land/toad/toad2" }, 
+									 { "base": "entity/land/toad/toad3" }
 									] 
 		},
 		"behaviors": [
@@ -36,7 +39,7 @@
 			{
 				"code": "idle",
 				"animation": "idle",
-				"blendMode": "AddAverage",
+				"blendMode": "addAverage",
 				"easeOutSpeed": 3,
 				"triggeredBy": { "defaultAnim": true },
 				"animationSpeed": 0.5
@@ -46,14 +49,14 @@
 				"animation": "sit",
 				"easeInSpeed": 4,
 				"easeOutSpeed": 3,
-				"blendMode": "Average"
+				"blendMode": "average"
 			},
 			{
 				"code": "die",
 				"animation": "dead",
 				"easeInSpeed": 2,
 				"weight": 10,
-				"blendMode": "Average",
+				"blendMode": "average",
 				"triggeredBy": { "onControls": ["dead"] }
 			}
 		]
@@ -84,7 +87,7 @@
 			},
 			{
 				"code": "deaddecay",
-				"hoursToDecay": 48
+				"hoursToDecay": 2
 			},
 			{
 				"code": "floatupwhenstuck",

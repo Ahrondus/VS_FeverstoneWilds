@@ -1,128 +1,173 @@
 [
+    // Land Creatures
+    // Creatures listed Alphabetically 
     {
         "op": "add",
         "path": "/enabled",
         "value": false,
         "file": "feverstonewilds:entities/land/bison.json",
-        "condition": { "when": "BisonEnabled", "isValue": "false"}
+        "condition": { "when": "FSWBisonEnabled", "isValue": "false" }
     },
     {
         "op": "add",
         "path": "/enabled",
         "value": false,
-        "file": "feverstonewilds:entities/land/bisoncalf.json",
-        "condition": { "when": "BisonCalfEnabled", "isValue": "false"}
+        "file": "feverstonewilds:entities/land/bison-calf.json",
+        "condition": { "when": "FSWBisonCalfEnabled", "isValue": "false" }
     },
     {
         "op": "add",
         "path": "/enabled",
         "value": false,
-        "file": "feverstonewilds:entities/land/direwolf-pup.json",
-        "condition": { "when": "WildDirewolfPupEnabled", "isValue": "false"}
+        "file": "feverstonewilds:entities/land/cockatrice.json",
+        "condition": { "when": "FSWCockatriceEnabled", "isValue": "false" }
     },
     {
         "op": "add",
         "path": "/enabled",
         "value": false,
         "file": "feverstonewilds:entities/land/direwolf.json",
-        "condition": { "when": "WildDirewolfEnabled", "isValue": "false"}
-    },
-    {
-        "op": "add",
-        "path": "/enabled",
-        "value": false,
-        "file": "feverstonewilds:entities/land/faunling.json",
-        "condition": { "when": "FaunlingEnabled", "isValue": "false"}
-    },
-    {
-        "op": "add",
-        "path": "/enabled",
-        "value": false,
-        "file": "feverstonewilds:entities/land/foal.json",
-        "condition": { "when": "FoalEnabled", "isValue": "false"}
-    },
-    {
-        "op": "add",
-        "path": "/enabled",
-        "value": false,
-        "file": "feverstonewilds:entities/land/.json",
-        "condition": { "when": "GeodeCrabEnabled", "isValue": "false"}
-    },
-    {
-        "op": "add",
-        "path": "/enabled",
-        "value": false,
-        "file": "feverstonewilds:entities/land/golem.json",
-        "condition": { "when": "GolemEnabled", "isValue": "false"}
-    },
-    {
-        "op": "add",
-        "path": "/enabled",
-        "value": false,
-        "file": "feverstonewilds:entities/land/horse.json",
-        "condition": { "when": "HorseEnabled", "isValue": "false"}
-    },
-    {
-        "op": "add",
-        "path": "/enabled",
-        "value": false,
-        "file": "feverstonewilds:entities/land/spider.json",
-        "condition": { "when": "SpiderEnabled", "isValue": "false"}
-    },
-    {
-        "op": "add",
-        "path": "/enabled",
-        "value": false,
-        "file": "feverstonewilds:entities/land/tame-direwolf-pup.json",
-        "condition": { "when": "TameDirewolfPupEnabled", "isValue": "false"}
+        "condition": { "when": "FSWWildDirewolfEnabled", "isValue": "false" }
     },
     {
         "op": "add",
         "path": "/enabled",
         "value": false,
         "file": "feverstonewilds:entities/land/tame-direwolf.json",
-        "condition": { "when": "TameDirewolfEnabled", "isValue": "false"}
+        "condition": { "when": "FSWTameDirewolfEnabled", "isValue": "false" }
+    },
+    {
+        "op": "add",
+        "path": "/enabled",
+        "value": false,
+        "file": "feverstonewilds:entities/land/direwolf-pup.json",
+        "condition": { "when": "FSWWildDirewolfPupEnabled", "isValue": "false" }
+    },
+    {
+        "op": "add",
+        "path": "/enabled",
+        "value": false,
+        "file": "feverstonewilds:entities/land/tame-direwolf-pup.json",
+        "condition": { "when": "FSWTameDirewolfPupEnabled", "isValue": "false" }
+    },
+    {
+        "op": "add",
+        "path": "/skipVariants",
+        "value": ["*-donkey"],
+        "file": "feverstonewilds:entities/land/horse.json",
+        "condition": { "when": "FSWDonkeyEnabled", "isValue": "false" }
+    },
+    {
+        "op": "add",
+        "path": "/enabled",
+        "value": false,
+        "file": "feverstonewilds:entities/land/faunling.json",
+        "condition": { "when": "FSWFaunlingEnabled", "isValue": "false" }
+    },
+    {
+        "op": "add",
+        "path": "/enabled",
+        "value": false,
+        "file": "feverstonewilds:entities/land/foal.json",
+        "condition": { "when": "FSWFoalEnabled", "isValue": "false" }
+    },
+    {
+        "op": "add",
+        "path": "/enabled",
+        "value": false,
+        "file": "feverstonewilds:entities/land/geodecrab.json",
+        "condition": { "when": "FSWGeodeCrabEnabled", "isValue": "false" }
+    },
+    {
+        "op": "add",
+        "path": "/enabled",
+        "value": false,
+        "file": "feverstonewilds:entities/land/giraffe.json",
+        "condition": { "when": "FSWGiraffeEnabled", "isValue": "false" }
+    },
+    {
+        "op": "add",
+        "path": "/enabled",
+        "value": false,
+        "file": "feverstonewilds:entities/land/golem.json",
+        "condition": { "when": "FSWGolemEnabled", "isValue": "false" }
+    },
+    {
+        "op": "add",
+        "path": "/enabled",
+        "value": false,
+        "file": "feverstonewilds:entities/land/horse.json",
+        "condition": { "when": "FSWHorseEnabled", "isValue": "false" }
+    },
+    {
+        "op": "add",
+        "path": "/enabled",
+        "value": false,
+        "file": "feverstonewilds:entities/land/ostrich.json",
+        "condition": { "when": "FSWOstrichEnabled", "isValue": "false" }
+    },
+    {
+        "op": "add",
+        "path": "/enabled",
+        "value": false,
+        "file": "feverstonewilds:entities/land/ostrich-chick.json",
+        "condition": { "when": "FSWOstrichEnabled", "isValue": "false" }
+    },
+    {
+        "op": "add",
+        "path": "/enabled",
+        "value": false,
+        "file": "feverstonewilds:entities/land/spider.json",
+        "condition": { "when": "FSWSpiderEnabled", "isValue": "false" }
     },
     {
         "op": "add",
         "path": "/enabled",
         "value": false,
         "file": "feverstonewilds:entities/land/toad.json",
-        "condition": { "when": "ToadEnabled", "isValue": "false"}
+        "condition": { "when": "FSWToadEnabled", "isValue": "false" }
+    },
+    // Water Creatures
+    {
+        "op": "add",
+        "path": "/enabled",
+        "value": false,
+        "file": "feverstonewilds:entities/water/buromenfish.json",
+        "condition": { "when": "FSWBuromenfishEnabled", "isValue": "false" }
     },
     {
         "op": "add",
         "path": "/enabled",
         "value": false,
-        "file": "feverstonewilds:entities/land/bullshark.json",
-        "condition": { "when": "BullsharkEnabled", "isValue": "false"}
+        "file": "feverstonewilds:entities/water/discus.json",
+        "condition": { "when": "FSWDiscusFishEnabled", "isValue": "false" }
     },
     {
         "op": "add",
         "path": "/enabled",
         "value": false,
-        "file": "feverstonewilds:entities/land/buromenfish.json",
-        "condition": { "when": "BuromenfishEnabled", "isValue": "false"}
+        "file": "feverstonewilds:entities/water/eel.json",
+        "condition": { "when": "FSWEelEnabled", "isValue": "false" }
     },
     {
         "op": "add",
         "path": "/enabled",
         "value": false,
-        "file": "feverstonewilds:entities/land/discus.json",
-        "condition": { "when": "DiscusFishEnabled", "isValue": "false"}
+        "file": "feverstonewilds:entities/water/orca.json",
+        "condition": { "when": "FSWOrcaEnabled", "isValue": "false" }
     },
     {
         "op": "add",
         "path": "/enabled",
         "value": false,
-        "file": "feverstonewilds:entities/land/orca.json",
-        "condition": { "when": "OrcaEnabled", "isValue": "false"}
+        "file": "feverstonewilds:entities/water/sharks.json",
+        "condition": { "when": "FSWSharksEnabled", "isValue": "false" }
     },
     {
         "op": "add",
         "path": "/enabled",
         "value": false,
-        "file": "feverstonewilds:entities/land/stingray.json",
-        "condition": { "when": "StingrayEnabled", "isValue": "false"}
+        "file": "feverstonewilds:entities/water/stingray.json",
+        "condition": { "when": "FSWStingrayEnabled", "isValue": "false" }
     }
 ]

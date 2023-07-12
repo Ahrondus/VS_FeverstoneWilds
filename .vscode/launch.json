@@ -7,7 +7,7 @@
 		"preLaunchTask": "Build (Debug)",
 		"program": "${env:VINTAGE_STORY}/Vintagestory.exe",
 		"args": [
-			"--playStyle" , "preset-surviveandbuild",
+			"--playStyle" , "preset-creativebuilding",
 			"--openWorld" , "modding test world",
 			"--addModPath", "${workspaceFolder}/bin/Debug/net461",
 			"--addOrigin" , "${workspaceFolder}/resources/assets",

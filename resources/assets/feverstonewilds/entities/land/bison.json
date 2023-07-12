@@ -32,11 +32,11 @@
         "killedbyInfoText": "deadcreature-bisongored",
         "riderIdleAnimation": "rideidle",
         "mountHeightByType": {
-			"*-male": 1.5,
-			"*-female": 1.475
+			"*-male": 1.925,
+			"*-female": 1.8
 		},
-        "mountRunningSpeed": 0.04,
-        "mountWalkingSpeed": 0.01,
+        "mountRunningSpeed": 0.05,
+        "mountWalkingSpeed": 0.02,
         "mountAnimations": {
             "walk": {
                 "code": "idle",
@@ -68,23 +68,24 @@
 			"*-female": { "base": "entity/land/bison-female" }
 		},
 		"textureByType": {
-			"*-male": { "base": "entity/bison/bisonskin1",
-                    "alternates": [ { "base": "entity/bison/bisonskin2" }, { "base": "entity/bison/bisonskin3" }, 
-                                    { "base": "entity/bison/bisonskin4" }, { "base": "entity/bison/bisonskin5" },
-									{ "base": "entity/bison/bisonskin6" } ] },
-			"*-female": { "base": "entity/bison/bisonskin1",
-					"alternates": [ { "base": "entity/bison/bisonskin2" }, { "base": "entity/bison/bisonskin3" }, 
-							 		{ "base": "entity/bison/bisonskin4" }, { "base": "entity/bison/bisonskin5" },
-									{ "base": "entity/bison/bisonskin6" } ] }
+			"*-male": { "base": "entity/land/bison/bisonskin1",
+                    "alternates": [ { "base": "entity/land/bison/bisonskin2" }, { "base": "entity/land/bison/bisonskin3" }, 
+                                    { "base": "entity/land/bison/bisonskin4" }, { "base": "entity/land/bison/bisonskin5" },
+									{ "base": "entity/land/bison/bisonskin6" } ] },
+			"*-female": { "base": "entity/land/bison/bisonskin1",
+					"alternates": [ { "base": "entity/land/bison/bisonskin2" }, { "base": "entity/land/bison/bisonskin3" }, 
+							 		{ "base": "entity/land/bison/bisonskin4" }, { "base": "entity/land/bison/bisonskin5" },
+									{ "base": "entity/land/bison/bisonskin6" } ] }
 		},
 		"behaviors": [
+			{ "code": "nametag", "showtagonlywhentargeted": true },
 			{ "code": "repulseagents" }, 
-			{ "code": "controlledphysics", "stepHeight": 2.1251 }, 
+			{ "code": "controlledphysics", "stepHeight": 1.1251 }, 
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
 			{ "code": "interpolatemount" },
-			{ "code": "multiply", "enabledByType": { "*-female": true, "*": false } },
+			{ "code": "multiply", "enabledByType": { "*-female": true, "*-male": false } },
 			{ "code": "harvestable" },
-			{ "code": "milkable", "enabledByType": { "*-female": true, "*": false }  },
+			{ "code": "milkable", "enabledByType": { "*-female": true, "*-male": false }  },
 			{ "code": "despawn", "minPlayerDistance": 8, "belowLightLevel": 8, "minSeconds": 300 },
 			{ "code": "ropetieable", "minGeneration": 2 },
 			{ "code": "receivecommand",
@@ -183,9 +184,9 @@
 			}
 		},
 		"behaviors": [
-			{ "code": "nametag" },
+            { "code": "nametag", "showtagonlywhentargeted": true },
 			{ "code": "repulseagents" }, 
-			{ "code": "controlledphysics", "stepHeight": 2.1251 },
+			{ "code": "controlledphysics", "stepHeight": 1.1251 },
 			{ "code": "despawn", "minPlayerDistance": 8, "belowLightLevel": 8, "minSeconds": 300 },
 			{ "code": "health", "maxhealth": 60 },
 			{ "code": "deaddecay", "hoursToDecay": 96, "decayedBlock": "carcass-large" },
@@ -210,9 +211,9 @@
 			},
 			{ "code": "breathe" },
 			{ "code": "multiply",
-				"enabledByType": { "*-female": true, "*": false },
+				"enabledByType": { "*-female": true, "*-male": false },
 				"spawnEntityCode": "feverstonewilds:bison-calf",
-				"requiresNearbyEntityCode": "bison-male",
+				"requiresNearbyEntityCode": "feverstonewilds:bison-male",
 				"requiresNearbyEntityRange": 10,
 				"spawnQuantityMin": 1,
 				"spawnQuantityMax": 1,
@@ -269,9 +270,25 @@
 				"aitasks": [
 					{
 						"code": "meleeattack",
-						"entityCodes": ["player", "hyena-male", "hyena-female"],
+						"entityCodes": ["player", "hyena-male", "hyena-female", "wolf-*", "bear-*"],
 						"knockbackStrength": 2.65,
-						"priority": 2,
+						"priority": 3,
+						"slot": 1,
+						"damage": 7.5,
+						"damageTier": 2,
+						"mincooldown": 1500, 
+						"maxcooldown": 2500, 
+						"attackDurationMs": 1250,
+						"damagePlayerAtMs": 800,
+						"animation": "Attack",
+						"animationSpeed": 2,
+						"whenInEmotionState": "aggressiveondamage"
+					},
+					{
+						"code": "meleeattack",
+						"entityCodes": ["hyena-male", "hyena-female", "wolf-*", "bear-*"],
+						"knockbackStrength": 2.65,
+						"priority": 3,
 						"slot": 1,
 						"damage": 7.5,
 						"damageTier": 2,
@@ -296,7 +313,7 @@
 					},
 					{
 						"code": "seekentity",
-						"entityCodes": ["hyena-female", "hyena-male"],
+						"entityCodes": ["hyena-female", "hyena-male", "wolf-*", "bear-*"],
 						"priority": 1.5,
 						"mincooldown": 1000, 
 						"maxcooldown": 1500, 
@@ -325,7 +342,7 @@
 						"seekingRange": 12,
 						"animation": "Run",
 						"animationSpeed": 3.5,
-						"sound": "game:creature/sheep/hurt2",
+						"sound": "bison/bisonhurt",
 						"whenInEmotionState": "fleeondamage"
 					},
 					{
@@ -373,13 +390,13 @@
 						"priority": 1.5,
 						"priorityForCancel": 1.7,
 						"eatItemCategories": [ "Vegetable", "Grain", "Fruit" ],
-						"eatItemCodes": [ "drygrass" ],
-						"eatSound": "horse/horseeating",
+						"eatItemCodes": [ "drygrass", "feverstonewilds:carrotbundle" ],
 						"soundRange": 3,
 						"soundStartMs": 950,
 						"useTime": 3.2,
 						"mincooldownHours": 1,
-						"maxcooldownHours": 1.5
+						"maxcooldownHours": 1.5,
+						"sound": "bison/bisoneating"
 					},
 					{
 						"code": "idle",
@@ -400,8 +417,10 @@
 						"code": "seekfoodandeat",
 						"movespeed": 0.006,
 						"priority": 1.35,
-						"eatSound": "player/eat",
-						"eatTime": 1.5,
+						"eatSound": "bison/bisoneating",
+						"soundRange": 4,
+						"soundStartMs": 900,
+						"eatTime": 2.0,
 						"animationSpeed": 1.5,
 						"animation": "Walk",
 						"mincooldownHours": 1,
@@ -416,6 +435,9 @@
 						"mincooldown": 6000,
 						"maxcooldown": 20000,
 						"animation": "Eat",
+						"eatSound": "bison/bisoneating",
+						"soundRange": 4,
+						"soundStartMs": 900,
 						"animationSpeed": 1.5,
 						"whenNotInEmotionState": "aggressiveondamage"
 					},
@@ -473,7 +495,8 @@
 						"stopOnNearbyEntityCodes": ["player"],
 						"stopRange": 5,
 						"stopOnHurt": true,
-						"animation": "Sit"
+						"animation": "Sit",
+						"sound": "bison/bisonidle"
 					},
 					{ 
 						"code": "lookaround", 
@@ -481,6 +504,7 @@
 					}
 				]
 			},
+			{ "code": "milkable", "enabledByType": { "*-female": true, "*-male": false }  },
 			{ "code": "ropetieable", "minGeneration": 2 },
 			{ "code": "pettable", "minGeneration": 1 }
 		],
@@ -508,7 +532,7 @@
 					"minLightLevel": 10,
 					"groupSize": { "dist": "verynarrowgaussian", "avg": 3, "var": 4 },
 					"insideBlockCodes": ["game:air", "game:tallgrass-*", "game:snowlayer-1"],
-					"minTemp": 22,
+					"minTemp": 20,
 					"maxTemp": 50,
 					"minRain": 0.2,
 					"minForestOrShrubs": 0.25,
@@ -520,10 +544,10 @@
 		}
 	},
 	"sounds": {
-		"hurt": "game:creature/sheep/hurt",
-		"death": "game:creature/sheep/hurt",
-		"idle": "game:creature/sheep/idle"
+		"hurt": "feverstonewilds:bison/bisonhurt",
+		"death": "feverstonewilds:bison/bisonhurt",
+		"idle": "feverstonewilds:bison/bisonidle"
 	},
-	"idleSoundChance": 0.001,
+	"idleSoundChance": 0.0001,
 	"hurtSoundChance": 0.005
 }

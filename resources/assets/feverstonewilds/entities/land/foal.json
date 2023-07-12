@@ -16,16 +16,16 @@
             "*-arabian": { "base": "entity/land/horse-arabian" }
         },
         "textureByType": {
-            "*-draft": { "base": "entity/horse/horse10",
-                         "alternates": [ { "base": "entity/horse/horse2" }, { "base": "entity/horse/horse3" },
-                            { "base": "entity/horse/horse5" }, { "base": "entity/horse/horse6" }, { "base": "entity/horse/horse7" },
-                            { "base": "entity/horse/horse8" }, { "base": "entity/horse/horse9" }, { "base": "entity/horse/horse1" }, 
-                            { "base": "entity/horse/horse11" }, { "base": "entity/horse/horse12" }, { "base": "entity/horse/horse15" },
-							{ "base": "entity/horse/horse16" }, { "base": "entity/horse/horse18" },	{ "base": "entity/horse/horse20" }
+            "*-draft": { "base": "entity/land/horse/horse10",
+                         "alternates": [ { "base": "entity/land/horse/horse2" }, { "base": "entity/land/horse/horse3" },
+                            { "base": "entity/land/horse/horse5" }, { "base": "entity/land/horse/horse6" }, { "base": "entity/land/horse/horse7" },
+                            { "base": "entity/land/horse/horse8" }, { "base": "entity/land/horse/horse9" }, { "base": "entity/land/horse/horse1" }, 
+                            { "base": "entity/land/horse/horse11" }, { "base": "entity/land/horse/horse12" }, { "base": "entity/land/horse/horse15" },
+							{ "base": "entity/land/horse/horse16" }, { "base": "entity/land/horse/horse18" },	{ "base": "entity/land/horse/horse20" }
                           ] },
-            "*-arabian": { "base": "entity/horse/horse14", 
-                           "alternates": [ { "base": "entity/horse/horse4" }, { "base": "entity/horse/horse13" },
-                            { "base": "entity/horse/horse17" }, { "base": "entity/horse/horse19" } ]},
+            "*-arabian": { "base": "entity/land/horse/horse14", 
+                           "alternates": [ { "base": "entity/land/horse/horse4" }, { "base": "entity/land/horse/horse13" },
+                            { "base": "entity/land/horse/horse17" }, { "base": "entity/land/horse/horse19" } ]},
 
             "__comment": "More horse breeds to come!"
             
@@ -35,7 +35,7 @@
             "foal-arabian": 0.55
         },
         "behaviors": [
-            { "code": "nametag" },
+			{ "code": "nametag", "showtagonlywhentargeted": true },
             { "code": "receivecommand",
                 "availableCommands": [
                     { "commandName": "followmaster", "commandType": "COMPLEX", "minObedience": 0.6 },
@@ -118,8 +118,8 @@
                 "maxTurnAnglePerSec": 175
             }
         },
-        "behaviors": [
-            { "code": "nametag" },
+        "behaviors": [ 
+            { "code": "nametag", "showtagonlywhentargeted": true },
             {
                 "code": "tameable",
                 "disobediencePerDay": 0.1,
@@ -165,8 +165,7 @@
                 "drops": [
                     { "type": "item", "code": "redmeat-raw", "quantity": { "avg": 6, "var": 2 } },
                     { "type": "item", "code": "hide-raw-medium", "quantity": { "avg": 1, "var": 0.5 } },
-                    { "type": "item", "code": "fat", "quantity": { "avg": 0.7, "var": 0.3 } },
-                    { "type": "item", "code": "bone", "quantity": { "avg": 2, "var": 1 } }
+                    { "type": "item", "code": "fat", "quantity": { "avg": 0.7, "var": 0.3 } }
                 ]
             },
             { "code": "breathe" },

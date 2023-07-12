@@ -64,57 +64,15 @@
         "renderer": "Shape",
         "shape": { "base": "entity/land/direwolf" },
         "texture": {
-            "base": "entity/direwolf/direwolf1",
-            "alternates": [ { "base": "entity/direwolf/direwolf2" }, { "base": "entity/direwolf/direwolf3" },
-                { "base": "entity/direwolf/direwolf4" }, { "base": "entity/direwolf/direwolf5" },
-                { "base": "entity/direwolf/direwolf6" }, { "base": "entity/direwolf/direwolf7" }
+            "base": "entity/land/direwolf/direwolf1",
+            "alternates": [ { "base": "entity/land/direwolf/direwolf2" }, { "base": "entity/land/direwolf/direwolf3" },
+                { "base": "entity/land/direwolf/direwolf4" }, { "base": "entity/land/direwolf/direwolf5" },
+                { "base": "entity/land/direwolf/direwolf6" }, { "base": "entity/land/direwolf/direwolf7" }
             ]
         },
-        "behaviorsByType": {
-            "*-female": [
+        "behaviors": [
                 { "code": "nametag", "showtagonlywhentargeted": true },
-                { "code": "receivecommand",
-                    "availableCommands": [
-                        { "commandName": "sit", "commandType": "SIMPLE", "minObedience": 0.2 },
-                        { "commandName": "lay", "commandType": "SIMPLE", "minObedience": 0.2 },
-                        { "commandName": "speak", "commandType": "SIMPLE", "minObedience": 0.2 },
-                        { "commandName": "followmaster", "commandType": "COMPLEX", "minObedience": 0.6 },
-                        { "commandName": "stay", "commandType": "COMPLEX", "minObedience": 0.1 },
-                        { "commandName": "NEUTRAL", "commandType": "AGGRESSIONLEVEL", "minObedience": 0 },
-                        { "commandName": "PROTECTIVE", "commandType": "AGGRESSIONLEVEL", "minObedience": 0.5 },
-                        { "commandName": "AGGRESSIVE", "commandType": "AGGRESSIONLEVEL", "minObedience": 0.7 },
-                        { "commandName": "PASSIVE", "commandType": "AGGRESSIONLEVEL", "minObedience": 0.8 }
-                    ]
-                },
-                { "code": "tameable", "size": "medium",
-                    "treat": [
-                        { "code": "bone", "progress": 0.1, "cooldown": 1 },
-                        { "code": "bushmeat-raw", "progress": 0.15, "cooldown": 2 },
-                        { "code": "redmeat-raw", "progress": 0.3, "cooldown": 3 },
-                        { "code": "poultry-raw", "progress": 0.3, "cooldown": 3 },
-                        { "code": "petcookie-meat-perfect", "domain": "petai", "progress": 0.8, "cooldown": 3 }
-                    ]
-                },
-                { "code": "mouthinventory",
-                    "acceptStacks": [
-                        { "type": "item", "code": "bone" },
-                        { "type": "item", "code": "bushmeat-raw" },
-                        { "type": "item", "code": "redmeat-raw" },
-                        { "type": "item", "code": "poultry-raw" },
-                        { "type": "item", "code": "wolftaming:dogtoy" },
-                        { "type": "item", "code": "petai:petcookie-meat-perfect" }
-                    ]
-                },
-                { "code": "repulseagents" },
-                { "code": "controlledphysics", "stepHeight": 1.15 },
-                { "code": "floatupwhenstuck", "onlyWhenDead": true },
-                { "code": "interpolatemount" },
-                { "code": "harvestable" },
-                { "code": "multiply" },
-                { "code": "ropetieable", "minGeneration": 2 }
-            ],
-            "*": [
-                { "code": "nametag", "showtagonlywhentargeted": true },
+                { "code": "multiply", "enabledByType": { "*-male": false, "*-female": true } },
                 { "code": "receivecommand",
                     "availableCommands": [
                         { "commandName": "sit", "commandType": "SIMPLE", "minObedience": 0.2 },
@@ -208,8 +166,7 @@
                 "animationSpeed": 1.1,
 				"triggeredBy": {"onControls": ["Move", "SprintMode"], "matchExact": true }
             }
-        ]
-    },
+        ],
     "server": {
         "attributes": {
             "pathfinder": {
