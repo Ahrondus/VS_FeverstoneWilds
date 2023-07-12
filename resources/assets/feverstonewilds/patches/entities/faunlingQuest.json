@@ -5,7 +5,7 @@
     "value": { "code": "questgiver" },
     "file": "feverstonewilds:entities/land/faunling",
     "dependsOn": [{"modid": "vsquest"}],
-    "condition": { "when": "FaunlingEnabled", "isValue": "true" }
+    "condition": { "when": "FSWFaunlingEnabled", "isValue": "true" }
   },
   {
     "op": "add",
@@ -38,6 +38,6 @@
     },
     "file":"feverstonewilds:entities/land/faunling",
     "dependsOn":[{"modid":"vsquest"}],
-    "condition": { "when": "FaunlingEnabled", "isValue": "true" }
+    "condition": { "when": "FSWFaunlingEnabled", "isValue": "true" }
   }
 ]

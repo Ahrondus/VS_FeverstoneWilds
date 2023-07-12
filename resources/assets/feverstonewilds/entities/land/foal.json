@@ -2,7 +2,7 @@
     "code": "foal",
     "class": "EntityPet",
     "variantgroups": [
-        { "code": "type", "states": ["draft", "arabian"] }
+        { "code": "type", "states": ["draft", "arabian", "donkey"] }
     ],
     "hitboxSize": { "x": 0.7, "y": 1.0 },
     "deadHitboxSize": { "x": 1.0, "y": 0.4 },
@@ -13,7 +13,8 @@
         "renderer": "Shape",
         "shapeByType": {
             "*-draft": { "base": "entity/land/horse-draft" },
-            "*-arabian": { "base": "entity/land/horse-arabian" }
+            "*-arabian": { "base": "entity/land/horse-arabian" },
+            "*-donkey": { "base": "entity/land/horse-donkey" }
         },
         "textureByType": {
             "*-draft": { "base": "entity/land/horse/horse10",
@@ -26,13 +27,18 @@
             "*-arabian": { "base": "entity/land/horse/horse14", 
                            "alternates": [ { "base": "entity/land/horse/horse4" }, { "base": "entity/land/horse/horse13" },
                             { "base": "entity/land/horse/horse17" }, { "base": "entity/land/horse/horse19" } ]},
+            "*-donkey": { "base": "entity/land/donkey/donkeyskin1",
+                            "alternates": [ { "base": "entity/land/donkey/donkeyskin2" }, { "base": "entity/land/donkey/donkeyskin3" },
+                            { "base": "entity/land/donkey/donkeyskin4" }, { "base": "entity/land/donkey/donkeyskin5" }, 
+                            { "base": "entity/land/donkey/donkeyskin6" } ] },
 
             "__comment": "More horse breeds to come!"
             
         },
         "sizeByType": {
             "foal-draft": 0.6,
-            "foal-arabian": 0.55
+            "foal-arabian": 0.55,
+            "foal-donkey": 0.525
         },
         "behaviors": [
 			{ "code": "nametag", "showtagonlywhentargeted": true },
@@ -208,7 +214,8 @@
             },
 			{ "code": "grow", "hoursToGrow": 178,
 				"adultEntityCodesByType": { "*-draft": ["feverstonewilds:horse-male-draft", "feverstonewilds:horse-female-draft"],
-                                            "*-arabian": ["feverstonewilds:horse-male-arabian", "feverstonewilds:horse-female-arabian"] }
+                                            "*-arabian": ["feverstonewilds:horse-male-arabian", "feverstonewilds:horse-female-arabian"],
+                                            "*-donkey": ["feverstonewilds:horse-male-donkey", "feverstonewilds:horse-female-donkey"] }
 			},
             {
                 "code": "taskai",
