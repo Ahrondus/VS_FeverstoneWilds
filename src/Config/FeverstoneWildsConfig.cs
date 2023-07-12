@@ -3,60 +3,60 @@ namespace FeverstoneWilds.Config
     public class FeverstoneWildsConfig
     {
         // Land Creatures
-        public bool BisonEnabled = true;
-        public bool BisonCalfEnabled = true;
-        public bool CockatriceEnabled = true;
-        public bool WildDirewolfEnabled = true;
-        public bool TameDirewolfEnabled = true;
-        public bool WildDirewolfPupEnabled = true;
-        public bool TameDirewolfPupEnabled = true;
-        public bool FaunlingEnabled = true;
-        public bool FoalEnabled = true;
-        public bool GeodeCrabEnabled = true;
-        public bool GiraffeEnabled = true;
-        public bool GolemEnabled = true;
-        public bool HorseEnabled = true;
-        public bool OstrichEnabled = true;
-        public bool SpiderEnabled = true;
-        public bool ToadEnabled = true;
+        public bool FSWBisonEnabled = true;
+        public bool FSWBisonCalfEnabled = true;
+        public bool FSWCockatriceEnabled = true;
+        public bool FSWWildDirewolfEnabled = true;
+        public bool FSWTameDirewolfEnabled = true;
+        public bool FSWWildDirewolfPupEnabled = true;
+        public bool FSWTameDirewolfPupEnabled = true;
+        public bool FSWFaunlingEnabled = true;
+        public bool FSWFoalEnabled = true;
+        public bool FSWGeodeCrabEnabled = true;
+        public bool FSWGiraffeEnabled = true;
+        public bool FSWGolemEnabled = true;
+        public bool FSWHorseEnabled = true;
+        public bool FSWOstrichEnabled = true;
+        public bool FSWSpiderEnabled = true;
+        public bool FSWToadEnabled = true;
 
         // Water Creatures
-        public bool BuromenfishEnabled = true;
-        public bool DiscusFishEnabled = true;
-        public bool EelEnabled = true;
-        public bool OrcaEnabled = true;
-        public bool SharksEnabled = true;
-        public bool StingrayEnabled = true;
+        public bool FSWBuromenfishEnabled = true;
+        public bool FSWDiscusFishEnabled = true;
+        public bool FSWEelEnabled = true;
+        public bool FSWOrcaEnabled = true;
+        public bool FSWSharksEnabled = true;
+        public bool FSWStingrayEnabled = true;
 
         public FeverstoneWildsConfig() { }
 
         public FeverstoneWildsConfig(FeverstoneWildsConfig previousConfig)
         {
             // Land Creatures
-            CockatriceEnabled = previousConfig.CockatriceEnabled;
-            FaunlingEnabled = previousConfig.FaunlingEnabled;
-            WildDirewolfEnabled = previousConfig.WildDirewolfEnabled;
-            TameDirewolfEnabled = previousConfig.TameDirewolfEnabled;
-            WildDirewolfPupEnabled = previousConfig.WildDirewolfPupEnabled;
-            TameDirewolfPupEnabled = previousConfig.TameDirewolfPupEnabled;
-            HorseEnabled = previousConfig.HorseEnabled;
-            FoalEnabled = previousConfig.FoalEnabled;
-            BisonEnabled = previousConfig.BisonEnabled;
-            BisonCalfEnabled = previousConfig.BisonCalfEnabled;
-            GiraffeEnabled = previousConfig.GiraffeEnabled;
-            GolemEnabled = previousConfig.GolemEnabled;
-            GeodeCrabEnabled = previousConfig.GeodeCrabEnabled;
-            OstrichEnabled = previousConfig.OstrichEnabled;
-            SpiderEnabled = previousConfig.SpiderEnabled;
-            ToadEnabled = previousConfig.ToadEnabled;
+            FSWCockatriceEnabled = previousConfig.FSWCockatriceEnabled;
+            FSWFaunlingEnabled = previousConfig.FSWFaunlingEnabled;
+            FSWWildDirewolfEnabled = previousConfig.FSWWildDirewolfEnabled;
+            FSWTameDirewolfEnabled = previousConfig.FSWTameDirewolfEnabled;
+            FSWWildDirewolfPupEnabled = previousConfig.FSWWildDirewolfPupEnabled;
+            FSWTameDirewolfPupEnabled = previousConfig.FSWTameDirewolfPupEnabled;
+            FSWHorseEnabled = previousConfig.FSWHorseEnabled;
+            FSWFoalEnabled = previousConfig.FSWFoalEnabled;
+            FSWBisonEnabled = previousConfig.FSWBisonEnabled;
+            FSWBisonCalfEnabled = previousConfig.FSWBisonCalfEnabled;
+            FSWGiraffeEnabled = previousConfig.FSWGiraffeEnabled;
+            FSWGolemEnabled = previousConfig.FSWGolemEnabled;
+            FSWGeodeCrabEnabled = previousConfig.FSWGeodeCrabEnabled;
+            FSWOstrichEnabled = previousConfig.FSWOstrichEnabled;
+            FSWSpiderEnabled = previousConfig.FSWSpiderEnabled;
+            FSWToadEnabled = previousConfig.FSWToadEnabled;
 
             // Water Creatures
-            BuromenfishEnabled = previousConfig.BuromenfishEnabled;
-            DiscusFishEnabled = previousConfig.DiscusFishEnabled;
-            EelEnabled = previousConfig.EelEnabled;
-            OrcaEnabled = previousConfig.OrcaEnabled;
-            SharksEnabled = previousConfig.SharksEnabled;
-            StingrayEnabled = previousConfig.StingrayEnabled;
+            FSWBuromenfishEnabled = previousConfig.FSWBuromenfishEnabled;
+            FSWDiscusFishEnabled = previousConfig.FSWDiscusFishEnabled;
+            FSWEelEnabled = previousConfig.FSWEelEnabled;
+            FSWOrcaEnabled = previousConfig.FSWOrcaEnabled;
+            FSWSharksEnabled = previousConfig.FSWSharksEnabled;
+            FSWStingrayEnabled = previousConfig.FSWStingrayEnabled;
         }
     }
 }

@@ -29,30 +29,30 @@ namespace FeverstoneWilds.Config
         config = LoadConfig(api);
       }
         // Land Creatures
-        api.World.Config.SetBool("BisonEnabled", config.BisonEnabled);
-        api.World.Config.SetBool("BisonCalfEnabled", config.BisonCalfEnabled);
-        api.World.Config.SetBool("CockatriceEnabled", config.CockatriceEnabled);
-        api.World.Config.SetBool("WildDirewolfEnabled", config.WildDirewolfEnabled);
-        api.World.Config.SetBool("TameDirewolfEnabled", config.TameDirewolfEnabled);
-        api.World.Config.SetBool("WildDirewolfPupEnabled", config.WildDirewolfPupEnabled);
-        api.World.Config.SetBool("TameDirewolfPupEnabled", config.TameDirewolfPupEnabled);
-        api.World.Config.SetBool("FaunlingEnabled", config.FaunlingEnabled);
-        api.World.Config.SetBool("FoalEnabled", config.FoalEnabled);
-        api.World.Config.SetBool("GeodeCrabEnabled", config.GeodeCrabEnabled);
-        api.World.Config.SetBool("GiraffeEnabled", config.GiraffeEnabled);
-        api.World.Config.SetBool("GolemEnabled", config.GolemEnabled);
-        api.World.Config.SetBool("HorseEnabled", config.HorseEnabled);
-        api.World.Config.SetBool("OstrichEnabled", config.OstrichEnabled);
-        api.World.Config.SetBool("SpiderEnabled", config.SpiderEnabled);
-        api.World.Config.SetBool("ToadEnabled", config.ToadEnabled);
+        api.World.Config.SetBool("FSWBisonEnabled", config.FSWBisonEnabled);
+        api.World.Config.SetBool("FSWBisonCalfEnabled", config.FSWBisonCalfEnabled);
+        api.World.Config.SetBool("FSWCockatriceEnabled", config.FSWCockatriceEnabled);
+        api.World.Config.SetBool("FSWWildDirewolfEnabled", config.FSWWildDirewolfEnabled);
+        api.World.Config.SetBool("FSWTameDirewolfEnabled", config.FSWTameDirewolfEnabled);
+        api.World.Config.SetBool("FSWWildDirewolfPupEnabled", config.FSWWildDirewolfPupEnabled);
+        api.World.Config.SetBool("FSWTameDirewolfPupEnabled", config.FSWTameDirewolfPupEnabled);
+        api.World.Config.SetBool("FSWFaunlingEnabled", config.FSWFaunlingEnabled);
+        api.World.Config.SetBool("FSWFoalEnabled", config.FSWFoalEnabled);
+        api.World.Config.SetBool("FSWGeodeCrabEnabled", config.FSWGeodeCrabEnabled);
+        api.World.Config.SetBool("FSWGiraffeEnabled", config.FSWGiraffeEnabled);
+        api.World.Config.SetBool("FSWGolemEnabled", config.FSWGolemEnabled);
+        api.World.Config.SetBool("FSWHorseEnabled", config.FSWHorseEnabled);
+        api.World.Config.SetBool("FSWOstrichEnabled", config.FSWOstrichEnabled);
+        api.World.Config.SetBool("FSWSpiderEnabled", config.FSWSpiderEnabled);
+        api.World.Config.SetBool("FSWToadEnabled", config.FSWToadEnabled);
         
         // Water Creatures
-        api.World.Config.SetBool("BuromenfishEnabled", config.BuromenfishEnabled);
-        api.World.Config.SetBool("DiscusFishEnabled", config.DiscusFishEnabled);
-        api.World.Config.SetBool("EelEnabled", config.EelEnabled);
-        api.World.Config.SetBool("OrcaEnabled", config.OrcaEnabled);
-        api.World.Config.SetBool("SharksEnabled", config.SharksEnabled);
-        api.World.Config.SetBool("StingrayEnabled", config.StingrayEnabled);
+        api.World.Config.SetBool("FSWBuromenfishEnabled", config.FSWBuromenfishEnabled);
+        api.World.Config.SetBool("FSWDiscusFishEnabled", config.FSWDiscusFishEnabled);
+        api.World.Config.SetBool("FSWEelEnabled", config.FSWEelEnabled);
+        api.World.Config.SetBool("FSWOrcaEnabled", config.FSWOrcaEnabled);
+        api.World.Config.SetBool("FSWSharksEnabled", config.FSWSharksEnabled);
+        api.World.Config.SetBool("FSWStingrayEnabled", config.FSWStingrayEnabled);
     }
 
     private static FeverstoneWildsConfig LoadConfig(ICoreAPI api) =>
