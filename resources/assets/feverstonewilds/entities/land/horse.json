@@ -584,12 +584,23 @@
             }
         }
     },
-    "sounds": {
-        "hurt": "feverstonewilds:horse/horsedamage",
-        "death": "feverstonewilds:horse/horsedamage",
-        "idle": "feverstonewilds:horse/neigh"
+    "soundsByType": {
+        "*-draft": {
+            "hurt": "feverstonewilds:horse/horsedamage",
+            "death": "feverstonewilds:horse/horsedamage",
+            "idle": "feverstonewilds:horse/neigh"
+        },
+        "*-arabian": {
+            "hurt": "feverstonewilds:horse/horsedamage",
+            "death": "feverstonewilds:horse/horsedamage",
+            "idle": "feverstonewilds:horse/neigh"
+        },
+        "*-donkey": {
+            "hurt": "feverstonewilds:donkey/donkeybray2",
+            "death": "feverstonewilds:horse/horsedamage",
+            "idle": "feverstonewilds:donkey/donkeyidle"
+        }
     },
     "idleSoundChance": 0.025,
     "hurtSoundChance": 0.05
-
 }
