@@ -111,62 +111,62 @@
                 { "code": "interpolatemount" },
                 { "code": "harvestable" },
                 { "code": "ropetieable", "minGeneration": 2 }
+            ],
+            "animations": [
+                {
+                    "code": "hurt",
+                    "animation": "hurt",
+                    "animationSpeed": 2.2,
+                    "weight": 10,
+                    "blendMode": "addAverage"
+                },
+                {
+                    "code": "die",
+                    "animation": "death",
+                    "animationSpeed": 1.25,
+                    "weight": 10,
+                    "blendMode": "average",
+                    "triggeredBy": { "onControls": [ "dead" ] }
+                },
+                {
+                    "code": "idle",
+                    "animation": "idle",
+                    "blendMode": "addAverage",
+                    "easeOutSpeed": 4,
+                    "triggeredBy": { "defaultAnim": true }
+                },
+                {
+                    "code": "sleep",
+                    "animation": "sleep",
+                    "easeInSpeed": 4,
+                    "easeOutSpeed": 4,
+                    "blendMode": "average"
+                },
+                {
+                    "code": "sit",
+                    "animation": "sit",
+                    "easeInSpeed": 4,
+                    "easeOutSpeed": 4,
+                    "blendMode": "average"
+                },
+                {
+                    "code": "walk",
+                    "animation": "walk",
+                    "blendMode": "average",
+                    "mulWithWalkSpeed": true,
+                    "animationSpeed": 0.8,
+                    "triggeredBy": {"onControls": ["Move"], "matchExact": true }
+                },
+                {
+                    "code": "run",
+                    "animation": "run",
+                    "blendMode": "average",
+                    "mulWithWalkSpeed": true,
+                    "animationSpeed": 1.1,
+                    "triggeredBy": {"onControls": ["Move", "SprintMode"], "matchExact": true }
+                }
             ]
         },
-        "animations": [
-            {
-                "code": "hurt",
-                "animation": "hurt",
-                "animationSpeed": 2.2,
-                "weight": 10,
-                "blendMode": "addAverage"
-            },
-            {
-                "code": "die",
-                "animation": "death",
-                "animationSpeed": 1.25,
-                "weight": 10,
-                "blendMode": "average",
-                "triggeredBy": { "onControls": [ "dead" ] }
-            },
-            {
-                "code": "idle",
-                "animation": "idle",
-                "blendMode": "addAverage",
-                "easeOutSpeed": 4,
-                "triggeredBy": { "defaultAnim": true }
-            },
-            {
-                "code": "sleep",
-                "animation": "sleep",
-                "easeInSpeed": 4,
-                "easeOutSpeed": 4,
-                "blendMode": "average"
-            },
-            {
-                "code": "sit",
-                "animation": "sit",
-                "easeInSpeed": 4,
-                "easeOutSpeed": 4,
-                "blendMode": "average"
-            },
-            {
-                "code": "walk",
-                "animation": "walk",
-                "blendMode": "average",
-                "mulWithWalkSpeed": true,
-                "animationSpeed": 0.8,
-				"triggeredBy": {"onControls": ["Move"], "matchExact": true }
-            },
-            {
-                "code": "run",
-                "animation": "run",
-                "blendMode": "average",
-                "mulWithWalkSpeed": true,
-                "animationSpeed": 1.1,
-				"triggeredBy": {"onControls": ["Move", "SprintMode"], "matchExact": true }
-            }
-        ],
     "server": {
         "attributes": {
             "pathfinder": {
