@@ -1,0 +1,48 @@
+{
+	"code": "creature",
+    "variantgroups": [ { "code": "type", "states": ["golem-andesite-nativecopper", "golem-andesite-cassiterite", "golem-andesite-hematite",
+	 												"golem-granite-nativecopper", "golem-granite-cassiterite", "golem-granite-hematite",
+	 												"golem-basalt-nativecopper", "golem-basalt-cassiterite", "golem-basalt-hematite",
+	 												"golem-limestone-nativecopper", "golem-limestone-hematite"] } ],
+
+	"class": "ItemCreature",
+	"maxstacksize": 1,
+	"shape": { "base": "entity/land/golem" },
+
+	"texturesByType": {
+		"*-andesite-nativecopper": { "skin": { "base": "entity/land/golem/golemandesitecopper" } },
+		"*-andesite-cassiterite": { "skin": { "base": "entity/land/golem/golemandesitetin" } },
+		"*-andesite-hematite": { "skin": { "base": "entity/land/golem/golemandesiteiron" } },
+		"*-granite-nativecopper": { "skin": { "base": "entity/land/golem/golemgranitecopper" } },
+		"*-granite-cassiterite": { "skin": { "base": "entity/land/golem/golemgranitetin" } },
+		"*-granite-hematite": { "skin": { "base": "entity/land/golem/golemgraniteiron" } },
+		"*-basalt-nativecopper": { "skin": { "base": "entity/land/golem/golembasaltcopper" } },
+		"*-basalt-cassiterite": { "skin": { "base": "entity/land/golem/golembasalttin" } },
+		"*-basalt-hematite": { "skin": { "base": "entity/land/golem/golembasaltiron" } },
+		"*-limestone-nativecopper": { "skin": { "base": "entity/land/golem/golemlimestonecopper" } },
+		"*-limestone-hematite": { "skin": { "base": "entity/land/golem/golemlimestoneiron" } }
+	},
+
+	"creativeinventory": {
+		"general": ["*"],
+		"items": ["*"],
+		"creatures": ["*"]
+		},
+		
+	"guiTransform": {
+		"translation": { "x": 0, "y": 0, "z": 0 },
+		"rotation": { "x": 180, "y": -109, "z": 1 },
+		"origin": { "x": 2, "y": 1.8, "z": 0 },
+		"scale": 0.46
+	},
+	"fpHandTransform": {
+		"translation": { "x": 0.2, "y": 0, "z": 0 },
+		"rotation": { "x": -8, "y": -63, "z": -7 }
+	},
+	"tpHandTransform": {
+		"translation": { "x": -0.9, "y": -0.9, "z": -0.7 },
+		"rotation": { "x": -180, "y": 0, "z": -156 },
+		"scale": 0.4
+	}
+	
+}

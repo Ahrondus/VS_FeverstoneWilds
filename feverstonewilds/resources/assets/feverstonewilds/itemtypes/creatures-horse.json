@@ -1,0 +1,82 @@
+{
+	"code": "creature",
+	"class": "ItemCreature",
+	"maxStackSize": 1,
+	"variantgroups": [
+		{
+			"code": "type",
+			"states": ["horse-male-draft", "horse-female-draft",
+			"horse-male-arabian", "horse-female-arabian",
+			"horse-male-donkey", "horse-female-donkey",
+			"foal-draft", "foal-arabian", "foal-donkey"]	
+		}
+	],
+	"shapeByType": {
+		"*-foal-draft": { "base": "entity/land/horse-draft" },
+		"*-foal-arabian": { "base": "entity/land/horse-arabian" },
+		"*-foal-donkey": { "base": "entity/land/horse-donkey" },
+		"*-horse-male-draft": { "base": "entity/land/horse-draft" },
+		"*-horse-female-draft": { "base": "entity/land/horse-draft" },
+		"*-horse-male-arabian": { "base": "entity/land/horse-arabian" },
+		"*-horse-female-arabian": { "base": "entity/land/horse-arabian" },
+		"*-horse-male-donkey": { "base": "entity/land/horse-donkey" },
+		"*-horse-female-donkey": { "base": "entity/land/horse-donkey" }
+		},
+	"texturesByType": {
+		"*-foal-draft": { "skin": { "base": "entity/land/horse/horse18" } },
+		"*-foal-arabian": { "skin": { "base": "entity/land/horse/horse15" } },
+		"*-foal-donkey": { "skin": { "base": "entity/land/donkey/donkeyskin1" } },
+		"*-horse-male-draft": { "skin": { "base": "entity/land/horse/horse5" } },
+		"*-horse-female-draft": { "skin": { "base": "entity/land/horse/horse20" } },
+		"*-horse-male-arabian": { "skin": { "base": "entity/land/horse/horse14" } },
+		"*-horse-female-arabian": { "skin": { "base": "entity/land/horse/horse13" } },
+		"*-horse-male-donkey": { "skin": { "base": "entity/land/donkey/donkeyskin2" } },
+		"*-horse-female-donkey": { "skin": { "base": "entity/land/donkey/donkeyskin3" } }
+		},
+		
+	"creativeinventory": {
+		"general": ["*"],
+		"items": ["*"],
+		"creatures": ["*"]
+		},
+		
+	"guiTransformByType": {
+		"creature-horse-*-draft": {
+			"rotate": true,
+			"translation": { "x": 0, "y": 0, "z": 0 },
+			"rotation": { "x": 180, "y": -115, "z": 6 },
+			"origin": { "x": 0.5, "y": 1.25, "z": 0.5 },
+			"scale": 0.6
+		},
+		"creature-horse-*-arabian": {
+			"rotate": true,
+			"translation": { "x": 0, "y": 0, "z": 0 },
+			"rotation": { "x": 180, "y": -115, "z": 6 },
+			"origin": { "x": 0.5, "y": 1.25, "z": 0.5 },
+			"scale": 0.6
+		},
+		"creature-horse-*-donkey": {
+			"rotate": true,
+			"translation": { "x": 0, "y": 0, "z": 0 },
+			"rotation": { "x": 180, "y": -115, "z": 6 },
+			"origin": { "x": 0.5, "y": 1.25, "z": 0.5 },
+			"scale": 0.575
+		},
+		"creature-foal-*": {
+			"rotate": true,
+			"translation": { "x": 0, "y": 6, "z": 0 },
+			"rotation": { "x": 180, "y": -115, "z": 6 },
+			"origin": { "x": 0.5, "y": 1.25, "z": 0.5 },
+			"scale": 0.4
+		}
+	},
+	"fpHandTransform": {
+		"translation": { "x": 0.2, "y": 0, "z": 0 },
+		"rotation": { "x": -8, "y": -63, "z": -7 }
+	},
+	"tpHandTransform": {
+		"translation": { "x": -0.9, "y": -1.1, "z": -0.85 },
+		"rotation": { "x": -180, "y": 0, "z": -156 },
+		"scale": 0.4
+	}	
+}

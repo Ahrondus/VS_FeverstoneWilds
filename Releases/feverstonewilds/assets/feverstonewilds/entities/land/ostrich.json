@@ -1,0 +1,301 @@
+{
+	"code": "ostrich",
+	"class": "EntityAgent",
+	"variantgroups": [
+        { "code": "gender", "states": ["male", "female"] }
+	],
+	"hitboxSize": { "x": 1.25, "y": 2.2 },
+	"deadHitboxSize": { "x": 2.25, "y": 1.25 },
+	"eyeHeight": 0.7,
+	"drops": [],
+	"attributes": {
+        "killedByInfoText": "deadcreature-eaten-large"
+    },
+	"client": {
+		"renderer": "Shape",
+		"shape": { "base": "entity/land/ostrich" },
+		"texture": { "base": "entity/land/ostrich/ostrichskin1", 
+			"alternates":  [{ "base": "entity/land/ostrich/ostrichskin2" }, { "base": "entity/land/ostrich/ostrichskin3" }, 
+							{ "base": "entity/land/ostrich/ostrichskin4" }, { "base": "entity/land/ostrich/ostrichskin5" }, 
+							{ "base": "entity/land/ostrich/ostrichskin6" }, { "base": "entity/land/ostrich/ostrichskin7" },
+							{ "base": "entity/land/ostrich/ostrichskin8" }, { "base": "entity/land/ostrich/ostrichskin9" },
+							{ "base": "entity/land/ostrich/ostrichskin10" } ] },
+		"behaviors": [
+			{ "code": "repulseagents" }, 
+			{ "code": "controlledphysics", "stepHeight": 1.1251 }, 
+			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
+			{ "code": "interpolateposition" },
+			{ "code": "harvestable" },
+			{ "code": "multiplybase",
+				"enabledByType": { "*-male": false, "*-female": true } },
+			{ "code": "despawn", "minPlayerDistance": 15, "belowLightLevel": 8, "minSeconds": 300 },
+			{ "code": "ropetieable", "minGeneration": 2 }
+		],
+		"animations": [
+			{
+				"code": "hurt",
+				"animation": "hurt", 
+				"animationSpeed": 2.2,
+				"weight": 10,
+				"blendMode": "addAverage" 
+			},
+			{
+				"code": "die",
+				"animation": "die", 
+				"animationSpeed": 2,
+				"weight": 10,
+				"blendMode": "average",
+				"triggeredBy": { "onControls": ["dead"] }
+			},
+			{ 
+				"code": "idle", 
+				"animation": "idle",
+				"blendMode": "addAverage",
+				"easeOutSpeed": 4,
+				"triggeredBy": { "defaultAnim": true }
+			},
+			{
+				"code": "sleep", 
+				"animation": "sleep",
+				"easeInSpeed": 4,
+				"easeOutSpeed": 4,
+				"blendMode": "average"
+			},
+			{
+				"code": "sit", 
+				"animation": "sit",
+				"easeInSpeed": 4,
+				"easeOutSpeed": 4,
+				"blendMode": "average"
+			},
+			{
+				"code": "eat",
+				"animation": "eat", 
+				"animationSpeed": 1,
+				"weight": 4,
+				"easeOutSpeed": 8,
+				"easeInSpeed": 5,
+				"blendMode": "addAverage" 
+			}
+		]
+	},
+	"server": {
+		"attributes": {
+            "pathfinder": {
+                "minTurnAnglePerSec": 125,
+                "maxTurnAnglePerSec": 210
+            }
+		},
+		"behaviors": [
+			{ "code": "multiplybase",
+				"enabledByType": { "*-female": true, "*-male": false },
+				"multiplyCooldownDaysMin": 0,
+				"multiplyCooldownDaysMax": 1,
+				"portionsEatenForMultiply": 9
+			},
+			{ "code": "repulseagents" }, 
+			{ "code": "controlledphysics", "stepHeight": 1.1251 },
+			{ "code": "despawn", "minPlayerDistance": 8, "belowLightLevel": 8, "minSeconds": 300 },
+			{ "code": "health", "currenthealth": 15, "maxhealth": 15 },
+			{ "code": "deaddecay", "hoursToDecay": 96, "decayedBlock": "carcass-medium" },
+			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
+			{ "code": "harvestable", "drops": [
+				{
+					"type": "item", 
+					"code": "poultry-raw", 
+					"quantity": { "avg": 9, "var": 1.5 } 
+				},
+				{
+					"type": "item", 
+					"code": "feather", 
+					"quantity": { "avg": 9, "var": 1.5 } 
+				},
+				{
+					"type": "item", 
+					"code": "fat", 
+					"quantity": { "avg": 2, "var": 0 } 
+				}
+			]
+			},
+			{ "code": "breathe" },
+			{ 
+				"code": "emotionstates",
+				"states": [
+					{ "code": "fleeondamage", "duration": 60, "chance": 0.8, "slot": 0, "priority": 5, "accumType": "max", "whenHealthRelBelow": 0.4 },
+					{ "code": "aggressiveondamage", "duration": 20, "chance": 0.9, "slot": 0, "priority": 2, "accumType": "noaccum" },
+					{ "code": "fleeondamage", "duration": 10, "chance": 1, "slot": 0, "priority": 1, "accumType": "max" },
+					{ "code": "alarmherdondamage", "chance": 1, "slot": 1, "priority": 1, "accumType": "max" }
+				]
+			},
+			{ 
+				"code": "taskai",
+				"aitasks": [
+					{
+						"code": "meleeattack",
+						"entityCodes": ["player", "fox-*", "wolf-*", "hyena-*"],
+						"priority": 2,
+						"damage": 8,
+						"damageTier": 2,
+						"damageType": "SlashingAttack",
+						"slot": 1,
+						"mincooldown": 1500, 
+						"maxcooldown": 1500, 
+						"attackDurationMs": 900,
+						"damagePlayerAtMs": 300,
+						"animation": "Attack",
+						"animationSpeed": 2,
+						"whenInEmotionState": "aggressiveondamage",
+						"sound": "creature/ostrich/attack"
+					},
+					{
+						"code": "fleeentity",
+						"entityCodes": ["player", "wolf-*", "hyena-*", "bear-*"],
+						"priority": 1.8,
+						"movespeed": 0.52,
+						"seekingRange": 12,
+						"animation": "Run",
+						"animationSpeed": 3,
+						"sound": "creature/ostrich/hurt",
+						"whenInEmotionState": "fleeondamage"
+					},
+					{
+						"code": "seekentity",
+						"entityCodes": ["player"],
+						"priority": 1.7,
+						"mincooldown": 1000, 
+						"maxcooldown": 1500, 
+						"seekingRange": 20,
+						"movespeed": 0.055,
+						"animation": "Run",
+						"animationSpeed": 3,
+						"whenInEmotionState": "aggressiveondamage"
+					},
+					{
+						"code": "seekblockandlay",
+						"enabledByType": { "*-female": true, "*-male": false },
+						"priority": 1.6,
+						"layTime": 2,
+						"chickCode": "ostrich-chick",
+						"sitDays": 0.9,
+						"incubationDays": 0.5,
+						"movespeed": 0.012,
+						"animation": "Walk",
+						"mincooldownHours": 1,
+						"maxcooldownHours": 2,
+						"sitAnimation": "Sit",
+						"requiresNearbyEntityCode": "feverstonewilds:ostrich-male",
+						"requiresNearbyEntityRange": 12,
+						"growthCapEntityCodes": ["feverstonewilds:ostrich-chick", "feverstonewilds:ostrich-female", "feverstonewilds:ostrich-male"],
+						"failBlockCode": "feverstonewilds:egg-ostrich-1",
+						"sound": "game:creature/chicken/hen-lay",
+						"priorityForCancel": 1.65
+					},
+					{
+						"code": "getoutofwater",
+						"priority": 1.65,
+						"movespeed": 0.015,
+						"animation": "Walk",
+						"animationSpeed": 2
+					},
+					{
+						"code": "seekfoodandeat",
+						"movespeed": 0.004,
+						"priority": 1.4,
+						"animationSpeed": 1,
+						"animation": "Walk",
+						"eatAnimation": "Eat",
+						"eatSound": "game:player/eat",
+						"eatTime": 1.5,
+						"mincooldownHours": 1,
+						"maxcooldownHours": 4
+					},
+					{
+						"code": "wander", 
+						"priority": 1.3, 
+						"movespeed": 0.004,
+						"animationSpeed": 0.75,
+						"animation": "Walk",
+						"preferredLightLevel": 20
+					},
+					{
+						"code": "idle",
+						"priority": 1.2,
+						"minduration": 3200,
+						"maxduration": 3200,
+						"mincooldown": 6000,
+						"maxcooldown": 20000,
+						"animation": "honk",
+						"animationSpeed": 0.95,
+						"whenNotInEmotionState": "aggressiveondamage"
+					},
+					{
+						"code": "idle",
+						"priority": 0.9,
+						"minduration": 5000,
+						"maxduration": 30000,
+						"mincooldown": 2000,
+						"maxcooldown": 120000,
+						"priorityForCancel": 1.25,
+						"animation": "Sit",
+						"whenNotInEmotionState": "aggressiveondamage",
+						"stopOnNearbyEntityCodes": ["player"],
+						"stopRange": 5
+					},
+					{
+						"code": "idle",
+						"priority": 0.8,
+						"minduration": 5000000,
+						"maxduration": 5000000,
+						"mincooldown": 10000,
+						"maxcooldown": 30000,
+						"priorityForCancel": 1.45,
+						"animation": "Sleep",
+						"whenNotInEmotionState": "aggressiveondamage",
+						"duringDayTimeFrames": [ { "fromHour": 21, "toHour": 24 }, { "fromHour": 0, "toHour": 6 } ],
+						"stopOnNearbyEntityCodes": ["player"],
+						"stopRange": 6,
+						"stopOnHurt": true
+					},
+					{
+						"code": "lookaround", 
+						"priority": 0.5
+					}
+				]
+			},
+			{ "code": "ropetieable", "minGeneration": 2 },
+			{ "code": "pettable", "minGeneration": 1 }
+		],
+		"spawnconditions": {
+        			"worldgen": {
+					"TriesPerChunk": { "avg": 0.005, "var": 0 },
+					"tryOnlySurface": true,
+					"minLightLevel": 10,
+					"groupSize": { "dist": "verynarrowgaussian", "avg": 2, "var": 0 },
+					"insideBlockCodes": ["game:air", "game:tallgrass-*"],
+					"minTemp": 16,
+					"maxTemp": 50,
+					"minRain": 0.1,
+					"companions": [ "feverstonewilds:ostrich-female", "feverstonewilds:ostrich-male", "feverstonewilds:ostrich-chick" ]
+            	},
+				"runtime": {
+					"group": "neutral",
+					"tryOnlySurface": true,
+					"chance": 0.00002,
+					"maxQuantity": 3,
+					"maxLightLevel": 10,
+					"groupSize": { "dist": "verynarrowgaussian", "avg": 2, "var": 0 },
+					"insideBlockCodes": ["game:air", "game:tallgrass-*"],
+					"minTemp": 16,
+					"maxTemp": 50,
+					"minRain": 0.1,
+					"companions": [ "feverstonewilds-female", "feverstonewilds-male", "feverstonewilds:ostrich-chick" ]
+                }
+			}
+		},
+		"sounds": {
+		"hurt": "creature/ostrich/hurt",
+		"death": "creature/ostrich/hurt",
+		"idle": "creature/ostrich/idle"
+	},
+	"idleSoundChance": 0.01
+}
