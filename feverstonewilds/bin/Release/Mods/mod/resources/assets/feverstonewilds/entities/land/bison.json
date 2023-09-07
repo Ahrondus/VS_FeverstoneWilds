@@ -270,9 +270,10 @@
 				"aitasks": [
 					{
 						"code": "meleeattack",
-						"entityCodes": ["player", "hyena-male", "hyena-female", "wolf-*", "bear-*"],
+						"entityCodes": ["player", "hyena-male", "hyena-female", "wolf-*", "bear-*",
+										"feverstonewilds:direwolf-*"],
 						"knockbackStrength": 2.65,
-						"priority": 3,
+						"priority": 4,
 						"slot": 1,
 						"damage": 7.5,
 						"damageTier": 2,
@@ -286,7 +287,8 @@
 					},
 					{
 						"code": "meleeattack",
-						"entityCodes": ["hyena-male", "hyena-female", "wolf-*", "bear-*"],
+						"entityCodes": ["hyena-male", "hyena-female", "wolf-*", "bear-*",
+										"feverstonewilds:direwolf-*"],
 						"knockbackStrength": 2.65,
 						"priority": 3,
 						"slot": 1,
@@ -302,7 +304,7 @@
 					{
 						"code": "seekentity",
 						"entityCodes": ["player"],
-						"priority": 1.5,
+						"priority": 1.55,
 						"mincooldown": 1000, 
 						"maxcooldown": 1500, 
 						"seekingRange": 25,
@@ -313,7 +315,8 @@
 					},
 					{
 						"code": "seekentity",
-						"entityCodes": ["hyena-female", "hyena-male", "wolf-*", "bear-*"],
+						"entityCodes": ["hyena-female", "hyena-male", "wolf-*", "bear-*",
+										"feverstonewilds:direwolf-*"],
 						"priority": 1.5,
 						"mincooldown": 1000, 
 						"maxcooldown": 1500, 
@@ -337,7 +340,7 @@
 					{
 						"code": "fleeentity",
 						"entityCodes": ["player"],
-						"priority": 1.5,
+						"priority": 1.75,
 						"movespeed": 0.052,
 						"seekingRange": 12,
 						"animation": "Run",

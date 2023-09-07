@@ -174,22 +174,22 @@
     // Golem Types
     {
         "op":"add",
-        "path": "/skipVariants",
-        "value": "[*-nativecopper]",
+        "path": "/skipVariants/0",
+        "value": "*-nativecopper",
         "file": "feverstonewilds:entities/land/golem.json",
         "condition": { "when": "FSWCopperGolemEnabled", "isValue": "false" }
     },
     {
         "op":"add",
-        "path": "/skipVariants",
-        "value": "[*-cassiterite]",
+        "path": "/skipVariants/0",
+        "value": "*-cassiterite",
         "file": "feverstonewilds:entities/land/golem.json",
         "condition": { "when": "FSWTinGolemEnabled", "isValue": "false" }
     },
     {
         "op":"add",
-        "path": "/skipVariants",
-        "value": "[*-hematite]",
+        "path": "/skipVariants/0",
+        "value": "*-hematite",
         "file": "feverstonewilds:entities/land/golem.json",
         "condition": { "when": "FSWIronGolemEnabled", "isValue": "false" }
     }

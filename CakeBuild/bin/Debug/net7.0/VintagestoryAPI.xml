@@ -33259,6 +33259,11 @@
             These are the stages the server goes through during launch
             </summary>
         </member>
+        <member name="F:Vintagestory.API.Server.EnumServerRunPhase.Standby">
+            <summary>
+            Server is listening to sockets but nothing has been launched yet
+            </summary>
+        </member>
         <member name="F:Vintagestory.API.Server.EnumServerRunPhase.Start">
             <summary>
             Before anything has been initialized (you cannot receive any events at this point)

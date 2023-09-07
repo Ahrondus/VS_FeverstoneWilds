@@ -5,6 +5,9 @@
 	"deadHitboxSize": { "x": 0.4, "y": 0.2 },
 	"eyeHeight": 0.15,
 	"weight": 0.1,
+	"attributes": {
+		"netCaughtItemCode": "feverstonewilds:creature-ostrich-chick"
+	},
 	"client": {
 		"renderer": "Shape",
 		"shape": { "base": "entity/land/ostrich-chick" },
@@ -19,7 +22,6 @@
 			{ "code": "controlledphysics", "stepHeight": 1.1251 }, 
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
 			{ "code": "interpolateposition" },
-			{ "code": "harvestable" },
 			{ "code": "despawn", "minPlayerDistance": 8, "belowLightLevel": 8, "minSeconds": 300 }
 		],
 		"animations": [
@@ -82,12 +84,8 @@
 			{ "code": "controlledphysics", "stepHeight": 1.1251 },
 			{ "code": "despawn", "minPlayerDistance": 8, "belowLightLevel": 8, "minSeconds": 300 },
 			{ "code": "health", "currenthealth": 1.5, "maxhealth": 1.5 },
-			{ "code": "deaddecay", "hoursToDecay": 12 },
+			{ "code": "deaddecay", "hoursToDecay": 2 },
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
-			{ "code": "harvestable", "drops": [
-				
-				]
-			},
 			{ "code": "grow", "hoursToGrow": 128,
 				"adultEntityCodes": ["feverstonewilds:ostrich-female", "feverstonewilds:ostrich-male"]
 			},
