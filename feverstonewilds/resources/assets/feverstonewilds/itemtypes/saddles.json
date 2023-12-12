@@ -1,10 +1,11 @@
 {
 	"code": "saddle",
 	"class": "ItemPetAccessory",
-	"variantgroups": [ { "code": "type", "states": ["draft", "arabian", "bison"] } ],
+	"variantgroups": [ { "code": "type", "states": ["draft", "arabian", "donkey", "bison"] } ],
 	"shapeByType": {
 		"*-draft": { "base": "item/equipment/back/horsesaddle-draft" },
 		"*-arabian": { "base": "item/equipment/back/horsesaddle-arabian" },
+		"*-donkey": { "base": "item/equipment/back/horsesaddle-donkey" },
 		"*-bison": { "base": "item/equipment/back/saddle-bison" }		
 	},
 	"attributesByType": {
@@ -12,13 +13,19 @@
 			"wearableAttachment": true,
 			"cothingType": "midbody",
 			"validPets": [ "horse-female-draft", "horse-male-draft" ],
-		"backpackslots": 12
+		"backpackslots": 14
 		},
 		"*-arabian": {
 			"wearableAttachment": true,
 			"cothingType": "midbody",
 			"validPets": [ "horse-female-arabian", "horse-male-arabian" ],
 			"backpackslots": 8
+		},
+		"*-donkey": {
+			"wearableAttachment": true,
+			"cothingType": "midbody",
+			"validPets": [ "horse-female-donkey", "horse-male-donkey" ],
+			"backpackslots": 20
 		},
 		"*-bison": {
 			"wearableAttachment": true,
