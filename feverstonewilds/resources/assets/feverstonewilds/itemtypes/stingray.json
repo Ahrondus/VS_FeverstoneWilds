@@ -1,0 +1,39 @@
+{
+	"code": "creature",
+	"class": "ItemCreature",
+	"maxstackssize": 1,
+	"variantgroups": [
+			{
+				"code": "type",
+				"states": ["stingray"]
+			}
+		],
+	"shape": {
+		"base": "entity/water/stingray"
+		},
+	"creativeinventory": {
+		"general": ["*"],
+		"items": ["*"],
+		"creatures": ["*"]
+		},
+	
+	"guiTransform": {
+		"translation": { "x": 0, "y": 4, "z": 0 },
+		"rotation": { "x": -20, "y": -120, "z": -172 },
+		"origin": { "x": 0.5, "y": 0.8, "z": 0.5 },
+		"scale": 0.58
+	},
+	"fpHandTransform": {
+		"translation": { "x": -0.15, "y": 0.05, "z": 0.5 },
+		"rotation": { "x": -25, "y": -69, "z": -74 },
+		"origin": { "x": 0.5, "y": 0.8, "z": 0.5 },
+		"scale": 0.5
+	},
+	"tpHandTransform": {
+		"translation": { "x": -2.8, "y": -2, "z": -1.8 },
+		"rotation": { "x": 108, "y": -3, "z": -180 },
+		"origin": { "x": 0.5, "y": 0.8, "z": 0.5 },
+		"scale": 0.25
+	}
+	
+}
