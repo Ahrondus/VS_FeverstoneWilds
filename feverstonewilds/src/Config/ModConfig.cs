@@ -32,6 +32,7 @@ namespace FeverstoneWilds.Config
         api.World.Config.SetBool("FSWBisonEnabled", config.FSWBisonEnabled);
         api.World.Config.SetBool("FSWBisonCalfEnabled", config.FSWBisonCalfEnabled);
         api.World.Config.SetBool("FSWCockatriceEnabled", config.FSWCockatriceEnabled);
+        api.World.Config.SetBool("FSWTameCockatriceEnabled", config.FSWCockatriceEnabled);
         api.World.Config.SetBool("FSWWildDirewolfEnabled", config.FSWWildDirewolfEnabled);
         api.World.Config.SetBool("FSWTameDirewolfEnabled", config.FSWTameDirewolfEnabled);
         api.World.Config.SetBool("FSWWildDirewolfPupEnabled", config.FSWWildDirewolfPupEnabled);

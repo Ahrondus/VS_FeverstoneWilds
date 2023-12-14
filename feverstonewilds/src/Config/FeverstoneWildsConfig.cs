@@ -6,6 +6,7 @@ namespace FeverstoneWilds.Config
         public bool FSWBisonEnabled = true;
         public bool FSWBisonCalfEnabled = true;
         public bool FSWCockatriceEnabled = true;
+        public bool FSWTameCockatriceEnabled = true;
         public bool FSWWildDirewolfEnabled = true;
         public bool FSWTameDirewolfEnabled = true;
         public bool FSWWildDirewolfPupEnabled = true;
@@ -40,6 +41,7 @@ namespace FeverstoneWilds.Config
         {
             // Land Creatures
             FSWCockatriceEnabled = previousConfig.FSWCockatriceEnabled;
+            FSWTameCockatriceEnabled = previousConfig.FSWCockatriceEnabled;
             FSWFaunlingEnabled = previousConfig.FSWFaunlingEnabled;
             FSWWildDirewolfEnabled = previousConfig.FSWWildDirewolfEnabled;
             FSWTameDirewolfEnabled = previousConfig.FSWTameDirewolfEnabled;
