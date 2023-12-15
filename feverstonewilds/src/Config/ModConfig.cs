@@ -15,16 +15,19 @@ namespace FeverstoneWilds.Config
 
         if (config == null)
         {
+          api.World.Logger.Event("Creating New 'Feverstone Wilds' Config");
           GenerateConfig(api);
           config = LoadConfig(api);
         }
         else
         {
+			    api.World.Logger.Event("Reading 'Feverstone Wilds' Config");
           GenerateConfig(api, config);
         }
       }
       catch
       {
+        api.World.Logger.Event("Creating New 'Feverstone Wilds' Config");
         GenerateConfig(api);
         config = LoadConfig(api);
       }
