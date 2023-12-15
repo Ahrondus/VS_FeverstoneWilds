@@ -15,16 +15,19 @@ namespace FeverstoneWilds.Config
 
         if (config == null)
         {
+          api.World.Logger.Event("Creating New 'Feverstone Wilds' Config");
           GenerateConfig(api);
           config = LoadConfig(api);
         }
         else
         {
+			    api.World.Logger.Event("Reading 'Feverstone Wilds' Config");
           GenerateConfig(api, config);
         }
       }
       catch
       {
+        api.World.Logger.Event("Creating New 'Feverstone Wilds' Config");
         GenerateConfig(api);
         config = LoadConfig(api);
       }
@@ -32,6 +35,7 @@ namespace FeverstoneWilds.Config
         api.World.Config.SetBool("FSWBisonEnabled", config.FSWBisonEnabled);
         api.World.Config.SetBool("FSWBisonCalfEnabled", config.FSWBisonCalfEnabled);
         api.World.Config.SetBool("FSWCockatriceEnabled", config.FSWCockatriceEnabled);
+        api.World.Config.SetBool("FSWTameCockatriceEnabled", config.FSWCockatriceEnabled);
         api.World.Config.SetBool("FSWWildDirewolfEnabled", config.FSWWildDirewolfEnabled);
         api.World.Config.SetBool("FSWTameDirewolfEnabled", config.FSWTameDirewolfEnabled);
         api.World.Config.SetBool("FSWWildDirewolfPupEnabled", config.FSWWildDirewolfPupEnabled);

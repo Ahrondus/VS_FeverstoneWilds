@@ -2,7 +2,7 @@
     // Bears
     {
         "op": "add",
-        "path": "/server/behaviors/9/aitasks/1/entityCodesByType/*/0",
+        "path": "/server/behaviors/9/aitasks/0/entityCodesByType/*/0",
         "value": "feverstonewilds:bison-*",
         "file": "game:entities/land/bear.json",
         "condition": { "when": "FSWBisonEnabled", "isValue": "true" }
@@ -342,6 +342,27 @@
         "file": "game:entities/land/hare-baby.json",
         "condition": { "when": "FSWCockatriceEnabled", "isValue": "true" }
     },
+    {
+        "op": "add",
+        "path": "/server/behaviors/10/aitasks/0/entityCodes/0",
+        "value": "feverstonewilds:tame-cockatrice",
+        "file": "game:entities/land/hare-female.json",
+        "condition": { "when": "FSWTameCockatriceEnabled", "isValue": "true" }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/9/aitasks/0/entityCodes/0",
+        "value": "feverstonewilds:tame-cockatrice",
+        "file": "game:entities/land/hare-male.json",
+        "condition": { "when": "FSWTameCockatriceEnabled", "isValue": "true" }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/9/aitasks/0/entityCodes/0",
+        "value": "feverstonewilds:tame-cockatrice",
+        "file": "game:entities/land/hare-baby.json",
+        "condition": { "when": "FSWTameCockatriceEnabled", "isValue": "true" }
+    },
 
     // Chickens
     {
@@ -432,6 +453,20 @@
     },
     {
         "op": "add",
+        "path": "/server/behaviors/9/aitasks/2/entityCodes/0",
+        "value": "feverstonewilds:tame-cockatrice",
+        "file": "game:entities/land/fox-arctic-female.json",
+        "condition": { "when": "FSWTameCockatriceEnabled", "isValue": "true" }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/9/aitasks/2/entityCodes/0",
+        "value": "feverstonewilds:tame-cockatrice",
+        "file": "game:entities/land/fox-arctic-male.json",
+        "condition": { "when": "FSWTameCockatriceEnabled", "isValue": "true" }
+    },
+    {
+        "op": "add",
         "path": "/server/behaviors/10/aitasks/2/entityCodes/0",
         "value": "feverstonewilds:direwolf-*",
         "file": "game:entities/land/fox-female.json",
@@ -492,6 +527,27 @@
         "value": "feverstonewilds:cockatrice",
         "file": "game:entities/land/fox-pup.json",
         "condition": { "when": "FSWCockatriceEnabled", "isValue": "true" }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/10/aitasks/2/entityCodes/0",
+        "value": "feverstonewilds:tame-cockatrice",
+        "file": "game:entities/land/fox-female.json",
+        "condition": { "when": "FSWTameCockatriceEnabled", "isValue": "true" }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/9/aitasks/2/entityCodes/0",
+        "value": "feverstonewilds:tame-cockatrice",
+        "file": "game:entities/land/fox-male.json",
+        "condition": { "when": "FSWTameCockatriceEnabled", "isValue": "true" }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/9/aitasks/0/entityCodes/0",
+        "value": "feverstonewilds:tame-cockatrice",
+        "file": "game:entities/land/fox-pup.json",
+        "condition": { "when": "FSWTameCockatriceEnabled", "isValue": "true" }
     },
 
     // Raccoons
@@ -557,5 +613,26 @@
         "value": "feverstonewilds:cockatrice",
         "file": "game:entities/land/raccoon-pup.json",
         "condition": { "when": "FSWCockatriceEnabled", "isValue": "true" }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/9/aitasks/2/entityCodes/0",
+        "value": "feverstonewilds:tame-cockatrice",
+        "file": "game:entities/land/raccoon-female.json",
+        "condition": { "when": "FSWTameCockatriceEnabled", "isValue": "true" }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/9/aitasks/2/entityCodes/0",
+        "value": "feverstonewilds:tame-cockatrice",
+        "file": "game:entities/land/raccoon-male.json",
+        "condition": { "when": "FSWTameCockatriceEnabled", "isValue": "true" }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/9/aitasks/0/entityCodes/0",
+        "value": "feverstonewilds:tame-cockatrice",
+        "file": "game:entities/land/raccoon-pup.json",
+        "condition": { "when": "FSWTameCockatriceEnabled", "isValue": "true" }
     }
 ]

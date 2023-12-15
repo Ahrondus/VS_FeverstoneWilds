@@ -26,6 +26,27 @@
         "op": "add",
         "path": "/enabled",
         "value": false,
+        "file": "feverstonewilds:entities/land/cockatrice-chick.json",
+        "condition": { "when": "FSWCockatriceEnabled", "isValue": "false" }
+    },
+    {
+        "op": "add",
+        "path": "/enabled",
+        "value": false,
+        "file": "feverstonewilds:entities/land/tame-cockatrice.json",
+        "condition": { "when": "FSWTameCockatriceEnabled", "isValue": "false" }
+    },
+    {
+        "op": "add",
+        "path": "/enabled",
+        "value": false,
+        "file": "feverstonewilds:entities/land/tame-cockatrice-chick.json",
+        "condition": { "when": "FSWTameCockatriceEnabled", "isValue": "false" }
+    },
+    {
+        "op": "add",
+        "path": "/enabled",
+        "value": false,
         "file": "feverstonewilds:entities/land/direwolf.json",
         "condition": { "when": "FSWWildDirewolfEnabled", "isValue": "false" }
     },
