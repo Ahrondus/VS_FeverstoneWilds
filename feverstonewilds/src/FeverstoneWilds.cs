@@ -14,7 +14,6 @@ namespace FeverstoneWilds
 			api.RegisterBlockEntityClass("AnimalNest", typeof(BlockEntityAnimalNest));
 
 			ModConfig.ReadConfig(api);
-			api.World.Logger.Event("Reading 'Feverstone Wilds' Config");
 		}
 	}
 }
