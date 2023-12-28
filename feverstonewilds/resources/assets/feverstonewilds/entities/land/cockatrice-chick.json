@@ -6,7 +6,15 @@
 	"eyeHeight": 0.15,
 	"weight": 0.1,
 	"attributes": {
-		"netCaughtItemCode": "feverstonewilds:creature-cockatrice-chick"
+		"creatureDiet": {
+			"foodCategories": [ "Grain", "Protein" ],
+			"skipFoodTags": [ "rice" ]
+		},
+		"handbook": {
+			"groupcode": "feverstonewilds:creaturegroup-fswcockatrice"
+		},
+		"netCaughtItemCode": "feverstonewilds:creature-cockatrice-chick",
+		"basketCatchable": true
 	},
 	"client": {
 		"renderer": "Shape",
@@ -33,7 +41,8 @@
 					{ "code": "bushmeat-raw", "progress": 0.05, "cooldown": 0.5 },
                     { "code": "poultry-raw", "progress": 0.075, "cooldown": 0.6 },
 					{ "code": "redmeat-raw", "progress": 0.125, "cooldown": 0.75 },
-					{ "code": "bone", "progress": 0.05, "cooldown": 0.5 }
+					{ "code": "grain-*", "progress": 0.025, "cooldown": 0.25 },
+					{ "code": "bone", "progress": 0.05, "cooldown": 0.55 }
                 ]
             },
             {
@@ -42,6 +51,7 @@
 					{ "type": "item", "code": "bushmeat-raw"},
                     { "type": "item", "code": "poultry-raw" },
 					{ "type": "item", "code": "redmeat-raw" },
+					{ "type": "item", "code": "grain-*" },
 					{ "type": "item", "code": "bone" }
 				]
             },
@@ -118,7 +128,8 @@
 					{ "code": "bushmeat-raw", "progress": 0.05, "cooldown": 0.5 },
                     { "code": "poultry-raw", "progress": 0.075, "cooldown": 0.6 },
 					{ "code": "redmeat-raw", "progress": 0.125, "cooldown": 0.75 },
-					{ "code": "bone", "progress": 0.05, "cooldown": 0.5 }
+					{ "code": "grain-*", "progress": 0.025, "cooldown": 0.25 },
+					{ "code": "bone", "progress": 0.05, "cooldown": 0.55 }
                 ]
             },
             {
@@ -127,13 +138,14 @@
 					{ "type": "item", "code": "bushmeat-raw"},
                     { "type": "item", "code": "poultry-raw" },
 					{ "type": "item", "code": "redmeat-raw" },
+					{ "type": "item", "code": "grain-*" },
 					{ "type": "item", "code": "bone" }
 				]
             },
 			{ "code": "repulseagents" }, 
 			{ "code": "controlledphysics", "stepHeight": 1.1251 },
 			{ "code": "despawn", "minPlayerDistance": 8, "belowLightLevel": 8, "minSeconds": 300 },
-			{ "code": "health", "currenthealth": 5, "maxhealth": 5 },
+			{ "code": "health", "currenthealth": 3, "maxhealth": 3 },
 			{ "code": "deaddecay", "hoursToDecay": 0 },
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
 			{ "code": "grow", "hoursToGrow": 100,
@@ -152,7 +164,7 @@
 				"aitasks": [
 					{
 						"code": "fleeentity",
-						"entityCodes": ["player", "wolf-male", "wolf-female", "fox-*", "raccoon-*", "hyena-male", "hyena-female", "bear-*"],
+						"entityCodes": ["player", "wolf-*", "fox-*", "raccoon-*", "hyena-*", "bear-*"],
 						"priority": 6,
 						"movespeed": 0.03,
 						"animationSpeed": 1.4,
@@ -170,7 +182,7 @@
 						"priority": 1.3,
 						"entityCode": "feverstonewilds:cockatrice",
 						"movespeed": 0.01,
-						"maxDistance": 2,
+						"maxDistance": 3,
 						"searchRange": 12,
 						"animation": "Run"
 					},
@@ -199,9 +211,9 @@
 						"animationSpeed": 0.7,
 						"priority": 2.1,
 						"priorityForCancel": 2.2,
-						"eatItemCategories": [ "Protein" ],
+						"eatItemCategories": [ "Protein", "Grain" ],
 						"eatItemCodes": [ "redmeat-raw", "bushmeat-raw", "poultry-raw", 
-								"bone", "petai:petcookie-meat-perfect" ],
+								"bone", "petai:petcookie-meat-perfect", "grain-*" ],
 						"useTime": 1.5,
 						"mincooldownHours": 1,
 						"maxcooldownHours": 1.5
@@ -218,11 +230,11 @@
 					{
 						"code": "meleeattack",
 						"entityCodes": ["player", "drifter-*", "toad-*", "spider-*", "hare-*", "raccoon-*", "fox-*"],
-						"knockbackStrength": 2.65,
+						"knockbackStrength": 0.65,
 						"priority": 1,
 						"slot": 1,
 						"damage": 1,
-						"damageTier": 2,
+						"damageTier": 1,
 						"mincooldown": 1500, 
 						"maxcooldown": 2500, 
 						"attackDurationMs": 1250,
@@ -255,6 +267,6 @@
 		"death": "game:creature/chick/chick*",
 		"idle": "game:creature/chick/chick*"
 	},
-	"idleSoundRange": 12,
+	"idleSoundRange": 8,
 	"idleSoundChance": 0.01
 }

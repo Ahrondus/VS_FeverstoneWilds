@@ -5,6 +5,14 @@
     "deadHitboxSize": { "x": 0.75, "y": 0.4 },
     "eyeHeight": 0.4,
     "drops": [],
+	"attributes": {
+		"creatureDiet": {
+			"foodCategories": [ "Protein" ]
+		},
+		"handbook": {
+			"groupcode": "feverstonewilds:creaturegroup-fswdirewolf"
+		}
+	},
     "client": {
         "renderer": "Shape",
         "shape": { "base": "entity/land/direwolf-pup" },

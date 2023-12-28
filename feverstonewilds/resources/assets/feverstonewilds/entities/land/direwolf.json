@@ -27,7 +27,13 @@
     "eyeheight": 1.1,
     "drops": [],
     "attributes": {
-        "killedByInfoText": "feverstonewilds:deadcreature-eaten-direwolf"
+        "killedByInfoText": "feverstonewilds:deadcreature-eaten-direwolf",
+		"creatureDiet": {
+			"foodCategories": [ "Protein" ]
+		},
+		"handbook": {
+			"groupcode": "feverstonewilds:creaturegroup-fswdirewolf"
+		}
     },
     "sizeByType": {
         "direwolf-male": 1,
