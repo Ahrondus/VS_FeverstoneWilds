@@ -142,7 +142,7 @@
 				"maxQuantity": 4,
 				"maxLightLevel": 8,
 				"groupSize": { "dist": "verynarrowgaussian", "avg": 3, "var": 1 },
-				"insideBlockCodes": ["game:water-*"],
+				"insideBlockCodes": ["game:water-still-*", "game:saltwater-still-*"],
 				"minTemp": -4,
 				"maxTemp": 30
 			},
@@ -153,7 +153,7 @@
 				"tryOnlySurface": true,
 				"maxLightLevel": 8,
 				"groupSize": { "dist": "verynarrowgaussian", "avg": 3, "var": 1 },
-				"insideBlockCodes": ["game:water-*"],
+				"insideBlockCodes": ["game:water-still-*", "game:saltwater-still-*"],
 				"minTemp": -4,
 				"maxTemp": 30
 			}

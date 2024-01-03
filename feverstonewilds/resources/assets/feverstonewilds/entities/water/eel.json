@@ -206,7 +206,7 @@
 				"TriesPerChunk": { "avg": 0.035, "var": 0 },
 				"tryOnlySurface": true,
 				"groupSize": { "dist": "verynarrowgaussian", "avg": 3, "var": 1 },
-				"insideBlockCodes": ["game:water-*"],
+				"insideBlockCodes": ["game:water-still-*", "game:saltwater-still-*"],
 				"minTemp": -10,
 				"maxTemp": 30
 			},
@@ -216,7 +216,7 @@
 				"chance": 0.00001,
 				"tryOnlySurface": true,
 				"groupSize": { "dist": "verynarrowgaussian", "avg": 3, "var": 1 },
-				"insideBlockCodes": ["game:water-*"],
+				"insideBlockCodes": ["game:water-still-*", "game:saltwater-still-*"],
 				"minTemp": -10,
 				"maxTemp": 30
 			}
