@@ -295,17 +295,17 @@
                         "animationSpeed": 0.75
                     },
                     {
-                        "code": "lookaround",
-                        "priority": 0.5
-                    },
-                    {
                         "code": "wander",
-                        "priority": 0.4,
+                        "priority": 0.55,
                         "priorityForCancel": 1.35,
                         "movespeed": 0.025,
                         "animationSpeed": 1.65,
                         "animation": "run",
-                        "minduration": 4000
+                        "minduration": 15000
+                    },
+                    {
+                        "code": "lookaround",
+                        "priority": 0.5
                     }
                 ]
             }
