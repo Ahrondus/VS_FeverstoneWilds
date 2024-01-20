@@ -6,6 +6,16 @@
 	"eyeHeight": 1.4,
 	"weight": 150,
 	"drops": [],
+	"attributes": {
+		"creatureDiet": {
+			"foodCategories": [ "Grain", "Protein" ],
+			"foodTags": [ "nibbleCrop" ],
+			"skipFoodTags": [ "rice" ]
+		},
+		"handbook": {
+			"groupcode": "feverstonewilds:creaturegroup-fswcockatrice"
+		}
+	},
 	"client": {
 		"renderer": "Shape",
 		"shape": { "base": "entity/land/cockatrice" },
@@ -190,6 +200,7 @@
 						"priority": 1.35,
 						"eatSound": "player/eat",
 						"eatTime": 1.5,
+						"eatLooseItems": true,
 						"animationSpeed": 1.5,
 						"animation": "Walk",
 						"mincooldownHours": 1,
@@ -245,7 +256,6 @@
 						"code": "wander", 
 						"priority": 1.0, 
 						"movespeed": 0.006,
-						"animationSpeed": 1.68,
 						"animation": "Walk",
 						"preferredLightLevel": 24,
 						"priorityForCancel": 1.37
