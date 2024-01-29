@@ -114,23 +114,12 @@
 					},
 					{
 						"code": "fleeentity",
-						"entityCodes": ["-"],
+						"entityCodes": ["*"],
 						"priority": 2,
 						"movespeed": 0.01,
 						"seekingRange": 14,
 						"animation": "skitter",
 						"animationSpeed": 2.5
-					},
-					{
-						"code": "seekentity",
-						"entityCodes": ["-"],
-						"priority": 1.5,
-						"movespeed": 0.01,
-						"animationSpeed": 2,
-						"seekingRange": 20,
-						"animation": "skitter",
-						"sound": "creature/-/growl",
-						"whenNotInEmotionState": "saturated"
 					},
 					{
 						"code": "getoutofwater",
