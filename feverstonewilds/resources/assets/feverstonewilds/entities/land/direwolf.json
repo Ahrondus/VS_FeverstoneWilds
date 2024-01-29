@@ -27,11 +27,13 @@
     "eyeheight": 1.1,
     "drops": [],
     "attributes": {
-        "killedByInfoText": "feverstonewilds:deadcreature-eaten-direwolf"
-    },
-    "sizeByType": {
-        "direwolf-male": 1,
-        "direwolf-female": 0.95
+        "killedByInfoText": "feverstonewilds:deadcreature-eaten-direwolf",
+		"creatureDiet": {
+			"foodCategories": [ "Protein" ]
+		},
+		"handbook": {
+			"groupcode": "feverstonewilds:creaturegroup-fswdirewolf"
+		}
     },
     "client": {
         "renderer": "Shape",
@@ -40,6 +42,10 @@
                     "alternates": [ { "base": "entity/land/direwolf/direwolf2" }, { "base": "entity/land/direwolf/direwolf3" }, 
                                     { "base": "entity/land/direwolf/direwolf4" }, { "base": "entity/land/direwolf/direwolf5" }, 
                                     { "base": "entity/land/direwolf/direwolf6" }, { "base": "entity/land/direwolf/direwolf7" } ] },
+        "sizeByType": {
+            "direwolf-male": 1,
+            "direwolf-female": 0.95
+        },
         "behaviors": [
             { "code": "multiply", "enabledByType": { "*-male": false, "*-female": true } },
             { "code": "repulseagents" },

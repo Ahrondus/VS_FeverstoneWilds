@@ -13,7 +13,7 @@
 		{
 			"type": "item",
 			"code": "game:salt",
-			"quantity": { "avg": 1.3, "var": 0.5 }
+			"quantity": { "avg": 1.5, "var": 0.5 }
 		}
 	],
 	"client": {
@@ -110,7 +110,7 @@
 						"code": "fleeentity",
 						"entityCodes": [ "player" ],
 						"priority": 1.5,
-						"movespeed": 0.032,
+						"movespeed": 0.030,
 						"seekingRange": 12,
 						"animation": "run",
 						"animationSpeed": 3.5
@@ -139,17 +139,6 @@
 						"stopOnNearbyEntityCodes": [ "player" ],
 						"stopRange": 6,
 						"stopOnHurt": true
-					},
-					{
-						"code": "seekfoodandeat",
-						"movespeed": 0.004,
-						"priority": 1.35,
-						"eatSound": "player/eat",
-						"eatTime": 1.5,
-						"animationSpeed": 0.5,
-						"animation": "run",
-						"mincooldownHours": 1,
-						"maxcooldownHours": 4
 					},
 					{
 						"code": "idle",
