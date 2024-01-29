@@ -1,0 +1,30 @@
+[
+  {
+    "op": "add",
+    "path": "/server/behaviors/9/aitasks/1/entityCodes/0",
+    "value": "ostrich-*",
+    "file": "game:entities/land/hyena-male.json",
+    "condition": { "when": "FSWOstrichEnabled", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/9/aitasks/3/entityCodes/0",
+    "value": "ostrich-*",
+    "file": "game:entities/land/hyena-male.json",
+    "condition": { "when": "FSWOstrichEnabled", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/10/aitasks/1/entityCodes/0",
+    "value": "ostrich-*",
+    "file": "game:entities/land/hyena-female.json",
+    "condition": { "when": "FSWOstrichEnabled", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/10/aitasks/3/entityCodes/0",
+    "value": "ostrich-*",
+    "file": "game:entities/land/hyena-female.json",
+    "condition": { "when": "FSWOstrichEnabled", "isValue": "true" }
+  }
+]

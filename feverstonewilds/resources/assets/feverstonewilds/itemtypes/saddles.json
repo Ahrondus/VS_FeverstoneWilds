@@ -1,19 +1,26 @@
 {
 	"code": "saddle",
 	"class": "ItemPetAccessory",
-	"variantgroups": [ { "code": "type", "states": ["draft", "arabian", "donkey", "bison"] } ],
+	"variantgroups": [
+		{
+			"code": "type",
+			"states": [ "draft", "arabian", "donkey", "bison", "direwolf", "ostrich" ]
+		}
+	],
 	"shapeByType": {
 		"*-draft": { "base": "item/equipment/back/horsesaddle-draft" },
 		"*-arabian": { "base": "item/equipment/back/horsesaddle-arabian" },
 		"*-donkey": { "base": "item/equipment/back/horsesaddle-donkey" },
-		"*-bison": { "base": "item/equipment/back/saddle-bison" }		
+		"*-bison": { "base": "item/equipment/back/saddle-bison" },
+		"*-direwolf": { "base": "item/equipment/back/saddle-direwolf" },
+		"*-ostrich": { "base": "item/equipment/back/saddle-ostrich" }
 	},
 	"attributesByType": {
 		"*-draft": {
 			"wearableAttachment": true,
 			"cothingType": "midbody",
 			"validPets": [ "horse-female-draft", "horse-male-draft" ],
-		"backpackslots": 14
+			"backpackslots": 14
 		},
 		"*-arabian": {
 			"wearableAttachment": true,
@@ -32,6 +39,18 @@
 			"cothingType": "midbody",
 			"validPets": [ "bison-male", "bison-female" ],
 			"backpackslots": 52
+		},
+		"*-direwolf": {
+			"wearableAttachment": true,
+			"cothingType": "midbody",
+			"validPets": [ "tame-direwolf-male", "tame-direwolf-female" ],
+			"backpackslots": 2
+		},
+		"*-ostrich": {
+			"wearableAttachment": true,
+			"cothingType": "midbody",
+			"validPets": [ "tame-ostrich-male", "tame-ostrich-female" ],
+			"backpackslots": 4
 		}
 	},
 	"maxstacksize": 1,

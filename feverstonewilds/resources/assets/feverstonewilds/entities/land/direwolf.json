@@ -45,6 +45,7 @@
         "sizeByType": {
             "direwolf-male": 1,
             "direwolf-female": 0.95
+
         },
         "behaviors": [
             { "code": "multiply", "enabledByType": { "*-male": false, "*-female": true } },
@@ -261,7 +262,7 @@
                             "maxcooldown": 500000,
                             "animation": "Howl",
                             "animationSpeed": 0.5,
-                            "sound": "game:creature/wolf/howl",
+                            "sound": "game:creature/wolf/howl*",
                             "soundRange": 110
                         },
                         {
@@ -353,7 +354,7 @@
     "sounds": {
         "hurt": "game:creature/wolf/hurt",
         "death": "game:creature/wolf/hurt",
-        "idle": "game:creature/wolf/howl"
+        "idle": "game:creature/wolf/howl*"
     },
     "idleSoundChance": 0.015,
     "hurtSoundChance": 0.25
