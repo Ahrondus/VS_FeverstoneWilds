@@ -11,9 +11,10 @@ namespace FeverstoneWilds
 
 			api.RegisterBlockClass("BlockAnimalNest", typeof(BlockAnimalNest));
 
-			api.RegisterBlockEntityClass("AnimalNest", typeof(BlockEntityAnimalNest));
+			api.RegisterBlockEntityClass("AnimalNestOstrich", typeof(BlockEntityAnimalNestOstrich));
+            api.RegisterBlockEntityClass("AnimalNestCockatrice", typeof(BlockEntityAnimalNestCockatrice));
 
-			ModConfig.ReadConfig(api);
+            ModConfig.ReadConfig(api);
 		}
 	}
 }

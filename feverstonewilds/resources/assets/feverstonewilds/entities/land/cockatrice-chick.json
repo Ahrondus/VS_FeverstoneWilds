@@ -6,6 +6,7 @@
 	"eyeHeight": 0.15,
 	"weight": 0.1,
 	"attributes": {
+		"killedByInfoText": "feverstonewilds:deadcreature-eaten-cockatrice",
 		"creatureDiet": {
 			"foodCategories": [ "Grain", "Protein" ],
 			"skipFoodTags": [ "rice" ]
@@ -25,6 +26,7 @@
 							{ "base": "entity/land/cockatrice/cockatriceskin6" }, { "base": "entity/land/cockatrice/cockatriceskin7" },
 							{ "base": "entity/land/cockatrice/cockatriceskin8" }, { "base": "entity/land/cockatrice/cockatriceskin9" }
 							] },
+		"size": 0.9,
 		"sizeGrowthFactor": 0.3,
 		"behaviors": [
 			{ "code": "nametag", "showtagonlywhentargeted": true },
@@ -149,7 +151,7 @@
 			{ "code": "deaddecay", "hoursToDecay": 0 },
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
 			{ "code": "grow", "hoursToGrow": 100,
-				"adultEntityCodes": [ "feverstonewilds:cockatrice" ]
+				"adultEntityCodes": [ "feverstonewilds:cockatrice-male", "feverstonewilds:cockatrice-female" ]
 			},
 			{ "code": "breathe" },
 			{ 
@@ -263,9 +265,9 @@
 		]
 	},
 	"sounds": {
-		"hurt": "game:creature/chick/chick*",
-		"death": "game:creature/chick/chick*",
-		"idle": "game:creature/chick/chick*"
+		"hurt": "game:creature/chicken/chick*",
+		"death": "game:creature/chicken/chick*",
+		"idle": "game:creature/chicken/chick*"
 	},
 	"idleSoundRange": 8,
 	"idleSoundChance": 0.01

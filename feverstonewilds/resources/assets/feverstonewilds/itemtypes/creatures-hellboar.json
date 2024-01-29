@@ -1,0 +1,46 @@
+{
+	"code": "creature",
+	"class": "ItemCreature",
+	"maxStackSize": 1,
+	"variantgroups": [
+		{
+			"code": "type",
+			"states": ["hellboar-male", "hellboar-female", "hellboar-piglet" ]	
+		}
+	],
+	"shapeByType": {
+		"*-hellboar-male": { "base": "entity/land/hellboar" },
+		"*-hellboar-female": { "base": "entity/land/hellboar" },
+		"*-hellboar-piglet": { "base": "entity/land/hellboar" }
+		},
+	"texturesByType": {
+		"*-hellboar-male": { "skin": { "base": "entity/land/hellboar/hellboarskin1" } },
+		"*-hellboar-female": { "skin": { "base": "entity/land/hellboar/hellboarskin1" } },
+		"*-hellboar-piglet": {"skin": { "base": "entity/land/hellboar/hellboarskin1" } }
+		},
+	"creativeinventory": {
+		"general": ["*"],
+		"items": ["*"],
+		"creatures": ["*"]
+		},
+		
+	"guiTransformByType": {
+		"creature-hellboar-*": {
+			"rotate": "true",
+			"translation": { "x": 0, "y": 3, "z": 0 },
+			"rotation": { "x": 180, "y": -115, "z": 6 },
+			"origin": { "x": 0.75, "y": 0.75, "z": 0.5 },
+			"scale": 0.8
+		}
+	},
+	"fpHandTransform": {
+		"translation": { "x": 0.2, "y": 0, "z": 0 },
+		"rotation": { "x": -8, "y": -63, "z": -7 }
+	},
+	"tpHandTransform": {
+		"translation": { "x": -0.9, "y": -0.9, "z": -0.7 },
+		"rotation": { "x": -180, "y": 0, "z": -156 },
+		"scale": 0.4
+	}
+	
+}
