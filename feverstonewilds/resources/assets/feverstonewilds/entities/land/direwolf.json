@@ -43,8 +43,9 @@
                                     { "base": "entity/land/direwolf/direwolf4" }, { "base": "entity/land/direwolf/direwolf5" }, 
                                     { "base": "entity/land/direwolf/direwolf6" }, { "base": "entity/land/direwolf/direwolf7" } ] },
         "sizeByType": {
-        "direwolf-male": 1,
-        "direwolf-female": 0.95
+            "direwolf-male": 1,
+            "direwolf-female": 0.95
+
         },
         "behaviors": [
             { "code": "multiply", "enabledByType": { "*-male": false, "*-female": true } },
