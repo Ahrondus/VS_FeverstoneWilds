@@ -1,0 +1,33 @@
+{
+	"code": "creature",
+	"class": "ItemCreature",
+	"maxstackssize": 1,
+	"variantgroups": [
+			{ "code": "type", "states": ["cockatrice-chick", "tame-cockatrice-chick"] }
+		],
+	"shape": { "base": "entity/land/cockatrice-chick" },		
+	"creativeinventory": {
+		"general": ["*"],
+		"items": ["*"],
+		"creatures": ["*"]
+		},
+	
+	"guiTransform": {
+		"translation": { "x": 0, "y": 0, "z": 0 },
+		"rotation": { "x": 113, "y": 37, "z": 0 },
+		"origin": { "x": 0.45, "y": 0, "z": 0.5 },
+		"scale": 5.42
+	},
+	"fpHandTransform": {
+		"translation": { "x": -0.1, "y": 0.5, "z": -0.3 },
+		"rotation": { "x": 4, "y": -74, "z": -27 },
+		"origin": { "x": 0.5, "y": -0.2, "z": 0.5 },
+		"scale": 3.42
+	},
+	"tpHandTransform": {
+		"translation": { "x": 0.2, "y": 0, "z": 0 },
+		"rotation": { "x": 0, "y": 0, "z": 0 },
+		"origin": { "x": 0.5, "y": 0.8, "z": 0.5 },
+		"scale": 1.25
+	}
+}

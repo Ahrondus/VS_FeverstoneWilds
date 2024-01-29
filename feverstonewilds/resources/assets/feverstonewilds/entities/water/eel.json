@@ -1,0 +1,225 @@
+{
+	"code": "eel",
+	"class": "EntityFish",
+	"hitboxSize": { "x": 1.2, "y": 1 },
+	"eyeHeight": 0.9,
+	"drops": [],
+	"habitat": "underwater",
+	"client": {
+		"renderer": "Shape",
+		"size": 0.7,
+		"shape": { "base": "entity/water/eel" },
+		"texture": { "base": "entity/water/eel/eelskin1",
+		            "alternates": [ { "base": "entity/water/eel/eelskin2" },
+									  { "base": "entity/water/eel/eelskin3" },
+									  { "base": "entity/water/eel/eelskin4" },
+									  { "base": "entity/water/eel/eelskin5" }
+									]
+		},
+		"behaviors": [
+			{ "code": "repulseagents" }, 
+			{ "code": "controlledphysics", "stepHeight": 3 }, 
+			{ "code": "interpolateposition" },
+			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
+			{ "code": "harvestable" },
+			{ "code": "despawn", "minPlayerDistance": 18, "minSeconds": 300, "belowLightLevel": 0 }
+		],
+		"animations": [
+			{
+				"code": "hurt",
+				"animation": "hurt", 
+				"animationSpeed": 1,
+				"weight": 10,
+				"blendMode": "addAverage" 
+			},
+			{
+				"code": "swim",
+				"animation": "swim"
+			},
+			{
+				"code": "swimfast",
+				"animation": "swim"
+			},
+			{
+				"code": "die",
+				"animation": "dead"
+			},
+			{
+				"code": "flop",
+				"animation": "flopping"
+			},
+			{ 
+				"code": "idle", 
+				"animation": "idle",
+				"blendMode": "addAverage",
+				"easeOutSpeed": 4,
+				"triggeredBy": { "defaultAnim": true }
+			}
+		]
+	},
+	"server": {
+		"behaviors": [
+			{ "code": "repulseagents" }, 
+			{ "code": "controlledphysics", "stepHeight": 3 }, 
+			{ "code": "despawn", "minPlayerDistance": 18, "minSeconds": 300, "belowLightLevel": 0 },
+			{ "code": "health", "maxhealth": 15 },
+			{ "code": "deaddecay", "hoursToDecay": 96 },
+			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
+			{ "code": "harvestable", "drops": [
+					{
+						"type": "item", 
+						"code": "fish-raw", 
+						"quantity": { "avg": 10, "var": 3 } 
+					}
+				]
+			},
+			{ 
+				"code": "emotionstates",
+				"states": [
+					{ "code": "fleeondamage", "duration": 10, "chance": 1, "slot": 0, "priority": 1, "accumType": "max" },
+					{ 
+						"code": "saturated", "duration": 3600, "chance": 1, "slot": 0, "priority": 1, "accumType": "sum",
+						"belowTempDuration": 600,
+						"belowTempThreshold": -5
+					}
+				]
+			},
+			{ 
+				"code": "taskai",
+				"aitasks": [
+				{
+						"code": "meleeattack",
+						"entityCodes": ["chicken-baby", "discus"],
+						"priority": 2,
+						"damage": 8,
+						"damageTier": 2,
+						"damageType": "SlashingAttack",
+						"slot": 1,
+						"mincooldown": 1500, 
+						"maxcooldown": 1500, 
+						"attackDurationMs": 800,
+						"damagePlayerAtMs": 500,
+						"animation": "attack",
+						"animationSpeed": 2.5,
+						"sound": ""
+					},
+					{
+						"code": "fleeentity",
+						"entityCodes": ["player"],
+						"priority": 1.6,
+						"movespeed": 0.052,
+						"seekingRange": 20,
+						"animation": "swim",
+						"animationSpeed": 3,
+						"whenInEmotionState": "fleeondamage"
+					},
+					{
+						"code": "seekentity",
+						"entityCodes": ["chicken-baby", "discus"],
+						"priority": 1.5,
+						"movespeed": 0.1,
+						"seekingRange": 15,
+						"belowTempSeekingRange": 25,
+						"belowTempThreshold": -5,
+						"animation": "swim",
+						"leapAtTarget": true,
+						"leapAnimation": null,
+						"animationSpeed": 2.2,
+						"leapChance": 0.01,
+						"sound": "",
+						"whenNotInEmotionState": "saturated"
+					},
+					{
+						"code": "seekentity",
+						"entityCodes": ["player"],
+						"priority": 1.49,
+						"movespeed": 0.1,
+						"seekingRange": 8,
+						"animation": "swim",
+						"leapAtTarget": true,
+						"leapAnimation": null,
+						"animationSpeed": 2.2,
+						"leapChance": 0.01,
+						"sound": "",
+						"whenInEmotionState": "aggressiveondamage"
+					},
+					{
+						"code": "fishoutofwater", 
+						"priority": 2.5, 
+						"priorityForCancel": 2.6,
+						"movespeed": 0.005,
+						"animation": "flop",
+						"animationSpeed": 2
+					},
+					{
+						"code": "wander", 
+						"priority": 1.2, 
+						"priorityForCancel": 1.35,
+						"movespeed": 0.01,
+						"animation": "swim"
+					},
+					{
+						"code": "fishmovefast", 
+						"priority": 1.0, 
+						"priorityForCancel": 1.35,
+						"movespeed": 0.045,
+						"animation": "swimfast",
+						"animationSpeed": 2.3
+					},
+					{
+						"code": "seekfoodandeat",
+						"movespeed": 0.010,
+						"priority": 1.25,
+						"eatTime": 2.3,
+						"eatLooseItems": true,
+						"eatItemCodes": ["game:redmeat-*", "game:fish-*", "game:poultry-*", "game:bushmeat-*"],
+						"eatItemCatagories": ["Protein"],
+						"animationSpeed": 1.4,
+						"animation": "swim",
+						"eatAnimation": "attack",
+						"mincooldownHours": 1,
+						"maxcooldownHours": 4
+					},
+					{
+						"code": "idle",
+						"priority": 0.9,
+						"minduration": 500,
+						"maxduration": 2000,
+						"mincooldown": 2000,
+						"maxcooldown": 30000,
+						"animation": "eat"
+					},
+					{
+						"code": "idle",
+						"priority": 0.9,
+						"minduration": 500,
+						"maxduration": 1000,
+						"mincooldown": 2000,
+						"maxcooldown": 30000,
+						"animation": "idle"
+					}
+				]
+			}
+		],
+		"spawnconditions": {
+			"worldgen": {
+				"TriesPerChunk": { "avg": 0.035, "var": 0 },
+				"tryOnlySurface": true,
+				"groupSize": { "dist": "verynarrowgaussian", "avg": 3, "var": 1 },
+				"insideBlockCodes": ["game:water-still-*", "game:saltwater-still-*"],
+				"minTemp": -10,
+				"maxTemp": 30
+			},
+			"runtime": {
+				"group": "neutral",
+				"maxQuantity": 8,
+				"chance": 0.00001,
+				"tryOnlySurface": true,
+				"groupSize": { "dist": "verynarrowgaussian", "avg": 3, "var": 1 },
+				"insideBlockCodes": ["game:water-still-*", "game:saltwater-still-*"],
+				"minTemp": -10,
+				"maxTemp": 30
+			}
+		}
+	}
+}

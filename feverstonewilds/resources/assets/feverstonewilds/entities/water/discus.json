@@ -1,0 +1,162 @@
+{
+	"code": "discus",
+	"class": "EntityFish",
+	"hitboxSize": { "x": 0.5, "y": 0.25 },
+	"eyeHeight": 0.2,
+	"drops": [],
+	"habitat": "underwater",
+	"client": {
+		"renderer": "Shape",
+		"size": 0.7,
+		"shape": { "base": "entity/water/discus" },
+		"texture": { "base": "entity/water/discus/discus1",
+		            "alternates": [ { "base": "entity/water/discus/discus2" },
+									  { "base": "entity/water/discus/discus3" },
+									  { "base": "entity/water/discus/discus4" },
+									  { "base": "entity/water/discus/discus5" }
+									]
+	},
+		"behaviors": [
+			{ "code": "repulseagents" }, 
+			{ "code": "controlledphysics", "stepHeight": 0 }, 
+			{ "code": "interpolateposition" },
+			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
+			{ "code": "harvestable" },
+			{ "code": "despawn", "minPlayerDistance": 18, "minSeconds": 300, "belowLightLevel": 0 }
+		],
+		"animations": [
+			{
+				"code": "hurt",
+				"animation": "hurt", 
+				"animationSpeed": 1,
+				"weight": 10,
+				"blendMode": "addAverage" 
+			},
+			{
+				"code": "swim",
+				"animation": "swim"
+			},
+			{
+				"code": "swimfast",
+				"animation": "swim"
+			},
+			{
+				"code": "die",
+				"animation": "dead"
+			},
+			{
+				"code": "flop",
+				"animation": "flopping"
+			},
+			{ 
+				"code": "idle", 
+				"animation": "idle",
+				"blendMode": "addAverage",
+				"easeOutSpeed": 4,
+				"triggeredBy": { "defaultAnim": true }
+			}
+		]
+	},
+	"server": {
+		"behaviors": [
+			{ "code": "repulseagents" }, 
+			{ "code": "controlledphysics", "stepHeight": 1.1251 }, 
+			{ "code": "despawn", "minPlayerDistance": 18,  "minSeconds": 300, "belowLightLevel": 0 },
+			{ "code": "health", "maxhealth": 1 },
+			{ "code": "deaddecay", "hoursToDecay": 96, "decayedBlock": "carcass-tiny" },
+			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
+			{ "code": "harvestable", "drops": [
+					{
+						"type": "item", 
+						"code": "fish-raw", 
+						"quantity": { "avg": 1, "var": 0 } 
+					}
+				]
+			},
+			{ 
+				"code": "emotionstates",
+				"states": [
+					{ "code": "fleeondamage", "duration": 10, "chance": 1, "slot": 0, "priority": 1, "accumType": "max" }
+				]
+			},
+			{ 
+				"code": "taskai",
+				"aitasks": [
+					{
+						"code": "fishoutofwater", 
+						"priority": 2.5, 
+						"priorityForCancel": 2.6,
+						"movespeed": 0.005,
+						"animation": "flop",
+						"animationSpeed": 2
+					},
+					{
+						"code": "fleeentity",
+						"entityCodes": ["player", "bullshark", "stingray", "wolf-male", "wolf-female", "fox-*", "hyena-male", "hyena-female"],
+						"priority": 2,
+						"movespeed": 0.06,
+						"seekingRange": 14,
+						"animation": "swim",
+						"animationSpeed": 2
+					},
+					{
+						"code": "wander", 
+						"priority": 1.2, 
+						"priorityForCancel": 1.35,
+						"movespeed": 0.01,
+						"animation": "swim"
+					},
+					{
+						"code": "fishmovefast", 
+						"priority": 1.0, 
+						"priorityForCancel": 1.35,
+						"movespeed": 0.045,
+						"animation": "swimfast",
+						"animationSpeed": 2.3
+					},
+					{
+						"code": "idle",
+						"priority": 0.9,
+						"minduration": 500,
+						"maxduration": 2000,
+						"mincooldown": 2000,
+						"maxcooldown": 30000,
+						"animation": "eat"
+					},
+					{
+						"code": "idle",
+						"priority": 0.9,
+						"minduration": 500,
+						"maxduration": 1000,
+						"mincooldown": 2000,
+						"maxcooldown": 30000,
+						"animation": "idle"
+					}
+				]
+			}
+		],
+		"spawnconditions": {
+			"worldgen": {
+				"TriesPerChunk": { "avg": 0.05, "var": 0 },
+				"tryOnlySurface": true,
+				"maxQuantity": 5,
+				"maxLightLevel": 8,
+				"groupSize": { "dist": "verynarrowgaussian", "avg": 4, "var": 1 },
+				"insideBlockCodes": ["game:water-still-*", "game:saltwater-still-*"],
+				"minTemp": 0,
+				"maxTemp": 30
+			},
+			"runtime": {
+				"group": "neutral",
+				"chance": 0.001,
+				"maxQuantity": 5,
+				"tryOnlySurface": true,
+				"maxLightLevel": 8,
+				"groupSize": { "dist": "verynarrowgaussian", "avg": 4, "var": 1 },
+				"insideBlockCodes": ["game:water-still-*", "game:saltwater-still-*"],
+				"minTemp": 0,
+				"maxTemp": 30
+			}
+		}
+	}
+}

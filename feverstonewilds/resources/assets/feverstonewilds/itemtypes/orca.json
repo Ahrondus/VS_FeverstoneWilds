@@ -1,0 +1,39 @@
+{
+	"code": "creature",
+	"class": "ItemCreature",
+	"maxstackssize": 1,
+	"variantgroups": [
+			{
+				"code": "type",
+				"states": ["orca"]
+			}
+		],
+	"shape": {
+		"base": "entity/water/orca"
+		},
+	"creativeinventory": {
+		"general": ["*"],
+		"items": ["*"],
+		"creatures": ["*"]
+		},
+	
+	"guiTransform": {
+		"translation": { "x": 0, "y": 0, "z": 0 },
+		"rotation": { "x": 15, "y": -120, "z": -162 },
+		"origin": { "x": 0.5, "y": 1.8, "z": 0.5 },
+		"scale": 0.25
+	},
+	"fpHandTransform": {
+		"translation": { "x": 0.9, "y": 0.9, "z": 0.7 },
+		"rotation": { "x": 0, "y": -81, "z": -35 },
+		"origin": { "x": -0.95, "y": -0.2, "z": 0.5 },
+		"scale": 0.20
+	},
+	"tpHandTransform": {
+		"translation": { "x": -0.8, "y": -1, "z": -1 },
+		"rotation": { "x": -175, "y": 22, "z": -157 },
+		"origin": { "x": 0.5, "y": 0.8, "z": 0.5 },
+		"scale": 0.10
+	}
+	
+}

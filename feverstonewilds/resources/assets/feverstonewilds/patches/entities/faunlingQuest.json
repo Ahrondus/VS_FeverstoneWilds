@@ -1,0 +1,44 @@
+[
+{
+    "op": "add",
+    "path": "/client/behaviors/0",
+    "value": { "code": "questgiver" },
+    "file": "feverstonewilds:entities/land/faunling",
+    "dependsOn": [{"modid": "vsquest"}],
+    "condition": { "when": "FSWFaunlingEnabled", "isValue": "true" }
+  },
+  {
+    "op": "add",
+    "path": "/server/behaviors/0",
+    "value": {
+      "code": "questgiver",
+      "quests": [
+        "feverstonewilds:fetchquestfaunling1",
+        "feverstonewilds:fetchquestfaunling2",
+        "feverstonewilds:fetchquestfaunling3",
+        "feverstonewilds:fetchquestfaunling4",
+        "feverstonewilds:fetchquestfaunling5",
+        "feverstonewilds:fetchquestfaunling6",
+        "feverstonewilds:fetchquestfaunling7",
+        "feverstonewilds:fetchquestfaunling8",
+        "feverstonewilds:fetchquestfaunling9",
+        "feverstonewilds:fetchquestfaunling10",
+        "feverstonewilds:fetchquestfaunling11",
+        "feverstonewilds:fetchquestfaunling12",
+        "feverstonewilds:fetchquestfaunling13",
+        "feverstonewilds:fetchquestfaunling14",
+        "feverstonewilds:fetchquestfaunling15",
+        "feverstonewilds:killquestfaunling1",
+        "feverstonewilds:killquestfaunling2",
+        "feverstonewilds:killquestfaunling3",
+        "feverstonewilds:killquestfaunling4",
+        "feverstonewilds:gamblequestfaunling1"
+        ],
+      "selectrandom": true,
+      "selectrandomcount": 1
+    },
+    "file":"feverstonewilds:entities/land/faunling",
+    "dependsOn":[{"modid":"vsquest"}],
+    "condition": { "when": "FSWFaunlingEnabled", "isValue": "true" }
+  }
+]
