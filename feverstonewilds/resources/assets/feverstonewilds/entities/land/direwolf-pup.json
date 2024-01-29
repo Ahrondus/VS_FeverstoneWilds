@@ -138,7 +138,7 @@
 						"animationSpeed": 4,
 						"seekingRange": 8,
 						"animation": "Run",
-						"sound": "game:creature/direwolf/pup-bark"
+						"sound": "game:creature/wolf/pup-bark"
 					},
 					{
 						"code": "getoutofwater",
@@ -205,7 +205,7 @@
 						"maxcooldown": 300000,
 						"animation": "Howl",
 						"animationSpeed": 0.8,
-						"sound": "game:creature/pup/pup-howl"
+						"sound": "game:creature/wolf/pup-howl*"
 					},
 					{
 						"code": "idle",
@@ -216,7 +216,7 @@
 						"mincooldown": 80000,
 						"maxcooldown": 200000,
 						"animation": "Flop",
-						"sound": "game:creature/pup/pup-flop"
+						"sound": "game:creature/wolf/pup-flop"
 					},
 					{
 						"code": "wander", 
@@ -248,9 +248,9 @@
 		]
 	},
 	"sounds": {
-		"hurt": "game:creature/pup/pup-hurt",
-		"death": "game:creature/pup/pup-hurt",
-		"idle": "game:creature/pup/pup-bark"
+		"hurt": "game:creature/wolf/pup-hurt",
+		"death": "game:creature/wolf/pup-hurt",
+		"idle": "game:creature/wolf/pup-bark"
 	},
 	"idleSoundChance": 0.015,
 	"hurtSoundChance": 0.25

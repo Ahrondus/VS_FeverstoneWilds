@@ -6,16 +6,17 @@
     "eyeHeight": 0.15,
 	"weight": 0.1,
     "drops": [],
-	"attributes": {
-		"creatureDiet": {
-			"foodCategories": [ "Grain", "Protein" ],
-			"skipFoodTags": [ "rice" ]
-		},
-		"handbook": {
-			"groupcode": "feverstonewilds:creaturegroup-fswcockatrice"
-		},
-		"basketCatchable": true
-	},
+  "attributes": {
+    "killedByInfoText": "feverstonewilds:deadcreature-eaten-cockatrice",
+    "creatureDiet": {
+      "foodCategories": [ "Grain", "Protein" ],
+      "skipFoodTags": [ "rice" ]
+    },
+    "handbook": {
+      "groupcode": "feverstonewilds:creaturegroup-fswcockatrice"
+    },
+    "basketCatchable": true
+  },
     "client": {
         "renderer": "Shape",
         "shape": { "base": "entity/land/cockatrice-chick" },
@@ -180,7 +181,7 @@
                         "priorityForCancel": 3.1,
                         "animation": "Attack",
                         "command": "speak",
-                        "sound": "game:creature/wolf/chick-flop"
+                        "sound": "game:creature/chicken/chick*"
                     },
                     {
                         "code": "playfetch",
@@ -267,7 +268,7 @@
                         "maxcooldown": 300000,
                         "animation": "Howl",
                         "animationSpeed": 0.8,
-                        "sound": "game:creature/wolf/chick-howl"
+                        "sound": "game:creature/chicken/chick*"
                     },
                     {
                         "code": "idle",
@@ -278,7 +279,7 @@
                         "mincooldown": 80000,
                         "maxcooldown": 200000,
                         "animation": "Flop",
-                        "sound": "game:creature/wolf/chick-flop"
+                        "sound": "game:creature/chicken/chick*"
                     },
                     {
                         "code": "wander",
@@ -329,10 +330,10 @@
             { "code": "pettableextended", "minGeneration": 1 }
         ]
     },
-    "sounds": {
-        "hurt": "game:creature/wolf/chick-hurt",
-        "death": "game:creature/wolf/chick-hurt",
-        "idle": "game:creature/wolf/chick-bark"
-    },
+  "sounds": {
+    "hurt": "game:creature/chicken/chick*",
+    "death": "game:creature/chicken/chick*",
+    "idle": "game:creature/chicken/chick*"
+  },
     "idleSoundChance": 0.01
 }
