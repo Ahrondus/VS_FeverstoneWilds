@@ -8,13 +8,12 @@
     "knockbackResistance": 0.10,
     "eyeheight": 1.1,
     "drops": [],
-  "attributes": {
-    "killedByInfoText": "feverstonewilds:deadcreature-eaten-hellboar",
-    "handbook": {
-      "groupcode": "feverstonewilds:creaturegroup-fswhellboar"
-    }
-  },
-
+    "attributes": {
+        "killedByInfoText": "feverstonewilds:deadcreature-eaten-hellboar",
+        "handbook": {
+            "groupcode": "feverstonewilds:creaturegroup-fswhellboar"
+        }
+    },
     "client": {
         "renderer": "Shape",
         "shape": { "base": "entity/land/hellboar" },
@@ -23,7 +22,7 @@
                                     { "base": "entity/land/hellboar/hellboarskin4" }, { "base": "entity/land/hellboar/hellboarskin5" }, 
                                     { "base": "entity/land/hellboar/hellboarskin6" }, { "base": "entity/land/hellboar/hellboarskin7" },
                                     { "base": "entity/land/hellboar/hellboarskin8" } ] },
-        "size": 0.8,
+        "size": 0.35,
         "sizeGrowthFactor": 0.3,
         "behaviors": [
             { "code": "repulseagents" },
@@ -113,89 +112,20 @@
                         { "code": "alarmherdondamage", "chance": 1, "slot": 1, "priority": 1, "accumType": "max" }
                     ]
 			    },
+                { "code": "grow", "hoursToGrow": 128,
+                    "adultEntityCodes": [ "feverstonewilds:hellboar-male", "feverstonewilds:hellboar-female" ]
+                },
                 { "code": "taskai",
                     "aitasks": [
-                        {
-                            "code": "meleeattack",
-                            "entityCodes": ["player", "chicken-*",  "wolf-*", 
-                                            "drifter-*", "bear-*", "hare-*",
-                                            "feverstonewilds:cockatrice", "feverstonewilds:cockatrice", "feverstonewilds:direwolf-*",
-                                            "feverstonewilds:ostrich-*", "feverstonewilds:ostrich-chick",
-                                            "feverstonewilds:bison-*", "feverstonewilds:bison-calf",
-                                            "feverstonewilds:giraffe"],
-                            "priority": 2,
-                            "damage": 8,
-                            "damageTier": 2,
-                            "damageType": "SlashingAttack",
-                            "slot": 1,
-                            "mincooldown": 1500, 
-                            "maxcooldown": 1500, 
-                            "attackDurationMs": 800,
-                            "damagePlayerAtMs": 500,
-                            "animation": "Attack",
-                            "animationSpeed": 2.5,
-                            "sound": "game:creature/pig/attack"
-                        },
                         {
                             "code": "fleeentity",
                             "entityCodes": ["player"],
                             "priority": 1.6,
-                            "movespeed": 0.052,
+                            "movespeed": 0.032,
                             "seekingRange": 20,
                             "animation": "Run",
-                            "animationSpeed": 3,
+                            "animationSpeed": 2.3,
                             "whenInEmotionState": "fleeondamage"
-                        },
-                        {
-                            "code": "seekentity",
-                            "entityCodes": ["player"],
-                            "priority": 1.51,
-                            "movespeed": 0.045,
-                            "seekingRange": 9,
-                            "belowTempSeekingRange": 25,
-                            "belowTempThreshold": -5,
-                            "animation": "Run",
-                            "leapAtTarget": true,
-                            "leapAnimation": null,
-                            "animationSpeed": 2.2,
-                            "leapChance": 0.01,
-                            "sound": "game:creature/pig/attack",
-                            "whenNotInEmotionState": "saturated"
-                        },
-                        {
-                            "code": "seekentity",
-                            "entityCodes": ["chicken-*",  "wolf-*", 
-                                            "drifter-*", "bear-*", "hare-*",
-                                            "feverstonewilds:cockatrice", "feverstonewilds:horse-*",
-                                            "feverstonewilds:ostrich-*", "feverstonewilds:ostrich-chick", "feverstonewilds:direwolf-*",
-                                            "feverstonewilds:bison-*", "feverstonewilds:bison-calf",
-                                            "feverstonewilds:giraffe"],
-                            "priority": 1.5,
-                            "movespeed": 0.045,
-                            "seekingRange": 15,
-                            "belowTempSeekingRange": 25,
-                            "belowTempThreshold": -5,
-                            "animation": "Run",
-                            "leapAtTarget": true,
-                            "leapAnimation": null,
-                            "animationSpeed": 2.2,
-                            "leapChance": 0.01,
-                            "sound": "game:creature/pig/attack",
-                            "whenNotInEmotionState": "saturated"
-                        },
-                        {
-                            "code": "seekentity",
-                            "entityCodes": ["player"],
-                            "priority": 1.49,
-                            "movespeed": 0.045,
-                            "seekingRange": 15,
-                            "animation": "Run",
-                            "leapAtTarget": true,
-                            "leapAnimation": null,
-                            "animationSpeed": 2.2,
-                            "leapChance": 0.01,
-                            "sound": "game:creature/pig/piglet-idle",
-                            "whenInEmotionState": "aggressiveondamage"
                         },
                         {
                             "code": "idle",
@@ -218,31 +148,6 @@
                             "movespeed": 0.015,
                             "animation": "Walk",
                             "animationSpeed": 2.2
-                        },
-                        {
-                            "code": "idle",
-                            "priority": 1.3,
-                            "priorityForCancel": 1.35,
-                            "minduration": 4667,
-                            "maxduration": 4667,
-                            "mincooldown": 80000,
-                            "maxcooldown": 500000,
-                            "animation": "Howl",
-                            "animationSpeed": 0.5,
-                            "sound": "game:creature/pig/piglet-idle",
-                            "soundRange": 110
-                        },
-                        {
-                            "code": "idle",
-                            "priority": 1.2,
-                            "priorityForCancel": 1.35,
-                            "minduration": 2500,
-                            "maxduration": 2500,
-                            "mincooldown": 6000,
-                            "maxcooldown": 20000,
-                            "animation": "Sniff",
-                            "animationSpeed": 1.25,
-                            "whenNotInEmotionState": "aggressiveondamage"
                         },
                         {
                             "code": "wander", 
