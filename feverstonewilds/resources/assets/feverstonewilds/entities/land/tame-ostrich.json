@@ -10,6 +10,14 @@
 	"drops": [],
 	"attributes": {
         "killedByInfoText": "feverstonewilds:deadcreature-ostrich",
+		"handbook": {
+			"groupcode": "feverstonewilds:creaturegroup-fswostrich"
+		},
+		"creatureDiet": {
+			"foodCategories": [ "Grain" ],
+			"foodTags": [ "cabbage", "carrot", "parsnip", "blueberry", "cranberry", "cherry", "whitecurrant", "redcurrant", "blackcurrant", "lychee" ],
+			"skipFoodTags": [ "rice" ]
+		},
         "riderIdleAnimation": "rideidle",
         "mountHeight": 1,
         "mountRunningSpeed": 0.15,

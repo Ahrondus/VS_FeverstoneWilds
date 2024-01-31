@@ -1,12 +1,7 @@
 {
 	"code": "cockatrice",
 	"class": "EntityAgent",
-	"variantgroups": [
-		{
-			"code": "gender",
-			"states": [ "male", "female" ]
-		}
-	],
+	"variantgroups": [ { "code": "gender", "states": [ "male", "female" ] } ],
 	"hitboxSize": {
 		"x": 1.15,
 		"y": 1.4
@@ -50,26 +45,13 @@
 		},
 		"behaviors": [
 			{ "code": "repulseagents" },
-			{
-				"code": "controlledphysics",
-				"stepHeight": 1.1251
-			},
-			{
-				"code": "floatupwhenstuck",
-				"onlyWhenDead": true
-			},
+			{ "code": "controlledphysics", "stepHeight": 1.1251 },
+			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
 			{ "code": "interpolateposition" },
 			{ "code": "harvestable" },
-			{
-				"code": "despawn",
-				"minPlayerDistance": 8,
-				"belowLightLevel": 8,
-				"minSeconds": 300
-			},
-			{
-				"code": "ropetieable",
-				"minGeneration": 2
-			}
+			{ "code": "despawn", "minPlayerDistance": 8,
+				"belowLightLevel": 8, "minSeconds": 300 },
+			{ "code": "ropetieable", "minGeneration": 2 }
 		],
 		"animations": [
 			{
@@ -119,70 +101,32 @@
 		},
 		"behaviors": [
 			{ "code": "repulseagents" },
-			{
-				"code": "controlledphysics",
-				"stepHeight": 1.1251
-			},
+			{ "code": "controlledphysics", "stepHeight": 1.1251 },
 			{
 				"code": "despawn",
 				"minPlayerDistance": 8,
 				"belowLightLevel": 8,
 				"minSeconds": 300
 			},
-			{
-				"code": "health",
-				"currenthealth": 19,
-				"maxhealth": 19
-			},
-			{
-				"code": "deaddecay",
-				"hoursToDecay": 56,
-				"decayedBlock": "carcass-medium"
-			},
-			{
-				"code": "floatupwhenstuck",
-				"onlyWhenDead": true
-			},
-			{
-				"code": "harvestable",
+			{ "code": "health",
+				"currenthealth": 19, "maxhealth": 19 },
+			{ "code": "deaddecay",
+				"hoursToDecay": 56, "decayedBlock": "carcass-medium" },
+			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
+			{ "code": "harvestable",
 				"drops": [
-					{
-						"type": "item",
-						"code": "poultry-raw",
-						"quantity": {
-							"avg": 10,
-							"var": 3
-						}
-					},
-					{
-						"type": "item",
-						"code": "hide-raw-medium",
-						"quantity": {
-							"avg": 1.2,
-							"var": 0.2
-						}
-					},
-					{
-						"type": "item",
-						"code": "feather",
-						"quantity": {
-							"avg": 5.2,
-							"var": 0.2
-						}
-					},
-					{
-						"type": "item",
-						"code": "fat",
-						"quantity": {
-							"avg": 1,
-							"var": 0.3
-						}
-					}
+					{ "type": "item", "code": "poultry-raw",
+						"quantity": { "avg": 10, "var": 3 } },
+					{ "type": "item", "code": "hide-raw-medium",
+						"quantity": { "avg": 1.2, "var": 0.2 } },
+					{ "type": "item", "code": "feather",
+						"quantity": { "avg": 5.2, "var": 0.2 } },
+					{ "type": "item", "code": "fat",
+						"quantity": { "avg": 1, "var": 0.3 } }
 				]
 			},
 			{ "code": "breathe" },
-			{
-				"code": "emotionstates",
+			{ "code": "emotionstates",
 				"states": [
 					{
 						"code": "fleeondamage",
@@ -218,8 +162,7 @@
 					}
 				]
 			},
-			{
-				"code": "taskai",
+			{ "code": "taskai",
 				"aitasks": [
 					{
 						"code": "meleeattack",
@@ -289,14 +232,8 @@
 						"animation": "sleep",
 						"whenNotInEmotionState": "aggressiveondamage",
 						"duringDayTimeFrames": [
-							{
-								"fromHour": 22,
-								"toHour": 24
-							},
-							{
-								"fromHour": 0,
-								"toHour": 5
-							}
+							{ "fromHour": 22, "toHour": 24 },
+							{ "fromHour": 0, "toHour": 5 }
 						],
 						"stopOnNearbyentityCodes": [ "player" ],
 						"stopRange": 8,
@@ -387,14 +324,8 @@
 					}
 				]
 			},
-			{
-				"code": "ropetieable",
-				"minGeneration": 2
-			},
-			{
-				"code": "pettable",
-				"minGeneration": 1
-			}
+			{ "code": "ropetieable", "minGeneration": 2 },
+			{ "code": "pettable", "minGeneration": 1 }
 		],
 		"spawnconditionsByType": {
 			"*-male": {
