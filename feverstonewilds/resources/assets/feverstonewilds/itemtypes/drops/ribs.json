@@ -5,7 +5,7 @@
 		"foodTags": [ "meat" ],
 		"inFirePitProps": {
 			"transform": {
-				"scale": 1,
+				"scale": 0.8,
 				"origin": {
 					"x": 0.5,
 					"y": 0.0625,
@@ -13,19 +13,19 @@
 				},
 				"translation": {
 					"x": 0.03125,
-					"y": 0.3125,
-					"z": 0
+					"y": 0.2725,
+					"z": 0.05
 				},
 				"rotation": {
 					"x": 0,
-					"y": 53,
-					"z": 90
+					"y": 40,
+					"z": 10
 				}
 			},
 			"useFirepitModel": "Spit"
 		},
 		"nutritionPropsWhenInMeal": {
-			"satiety": 200,
+			"satiety": 300,
 			"foodcategory": "Protein"
 		},
 		"handbook": {
@@ -58,22 +58,22 @@
 	},
 	"nutritionPropsByType": {
 		"ribs-raw": {
-			"satiety": 200,
-			"health": 0,
+			"satiety": 160,
+			"health": -2.25,
 			"foodcategory": "Protein"
 		},
 		"ribs-partcooked": {
 			"satiety": 200,
-			"health": 0,
+			"health": -1,
 			"foodcategory": "Protein"
 		},
 		"ribs-cooked": {
-			"satiety": 200,
-			"health": 0,
+			"satiety": 350,
+			"health": 0.75,
 			"foodcategory": "Protein"
 		},
 		"ribs-charred": {
-			"satiety": 200,
+			"satiety": 225,
 			"health": 0,
 			"foodcategory": "Protein"
 		}
@@ -88,7 +88,7 @@
 					"type": "item",
 					"code": "game:rot"
 				},
-				"transitionRatio": 1
+				"transitionRatio": 2
 			}
 		],
 		"*-partcooked": [
@@ -100,7 +100,7 @@
 					"type": "item",
 					"code": "game:rot"
 				},
-				"transitionRatio": 1
+				"transitionRatio": 2
 			}
 		],
 		"*-cooked": [
@@ -112,7 +112,7 @@
 					"type": "item",
 					"code": "game:rot"
 				},
-				"transitionRatio": 1
+				"transitionRatio": 2
 			}
 		],
 		"*-charred": [
@@ -124,7 +124,7 @@
 					"type": "item",
 					"code": "game:rot"
 				},
-				"transitionRatio": 1
+				"transitionRatio": 2
 			}
 		]
 	},
@@ -170,7 +170,7 @@
 	},
 	"combustiblePropsByType": {
 		"ribs-raw": {
-			"meltingPoint": 150,
+			"meltingPoint": 250,
 			"meltingDuration": 60,
 			"smeltedRatio": 1,
 			"smeltingType": "cook",
