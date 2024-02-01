@@ -5,27 +5,27 @@
 		"foodTags": [ "meat" ],
 		"inFirePitProps": {
 			"transform": {
-				"scale": 1.2,
+				"scale": 0.75,
 				"origin": {
 					"x": 0.5,
 					"y": 0.0625,
 					"z": 0.5
 				},
 				"translation": {
-					"x": 0.03125,
-					"y": 0.3125,
-					"z": -0.15
+					"x": 0.1,
+					"y": 0.25,
+					"z": -0.05
 				},
 				"rotation": {
-					"x": 90,
+					"x": 0,
 					"y": 53,
-					"z": 45
+					"z": 20
 				}
 			},
 			"useFirepitModel": "Spit"
 		},
 		"nutritionPropsWhenInMeal": {
-			"satiety": 200,
+			"satiety": 300,
 			"foodcategory": "Protein"
 		},
 		"handbook": {
@@ -58,22 +58,22 @@
 	},
 	"nutritionPropsByType": {
 		"bisonleg-raw": {
-			"satiety": 200,
-			"health": 0,
+			"satiety": 180,
+			"health": -2.5,
 			"foodcategory": "Protein"
 		},
 		"bisonleg-partcooked": {
-			"satiety": 200,
-			"health": 0,
+			"satiety": 220,
+			"health": -1,
 			"foodcategory": "Protein"
 		},
 		"bisonleg-cooked": {
-			"satiety": 200,
-			"health": 0,
+			"satiety": 400,
+			"health": 1,
 			"foodcategory": "Protein"
 		},
 		"bisonleg-charred": {
-			"satiety": 200,
+			"satiety": 250,
 			"health": 0,
 			"foodcategory": "Protein"
 		}
@@ -88,7 +88,7 @@
 					"type": "item",
 					"code": "game:rot"
 				},
-				"transitionRatio": 1
+				"transitionRatio": 2
 			}
 		],
 		"*-partcooked": [
@@ -100,7 +100,7 @@
 					"type": "item",
 					"code": "game:rot"
 				},
-				"transitionRatio": 1
+				"transitionRatio": 2
 			}
 		],
 		"*-cooked": [
@@ -112,7 +112,7 @@
 					"type": "item",
 					"code": "game:rot"
 				},
-				"transitionRatio": 1
+				"transitionRatio": 2
 			}
 		],
 		"*-charred": [
@@ -124,7 +124,7 @@
 					"type": "item",
 					"code": "game:rot"
 				},
-				"transitionRatio": 1
+				"transitionRatio": 2
 			}
 		]
 	},
@@ -175,7 +175,7 @@
 	},
 	"combustiblePropsByType": {
 		"bisonleg-raw": {
-			"meltingPoint": 150,
+			"meltingPoint": 250,
 			"meltingDuration": 60,
 			"smeltedRatio": 1,
 			"smeltingType": "cook",
