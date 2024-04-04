@@ -1,0 +1,68 @@
+{
+	"code": "egg-ostrich",
+	"behaviors": [{"name": "UnstableFalling"}, {"name": "RightClickPickup", "properties": { "dropsPickupMode": true}} ],
+	"entityClass": "Transient",
+	"attributes": {
+		"transientProps": {
+			"convertFrom": "*", 
+			"convertTo": "air", 
+			"inGameHours": "72"
+		},
+		"handbook": {
+			"groupBy": ["egg-ostrich-*"]
+		}
+	},
+	"variantgroups": [
+		{ "code":"amount", "states": ["1", "2", "3", "4", "5", "6"] }
+	],	
+	"creativeinventory": { "general": ["*"], "decorative": ["*"] },
+	"blockmaterial": "Soil",
+	"drawtype": "json",
+	"shapebytype": {
+		"*-1": { 
+			"base": "block/egg/1ostrichegg",
+			"alternates": [ { "base": "block/egg/1ostrichegg", "rotateY": 90 }, { "base": "block/egg/1ostrichegg", "rotateY": 180 }, { "base": "block/egg/1ostrichegg", "rotateY": 270 } ]
+		},
+		"*-2": { 
+			"base": "block/egg/2ostricheggs",
+			"alternates": [ { "base": "block/egg/2ostricheggs", "rotateY": 90 }, { "base": "block/egg/2ostricheggs", "rotateY": 180 }, { "base": "block/egg/2ostricheggs", "rotateY": 270 } ]
+		},
+		"*-3": { 
+			"base": "block/egg/3ostricheggs",
+			"alternates": [ { "base": "block/egg/3ostricheggs", "rotateY": 90 }, { "base": "block/egg/3ostricheggs", "rotateY": 180 }, { "base": "block/egg/3ostricheggs", "rotateY": 270 } ]
+		},
+		"*-4": { 
+			"base": "block/egg/4ostricheggs",
+			"alternates": [ { "base": "block/egg/4ostricheggs", "rotateY": 90 }, { "base": "block/egg/4ostricheggs", "rotateY": 180 }, { "base": "block/egg/4ostricheggs", "rotateY": 270 } ]
+		},
+		"*-5": { 
+			"base": "block/egg/5ostricheggs",
+			"alternates": [ { "base": "block/egg/5ostricheggs", "rotateY": 90 }, { "base": "block/egg/5ostricheggs", "rotateY": 180 }, { "base": "block/egg/5ostricheggs", "rotateY": 270 } ]
+		},
+		"*-6": { 
+			"base": "block/egg/6ostricheggs",
+			"alternates": [ { "base": "block/egg/6ostricheggs", "rotateY": 90 }, { "base": "block/egg/6ostricheggs", "rotateY": 180 }, { "base": "block/egg/6ostricheggs", "rotateY": 270 } ]
+		}
+	},
+	"doNotRenderAtLod2": true,
+	"lightAbsorption": 0,
+	"sidesolid": { "all": false },
+	"sideopaque": { "all": false },
+	"replaceable": 100,
+	"resistance": 0.25,
+	"selectionbox": { "x1": 0, "y1": 0, "x2": 1, "y2": 0.125, "z2": 1 },
+	"collisionbox": null,
+	"dropsByType": {
+		"*-1": [ { "type": "item", "code": "egg-ostrich-raw", "quantity": { "avg": 1 }  } ],
+		"*-2": [ { "type": "item", "code": "egg-ostrich-raw", "quantity": { "avg": 2 }  } ],
+		"*-3": [ { "type": "item", "code": "egg-ostrich-raw", "quantity": { "avg": 3 }  } ],
+		"*-4": [ { "type": "item", "code": "egg-ostrich-raw", "quantity": { "avg": 4 }  } ],
+		"*-5": [ { "type": "item", "code": "egg-ostrich-raw", "quantity": { "avg": 5 }  } ],
+		"*-6": [ { "type": "item", "code": "egg-ostrich-raw", "quantity": { "avg": 6 }  } ]
+	},
+	"materialDensity": 300,
+	"guiTransform": {
+		"origin": { "x": 0.5, "y": 0.15, "z": 0.5 },
+		"scale": 2.5
+	}
+}

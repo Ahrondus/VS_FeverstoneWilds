@@ -35,10 +35,6 @@
 			"groupcode": "feverstonewilds:creaturegroup-fswdirewolf"
 		}
     },
-    "sizeByType": {
-        "direwolf-male": 1,
-        "direwolf-female": 0.95
-    },
     "client": {
         "renderer": "Shape",
         "shape": { "base": "entity/land/direwolf" },
@@ -46,6 +42,11 @@
                     "alternates": [ { "base": "entity/land/direwolf/direwolf2" }, { "base": "entity/land/direwolf/direwolf3" }, 
                                     { "base": "entity/land/direwolf/direwolf4" }, { "base": "entity/land/direwolf/direwolf5" }, 
                                     { "base": "entity/land/direwolf/direwolf6" }, { "base": "entity/land/direwolf/direwolf7" } ] },
+        "sizeByType": {
+            "direwolf-male": 1,
+            "direwolf-female": 0.95
+
+        },
         "behaviors": [
             { "code": "multiply", "enabledByType": { "*-male": false, "*-female": true } },
             { "code": "repulseagents" },
@@ -124,9 +125,10 @@
                 { "code": "floatupwhenstuck", "onlyWhenDead": true },
                 { "code": "harvestable",
                     "drops": [
-                        { "type": "item", "code": "bushmeat-raw", "quantity": { "avg": 8, "var": 2 } },
+                        { "type": "item", "code": "bushmeat-raw", "quantity": { "avg": 5, "var": 2 } },
                         { "type": "item", "code": "hide-raw-medium", "quantity": { "avg": 2, "var": 1 } },
-                        { "type": "item", "code": "fat", "quantity": { "avg": 2, "var": 1 } }
+                        { "type": "item", "code": "fat", "quantity": { "avg": 1.5, "var": 0.5 } },
+                        { "type": "item", "code": "bone-big", "quantity": 1 }
                     ] },
                 { "code": "deaddecay", "hourstoDecay": 96, "decayedBlock": "carcass-medium" },
                 { "code": "despawn", "minPlayerDistance": 15, "belowLightLevel": 7, "minSeconds": 300 },
@@ -261,7 +263,7 @@
                             "maxcooldown": 500000,
                             "animation": "Howl",
                             "animationSpeed": 0.5,
-                            "sound": "game:creature/wolf/howl",
+                            "sound": "game:creature/wolf/howl*",
                             "soundRange": 110
                         },
                         {
@@ -323,7 +325,7 @@
                     },
                     "insideBlockCodes": [ "game:air", "game:tallgrass-*", "game:snowlayer-1" ],
                     "minTemp": -15,
-                    "maxTemp": 25,
+                    "maxTemp": 12,
                     "minRain": 0.25,
                     "minForest": 0.15,
                     "companions": [ "direwolf-female", "feverstonewilds:direwolf-pup" ]
@@ -342,7 +344,7 @@
                     },
                     "insideBlockCodes": [ "game:air", "game:tallgrass-*", "game:snowlayer-1" ],
                     "minTemp": -15,
-                    "maxTemp": 25,
+                    "maxTemp": 12,
                     "minRain": 0.15,
                     "minForest": 0.15,
                     "companions": [ "direwolf-female", "feverstonewilds:direwolf-pup" ]
@@ -353,7 +355,7 @@
     "sounds": {
         "hurt": "game:creature/wolf/hurt",
         "death": "game:creature/wolf/hurt",
-        "idle": "game:creature/wolf/howl"
+        "idle": "game:creature/wolf/howl*"
     },
     "idleSoundChance": 0.015,
     "hurtSoundChance": 0.25

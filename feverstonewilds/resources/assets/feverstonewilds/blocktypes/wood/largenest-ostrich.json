@@ -1,7 +1,7 @@
 {
-	"code": "largenest",
-	"class": "BlockAnimalNest",
-	"entityClass": "AnimalNest",
+	"code": "largenest-ostrich",
+	"class": "BlockAnimalNestOstrich",
+	"entityClass": "AnimalNestOstrich",
 	"behaviors": [{ "name": "CollectFrom"}],
 	"variantgroups": [
 		{"code": "eggCount", "states": ["empty", "1egg", "2eggs", "3eggs", "4eggs", "5eggs", "6eggs" ]}
@@ -9,7 +9,7 @@
 	"attributes": {
 		"fullVariant": "6eggs",
 		"handbook": {
-			"groupBy": ["largenest-*"],
+			"groupBy": ["largenest-ostrich-*"],
 			"extraSections": [
 				{ "title": "handbooktitle-largenest", "text": "handbooktext-henbox" }
 			]
@@ -17,7 +17,7 @@
 	},
 	"creativeinventory": { "general": ["*"] },
 	"shape": {
-		"base": "block/wood/largenest/largenest-{eggCount}"
+		"base": "block/wood/largenest-ostrich/largenest-ostrich-{eggCount}"
 	},
 	"resistance": 1,
 	"sideopaque": {
@@ -39,30 +39,30 @@
 	{
 		"*-1egg": [ 
 			{ "type": "item", "code": "egg-ostrich-raw", "quantity": { "avg": 1 }  },
-			{ "type": "block", "code": "largenest-empty", "quantity": { "avg": 1} }
+			{ "type": "block", "code": "largenest-ostrich-empty", "quantity": { "avg": 1} }
 		],
 		"*-2eggs": [ 			
 			{ "type": "item", "code": "egg-ostrich-raw", "quantity": { "avg": 2 }  },
-			{ "type": "block", "code": "largenest-empty", "quantity": { "avg": 1} } 
+			{ "type": "block", "code": "largenest-ostrich-empty", "quantity": { "avg": 1} } 
 			],
 		"*-3eggs": [ 
 			{ "type": "item", "code": "egg-ostrich-raw", "quantity": { "avg": 3 }  },
-			{ "type": "block", "code": "largenest-empty", "quantity": { "avg": 1} }
+			{ "type": "block", "code": "largenest-ostrich-empty", "quantity": { "avg": 1} }
 		],
 		"*-4eggs": [ 
 			{ "type": "item", "code": "egg-ostrich-raw", "quantity": { "avg": 4 }  },
-			{ "type": "block", "code": "largenest-empty", "quantity": { "avg": 1} }
+			{ "type": "block", "code": "largenest-ostrich-empty", "quantity": { "avg": 1} }
 		],
 		"*-5eggs": [ 
 			{ "type": "item", "code": "egg-ostrich-raw", "quantity": { "avg": 5 }  },
-			{ "type": "block", "code": "largenest-empty", "quantity": { "avg": 1} }
+			{ "type": "block", "code": "largenest-ostrich-empty", "quantity": { "avg": 1} }
 		],
 		"*-6eggs": [ 
 			{ "type": "item", "code": "egg-ostrich-raw", "quantity": { "avg": 6 }  },
-			{ "type": "block", "code": "largenest-empty", "quantity": { "avg": 1} }
+			{ "type": "block", "code": "largenest-ostrich-empty", "quantity": { "avg": 1} }
 		],
 		"*-empty":[
-			{ "type": "block", "code": "largenest-empty", "quantity": { "avg": 1} }
+			{ "type": "block", "code": "largenest-ostrich-empty", "quantity": { "avg": 1} }
 		]
 	},
 	"tphandTransform": {

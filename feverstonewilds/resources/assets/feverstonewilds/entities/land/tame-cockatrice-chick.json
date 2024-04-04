@@ -6,16 +6,18 @@
     "eyeHeight": 0.15,
 	"weight": 0.1,
     "drops": [],
-	"attributes": {
-		"creatureDiet": {
-			"foodCategories": [ "Grain", "Protein" ],
-			"skipFoodTags": [ "rice" ]
-		},
-		"handbook": {
-			"groupcode": "feverstonewilds:creaturegroup-fswcockatrice"
-		},
-		"basketCatchable": true
-	},
+  "attributes": {
+    "killedByInfoText": "feverstonewilds:deadcreature-eaten-cockatrice",
+    "creatureDiet": {
+      "foodCategories": [ "Grain", "Protein" ],
+      "foodTags": [ "nibbleCrop" ],
+      "skipFoodTags": [ "rice" ]
+    },
+    "handbook": {
+      "groupcode": "feverstonewilds:creaturegroup-fswcockatrice"
+    },
+    "basketCatchable": true
+  },
     "client": {
         "renderer": "Shape",
         "shape": { "base": "entity/land/cockatrice-chick" },
@@ -173,24 +175,6 @@
                         "command": "lay"
                     },
                     {
-                        "code": "simplecommand",
-                        "priority": 3,
-                        "minduration": 2000,
-                        "maxduration": 3000,
-                        "priorityForCancel": 3.1,
-                        "animation": "Attack",
-                        "command": "speak",
-                        "sound": "game:creature/wolf/chick-flop"
-                    },
-                    {
-                        "code": "playfetch",
-                        "priority": 2.2,
-                        "priorityForCancel": 2.1,
-                        "movespeed": 0.02,
-                        "animationSpeed": 4,
-                        "animation": "Run"
-                    },
-                    {
                         "code": "stayclosetoentity",
                         "priority": 1.4,
                         "entityCode": "player",
@@ -218,17 +202,6 @@
                         "animationSpeed": 2.2
                     },
                     {
-                        "code": "seeknest",
-                        "priority": 1.4,
-                        "duringDayTimeFrames": [
-                            { "fromHour": 10, "toHour": 18 },
-                            { "fromHour": 1, "toHour": 3 }
-                        ],
-                        "movespeed": 0.004,
-                        "animationSpeed": 2,
-                        "animation": "Walk"
-                    },
-                    {
                         "code": "idle",
                         "priority": 1.35,
                         "priorityForCancel": 1.35,
@@ -247,38 +220,18 @@
                         "stopOnHurt": true
                     },
                     {
-                        "code": "idle",
-                        "priority": 1.3,
-                        "priorityForCancel": 1.35,
-                        "minduration": 2500,
-                        "maxduration": 2500,
-                        "mincooldown": 10000,
-                        "maxcooldown": 50000,
-                        "animation": "Sniff",
-                        "animationSpeed": 0.8
-                    },
-                    {
-                        "code": "idle",
-                        "priority": 1.31,
-                        "priorityForCancel": 1.35,
-                        "minduration": 1500,
-                        "maxduration": 1500,
-                        "mincooldown": 50000,
-                        "maxcooldown": 300000,
-                        "animation": "Howl",
-                        "animationSpeed": 0.8,
-                        "sound": "game:creature/wolf/chick-howl"
-                    },
-                    {
-                        "code": "idle",
-                        "priority": 1.32,
-                        "priorityForCancel": 1.35,
-                        "minduration": 2830,
-                        "maxduration": 2830,
-                        "mincooldown": 80000,
-                        "maxcooldown": 200000,
-                        "animation": "Flop",
-                        "sound": "game:creature/wolf/chick-flop"
+                        "code": "seekfoodandeat",
+                        "movespeed": 0.004,
+                        "priority": 1.35,
+                        "eatSound": "game:creature/animal-eat-small",
+                        "soundRange": 3,
+                        "soundStartMs": 800,
+                        "eatTime": 1.5,
+                        "animationSpeed": 1.4,
+                        "animation": "walk",
+                        "eatAnimation": "eat",
+                        "mincooldownHours": 1,
+                        "maxcooldownHours": 4
                     },
                     {
                         "code": "wander",
@@ -295,15 +248,11 @@
                         "animationSpeed": 0.75,
                         "priority": 1.4,
                         "priorityForCancel": 1.7,
-                        "eatItemCategories": [
-                            "Protein"
-                        ],
+                        "eatItemCategories": [ "Protein", "Grain" ],
                         "eatItemCodes": [
-                            "bone",
-                            "bushmeat-raw",
-                            "redmeat-raw",
-                            "poultry-raw",
-                            "petai:petcookie-meat-perfect"
+                            "bone", "bushmeat-raw", "redmeat-raw",
+                            "poultry-raw", "petai:petcookie-meat-perfect",
+                            "grain-*"
                         ],
                         "useTime": 1.5,
                         "mincooldownHours": 1,
@@ -329,10 +278,10 @@
             { "code": "pettableextended", "minGeneration": 1 }
         ]
     },
-    "sounds": {
-        "hurt": "game:creature/wolf/chick-hurt",
-        "death": "game:creature/wolf/chick-hurt",
-        "idle": "game:creature/wolf/chick-bark"
-    },
+  "sounds": {
+    "hurt": "game:creature/chicken/chick*",
+    "death": "game:creature/chicken/chick*",
+    "idle": "game:creature/chicken/chick*"
+  },
     "idleSoundChance": 0.01
 }

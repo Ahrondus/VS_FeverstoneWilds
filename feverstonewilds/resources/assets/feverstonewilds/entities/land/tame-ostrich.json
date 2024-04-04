@@ -6,7 +6,7 @@
 	],
 	"hitboxSize": { "x": 1.25, "y": 2.2 },
 	"deadHitboxSize": { "x": 2.25, "y": 1.25 },
-	"eyeHeight": 0.7,
+	"eyeHeight": 2,
 	"drops": [],
 	"attributes": {
         "killedByInfoText": "feverstonewilds:deadcreature-ostrich",
@@ -19,7 +19,7 @@
 			"skipFoodTags": [ "rice" ]
 		},
         "riderIdleAnimation": "rideidle",
-        "mountHeight": 0.7,
+        "mountHeight": 1,
         "mountRunningSpeed": 0.15,
         "mountWalkingSpeed": 0.055,
         "mountAnimations": {
@@ -146,7 +146,23 @@
 				"easeOutSpeed": 8,
 				"easeInSpeed": 5,
 				"blendMode": "addAverage" 
-			}
+			},
+            {
+                "code": "walk",
+                "animation": "walk",
+                "blendMode": "average",
+                "mulWithWalkSpeed": true,
+                "animationSpeed": 0.6,
+				"triggeredBy": {"onControls": ["move"], "matchExact": true }
+            },
+            {
+                "code": "run",
+                "animation": "run",
+                "blendMode": "average",
+                "mulWithWalkSpeed": true,
+                "animationSpeed": 1.1,
+				"triggeredBy": {"onControls": ["move", "sprintMode"], "matchExact": true }
+            }
 		]
 	},
 	"server": {
@@ -255,7 +271,7 @@
                         "animationSpeed": 2.2,
                         "maxDistance": 8,
                         "searchRange": 40,
-                        "animation": "Run"
+                        "animation": "run"
                     },
                     {
                         "code": "stay",
@@ -265,7 +281,7 @@
                         "movespeed": 0.006,
                         "maxDistance": 10,
                         "searchRange": 40,
-                        "animation": "Walk"
+                        "animation": "walk"
                     },
                     {
                         "code": "useinventory",

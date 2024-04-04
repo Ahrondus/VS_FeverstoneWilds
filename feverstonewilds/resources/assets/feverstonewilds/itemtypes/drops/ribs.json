@@ -1,0 +1,184 @@
+{
+	"code": "ribs",
+	"maxstacksize": 8,
+	"attributes": {
+		"foodTags": [ "meat" ],
+		"inFirePitProps": {
+			"transform": {
+				"scale": 0.8,
+				"origin": {
+					"x": 0.5,
+					"y": 0.0625,
+					"z": 0.5
+				},
+				"translation": {
+					"x": 0.03125,
+					"y": 0.2725,
+					"z": 0.05
+				},
+				"rotation": {
+					"x": 0,
+					"y": 40,
+					"z": 10
+				}
+			},
+			"useFirepitModel": "Spit"
+		},
+		"nutritionPropsWhenInMeal": {
+			"satiety": 300,
+			"foodcategory": "Protein"
+		},
+		"handbook": {
+			"groupBy": [ "ribs-*" ]
+		}
+	},
+	"variantgroups": [
+		{
+			"code": "type",
+			"states": [ "raw", "partcooked", "cooked", "charred" ]
+		}
+	],
+	"shapebytype": {
+		"ribs-raw": {
+			"base": "item/drops/ribsraw"
+		},
+		"ribs-partcooked": {
+			"base": "item/drops/ribspartcooked"
+		},
+		"ribs-cooked": {
+			"base": "item/drops/ribscooked"
+		},
+		"ribs-charred": {
+			"base": "item/drops/ribscharred"
+		}
+	},
+	"creativeinventory": {
+		"general": [ "*" ],
+		"items": [ "*" ]
+	},
+	"nutritionPropsByType": {
+		"ribs-raw": {
+			"satiety": 160,
+			"health": -2.25,
+			"foodcategory": "Protein"
+		},
+		"ribs-partcooked": {
+			"satiety": 200,
+			"health": -1,
+			"foodcategory": "Protein"
+		},
+		"ribs-cooked": {
+			"satiety": 350,
+			"health": 0.75,
+			"foodcategory": "Protein"
+		},
+		"ribs-charred": {
+			"satiety": 225,
+			"health": 0,
+			"foodcategory": "Protein"
+		}
+	},
+	"transitionablePropsByType": {
+		"*-raw": [
+			{
+				"type": "Perish",
+				"freshHours": { "avg": 50 },
+				"transitionHours": { "avg": 24 },
+				"transitionedStack": {
+					"type": "item",
+					"code": "game:rot"
+				},
+				"transitionRatio": 2
+			}
+		],
+		"*-partcooked": [
+			{
+				"type": "Perish",
+				"freshHours": { "avg": 130 },
+				"spoilHours": { "avg": 36 },
+				"transitionedStack": {
+					"type": "item",
+					"code": "game:rot"
+				},
+				"transitionRatio": 2
+			}
+		],
+		"*-cooked": [
+			{
+				"type": "Perish",
+				"freshHours": { "avg": 180 },
+				"spoilHours": { "avg": 40 },
+				"transitionedStack": {
+					"type": "item",
+					"code": "game:rot"
+				},
+				"transitionRatio": 2
+			}
+		],
+		"*-charred": [
+			{
+				"type": "Perish",
+				"freshHours": { "avg": 400 },
+				"spoilHours": { "avg": 60 },
+				"transitionedStack": {
+					"type": "item",
+					"code": "game:rot"
+				},
+				"transitionRatio": 2
+			}
+		]
+	},
+	"materialDensity": 600,
+	"guiTransform": {
+		"rotation": {
+			"x": -54,
+			"y": 47,
+			"z": 31
+		},
+		"origin": {
+			"x": 0.5,
+			"y": 0.15,
+			"z": 0.4
+		},
+		"scale": 2.08
+	},
+	"tpHandTransform": {
+		"translation": {
+			"x": -1.2,
+			"y": -0.8,
+			"z": -0.8
+		},
+		"rotation": {
+			"x": 180,
+			"y": -180,
+			"z": 33
+		},
+		"scale": 0.75
+	},
+	"groundTransform": {
+		"translation": {
+			"x": 0,
+			"y": -0.25,
+			"z": -0
+		},
+		"rotation": {
+			"x": 180,
+			"y": 0,
+			"z": 0
+		},
+		"scale": 5
+	},
+	"combustiblePropsByType": {
+		"ribs-raw": {
+			"meltingPoint": 250,
+			"meltingDuration": 60,
+			"smeltedRatio": 1,
+			"smeltingType": "cook",
+			"smeltedStack": {
+				"type": "item",
+				"code": "ribs-charred"
+			},
+			"requiresContainer": false
+		}
+	}
+}

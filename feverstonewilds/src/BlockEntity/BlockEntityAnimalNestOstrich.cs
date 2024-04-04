@@ -27,9 +27,9 @@ namespace FeverstoneWilds
      * HenBox tracks the parent entity and the generation of each egg separately => in future could have 1 duck egg in a henbox for example, so that 1 duckling hatches and 2 hen chicks
      */
 
-    public class BlockEntityAnimalNest : BlockEntity, IAnimalNest
+    public class BlockEntityAnimalNestOstrich : BlockEntity, IAnimalNest
     {
-        internal InventoryGeneric inventory;
+        // internal InventoryGeneric inventory;
         string fullCode = "1egg";
 
         public Size2i AtlasSize => (Api as ICoreClientAPI).BlockTextureAtlas.Size;
@@ -45,14 +45,14 @@ namespace FeverstoneWilds
         private double occupiedTimeLast;
 
 
-        public BlockEntityAnimalNest()
+        public BlockEntityAnimalNestOstrich()
         {
         }
 
 
         public bool IsSuitableFor(Entity entity)
         {
-            return entity is EntityAgent && entity.Code.Path == "ostrich-female";
+            return entity is EntityAgent && ( entity.Code.Path == "ostrich-female" || entity.Code.Path == "tame-ostrich-female" );
         }
 
         public bool Occupied(Entity entity)
