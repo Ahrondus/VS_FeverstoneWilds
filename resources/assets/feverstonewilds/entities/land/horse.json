@@ -3,33 +3,42 @@
     "class": "EntityMount",
     "variantgroups": [
         { "code": "gender", "states": ["male", "female"] },
-        { "code": "type", "states": ["draft", "arabian"] }
+        { "code": "type", "states": ["draft", "arabian", "donkey"] }
     ],
     "collisionBoxSizeByType": {
         "horse-male-draft": { "x": 1.75, "y": 1.9 },
         "horse-female-draft": { "x":1.65, "y": 1.9 },
 
         "horse-male-arabian": { "x": 1.4, "y": 1.55 },
-        "horse-female-arabian": { "x": 1.3, "y": 1.5 }
+        "horse-female-arabian": { "x": 1.3, "y": 1.5 },
+
+        "horse-male-donkey": { "x": 1.3, "y": 1.45 },
+        "horse-female-donkey": { "x": 1.25, "y": 1.40 }
     },
     "deadCollisionBoxSizeByType": {
         "horse-male-draft": { "x": 1.9, "y": 0.8 },
         "horse-female-draft": { "x": 1.9, "y": 0.8 },
 
         "horse-male-arabian": { "x": 1.55, "y": 0.7 },
-        "horse-female-arabian": { "x": 1.5, "y": 0.7 }
+        "horse-female-arabian": { "x": 1.5, "y": 0.7 },
+
+        "horse-male-donkey": { "x": 1.45, "y": 0.5 },
+        "horse-female-donkey": { "x": 1.40, "y": 0.47 }
     },
     "selectionBoxSizeByType": {
         "*-draft": { "x": 1.7, "y": 2.0 },
-        "*-arabian": { "x": 1.5, "y": 1.6 }
+        "*-arabian": { "x": 1.5, "y": 1.6 },
+        "*-donkey": { "x": 1.5, "y": 1.5 }
     },
     "deadSelectionBoxSizeByType": {        
         "*-draft": { "x": 1.9, "y": 1 },
-        "*-arabian": { "x": 1.5, "y": 0.75 }
+        "*-arabian": { "x": 1.5, "y": 0.75 },
+        "*-donkey": { "x": 1.45, "y": 0.6 }
     },
     "knockbackResistanceByType": {
         "*-draft": 0.25,
-        "*-arabian": 0.15
+        "*-arabian": 0.15,
+        "*-donkey": 0.125
     },
     "eyeHeight": 1.7,
     "drops": [],
@@ -39,15 +48,18 @@
         "riderIdleAnimation": "rideidle",
         "mountHeightByType": {
             "*-draft": 1.05,
-            "*-arabian": 0.80
+            "*-arabian": 0.80,
+            "*-donkey": 0.625
         },
         "mountRunningSpeedByType": {
             "*-draft": 0.09,
-            "*-arabian": 0.12
+            "*-arabian": 0.12,
+            "*-donkey": 0.07
         },
         "mountWalkingSpeedByType": {
             "*-draft": 0.02,
-            "*-arabian": 0.035
+            "*-arabian": 0.035,
+            "*-donkey": 0.0175
         },
         "mountAnimations": {
             "walk": {
@@ -77,7 +89,8 @@
         "renderer": "Shape",
         "shapeByType": {
             "*-draft": { "base": "entity/land/horse-draft" },
-            "*-arabian": { "base": "entity/land/horse-arabian" }
+            "*-arabian": { "base": "entity/land/horse-arabian" },
+            "*-donkey": { "base": "entity/land/horse-donkey" }
         },
         "textureByType": {
             "*-draft": { "base": "entity/land/horse/horse10",
@@ -90,6 +103,10 @@
             "*-arabian": { "base": "entity/land/horse/horse14", 
                            "alternates": [ { "base": "entity/land/horse/horse4" }, { "base": "entity/land/horse/horse13" },
                             { "base": "entity/land/horse/horse17" }, { "base": "entity/land/horse/horse19" } ]},
+            "*-donkey": { "base": "entity/land/donkey/donkeyskin1",
+                            "alternates": [ { "base": "entity/land/donkey/donkeyskin2" }, { "base": "entity/land/donkey/donkeyskin3" },
+                            { "base": "entity/land/donkey/donkeyskin4" }, { "base": "entity/land/donkey/donkeyskin5" }, 
+                            { "base": "entity/land/donkey/donkeyskin6" } ] },
 
             "__comment": "More horse breeds to come!"
             
@@ -99,7 +116,10 @@
             "horse-female-draft": 0.95,
 
             "horse-male-arabian": 1,
-            "horse-female-arabian": 0.925
+            "horse-female-arabian": 0.925,
+
+            "horse-male-donkey": 0.9,
+            "horse-female-donkey": 0.86
         },
         "behaviors": [ 
                 { "code": "multiply",
@@ -207,9 +227,13 @@
             { "code": "nametag", "showtagonlywhentargeted": true },
                 {
                     "code": "multiply",
-                    "enabledByType": { "*-male-*": false, "*-female-draft": true, "*-female-arabian": true },
-                    "spawnEntityCodeByType": { "*-female-draft": "feverstonewilds:foal-draft", "*-female-arabian": "feverstonewilds:foal-arabian"},
-                    "requiresNearbyEntityCodeByType": { "*-female-draft": "feverstonewilds:horse-male-draft", "*-female-arabian": "feverstonewilds:horse-male-arabian"},
+                    "enabledByType": { "*-male-*": false, "*-female-draft": true, "*-female-arabian": true, "*-female-donkey": true },
+                    "spawnEntityCodeByType": {  "*-female-draft": "feverstonewilds:foal-draft", 
+                                                "*-female-arabian": "feverstonewilds:foal-arabian",
+                                                "*-famale-donkey": "feverstonewilds:foal-donkey" },
+                    "requiresNearbyEntityCodeByType": { "*-female-draft": "feverstonewilds:horse-male-draft", 
+                                                        "*-female-arabian": "feverstonewilds:horse-male-arabian",
+                                                        "*-female-donkey": "feverstonewilds:horse-male-donkey"},
                     "requiresNearbyEntityRange": 10,
                     "spawnQuantityMax": 1,
                     "spawnQuantityMin": 1,
@@ -220,7 +244,7 @@
                     "portionsEatenForMultiply": 14
                 },
                 { "code": "tameable",
-                    "disobediencePerDay": 0.1,
+                    "disobediencePerDay": 0.05,
                     "treat": [
                         { "code": "vegetable-carrot", "progress": 0.05, "cooldown": 0.3 },
                         { "code": "carrotbundle", "progress": 0.125, "cooldown": 0.4 },
@@ -268,7 +292,8 @@
                 { "code": "health", 
                         "maxhealthByType": {
                             "*-draft": 28,
-                            "*-arabian": 21
+                            "*-arabian": 21,
+                            "*-donkey": 18
                         }
                     },
                 { "code": "harvestable",
@@ -276,21 +301,24 @@
                         { "type": "item", "code": "redmeat-raw",
                             "quantityByType": {
                                 "*-draft": { "avg": 15, "var": 4 },
-                                "*-arabian": { "avg": 13, "var": 3 }
+                                "*-arabian": { "avg": 13, "var": 3 },
+                                "*-donkey": { "avg": 11, "var": 2 }
                                 
                             }
                         },
                         { "type": "item", "code": "hide-raw-large",
                             "quantityByType": {
                                 "*-draft": { "avg": 1.5, "var": 0.5 },
-                                "*-arabian": { "avg": 1, "var": 0.5 }
+                                "*-arabian": { "avg": 1, "var": 0.5 },
+                                "*-donkey": { "avg": 1.5, "var": 0.5 }
                                 
                             }
                         },
                         { "type": "item", "code": "fat",
                             "quantityByType": {
                                 "*-draft": { "avg": 3, "var": 1 },
-                                "*-arabian": { "avg": 2, "var": 1 }
+                                "*-arabian": { "avg": 2, "var": 1 },
+                                "*-donkey": { "avg": 2, "var": 1 }
                                 
                             }
                         }
@@ -310,7 +338,7 @@
                     "aitasks": [
                         {
                             "code": "meleeattack",
-                            "entityCodes": [ "player", "wolf-*" ],
+                            "entityCodes": [ "player", "wolf-*", "feverstonewilds:direwolf-*" ],
                             "priority": 2,
                             "slot": 1,
                             "damageByType":{
@@ -340,13 +368,22 @@
                         },
                         {
                             "code": "fleeentity",
-                            "entityCodes": [ "player", "wolf-*" ],
+                            "entityCodes": [ "player", "wolf-*", "feverstonewilds:direwolf-*" ],
                             "priority": 1.7,
                             "movespeed": 0.055,
                             "seekingRange": 18,
                             "animation": "run",
                             "animationSpeed": 2.2,
                             "whenInEmotionState": "fleeondamage"
+                        },
+                        {
+                            "code": "fleeentity",
+                            "entityCodes": [ "wolf-*", "feverstonewilds:direwolf-*" ],
+                            "priority": 1.7,
+                            "movespeed": 0.055,
+                            "seekingRange": 18,
+                            "animation": "run",
+                            "animationSpeed": 2.2
                         },
                         {
                             "code": "beamount",
@@ -421,7 +458,7 @@
                                     "toHour": 5
                                 }
                             ],
-                            "stopOnNearbyEntityCodes": [ "player", "wolf-*" ],
+                            "stopOnNearbyEntityCodes": [ "player", "wolf-*", "feverstonewilds:direwolf-*" ],
                             "stopRange": 8,
                             "stopOnHurt": true
                         },
@@ -492,25 +529,30 @@
                     "insideBlockCodes": [ "game:air", "game:tallgrass-*", "game:snowlayer-1" ],
                     "minTempByType": {
                         "*-draft": -10,
-                        "*-arabian": 0
+                        "*-arabian": 0,
+                        "*-donkey": -5
                     },
                     "maxTempByType": {
                         "*-draft": 20,
-                        "*-arabian": 27
+                        "*-arabian": 28,
+                        "*-donkey": 24
                     },
                     "minRainByType": {
                         "*-draft": 0.25,
-                        "*-arabian": 0
+                        "*-arabian": 0,
+                        "*-donkey": 0.25
                     },
                     "minForestOrShrubsByType": {
                         "*-draft": 0.1,
-                        "*-arabian": 0.1
+                        "*-arabian": 0.1,
+                        "*-donkey": 0.1
                     },
                     "maxForestByType": {
                         "*-draft": 0.25,
-                        "*-arabian": 0.25
+                        "*-arabian": 0.25,
+                        "*-donkey": 0.25
                     },
-                    "companions": [ "horse-female-{type}", "feverstonewilds:foal-*-{type}" ]
+                    "companions": [ "feverstonewilds:horse-female-{type}", "feverstonewilds:foal-*-{type}" ]
                 },
                 "runtime": {
                     "group": "neutral",
@@ -523,35 +565,51 @@
                     "insideBlockCodes": [ "game:air", "game:tallgrass-*", "game:snowlayer-1" ],
                     "minTempByType": {
                         "*-draft": -10,
-                        "*-arabian": 0
+                        "*-arabian": 0,
+                        "*-donkey": -5
                     },
                     "maxTempByType": {
                         "*-draft": 20,
-                        "*-arabian": 27
+                        "*-arabian": 28,
+                        "*-donkey": 24
                     },
                     "minRainByType": {
                         "*-draft": 0.25,
-                        "*-arabian": 0
+                        "*-arabian": 0,
+                        "*-donkey": 0.25
                     },
                     "minForestOrShrubsByType": {
                         "*-draft": 0.1,
-                        "*-arabian": 0.1
+                        "*-arabian": 0.1,
+                        "*-donkey": 0.1
                     },
                     "maxForestByType": {
                         "*-draft": 0.25,
-                        "*-arabian": 0.25
+                        "*-arabian": 0.25,
+                        "*-donkey": 0.25
                     },
-                    "companions": [ "horse-female-{type}", "feverstonewilds:foal-*-{type}" ]
+                    "companions": [ "feverstonewilds:horse-female-{type}", "feverstonewilds:foal-*-{type}" ]
                 }
             }
         }
     },
-    "sounds": {
-        "hurt": "feverstonewilds:horse/horsedamage",
-        "death": "feverstonewilds:horse/horsedamage",
-        "idle": "feverstonewilds:horse/neigh"
+    "soundsByType": {
+        "*-draft": {
+            "hurt": "feverstonewilds:horse/horsedamage",
+            "death": "feverstonewilds:horse/horsedamage",
+            "idle": "feverstonewilds:horse/neigh"
+        },
+        "*-arabian": {
+            "hurt": "feverstonewilds:horse/horsedamage",
+            "death": "feverstonewilds:horse/horsedamage",
+            "idle": "feverstonewilds:horse/neigh"
+        },
+        "*-donkey": {
+            "hurt": "feverstonewilds:donkey/donkeybray2",
+            "death": "feverstonewilds:horse/horsedamage",
+            "idle": "feverstonewilds:donkey/donkeyidle"
+        }
     },
     "idleSoundChance": 0.025,
     "hurtSoundChance": 0.05
-
 }

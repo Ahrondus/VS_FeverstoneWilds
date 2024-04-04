@@ -32,7 +32,7 @@
 			{ "code": "interpolateposition" },
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
 			{ "code": "harvestable" },
-			{ "code": "despawn", "minPlayerDistance": 18, "minSeconds": 300 }
+			{ "code": "despawn", "minPlayerDistance": 18, "minSeconds": 300, "belowLightLevel": 0 }
 		],
 		"animations": [
 			{
@@ -71,7 +71,7 @@
 		"behaviors": [
 			{ "code": "repulseagents" }, 
 			{ "code": "controlledphysics", "stepHeight": 5 }, 
-			{ "code": "despawn", "minPlayerDistance": 18, "minSeconds": 300 },
+			{ "code": "despawn", "minPlayerDistance": 18, "minSeconds": 300, "belowLightLevel": 0 },
 			{ "code": "health", "maxhealthByType": {
 				"*-freshwater": 40,
 				"*-saltwater": 45,
@@ -241,63 +241,69 @@
 				"worldgen": {
 					"TriesPerChunk": { "avg": 0.035, "var": 0 },
 					"tryOnlySurface": true,
-					"maxQuantity": 2,
+					"maxQuantity": 1,
 					"groupSize": { "dist": "verynarrowgaussian", "avg": 1, "var": 0 },
 					"insideBlockCodes": ["game:water-*"],
 					"minTemp": -20,
-					"maxTemp": 50
+					"maxTemp": 50,
+					"maxY": 0.95
 				},
 				"runtime": {
 					"group": "neutral",
-					"maxQuantity": 2,
+					"maxQuantity": 1,
 					"chance": 0.00001,
 					"tryOnlySurface": true,
 					"groupSize": { "dist": "verynarrowgaussian", "avg": 1, "var": 0 },
 					"insideBlockCodes": ["game:water-*"],
 					"minTemp": -20,
-					"maxTemp": 50
+					"maxTemp": 50,
+					"maxY": 0.95
 				}
 			},
 			"shark-saltwater": {
 				"worldgen": {
-					"TriesPerChunk": { "avg": 0.055, "var": 0 },
+					"TriesPerChunk": { "avg": 0.035, "var": 0 },
 					"tryOnlySurface": true,
-					"maxQuantity": 5,
-					"groupSize": { "dist": "verynarrowgaussian", "avg": 2, "var": 3 },
+					"maxQuantity": 2,
+					"groupSize": { "dist": "verynarrowgaussian", "avg": 1.5, "var": 0.5 },
 					"insideBlockCodes": ["game:saltwater-*", "game:saltwater-still-*"],
 					"minTemp": -20,
-					"maxTemp": 50
+					"maxTemp": 50,
+					"maxY": 0.95
 				},
 				"runtime": {
 					"group": "neutral",
-					"maxQuantity": 5,
+					"maxQuantity": 2,
 					"chance": 0.00001,
 					"tryOnlySurface": true,
-					"groupSize": { "dist": "verynarrowgaussian", "avg": 2, "var": 3 },
+					"groupSize": { "dist": "verynarrowgaussian", "avg": 1.5, "var": 0.5 },
 					"insideBlockCodes": ["game:saltwater-*", "game:saltwater-still-*"],
 					"minTemp": -20,
-					"maxTemp": 50
+					"maxTemp": 50,
+					"maxY": 0.95
 				}
 			},
 			"*-hammerhead": {
 				"worldgen": {
 					"TriesPerChunk": { "avg": 0.055, "var": 0 },
 					"tryOnlySurface": true,
-					"maxQuantity": 5,
-					"groupSize": { "dist": "verynarrowgaussian", "avg": 2, "var": 3 },
+					"maxQuantity": 2,
+					"groupSize": { "dist": "verynarrowgaussian", "avg": 1.5, "var": 0.5 },
 					"insideBlockCodes": ["game:saltwater-*", "game:saltwater-still-*"],
 					"minTemp": -20,
-					"maxTemp": 50
+					"maxTemp": 50,
+					"maxY": 0.95
 				},
 				"runtime": {
 					"group": "neutral",
-					"maxQuantity": 5,
+					"maxQuantity": 2,
 					"chance": 0.00001,
 					"tryOnlySurface": true,
-					"groupSize": { "dist": "verynarrowgaussian", "avg": 2, "var": 3 },
+					"groupSize": { "dist": "verynarrowgaussian", "avg": 1.5, "var": 0.5 },
 					"insideBlockCodes": ["game:saltwater-*", "game:saltwater-still-*"],
 					"minTemp": -20,
-					"maxTemp": 50
+					"maxTemp": 50,
+					"maxY": 0.95
 				}
 			}
 

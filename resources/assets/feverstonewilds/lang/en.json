@@ -15,14 +15,26 @@
 	"item-creature-horse-female-arabian": "Arabian Mare",	
 	"item-dead-creature-horse-female-arabian": "Dead Mare",
 	"itemdesc-creature-horse-female-arabian": "A reliable and swift steed, found in arid climates.",
+
+	"item-creature-horse-male-donkey": "Male Donkey",
+	"item-dead-creature-horse-male-donkey": "Dead Donkey",
+	"itemdesc-creature-horse-male-donkey": "A hardy work-horse.",	
+	
+	"item-creature-horse-female-donkey": "Female Donkey",	
+	"item-dead-creature-horse-female-donkey": "Dead Donkey",
+	"itemdesc-creature-horse-female-donkey": "A hardy work-horse.",
 	
 	"item-creature-foal-draft": "Draft Foal",
 	"item-dead-creature-foal-draft": "Dead Foal",
-	"itemdesc-creature-foal-draft": "A young draft horse.",
+	"itemdesc-creature-foal-draft": "A young n.",
 	
 	"item-creature-foal-arabian": "Arabian Foal",
 	"item-dead-creature-foal-arabian": "Dead Foal",
 	"itemdesc-creature-foal-arabian": "A young arabian horse.",
+	
+	"item-creature-foal-donkey": "Donkey Foal",
+	"item-dead-creature-foal-donkey": "Dead Foal",
+	"itemdesc-creature-foal-donkey": "A young donkey.",
 
 	"item-carrotbundle": "Carrot Bundle",
 	"itemdesc-carrotbundle": "A small bundle of carrots for taming! Horses like these!",
@@ -30,18 +42,34 @@
 	"item-haybundle": "Hay Bundle",
 	"itemdesc-haybundle": "A bundle of dry grass used for taming. Horses will eat these!",
 
-	"item-horsesaddle-draft": "Draft Horse Saddle",
-	"itemdesc-horsesaddle-draft": "A sturdy leather saddle for your steed, with saddlebags!",
-	"item-horsesaddle-arabian": "Arabian Horse Saddle",
-	"itemdesc-horsesaddle-arabian": "A sturdy leather saddle for your steed, with saddlebags!",
+	"item-saddle-draft": "Draft Saddle",
+	"itemdesc-saddle-draft": "A sturdy leather saddle for a Draft steed, with saddlebags!",
+	"item-saddle-arabian": "Arabian Horse Saddle",
+	"itemdesc-saddle-arabian": "A sturdy leather saddle for an Arabian steed, with saddlebags!",
+	"item-saddle-bison": "Bison Saddle",
+	"itemdesc-saddle-bison": "A sturdy leather pack saddle for a bison, with saddlebags and a chest!",
+	"item-saddle-donkey": "Donkey Saddle",
+	"itemdesc-saddle-donkey": "A sturdy leather saddle for a Donkey, with saddlebags!",
+	"item-saddle-direwolf": "Direwolf Saddle",
+	"itemdesc-saddle-direwolf": "A sturdy leather saddle for a Direwolf.",
+	"item-saddle-ostrich": "Ostrich Saddle",
+	"itemdesc-saddle-ostrich": "A sturdy leather saddle for a Ostrich.",
 
 	"horsetamingguide-title": "Taming Horses",
 	"horsetamingguide-text": "<strong>A Guide to Horse Taming:\n-----by Verlia</strong>\n\nTaming a horse is fairly simple!\nFirst, you will need to find a food that horses will enjoy! Dry grass is a good start, but other foods will be preferred.\nTry out a variety!\n\nRight clicking a wild horse with a compatible food item will start the taming process.\nEach feed will increase taming percentage until the process is complete. Now you can name your new horse!\nFeeding your horse after taming is complete will increase its obedience, so when you give it a command it will be more inclined to listen.\n\n<strong>--Now you're ready for adventure!--</strong>\nMount up on your new horse by right clicking on it! An empty hand is needed.\nDismount your horse by sneaking/crouching.\n\nHorses can eat from troughs and breed just like other domesticated animals.\nSome of their favorite foods are carrots, apples, and grains, and each will affect them differently!\n\n\n<strong>Keep an eye out for more saddles, saddlebags, and attachments in the future!</strong>",
 
-	"deathmsg-horsemale-1": "Player {0} was trampled by a horse.",
-	"deathmsg-horsemale-2": "Player {0} was kicked to death.",
-	"deathmsg-horsefemale-1": "Player {0} was trampled by a horse.",
-	"deathmsg-horsefemale-2": "Player {0} was kicked to death.",
+	"game:deathmsg-horsemaledraft-1": "Player {0} was trampled by a horse.",
+	"game:deathmsg-horsemaledraft-2": "Player {0} was kicked to death.",
+	"game:deathmsg-horsefemaledraft-1": "Player {0} was trampled by a horse.",
+	"game:deathmsg-horsefemaledraft-2": "Player {0} was kicked to death.",
+	"game:deathmsg-horsemalearabian-1": "Player {0} was trampled by a horse.",
+	"game:deathmsg-horsemalearabian-2": "Player {0} was kicked to death.",
+	"game:deathmsg-horsefemalearabian-1": "Player {0} was trampled by a horse.",
+	"game:deathmsg-horsefemalearabian-2": "Player {0} was kicked to death.",
+	"game:deathmsg-horsemaledonkey-1": "Player {0} was trampled by a donkey.",
+	"game:deathmsg-horsemaledonkey-2": "Player {0} was kicked to death.",
+	"game:deathmsg-horsefemaledonkey-1": "Player {0} was trampled by a donkey.",
+	"game:deathmsg-horsefemaledonkey-2": "Player {0} was kicked to death.",
 
 	"deadcreature-horsetrampled": "Appears to be trampled by a horse.",
 
@@ -62,7 +90,18 @@
 	"item-dead-creature-golem-basalt-*": "Dead Golem",
 	"itemdesc-creature-golem-basalt-*": "A large earthen sentient.",
 	
-	"deathmsg-creature-golem": "Player {0} was crushed by a golem.",
+	"game:deathmsg-golemgranitenativecopper-1": "Player {0} was crushed by a golem.",
+	"game:deathmsg-golemgranitecassiterite-1": "Player {0} was crushed by a golem.",
+	"game:deathmsg-golemgranitehematite-1": "Player {0} was crushed by a golem.",
+	"game:deathmsg-golemandesitenativecopper-1": "Player {0} was crushed by a golem.",
+	"game:deathmsg-golemandesitecassiterite-1": "Player {0} was crushed by a golem.",
+	"game:deathmsg-golemandesitehematite-1": "Player {0} was crushed by a golem.",
+	"game:deathmsg-golemlimestonenativecopper-1": "Player {0} was crushed by a golem.",
+	"game:deathmsg-golemlimestonecassiterite-1": "Player {0} was crushed by a golem.",
+	"game:deathmsg-golemlimestonehematite-1": "Player {0} was crushed by a golem.",
+	"game:deathmsg-golembasaltnativecopper-1": "Player {0} was crushed by a golem.",
+	"game:deathmsg-golembasaltcassiterite-1": "Player {0} was crushed by a golem.",
+	"game:deathmsg-golembasalthematite-1": "Player {0} was crushed by a golem.",
 	
 	// Faunlings
 	"item-creature-faunling-female": "Female Faunling",
@@ -73,8 +112,10 @@
 	"item-dead-creature-faunling-male": "Dead Faunling",
 	"itemdesc-creature-faunling-male": "A friendly male faunling.",
 	
-	"deathmsg-faunlingmale-1": "Player {0} was killed by a faunling.",
-	"deathmsg-faunlingfemale-1": "Player {0} was killed by a faunling.",
+	"game:deathmsg-faunlingmale-1": "Player {0} was killed by a faunling.",
+	"game:deathmsg-faunlingfemale-1": "Player {0} was killed by a faunling.",
+
+	"deadcreature-beaten-faunling": "Something beat this up.. A faunling maybe?",
 
 	// Sharks
 	"item-creature-shark-freshwater": "Freshwater Bullshark",
@@ -85,7 +126,9 @@
 	"itemdesc-creature-shark-saltwater": "Saltwater Bullshark",
 	"itemdesc-creature-shark-hammerhead": "Hammerhead Shark",
 	
-	"deathmsg-shark-*": "Player {0} will be known as: Sharkbait!",
+	"game:deathmsg-sharkfreshwater-1": "Player {0} will be known as: Sharkbait!",
+	"game:deathmsg-sharksaltwater-1": "Player {0} will be known as: Sharkbait!",
+	"game:deathmsg-sharkhammerhead-1": "Player {0} will be known as: Sharkbait!",
 	"deadcreature-shark": "Became sharkbait.",
 
 	// Bison
@@ -101,28 +144,50 @@
 	"bisontamingguide-text": "<strong>A Guide to Bisons Taming:\n-----by Verlia</strong>\nTaming a bison is similar in that of taming a horse, grab a food type it likes and right click the creature with the food in hand until it's tamed. When it's tamed it doesn't mean it'll immediately be under your command. It needs training, which takes more food and care. \n\nYou can mount up on a bison by right clicking on it with an empty hand. Dismount by sneaking/crouching. \n\nBison can eat from troughs, breed and be milked. Although slow, these beasts of burden can carry hefty amounts for long distances.", 
 
 
-	"deathmsg-bison-*": "Player {0} was gored by a bison.",
+	"game:deathmsg-bisonmale-1": "Player {0} was gored by a bison.",
+	"game:deathmsg-bisonfemale-1": "Player {0} was gored by a bison.",
 	"deadcreature-bisongored": "Appears to be gored by a bison.",
 
 	// Giraffe
-	"item-creature-giraffe": "Giraffe",
-	"item-dead-creature-giraffe": "Dead Giraffe",
-	"itemdesc-creature-giraffe": "A tall and spotted creature with horns.",
+	"item-creature-giraffe-male": "Male Giraffe",
+	"item-dead-creature-giraffe-male": "Dead Giraffe",
+	"itemdesc-creature-giraffe-male": "A tall and spotted creature with horns.",
+	"item-creature-giraffe-female": "Female Giraffe",
+	"item-dead-creature-giraffe-female": "Dead Giraffe",
+	"itemdesc-creature-giraffe-female": "A tall and spotted creature with horns.",
+	"item-creature-giraffe-calf": "Giraffe calf",
+	"item-dead-creature-giraffe-calf": "Dead Giraffe",
+	"itemdesc-creature-giraffe-calf": "A calf of a giraffe.",
+	
+	"game:deathmsg-giraffe-1": "Player {0} was trampled.",
 	
 	// Orca
 	"item-creature-orca": "Orca",
 	"item-dead-creature-orca": "Dead orca",
 	"itemdesc-creature-orca": "A large orca.",
 	
-	"deathmsg-orca-*": "Player {0} became fishbait.",
+	"game:deathmsg-orca-1": "Player {0} became fishbait.",
 	"deadcreature-orca": "Became dinner.",
+	
+	// Dolphin
+	"item-creature-dolphin-female": "Dolphin",
+	"item-dead-creature-dolphin-female": "Dead dolphin",
+	"itemdesc-creature-dolphin-female": "A dolphin.",
+	"item-creature-dolphin-male": "Dolphin",
+	"item-dead-creature-dolphin-male": "Dead dolphin",
+	"itemdesc-creature-dolphin-male": "A dolphin.",
+	"item-creature-dolphin-calf": "Dolphin calf",
+	"item-dead-creature-dolphin-calf": "Dead dolphin calf",
+	"itemdesc-creature-dolphin-calf": "A dolphin calf.",
+	
+	"game:deathmsg-dolphin-1": "Player {0} was bludgeoned by a dolphin.",
 	
 	// Stingray
 	"item-creature-stingray": "Stingray",
 	"item-dead-creature-stingray": "Dead Stingray",
 	"itemdesc-creature-stingray": "A large stingray.",
 	
-	"deathmsg-stingray": "Player {0} was stung to death.",
+	"game:deathmsg-stingray-1": "Player {0} was stung to death.",
 	
 	// Buromenfish
 	"item-creature-buromenfish": "Buromenfish",
@@ -153,11 +218,32 @@
 	"item-creature-spider": "Spider",
 	"item-dead-creature-spider": "Dead Spider",
 	"itemdesc-creature-spider": "An itsy bitsy spider.",
+	
+	// Scorpion
+	"item-creature-scorpion": "Scorpion",
+	"item-dead-creature-scorpion": "Dead scorpion",
+	"itemdesc-creature-scorpion": "A scorpion.",
 
 	// Cockatrice
 	"item-creature-cockatrice": "Cockatrice",
 	"item-dead-creature-cockatrice": "Dead Cockatrice",
 	"itemdesc-creature-cockatrice": "A mutated, overgrown, chicken of some kind?",
+
+	"game:deathmsg-cockatrice-1": "Player {0} was killed by a cockatrice.",
+
+	// Cockatrice-chick
+	"item-creature-cockatrice-chick": "Cockatrice chick",
+	"item-dead-creature-cockatrice-chick": "Dead Cockatrice chick",
+	"itemdesc-creature-cockatrice-chick": "A small mutated chicken of some kind?",
+
+	"game:deathmsg-cockatrice-1": "Player {0} was killed by a cockatrice.",
+
+	// Hellboar
+	"item-creature-hellboar": "Hellboar",
+	"item-dead-creature-hellboar": "Dead Hellboar",
+	"itemdesc-creature-hellboar": "A large intimidating boar.",
+
+	"game:deathmsg-hellboar-1": "Player {0} was goared by a hellboar.",
 
 	// Direwolves
 	"item-creature-direwolf-male": "Male Direwolf",
@@ -168,13 +254,9 @@
 	"item-dead-creature-direwolf-female": "Dead Direwolf",
 	"itemdesc-creature-direwolf-female": "An unusually large wolf.",
 
-	"item-creature-direwolf-pup-male": "Male Direwolf Pup",
-	"item-dead-creature-direwolf-pup-male": "Dead Male Direwolf Pup",
-	"itemdesc-creature-direwolf-pup-male": "An unusually large wolf pup.",
-
-	"item-creature-direwolf-pup-female": "Female Direwolf Pup",
-	"item-dead-creature-direwolf-pup-female": "Dead Female Direwolf Pup",
-	"itemdesc-creature-direwolf-pup-female": "An unusually large wolf pup.",
+	"item-creature-direwolf-pup": "Direwolf Pup",
+	"item-dead-creature-direwolf-pup": "Dead Male Direwolf Pup",
+	"itemdesc-creature-direwolf-pup": "An unusually large wolf pup.",
 
 	"item-creature-tame-direwolf-male": "Tamed Male Direwolf",
 	"item-dead-creature-tame-direwolf-male": "Dead Direwolf",
@@ -184,17 +266,21 @@
 	"item-dead-creature-tame-direwolf-female": "Dead Direwolf",
 	"itemdesc-creature-tame-direwolf-female": "An unusually large wolf, tamed by a cunning survivor.",
 
-	"item-creature-tame-direwolf-pup-male": "Tamed Male Direwolf Pup",
-	"item-dead-creature-tame-direwolf-pup-male": "Dead Male Direwolf Pup",
-	"itemdesc-creature-tame-direwolf-pup-male": "An unusually large wolf pup, tamed by a cunning survivor.",
-
-	"item-creature-tame-direwolf-pup-female": "Tamed Female Direwolf Pup",
-	"item-dead-creature-tame-direwolf-pup-female": "Dead Female Direwolf Pup",
-	"itemdesc-creature-tame-direwolf-pup-female": "An unusually large wolf pup, tamed by a cunning survivor.",
+	"item-creature-tame-direwolf-pup": "Tamed Direwolf Pup",
+	"item-dead-creature-tame-direwolf-pup": "Dead Female Direwolf Pup",
+	"itemdesc-creature-tame-direwolf-pup": "An unusually large wolf pup, tamed by a cunning survivor.",
 
 	"direwolftamingguide-title": "Taming Direwolves",
 	"direwolftamingguide-text": "<strong>A Guide to Direwolf Taming:\n-----by Verlia</strong>\nTaming a direwolf can be a dangerous task. Finding a pup and separating it from the parents even more dangerous. Should you succeed, you can pen the pup in and right click the pup with it's preferred food type in hand until it tames. \n\nOnce tamed, it'll no longer fear you and you'll be able to name it and continue to train it. Eventually when it grows, it'll be able to become a companion or mount. \n\nYou can mount up by right clicking on it with an empty hand. Dismount by sneaking/crouching.",
 
+	"game:deathmsg-direwolfmale-1": "Player {0} was ripped apart.",
+	"game:deathmsg-direwolffemale-1": "Player {0} was ripped apart.",
+	"game:deathmsg-direwolfmale-2": "Player {0} was thrashed by a direwolf.",
+	"game:deathmsg-direwolffemale-2": "Player {0} was thrashed by a direwolf.",
+	"game:deathmsg-tamedirewolfmale-1": "Player {0} lost a fight with a tamed direwolf.",
+	"game:deathmsg-tamedirewolffemale-1": "Player {0} lost a fight with a tamed direwolf.",
+
+	"deadcreature-eaten-direwolf": "A wolf ate this.? A really big wolf..",
 
 	// Ostrich
 	"item-egg-ostrich-raw": "An Ostrich egg",
@@ -207,13 +293,13 @@
 	"block-egg-ostrich-5": "5 Ostrich eggs",
 	"block-egg-ostrich-6": "6 Ostrich eggs",
 
-	"block-largenest-empty": "An empty Ostrich nest",
-	"block-largenest-1egg": "1 Ostrich egg in a nest",
-	"block-largenest-2eggs": "2 Ostrich eggs in a nest",
-	"block-largenest-3eggs": "3 Ostrich eggs in a nest",
-	"block-largenest-4eggs": "4 Ostrich eggs in a nest",
-	"block-largenest-5eggs": "5 Ostrich eggs in a nest",
-	"block-largenest-6eggs": "6 Ostrich eggs in a nest",
+	"block-largenest-empty": "Empty Ostrich Nest",
+	"block-largenest-1egg": "Ostrich Nest (1 egg)",
+	"block-largenest-2eggs": "Ostrich Nest (2 eggs)",
+	"block-largenest-3eggs": "Ostrich Nest (3 eggs)",
+	"block-largenest-4eggs": "Ostrich Nest (4 eggs)",
+	"block-largenest-5eggs": "Ostrich Nest (5 eggs)",
+	"block-largenest-6eggs": "Ostrich Nest (6 eggs)",
 
 	"item-creature-ostrich-male": "Male ostrich",
 	"item-dead-creature-ostrich-male": "Dead ostrich",
@@ -226,22 +312,33 @@
 	"item-creature-ostrich-chick": "Ostrich chick",
 	"item-dead-creature-ostrich-chick": "Dead Ostrich chick",
 	"itemdesc-creature-ostrich-chick": "A small flightless chick.",
-
+	
 	"item-creature-tame-ostrich-male": "Tamed Male ostrich",
 	"item-dead-creature-tame-ostrich-male": "Dead ostrich",
-	"itemdesc-creature-tame-ostrich-male": "A large flightless bird, tamed by a cunning survivor.",
+	"itemdesc-creature-tame-ostrich-male": "A large flightless bird.",
 
 	"item-creature-tame-ostrich-female": "Tamed Female ostrich",
 	"item-dead-creature-tame-ostrich-female": "Dead ostrich",
-	"itemdesc-creature-tame-ostrich-female": "A large flightless bird, tamed by a cunning survivor.",
+	"itemdesc-creature-tame-ostrich-female": "A large flightless bird.",
 
-	"item-creature-tame-ostrich-chick-male": "Tamed Male ostrich chick",
-	"item-dead-creature-tame-ostrich-chick-male": "Dead Male ostrich chick",
-	"itemdesc-creature-tame-ostrich-chick-male": "A small flightless chick, tamed by a cunning survivor.",
+	"item-creature-tame-ostrich-chick": "Tamed ostrich chick",
+	"item-dead-creature-tame-ostrich-chick": "Dead ostrich chick",
+	"itemdesc-creature-tame-ostrich-chick": "A small ostrich chick.",
 
-	"item-creature-tame-ostrich-chick-female": "Tamed Female ostrich chick",
-	"item-dead-creature-tame-ostrich-chick-female": "Dead Female ostrich chick",
-	"itemdesc-creature-tame-ostrich-chick-female": "A small flightless chick, tamed by a cunning survivor.",
+	// Wyvern
+	"item-creature-wyvern-female": "Female Wyvern",
+	"item-dead-creature-wyvern-female": "Dead Wyvern",
+	"itemdesc-creature-wyvern-female": "A large winged reptile.",
+
+	"item-creature-wyvern-male": "Male Wyvern",
+	"item-dead-creature-wyvern-male": "Dead Wyvern",
+	"itemdesc-creature-wyvern-male": "A large winged reptile.",
+
+	"item-creature-wyvern-hatchling": "Wyvern hatchling",
+	"item-dead-creature-wyvern-hatchling": "Dead Wyvern hatchling",
+	"itemdesc-creature-wyvern-hatchling": "A small winged reptile.",
+
+	"game:deathmsg-wyvern-1": "Player {0} was killed by a wyvern.",
 
 
 	// Quests
@@ -289,9 +386,9 @@
     	"fetchquestfaunling11-desc": "I offer fancy stone for two shells no-fur.",
     	"fetchquestfaunling11-obj": "Shells {0}/2",
 
-		"fetchquestfaunling12-title": "Broken Basket",
-    	"fetchquestfaunling12-desc": "My basket broke, find or make me a new one no-fur and I share shiny tool thing I found.",
-    	"fetchquestfaunling12-obj": "Reed Basket {0}/1",
+		"fetchquestfaunling12-title": "Broken Reed Chest",
+        "fetchquestfaunling12-desc": "My reed chest broke, find or make me a new one no-fur and I share shiny tool thing I found.",
+        "fetchquestfaunling12-obj": "Reed Chest {0}/1",
 
 		"fetchquestfaunling13-title": "Too Lazy To Hunt",
     	"fetchquestfaunling13-desc": "Need big raw hide for sleeping in. Hard worker I promise, with shiny arrow heads I barter.",

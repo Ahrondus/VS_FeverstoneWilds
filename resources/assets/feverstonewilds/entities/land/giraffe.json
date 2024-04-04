@@ -1,6 +1,9 @@
 {
 	"code": "giraffe",
 	"class": "EntityAgent",
+	"variantgroups": [
+        { "code": "gender", "states": ["male", "female"] }
+	],
 	"hitboxSize": { "x": 2.15, "y": 2.4 },
 	"deadHitboxSize": { "x": 2.15, "y": 1.75 },
 	"eyeHeight": 1.4,
@@ -20,6 +23,8 @@
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
 			{ "code": "interpolateposition" },
 			{ "code": "harvestable" },
+			{ "code": "multiplybase",
+				"enabledByType": { "*-male": false, "*-female": true } },
 			{ "code": "despawn", "minPlayerDistance": 8, "belowLightLevel": 8, "minSeconds": 300 },
 			{ "code": "ropetieable", "minGeneration": 2 }
 		],
@@ -70,6 +75,12 @@
 			}
 		},
 		"behaviors": [
+			{ "code": "multiplybase",
+				"enabledByType": { "*-female": true, "*-male": false },
+				"multiplyCooldownDaysMin": 0,
+				"multiplyCooldownDaysMax": 1,
+				"portionsEatenForMultiply": 9
+			},
 			{ "code": "repulseagents" }, 
 			{ "code": "controlledphysics", "stepHeight": 2.1251 },
 			{ "code": "despawn", "minPlayerDistance": 8, "belowLightLevel": 8, "minSeconds": 300 },
@@ -267,7 +278,8 @@
 			{ "code": "ropetieable", "minGeneration": 2 },
 			{ "code": "pettable", "minGeneration": 1 }
 		],
-		"spawnconditions": {
+		"spawnconditionsByType": {
+			"*-male":{
 			"worldgen": {
 				"TriesPerChunk": { "avg": 0.045, "var": 0 },
 				"tryOnlySurface": true,
@@ -280,7 +292,7 @@
 				"minForestOrShrubs": 0.25,
 					"maxForest": 0.75,
 					"maxShrubs": 0.75,
-				"companions": ["giraffe"]
+				"companions": ["giraffe-female", "giraffe-calf"]
 			},
 			"runtime": {
 				"group": "neutral",

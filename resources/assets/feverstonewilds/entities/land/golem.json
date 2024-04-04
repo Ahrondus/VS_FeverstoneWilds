@@ -154,25 +154,10 @@
                 {
                     "code": "wander",
                     "priority": 1.0,
-                    "priorityForCancel": 1.2,
                     "movespeed": 0.004,
                     "animationSpeed": 0.6,
                     "animation": "move",
                     "preferredLightLevel": 10
-                },
-                {
-                    "code": "throwatentity",
-                    "entityCodes": ["player"],
-                    "priority": 1.5,
-                    "priorityForCancel": 9,
-                    "mincooldown": 1000, 
-                    "maxcooldown": 10000, 
-                    "durationMs": 1200,
-                    "releaseAtMs": 700,
-                    "seekingRange": 15,
-                    "animationSpeed": 1.5,
-                    "animation": "throw",
-                    "whenInEmotionState": "aggressiveondamage"
                 }
             ]
         }

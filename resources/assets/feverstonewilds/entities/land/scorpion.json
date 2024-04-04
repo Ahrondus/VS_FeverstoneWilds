@@ -68,13 +68,6 @@
 				"easeInSpeed": 4,
 				"easeOutSpeed": 4,
 				"blendMode": "average" 
-			},
-			{
-				"code": "sit", 
-				"animation": "sit",
-				"easeInSpeed": 4,
-				"easeOutSpeed": 4,
-				"blendMode": "average" 
 			}
 		]
 	},
@@ -102,29 +95,16 @@
 					{
 						"code": "meleeattack",
 						"entityCodes": ["player"],
-						"priority": 3,
+						"priority": 1,
 						"damage": 1,
 						"damageType": "SlashingAttack",
 						"slot": 1,
 						"mincooldown": 1500, 
-						"maxcooldown": 1500, 
-						"attackDurationMs": 800,
-						"damagePlayerAtMs": 500,
+						"maxcooldown": 2500, 
+						"attackDurationMs": 0,
+						"damagePlayerAtMs": 0,
 						"animation": "attack",
-						"animationSpeed": 2.5,
-						"sound": "",
-						"whenInEmotionState": "aggressive"
-					},
-					{
-						"code": "seekentity",
-						"entityCodes": ["player"],
-						"priority": 2.5,
-						"movespeed": 0.03,
-						"seekingRange": 20,
-						"animation": "attack",
-						"animationSpeed": 1.5,
-						"sound": "",
-						"whenInEmotionState": "aggressive"
+						"animationSpeed": 2.5
 					},
 					{
 						"code": "fleeentity",
@@ -134,17 +114,6 @@
 						"seekingRange": 14,
 						"animation": "run",
 						"animationSpeed": 2.5
-					},
-					{
-						"code": "seekentity",
-						"entityCodes": ["-"],
-						"priority": 1.5,
-						"movespeed": 0.01,
-						"animationSpeed": 2,
-						"seekingRange": 20,
-						"animation": "run",
-						"sound": "creature/-/growl",
-						"whenNotInEmotionState": "saturated"
 					},
 					{
 						"code": "getoutofwater",
@@ -162,24 +131,11 @@
 						"maxcooldown": 30000,
 						"priorityForCancel": 1.38,
 						"animation": "Sleep",
-						"whenNotInEmotionState": "aggressiveondamage",
+						"whenNotInEmotionState": "aggressive",
 						"duringDayTimeFrames": [ { "fromHour": 10, "toHour": 18 }, { "fromHour": 1, "toHour": 4 } ],
 						"stopOnNearbyEntityCodes": ["player", "toad", "spider"],
 						"stopRange": 8,
 						"stopOnHurt": true
-					},
-					{
-						"code": "idle",
-						"priority": 1.3,
-						"priorityForCancel": 1.35,
-						"minduration": 4680,
-						"maxduration": 4680,
-						"mincooldown": 80000,
-						"maxcooldown": 400000,
-						"animation": "Yip",
-						"animationSpeed": 0.25,
-						"sound": "creature/-/yip",
-						"soundRange": 110
 					},
 					{
 						"code": "idle",
@@ -240,25 +196,17 @@
 				"tryOnlySurface": true,
 				"chance": 0.00006,
 				"maxQuantity": 4,
-				"__comment": "WIP scorpion",
 				"maxLightLevel": 7,
 				"lightLevelType": "onlyBlockLight",					
 				"groupSize": { "dist": "verynarrowgaussian", "avg": 3, "var": 1 },
 				"insideBlockCodes": ["game:air", "game:tallgrass-*"],
 				"minTemp": -5,
-				"maxTemp": 25,
-				"minRain": 0.25,
-				"minForestOrShrubs": 0.25,
-				"maxForest": 0.75,
-				"maxShrubs": 0.75,
+				"maxTemp": 60,
 				"companions": ["scorpion"]
 			}
 		}
 	},
 	"sounds": {
-		"hurt": "creature/-/hurt",
-		"death": "creature/-/die",
-		"idle": "creature/-/yip"
 	},
 	"idleSoundChance": 0
 }

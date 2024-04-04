@@ -7,24 +7,31 @@
 			"code": "type",
 			"states": ["horse-male-draft", "horse-female-draft",
 			"horse-male-arabian", "horse-female-arabian",
-			"foal-draft", "foal-arabian"]	
+			"horse-male-donkey", "horse-female-donkey",
+			"foal-draft", "foal-arabian", "foal-donkey"]	
 		}
 	],
 	"shapeByType": {
 		"*-foal-draft": { "base": "entity/land/horse-draft" },
 		"*-foal-arabian": { "base": "entity/land/horse-arabian" },
+		"*-foal-donkey": { "base": "entity/land/horse-donkey" },
 		"*-horse-male-draft": { "base": "entity/land/horse-draft" },
 		"*-horse-female-draft": { "base": "entity/land/horse-draft" },
 		"*-horse-male-arabian": { "base": "entity/land/horse-arabian" },
-		"*-horse-female-arabian": { "base": "entity/land/horse-arabian" }
+		"*-horse-female-arabian": { "base": "entity/land/horse-arabian" },
+		"*-horse-male-donkey": { "base": "entity/land/horse-donkey" },
+		"*-horse-female-donkey": { "base": "entity/land/horse-donkey" }
 		},
 	"texturesByType": {
 		"*-foal-draft": { "skin": { "base": "entity/land/horse/horse18" } },
 		"*-foal-arabian": { "skin": { "base": "entity/land/horse/horse15" } },
+		"*-foal-donkey": { "skin": { "base": "entity/land/donkey/donkeyskin1" } },
 		"*-horse-male-draft": { "skin": { "base": "entity/land/horse/horse5" } },
 		"*-horse-female-draft": { "skin": { "base": "entity/land/horse/horse20" } },
 		"*-horse-male-arabian": { "skin": { "base": "entity/land/horse/horse14" } },
-		"*-horse-female-arabian": { "skin": { "base": "entity/land/horse/horse13" } }
+		"*-horse-female-arabian": { "skin": { "base": "entity/land/horse/horse13" } },
+		"*-horse-male-donkey": { "skin": { "base": "entity/land/donkey/donkeyskin2" } },
+		"*-horse-female-donkey": { "skin": { "base": "entity/land/donkey/donkeyskin3" } }
 		},
 		
 	"creativeinventory": {
@@ -47,6 +54,13 @@
 			"rotation": { "x": 180, "y": -115, "z": 6 },
 			"origin": { "x": 0.5, "y": 1.25, "z": 0.5 },
 			"scale": 0.6
+		},
+		"creature-horse-*-donkey": {
+			"rotate": true,
+			"translation": { "x": 0, "y": 0, "z": 0 },
+			"rotation": { "x": 180, "y": -115, "z": 6 },
+			"origin": { "x": 0.5, "y": 1.25, "z": 0.5 },
+			"scale": 0.575
 		},
 		"creature-foal-*": {
 			"rotate": true,

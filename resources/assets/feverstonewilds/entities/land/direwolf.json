@@ -2,32 +2,32 @@
     "code": "direwolf",
     "class": "EntityAgent",
     "variantgroups": [
-        { "code": "gender", "states": ["male", "female"] }
+        { "code": "gender", "states": [ "male", "female" ] }
     ],
     "collisionBoxSizeByType": {
-        "direwolf-male": { "x": 1.6, "y": 1.2 },
-        "direwolf-female": { "x": 1.5, "y": 1.1 }
+        "direwolf-male": { "x": 1.4, "y": 1.8, "z": 1.1 },
+        "direwolf-female": { "x": 1.3, "y": 1.75, "z": 1.1 }
     },
     "deadCollisionBoxSizeByType": {
-        "direwolf-male": { "x": 1.2, "y": 0.8 },
-        "direwolf-female": { "x": 1.2, "y": 0.8 }
+        "direwolf-male": { "x": 0.8, "y": 1.3 },
+        "direwolf-female": { "x": 0.8, "y": 1.3 }
     },
     "selectionBoxSizeByType": {
-        "*-male": { "x": 1.8, "y": 1.4 },
-        "*-female": { "x": 1.65, "y": 1.25 }
+        "*-male": { "x": 1.4, "y": 1.8, "z": 1.1 },
+        "*-female": { "x": 1.75, "y": 1.35, "z": 1.0 }
     },
     "deadSelectionBoxSizeByType": {
-        "*-male": { "x": 1.3, "y": 0.9 },
-        "*-female": { "x": 1.3, "y": 0.9 }
+        "*-male": { "x": 0.9, "y": 1.3 },
+        "*-female": { "x": 0.9 , "y": 1.3 }
     },
     "knockbackResistanceByType": {
         "*-male": 0.15,
         "*-female": 0.10
     },
-    "eyeheight": 0.9,
+    "eyeheight": 1.1,
     "drops": [],
     "attributes": {
-        "killedByInfoText": "deadcreature-eaten-large"
+        "killedByInfoText": "deadcreature-eaten-direwolf"
     },
     "sizeByType": {
         "direwolf-male": 1,
@@ -39,7 +39,11 @@
         "texture": { "base": "entity/land/direwolf/direwolf1",
                     "alternates": [ { "base": "entity/land/direwolf/direwolf2" }, { "base": "entity/land/direwolf/direwolf3" }, 
                                     { "base": "entity/land/direwolf/direwolf4" }, { "base": "entity/land/direwolf/direwolf5" }, 
-                                    { "base": "entity/land/direwolf/direwolf6" }, { "base": "entity/land/direwolf/direwolf7" } ] },
+                                    { "base": "entity/land/direwolf/direwolf6" }, { "base": "entity/land/direwolf/direwolf7" },
+									{ "base": "entity/land/direwolf/direwolf8" }, { "base": "entity/land/direwolf/direwolf9" },
+									{ "base": "entity/land/direwolf/direwolf10" }, { "base": "entity/land/direwolf/direwolf11" },
+									{ "base": "entity/land/direwolf/direwolf12" },	{ "base": "entity/land/direwolf/direwolf13" },
+									{ "base": "entity/land/direwolf/direwolf14" } ] },
         "behaviors": [
             { "code": "multiply", "enabledByType": { "*-male": false, "*-female": true } },
             { "code": "repulseagents" },
@@ -103,18 +107,15 @@
             }
         },
         "behaviors": [
-                { 
-                    "code": "multiply",
+                { "code": "multiply",
                     "enabledByType": { "*-male": false, "*-female": true },
-                    "quantityPerDay": 1,
-                    "spawnEntityCode": "feverstonewilds:direwolf-pup-*",
-                    "pregnancyDays": 14,
-                    "portionsEatenForMultiply": 10,
-                    "growthCapQuantity": 10,
-                    "growthCapRange": 15,
-                    "growthCapEntityCodes": ["feverstonewilds:direwolf-pup-*", "feverstonewilds:direwolf-female", "feverstonewilds:direwolf-male"],
-                    "requiresNearbyEntityCode": "feverstonewilds:direwolf-male",
-                    "requiresNearbyEntityRange": 10
+				    "quantityPerDay": 0,
+				    "spawnEntityCode": "feverstonewilds:direwolf-pup",
+				    "growthCapQuantity": 10,
+				    "growthCapRange": 15,
+				    "growthCapEntityCodes": ["feverstonewilds:direwolf-pup", "feverstonewilds:direwolf-female", "feverstonewilds:direwolf-male"],
+				    "requiresNearbyEntityCode": "feverstonewilds:direwolf-male",
+				    "requiresNearbyEntityRange": 10
                 },
                 { "code": "repulseagents" },
                 { "code": "controlledphysics", "stepHeight": 1.1251 },
@@ -146,7 +147,12 @@
                     "aitasks": [
                         {
                             "code": "meleeattack",
-                            "entityCodes": ["player", "chicken-*", "horse-*", "wolf-*", "drifter-*", "bear-*", "hare-*"],
+                            "entityCodes": ["player", "chicken-*",  "wolf-*", 
+                                            "drifter-*", "bear-*", "hare-*",
+                                            "feverstonewilds:cockatrice", "feverstonewilds:horse-*",
+                                            "feverstonewilds:ostrich-*", "feverstonewilds:ostrich-chick",
+                                            "feverstonewilds:bison-*", "feverstonewilds:bison-calf",
+                                            "feverstonewilds:giraffe"],
                             "priority": 2,
                             "damage": 8,
                             "damageTier": 2,
@@ -188,7 +194,12 @@
                         },
                         {
                             "code": "seekentity",
-                            "entityCodes": ["chicken-*", "horse-*", "wolf-*", "drifter-*", "bear-*", "hare-*"],
+                            "entityCodes": ["chicken-*",  "wolf-*", 
+                                            "drifter-*", "bear-*", "hare-*",
+                                            "feverstonewilds:cockatrice", "feverstonewilds:horse-*",
+                                            "feverstonewilds:ostrich-*", "feverstonewilds:ostrich-chick",
+                                            "feverstonewilds:bison-*", "feverstonewilds:bison-calf",
+                                            "feverstonewilds:giraffe"],
                             "priority": 1.5,
                             "movespeed": 0.045,
                             "seekingRange": 15,
@@ -281,7 +292,8 @@
                             "priorityForCancel": 1.33,
                             "animation": "Sit",
                             "whenNotInEmotionState": "aggressiveondamage",
-                            "stopOnNearbyEntityCodes": ["player"],
+                            "stopOnNearbyEntityCodes": ["player", "bear-*", 
+                                                        "feverstonewilds:cockatrice"],
                             "stopRange": 5
                         },
                         { 
@@ -312,12 +324,12 @@
                     "maxTemp": 25,
                     "minRain": 0.25,
                     "minForest": 0.15,
-                    "companions": [ "direwolf-female", "feverstonewilds:direwolf-pup-*" ]
+                    "companions": [ "direwolf-female", "feverstonewilds:direwolf-pup" ]
                 },
                 "runtime": {
                     "group": "neutral",
                     "tryOnlySurface": true,
-                    "chance": 0.00002,
+                    "chance": 0.00004,
                     "maxQuantity": 1,
                     "maxLightLevel": 7,
                     "lightLevelType": "onlyBlockLight",
@@ -331,7 +343,7 @@
                     "maxTemp": 25,
                     "minRain": 0.15,
                     "minForest": 0.15,
-                    "companions": [ "direwolf-female", "feverstonewilds:direwolf-pup-*" ]
+                    "companions": [ "direwolf-female", "feverstonewilds:direwolf-pup" ]
                 }
             }                
         }

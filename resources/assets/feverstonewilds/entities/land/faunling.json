@@ -33,6 +33,9 @@
         { "type": "item", "code": "game:treeseed-pine", "quantity": { "avg": 0, "var": 1 } },
         { "type": "item", "code": "game:treeseed-oak", "quantity": { "avg": 0, "var": 1 } }   
     ],
+    "attributes": {
+        "killedByInfoText": "deadcreature-beaten-faunling"
+    },
     "client": {
         "renderer": "Shape",
         "shapeByType": {
@@ -186,7 +189,7 @@
                     },
                     {
                         "code": "seekentity",
-                        "entityCodes": [ "player" ],
+                        "entityCodes": [ "player", "drifter-normal", "drifter-deep" ],
                         "priority": 1.6,
                         "mincooldown": 1000,
                         "maxcooldown": 1500,
@@ -198,7 +201,7 @@
                     },
                     {
                         "code": "fleeentity",
-                        "entityCodes": [ "player" ],
+                        "entityCodes": [ "player", "drifter-*" ],
                         "priority": 1.5,
                         "movespeed": 0.045,
                         "seekingRange": 18,
@@ -296,7 +299,7 @@
                         "var": 0.02
                     },
                     "tryOnlySurface": true,
-                    "minLightLevel": 6,
+                    "maxLightLevel": 11,
                     "groupSize": {
                         "dist": "verynarrowgaussian",
                         "avg": 2,
@@ -312,10 +315,10 @@
                 "runtime": {
                     "group": "neutral",
                     "tryOnlySurface": true,
-                    "chance": 0.00008,
+                    "chance": 0.00004,
                     "maxQuantity": 3,
-                    "mindistancetoplayer": 60,
-                    "maxLightLevel": 10,
+                    "mindistancetoplayer": 160,
+                    "maxLightLevel": 9,
                     "lightLevelType": "onlyBlockLight",
                     "groupSize": {
                         "dist": "verynarrowgaussian",

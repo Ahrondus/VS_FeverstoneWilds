@@ -22,7 +22,7 @@
 			{ "code": "interpolateposition" },
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
 			{ "code": "harvestable" },
-			{ "code": "despawn", "minPlayerDistance": 28, "minSeconds": 300 }
+			{ "code": "despawn", "minPlayerDistance": 28, "minSeconds": 300, "belowLightLevel": 0 }
 		],
 		"animations": [
 			{
@@ -61,7 +61,7 @@
 		"behaviors": [
 			{ "code": "repulseagents" }, 
 			{ "code": "controlledphysics", "stepHeight": 0 }, 
-			{ "code": "despawn", "minPlayerDistance": 28, "minSeconds": 300 },
+			{ "code": "despawn", "minPlayerDistance": 28, "minSeconds": 300, "belowLightLevel": 0 },
 			{ "code": "health", "maxhealth": 85 },
 			{ "code": "deaddecay", "hoursToDecay": 96, "decayedBlock": "carcass-large" },
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
@@ -228,22 +228,22 @@
 		],
 		"spawnconditions": {
 			"worldgen": {
-				"TriesPerChunk": { "avg": 0.015, "var": 0 },
+				"TriesPerChunk": { "avg": 0.045, "var": 0 },
 				"tryOnlySurface": true,
-				"maxLightLevel":22,
-				"groupSize": { "dist": "verynarrowgaussian", "avg": 3, "var": 2 },
-				"maxQuantity": 6,
+				"maxLightLevel": 22,
+				"groupSize": { "dist": "verynarrowgaussian", "avg": 1.5, "var": 0.5 },
+				"maxQuantity": 2,
 				"insideBlockCodes": ["game:saltwater-*", "game:saltwater-still-*"],
 				"minTemp": -30,
 				"maxTemp": 40
 			},
 			"runtime": {
 				"group": "neutral",
-				"maxQuantity": 6,
+				"maxQuantity": 2,
 				"chance": 0.00001,
 				"tryOnlySurface": true,
-				"maxLightLevel":22,
-				"groupSize": { "dist": "verynarrowgaussian", "avg": 3, "var": 2 },
+				"maxLightLevel": 22,
+				"groupSize": { "dist": "verynarrowgaussian", "avg": 1.5, "var": 0.5 },
 				"insideBlockCodes": ["game:saltwater-*", "game:saltwater-still-*"],
 				"minTemp": -30,
 				"maxTemp": 40

@@ -1,0 +1,92 @@
+{
+	"editor": {
+		"collapsedPaths": "Root/Cube1",
+		"allAngles": false,
+		"entityTextureMode": false
+	},
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textureSizes": {
+	},
+	"textures": {
+		"bone": "C:/Users/Poiso/AppData/Roaming/Vintagestory/assets/survival/textures/block/creature/bone"
+	},
+	"elements": [
+		{
+			"name": "Cube6",
+			"from": [ 7.0, 1.43, 0.57 ],
+			"to": [ 8.43, 10.01, 2.0 ],
+			"rotationOrigin": [ 7.72, 0.0, 1.29 ],
+			"rotationX": 90.0,
+			"faces": {
+				"north": { "texture": "#bone", "uv": [ 2.5, 6.5, 3.5, 15.0 ] },
+				"east": { "texture": "#bone", "uv": [ 4.0, 2.5, 5.0, 11.0 ] },
+				"south": { "texture": "#bone", "uv": [ 4.0, 2.0, 5.0, 10.5 ] },
+				"west": { "texture": "#bone", "uv": [ 10.0, 7.0, 11.0, 15.5 ] },
+				"up": { "texture": "#bone", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
+				"down": { "texture": "#bone", "uv": [ 0.5, 0.5, 1.5, 1.5 ] }
+			},
+			"children": [
+				{
+					"name": "Cube7",
+					"from": [ -0.858, 7.15, -0.286 ],
+					"to": [ 1.287, 9.295, 1.859 ],
+					"rotationOrigin": [ 1.287, 7.15, 0.858 ],
+					"rotationZ": 8.0,
+					"faces": {
+						"north": { "texture": "#bone", "uv": [ 4.5, 5.0, 6.645, 7.145 ] },
+						"east": { "texture": "#bone", "uv": [ 4.5, 4.5, 6.645, 6.645 ] },
+						"south": { "texture": "#bone", "uv": [ 11.5, 6.5, 13.645, 8.645 ] },
+						"west": { "texture": "#bone", "uv": [ 3.0, 6.5, 5.145, 8.645 ] },
+						"up": { "texture": "#bone", "uv": [ 5.0, 4.5, 7.145, 6.645 ] },
+						"down": { "texture": "#bone", "uv": [ 6.0, 4.5, 8.145, 6.645 ] }
+					}
+				},
+				{
+					"name": "Cube8",
+					"from": [ 0.0, 8.008, -0.715 ],
+					"to": [ 2.145, 10.153, 2.145 ],
+					"rotationOrigin": [ 0.0, 8.008, 0.715 ],
+					"rotationZ": -9.0,
+					"faces": {
+						"north": { "texture": "#bone", "uv": [ 13.5, 1.0, 15.645, 3.145 ] },
+						"east": { "texture": "#bone", "uv": [ 8.5, 6.0, 11.36, 8.145 ] },
+						"south": { "texture": "#bone", "uv": [ 8.5, 12.0, 10.645, 14.145 ] },
+						"west": { "texture": "#bone", "uv": [ 3.5, 7.5, 6.36, 9.645 ] },
+						"up": { "texture": "#bone", "uv": [ 9.5, 5.5, 11.645, 8.36 ] },
+						"down": { "texture": "#bone", "uv": [ 6.0, 3.5, 8.145, 6.36 ] }
+					}
+				},
+				{
+					"name": "Cube9",
+					"from": [ -0.286, -1.43, -0.286 ],
+					"to": [ 1.144, 0.0, 1.859 ],
+					"rotationOrigin": [ 1.287, 0.0, 0.429 ],
+					"rotationZ": -23.0,
+					"faces": {
+						"north": { "texture": "#bone", "uv": [ 11.0, 2.5, 12.43, 3.93 ] },
+						"east": { "texture": "#bone", "uv": [ 4.5, 2.5, 6.645, 3.93 ] },
+						"south": { "texture": "#bone", "uv": [ 6.0, 11.5, 7.43, 12.93 ] },
+						"west": { "texture": "#bone", "uv": [ 4.5, 5.0, 6.645, 6.43 ] },
+						"up": { "texture": "#bone", "uv": [ 7.0, 8.0, 8.43, 10.145 ] },
+						"down": { "texture": "#bone", "uv": [ 6.5, 7.5, 7.93, 9.645 ] }
+					}
+				},
+				{
+					"name": "Cube10",
+					"from": [ 0.286, -0.858, -0.429 ],
+					"to": [ 1.716, 0.572, 1.716 ],
+					"rotationOrigin": [ 0.286, 0.572, 0.715 ],
+					"rotationZ": 5.0,
+					"faces": {
+						"north": { "texture": "#bone", "uv": [ 12.5, 11.0, 13.93, 12.43 ] },
+						"east": { "texture": "#bone", "uv": [ 8.5, 7.5, 10.645, 8.93 ] },
+						"south": { "texture": "#bone", "uv": [ 4.5, 13.5, 5.93, 14.93 ] },
+						"west": { "texture": "#bone", "uv": [ 9.0, 7.0, 11.145, 8.43 ] },
+						"up": { "texture": "#bone", "uv": [ 10.5, 6.5, 11.93, 8.645 ] },
+						"down": { "texture": "#bone", "uv": [ 5.5, 0.5, 6.93, 2.645 ] }
+					}
+				}
+			]
+		}
+	]}

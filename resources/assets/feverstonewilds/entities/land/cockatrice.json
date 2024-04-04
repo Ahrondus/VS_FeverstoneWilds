@@ -277,25 +277,25 @@
 				"TriesPerChunk": { "avg": 0.004, "var": 0 },
 				"tryOnlySurface": true,
 				"minLightLevel": 10,
-				"groupSize": { "dist": "verynarrowgaussian", "avg": 2, "var": 4 },
+				"groupSize": { "dist": "verynarrowgaussian", "avg": 2, "var": 1 },
 				"insideBlockCodes": ["game:air", "game:tallgrass-*", "game:snowlayer-1"],
 				"minTemp": -10,
 				"maxTemp": 20,
 				"minRain": 0.43,
-				"companions": ["cockatrice"]
+				"companions": ["cockatrice", "cockatrice-chick"]
 			},
 			"runtime": {
 				"group": "neutral",
 				"tryOnlySurface": true,
-				"chance": 0.0006,
+				"chance": 0.00003,
 				"maxquantity": 4,
 				"minLightLevel": 10,
-				"groupSize": { "dist": "verynarrowgaussian", "avg": 2, "var": 4 },
+				"groupSize": { "dist": "verynarrowgaussian", "avg": 2, "var": 1 },
 				"insideBlockCodes": ["game:air", "game:tallgrass-*", "game:snowlayer-1"],
 				"minTemp": -10,
 				"maxTemp": 20,
 				"minRain": 0.43,
-				"companions": ["cockatrice"]
+				"companions": ["cockatrice", "cockatrice-chick"]
 			}
 		}
 	},

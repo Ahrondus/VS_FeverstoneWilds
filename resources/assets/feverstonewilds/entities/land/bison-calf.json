@@ -169,9 +169,9 @@
 				"states": [ { "code": "alarmherdondamage", "chance": 1, "slot": 1, "priority": 1, "accumType": "max" },
 							{ "code": "fleeondamage", "duration": 60, "chance": 0.85, "slot": 0, "priority": 5, "accumType": "max", "whenHealthRelBelow": 0.75 }]
 			},
-			{ "code": "grow", "hoursToGrow": 336, "adultEntityCodes": [ "feverstonewilds:bison-male", "feverstonewilds:bison-female" ] },
-			{
-				"code": "taskai",
+			{ "code": "grow", "hoursToGrow": 336, 
+				"adultEntityCodes": [ "feverstonewilds:bison-male", "feverstonewilds:bison-female" ] },
+			{ "code": "taskai",
 				"aitasks": [
 					{
 						"code": "fleeentity",

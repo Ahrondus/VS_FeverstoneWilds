@@ -10172,6 +10172,39 @@
 				}
 			]
 		},
+		{
+			"name": "sit",
+			"code": "sit",
+			"quantityframes": 20,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"Origin": {  },
+						"body": { "offsetX": 0.0, "offsetY": -17.0, "offsetZ": 0.0 },
+						"lleg": {  },
+						"Cube13": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 45.0 },
+						"Cube14": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -95.0 },
+						"Cube15": { "offsetX": 0.0, "offsetY": 1.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 45.0 },
+						"rleg18": {  },
+						"Cube19": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 45.0 },
+						"Cube20": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -95.0 },
+						"Cube21": { "offsetX": 0.0, "offsetY": 1.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 45.0 },
+						"head0": {  },
+						"neck1": { "offsetX": 0.0, "offsetY": -3.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5 },
+						"neck2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5 },
+						"neck3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 45.0 },
+						"head": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 60.0 },
+						"Cube31": {  },
+						"lwing": { "rotationX": -22.5, "rotationY": 0.0, "rotationZ": 0.0 },
+						"rwing": { "rotationX": 22.5, "rotationY": 0.0, "rotationZ": 0.0 },
+						"tail": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5 }
+					}
+				}
+			]
+		},
 
 		{
 			"name": "hurt",

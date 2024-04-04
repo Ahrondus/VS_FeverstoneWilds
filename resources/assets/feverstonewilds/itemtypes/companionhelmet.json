@@ -1,0 +1,112 @@
+{
+	"code": "companionhelmet",
+	"class": "ItemPetAccessory",
+	"variantgroups": [
+		{
+			"code": "type",
+			"states": [
+				"skullhelmetdirewolf"
+			]
+		}
+	],
+	"shapebytype": {
+		"*-skullhelmetdirewolf": {
+			"base": "item/equipment/direwolfskullhelmet" }
+	},
+	"attributesByType": {
+		"*-skullhelmetdirewolf": {
+			"damageReduction": 0.3,
+			"wearableAttachment": true,
+			"cothingType": "HEAD",
+			"validPets": [
+				"tame-direwolf-male",
+				"tame-direwolf-female"
+			]
+		}
+	},
+	"maxstacksize": 1,
+	"heldTpIdleAnimation": "holdunderarm",
+	"creativeinventory": {
+		"general": [
+			"*"
+		],
+		"items": [
+			"*"
+		],
+		"clothing": [
+			"*"
+		]
+	},
+	"guiTransform": {
+		"translation": {
+			"x": 0.1,
+			"y": -4,
+			"z": 0.3
+		},
+		"rotation": {
+			"x": 120,
+			"y": -60,
+			"z": -45
+		},
+		"origin": {
+			"x": 0.1,
+			"y": 0.3,
+			"z": 0.3
+		},
+		"scale": 2.52
+	},
+	"groundTransform": {
+		"translation": {
+			"x": 0,
+			"y": 0,
+			"z": 0
+		},
+		"rotation": {
+			"x": 0,
+			"y": 0,
+			"z": 270
+		},
+		"origin": {
+			"x": 0,
+			"y": 0,
+			"z": 0
+		},
+		"scale": 3.5
+	},
+	"fpHandTransform": {
+		"translation": {
+			"x": 0.5,
+			"y": 0,
+			"z": 0
+		},
+		"rotation": {
+			"x": -2,
+			"y": 50,
+			"z": 1
+		},
+		"origin": {
+			"x": 0,
+			"y": 0,
+			"z": 0
+		},
+		"scale": 2.41
+	},
+	"tpHandTransform": {
+		"translation": {
+			"x": -0.1,
+			"y": 0.3,
+			"z": -0.05
+		},
+		"rotation": {
+			"x": 21,
+			"y": -170,
+			"z": 22
+		},
+		"origin": {
+			"x": 0,
+			"y": 0,
+			"z": 0
+		},
+		"scale": 0.65
+	}
+}

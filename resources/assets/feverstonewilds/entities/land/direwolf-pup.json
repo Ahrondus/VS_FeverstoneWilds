@@ -1,9 +1,6 @@
 {
 	"code": "direwolf-pup",
 	"class": "EntityAgent",
-	"variantgroups": [
-		{ "code": "gender", "states": ["male", "female"] }
-	],
 	"hitboxSize": { "x": 0.85, "y": 0.5 },
 	"deadHitboxSize": { "x": 0.75, "y": 0.4 },
 	"eyeHeight": 0.4,
@@ -95,7 +92,7 @@
 				]
             },
             { "code": "tameable",
-				"tameEntityCode": "feverstonewilds:tame-direwolf-pup-{gender}",
+				"tameEntityCode": "feverstonewilds:tame-direwolf-pup",
                 "treat": [
 					{ "code": "redmeat-raw", "progress": 0.125, "cooldown": 0.75 },
 					{ "code": "bushmeat-raw", "progress": 0.05, "cooldown": 0.5 },
@@ -120,7 +117,8 @@
 			{ "code": "breathe" },
 			{ "code": "emotionstates",
 				"states": [ { "code": "alarmherdondamage", "chance": 1, "slot": 1, "priority": 1, "accumType": "max" } ] },
-			{  "code": "raisable", "hoursToGrow": 300, "adultEntityCodes": [ "feverstonewilds:direwolf-{gender}" ] },
+			{  "code": "grow", "hoursToGrow": 300,
+				"adultEntityCodes": [ "feverstonewilds:direwolf-male", "feverstonewilds:direwolf-female" ] },
 			{ 
 				"code": "taskai",
 				"aitasks": [

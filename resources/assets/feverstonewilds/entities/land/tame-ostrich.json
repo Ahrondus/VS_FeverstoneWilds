@@ -1,0 +1,465 @@
+{
+	"code": "tame-ostrich",
+	"class": "EntityMount",
+	"variantgroups": [
+        { "code": "gender", "states": ["male", "female"] }
+	],
+	"hitboxSize": { "x": 1.25, "y": 2.2 },
+	"deadHitboxSize": { "x": 2.25, "y": 1.25 },
+	"eyeHeight": 2,
+	"drops": [],
+	"fallDamage": false,
+	"attributes": {
+        "killedByInfoText": "feverstonewilds:deadcreature-ostrich",
+        "riderIdleAnimation": "rideidle",
+        "mountHeight": 1,
+        "mountRunningSpeed": 0.15,
+        "mountWalkingSpeed": 0.055,
+        "mountAnimations": {
+            "walk": {
+                "code": "idle",
+                "animation": "idle",
+                "blendMode": "Average",
+                "mulWithWalkSpeed": true,
+                "animationSpeed": 1.1
+            },
+            "sprint": {
+                "code": "idle",
+                "animation": "idle",
+                "blendMode": "Average",
+                "mulWithWalkSpeed": true,
+                "animationSpeed": 3.3
+            },
+            "backward": {
+                "code": "idle",
+                "animation": "idle",
+                "blendMode": "Average",
+                "mulWithWalkSpeed": true,
+                "animationSpeed": 0.6
+            }
+        }
+    },
+	"client": {
+		"renderer": "Shape",
+		"shape": { "base": "entity/land/ostrich" },
+		"texture": { "base": "entity/land/ostrich/ostrichskin1", 
+			"alternates":  [{ "base": "entity/land/ostrich/ostrichskin2" }, { "base": "entity/land/ostrich/ostrichskin3" }, 
+							{ "base": "entity/land/ostrich/ostrichskin4" }, { "base": "entity/land/ostrich/ostrichskin5" }, 
+							{ "base": "entity/land/ostrich/ostrichskin6" }, { "base": "entity/land/ostrich/ostrichskin7" },
+							{ "base": "entity/land/ostrich/ostrichskin8" }, { "base": "entity/land/ostrich/ostrichskin9" },
+							{ "base": "entity/land/ostrich/ostrichskin10" } ] },
+		"behaviors": [
+            { "code": "nametag", "showtagonlywhentargeted": true },
+			{ "code": "repulseagents" }, 
+			{ "code": "controlledphysics", "stepHeight": 2 },
+			{ "code": "passivephysics", "waterDragFactor": 1, "airDragFallingFactor": 0.1, "groundDragFactor": 1, "gravityFactor": 0.1 },			
+			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
+			{ "code": "interpolateposition" },
+			{ "code": "harvestable" },
+			{ "code": "multiplybase",
+				"enabledByType": { "*-male": false, "*-female": true } },
+			{ "code": "despawn", "minPlayerDistance": 15, "belowLightLevel": 8, "minSeconds": 300 },
+			{ "code": "ropetieable", "minGeneration": 2 },
+            { "code": "receivecommand",
+                "availableCommands": [
+                    { "commandName": "stay", "commandType": "COMPLEX", "minObedience": 0.4 },
+                    { "commandName": "followmaster", "commandType": "COMPLEX", "minObedience": 0.2 }
+                ]
+            },
+            { "code": "tameable",
+                "treat": [
+                    { "code": "vegetable-carrot", "progress": 0.10, "cooldown": 0.2 },
+                    { "code": "vegetable-cabbage", "progress": 0.03, "cooldown": 0.4 },
+                    { "code": "vegetable-turnip", "progress": 0.04, "cooldown": 0.3 },
+                    { "code": "carrotbundle", "progress": 0.15, "cooldown": 0.25 },
+                    { "code": "fruit-pinkapple", "progress": 0.169, "cooldown": 0.55 },
+                    { "code": "fruit-redapple", "progress": 0.169, "cooldown": 0.55 },
+                    { "code": "fruit-yellowapple", "progress": 0.169, "cooldown": 0.55 },
+                    { "code": "grain-flax", "progress": 0.075, "cooldown": 0.45 },
+                    { "code": "grain-rye", "progress": 0.075, "cooldown": 0.45 },
+                    { "code": "grain-spelt", "progress": 0.075, "cooldown": 0.45 }
+                ]
+            },
+            { "code": "mouthinventory",
+                "acceptStacks": [
+                    { "type": "item", "code": "vegetable-carrot" },
+                    { "type": "item", "code": "vegetable-cabbage" },
+                    { "type": "item", "code": "vegetable-turnip" },
+                    { "type": "item", "code": "feverstonewilds:carrotbundle" },
+                    { "type": "item", "code": "fruit-pinkapple" },
+                    { "type": "item", "code": "fruit-redapple" },
+                    { "type": "item", "code": "fruit-yellowapple" },
+                    { "type": "item", "code": "grain-flax" },
+                    { "type": "item", "code": "grain-rye" },
+                    { "type": "item", "code": "grain-spelt" }
+                ]
+            }
+		],
+		"animations": [
+			{
+				"code": "hurt",
+				"animation": "hurt", 
+				"animationSpeed": 2.2,
+				"weight": 10,
+				"blendMode": "addAverage" 
+			},
+			{
+				"code": "die",
+				"animation": "die", 
+				"animationSpeed": 2,
+				"weight": 10,
+				"blendMode": "average",
+				"triggeredBy": { "onControls": ["dead"] }
+			},
+			{ 
+				"code": "idle", 
+				"animation": "idle",
+				"blendMode": "addAverage",
+				"easeOutSpeed": 4,
+				"triggeredBy": { "defaultAnim": true }
+			},
+			{
+				"code": "sleep", 
+				"animation": "sleep",
+				"easeInSpeed": 4,
+				"easeOutSpeed": 4,
+				"blendMode": "average"
+			},
+			{
+				"code": "sit", 
+				"animation": "sit",
+				"easeInSpeed": 4,
+				"easeOutSpeed": 4,
+				"blendMode": "average"
+			},
+			{
+				"code": "eat",
+				"animation": "eat", 
+				"animationSpeed": 1,
+				"weight": 4,
+				"easeOutSpeed": 8,
+				"easeInSpeed": 5,
+				"blendMode": "addAverage" 
+			},
+            {
+                "code": "walk",
+                "animation": "walk",
+                "blendMode": "average",
+                "mulWithWalkSpeed": true,
+                "animationSpeed": 0.6,
+				"triggeredBy": {"onControls": ["move"], "matchExact": true }
+            },
+            {
+                "code": "run",
+                "animation": "run",
+                "blendMode": "average",
+                "mulWithWalkSpeed": true,
+                "animationSpeed": 1.1,
+				"triggeredBy": {"onControls": ["move", "sprintMode"], "matchExact": true }
+            }
+		]
+	},
+	"server": {
+		"attributes": {
+            "pathfinder": {
+                "minTurnAnglePerSec": 125,
+                "maxTurnAnglePerSec": 210
+            }
+		},
+		"behaviors": [
+			{ "code": "multiplybase",
+				"enabledByType": { "*-female": true, "*-male": false },
+				"multiplyCooldownDaysMin": 0,
+				"multiplyCooldownDaysMax": 1,
+				"portionsEatenForMultiply": 9
+			},
+            { "code": "nametag", "showtagonlywhentargeted": true },
+			{ "code": "repulseagents" }, 
+			{ "code": "controlledphysics", "stepHeight": 2 },
+			{ "code": "passivephysics", "waterDragFactor": 1, "airDragFallingFactor": 0.1, "groundDragFactor": 1, "gravityFactor": 0.1 }, 
+			{ "code": "despawn", "minPlayerDistance": 8, "belowLightLevel": 8, "minSeconds": 300 },
+			{ "code": "health", "currenthealth": 18, "maxhealth": 18 },
+			{ "code": "deaddecay", "hoursToDecay": 96, "decayedBlock": "carcass-medium" },
+			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
+			{ "code": "harvestable", "drops": [
+				{
+					"type": "item", 
+					"code": "poultry-raw", 
+					"quantity": { "avg": 9, "var": 1.5 } 
+				},
+				{
+					"type": "item", 
+					"code": "feather", 
+					"quantity": { "avg": 9, "var": 1.5 } 
+				},
+				{
+					"type": "item", 
+					"code": "fat", 
+					"quantity": { "avg": 2, "var": 0 } 
+				}
+			]
+			},
+			{ "code": "breathe" },
+			{ 
+				"code": "emotionstates",
+				"states": [
+					{ "code": "fleeondamage", "duration": 60, "chance": 0.8, "slot": 0, "priority": 5, "accumType": "max", "whenHealthRelBelow": 0.4 },
+					{ "code": "aggressiveondamage", "duration": 20, "chance": 0.9, "slot": 0, "priority": 2, "accumType": "noaccum" },
+					{ "code": "fleeondamage", "duration": 10, "chance": 1, "slot": 0, "priority": 1, "accumType": "max" },
+					{ "code": "alarmherdondamage", "chance": 1, "slot": 1, "priority": 1, "accumType": "max" }
+				]
+			},
+            { "code": "receivecommand",
+                "availableCommands": [
+                    { "commandName": "stay", "commandType": "COMPLEX", "minObedience": 0.4 },
+                    { "commandName": "followmaster", "commandType": "COMPLEX", "minObedience": 0.2 }
+                ]
+            },
+            { "code": "tameable",
+                "disobediencePerDay": 0.045,
+                "treat": [
+                    { "code": "vegetable-carrot", "progress": 0.10, "cooldown": 0.2 },
+                    { "code": "vegetable-cabbage", "progress": 0.03, "cooldown": 0.4 },
+                    { "code": "vegetable-turnip", "progress": 0.04, "cooldown": 0.3 },
+                    { "code": "carrotbundle", "progress": 0.15, "cooldown": 0.25 },
+                    { "code": "fruit-pinkapple", "progress": 0.169, "cooldown": 0.55 },
+                    { "code": "fruit-redapple", "progress": 0.169, "cooldown": 0.55 },
+                    { "code": "fruit-yellowapple", "progress": 0.169, "cooldown": 0.55 },
+                    { "code": "grain-flax", "progress": 0.075, "cooldown": 0.45 },
+                    { "code": "grain-rye", "progress": 0.075, "cooldown": 0.45 },
+                    { "code": "grain-spelt", "progress": 0.075, "cooldown": 0.45 }
+                ]
+            },
+            { "code": "mouthinventory",
+                "acceptStacks": [
+                    { "type": "item", "code": "vegetable-carrot" },
+                    { "type": "item", "code": "vegetable-cabbage" },
+                    { "type": "item", "code": "vegetable-turnip" },
+                    { "type": "item", "code": "feverstonewilds:carrotbundle" },
+                    { "type": "item", "code": "fruit-pinkapple" },
+                    { "type": "item", "code": "fruit-redapple" },
+                    { "type": "item", "code": "fruit-yellowapple" },
+                    { "type": "item", "code": "grain-flax" },
+                    { "type": "item", "code": "grain-rye" },
+                    { "type": "item", "code": "grain-spelt" }
+                ]
+            },
+			{ 
+				"code": "taskai",
+				"aitasks": [
+                    {
+                        "code": "beamount",
+                        "priority": 8,
+                        "priorityForCancel": 8,
+                        "movespeed": 0.055,
+                        "animationSpeed": 2.2,
+                        "maxDistance": 8,
+                        "searchRange": 40,
+                        "animation": "idle"
+                    },
+                    {
+                        "code": "followmaster",
+                        "priority": 3,
+                        "priorityForCancel": 1.7,
+                        "command": "followmaster",
+                        "movespeed": 0.045,
+                        "animationSpeed": 2.2,
+                        "maxDistance": 8,
+                        "searchRange": 40,
+                        "animation": "run"
+                    },
+                    {
+                        "code": "stay",
+                        "priority": 3,
+                        "priorityForCancel": 1.7,
+                        "command": "stay",
+                        "movespeed": 0.006,
+                        "maxDistance": 10,
+                        "searchRange": 40,
+                        "animation": "walk"
+                    },
+                    {
+                        "code": "useinventory",
+                        "animation": "eat",
+                        "animationSpeed": 1,
+                        "priority": 1.5,
+                        "priorityForCancel": 1.7,
+                        "eatItemCategories": [ "Vegetable", "Grain", "Fruit" ],
+                        "eatItemCodes": [ "feverstonewilds:carrotbundle" ],
+                        "eatSound": "game:creature/animal-eat-small",
+                        "soundRange": 3,
+                        "soundStartMs": 950,
+                        "useTime": 3.2,
+                        "mincooldownHours": 1,
+                        "maxcooldownHours": 1.5
+                    },
+					{
+						"code": "meleeattack",
+						"entityCodes": ["player", "fox-*", "wolf-*", "hyena-*"],
+						"priority": 2,
+						"damage": 8,
+						"damageTier": 2,
+						"damageType": "SlashingAttack",
+						"slot": 1,
+						"mincooldown": 1500, 
+						"maxcooldown": 1500, 
+						"attackDurationMs": 900,
+						"damagePlayerAtMs": 300,
+						"animation": "Attack",
+						"animationSpeed": 2,
+						"whenInEmotionState": "aggressiveondamage",
+						"sound": "creature/ostrich/attack"
+					},
+					{
+						"code": "fleeentity",
+						"entityCodes": ["player", "wolf-*", "hyena-*", "bear-*"],
+						"priority": 1.8,
+						"movespeed": 0.057,
+						"seekingRange": 12,
+						"animation": "Run",
+						"animationSpeed": 3,
+						"sound": "creature/ostrich/hurt",
+						"whenInEmotionState": "fleeondamage"
+					},
+					{
+						"code": "seekentity",
+						"entityCodes": ["player"],
+						"priority": 1.7,
+						"mincooldown": 1000, 
+						"maxcooldown": 1500, 
+						"seekingRange": 20,
+						"movespeed": 0.050,
+						"animation": "Run",
+						"animationSpeed": 3,
+						"whenInEmotionState": "aggressiveondamage"
+					},
+					{
+						"code": "seekblockandlay",
+						"enabledByType": { "*-female": true, "*-male": false },
+						"priority": 1.6,
+						"layTime": 2,
+						"chickCode": "tame-ostrich-chick",
+						"sitDays": 0.9,
+						"incubationDays": 3.6,
+						"movespeed": 0.012,
+						"animation": "Walk",
+						"mincooldownHours": 1,
+						"maxcooldownHours": 2,
+						"sitAnimation": "Sit",
+						"requiresNearbyEntityCode": "feverstonewilds:tame-ostrich-male",
+						"requiresNearbyEntityRange": 12,
+						"growthCapEntityCodes": ["feverstonewilds:tame-ostrich-chick", "feverstonewilds:tame-ostrich-female", "feverstonewilds:tame-ostrich-male"],
+						"failBlockCode": "feverstonewilds:egg-ostrich-1",
+						"sound": "feverstonewilds:ostrich/ostrichlay",
+						"priorityForCancel": 1.65
+					},
+					{
+						"code": "getoutofwater",
+						"priority": 1.65,
+						"movespeed": 0.015,
+						"animation": "Walk",
+						"animationSpeed": 2
+					},
+					{
+						"code": "seekfoodandeat",
+						"movespeed": 0.004,
+						"priority": 1.4,
+						"animationSpeed": 1,
+						"animation": "Walk",
+						"eatAnimation": "Eat",
+						"eatSound": "game:creature/animal-eat-small",
+						"eatTime": 1.5,
+						"mincooldownHours": 1,
+						"maxcooldownHours": 4
+					},
+					{
+						"code": "wander", 
+						"priority": 1.3, 
+						"movespeed": 0.004,
+						"animationSpeed": 0.75,
+						"animation": "Walk",
+						"preferredLightLevel": 20,
+						"priorityForCancel": 1.35
+					},
+					{
+						"code": "idle",
+						"priority": 1.2,
+						"minduration": 3200,
+						"maxduration": 3200,
+						"mincooldown": 6000,
+						"maxcooldown": 20000,
+						"animation": "honk",
+						"animationSpeed": 0.95,
+						"whenNotInEmotionState": "aggressiveondamage"
+					},
+					{
+						"code": "idle",
+						"priority": 0.9,
+						"minduration": 5000,
+						"maxduration": 30000,
+						"mincooldown": 2000,
+						"maxcooldown": 120000,
+						"priorityForCancel": 1.25,
+						"animation": "Sit",
+						"whenNotInEmotionState": "aggressiveondamage",
+						"stopOnNearbyEntityCodes": ["player"],
+						"stopRange": 5
+					},
+					{
+						"code": "idle",
+						"priority": 0.8,
+						"minduration": 5000000,
+						"maxduration": 5000000,
+						"mincooldown": 10000,
+						"maxcooldown": 30000,
+						"priorityForCancel": 1.45,
+						"animation": "Sleep",
+						"whenNotInEmotionState": "aggressiveondamage",
+						"duringDayTimeFrames": [ { "fromHour": 21, "toHour": 24 }, { "fromHour": 0, "toHour": 6 } ],
+						"stopOnNearbyEntityCodes": ["player"],
+						"stopRange": 6,
+						"stopOnHurt": true
+					},
+					{
+						"code": "lookaround", 
+						"priority": 0.5
+					}
+				]
+			},
+			{ "code": "ropetieable", "minGeneration": 2 },
+			{ "code": "pettable", "minGeneration": 1 }
+		],
+		"spawnconditions": {
+        			"worldgen": {
+					"TriesPerChunk": { "avg": 0.005, "var": 0 },
+					"tryOnlySurface": true,
+					"minLightLevel": 10,
+					"groupSize": { "dist": "verynarrowgaussian", "avg": 2, "var": 0 },
+					"insideBlockCodes": ["game:air", "game:tallgrass-*"],
+					"minTemp": 16,
+					"maxTemp": 50,
+					"minRain": 0.1,
+					"companions": [ "feverstonewilds:ostrich-female", "feverstonewilds:ostrich-male", "feverstonewilds:ostrich-chick" ]
+            	},
+				"runtime": {
+					"group": "neutral",
+					"tryOnlySurface": true,
+					"chance": 0.00002,
+					"maxQuantity": 3,
+					"maxLightLevel": 10,
+					"groupSize": { "dist": "verynarrowgaussian", "avg": 2, "var": 0 },
+					"insideBlockCodes": ["game:air", "game:tallgrass-*"],
+					"minTemp": 16,
+					"maxTemp": 50,
+					"minRain": 0.1,
+					"companions": [ "feverstonewilds-female", "feverstonewilds-male", "feverstonewilds:ostrich-chick" ]
+                }
+			}
+		},
+		"sounds": {
+		"hurt": "creature/ostrich/hurt",
+		"death": "creature/ostrich/hurt",
+		"idle": "creature/ostrich/idle"
+	},
+	"idleSoundChance": 0.01
+}

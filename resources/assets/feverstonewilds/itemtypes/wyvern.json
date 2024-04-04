@@ -1,0 +1,69 @@
+{
+	"code": "creature",
+	"class": "ItemCreature",
+	"maxStackSize": 1,
+	"variantgroups": [
+		{
+			"code": "type",
+			"states": ["wyvern-male", "wyvern-female", "wyvern-hatchling",
+						"tame-wyvern-male", "tame-wyvern-female", "tame-wyvern-hatchling" ]	
+		}
+	],
+	"shapeByType": {
+		"*-wyvern-male": { "base": "entity/land/wyvern-male" },
+		"*-wyvern-female": { "base": "entity/land/wyvern-female" },
+		"*-wyvern-hatchling": { "base": "entity/land/wyvern-hatchling" }
+		},
+	"texturesByType": {
+		"*-wyvern-male": { "skin": { "base": "entity/land/wyvern/wyvernskin8" } },
+		"*-wyvern-female": { "skin": { "base": "entity/land/wyvern/wyvernskin9" } },
+		"*-wyvern-hatchling": {"skin": { "base": "entity/land/wyvern/wyvernskin1" } }
+		},
+		
+	"creativeinventory": {
+		"general": ["*"],
+		"items": ["*"],
+		"creatures": ["*"]
+		},
+		
+	"guiTransformByType": {
+		"creature-wyvern-hatchling": {
+			"rotate": "true",
+			"translation": { "x": 0, "y": 0, "z": 0 },
+			"rotation": { "x": 180, "y": -115, "z": 6 },
+			"origin": { "x": 0.5, "y": 0.5, "z": 0.5 },
+			"scale": 1.4
+		},
+		"creature-tame-wyvern-hatchling": {
+			"rotate": "true",
+			"translation": { "x": 0, "y": 0, "z": 0 },
+			"rotation": { "x": 180, "y": -115, "z": 6 },
+			"origin": { "x": 0.5, "y": 0.5, "z": 0.5 },
+			"scale": 1.4
+		},
+		"creature-wyvern-*": {
+			"rotate": "true",
+			"translation": { "x": 0, "y": 3, "z": 0 },
+			"rotation": { "x": 180, "y": -115, "z": 6 },
+			"origin": { "x": 0.75, "y": 0.75, "z": 0.5 },
+			"scale": 0.8
+		},
+		"creature-tame-wyvern-*": {
+			"rotate": "true",
+			"translation": { "x": 0, "y": 3, "z": 0 },
+			"rotation": { "x": 180, "y": -115, "z": 6 },
+			"origin": { "x": 0.75, "y": 0.75, "z": 0.5 },
+			"scale": 0.8
+		}
+	},
+	"fpHandTransform": {
+		"translation": { "x": 0.2, "y": 0, "z": 0 },
+		"rotation": { "x": -8, "y": -63, "z": -7 }
+	},
+	"tpHandTransform": {
+		"translation": { "x": -0.9, "y": -0.9, "z": -0.7 },
+		"rotation": { "x": -180, "y": 0, "z": -156 },
+		"scale": 0.4
+	}
+	
+}

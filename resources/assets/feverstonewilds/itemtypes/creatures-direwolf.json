@@ -5,19 +5,19 @@
 	"variantgroups": [
 		{
 			"code": "type",
-			"states": ["direwolf-male", "direwolf-female", "direwolf-pup-male", "direwolf-pup-female",
-						"tame-direwolf-male", "tame-direwolf-female", "tame-direwolf-pup-male", "tame-direwolf-pup-female" ]	
+			"states": ["direwolf-male", "direwolf-female", "direwolf-pup",
+						"tame-direwolf-male", "tame-direwolf-female", "tame-direwolf-pup" ]	
 		}
 	],
 	"shapeByType": {
 		"*-direwolf-male": { "base": "entity/land/direwolf" },
 		"*-direwolf-female": { "base": "entity/land/direwolf" },
-		"*-direwolf-pup-*": { "base": "entity/land/direwolf-pup" }
+		"*-direwolf-pup": { "base": "entity/land/direwolf-pup" }
 		},
 	"texturesByType": {
 		"*-direwolf-male": { "skin": { "base": "entity/land/direwolf/direwolf1" } },
 		"*-direwolf-female": { "skin": { "base": "entity/land/direwolf/direwolf2" } },
-		"*-direwolf-pup-*": {"skin": { "base": "entity/land/direwolf/direwolf-pup1" } }
+		"*-direwolf-pup": {"skin": { "base": "entity/land/direwolf/direwolf-pup1" } }
 		},
 		
 	"creativeinventory": {
@@ -27,14 +27,14 @@
 		},
 		
 	"guiTransformByType": {
-		"creature-direwolf-pup-*": {
+		"creature-direwolf-pup": {
 			"rotate": "true",
 			"translation": { "x": 0, "y": 0, "z": 0 },
 			"rotation": { "x": 180, "y": -115, "z": 6 },
 			"origin": { "x": 0.5, "y": 0.5, "z": 0.5 },
 			"scale": 1.4
 		},
-		"creature-tame-direwolf-pup-*": {
+		"creature-tame-direwolf-pup": {
 			"rotate": "true",
 			"translation": { "x": 0, "y": 0, "z": 0 },
 			"rotation": { "x": 180, "y": -115, "z": 6 },
