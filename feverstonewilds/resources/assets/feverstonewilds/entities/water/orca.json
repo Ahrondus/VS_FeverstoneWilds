@@ -183,20 +183,6 @@
 						"preferredLightLevel": "22"
 					},
 					{
-						"code": "seekfoodandeat",
-						"movespeed": 0.010,
-						"priority": 1.25,
-						"eatTime": 2.3,
-						"eatLooseItems": true,
-						"eatItemCodes": ["game:redmeat-*", "game:fish-*", "game:poultry-*", "game:bushmeat-*"],
-						"eatItemCatagories": ["Protein"],
-						"animationSpeed": 1.4,
-						"animation": "swim",
-						"eatAnimation": "attack",
-						"mincooldownHours": 1,
-						"maxcooldownHours": 4
-					},
-					{
 						"code": "fishmovefast", 
 						"priority": 1.0, 
 						"priorityForCancel": 1.35,
@@ -204,15 +190,6 @@
 						"animation": "swimfast",
 						"animationSpeed": 2.3,
 						"sound": "orca/orcaswim"
-					},
-					{
-						"code": "idle",
-						"priority": 0.9,
-						"minduration": 500,
-						"maxduration": 2000,
-						"mincooldown": 2000,
-						"maxcooldown": 30000,
-						"animation": "idle"
 					},
 					{
 						"code": "idle",

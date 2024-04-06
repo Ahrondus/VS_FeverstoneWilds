@@ -56,7 +56,7 @@
 					{ "type": "item", "code": "bushmeat-raw"},
                     { "type": "item", "code": "poultry-raw" },
 					{ "type": "item", "code": "redmeat-raw" },
-					{ "type": "item", "code": "grain-*" },
+					{ "type": "item", "code": "grain-rye" },
 					{ "type": "item", "code": "bone" }
 				]
             },
@@ -141,7 +141,7 @@
 					{ "type": "item", "code": "bushmeat-raw"},
                     { "type": "item", "code": "poultry-raw" },
 					{ "type": "item", "code": "redmeat-raw" },
-					{ "type": "item", "code": "grain-*" },
+					{ "type": "item", "code": "grain-{flax|spelt|rye|sunflower}" },
 					{ "type": "item", "code": "bone" }
 				]
             },
@@ -215,7 +215,7 @@
 						"priorityForCancel": 2.2,
 						"eatItemCategories": [ "Protein", "Grain" ],
 						"eatItemCodes": [ "redmeat-raw", "bushmeat-raw", "poultry-raw", 
-								"bone", "petai:petcookie-meat-perfect", "grain-*" ],
+								"bone", "petai:petcookie-meat-perfect" ],
 						"useTime": 1.5,
 						"mincooldownHours": 1,
 						"maxcooldownHours": 1.5
