@@ -130,7 +130,7 @@
 	"item-creature-shark-freshwater": "Freshwater Bullshark",
 	"item-creature-shark-saltwater": "Saltwater Bullshark",
 	"item-creature-shark-hammerhead": "Hammerhead Shark",
-	"item-dead-creature-shark-*": "Dead shark",
+	"item-dead-creature-shark-*": "Dead Shark",
 	"itemdesc-creature-shark-freshwater": "Freshwater Bullshark",
 	"itemdesc-creature-shark-saltwater": "Saltwater Bullshark",
 	"itemdesc-creature-shark-hammerhead": "Hammerhead Shark",
@@ -166,7 +166,7 @@
 
 
 	"item-creature-orca": "Orca",
-	"item-dead-creature-orca": "Dead orca",
+	"item-dead-creature-orca": "Dead Orca",
 	"itemdesc-creature-orca": "A large orca.",
 
 	"game:deathmsg-orca-1": "Player {0} became fishbait.",
@@ -176,10 +176,11 @@
 	"item-creature-stingray": "Stingray",
 	"item-dead-creature-stingray": "Dead Stingray",
 	"itemdesc-creature-stingray": "A large stingray.",
-
-	"game:deathmsg-stingray-1": "Player {0} was stung to death.",
-
-
+	"deadcreature-stingray": "Impaled by a sharp stingray stinger.",
+	
+	"game:deathmsg-stingray-1": "Player {0} was stabbed and stung by a stingray.",
+	
+	
 	"item-creature-buromenfish": "Buromenfish",
 	"item-dead-creature-buromenfish": "Dead Buromenfish",
 	"itemdesc-creature-buromenfish": "A type of fish.",
@@ -187,7 +188,7 @@
 
 	"item-creature-discus": "Discus",
 	"item-dead-creature-discus": "Dead Discus",
-	"itemdesc-creature-discus": "A type of fish.",
+	"itemdesc-creature-discus": "A type of tropical fish.",
 
 
 	"item-creature-eel": "Eel",
@@ -208,11 +209,14 @@
 	"item-creature-spider": "Spider",
 	"item-dead-creature-spider": "Dead Spider",
 	"itemdesc-creature-spider": "An itsy bitsy spider.",
-
-
+	"game:deathmsg-spider-1": "Player {0} died from spider bites.",
+	
+	
 	"item-creature-scorpion": "Scorpion",
 	"item-dead-creature-scorpion": "Dead scorpion",
-	"itemdesc-creature-scorpion": "A scorpion.",
+	"itemdesc-creature-scorpion": "A tiny scorpion.",
+	"deadcreature-scorpion": "Stung by a scorpion.",
+	"game:deathmsg-scorpion-1": "Player {0} was stung by a scorpion.",
 
 	"item-egg-cockatrice-raw": "A Cockatrice egg",
 	"itemdesc-egg-cockatrice-raw": "A strange chicken's egg.",
@@ -246,6 +250,7 @@
 	"game:deathmsg-cockatrice-1": "Player {0} was killed by a cockatrice.",
 	"game:deathmsg-tamedcockatrice-1": "Player {0} was pecked and scratched by a cockatrice.",
 
+	"deadcreature-eaten-cockatrice": "Pecked and scratched by a cockatrice.",
 	"creaturegroup-fswcockatrice": "Cockatrice",
 
 
@@ -289,7 +294,7 @@
 	"creaturegroup-fswdirewolf": "Direwolves",
 
 
-	"deadcreature-ostrich": "Pecked and scratched by an Ostrich..",
+	"deadcreature-ostrich": "Stomped and pecked by an Ostrich..",
 	"item-egg-ostrich-raw": "A Ostrich egg",
 	"itemdesc-egg-ostrich-raw": "A BIG chicken egg. Or an Ostrich's",
 

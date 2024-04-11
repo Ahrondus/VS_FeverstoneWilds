@@ -65,12 +65,15 @@ namespace FeverstoneWilds.Config
         api.World.Config.SetBool("FSWIronGolemEnabled", config.FSWIronGolemEnabled);
     }
 
+    // Load a previous config
     private static FeverstoneWildsConfig LoadConfig(ICoreAPI api) =>
       api.LoadModConfig<FeverstoneWildsConfig>(jsonConfig);
 
+    // Generate a new config file
     private static void GenerateConfig(ICoreAPI api) =>
       api.StoreModConfig(new FeverstoneWildsConfig(), jsonConfig);
 
+    // Generate a new config from an existing config
     private static void GenerateConfig(ICoreAPI api, FeverstoneWildsConfig previousConfig) =>
       api.StoreModConfig(new FeverstoneWildsConfig(previousConfig), jsonConfig);
   }

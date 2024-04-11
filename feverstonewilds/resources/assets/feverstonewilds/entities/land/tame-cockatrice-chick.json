@@ -52,7 +52,7 @@
                     { "type": "item", "code": "bushmeat-raw" },
                     { "type": "item", "code": "redmeat-raw" },
                     { "type": "item", "code": "poultry-raw" },
-					{ "type": "item", "code": "grain-*" },
+					{ "type": "item", "code": "grain-{flax|spelt|rye|sunflower}" },
                     { "type": "item", "code": "wolftaming:dogtoy" },
                     { "type": "item", "code": "petai:petcookie-meat-perfect" }
                 ]
@@ -130,8 +130,7 @@
                     { "type": "item", "code": "bushmeat-raw" },
                     { "type": "item", "code": "redmeat-raw" },
                     { "type": "item", "code": "poultry-raw" },
-					{ "type": "item", "code": "grain-*" },
-                    { "type": "item", "code": "wolftaming:dogtoy" },
+					{ "type": "item", "code": "grain-rye" },
                     { "type": "item", "code": "petai:petcookie-meat-perfect" }
                 ]
             },
@@ -153,7 +152,7 @@
                 ]
             },
             { "code": "grow", "hoursToGrow": 100, 
-                "adultEntityCodes": [ "feverstonewilds:tame-cockatrice"] },
+                "adultEntityCodes": [ "feverstonewilds:tame-cockatrice-*"] },
             { "code": "taskai",
                 "aitasks": [
                     {
@@ -251,8 +250,7 @@
                         "eatItemCategories": [ "Protein", "Grain" ],
                         "eatItemCodes": [
                             "bone", "bushmeat-raw", "redmeat-raw",
-                            "poultry-raw", "petai:petcookie-meat-perfect",
-                            "grain-*"
+                            "poultry-raw", "petai:petcookie-meat-perfect"
                         ],
                         "useTime": 1.5,
                         "mincooldownHours": 1,
