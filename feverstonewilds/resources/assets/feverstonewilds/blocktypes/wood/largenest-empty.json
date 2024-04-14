@@ -1,0 +1,45 @@
+{
+	"code": "largenest-empty",
+	"class": "BlockAnimalNestLarge",
+	"entityClass": "AnimalNestLarge",
+	"behaviors": [{ "name": "CollectFrom" }],
+	"attributes": {
+		"fullVariant": "6eggs",
+		"handbook": {
+			"groupBy": ["largenest-*"],
+			"extraSections": [
+				{ "title": "handbooktitle-largenest", "text": "handbooktext-henbox" }
+			]
+		}
+	},
+	"creativeinventory": { "general": ["*"] },
+	"shape": { "base": "block/wood/largenest/largenest-empty" },
+	"resistance": 1,
+	"sideopaque": {
+		"all": false
+	},
+	"sidesolid": {
+		"all": false
+	},
+	"blockmaterial": "Wood",
+	"randomizeRotations": true,
+	"sideao": { "all": false },
+	"lightAbsorption": 0,
+	"collisionbox": {"x1": 0.25, "y1": 0, "z1": 0.25, "x2": 0.75, "y2": 0.08, "z2": 0.75},
+	"selectionbox": {
+		"x1": 0.2, "y1": 0, "z1": 0.2,
+		"x2": 0.8, "y2": 0.21, "z2": 0.8
+	},
+	"drops": [ { "type": "block", "code": "largenest-empty", "quantity": { "avg": 1} } ],
+	"tphandTransform": {
+		"origin": { "x": 0.5, "y": 0.5, "z": 0 },
+		"translation": { "x": -1.2, "y": -0.5, "z": 0.5 },
+		"rotation": { "x": 0, "y": 0, "z": 0 },
+		"scale": 0.5
+	},
+	"guiTransform": {
+		"origin": { "x": 0.5, "y": 0.15, "z": 0.5 },
+		"scale": 1.8
+	}
+	
+}
