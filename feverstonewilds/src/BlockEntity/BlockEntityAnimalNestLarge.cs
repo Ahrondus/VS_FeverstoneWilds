@@ -52,7 +52,7 @@ namespace FeverstoneWilds
 
         public bool IsSuitableFor(Entity entity)
         {
-            return entity is EntityAgent && ( entity.Code.Path == "ostrich-female" || entity.Code.Path == "tame-ostrich-female" || entity.Code.Path == "cockatrice-female" || entity.Code.Path == "tame-cockatrice-female" );
+            return entity is EntityAgent && ( entity.Code.Path == "ostrich-female" || entity.Code.Path == "tame-ostrich-female" || entity.Code.Path == "tame-cockatrice-female" );
         }
 
         public bool Occupied(Entity entity)
@@ -63,10 +63,6 @@ namespace FeverstoneWilds
         public void SetOccupier(Entity entity)
         {
             occupier = entity;
-        }
-        public string GetOccupier()
-        {
-            return occupier.Code.Path;
         }
 
         public float DistanceWeighting => 2 / (CountEggs() + 2);
@@ -90,7 +86,7 @@ namespace FeverstoneWilds
             parentGenerations[eggs] = entity.WatchedAttributes.GetInt("generation", 0);
             chickNames[eggs] = chickCode == null ? null : entity.Code.CopyWithPath(chickCode);
             eggs++;
-            if ((entity.Code.SecondCodePart() == "cockatrice") || (entity.Code.FirstCodePart() == "cockatrice")) {
+            if (entity.Code.SecondCodePart() == "cockatrice") {
                 Block replacementBlock = Api.World.GetBlock(new AssetLocation("feverstonewilds:" + Block.FirstCodePart() + "-cockatrice-" + eggs + (eggs > 1 ? "eggs" : "egg")));
                 if (replacementBlock == null)
                 {
@@ -98,7 +94,7 @@ namespace FeverstoneWilds
                 }
                 Api.World.BlockAccessor.ExchangeBlock(replacementBlock.Id, this.Pos);
                 this.Block = replacementBlock;
-                this.MarkDirty();
+                this.MarkDirty(true);
                 }
             else {
                 Block replacementBlock = Api.World.GetBlock(new AssetLocation("feverstonewilds:" + Block.FirstCodePart() + "-ostrich-" + eggs + (eggs > 1 ? "eggs" : "egg")));
@@ -108,7 +104,7 @@ namespace FeverstoneWilds
                 }
                 Api.World.BlockAccessor.ExchangeBlock(replacementBlock.Id, this.Pos);
                 this.Block = replacementBlock;
-                this.MarkDirty();
+                this.MarkDirty(true);
             }
 
             return true;
@@ -241,22 +237,16 @@ namespace FeverstoneWilds
 
 
         public override void GetBlockInfo(IPlayer forPlayer, StringBuilder dsc)
-        {
+        {        
             int eggCount = CountEggs();
             int fertileCount = 0;
             for (int i = 0; i < eggCount; i++) if (chickNames[i] != null) fertileCount++;
             if (fertileCount > 0)
             {
-                if ((GetOccupier() == "ostrich-female" || GetOccupier() == "tame-ostrich-female") && fertileCount > 1)
-                //if (fertileCount > 1)
-                    dsc.AppendLine(Lang.Get("{0} fertile Ostrich eggs", fertileCount));
+                if (fertileCount > 1)
+                    dsc.AppendLine(Lang.Get("{0} fertile eggs", fertileCount));
                 else
-                    dsc.AppendLine(Lang.Get("1 fertile Ostrich egg"));
-                
-                if ((GetOccupier() == "cockatrice-female" || GetOccupier() == "tame-cockatrice-female") && fertileCount > 1)
-                    dsc.AppendLine(Lang.Get("{0} fertile Cockatrice eggs", fertileCount));
-                else
-                    dsc.AppendLine(Lang.Get("1 fertile Cockatrice egg"));
+                    dsc.AppendLine(Lang.Get("1 fertile egg"));
 
                 if (timeToIncubate >= 1.5)
                     dsc.AppendLine(Lang.Get("Incubation time remaining: {0:0} days", timeToIncubate));
@@ -265,10 +255,10 @@ namespace FeverstoneWilds
                 else if (timeToIncubate > 0)
                     dsc.AppendLine(Lang.Get("Incubation time remaining: {0:0} hours", timeToIncubate * 24));
 
-                if (occupier == null && Block.LastCodePart() == fullCode && (GetOccupier() == "ostrich-female" || GetOccupier() == "tame-ostrich-female"))
-                    dsc.AppendLine(Lang.Get("A broody Ostrich is needed!"));
-                else
+                if (occupier == null && Block.LastCodePart() == fullCode && (this.Block.FirstCodePart(1) == "cockatrice"))
                     dsc.AppendLine(Lang.Get("A broody Cockatrice is needed!"));
+                if (occupier == null && Block.LastCodePart() == fullCode && ((this.Block.FirstCodePart() == "ostrich") || (this.Block.FirstCodePart(1) == "ostrich")))
+                    dsc.AppendLine(Lang.Get("A broody Ostrich is needed!"));
             }
             else if (eggCount > 0)
             {
