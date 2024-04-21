@@ -261,7 +261,8 @@
 						"stopOnNearbyentityCodes": ["player"],
 						"stopRange": 5,
 						"stopOnHurt": true,
-						"animation": "sleep"
+						"animation": "sleep",
+						"sound": "feverstonewilds:cockatrice/cockatriceidle"
 					},
 					{ 
 						"code": "lookaround", 
@@ -302,7 +303,7 @@
 	"sounds": {
 		"hurt": "creature/sheep/hurt",
 		"death": "creature/sheep/hurt",
-		"idle": "creature/sheep/idle"
+		"idle": "feverstonewilds:cockatrice/cockatriceidle"
 	},
 	"idleSoundchance": 0.001
 }
