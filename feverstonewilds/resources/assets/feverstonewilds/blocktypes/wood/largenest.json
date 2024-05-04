@@ -1,13 +1,18 @@
 {
 	"code": "largenest",
-	"class": "BlockAnimalNest",
-	"entityClass": "AnimalNest",
+	"class": "BlockAnimalNestLarge",
+	"entityClass": "AnimalNestLarge",
 	"behaviors": [{ "name": "CollectFrom"}],
 	"variantgroups": [
-		{"code": "eggCount", "states": ["empty", "1egg", "2eggs", "3eggs", "4eggs", "5eggs", "6eggs" ]}
+        { "code": "ownerBird", "states": ["cockatrice", "ostrich"] },
+		{ "code": "eggCount", "states": ["1egg", "2eggs", "3eggs", "4eggs", "5eggs", "6eggs" ] }
 	],
+    "skipVariants": [ "*-cockatrice-6eggs" ],
 	"attributes": {
-		"fullVariant": "6eggs",
+		"fullVariantByType": {
+			"*-ostrich-*":"6eggs",
+			"*-cockatrice-*": "5eggs"
+		},
 		"handbook": {
 			"groupBy": ["largenest-*"],
 			"extraSections": [
@@ -16,8 +21,13 @@
 		}
 	},
 	"creativeinventory": { "general": ["*"] },
-	"shape": {
-		"base": "block/wood/largenest/largenest-{eggCount}"
+	"shapeByType": {
+		"*-ostrich-*": {
+            "base": "block/wood/largenest-ostrich/largenest-ostrich-{eggCount}"
+        },
+        "*-cockatrice-*": {
+            "base":"block/wood/largenest-cockatrice/largenest-cockatrice-{eggCount}"
+        }
 	},
 	"resistance": 1,
 	"sideopaque": {
@@ -38,23 +48,23 @@
 	"dropsbytype":
 	{
 		"*-1egg": [ 
-			{ "type": "item", "code": "egg-ostrich-raw", "quantity": { "avg": 1 }  },
+			{ "type": "item", "code": "egg-{ownerBird}-raw", "quantity": { "avg": 1 }  },
 			{ "type": "block", "code": "largenest-empty", "quantity": { "avg": 1} }
 		],
 		"*-2eggs": [ 			
-			{ "type": "item", "code": "egg-ostrich-raw", "quantity": { "avg": 2 }  },
+			{ "type": "item", "code": "egg-{ownerBird}-raw", "quantity": { "avg": 2 }  },
 			{ "type": "block", "code": "largenest-empty", "quantity": { "avg": 1} } 
 			],
 		"*-3eggs": [ 
-			{ "type": "item", "code": "egg-ostrich-raw", "quantity": { "avg": 3 }  },
+			{ "type": "item", "code": "egg-{ownerBird}-raw", "quantity": { "avg": 3 }  },
 			{ "type": "block", "code": "largenest-empty", "quantity": { "avg": 1} }
 		],
 		"*-4eggs": [ 
-			{ "type": "item", "code": "egg-ostrich-raw", "quantity": { "avg": 4 }  },
+			{ "type": "item", "code": "egg-{ownerBird}-raw", "quantity": { "avg": 4 }  },
 			{ "type": "block", "code": "largenest-empty", "quantity": { "avg": 1} }
 		],
 		"*-5eggs": [ 
-			{ "type": "item", "code": "egg-ostrich-raw", "quantity": { "avg": 5 }  },
+			{ "type": "item", "code": "egg-{ownerBird}-raw", "quantity": { "avg": 5 }  },
 			{ "type": "block", "code": "largenest-empty", "quantity": { "avg": 1} }
 		],
 		"*-6eggs": [ 

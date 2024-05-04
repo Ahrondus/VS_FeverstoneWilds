@@ -1,6 +1,5 @@
 [
-    // Land Creatures
-    // Creatures listed Alphabetically 
+    
     {
         "op": "add",
         "path": "/enabled",
@@ -21,6 +20,27 @@
         "value": false,
         "file": "feverstonewilds:entities/land/cockatrice.json",
         "condition": { "when": "FSWCockatriceEnabled", "isValue": "false" }
+    },
+    {
+        "op": "add",
+        "path": "/enabled",
+        "value": false,
+        "file": "feverstonewilds:entities/land/cockatrice-chick.json",
+        "condition": { "when": "FSWCockatriceEnabled", "isValue": "false" }
+    },
+    {
+        "op": "add",
+        "path": "/enabled",
+        "value": false,
+        "file": "feverstonewilds:entities/land/tame-cockatrice.json",
+        "condition": { "when": "FSWTameCockatriceEnabled", "isValue": "false" }
+    },
+    {
+        "op": "add",
+        "path": "/enabled",
+        "value": false,
+        "file": "feverstonewilds:entities/land/tame-cockatrice-chick.json",
+        "condition": { "when": "FSWTameCockatriceEnabled", "isValue": "false" }
     },
     {
         "op": "add",
@@ -110,6 +130,13 @@
         "op": "add",
         "path": "/enabled",
         "value": false,
+        "file": "feverstonewilds:entities/land/tame-ostrich.json",
+        "condition": { "when": "FSWOstrichEnabled", "isValue": "false" }
+    },
+    {
+        "op": "add",
+        "path": "/enabled",
+        "value": false,
         "file": "feverstonewilds:entities/land/ostrich-chick.json",
         "condition": { "when": "FSWOstrichEnabled", "isValue": "false" }
     },
@@ -127,7 +154,7 @@
         "file": "feverstonewilds:entities/land/toad.json",
         "condition": { "when": "FSWToadEnabled", "isValue": "false" }
     },
-    // Water Creatures
+    
     {
         "op": "add",
         "path": "/enabled",
@@ -171,7 +198,7 @@
         "condition": { "when": "FSWStingrayEnabled", "isValue": "false" }
     },
 
-    // Golem Types
+    
     {
         "op":"add",
         "path": "/skipVariants/0",
