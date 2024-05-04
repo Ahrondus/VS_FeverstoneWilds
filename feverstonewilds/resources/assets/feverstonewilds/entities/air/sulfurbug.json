@@ -16,7 +16,7 @@
 	"attributes": {
 		"killedByInfoText": "game:deadcreature-vile",
 		"physics": {"airMovingStrength": 0.05},
-		"lightHsv": [ 34, 7, 5 ],
+		"lightHsv": [ 34, 7, 18 ],
     	"strobeFrequency": 0,
     	"minLightLevel": 1.0
 	},
@@ -24,7 +24,7 @@
 		"renderer": "Shape",
 		"size": 1.5,
 		"shape": { "base": "entity/air/sulfurbug" },
-		"texture": { "base": "entity/sulfurbug" },
+		"texture": { "base": "entity/air/sulfurbug" },
 		"behaviors": [
 				{"code": "repulseagents" }, 
 				{"code": "controlledphysics", "stepHeight": 2.0001},
