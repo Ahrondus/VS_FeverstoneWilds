@@ -1,6 +1,5 @@
 {
 	"editor": {
-		"backDropShape": "C:/Users/Poiso/AppData/Roaming/Vintagestory/assets/survival/shapes/block/wood/henbox/henbox-empty",
 		"collapsedPaths": "Root/origin/chest/stomach/rleg,Root/origin/chest/stomach/tail,Root/origin/chest/stomach/lleg,Root/origin/chest/neck/neck2/head/featherfrill",
 		"allAngles": false,
 		"entityTextureMode": false
@@ -10,13 +9,13 @@
 	"textureSizes": {
 	},
 	"textures": {
-		"cockatriceegg": "/Users/Poiso/Desktop/FSWilds/assets/feverstonewilds/textures/block/largenest/cockatriceegg"
+		"cockatriceegg": "block/nests/cockatriceegg"
 	},
 	"elements": [
 		{
-			"name": "Cube1",
-			"from": [ 7.2, 0.2, 7.2 ],
-			"to": [ 8.7, 1.7, 8.7 ],
+			"name": "Cube2",
+			"from": [ 7.2, 0.0, 7.2 ],
+			"to": [ 8.7, 1.5, 8.7 ],
 			"rotationOrigin": [ 8.0, 0.0, 8.0 ],
 			"faces": {
 				"north": { "texture": "#cockatriceegg", "uv": [ 0.75, 1.75, 3.0, 3.75 ], "autoUv": false },
@@ -28,7 +27,7 @@
 			},
 			"children": [
 				{
-					"name": "Cube11",
+					"name": "Cube3",
 					"from": [ 0.1, 1.5, 0.1 ],
 					"to": [ 1.4, 2.5, 1.4 ],
 					"rotationOrigin": [ 0.8, 2.0, 0.8 ],

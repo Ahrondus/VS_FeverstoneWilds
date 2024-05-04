@@ -1,9 +1,10 @@
 {
 	"code": "demigryph",
 	"classByType": { "*-adult-tamed": "EntityMount", "*-wild": "EntityAgent", "*-tamed": "EntityPet" },
+	"enabled": false,
 	"variantgroups": [
         { "code": "gender", "states": ["male", "female"] },
-		{ "code": "age", "states": ["adult"] },
+		{ "code": "age", "states": ["adult", "young"] },
 		{ "code": "tamed", "states": ["wild", "tamed"] }
     ],
 	"collisionBoxSizeByType": {

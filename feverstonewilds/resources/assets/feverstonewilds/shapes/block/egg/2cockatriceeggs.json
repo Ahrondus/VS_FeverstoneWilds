@@ -1,6 +1,6 @@
 {
 	"editor": {
-		"collapsedPaths": "Root/origin/chest/stomach/rleg,Root/origin/chest/stomach/tail,Root/origin/chest/stomach/lleg,Root/origin/chest/neck/neck2/head/featherfrill",
+		"collapsedPaths": "Root/origin/chest/stomach/rleg,Root/Cube4,Root/Cube2,Root/origin/chest/stomach/tail,Root/origin/chest/stomach/lleg,Root/origin/chest/neck/neck2/head/featherfrill",
 		"allAngles": false,
 		"entityTextureMode": false
 	},
@@ -9,7 +9,7 @@
 	"textureSizes": {
 	},
 	"textures": {
-		"cockatriceegg": "/Users/Poiso/Desktop/FSWilds/assets/feverstonewilds/textures/block/largenest/cockatriceegg"
+		"cockatriceegg": "block/nests/cockatriceegg"
 	},
 	"elements": [
 		{
@@ -27,7 +27,7 @@
 			},
 			"children": [
 				{
-					"name": "Cube11",
+					"name": "Cube3",
 					"from": [ 0.1, 1.5, 0.1 ],
 					"to": [ 1.4, 2.5, 1.4 ],
 					"rotationOrigin": [ 0.8, 2.0, 0.8 ],
@@ -58,7 +58,7 @@
 			},
 			"children": [
 				{
-					"name": "Cube22",
+					"name": "Cube5",
 					"from": [ 0.1, 1.5, 0.1 ],
 					"to": [ 1.4, 2.5, 1.4 ],
 					"rotationOrigin": [ 0.8, 2.0, 0.8 ],
@@ -69,38 +69,6 @@
 						"west": { "texture": "#cockatriceegg", "uv": [ 5.5, 8.5, 7.0, 10.25 ], "autoUv": false },
 						"up": { "texture": "#cockatriceegg", "uv": [ 2.25, 13.25, 3.5, 15.0 ], "autoUv": false },
 						"down": { "texture": "#cockatriceegg", "uv": [ 0.5, 8.0, 1.25, 8.75 ], "autoUv": false }
-					}
-				}
-			]
-		},
-		{
-			"name": "Cube3",
-			"from": [ 6.5, 0.0, 5.0 ],
-			"to": [ 8.0, 1.5, 6.5 ],
-			"rotationOrigin": [ 8.0, 0.0, 7.0 ],
-			"rotationY": -45.0,
-			"rotationZ": -90.0,
-			"faces": {
-				"north": { "texture": "#cockatriceegg", "uv": [ 8.75, 1.75, 11.0, 3.75 ], "autoUv": false },
-				"east": { "texture": "#cockatriceegg", "uv": [ 12.75, 2.5, 14.5, 4.5 ], "autoUv": false },
-				"south": { "texture": "#cockatriceegg", "uv": [ 12.5, 1.0, 14.75, 3.0 ], "autoUv": false },
-				"west": { "texture": "#cockatriceegg", "uv": [ 12.5, 4.0, 14.25, 6.25 ], "autoUv": false },
-				"up": { "texture": "#cockatriceegg", "uv": [ 13.25, 0.75, 15.0, 3.0 ], "autoUv": false },
-				"down": { "texture": "#cockatriceegg", "uv": [ 11.25, 6.0, 10.25, 7.25 ], "autoUv": false }
-			},
-			"children": [
-				{
-					"name": "Cube33",
-					"from": [ 0.1, 1.5, 0.1 ],
-					"to": [ 1.4, 2.5, 1.4 ],
-					"rotationOrigin": [ 0.8, 2.0, 0.8 ],
-					"faces": {
-						"north": { "texture": "#cockatriceegg", "uv": [ 9.75, 5.25, 11.5, 7.0 ], "autoUv": false },
-						"east": { "texture": "#cockatriceegg", "uv": [ 8.5, 0.25, 10.25, 2.0 ], "autoUv": false },
-						"south": { "texture": "#cockatriceegg", "uv": [ 12.75, 4.25, 15.25, 6.25 ], "autoUv": false },
-						"west": { "texture": "#cockatriceegg", "uv": [ 13.5, 4.5, 15.0, 6.25 ], "autoUv": false },
-						"up": { "texture": "#cockatriceegg", "uv": [ 10.25, 6.0, 11.5, 7.75 ], "autoUv": false },
-						"down": { "texture": "#cockatriceegg", "uv": [ 8.0, 0.25, 8.75, 1.0 ], "autoUv": false }
 					}
 				}
 			]
