@@ -52,7 +52,10 @@
                     { "type": "item", "code": "bushmeat-raw" },
                     { "type": "item", "code": "redmeat-raw" },
                     { "type": "item", "code": "poultry-raw" },
-					{ "type": "item", "code": "grain-{flax|spelt|rye|sunflower}" },
+					{ "type": "item", "code": "grain-flax" },
+					{ "type": "item", "code": "grain-spelt" },
+					{ "type": "item", "code": "grain-rye" },
+					{ "type": "item", "code": "grain-sunflower" },
                     { "type": "item", "code": "wolftaming:dogtoy" },
                     { "type": "item", "code": "petai:petcookie-meat-perfect" }
                 ]
@@ -130,7 +133,10 @@
                     { "type": "item", "code": "bushmeat-raw" },
                     { "type": "item", "code": "redmeat-raw" },
                     { "type": "item", "code": "poultry-raw" },
+					{ "type": "item", "code": "grain-flax" },
+					{ "type": "item", "code": "grain-spelt" },
 					{ "type": "item", "code": "grain-rye" },
+					{ "type": "item", "code": "grain-sunflower" },
                     { "type": "item", "code": "petai:petcookie-meat-perfect" }
                 ]
             },
@@ -152,7 +158,7 @@
                 ]
             },
             { "code": "grow", "hoursToGrow": 100, 
-                "adultEntityCodes": [ "feverstonewilds:tame-cockatrice-*"] },
+                "adultEntityCodes": [ "feverstonewilds:tame-cockatrice-male", "feverstonewilds:tame-cockatrice-female"] },
             { "code": "taskai",
                 "aitasks": [
                     {

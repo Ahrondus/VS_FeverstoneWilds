@@ -255,9 +255,9 @@ namespace FeverstoneWilds
                 else if (timeToIncubate > 0)
                     dsc.AppendLine(Lang.Get("Incubation time remaining: {0:0} hours", timeToIncubate * 24));
 
-                if (occupier == null && Block.LastCodePart() == fullCode && (this.Block.FirstCodePart(1) == "cockatrice"))
+                if (occupier == null && Block.LastCodePart() == "5eggs" && (this.Block.FirstCodePart(1) == "cockatrice"))
                     dsc.AppendLine(Lang.Get("A broody Cockatrice is needed!"));
-                if (occupier == null && Block.LastCodePart() == fullCode && ((this.Block.FirstCodePart() == "ostrich") || (this.Block.FirstCodePart(1) == "ostrich")))
+                if (occupier == null && Block.LastCodePart() == "6eggs" && ((this.Block.FirstCodePart() == "ostrich") || (this.Block.FirstCodePart(1) == "ostrich")))
                     dsc.AppendLine(Lang.Get("A broody Ostrich is needed!"));
             }
             else if (eggCount > 0)

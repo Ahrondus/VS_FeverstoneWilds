@@ -10,8 +10,7 @@
 	"textureSizes": {
 	},
 	"textures": {
-		"cooked": "game:item/food/meat/cooked",
-		"raw": "game:item/food/meat/raw"
+		"raw": "item/food/meat/raw"
 	},
 	"elements": [
 		{
@@ -23,7 +22,7 @@
 			},
 			"children": [
 				{
-					"name": "contents1",
+					"name": "contents",
 					"from": [ 5.0, 4.0, 4.0 ],
 					"to": [ 16.0, 6.5, 12.0 ],
 					"rotationOrigin": [ 5.0, 8.0, 11.0 ],
@@ -38,12 +37,12 @@
 							"to": [ 0.0, 1.0, 0.0 ],
 							"rotationOrigin": [ 6.0, 1.0, 4.0 ],
 							"faces": {
-								"north": { "texture": "#cooked", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
-								"east": { "texture": "#cooked", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
-								"south": { "texture": "#cooked", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
-								"west": { "texture": "#cooked", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
-								"up": { "texture": "#cooked", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
-								"down": { "texture": "#cooked", "uv": [ 0.0, 0.0, 0.5, 0.5 ] }
+								"north": { "texture": "#raw", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+								"east": { "texture": "#raw", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+								"south": { "texture": "#raw", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+								"west": { "texture": "#raw", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+								"up": { "texture": "#raw", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+								"down": { "texture": "#raw", "uv": [ 0.0, 0.0, 0.5, 0.5 ] }
 							},
 							"children": [
 								{
@@ -51,7 +50,6 @@
 									"from": [ 6.5, 1.0, 3.5 ],
 									"to": [ 11.0, 2.0, 5.0 ],
 									"rotationOrigin": [ 8.0, 1.0, 5.0 ],
-									"rotationX": 0.0,
 									"rotationY": -47.0,
 									"rotationZ": 8.0,
 									"faces": {
@@ -150,7 +148,6 @@
 									"from": [ 6.5, 2.0, 1.5 ],
 									"to": [ 11.0, 3.0, 3.0 ],
 									"rotationOrigin": [ 8.0, 2.0, 3.0 ],
-									"rotationX": 0.0,
 									"rotationY": 25.0,
 									"rotationZ": -14.0,
 									"faces": {
