@@ -1,58 +1,65 @@
 [
     {
-        "op": "add",
-        "path": "/attributes/contentConfig/0",
-        "value": { "code": "bushmeat",
-                    "content": { "type": "item", "code": "game:bushmeat-raw" },
-                    "quantityPerFillLevel": 2,
-                    "maxFillLevels": 8,
-                    "shapesPerFillLevel": [ "feverstonewilds:block/wood/trough/large/bushmeatfill1", "feverstonewilds:block/wood/trough/large/bushmeatfill1", 
-                                            "feverstonewilds:block/wood/trough/large/bushmeatfill2", "feverstonewilds:block/wood/trough/large/bushmeatfill2",
-                                            "feverstonewilds:block/wood/trough/large/bushmeatfill3", "feverstonewilds:block/wood/trough/large/bushmeatfill3",
-                                            "feverstonewilds:block/wood/trough/large/bushmeatfill4", "feverstonewilds:block/wood/trough/large/bushmeatfill4" ],
-                    "textureCode": "contents-bushmeat" },
+        "op": "addeach",
+        "path": "/attributes/contentConfig/18",
+        "side": "server",
+        "value": [ 
+            { "code": "bushmeat",
+                "content": { "type": "item", "code": "bushmeat-raw" },
+                "quantityPerFillLevel": 2,
+                "maxFillLevels": 8,
+                "shapesPerFillLevel": [ "feverstonewilds:block/wood/trough/large/bushmeatfill1", "feverstonewilds:block/wood/trough/large/bushmeatfill1", 
+                                        "feverstonewilds:block/wood/trough/large/bushmeatfill2", "feverstonewilds:block/wood/trough/large/bushmeatfill2",
+                                        "feverstonewilds:block/wood/trough/large/bushmeatfill3", "feverstonewilds:block/wood/trough/large/bushmeatfill3",
+                                        "feverstonewilds:block/wood/trough/large/bushmeatfill4", "feverstonewilds:block/wood/trough/large/bushmeatfill4" ],
+                "textureCode": "contents-bushmeat" },
+            { "code": "redmeat",
+                "content": { "type": "item", "code": "redmeat-raw" },
+                "quantityPerFillLevel": 2,
+                "maxFillLevels": 8,
+                "shapesPerFillLevel": [ "feverstonewilds:block/wood/trough/large/redmeatfill1", "feverstonewilds:block/wood/trough/large/redmeatfill1", 
+                                        "feverstonewilds:block/wood/trough/large/redmeatfill2", "feverstonewilds:block/wood/trough/large/redmeatfill2",
+                                        "feverstonewilds:block/wood/trough/large/redmeatfill3", "feverstonewilds:block/wood/trough/large/redmeatfill3",
+                                        "feverstonewilds:block/wood/trough/large/redmeatfill4", "feverstonewilds:block/wood/trough/large/redmeatfill4" ],
+                "textureCode": "contents-redmeat" },
+            { "code": "poultry",
+                "content": { "type": "item", "code": "poultry-raw" },
+                "quantityPerFillLevel": 2,
+                "maxFillLevels": 8,
+                "shapesPerFillLevel": [ "feverstonewilds:block/wood/trough/large/poultryfill1", "feverstonewilds:block/wood/trough/large/poultryfill1", 
+                                        "feverstonewilds:block/wood/trough/large/poultryfill2", "feverstonewilds:block/wood/trough/large/poultryfill2",
+                                        "feverstonewilds:block/wood/trough/large/poultryfill3", "feverstonewilds:block/wood/trough/large/poultryfill3",
+                                        "feverstonewilds:block/wood/trough/large/poultryfill4", "feverstonewilds:block/wood/trough/large/poultryfill4" ],
+                "textureCode": "contents-poultry" },
+            { "code": "fish",
+                "content": { "type": "item", "code": "fish-raw" },
+                "quantityPerFillLevel": 2,
+                "maxFillLevels": 8,
+                "shapesPerFillLevel": [ "feverstonewilds:block/wood/trough/large/fishmeatfill1", "feverstonewilds:block/wood/trough/large/fishmeatfill1", 
+                                        "feverstonewilds:block/wood/trough/large/fishmeatfill2", "feverstonewilds:block/wood/trough/large/fishmeatfill2",
+                                        "feverstonewilds:block/wood/trough/large/fishmeatfill3", "feverstonewilds:block/wood/trough/large/fishmeatfill3",
+                                        "feverstonewilds:block/wood/trough/large/fishmeatfill4", "feverstonewilds:block/wood/trough/large/fishmeatfill4" ],
+                "textureCode": "contents-fishmeat" } ],
         "file": "game:blocktypes/wood/trough-large.json"
     },
     {
-        "op": "add",
-        "path": "/attributes/contentConfig/0",
-        "value": { "code": "redmeat",
-                    "content": { "type": "item", "code": "game:redmeat-raw" },
-                    "quantityPerFillLevel": 2,
-                    "maxFillLevels": 8,
-                    "shapesPerFillLevel": [ "feverstonewilds:block/wood/trough/large/redmeatfill1", "feverstonewilds:block/wood/trough/large/redmeatfill1", 
-                                            "feverstonewilds:block/wood/trough/large/redmeatfill2", "feverstonewilds:block/wood/trough/large/redmeatfill2",
-                                            "feverstonewilds:block/wood/trough/large/redmeatfill3", "feverstonewilds:block/wood/trough/large/redmeatfill3",
-                                            "feverstonewilds:block/wood/trough/large/redmeatfill4", "feverstonewilds:block/wood/trough/large/redmeatfill4" ],
-                    "textureCode": "contents-redmeat" },
-        "file": "game:blocktypes/wood/trough-large.json"
-    },
-    {
-        "op": "add",
-        "path": "/attributes/contentConfig/0",
-        "value": { "code": "poultry",
-                    "content": { "type": "item", "code": "game:poultry-raw" },
-                    "quantityPerFillLevel": 2,
-                    "maxFillLevels": 8,
-                    "shapesPerFillLevel": [ "feverstonewilds:block/wood/trough/large/poultryfill1", "feverstonewilds:block/wood/trough/large/poultryfill1", 
-                                            "feverstonewilds:block/wood/trough/large/poultryfill2", "feverstonewilds:block/wood/trough/large/poultryfill2",
-                                            "feverstonewilds:block/wood/trough/large/poultryfill3", "feverstonewilds:block/wood/trough/large/poultryfill3",
-                                            "feverstonewilds:block/wood/trough/large/poultryfill4", "feverstonewilds:block/wood/trough/large/poultryfill4" ],
-                    "textureCode": "contents-poultry" },
-        "file": "game:blocktypes/wood/trough-large.json"
-    },
-    {
-        "op": "add",
-        "path": "/attributes/contentConfig/0",
-        "value": { "code": "fish",
-                    "content": { "type": "item", "code": "game:fish-raw" },
-                    "quantityPerFillLevel": 2,
-                    "maxFillLevels": 8,
-                    "shapesPerFillLevel": [ "feverstonewilds:block/wood/trough/large/fishmeatfill1", "feverstonewilds:block/wood/trough/large/fishmeatfill1", 
-                                            "feverstonewilds:block/wood/trough/large/fishmeatfill2", "feverstonewilds:block/wood/trough/large/fishmeatfill2",
-                                            "feverstonewilds:block/wood/trough/large/fishmeatfill3", "feverstonewilds:block/wood/trough/large/fishmeatfill3",
-                                            "feverstonewilds:block/wood/trough/large/fishmeatfill4", "feverstonewilds:block/wood/trough/large/fishmeatfill4" ],
-                    "textureCode": "contents-fishmeat" },
+        "op": "addmerge",
+        "path": "/textures",
+        "side": "server",
+        "value": {
+            "contents-bushmeat": {
+                "base": "item/food/meat/raw"
+            },
+            "contents-redmeat": {
+                "base": "item/food/meat/raw"
+            },
+            "contents-poultry": {
+                "base": "item/food/meat/raw"
+            },
+            "contents-fishmeat": {
+                "base": "item/food/meat/raw"
+            }
+        },
         "file": "game:blocktypes/wood/trough-large.json"
     }
 ]
