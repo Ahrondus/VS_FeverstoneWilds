@@ -25,7 +25,7 @@
 			"useFirepitModel": "Spit"
 		},
 		"nutritionPropsWhenInMeal": {
-			"satiety": 300,
+			"satiety": 550,
 			"foodcategory": "Protein"
 		},
 		"handbook": {
@@ -38,19 +38,12 @@
 			"states": [ "raw", "partcooked", "cooked", "charred" ]
 		}
 	],
-	"shapebytype": {
-		"bisonleg-raw": {
-			"base": "item/drops/bisonlegraw"
-		},
-		"bisonleg-partcooked": {
-			"base": "item/drops/bisonlegpartcooked"
-		},
-		"bisonleg-cooked": {
-			"base": "item/drops/bisonlegcooked"
-		},
-		"bisonleg-charred": {
-			"base": "item/drops/bisonlegcharred"
-		}
+	"shape": { "base": "item/drops/bisonleg" },
+	"texturesByType": {
+		"bisonleg-raw": { "bisonleg": { "base": "items/food/rawmeat" } },
+		"bisonleg-partcooked": { "bisonleg": { "base": "items/food/precookedmeat" } },
+		"bisonleg-cooked": { "bisonleg": { "base": "items/food/cookedmeat" } },
+		"bisonleg-charred": { "bisonleg": { "base": "items/food/charredmeat" } }
 	},
 	"creativeinventory": {
 		"general": [ "*" ],

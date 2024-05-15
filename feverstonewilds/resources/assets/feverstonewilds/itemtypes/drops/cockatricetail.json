@@ -1,72 +1,70 @@
 {
-	"code": "ribs",
+	"code": "cockatrice-tail",
 	"maxstacksize": 8,
 	"attributes": {
 		"foodTags": [ "meat" ],
 		"inFirePitProps": {
 			"transform": {
-				"scale": 0.8,
+				"scale": 0.75,
 				"origin": {
 					"x": 0.5,
 					"y": 0.0625,
 					"z": 0.5
 				},
 				"translation": {
-					"x": 0.03125,
-					"y": 0.2725,
-					"z": 0.05
+					"x": 0.1,
+					"y": 0.25,
+					"z": -0.05
 				},
 				"rotation": {
 					"x": 0,
-					"y": 40,
-					"z": 10
+					"y": 53,
+					"z": 20
 				}
 			},
 			"useFirepitModel": "Spit"
 		},
 		"nutritionPropsWhenInMeal": {
-			"satiety": 500,
+			"satiety": 450,
 			"foodcategory": "Protein"
 		},
 		"handbook": {
-			"groupBy": [ "ribs-*" ]
+			"groupBy": [ "cockatrice-tail-*" ]
 		}
 	},
 	"variantgroups": [
-		{
-			"code": "type",
-			"states": [ "raw", "partcooked", "cooked", "charred" ]
-		}
+		{ "code": "type",
+			"states": [ "raw", "partcooked", "cooked", "charred" ] }
 	],
-	"shape": { "base": "item/drops/ribs" },
-	"texturesByType": {
-		"ribs-raw": { "ribmeat": { "base": "items/food/rawmeat" } },
-		"ribs-partcooked": { "ribmeat":{ "base": "items/food/precookedmeat" } },
-		"ribs-cooked": { "ribmeat": { "base": "items/food/cookedmeat" } },
-		"ribs-charred":{ "ribmeat": { "base": "items/food/charredmeat" } }
-	},
+	"shape": { "base": "item/drops/cockatricetail" },
+    "texturesByType": {
+        "cockatrice-tail-raw": { "cockatricemeat": { "base": "items/food/rawmeat" } },
+        "cockatrice-tail-partcooked": { "cockatricemeat": { "base": "items/food/precookedmeat" } },
+        "cockatrice-tail-cooked": { "cockatricemeat": { "base": "items/food/cookedmeat" } },
+        "cockatrice-tail-charred": { "cockatricemeat": { "base": "items/food/charredmeat" } }
+    },
 	"creativeinventory": {
 		"general": [ "*" ],
 		"items": [ "*" ]
 	},
 	"nutritionPropsByType": {
-		"ribs-raw": {
-			"satiety": 160,
-			"health": -2.25,
+		"cockatrice-tail-raw": {
+			"satiety": 120,
+			"health": -2.5,
 			"foodcategory": "Protein"
 		},
-		"ribs-partcooked": {
-			"satiety": 200,
+		"cockatrice-tail-partcooked": {
+			"satiety": 150,
 			"health": -1,
 			"foodcategory": "Protein"
 		},
-		"ribs-cooked": {
+		"cockatrice-tail-cooked": {
 			"satiety": 350,
-			"health": 0.75,
+			"health": 1,
 			"foodcategory": "Protein"
 		},
-		"ribs-charred": {
-			"satiety": 225,
+		"cockatrice-tail-charred": {
+			"satiety": 215,
 			"health": 0,
 			"foodcategory": "Protein"
 		}
@@ -125,51 +123,56 @@
 	"guiTransform": {
 		"rotation": {
 			"x": -54,
-			"y": 47,
+			"y": 61,
 			"z": 31
 		},
 		"origin": {
 			"x": 0.5,
-			"y": 0.15,
-			"z": 0.4
+			"y": 0.2,
+			"z": 0.45
 		},
-		"scale": 2.08
+		"scale": 1.89
 	},
 	"tpHandTransform": {
 		"translation": {
-			"x": -1.2,
-			"y": -0.8,
-			"z": -0.8
+			"x": -1.1,
+			"y": -0.5,
+			"z": -0.5
 		},
 		"rotation": {
 			"x": 180,
 			"y": -180,
-			"z": 33
+			"z": 32
 		},
-		"scale": 0.75
+		"scale": 1
 	},
 	"groundTransform": {
 		"translation": {
 			"x": 0,
-			"y": -0.25,
-			"z": -0
+			"y": -0.15,
+			"z": 0
 		},
 		"rotation": {
 			"x": 180,
 			"y": 0,
 			"z": 0
 		},
+		"origin": {
+			"x": 0.5,
+			"y": 0.5,
+			"z": 0.5299
+		},
 		"scale": 5
 	},
 	"combustiblePropsByType": {
-		"ribs-raw": {
+		"cockatrice-tail-raw": {
 			"meltingPoint": 250,
 			"meltingDuration": 60,
 			"smeltedRatio": 1,
 			"smeltingType": "cook",
 			"smeltedStack": {
 				"type": "item",
-				"code": "ribs-charred"
+				"code": "cockatrice-tail-charred"
 			},
 			"requiresContainer": false
 		}

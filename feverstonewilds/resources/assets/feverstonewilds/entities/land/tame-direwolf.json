@@ -499,6 +499,18 @@
                         "mincooldownHours": 1,
                         "maxcooldownHours": 1.5
                     },
+					{
+						"code": "seekfoodandeat",
+						"movespeed": 0.004,
+						"priority": 1.4,
+						"animationSpeed": 1.25,
+						"animation": "Walk",
+						"eatAnimation": "Eat",
+						"eatSound": "game:creature/animal-eat-small",
+						"eatTime": 1.75,
+						"mincooldownHours": 1,
+						"maxcooldownHours": 4
+					},
                     {
                         "code": "idle",
                         "priority": 0.9,

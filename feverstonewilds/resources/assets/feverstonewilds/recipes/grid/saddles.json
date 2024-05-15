@@ -131,5 +131,74 @@
             "code": "feverstonewilds:saddle-bison",
             "quantity": 1
         }
+    },
+    {
+        "ingredientPattern": "BLB,EHE,_C_",
+        "ingredients": {
+            "B": {
+                "type": "item",
+                "code": "game:metalbit-*",
+                "quantity": 4
+            },
+            "L": {
+                "type": "item",
+                "code": "game:leather-plain",
+                "quantity": 2
+            },
+            "E": {
+                "type": "item",
+                "code": "game:leather-plain",
+                "quantity": 3
+            },
+            "H": {
+                "type": "item",
+                "code": "game:hunterbackpack",
+                "quantity": 3
+            },
+            "C": {
+                "type": "item",
+                "code": "game:cloth-plain",
+                "quantity": 2
+            }
+        },
+        "width": 3,
+        "height": 3,
+        "output": {
+            "type": "item",
+            "code": "feverstonewilds:saddle-direwolf",
+            "quantity": 1
+        }
+    },
+    {
+        "ingredientPattern": "LCL,B_B,O_O",
+        "ingredients": {
+            "L": {
+                "type": "item",
+                "code": "game:leather-plain",
+                "quantity": 2
+            },
+            "C": {
+                "type": "item",
+                "code": "game:cloth-plain",
+                "quantity": 1
+            },
+            "B": {
+                "type": "item",
+                "code": "feverstonewilds:bone-big",
+                "quantity": 4
+            },
+            "O": {
+                "type": "item",
+                "code": "feverstonewilds:bone-big",
+                "quantity": 6
+            }
+        },
+        "width": 3,
+        "height": 3,
+        "output": {
+            "type": "item",
+            "code": "feverstonewilds:saddle-direwolf",
+            "quantity": 1
+        }
     }
 ]
