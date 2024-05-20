@@ -2,23 +2,8 @@
 	"code": "armor",
 	"class": "ItemWearable",
 	"variantgroups": [
-		{
-			"code": "bodypart",
-			"states": [ "head", "body", "legs" ]
-		},
-		{
-			"code": "type",
-			"states": [
-				"hunterblack"
-			]
-		}
-	],
-	"skipVariants": [
-	],
-	"allowedVariants": [
-		"armor-head-hunterblack",
-		"armor-body-hunterblack",
-		"armor-legs-hunterblack"
+		{ "code": "bodypart", "states": [ "head", "body", "legs" ] },
+		{ "code": "type", "states": [ "hunterblack" ] }
 	],
 	"shapeByType": {
 		"armor-head-hunterblack": { "base": "item/equipment/hunterhelmblack" },
@@ -46,6 +31,7 @@
 			"perTierFlatDamageReductionLoss": [ 0.1, 0.2 ]
 		},
 		"footStepSoundByType": {
+			"armor-body-hunterblack": "game:wearable/leather*"
 		},
 		"protectionModifiersByType": {
 			"*-hunterblack": {

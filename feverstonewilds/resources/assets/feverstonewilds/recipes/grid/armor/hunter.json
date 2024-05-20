@@ -1,6 +1,7 @@
 [
     {
         "ingredientPattern": "ELE,LSL",
+        "recipeGroup": 1,
         "ingredients": {
             "E": {
                 "type": "item",
@@ -20,15 +21,16 @@
         },
         "width": 3,
         "height": 2,
+        "name": "black hunter helmet",
         "output": {
             "type": "item",
-            "code": "feverstonewilds:armor-head-hunterblack",
-            "quantity": 1
+            "code": "feverstonewilds:armor-head-hunterblack"
         }
     },
     
     {
         "ingredientPattern": "LCL,ELE,CPC",
+        "recipeGroup": 1,
         "ingredients": {
             "L": {
                 "type": "item",
@@ -36,7 +38,7 @@
                 "quantity": 6
             },
             "C": {
-                "type": "item",
+                "type": "block",
                 "code": "game:linen-*",
                 "quantity": 1
             },
@@ -53,15 +55,16 @@
         },
         "width": 3,
         "height": 3,
+        "name": "black hunter armor",
         "output": {
             "type": "item",
-            "code": "feverstonewilds:armor-body-hunterblack",
-            "quantity": 1
+            "code": "feverstonewilds:armor-body-hunterblack"
         }
     },
 
     {
         "ingredientPattern": "LEL,LCL,EBE",
+        "recipeGroup": 1,
         "ingredients": {
             "L": {
                 "type": "item",
@@ -74,7 +77,7 @@
                 "quantity": 1
             },
             "C": {
-                "type": "item",
+                "type": "block",
                 "code": "game:linen-*",
                 "quantity": 1
             },
@@ -86,10 +89,10 @@
         },
         "width": 3,
         "height": 3,
+        "name": "black hunter leg armor",
         "output": {
             "type": "item",
-            "code": "feverstonewilds:armor-legs-hunterblack",
-            "quantity": 1
+            "code": "feverstonewilds:armor-legs-hunterblack"
         }
     }
 ]
