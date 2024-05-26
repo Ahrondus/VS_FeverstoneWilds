@@ -22,6 +22,7 @@ namespace FeverstoneWilds.Config
         public bool FSWGiraffeEnabled = true;
         public bool FSWGolemEnabled = true;
         public bool FSWHorseEnabled = true;
+        public bool FSWHellboarEnabled = true;
         public bool FSWOstrichEnabled = true;
         public bool FSWSpiderEnabled = true;
         public bool FSWScorpionEnabled = true;
@@ -54,6 +55,7 @@ namespace FeverstoneWilds.Config
             FSWTameDirewolfEnabled = previousConfig.FSWTameDirewolfEnabled;
             FSWWildDirewolfPupEnabled = previousConfig.FSWWildDirewolfPupEnabled;
             FSWTameDirewolfPupEnabled = previousConfig.FSWTameDirewolfPupEnabled;
+            FSWHellboarEnabled = previousConfig.FSWHellboarEnabled;
             FSWHorseEnabled = previousConfig.FSWHorseEnabled;
             FSWFoalEnabled = previousConfig.FSWFoalEnabled;
             FSWBisonEnabled = previousConfig.FSWBisonEnabled;

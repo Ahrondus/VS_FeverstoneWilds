@@ -45,6 +45,7 @@ namespace FeverstoneWilds.Config
         api.World.Config.SetBool("FSWGeodeCrabEnabled", config.FSWGeodeCrabEnabled);
         api.World.Config.SetBool("FSWGiraffeEnabled", config.FSWGiraffeEnabled);
         api.World.Config.SetBool("FSWGolemEnabled", config.FSWGolemEnabled);
+        api.World.Config.SetBool("FSWHellboarEnabled", config.FSWHellboarEnabled);
         api.World.Config.SetBool("FSWHorseEnabled", config.FSWHorseEnabled);
         api.World.Config.SetBool("FSWOstrichEnabled", config.FSWOstrichEnabled);
         api.World.Config.SetBool("FSWSpiderEnabled", config.FSWSpiderEnabled);

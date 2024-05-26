@@ -116,6 +116,20 @@
         "op": "add",
         "path": "/enabled",
         "value": false,
+        "file": "feverstonewilds:entities/land/hellboar.json",
+        "condition": { "when": "FSWHellboarEnabled", "isValue": "false" }
+    },
+    {
+        "op": "add",
+        "path": "/enabled",
+        "value": false,
+        "file": "feverstonewilds:entities/land/hellboar-piglet.json",
+        "condition": { "when": "FSWHellboarEnabled", "isValue": "false" }
+    },
+    {
+        "op": "add",
+        "path": "/enabled",
+        "value": false,
         "file": "feverstonewilds:entities/land/horse.json",
         "condition": { "when": "FSWHorseEnabled", "isValue": "false" }
     },
@@ -139,6 +153,13 @@
         "value": false,
         "file": "feverstonewilds:entities/land/ostrich-chick.json",
         "condition": { "when": "FSWOstrichEnabled", "isValue": "false" }
+    },
+    {
+        "op": "add",
+        "path": "/enabled",
+        "value": false,
+        "file": "feverstonewilds:entities/land/scorpion.json",
+        "condition": { "when": "FSWScorpionEnabled", "isValue": "false" }
     },
     {
         "op": "add",
