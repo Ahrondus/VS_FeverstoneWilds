@@ -22,7 +22,11 @@
                 "--project",
                 "${workspaceFolder}/CakeBuild/CakeBuild.csproj"
             ],
-            "problemMatcher": "$msCompile"
+            "problemMatcher": "$msCompile",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
         },
         {
             "label": "build (Cake)",
