@@ -128,15 +128,14 @@
                         { "type": "item", "code": "bushmeat-raw", "quantity": { "avg": 5, "var": 2 } },
                         { "type": "item", "code": "hide-raw-medium", "quantity": { "avg": 2, "var": 1 } },
                         { "type": "item", "code": "fat", "quantity": { "avg": 1.5, "var": 0.5 } },
-                        { "type": "item", "code": "feverstonewilds:bone-big", "quantity": { "avg": 1, "var": 0 } },
-                        { "type": "item", "code": "feverstonewilds:canineskull", "quantity": { "avg": 0.85, "var": 0.5 } }
+                        { "type": "item", "code": "feverstonewilds:bone-big", "quantity": { "avg": 1, "var": 0.5 } },
+                        { "type": "item", "code": "feverstonewilds:canineskull", "quantity": { "avg": 0.85 } }
 
                     ] },
                 { "code": "deaddecay", "hourstoDecay": 96, "decayedBlock": "carcass-medium" },
                 { "code": "despawn", "minPlayerDistance": 15, "belowLightLevel": 7, "minSeconds": 300 },
                 { "code": "health", "maxHealth": 18 },
                 { "code": "breathe" },
-                { "code": "deaddecay", "hoursToDecay": 96, "decayedBlock": "carcass-medium" },
                 { "code": "emotionstates",
                     "states": [
                         { "code": "fleeondamage", "duration": 60, "chance": 0.75, "slot": 2, "priority": 5, "accumType": "max", "whenHealthRelBelow": 0.3 },
