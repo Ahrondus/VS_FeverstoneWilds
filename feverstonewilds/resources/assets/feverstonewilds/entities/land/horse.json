@@ -321,17 +321,17 @@
             
         },
         "sizeByType": {
-            "horse-{tamed}-male-draft": 1,
-            "horse-{tamed}-female-draft": 0.95,
+            "horse-{tamed}-male-draft": 0.9,
+            "horse-{tamed}-female-draft": 0.85,
 
             "horse-{tamed}-male-arabian": 1,
             "horse-{tamed}-female-arabian": 0.925,
 
-            "horse-{tamed}-male-shire": 1,
-            "horse-{tamed}-female-shire": 0.925,
+            "horse-{tamed}-male-shire": 0.8,
+            "horse-{tamed}-female-shire": 0.725,
 
-            "horse-{tamed}-male-donkey": 0.9,
-            "horse-{tamed}-female-donkey": 0.86
+            "horse-{tamed}-male-donkey": 0.85,
+            "horse-{tamed}-female-donkey": 0.81
         },
         "behaviors": [ 
                 { "code": "multiply",
@@ -435,8 +435,7 @@
                 "code": "walk",
                 "animation": "walk",
                 "blendMode": "Average",
-                "mulWithWalkSpeed": true,
-                "animationSpeed": 0.8,
+                "animationSpeed": 1.2,
 				"triggeredBy": {"onControls": ["move"], "matchExact": true }
             },
             {
@@ -521,13 +520,15 @@
                 { "code": "nametag", "showtagonlywhentargeted": true },
                 {
                     "code": "multiply",
-                    "enabledByType": { "*-male-*": false, "*-female-draft": true, "*-female-arabian": true, "*-female-donkey": true },
+                    "enabledByType": { "*-male-*": false, "*-female-draft": true, "*-female-arabian": true, "*-female-donkey": true, "*-female-shire": true },
                     "spawnEntityCodesByType": { "*-female-draft": [ { "code": "feverstonewilds:foal-draft" } ], 
                                                 "*-female-arabian": [ { "code": "feverstonewilds:foal-arabian" } ], 
-                                                "*-female-donkey": [ { "code": "feverstonewilds:foal-donkey" } ] },
-                    "requiresNearbyEntityCodeByType": { "*-female-draft": "feverstonewilds:horse-male-draft", 
-                                                        "*-female-arabian": "feverstonewilds:horse-male-arabian", 
-                                                        "*-female-donkey": "feverstonewilds:horse-male-donkey" },
+                                                "*-female-donkey": [ { "code": "feverstonewilds:foal-donkey" } ], 
+                                                "*-female-shire": [ { "code": "feverstonewilds:foal-shire" } ] },
+                    "requiresNearbyEntityCodeByType": { "*-female-draft": "feverstonewilds:horse-{tamed}-male-draft", 
+                                                        "*-female-arabian": "feverstonewilds:horse-{tamed}-male-arabian", 
+                                                        "*-female-donkey": "feverstonewilds:horse-{tamed}-male-donkey", 
+                                                        "*-female-shire": "feverstonewilds:horse-{tamed}-male-shire" },
                     "requiresNearbyEntityRange": 10,
                     "spawnQuantityMax": 1,
                     "spawnQuantityMin": 1,
@@ -539,6 +540,7 @@
                 },
                 { "code": "tameable",
                     "disobediencePerDay": 0.05,
+                    "tameEntityCode": "feverstonewilds:horse-tamed-{gender}-{type}",
                     "treat": [
                         { "code": "vegetable-carrot", "progress": 0.10, "cooldown": 0.2 },
                         { "code": "vegetable-cabbage", "progress": 0.03, "cooldown": 0.4 },
@@ -796,27 +798,32 @@
                     "minTempByType": {
                         "*-draft": -10,
                         "*-arabian": 5,
-                        "*-donkey": -5
+                        "*-donkey": -5,
+                        "*-shire": 0
                     },
                     "maxTempByType": {
                         "*-draft": 20,
                         "*-arabian": 35,
-                        "*-donkey": 24
+                        "*-donkey": 24,
+                        "*-shire": 28
                     },
                     "minRainByType": {
                         "*-draft": 0.25,
                         "*-arabian": 0,
-                        "*-donkey": 0.25
+                        "*-donkey": 0.25,
+                        "*-shire": 0.25
                     },
                     "minForestOrShrubsByType": {
                         "*-draft": 0.1,
                         "*-arabian": 0.1,
-                        "*-donkey": 0.1
+                        "*-donkey": 0.1,
+                        "*-shire": 0.1
                     },
                     "maxForestByType": {
                         "*-draft": 0.25,
                         "*-arabian": 0.25,
-                        "*-donkey": 0.25
+                        "*-donkey": 0.25,
+                        "*-shire": 0.25
                     },
                     "companions": [ "horse-wild-female-{type}", "feverstonewilds:foal-*-{type}" ]
                 },
@@ -832,27 +839,32 @@
                     "minTempByType": {
                         "*-draft": -10,
                         "*-arabian": 5,
-                        "*-donkey": -5
+                        "*-donkey": -5,
+                        "*-shire": 0
                     },
                     "maxTempByType": {
                         "*-draft": 20,
                         "*-arabian": 35,
-                        "*-donkey": 24
+                        "*-donkey": 24,
+                        "*-shire": 28
                     },
                     "minRainByType": {
                         "*-draft": 0.25,
                         "*-arabian": 0,
-                        "*-donkey": 0.25
+                        "*-donkey": 0.25,
+                        "*-shire": 0.25
                     },
                     "minForestOrShrubsByType": {
                         "*-draft": 0.1,
                         "*-arabian": 0.1,
-                        "*-donkey": 0.1
+                        "*-donkey": 0.1,
+                        "*-shire": 0.1
                     },
                     "maxForestByType": {
                         "*-draft": 0.25,
                         "*-arabian": 0.25,
-                        "*-donkey": 0.25
+                        "*-donkey": 0.25,
+                        "*-shire": 0.25
                     },
                     "companions": [ "horse-wild-female-{type}", "feverstonewilds:foal-*-{type}" ]
                 }
