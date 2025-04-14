@@ -1,15 +1,13 @@
 {
 	"code": "fsmountwearables",
 	"variantgroups": [
-		{
-			"code": "breed",
+		{ "code": "breed",
 			"states": [ "draft", "arabian", "donkey", "shire", "bison", "direwolf", "ostrich" ]
 		},
-		{
-			"code": "category", "states": [ "head", "middlebackupper", "lowerbackside" ]
+		{ "code": "category",
+			"states": [ "head", "middlebackupper", "lowerbackside" ]
 		},
-		{
-			"code": "type",
+		{ "code": "type",
 			"states": [ "saddle", "bridle", "saddlebags" ]
 		}
 	],
@@ -31,7 +29,7 @@
 			"attachedShapeByType": {
 				"*-head-bridle": { "base": "item/equipment/head/bridle-{breed}" },
 				"*-middlebackupper-saddle": { "base": "item/equipment/back/saddle-{breed}" },
-				"*-lowerbackside-saddlebags": { "base": "item/equipment/rearside/saddlebags-{breed}" }
+				"*-lowerbackside-saddlebags": { "base": "item/equipment/rear/saddlebags-{breed}" }
 			}
 		},
 		"controlSchemeByType": {
@@ -51,7 +49,13 @@
 			"*-bison-lowerbackside-saddlebags": { "quantitySlots": 36 },
 			"*-direwolf-lowerbackside-saddlebags": { "quantitySlots": 14 },
 			"*-ostrich-lowerbackside-saddlebags": { "quantitySlots": 12 }
+		},
+		"interactPassthroughByType": {
+			"*-saddle": true
 		}
+	},
+	"behaviorsByType": {
+		"*-lowerbackside-saddlebags": [ { "name": "HeldBag" } ]
 	},
 	"shapeByType": {
 		"*-saddle": { "base": "item/equipment/back/saddle-{breed}" },

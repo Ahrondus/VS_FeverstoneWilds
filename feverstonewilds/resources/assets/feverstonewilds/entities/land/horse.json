@@ -86,7 +86,7 @@
             "selectionBoxes": ["HeadAP", "FaceAP", "MidUpperAP", "MidLowerAP", "RearUpperAP", "RearSideAP", "RFrontAP", "LFrontAP"]
         },
         "rideable": {
-            "interactMountAnySeat": true,
+            "interactMountAnySeat": false,
             "seats": [
                 { "apName": "Rider", "selectionBox": "MidUpperAP", "bodyYawLimit": 0.2, "controllable": true, "mountOffset": { "x": 0, "y": -0.9, "z": 0 } }
             ],
@@ -585,7 +585,9 @@
                 { "code": "repulseagents" },
                 { "code": "controlledphysics" },
                 { "code": "mortallywoundable", "whenBelowHealth": 8 },
-                { "code": "despawn", "minPlayerDistance": 8, "belowLightLevel": 8, "minSeconds": 300 },
+                { "code": "despawn",
+                    "enabledByType": { "*-wild-*": true, "*-tamed-*": false },
+                     "minPlayerDistance": 12, "belowLightLevel": 8, "minSeconds": 600 },
                 { "code": "deaddecay",  "hoursToDecay": 96, "decayedBlock": "carcass-large" },
                 { "code": "floatupwhenstuck" },
                 { "code": "health" },
@@ -630,6 +632,7 @@
                 },
                 {
                     "code": "taskai",
+                    "aiCreatureType": "LandCreature",
                     "aitasks": [
                         {
                             "code": "meleeattack",
