@@ -1,7 +1,7 @@
 {
 	"editor": {
 		"backDropShape": "C:/Users/ahron/Documents/GitHub/VS_FeverstoneWilds/feverstonewilds/resources/assets/feverstonewilds/shapes/entity/land/horse-shire",
-		"collapsedPaths": "Root/ORIGINbridle/ORIGINstraps/StrapBottom,Root/ORIGINbridle/Bit/BitEndS5/BitEndS7,Root/ORIGINbridle/Bit/ReinsN,Root/ORIGINbridle/ORIGINstraps/StrapBack1,Root/ORIGINbridle/ORIGINstraps/ReinsN1,Root/ORIGINbridle/Bit/StrapBottom,Root/ORIGINbridle/ORIGINstraps/StrapTop,Root/ORIGINbridle/ORIGINstraps/ReinsS1,Root/ORIGINbridle/ORIGINstraps/BitEndN2,Root/ORIGINbridle/Bit/BitEndS5,Root/ORIGINbridle/Bit/StrapTop,Root/ORIGINbridle/Bit/ReinsN4,Root/ORIGINbridle/Bit/BitEndS",
+		"collapsedPaths": "Root/ORIGINbridle/Bit/BitEndS5/BitEndS7,Root/ORIGINbridle/Bit/ReinsN,Root/ORIGINbridle/Bit/StrapBottom,Root/ORIGINbridle/ORIGINstraps/BitEndN2,Root/ORIGINbridle/Bit/ReinsN4,Root/ORIGINbridle/ORIGINstraps/StrapBack1,Root/ORIGINbridle/ORIGINstraps/ReinsN1,Root/ORIGINbridle/ORIGINstraps/ReinsS1,Root/ORIGINbridle/ORIGINstraps/StrapTop,Root/ORIGINbridle/Bit/StrapTop",
 		"allAngles": true,
 		"entityTextureMode": false
 	},
@@ -32,12 +32,6 @@
 					"rotationOrigin": [ -0.7, -0.5, 2.0 ],
 					"rotationZ": 40.0,
 					"faces": {
-						"north": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 0.5, 0.5 ], "windMode": [-1,-1,-1,-1], "windData": [1,1,1,1] },
-						"east": { "texture": "#tinbronze1", "uv": [ 11.5, 1.0, 16.0, 1.5 ], "windMode": [-1,-1,-1,-1], "windData": [1,1,1,1] },
-						"south": { "texture": "#tinbronze1", "uv": [ 0.0, 0.0, 0.5, 0.5 ], "windMode": [-1,-1,-1,-1], "windData": [1,1,1,1] },
-						"west": { "texture": "#tinbronze1", "uv": [ 3.0, 9.0, 7.5, 9.5 ] },
-						"up": { "texture": "#tinbronze1", "uv": [ 10.0, 10.0, 10.5, 14.5 ] },
-						"down": { "texture": "#tinbronze1", "uv": [ 13.5, 7.5, 14.0, 12.0 ] }
 					},
 					"children": [
 						{
@@ -74,6 +68,20 @@
 											"from": [ -0.1, 0.4, -0.1 ],
 											"to": [ 0.4, 0.9, 0.4 ],
 											"rotationOrigin": [ -0.1, 0.4, -0.1 ],
+											"faces": {
+												"north": { "texture": "#plain", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+												"east": { "texture": "#plain", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+												"south": { "texture": "#plain", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+												"west": { "texture": "#plain", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+												"up": { "texture": "#plain", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+												"down": { "texture": "#plain", "uv": [ 0.0, 0.0, 0.5, 0.5 ] }
+											}
+										},
+										{
+											"name": "leatherknotS3",
+											"from": [ -1.2, 0.8, -0.1 ],
+											"to": [ -0.7, 1.3, 0.4 ],
+											"rotationOrigin": [ -1.2, 0.8, -0.1 ],
 											"faces": {
 												"north": { "texture": "#plain", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
 												"east": { "texture": "#plain", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
@@ -161,6 +169,20 @@
 											"from": [ -0.1, 0.4, -0.1 ],
 											"to": [ 0.4, 0.9, 0.4 ],
 											"rotationOrigin": [ -0.1, 0.4, -0.1 ],
+											"faces": {
+												"north": { "texture": "#plain", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+												"east": { "texture": "#plain", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+												"south": { "texture": "#plain", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+												"west": { "texture": "#plain", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+												"up": { "texture": "#plain", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
+												"down": { "texture": "#plain", "uv": [ 0.0, 0.0, 0.5, 0.5 ] }
+											}
+										},
+										{
+											"name": "leatherknotS4",
+											"from": [ -1.2, 0.9, -0.1 ],
+											"to": [ -0.7, 1.4, 0.4 ],
+											"rotationOrigin": [ -1.2, 0.9, -0.1 ],
 											"faces": {
 												"north": { "texture": "#plain", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
 												"east": { "texture": "#plain", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
@@ -542,6 +564,97 @@
 									]
 								}
 							]
+						},
+						{
+							"name": "MuzzleStrapTop",
+							"from": [ -1.21, -0.07, 0.7 ],
+							"to": [ -0.71, 2.53, 1.0 ],
+							"rotationOrigin": [ -1.2132, -0.0658, 0.7 ],
+							"rotationY": 4.0,
+							"rotationZ": 78.0,
+							"faces": {
+								"north": { "texture": "#plain", "uv": [ 12.5, 9.5, 13.0, 12.0 ], "windMode": [-1,-1,-1,-1], "windData": [1,1,1,1] },
+								"east": { "texture": "#plain", "uv": [ 10.5, 6.5, 11.0, 9.0 ] },
+								"south": { "texture": "#plain", "uv": [ 5.5, 1.0, 6.0, 3.5 ] },
+								"west": { "texture": "#plain", "uv": [ 2.0, 10.5, 2.5, 13.0 ] },
+								"up": { "texture": "#plain", "uv": [ 3.0, 6.0, 3.5, 6.5 ], "windMode": [-1,-1,-1,-1], "windData": [1,1,1,1] }
+							},
+							"children": [
+								{
+									"name": "MuzzleStrapTop2",
+									"from": [ 0.0, 2.4, 0.0 ],
+									"to": [ 0.5, 2.7, 4.8 ],
+									"rotationOrigin": [ 0.0, 2.4, 0.0 ],
+									"rotationX": -5.0,
+									"faces": {
+										"north": { "texture": "#plain", "uv": [ 1.0, 12.0, 1.5, 12.5 ] },
+										"east": { "texture": "#plain", "uv": [ 3.0, 8.5, 7.5, 9.0 ] },
+										"south": { "texture": "#plain", "uv": [ 13.5, 14.5, 14.0, 15.0 ] },
+										"west": { "texture": "#plain", "uv": [ 5.5, 7.5, 10.0, 8.0 ] },
+										"up": { "texture": "#plain", "uv": [ 7.5, 5.5, 8.0, 10.0 ] }
+									}
+								},
+								{
+									"name": "MuzzleStrapTop3",
+									"from": [ 0.0, 0.0, 4.8 ],
+									"to": [ 0.5, 3.0, 5.1 ],
+									"rotationOrigin": [ 0.0, 0.0, 4.8 ],
+									"rotationX": -6.0,
+									"faces": {
+										"north": { "texture": "#plain", "uv": [ 0.5, 10.0, 1.0, 13.0 ] },
+										"east": { "texture": "#plain", "uv": [ 8.0, 12.0, 8.5, 15.0 ] },
+										"south": { "texture": "#plain", "uv": [ 5.0, 0.0, 5.5, 3.0 ] },
+										"west": { "texture": "#plain", "uv": [ 14.5, 5.0, 15.0, 8.0 ] },
+										"up": { "texture": "#plain", "uv": [ 7.5, 7.5, 8.0, 8.0 ] }
+									}
+								}
+							]
+						},
+						{
+							"name": "MuzzleStrapBottom",
+							"from": [ 0.69, 0.03, 0.7 ],
+							"to": [ 1.19, 0.73, 1.0 ],
+							"rotationOrigin": [ 0.6868, 0.0342, 0.7 ],
+							"rotationY": 2.0,
+							"rotationZ": -119.0,
+							"faces": {
+								"north": { "texture": "#plain", "uv": [ 12.5, 9.5, 13.0, 10.0 ], "windMode": [-1,-1,-1,-1], "windData": [1,1,1,1] },
+								"east": { "texture": "#plain", "uv": [ 10.5, 6.5, 11.0, 7.0 ] },
+								"south": { "texture": "#plain", "uv": [ 5.5, 1.0, 6.0, 1.5 ] },
+								"west": { "texture": "#plain", "uv": [ 2.0, 10.5, 2.5, 11.0 ] },
+								"up": { "texture": "#plain", "uv": [ 3.0, 6.0, 3.5, 6.5 ], "windMode": [-1,-1,-1,-1], "windData": [1,1,1,1] }
+							},
+							"children": [
+								{
+									"name": "MuzzleStrapBottom2",
+									"from": [ 0.0, 0.4, 0.0 ],
+									"to": [ 0.5, 0.7, 5.5 ],
+									"rotationOrigin": [ 0.0, 0.4, 0.0 ],
+									"rotationX": 2.0,
+									"rotationY": 5.3,
+									"faces": {
+										"north": { "texture": "#plain", "uv": [ 1.0, 12.0, 1.5, 12.5 ] },
+										"east": { "texture": "#plain", "uv": [ 3.0, 8.5, 8.5, 9.0 ] },
+										"south": { "texture": "#plain", "uv": [ 13.5, 14.5, 14.0, 15.0 ] },
+										"west": { "texture": "#plain", "uv": [ 5.5, 7.5, 11.0, 8.0 ] },
+										"up": { "texture": "#plain", "uv": [ 7.5, 5.5, 8.0, 11.0 ] }
+									}
+								},
+								{
+									"name": "MuzzleStrapBottom3",
+									"from": [ 0.5, -0.9, 5.3 ],
+									"to": [ 1.0, 0.4, 5.6 ],
+									"rotationOrigin": [ 0.5, -0.9, 5.3 ],
+									"rotationX": -6.0,
+									"faces": {
+										"north": { "texture": "#plain", "uv": [ 0.5, 10.0, 1.0, 11.0 ] },
+										"east": { "texture": "#plain", "uv": [ 8.0, 12.0, 8.5, 13.0 ] },
+										"south": { "texture": "#plain", "uv": [ 5.0, 0.0, 5.5, 1.0 ] },
+										"west": { "texture": "#plain", "uv": [ 14.5, 5.0, 15.0, 6.0 ] },
+										"up": { "texture": "#plain", "uv": [ 7.5, 7.5, 8.0, 8.0 ] }
+									}
+								}
+							]
 						}
 					]
 				}
@@ -549,5 +662,171 @@
 		}
 	],
 	"animations": [
+		{
+			"name": "Walk",
+			"code": "walk",
+			"quantityframes": 60,
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"ReinsN1": { "rotationX": 0.0, "rotationY": -4.0, "rotationZ": 3.0 },
+						"ReinsS1": { "rotationX": 0.0, "rotationY": -6.0, "rotationZ": 3.0 },
+						"ReinsAcross": { "rotationX": 0.0, "rotationY": 3.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 18,
+					"elements": {
+						"ReinsN1": { "rotationX": 0.0, "rotationY": 4.0, "rotationZ": 3.0 },
+						"ReinsS1": { "rotationX": 0.0, "rotationY": 2.0, "rotationZ": 3.0 },
+						"ReinsAcross": { "rotationX": -2.0, "rotationY": -2.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 54,
+					"elements": {
+						"ReinsS1": { "rotationX": 0.0, "rotationY": -6.0, "rotationZ": 3.0 },
+						"ReinsN1": { "rotationX": 0.0, "rotationY": -4.0, "rotationZ": 3.0 },
+						"ReinsAcross": { "rotationX": 0.0, "rotationY": 3.0, "rotationZ": 0.0 }
+					}
+				}
+			]
+		},
+
+		{
+			"name": "Trot",
+			"code": "trot",
+			"quantityframes": 40,
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"ReinsN3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 3.0 },
+						"ReinsS3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 3.0 }
+					}
+				},
+				{
+					"frame": 10,
+					"elements": {
+						"ReinsS3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 5.0 },
+						"ReinsN3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 5.0 }
+					}
+				},
+				{
+					"frame": 20,
+					"elements": {
+						"ReinsS3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 3.0 },
+						"ReinsN3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 3.0 }
+					}
+				},
+				{
+					"frame": 30,
+					"elements": {
+						"ReinsN3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 5.0 },
+						"ReinsS3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 5.0 }
+					}
+				}
+			]
+		},
+
+		{
+			"name": "Canter",
+			"code": "canter",
+			"quantityframes": 30,
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"ReinsN3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -15.0 },
+						"ReinsS3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -15.0 }
+					}
+				},
+				{
+					"frame": 10,
+					"elements": {
+						"ReinsS3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -10.0 },
+						"ReinsN3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -10.0 }
+					}
+				}
+			]
+		},
+
+		{
+			"name": "Gallop",
+			"code": "gallop",
+			"quantityframes": 30,
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"ORIGINbridle": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 10.0 },
+						"ORIGINstraps": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 8.0 },
+						"ReinsN3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 5.0 },
+						"ReinsS3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 5.0 }
+					}
+				},
+				{
+					"frame": 14,
+					"elements": {
+						"ReinsS3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"ReinsN3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				},
+				{
+					"frame": 28,
+					"elements": {
+						"ReinsN3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 6.0 },
+						"ReinsS3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 6.0 }
+					}
+				}
+			]
+		},
+
+		{
+			"name": "Turn-Left",
+			"code": "turn-left",
+			"quantityframes": 1,
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"ReinsN3": { "rotationX": 0.0, "rotationY": -20.0, "rotationZ": 0.0 },
+						"ReinsAcross": { "rotationX": 12.0, "rotationY": 23.0, "rotationZ": 0.0 },
+						"ReinsS2": { "rotationX": 0.0, "rotationY": -17.0, "rotationZ": 0.0 },
+						"ReinsS4": { "rotationX": 11.0, "rotationY": -1.0, "rotationZ": -2.0 }
+					}
+				}
+			]
+		},
+
+		{
+			"name": "Turn-Right",
+			"code": "turn-right",
+			"quantityframes": 1,
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"ReinsN2": { "rotationX": 0.0, "rotationY": 17.0, "rotationZ": 0.0 },
+						"ReinsN4": { "rotationX": -11.0, "rotationY": 1.0, "rotationZ": 2.0 },
+						"ReinsS3": { "rotationX": 0.0, "rotationY": 20.0, "rotationZ": 0.0 },
+						"ReinsAcross": { "rotationX": -3.0, "rotationY": -14.0, "rotationZ": 0.0 }
+					}
+				}
+			]
+		}
 	]
 }
