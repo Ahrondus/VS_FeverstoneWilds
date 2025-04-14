@@ -5,33 +5,58 @@
 	"variantgroups": [
 		{
 			"code": "type",
-			"states": ["horse-male-draft", "horse-female-draft",
-			"horse-male-arabian", "horse-female-arabian",
-			"horse-male-donkey", "horse-female-donkey",
-			"foal-draft", "foal-arabian", "foal-donkey"]	
+			"states": ["horse-wild-male-draft", "horse-wild-female-draft",
+			"horse-tamed-male-draft", "horse-tamed-female-draft",
+			"horse-wild-male-arabian", "horse-wild-female-arabian",
+			"horse-tamed-male-arabian", "horse-tamed-female-arabian",
+			"horse-wild-male-donkey", "horse-wild-female-donkey",
+			"horse-tamed-male-donkey", "horse-tamed-female-donkey",
+			"horse-wild-male-shire", "horse-wild-female-shire",
+			"horse-tamed-male-shire", "horse-tamed-female-shire",
+			"foal-draft", "foal-arabian", "foal-donkey", "foal-shire"]	
 		}
 	],
 	"shapeByType": {
 		"*-foal-draft": { "base": "entity/land/horse-draft" },
 		"*-foal-arabian": { "base": "entity/land/horse-arabian" },
 		"*-foal-donkey": { "base": "entity/land/horse-donkey" },
-		"*-horse-male-draft": { "base": "entity/land/horse-draft" },
-		"*-horse-female-draft": { "base": "entity/land/horse-draft" },
-		"*-horse-male-arabian": { "base": "entity/land/horse-arabian" },
-		"*-horse-female-arabian": { "base": "entity/land/horse-arabian" },
-		"*-horse-male-donkey": { "base": "entity/land/horse-donkey" },
-		"*-horse-female-donkey": { "base": "entity/land/horse-donkey" }
+		"*-horse-wild-male-draft": { "base": "entity/land/horse-draft" },
+		"*-horse-tamed-male-draft": { "base": "entity/land/horse-draft" },
+		"*-horse-wild-female-draft": { "base": "entity/land/horse-draft" },
+		"*-horse-tamed-female-draft": { "base": "entity/land/horse-draft" },
+		"*-horse-wild-male-arabian": { "base": "entity/land/horse-arabian" },
+		"*-horse-tamed-male-arabian": { "base": "entity/land/horse-arabian" },
+		"*-horse-wild-female-arabian": { "base": "entity/land/horse-arabian" },
+		"*-horse-tamed-female-arabian": { "base": "entity/land/horse-arabian" },
+		"*-horse-wild-male-shire": { "base": "entity/land/horse-shire" },
+		"*-horse-tamed-male-shire": { "base": "entity/land/horse-shire" },
+		"*-horse-wild-female-shire": { "base": "entity/land/horse-shire" },
+		"*-horse-tamed-female-shire": { "base": "entity/land/horse-shire" },
+		"*-horse-wild-male-donkey": { "base": "entity/land/horse-donkey" },
+		"*-horse-tamed-male-donkey": { "base": "entity/land/horse-donkey" },
+		"*-horse-wild-female-donkey": { "base": "entity/land/horse-donkey" },
+		"*-horse-tamed-female-donkey": { "base": "entity/land/horse-donkey" }
 		},
 	"texturesByType": {
 		"*-foal-draft": { "skin": { "base": "entity/land/horse/horse18" } },
 		"*-foal-arabian": { "skin": { "base": "entity/land/horse/horse15" } },
 		"*-foal-donkey": { "skin": { "base": "entity/land/donkey/donkeyskin1" } },
-		"*-horse-male-draft": { "skin": { "base": "entity/land/horse/horse5" } },
-		"*-horse-female-draft": { "skin": { "base": "entity/land/horse/horse20" } },
-		"*-horse-male-arabian": { "skin": { "base": "entity/land/horse/horse14" } },
-		"*-horse-female-arabian": { "skin": { "base": "entity/land/horse/horse13" } },
-		"*-horse-male-donkey": { "skin": { "base": "entity/land/donkey/donkeyskin2" } },
-		"*-horse-female-donkey": { "skin": { "base": "entity/land/donkey/donkeyskin3" } }
+		"*-horse-wild-male-draft": { "skin": { "base": "entity/land/horse/horse5" } },
+		"*-horse-tamed-male-draft": { "skin": { "base": "entity/land/horse/horse5" } },
+		"*-horse-wild-female-draft": { "skin": { "base": "entity/land/horse/horse20" } },
+		"*-horse-tamed-female-draft": { "skin": { "base": "entity/land/horse/horse20" } },
+		"*-horse-wild-male-arabian": { "skin": { "base": "entity/land/horse/horse14" } },
+		"*-horse-tamed-male-arabian": { "skin": { "base": "entity/land/horse/horse14" } },
+		"*-horse-wild-female-arabian": { "skin": { "base": "entity/land/horse/horse13" } },
+		"*-horse-tamed-female-arabian": { "skin": { "base": "entity/land/horse/horse13" } },
+		"*-horse-wild-male-shire": { "skin": { "base": "entity/land/horse/horse14" } },
+		"*-horse-tamed-male-shire": { "skin": { "base": "entity/land/horse/horse14" } },
+		"*-horse-wild-female-shire": { "skin": { "base": "entity/land/horse/horse13" } },
+		"*-horse-tamed-female-shire": { "skin": { "base": "entity/land/horse/horse13" } },
+		"*-horse-wild-male-donkey": { "skin": { "base": "entity/land/donkey/donkeyskin2" } },
+		"*-horse-tamed-male-donkey": { "skin": { "base": "entity/land/donkey/donkeyskin2" } },
+		"*-horse-wild-female-donkey": { "skin": { "base": "entity/land/donkey/donkeyskin3" } },
+		"*-horse-tamed-female-donkey": { "skin": { "base": "entity/land/donkey/donkeyskin3" } }
 		},
 		
 	"creativeinventory": {
@@ -49,6 +74,13 @@
 			"scale": 0.6
 		},
 		"creature-horse-*-arabian": {
+			"rotate": true,
+			"translation": { "x": 0, "y": 0, "z": 0 },
+			"rotation": { "x": 180, "y": -115, "z": 6 },
+			"origin": { "x": 0.5, "y": 1.25, "z": 0.5 },
+			"scale": 0.6
+		},
+		"creature-horse-*-shire": {
 			"rotate": true,
 			"translation": { "x": 0, "y": 0, "z": 0 },
 			"rotation": { "x": 180, "y": -115, "z": 6 },

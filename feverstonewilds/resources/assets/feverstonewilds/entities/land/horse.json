@@ -7,30 +7,30 @@
         { "code": "type", "states": ["draft", "arabian", "donkey", "shire"] }
     ],
     "hitBoxSizeByType": {
-        "horse-{tamed}-male-draft": { "x": 1.75, "y": 1.9 },
-        "horse-{tamed}-female-draft": { "x":1.65, "y": 1.9 },
+        "*-male-draft": { "x": 1.75, "y": 1.9 },
+        "*-female-draft": { "x":1.65, "y": 1.9 },
 
-        "horse-{tamed}-male-arabian": { "x": 1.4, "y": 1.55 },
-        "horse-{tamed}-female-arabian": { "x": 1.3, "y": 1.5 },
+        "*-male-arabian": { "x": 1.4, "y": 1.55 },
+        "*-female-arabian": { "x": 1.3, "y": 1.5 },
 
-        "horse-{tamed}-male-shire": { "x": 1.6, "y": 1.65 },
-        "horse-{tamed}-female-shire": { "x": 1.55, "y": 1.55 },
+        "*-male-shire": { "x": 1.8, "y": 1.65 },
+        "-female-shire": { "x": 1.75, "y": 1.55 },
 
-        "horse-{tamed}-male-donkey": { "x": 1.3, "y": 1.45 },
-        "horse-{tamed}-female-donkey": { "x": 1.25, "y": 1.40 }
+        "*-male-donkey": { "x": 1.3, "y": 1.45 },
+        "*-female-donkey": { "x": 1.25, "y": 1.40 }
     },
     "deadhitBoxSizeByType": {
-        "horse-{tamed}-male-draft": { "x": 1.9, "y": 0.8 },
-        "horse-{tamed}-female-draft": { "x": 1.8, "y": 0.8 },
+        "*-male-draft": { "x": 1.9, "y": 0.8 },
+        "*-female-draft": { "x": 1.8, "y": 0.8 },
 
-        "horse-{tamed}-male-arabian": { "x": 1.55, "y": 0.7 },
-        "horse-{tamed}-female-arabian": { "x": 1.5, "y": 0.7 },
+        "*-male-arabian": { "x": 1.55, "y": 0.7 },
+        "*-female-arabian": { "x": 1.5, "y": 0.7 },
 
-        "horse-{tamed}-male-shire": { "x": 1.6, "y": 0.65 },
-        "horse-{tamed}-female-shire": { "x": 1.55, "y": 0.6 },
+        "*-male-shire": { "x": 1.6, "y": 0.65 },
+        "*-female-shire": { "x": 1.55, "y": 0.6 },
 
-        "horse-{tamed}-male-donkey": { "x": 1.45, "y": 0.5 },
-        "horse-{tamed}-female-donkey": { "x": 1.40, "y": 0.47 }
+        "*-male-donkey": { "x": 1.45, "y": 0.5 },
+        "*-female-donkey": { "x": 1.40, "y": 0.47 }
     },
     "knockbackResistanceByType": {
         "*-draft": 0.25,
@@ -74,25 +74,25 @@
             "wearableSlots": [
                 { "code": "head", "forCategoryCodes": ["bridle"], "attachmentPointCode": "HeadAP" }, 
                 { "code": "face", "forCategoryCodes": ["face"], "attachmentPointCode": "FaceAP" }, 
-                { "code": "middleback", "forCategoryCodes": ["saddle"], "attachmentPointCode": "MidAP" },
-                { "code": "middlebackunder", "forCategoryCodes": ["blanket"], "attachmentPointCode": "MidUnderAP" },
-                { "code": "lowerback", "forCategoryCodes": ["bedroll"], "attachmentPointCode": "RearAP" },
+                { "code": "middlebackupper", "forCategoryCodes": ["saddle"], "attachmentPointCode": "MidUpperAP" },
+                { "code": "middlebackunder", "forCategoryCodes": ["blanket"], "attachmentPointCode": "MidLowerAP" },
+                { "code": "lowerback", "forCategoryCodes": ["bedroll"], "attachmentPointCode": "RearUpperAP" },
                 { "code": "lowerbackside", "forCategoryCodes": ["sidebags"], "attachmentPointCode": "RearSideAP" },
                 { "code": "frontrightside", "forCategoryCodes": ["utilities"], "attachmentPointCode": "RFrontAP" },
                 { "code": "frontleftside", "forCategoryCodes": ["utilities"], "attachmentPointCode": "LFrontAP" }
             ]
         },
         "selectionboxes": {
-            "selectionBoxes": ["HeadAP", "FaceAP", "NeckAP", "MidAP", "MidUnderAP", "RearAP", "RearSideAP", "RFrontAP", "LFrontAP"]
+            "selectionBoxes": ["HeadAP", "FaceAP", "MidUpperAP", "MidLowerAP", "RearUpperAP", "RearSideAP", "RFrontAP", "LFrontAP"]
         },
         "rideable": {
             "interactMountAnySeat": true,
             "seats": [
-                { "apName": "Rider", "selectionBox": "MidAP", "bodyYawLimit": 0.2, "controllable": true, "mountOffset": { "x": 0, "y": -0.5, "z": 0 } }
+                { "apName": "Rider", "selectionBox": "MidUpperAP", "bodyYawLimit": 0.2, "controllable": true, "mountOffset": { "x": 0, "y": -0.9, "z": 0 } }
             ],
             "controls": {
                 "idle": {
-                    "animation": "idle",
+                    "animation": "Idle",
                     "weight": 1,
                     "riderAnim": {
                         "animation": "rideelk-idle",
@@ -149,8 +149,8 @@
                     }
                 },
                 "walk": {
-                    "animation": "walk",
-                    "animationSpeed": 1.15,
+                    "animation": "Trot",
+                    "animationSpeed": 1.25,
                     "weight": 10,
                     "movespeed": 0.019,
                     "blendMode": "Average",
@@ -214,11 +214,11 @@
                     "animation": "Gallop",
                     "weight": 10,
                     "animationSpeed": 2,
-                    "movespeed": 0.08,
+                    "movespeed": 0.10,
                     "blendMode": "Average",
                     "riderAnim": {
                         "animation": "rideelk-run",
-                        "animationSpeed": 2,
+                        "animationSpeed": 1.8,
                         "weight": 1,
                         "withFpVariant": true,
                         "blendMode": "Average", 
@@ -321,17 +321,17 @@
             
         },
         "sizeByType": {
-            "horse-{tamed}-male-draft": 0.9,
-            "horse-{tamed}-female-draft": 0.85,
+            "*-male-draft": 0.9,
+            "*-female-draft": 0.85,
 
-            "horse-{tamed}-male-arabian": 1,
-            "horse-{tamed}-female-arabian": 0.925,
+            "*-male-arabian": 1,
+            "*-female-arabian": 0.925,
 
-            "horse-{tamed}-male-shire": 0.8,
-            "horse-{tamed}-female-shire": 0.725,
+            "*-male-shire": 0.8,
+            "*-female-shire": 0.725,
 
-            "horse-{tamed}-male-donkey": 0.85,
-            "horse-{tamed}-female-donkey": 0.81
+            "*-male-donkey": 0.85,
+            "*-female-donkey": 0.81
         },
         "behaviors": [ 
                 { "code": "multiply",
@@ -410,7 +410,7 @@
 			},
             {
                 "code": "idle",
-                "animation": "idle",
+                "animation": "Idle",
                 "blendMode": "addAverage",
                 "easeOutSpeed": 3,
                 "triggeredBy": { "defaultAnim": true },
@@ -435,28 +435,24 @@
                 "code": "walk",
                 "animation": "walk",
                 "blendMode": "Average",
-                "animationSpeed": 1.2,
-				"triggeredBy": {"onControls": ["move"], "matchExact": true }
+                "animationSpeed": 1.2
             },
             {
                 "code": "trot",
                 "animation": "Trot",
                 "blendMode": "Average",
-                "supressDefaultAnimation": true,
                 "animationSpeed": 1.25
             },
             {
                 "code": "canter",
                 "animation": "Canter",
                 "blendMode": "Average",
-                "supressDefaultAnimation": true,
                 "animationSpeed": 1.1
             },
             {
                 "code": "gallop",
                 "animation": "Gallop",
                 "blendMode": "Average",
-                "supressDefaultAnimation": true,
                 "animationSpeed": 1.5
             },
 			{
@@ -468,9 +464,9 @@
 				"triggeredBy": { "onControls": ["jump"] }
 			},
 			{
-				"code": "turnleft",
-				"animation": "Turnleft",
-				"easeInSpeed": 3,
+				"code": "turn-left",
+				"animation": "Turn-Left",
+				"easeInSpeed": 6,
 				"easeOutSpeed": 10,
 				"weight": 0.01,
 				"blendMode": "Average",
@@ -488,9 +484,9 @@
 				}					
 			},
 			{
-				"code": "turnright",
-				"animation": "Turnright",
-				"easeInSpeed": 3,
+				"code": "turn-right",
+				"animation": "Turn-Right",
+				"easeInSpeed": 6,
 				"easeOutSpeed": 10,
 				"weight": 0.01,
 				"blendMode": "Average",
@@ -774,7 +770,7 @@
                             "priorityForCancel": 1.35,
                             "movespeed": 0.026,
                             "animationSpeed": 1.6,
-                            "animation": "run",
+                            "animation": "Trot",
                             "minduration": 20000,
                             "chance": 0.02
                         },
@@ -784,9 +780,10 @@
                 { "code": "selectionboxes" },
                 { "code": "ownable" },
                 { "code": "rideableaccessories" },
-                { "code": "rideable" },
+                { "code": "rideable",
+                    "enabledByType": { "*-wild-*": false, "*-tamed-*": true } },
                 { "code": "ropetieable", "minGeneration": 2 },
-                { "code": "pettableextended", "minGeneration": 1 }
+                { "code": "pettable", "minGeneration": 1 }
             ],
         "spawnconditionsByType": {
             "horse-wild-male-*": {
