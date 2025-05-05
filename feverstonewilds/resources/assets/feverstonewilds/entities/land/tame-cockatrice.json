@@ -1,6 +1,6 @@
 {
   "code": "tame-cockatrice",
-  "class": "EntityPet",
+  "class": "EntityAgent",
   "variantgroups": [
     { "code": "gender", "states": [ "male", "female" ] } ],
   "hitboxSize": {
@@ -272,6 +272,7 @@
       },
       {
         "code": "taskai",
+        "aiCreatureType": "LandCreature",
         "aitasks": [
           {
             "code": "petmeleeattack",

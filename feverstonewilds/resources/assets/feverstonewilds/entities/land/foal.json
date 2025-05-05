@@ -1,6 +1,6 @@
 {
     "code": "foal",
-    "class": "EntityPet",
+    "class": "EntityAgent",
     "variantgroups": [
         { "code": "type", "states": ["draft", "arabian", "donkey"] }
     ],
@@ -237,6 +237,7 @@
 			},
             {
                 "code": "taskai",
+                "aiCreatureType": "LandCreature",
                 "aitasks": [
                     {
                         "code": "fleeentity",

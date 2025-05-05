@@ -1,6 +1,6 @@
 {
 	"code": "bison",
-	"class": "EntityMount",
+	"class": "EntityAgent",
 	"variantgroups": [ 
 		{ "code": "gender", "states": [ "male", "female" ] } 
 	],
@@ -292,6 +292,7 @@
 			},
 			{ 
 				"code": "taskai",
+				"aiCreatureType": "LandCreature",
 				"aitasks": [
 					{
 						"code": "meleeattack",

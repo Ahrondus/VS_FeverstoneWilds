@@ -1,6 +1,6 @@
 {
 	"code": "tame-ostrich",
-	"class": "EntityMount",
+	"class": "EntityAgent",
 	"variantgroups": [
         { "code": "gender", "states": ["male", "female"] }
 	],
@@ -251,17 +251,8 @@
             },
 			{ 
 				"code": "taskai",
+				"aiCreatureType": "LandCreature",
 				"aitasks": [
-                    {
-                        "code": "beamount",
-                        "priority": 8,
-                        "priorityForCancel": 8,
-                        "movespeed": 0.055,
-                        "animationSpeed": 2.2,
-                        "maxDistance": 8,
-                        "searchRange": 40,
-                        "animation": "idle"
-                    },
                     {
                         "code": "followmaster",
                         "priority": 3,

@@ -88,7 +88,12 @@
         "rideable": {
             "interactMountAnySeat": false,
             "seats": [
-                { "apName": "Rider", "selectionBox": "MidUpperAP", "bodyYawLimit": 0.2, "controllable": true, "mountOffset": { "x": 0, "y": -0.9, "z": 0 } }
+                { "apName": "Rider", "selectionBox": "MidUpperAP", "bodyYawLimit": 0.2, "controllable": true,
+                    "mountOffsetByType": {
+                        "*-female-shire":{ "x": 0, "y": -1.1, "z": 0 },
+                        "*-male-shire": { "x": 0, "y": -0.9, "z": 0 }
+                    }
+                }
             ],
             "controls": {
                 "idle": {
@@ -243,9 +248,9 @@
                 "jump": {
                     "animation": "jump",
                     "weight": 50,
-                    "easeOutSpeed": 40,
+                    "easeOutSpeed": 5,
                     "blendMode": "Average",
-                    "animationSpeed": 1,
+                    "animationSpeed": 1.75,
                     "movespeed": 0.08,
                     "riderAnim": {
                         "animation": "rideelk-jump",
@@ -461,6 +466,7 @@
 				"blendMode": "Average",
 				"easeInSpeed": 0.5,
 				"easeOutSpeed": 0.5,
+                "animationSpeed": 1.5,
 				"triggeredBy": { "onControls": ["jump"] }
 			},
 			{
@@ -714,7 +720,9 @@
                             "maxduration": 5000000,
                             "mincooldown": 10000,
                             "maxcooldown": 30000,
-                            "animation": "sleeplay",
+                            "animation": "sleepstand",
+                            "easeInSpeed": 0.5,
+                            "easeOutSpeed": 0.5,
                             "whenNotInEmotionState": "aggressiveondamage",
                             "duringDayTimeFrames": [
                                 {

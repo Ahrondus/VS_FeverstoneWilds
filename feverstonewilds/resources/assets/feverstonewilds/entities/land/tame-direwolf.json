@@ -1,6 +1,6 @@
 {
     "code": "tame-direwolf",
-    "class": "EntityMount",
+    "class": "EntityAgent",
     "variantgroups": [
         { "code": "gender", "states": [ "male", "female" ] }
     ],
@@ -272,6 +272,7 @@
             },
             {
                 "code": "taskai",
+                "aiCreatureType": "LandCreature",
                 "aitasks": [
                     {
                         "code": "petmeleeattack",
@@ -468,16 +469,6 @@
                         "movespeed": 0.006,
                         "animation": "Walk",
                         "preferredLightLevel": 20
-                    },
-                    {
-                        "code": "beamount",
-                        "priority": 8,
-                        "priorityForCancel": 8,
-                        "movespeed": 0.045,
-                        "animationSpeed": 2.2,
-                        "maxDistance": 8,
-                        "searchRange": 40,
-                        "animation": "idle"
                     },
                     {
                         "code": "useinventory",
