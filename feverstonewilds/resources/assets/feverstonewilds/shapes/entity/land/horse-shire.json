@@ -6026,6 +6026,48 @@
 					}
 				}
 			]
+		},
+
+		{
+			"name": "Wounded-Lie",
+			"code": "wounded-lie",
+			"quantityframes": 40,
+			"onActivityStopped": "Rewind",
+			"onAnimationEnd": "Repeat",
+			"keyframes": [
+				{
+					"frame": 0,
+					"elements": {
+						"FrontBody": { "offsetX": 0.0, "offsetY": 3.0, "offsetZ": 19.0, "rotationX": 90.0, "rotationY": 2.0, "rotationZ": 0.0 },
+						"RightLegRear": { "rotationX": -9.0, "rotationY": 0.0, "rotationZ": -27.5 },
+						"RLegRearJoint1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 42.0 },
+						"RLegRearJoint2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -39.0 },
+						"RLegRearJoint1Def": { "offsetX": 0.0, "offsetY": -2.0, "offsetZ": 0.0 },
+						"RLegAnkle": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 67.5 },
+						"LeftLegRear": { "rotationX": 14.0, "rotationY": 0.0, "rotationZ": 12.0 },
+						"RearBody": { "rotationX": -14.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"TailBase": { "rotationX": 0.0, "rotationY": -27.0, "rotationZ": 19.0 },
+						"Tail2": { "rotationX": 0.0, "rotationY": -35.0, "rotationZ": 0.0 },
+						"Tail3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Tail4": { "rotationX": 0.0, "rotationY": 46.0, "rotationZ": -14.0 },
+						"Neck1": { "rotationX": -30.0, "rotationY": -45.0, "rotationZ": 0.0 },
+						"Neck2": { "rotationX": -8.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Neck3": { "rotationX": 0.0, "rotationY": 2.0, "rotationZ": 0.0 },
+						"HeadBase": { "rotationX": -3.0, "rotationY": 3.0, "rotationZ": 0.0 },
+						"FrontBodyRShoulder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5 },
+						"ShoulderFrontRightLeg": { "rotationX": -11.0, "rotationY": 0.0, "rotationZ": -6.0 },
+						"FrontRightLeg": { "rotationX": -8.0, "rotationY": 0.0, "rotationZ": -6.0 },
+						"FrontRightLegKnee": { "rotationX": -4.0, "rotationY": -11.0, "rotationZ": 70.5 },
+						"FrontBodyLShoulder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -4.0 },
+						"FrontLeftLegKnee": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 23.0 },
+						"LFrontLegAnkle": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 45.0 },
+						"RFrontLegAnkle": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 26.0 },
+						"HeadREyelid": { "offsetX": -0.2, "offsetY": 0.05, "offsetZ": -0.3, "rotationX": 0.0, "rotationY": -90.0, "rotationZ": 0.0 },
+						"RightEar1": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -45.0 },
+						"LeftEar1": { "rotationX": -22.5, "rotationY": 45.0, "rotationZ": 22.5 }
+					}
+				}
+			]
 		}
 	]
 }
