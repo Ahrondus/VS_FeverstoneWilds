@@ -31,13 +31,16 @@
 		"creatureDiet": {
 			"foodTags": [ "meat" ]
 		},
+        "basketCatchable": true,
+        "trapChance": 0.0,
+        "trapDestroyChance": 0.65,
 		"handbook": {
 			"groupcode": "feverstonewilds:creaturegroup-fswdirewolf"
 		}
     },
     "client": {
         "renderer": "Shape",
-        "shape": { "base": "entity/land/direwolf" },
+        "shape": { "base": "entity/land/direwolf-adult" },
         "texture": { "base": "entity/land/direwolf/direwolf1",
                     "alternates": [ { "base": "entity/land/direwolf/direwolf2" }, { "base": "entity/land/direwolf/direwolf3" }, 
                                     { "base": "entity/land/direwolf/direwolf4" }, { "base": "entity/land/direwolf/direwolf5" }, 
