@@ -2,8 +2,14 @@
     "code": "foal",
     "class": "EntityAgent",
     "variantgroups": [
-        { "code": "type", "states": ["draft", "arabian", "donkey"] }
+        { "code": "tame", "states": ["wild", "tamed"] },
+        { "code": "type", "states": ["draft", "arabian", "donkey", "shire", "quarter" ] }
     ],
+    "enabledByType": {
+        "*-shire": true,
+        "*-quarter": true,
+        "*": false
+    },
     "hitboxSize": { "x": 0.7, "y": 1.0 },
     "deadHitboxSize": { "x": 1.0, "y": 0.4 },
     "eyeHeight": 0.9,
@@ -24,7 +30,9 @@
         "shapeByType": {
             "*-draft": { "base": "entity/land/horse-draft" },
             "*-arabian": { "base": "entity/land/horse-arabian" },
-            "*-donkey": { "base": "entity/land/horse-donkey" }
+            "*-donkey": { "base": "entity/land/horse-donkey" },
+            "*-shire": { "base": "entity/land/horse-shire" },
+            "*-quarter": { "base": "entity/land/horse-quarter" }
         },
         "textureByType": {
             "*-draft": { "base": "entity/land/horse/horse10",
@@ -41,6 +49,10 @@
                             "alternates": [ { "base": "entity/land/donkey/donkeyskin2" }, { "base": "entity/land/donkey/donkeyskin3" },
                             { "base": "entity/land/donkey/donkeyskin4" }, { "base": "entity/land/donkey/donkeyskin5" }, 
                             { "base": "entity/land/donkey/donkeyskin6" } ] },
+            "*-shire": { "skin": { "base": "entity/land/horse/horseskin8" }, "mane": { "base": "entity/land/horse/horsemane1" },
+                            "alternates": [ { "skin": { "base":"entity/land/horse/horseskin*" } }, { "mane": { "base": "entity/land/horse/horsemane*" } } ] },
+            "*-quarter": { "skin": { "base": "entity/land/horse/horseskin1" }, "mane": { "base": "entity/land/horse/horsemane2" },
+                            "alternates": [ { "skin": { "base":"entity/land/horse/horseskin*" } }, { "mane": { "base": "entity/land/horse/horsemane*" } } ] },
 
             "__comment": "More horse breeds to come!"
             
@@ -48,7 +60,9 @@
         "sizeByType": {
             "foal-draft": 0.6,
             "foal-arabian": 0.55,
-            "foal-donkey": 0.52
+            "foal-donkey": 0.52,
+            "foal-shire": 0.58,
+            "foal-quarter": 0.56
         },
         "behaviors": [
             { "code": "nametag", "showtagonlywhentargeted": true },
@@ -231,9 +245,11 @@
                 ]
             },
 			{ "code": "grow", "hoursToGrow": 178,
-				"adultEntityCodesByType": { "*-draft": ["feverstonewilds:horse-male-draft", "feverstonewilds:horse-female-draft"],
-                                            "*-arabian": ["feverstonewilds:horse-male-arabian", "feverstonewilds:horse-female-arabian"],
-                                            "*-donkey": [ "feverstonewilds:horse-male-donkey", "feverstonewilds:horse-female-donkey" ] }
+				"adultEntityCodesByType": { "*-draft": ["feverstonewilds:horse-{tame}-male-draft", "feverstonewilds:horse-{tame}-female-draft"],
+                                            "*-arabian": ["feverstonewilds:horse-{tame}-male-arabian", "feverstonewilds:horse-{tame}-female-arabian"],
+                                            "*-donkey": [ "feverstonewilds:horse-{tame}-male-donkey", "feverstonewilds:horse-{tame}-female-donkey" ],
+                                            "*-shire": [ "feverstonewilds:horse-{tame}-male-shire", "feverstonewilds:horse-{tame}-female-shire" ],
+                                            "*-quarter": [ "feverstonewilds:horse-{tame}-male-quarter", "feverstonewilds:horse-{tame}-female-quarter" ]  }
 			},
             {
                 "code": "taskai",
@@ -253,9 +269,11 @@
                         "code": "stayclosetoentity",
                         "priority": 1.3,
                         "entityCodesByType":{
-                            "*-draft": [ "feverstonewilds:horse-male-draft", "feverstonewilds:horse-female-draft" ],
-                            "*-arabian": [ "feverstonewilds:horse-male-arabian", "feverstonewilds:horse-female-arabian" ],
-                            "*-donkey": [ "feverstonewilds:horse-male-donkey", "feverstonewilds:horse-female-donkey" ]
+                            "*-draft": [ "feverstonewilds:horse-{tame}-male-draft", "feverstonewilds:horse-{tame}-female-draft" ],
+                            "*-arabian": [ "feverstonewilds:horse-{tame}-male-arabian", "feverstonewilds:horse-{tame}-female-arabian" ],
+                            "*-donkey": [ "feverstonewilds:horse-{tame}-male-donkey", "feverstonewilds:horse-{tame}-female-donkey" ],
+                            "*-shire": [ "feverstonewilds:horse-{tame}-male-shire", "feverstonewilds:horse-{tame}-female-shire" ],
+                            "*-quarter": [ "feverstonewilds:horse-{tame}-male-quarter", "feverstonewilds:horse-{tame}-female-quarter" ]
                         },
                         "maxDistance": 12,
                         "searchRange": 30,
@@ -360,7 +378,7 @@
                 ]
             },
             { "code": "ropetieable", "minGeneration": 2 },
-            { "code": "pettableextended", "minGeneration": 1 }
+            { "code": "pettable", "minGeneration": 1 }
         ]
     },
     "sounds": {
@@ -368,5 +386,5 @@
         "death": "feverstonewilds:horse/horsedamage",
         "idle": "feverstonewilds:horse/neigh"
     },
-    "idleSoundChance": 0
+    "idleSoundChance": 0.002
 }

@@ -31,14 +31,14 @@
     {
         "op": "add",
         "path": "/server/behaviors/9/aitasks/0/entityCodes/0",
-        "value": "feverstonewilds:horse-female-*",
+        "value": "feverstonewilds:horse-*",
         "file": "game:entities/land/bear.json",
         "condition": { "when": "FSWHorseEnabled", "isValue": "true" }
     },
     {
         "op": "add",
         "path": "/server/behaviors/9/aitasks/3/entityCodesByType/*/0",
-        "value": "feverstonewilds:horse-male-*",
+        "value": "feverstonewilds:horse-*",
         "file": "game:entities/land/bear.json",
         "condition": { "when": "FSWHorseEnabled", "isValue": "true" }
     },

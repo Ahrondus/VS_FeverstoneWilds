@@ -2,7 +2,7 @@
 	"code": "fsmountwearables",
 	"variantgroups": [
 		{ "code": "breed",
-			"states": [ "draft", "arabian", "donkey", "shire", "bison", "direwolf", "ostrich" ]
+			"states": [ "draft", "arabian", "donkey", "shire", "quarter", "bison", "direwolf", "ostrich" ]
 		},
 		{ "code": "category",
 			"states": [ "head", "middlebackupper", "lowerbackside" ]
@@ -13,11 +13,11 @@
 	],
 	"allowedVariants": [
 		"fsmountwearables-draft-head-bridle", "fsmountwearables-arabian-head-bridle", "fsmountwearables-donkey-head-bridle", "fsmountwearables-shire-head-bridle",
-		"fsmountwearables-bison-head-bridle", "fsmountwearables-direwolf-head-bridle", "fsmountwearables-ostrich-head-bridle",
+		"fsmountwearables-bison-head-bridle", "fsmountwearables-quarter-head-bridle", "fsmountwearables-direwolf-head-bridle", "fsmountwearables-ostrich-head-bridle",
 		"fsmountwearables-draft-middlebackupper-saddle", "fsmountwearables-arabian-middlebackupper-saddle", "fsmountwearables-donkey-middlebackupper-saddle", "fsmountwearables-shire-middlebackupper-saddle",
-		"fsmountwearables-bison-middlebackupper-saddle", "fsmountwearables-direwolf-middlebackupper-saddle", "fsmountwearables-ostrich-middlebackupper-saddle",
+		"fsmountwearables-quarter-middlebackupper-saddle","fsmountwearables-bison-middlebackupper-saddle", "fsmountwearables-direwolf-middlebackupper-saddle", "fsmountwearables-ostrich-middlebackupper-saddle",
 		"fsmountwearables-draft-lowerbackside-saddlebags", "fsmountwearables-arabian-lowerbackside-saddlebags", "fsmountwearables-donkey-lowerbackside-saddlebags", "fsmountwearables-shire-lowerbackside-saddlebags",
-		"fsmountwearables-bison-lowerbackside-saddlebags", "fsmountwearables-direwolf-lowerbackside-saddlebags", "fsmountwearables-ostrich-lowerbackside-saddlebags"
+		"fsmountwearables-quarter-middlebackupper-saddle", "fsmountwearables-bison-lowerbackside-saddlebags", "fsmountwearables-direwolf-lowerbackside-saddlebags", "fsmountwearables-ostrich-lowerbackside-saddlebags"
 	],
 	"attributes": {
 		"attachableToEntity": {
@@ -43,8 +43,9 @@
 		},
 		"backpackByType": {
 			"*-draft-lowerbackside-saddlebags": { "quantitySlots": 24 },
-			"*-arabian-lowerbackside-saddlebags": { "quantitySlots": 16 },
+			"*-arabian-lowerbackside-saddlebags": { "quantitySlots": 12 },
 			"*-shire-lowerbackside-saddlebags": { "quantitySlots": 18 },
+			"*-quarter-lowerbackside-saddlebags": { "quantitySlots": 14 },
 			"*-donkey-lowerbackside-saddlebags": { "quantitySlots": 20 },
 			"*-bison-lowerbackside-saddlebags": { "quantitySlots": 36 },
 			"*-direwolf-lowerbackside-saddlebags": { "quantitySlots": 14 },
