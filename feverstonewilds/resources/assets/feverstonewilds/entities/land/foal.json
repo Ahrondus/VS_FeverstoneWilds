@@ -3,12 +3,11 @@
     "class": "EntityAgent",
     "variantgroups": [
         { "code": "tame", "states": ["wild", "tamed"] },
-        { "code": "type", "states": ["draft", "arabian", "donkey", "shire", "quarter" ] }
+        { "code": "type", "states": ["percheron", "arabian", "donkey", "shire", "quarter" ] }
     ],
-    "enabledByType": {
-        "*-shire": true,
-        "*-quarter": true,
-        "*": false
+    "tagsByType": {
+        "*-tamed": [ "animal", "huntable", "habitat-land", "tamed" ],
+        "*": [ "animal", "huntable", "habitat-land" ]
     },
     "hitboxSize": { "x": 0.7, "y": 1.0 },
     "deadHitboxSize": { "x": 1.0, "y": 0.4 },
@@ -20,74 +19,67 @@
             "foodTags": [ "grass", "tamingfeedbundle", "carrot", "cabbage", "turnip", "redapple", "yellowapple", "pinkapple" ],
             "skipFoodTags": [ "rice", "amaranth", "sunflower" ]
         },
+        "trappable": {
+			"large": { "trapChance": 0.6, "trapDestroyChance": 0.15 }
+		},
         "handbook": {
-			"groupcode": "feverstonewilds:creaturegroup-fswhorse"
+			"groupcode": "feverstonewilds:creaturegroup-fshorse"
 		}
     },
     
     "client": {
         "renderer": "Shape",
         "shapeByType": {
-            "*-draft": { "base": "entity/land/horse-draft" },
+            "*-percheron": { "base": "entity/land/horse-percheron" },
             "*-arabian": { "base": "entity/land/horse-arabian" },
             "*-donkey": { "base": "entity/land/horse-donkey" },
             "*-shire": { "base": "entity/land/horse-shire" },
             "*-quarter": { "base": "entity/land/horse-quarter" }
         },
-        "textureByType": {
-            "*-draft": { "base": "entity/land/horse/horse10",
-                            "alternates": [ { "base": "entity/land/horse/horse2" }, { "base": "entity/land/horse/horse3" },
-                            { "base": "entity/land/horse/horse5" }, { "base": "entity/land/horse/horse6" }, { "base": "entity/land/horse/horse7" },
-                            { "base": "entity/land/horse/horse8" }, { "base": "entity/land/horse/horse9" }, { "base": "entity/land/horse/horse1" }, 
-                            { "base": "entity/land/horse/horse11" }, { "base": "entity/land/horse/horse12" }, { "base": "entity/land/horse/horse15" },
-							{ "base": "entity/land/horse/horse16" }, { "base": "entity/land/horse/horse18" },	{ "base": "entity/land/horse/horse20" }
-                          ] },
-            "*-arabian": { "base": "entity/land/horse/horse14", 
-                            "alternates": [ { "base": "entity/land/horse/horse4" }, { "base": "entity/land/horse/horse13" },
-                            { "base": "entity/land/horse/horse17" }, { "base": "entity/land/horse/horse19" } ] },
-            "*-donkey": { "base": "entity/land/donkey/donkeyskin1",
-                            "alternates": [ { "base": "entity/land/donkey/donkeyskin2" }, { "base": "entity/land/donkey/donkeyskin3" },
-                            { "base": "entity/land/donkey/donkeyskin4" }, { "base": "entity/land/donkey/donkeyskin5" }, 
-                            { "base": "entity/land/donkey/donkeyskin6" } ] },
-            "*-shire": { "skin": { "base": "entity/land/horse/horseskin8" }, "mane": { "base": "entity/land/horse/horsemane1" },
-                            "alternates": [ { "skin": { "base":"entity/land/horse/horseskin*" } }, { "mane": { "base": "entity/land/horse/horsemane*" } } ] },
-            "*-quarter": { "skin": { "base": "entity/land/horse/horseskin1" }, "mane": { "base": "entity/land/horse/horsemane2" },
-                            "alternates": [ { "skin": { "base":"entity/land/horse/horseskin*" } }, { "mane": { "base": "entity/land/horse/horsemane*" } } ] },
+        "texturesByType": {
+            "*-shire": { "skin": { "base": "entity/land/horse/horseskin1", 
+                            "alternates": [ { "base": "entity/land/horse/horseskin2" }, { "base": "entity/land/horse/horseskin4"},
+                                            { "base": "entity/land/horse/horseskin6" }, { "base": "entity/land/horse/horseskin10"},
+                                            { "base": "entity/land/horse/horseskin18" }, { "base": "entity/land/horse/horseskin22"},
+                                            { "base": "entity/land/horse/horseskin21" }, { "base": "entity/land/horse/horseskin12"},
+                                            { "base": "entity/land/horse/horseskin20" }, { "base": "entity/land/horse/horseskin23"},
+                                            { "base": "entity/land/horse/horseskin24" }, { "base": "entity/land/horse/horseskin25"},
+                                            { "base": "entity/land/horse/horseskin26" } ] },
+                         "mane": { "base": "entity/land/horse/horsemane", 
+                            "alternates": [ { "base": "entity/land/horse/horsemane2" }, { "base": "entity/land/horse/horsemane3" },
+                                            { "base": "entity/land/horse/horsemane4" }, { "base": "entity/land/horse/horsemane5" },
+                                            { "base": "entity/land/horse/horsemane6" }, { "base": "entity/land/horse/horsemane7" },
+                                            { "base": "entity/land/horse/horsemane8" }, { "base": "entity/land/horse/horsemane9" },
+                                            { "base": "entity/land/horse/horsemane10" }, { "base": "entity/land/horse/horsemane11" },
+                                            { "base": "entity/land/horse/horsemane12" } ] } },
+            "*-quarter": { "skin": { "base": "entity/land/horse/horseskin3", 
+                            "alternates": [ { "base": "entity/land/horse/horseskin5" }, { "base": "entity/land/horse/horseskin7"},
+                                            { "base": "entity/land/horse/horseskin8" }, { "base": "entity/land/horse/horseskin9"},
+                                            { "base": "entity/land/horse/horseskin11" }, { "base": "entity/land/horse/horseskin13"},
+                                            { "base": "entity/land/horse/horseskin14" }, { "base": "entity/land/horse/horseskin15"},
+                                            { "base": "entity/land/horse/horseskin21" }, { "base": "entity/land/horse/horseskin12"},
+                                            { "base": "entity/land/horse/horseskin20" }, { "base": "entity/land/horse/horseskin23"},
+                                            { "base": "entity/land/horse/horseskin24" }, { "base": "entity/land/horse/horseskin25"},
+                                            { "base": "entity/land/horse/horseskin26" } ] },
+                         "mane": { "base": "entity/land/horse/horsemane", 
+                            "alternates": [ { "base": "entity/land/horse/horsemane2" }, { "base": "entity/land/horse/horsemane3" },
+                                            { "base": "entity/land/horse/horsemane4" }, { "base": "entity/land/horse/horsemane5" },
+                                            { "base": "entity/land/horse/horsemane6" }, { "base": "entity/land/horse/horsemane7" },
+                                            { "base": "entity/land/horse/horsemane8" }, { "base": "entity/land/horse/horsemane9" },
+                                            { "base": "entity/land/horse/horsemane10" }, { "base": "entity/land/horse/horsemane11" },
+                                            { "base": "entity/land/horse/horsemane12" } ] } },
 
             "__comment": "More horse breeds to come!"
             
         },
         "sizeByType": {
-            "foal-draft": 0.6,
-            "foal-arabian": 0.55,
-            "foal-donkey": 0.52,
-            "foal-shire": 0.58,
-            "foal-quarter": 0.56
+            "foal-*-percheron": 0.6,
+            "foal-*-arabian": 0.55,
+            "foal-*-donkey": 0.52,
+            "foal-*-shire": 0.62,
+            "foal-*-quarter": 0.53
         },
         "behaviors": [
-            { "code": "nametag", "showtagonlywhentargeted": true },
-            { "code": "receivecommand",
-                "availableCommands": [
-                    { "commandName": "followmaster", "commandType": "COMPLEX", "minObedience": 0.4 },
-                    { "commandName": "stay", "commandType": "COMPLEX", "minObedience": 0.2 }
-                ]
-            },
-            { "code": "tameable",
-                "treat": [
-                    { "code": "vegetable-carrot", "progress": 0.10, "cooldown": 0.2 },
-                    { "code": "vegetable-cabbage", "progress": 0.03, "cooldown": 0.4 },
-                    { "code": "vegetable-turnip", "progress": 0.04, "cooldown": 0.3 },
-                    { "code": "carrotbundle", "progress": 0.15, "cooldown": 0.25 },
-                    { "code": "drygrassbundle", "progress": 0.075, "cooldown": 0.55 },
-                    { "code": "drygrass", "progress": 0.025, "cooldown": 0.25 },
-                    { "code": "fruit-pinkapple", "progress": 0.169, "cooldown": 0.55 },
-                    { "code": "fruit-redapple", "progress": 0.169, "cooldown": 0.55 },
-                    { "code": "fruit-yellowapple", "progress": 0.169, "cooldown": 0.55 },
-                    { "code": "grain-flax", "progress": 0.075, "cooldown": 0.45 },
-                    { "code": "grain-rye", "progress": 0.075, "cooldown": 0.45 },
-                    { "code": "grain-spelt", "progress": 0.075, "cooldown": 0.45 }
-                ]
-            },
             { "code": "mouthinventory",
                 "acceptStacks": [
                     { "type": "item", "code": "vegetable-carrot" },
@@ -110,7 +102,7 @@
             { "code": "floatupwhenstuck", "onlyWhenDead": true },
             { "code": "interpolateposition" },
             { "code": "despawn",  "minPlayerDistance": 8, "belowLightLevel": 8, "minSeconds": 300 },
-            { "code": "ropetieable", "minGeneration": 2 }
+            { "code": "ropetieable" }
         ],
         "animations": [
             {
@@ -153,24 +145,6 @@
             }
         },
         "behaviors": [
-            { "code": "nametag", "showtagonlywhentargeted": true },
-            { "code": "tameable",
-                "disobediencePerDay": 0.025,
-                "treat": [
-                    { "code": "vegetable-carrot", "progress": 0.10, "cooldown": 0.2 },
-                    { "code": "vegetable-cabbage", "progress": 0.03, "cooldown": 0.4 },
-                    { "code": "vegetable-turnip", "progress": 0.04, "cooldown": 0.3 },
-                    { "code": "carrotbundle", "progress": 0.15, "cooldown": 0.25 },
-                    { "code": "drygrassbundle", "progress": 0.075, "cooldown": 0.55 },
-                    { "code": "drygrass", "progress": 0.025, "cooldown": 0.25 },
-                    { "code": "fruit-pinkapple", "progress": 0.169, "cooldown": 0.55 },
-                    { "code": "fruit-redapple", "progress": 0.169, "cooldown": 0.55 },
-                    { "code": "fruit-yellowapple", "progress": 0.169, "cooldown": 0.55 },
-                    { "code": "grain-flax", "progress": 0.075, "cooldown": 0.45 },
-                    { "code": "grain-rye", "progress": 0.075, "cooldown": 0.45 },
-                    { "code": "grain-spelt", "progress": 0.075, "cooldown": 0.45 }
-                ]
-            },
             { "code": "mouthinventory",
                 "acceptStacks": [
                     { "type": "item", "code": "vegetable-carrot" },
@@ -185,12 +159,6 @@
                     { "type": "item", "code": "grain-flax" },
                     { "type": "item", "code": "grain-rye" },
                     { "type": "item", "code": "grain-spelt" }
-                ]
-            },
-            { "code": "receivecommand",
-                "availableCommands": [
-                    { "commandName": "followmaster", "commandType": "COMPLEX", "minObedience": 0.4 },
-                    { "commandName": "stay", "commandType": "COMPLEX", "minObedience": 0.2 }
                 ]
             },
             { "code": "repulseagents" },
@@ -245,11 +213,17 @@
                 ]
             },
 			{ "code": "grow", "hoursToGrow": 178,
-				"adultEntityCodesByType": { "*-draft": ["feverstonewilds:horse-{tame}-male-draft", "feverstonewilds:horse-{tame}-female-draft"],
-                                            "*-arabian": ["feverstonewilds:horse-{tame}-male-arabian", "feverstonewilds:horse-{tame}-female-arabian"],
-                                            "*-donkey": [ "feverstonewilds:horse-{tame}-male-donkey", "feverstonewilds:horse-{tame}-female-donkey" ],
-                                            "*-shire": [ "feverstonewilds:horse-{tame}-male-shire", "feverstonewilds:horse-{tame}-female-shire" ],
-                                            "*-quarter": [ "feverstonewilds:horse-{tame}-male-quarter", "feverstonewilds:horse-{tame}-female-quarter" ]  }
+                "orPortionsEatenForGrowing": 12,
+				"fedAdultEntityCodesByType": { "*-percheron": ["feverstonewilds:taminghorse-wild-male-percheron", "feverstonewilds:taminghorse-wild-female-percheron"],
+                                            "*-arabian": ["feverstonewilds:taminghorse-wild-male-arabian", "feverstonewilds:taminghorse-wild-female-arabian"],
+                                            "*-donkey": [ "feverstonewilds:taminghorse-wild-male-donkey", "feverstonewilds:taminghorse-wild-female-donkey" ],
+                                            "*-shire": [ "feverstonewilds:taminghorse-wild-male-shire", "feverstonewilds:taminghorse-wild-female-shire" ],
+                                            "*-quarter": [ "feverstonewilds:taminghorse-wild-male-quarter", "feverstonewilds:taminghorse-wild-female-quarter" ]  },
+				"adultEntityCodesByType": { "*-percheron": ["feverstonewilds:horse-wild-male-percheron", "feverstonewilds:horse-wild-female-percheron"],
+                                            "*-arabian": ["feverstonewilds:horse-wild-male-arabian", "feverstonewilds:horse-wild-female-arabian"],
+                                            "*-donkey": [ "feverstonewilds:horse-wild-male-donkey", "feverstonewilds:horse-wild-female-donkey" ],
+                                            "*-shire": [ "feverstonewilds:horse-wild-male-shire", "feverstonewilds:horse-wild-female-shire" ],
+                                            "*-quarter": [ "feverstonewilds:horse-wild-male-quarter", "feverstonewilds:horse-wild-female-quarter" ]  }
 			},
             {
                 "code": "taskai",
@@ -257,19 +231,19 @@
                 "aitasks": [
                     {
                         "code": "fleeentity",
-                        "entityCodes": [ "player", "wolf-*" ],
-                        "priority": 1.5,
-                        "movespeed": 0.05,
-                        "seekingRange": 12,
-                        "animation": "run",
+                        "entityCodes": [ "player", "wolf-*", "bear-*" ],
+                        "priority": 1.8,
+                        "movespeed": 0.058,
+                        "seekingRange": 26,
+                        "animation": "gallop",
                         "animationSpeed": 2.2,
-                        "whenInEmotionState": "fleeondamage"
+                        "instafleeOnDamageChance": 1
                     },
                     {
                         "code": "stayclosetoentity",
                         "priority": 1.3,
                         "entityCodesByType":{
-                            "*-draft": [ "feverstonewilds:horse-{tame}-male-draft", "feverstonewilds:horse-{tame}-female-draft" ],
+                            "*-percheron": [ "feverstonewilds:horse-{tame}-male-percheron", "feverstonewilds:horse-{tame}-female-percheron" ],
                             "*-arabian": [ "feverstonewilds:horse-{tame}-male-arabian", "feverstonewilds:horse-{tame}-female-arabian" ],
                             "*-donkey": [ "feverstonewilds:horse-{tame}-male-donkey", "feverstonewilds:horse-{tame}-female-donkey" ],
                             "*-shire": [ "feverstonewilds:horse-{tame}-male-shire", "feverstonewilds:horse-{tame}-female-shire" ],
@@ -282,25 +256,17 @@
                         "animationSpeed": 2.2
                     },
                     {
-                        "code": "followmaster",
-                        "priority": 2,
-                        "priorityForCancel": 1.9,
-                        "command": "followmaster",
-                        "movespeed": 0.045,
-                        "animationSpeed": 2.2,
-                        "maxDistance": 8,
-                        "searchRange": 40,
-                        "animation": "run"
-                    },
-                    {
-                        "code": "stay",
-                        "priority": 2,
-                        "priorityForCancel": 1.9,
-                        "command": "stay",
-                        "movespeed": 0.006,
-                        "maxDistance": 10,
-                        "searchRange": 40,
-                        "animation": "walk"
+                        "code": "followleadholder",
+                        "priority": 1.45,
+                        "animation": "trot",
+                        "animationSpeed": 1.25,
+                        "movespeedByType": {
+                            "*-percheron": 0.040,
+                            "*-arabian": 0.045,
+                            "*-donkey": 0.035,
+                            "*-shire": 0.038, 
+                            "*-quarter": 0.0425
+                        }
                     },
                     {
                         "code": "getoutofwater",
@@ -346,7 +312,7 @@
                         "code": "seekfoodandeat",
                         "movespeed": 0.004,
                         "priority": 1.35,
-                        "eatSound": "player/eat",
+                        "eatSound": "game:creature/animal-eat-small",
                         "eatTime": 1.5,
                         "animationSpeed": 1.4,
                         "animation": "walk",
@@ -377,7 +343,7 @@
                     { "code": "lookaround", "priority": 0.5 }
                 ]
             },
-            { "code": "ropetieable", "minGeneration": 2 },
+            { "code": "ropetieable" },
             { "code": "pettable", "minGeneration": 1 }
         ]
     },
