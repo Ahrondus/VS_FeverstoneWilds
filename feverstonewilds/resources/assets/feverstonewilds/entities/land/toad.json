@@ -131,6 +131,7 @@
 			},
 			{
 				"code": "taskai",
+				"aiCreatureType": "LandCreature",
 				"aitasks": [
 					{
 						"code": "seekentity",
@@ -169,7 +170,7 @@
 						"maxduration": 5000000,
 						"mincooldown": 10000,
 						"maxcooldown": 30000,
-						"animation": " ",
+						"animation": "sit",
 						"whenNotInEmotionState": "aggressiveondamage",
 						"duringDayTimeFrames": [
 							{
@@ -184,17 +185,6 @@
 						"stopOnNearbyEntityCodes": [ "player" ],
 						"stopRange": 6,
 						"stopOnHurt": true
-					},
-					{
-						"code": "seekfoodandeat",
-						"movespeed": 0.004,
-						"priority": 1.35,
-						"eatSound": "player/eat",
-						"eatTime": 1.5,
-						"animationSpeed": 1.4,
-						"animation": "walk",
-						"mincooldownHours": 1,
-						"maxcooldownHours": 4
 					},
 					{
 						"code": "idle",
@@ -219,18 +209,6 @@
 						"preferredLightLevel": 10
 					},
 					{
-						"code": "idle",
-						"priority": 0.9,
-						"minduration": 7000,
-						"maxduration": 45000,
-						"mincooldown": 6000,
-						"maxcooldown": 120000,
-						"priorityForCancel": 1.33,
-						"stopOnHurt": true,
-						"animation": "idleLook",
-						"animationSpeed": 0.75
-					},
-					{
 						"code": "lookaround",
 						"priority": 0.5
 					}
@@ -251,7 +229,7 @@
 					"avg": 1,
 					"var": 2
 				},
-				"insideBlockCodes": [ "game:air", "game:tallgrass-*", "game:water" ],
+				"insideBlockCodes": [ "game:air", "game:tallgrass-*", "game:freshwater-*" ],
 				"minTemp": -2,
 				"maxTemp": 25,
 				"minRain": 0.25,
@@ -269,7 +247,7 @@
 					"avg": 3,
 					"var": 2
 				},
-				"insideBlockCodes": [ "game:air", "game:tallgrass-*", "game:water" ],
+				"insideBlockCodes": [ "game:air", "game:tallgrass-*", "game:freshwater-*" ],
 				"minTemp": -2,
 				"maxTemp": 25,
 				"minRain": 0.25,

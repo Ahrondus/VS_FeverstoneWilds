@@ -5,6 +5,9 @@
 	"eyeHeight": 0.9,
 	"drops": [],
 	"habitat": "underwater",
+	"attributes": {
+		"killedByInfoText": "feverstonewilds:deadcreature-stingray"
+	},
 	"client": {
 		"renderer": "Shape",
 		"size": 0.7,
@@ -174,7 +177,7 @@
 				"maxQuantity": 2,
 				"maxLightLevel": 8,
 				"groupSize": { "dist": "verynarrowgaussian", "avg": 1, "var": 0 },
-				"insideBlockCodes": ["game:saltwater-*"],
+				"insideBlockCodes": ["game:saltwater-still-*"],
 				"maxY": 0.99,
 				"minY": 0.92,
 				"minTemp": -10,
@@ -187,7 +190,7 @@
 				"tryOnlySurface": true,
 				"maxLightLevel": 8,
 				"groupSize": { "dist": "verynarrowgaussian", "avg": 1, "var": 0 },
-				"insideBlockCodes": ["game:saltwater-*"],
+				"insideBlockCodes": ["game:saltwater-still-*"],
 				"maxY": 0.99,
 				"minY": 0.92,
 				"minTemp": -10,

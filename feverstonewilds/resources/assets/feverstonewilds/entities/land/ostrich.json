@@ -9,7 +9,15 @@
 	"eyeHeight": 0.7,
 	"drops": [],
 	"attributes": {
-        "killedByInfoText": "feverstonewilds:deadcreature-ostrich"
+        "killedByInfoText": "feverstonewilds:deadcreature-ostrich",
+		"handbook": {
+			"groupcode": "feverstonewilds:creaturegroup-fswostrich"
+		},
+		"creatureDiet": {
+			"foodCategories": [ "Grain" ],
+			"foodTags": [ "cabbage", "carrot", "parsnip", "blueberry", "cranberry", "cherry", "whitecurrant", "redcurrant", "blackcurrant", "lychee" ],
+			"skipFoodTags": [ "rice" ]
+		}
     },
 	"client": {
 		"renderer": "Shape",
@@ -129,6 +137,7 @@
 			},
 			{ 
 				"code": "taskai",
+				"aiCreatureType": "LandCreature",
 				"aitasks": [
 					{
 						"code": "meleeattack",
@@ -151,7 +160,7 @@
 						"code": "fleeentity",
 						"entityCodes": ["player", "wolf-*", "hyena-*", "bear-*"],
 						"priority": 1.8,
-						"movespeed": 0.52,
+						"movespeed": 0.057,
 						"seekingRange": 12,
 						"animation": "Run",
 						"animationSpeed": 3,
@@ -165,7 +174,7 @@
 						"mincooldown": 1000, 
 						"maxcooldown": 1500, 
 						"seekingRange": 20,
-						"movespeed": 0.055,
+						"movespeed": 0.050,
 						"animation": "Run",
 						"animationSpeed": 3,
 						"whenInEmotionState": "aggressiveondamage"
@@ -177,7 +186,7 @@
 						"layTime": 2,
 						"chickCode": "ostrich-chick",
 						"sitDays": 0.9,
-						"incubationDays": 0.5,
+						"incubationDays": 3.6,
 						"movespeed": 0.012,
 						"animation": "Walk",
 						"mincooldownHours": 1,
@@ -187,7 +196,7 @@
 						"requiresNearbyEntityRange": 12,
 						"growthCapEntityCodes": ["feverstonewilds:ostrich-chick", "feverstonewilds:ostrich-female", "feverstonewilds:ostrich-male"],
 						"failBlockCode": "feverstonewilds:egg-ostrich-1",
-						"sound": "game:creature/chicken/hen-lay",
+						"sound": "feverstonewilds:ostrich/ostrichlay",
 						"priorityForCancel": 1.65
 					},
 					{

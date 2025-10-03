@@ -1,0 +1,77 @@
+[
+    {
+        "op": "addeach",
+        "path": "/attributes/contentConfig/0",
+        "side": "server",
+        "value": [ 
+            { "code": "bushmeat",
+                "content": { "type": "item", "code": "game:bushmeat-*" },
+                "quantityPerFillLevel": 2,
+                "maxFillLevels": 8,
+                "shapesPerFillLevel": [ "block/wood/trough/large/cassavafill1", "block/wood/trough/large/cassavafill1", 
+                                        "block/wood/trough/large/cassavafill2", "block/wood/trough/large/cassavafill2",
+                                        "block/wood/trough/large/cassavafill3", "block/wood/trough/large/cassavafill3",
+                                        "block/wood/trough/large/cassavafill4", "block/wood/trough/large/cassavafill4" ],
+                "textureCode": "contents-bushmeat" },
+            { "code": "redmeat",
+                "content": { "type": "item", "code": "game:redmeat-*" },
+                "quantityPerFillLevel": 2,
+                "maxFillLevels": 8,
+                "shapesPerFillLevel": [ "block/wood/trough/large/legumefill1", "block/wood/trough/large/legumefill1", 
+                                        "block/wood/trough/large/legumefill2", "block/wood/trough/large/legumefill2",
+                                        "block/wood/trough/large/legumefill3", "block/wood/trough/large/legumefill3",
+                                        "block/wood/trough/large/legumefill4", "block/wood/trough/large/legumefill4" ],
+                "textureCode": "contents-redmeat" },
+            { "code": "poultry",
+                "content": { "type": "item", "code": "game:poultry-*" },
+                "quantityPerFillLevel": 2,
+                "maxFillLevels": 8,
+                "shapesPerFillLevel": [ "block/wood/trough/large/parsnipfill1", "block/wood/trough/large/parsnipfill1", 
+                                        "block/wood/trough/large/parsnipfill2", "block/wood/trough/large/parsnipfill2",
+                                        "block/wood/trough/large/parsnipfill3", "block/wood/trough/large/parsnipfill3",
+                                        "block/wood/trough/large/parsnipfill4", "block/wood/trough/large/parsnipfill4" ],
+                "textureCode": "contents-poultry" },
+            { "code": "fish",
+                "content": { "type": "item", "code": "game:fish-*" },
+                "quantityPerFillLevel": 2,
+                "maxFillLevels": 8,
+                "shapesPerFillLevel": [ "block/wood/trough/large/bellpepperfill1", "block/wood/trough/large/bellpepperfill1", 
+                                        "block/wood/trough/large/bellpepperfill2", "block/wood/trough/large/bellpepperfill2",
+                                        "block/wood/trough/large/bellpepperfill3", "block/wood/trough/large/bellpepperfill3",
+                                        "block/wood/trough/large/bellpepperfill4", "block/wood/trough/large/bellpepperfill4" ],
+                "textureCode": "contents-fishmeat" } ],
+        "file": "game:blocktypes/wood/trough-large.json"
+    },
+    {
+        "op": "addmerge",
+        "path": "/textures",
+        "side": "server",
+        "value": {
+            "contents-bushmeat": {
+                "base": "block/wood/barrel/raw-bushmeat",
+                "overlays": [
+                  "block/wood/trough/large/shadow"
+                ]
+            },
+            "contents-redmeat": {
+                "base": "block/wood/barrel/raw-redmeat",
+                "overlays": [
+                  "block/wood/trough/large/shadow"
+                ]
+            },
+            "contents-poultry": {
+                "base": "block/wood/barrel/raw-poultry",
+                "overlays": [
+                  "block/wood/trough/large/shadow"
+                ]
+            },
+            "contents-fishmeat": {
+                "base": "block/wood/barrel/raw-fish",
+                "overlays": [
+                  "block/wood/trough/large/shadow"
+                ]
+            }
+        },
+        "file": "game:blocktypes/wood/trough-large.json"
+    }
+]

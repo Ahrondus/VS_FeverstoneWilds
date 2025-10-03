@@ -1,10 +1,18 @@
 {
     "code": "tame-direwolf-pup",
-    "class": "EntityPet",
+    "class": "EntityAgent",
     "hitboxSize": { "x": 0.85, "y": 0.5 },
     "deadHitboxSize": { "x": 0.75, "y": 0.4 },
     "eyeHeight": 0.4,
     "drops": [],
+	"attributes": {
+		"creatureDiet": {
+			"foodTags": [ "meat" ]
+		},
+		"handbook": {
+			"groupcode": "feverstonewilds:creaturegroup-fswdirewolf"
+		}
+	},
     "client": {
         "renderer": "Shape",
         "shape": { "base": "entity/land/direwolf-pup" },
@@ -136,6 +144,7 @@
             { "code": "grow", "hoursToGrow": 100, 
                 "adultEntityCodes": [ "feverstonewilds:tame-direwolf-male", "feverstonewilds:tame-direwolf-female" ] },
             { "code": "taskai",
+                "aiCreatureType": "LandCreature",
                 "aitasks": [
                     {
                         "code": "simplecommand",
@@ -163,7 +172,7 @@
                         "priorityForCancel": 3.1,
                         "animation": "Howl",
                         "command": "speak",
-                        "sound": "game:creature/wolf/pup-flop"
+                        "sound": "game:creature/wolf/pup-bark"
                     },
                     {
                         "code": "playfetch",
@@ -250,7 +259,7 @@
                         "maxcooldown": 300000,
                         "animation": "Howl",
                         "animationSpeed": 0.8,
-                        "sound": "game:creature/wolf/pup-howl"
+                        "sound": "game:creature/wolf/pup-howl*"
                     },
                     {
                         "code": "idle",
@@ -278,9 +287,6 @@
                         "animationSpeed": 0.75,
                         "priority": 1.4,
                         "priorityForCancel": 1.7,
-                        "eatItemCategories": [
-                            "Protein"
-                        ],
                         "eatItemCodes": [
                             "bone",
                             "bushmeat-raw",

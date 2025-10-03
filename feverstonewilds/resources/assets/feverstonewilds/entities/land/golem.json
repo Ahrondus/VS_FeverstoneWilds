@@ -116,6 +116,7 @@
 			},
             {
             "code": "taskai",
+            "aiCreatureType": "LandCreature",
             "aitasks": [
                 {
                     "code": "meleeattack",
@@ -130,6 +131,32 @@
                     "damagePlayerAtMs": 800,
                     "animation": "smash",
                     "animationSpeed": 1.2,
+                    "whenInEmotionState": "aggressiveondamage"
+                },
+                {
+                    "code": "throwatentity",
+                    "entityCodes": ["player"],
+                    "projectileCodeByType": {
+                        "golem-*": "game:thrownboulder-{rock}"
+                    },
+                    "projectileDamage": 6,
+                    "damageTier": 2,
+                    "priority": 1.55,
+                    "priorityForCancel": 9,
+                    "mincooldown": 10000, 
+                    "maxcooldown": 12000, 
+                    "durationMs": 1800,
+                    "releaseAtMs": 1250,
+                    "seekingRange": 15,
+                    "sound": "game:creature/eidolon/throw",
+                    "soundStartMs": 200,
+                    "soundRange": 20,
+                    "animationSpeed": 1.05,
+                    "animation": "throwBoulder",
+                    "immobile": true,
+                    "maxTurnAngleDeg": 35,
+                    "maxOffAngleThrowDeg": 45,
+                    "chance": 0.005,
                     "whenInEmotionState": "aggressiveondamage"
                 },
                 {

@@ -1,0 +1,182 @@
+{
+	"code": "bisonleg",
+	"maxstacksize": 8,
+	"attributes": {
+		"foodTags": [ "meat" ],
+		"inFirePitProps": {
+			"transform": {
+				"scale": 0.75,
+				"origin": {
+					"x": 0.5,
+					"y": 0.0625,
+					"z": 0.5
+				},
+				"translation": {
+					"x": 0.1,
+					"y": 0.25,
+					"z": -0.05
+				},
+				"rotation": {
+					"x": 0,
+					"y": 53,
+					"z": 20
+				}
+			},
+			"useFirepitModel": "Spit"
+		},
+		"nutritionPropsWhenInMeal": {
+			"satiety": 550,
+			"foodcategory": "Protein"
+		},
+		"handbook": {
+			"groupBy": [ "bisonleg-*" ]
+		}
+	},
+	"variantgroups": [
+		{
+			"code": "type",
+			"states": [ "raw", "partcooked", "cooked", "charred" ]
+		}
+	],
+	"shape": { "base": "item/drops/bisonleg" },
+	"texturesByType": {
+		"bisonleg-raw": { "bisonleg": { "base": "items/food/rawmeat" } },
+		"bisonleg-partcooked": { "bisonleg": { "base": "items/food/precookedmeat" } },
+		"bisonleg-cooked": { "bisonleg": { "base": "items/food/cookedmeat" } },
+		"bisonleg-charred": { "bisonleg": { "base": "items/food/charredmeat" } }
+	},
+	"creativeinventory": {
+		"general": [ "*" ],
+		"items": [ "*" ]
+	},
+	"nutritionPropsByType": {
+		"bisonleg-raw": {
+			"satiety": 180,
+			"health": -2.5,
+			"foodcategory": "Protein"
+		},
+		"bisonleg-partcooked": {
+			"satiety": 220,
+			"health": -1,
+			"foodcategory": "Protein"
+		},
+		"bisonleg-cooked": {
+			"satiety": 400,
+			"health": 1,
+			"foodcategory": "Protein"
+		},
+		"bisonleg-charred": {
+			"satiety": 250,
+			"health": 0,
+			"foodcategory": "Protein"
+		}
+	},
+	"transitionablePropsByType": {
+		"*-raw": [
+			{
+				"type": "Perish",
+				"freshHours": { "avg": 50 },
+				"transitionHours": { "avg": 24 },
+				"transitionedStack": {
+					"type": "item",
+					"code": "game:rot"
+				},
+				"transitionRatio": 2
+			}
+		],
+		"*-partcooked": [
+			{
+				"type": "Perish",
+				"freshHours": { "avg": 130 },
+				"spoilHours": { "avg": 36 },
+				"transitionedStack": {
+					"type": "item",
+					"code": "game:rot"
+				},
+				"transitionRatio": 2
+			}
+		],
+		"*-cooked": [
+			{
+				"type": "Perish",
+				"freshHours": { "avg": 180 },
+				"spoilHours": { "avg": 40 },
+				"transitionedStack": {
+					"type": "item",
+					"code": "game:rot"
+				},
+				"transitionRatio": 2
+			}
+		],
+		"*-charred": [
+			{
+				"type": "Perish",
+				"freshHours": { "avg": 400 },
+				"spoilHours": { "avg": 60 },
+				"transitionedStack": {
+					"type": "item",
+					"code": "game:rot"
+				},
+				"transitionRatio": 2
+			}
+		]
+	},
+	"materialDensity": 600,
+	"guiTransform": {
+		"rotation": {
+			"x": -54,
+			"y": 61,
+			"z": 31
+		},
+		"origin": {
+			"x": 0.5,
+			"y": 0.2,
+			"z": 0.45
+		},
+		"scale": 1.89
+	},
+	"tpHandTransform": {
+		"translation": {
+			"x": -1.1,
+			"y": -0.5,
+			"z": -0.5
+		},
+		"rotation": {
+			"x": 180,
+			"y": -180,
+			"z": 32
+		},
+		"scale": 1
+	},
+	"groundTransform": {
+		"translation": {
+			"x": 0,
+			"y": -0.15,
+			"z": 0
+		},
+		"rotation": {
+			"x": 180,
+			"y": 0,
+			"z": 0
+		},
+		"origin": {
+			"x": 0.5,
+			"y": 0.5,
+			"z": 0.5299
+		},
+		"scale": 5
+	},
+	"combustiblePropsByType": {
+		"bisonleg-raw": {
+			"meltingPoint": 250,
+			"meltingDuration": 60,
+			"smeltedRatio": 1,
+			"smeltingType": "cook",
+			"smeltedStack": {
+				"type": "item",
+				"code": "bisonleg-charred"
+			},
+			"requiresContainer": false
+		}
+	}
+}

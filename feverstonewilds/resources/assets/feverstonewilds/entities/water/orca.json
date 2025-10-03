@@ -5,6 +5,9 @@
 	"eyeHeight": 0.9,
 	"drops": [],
 	"habitat": "underwater",
+	"attributes": {
+		"killedByInfoText": "feverstonewilds:deadcreature-orca"
+	},
 	"client": {
 		"renderer": "Shape",
 		"size": 0.7,
@@ -183,20 +186,6 @@
 						"preferredLightLevel": "22"
 					},
 					{
-						"code": "seekfoodandeat",
-						"movespeed": 0.010,
-						"priority": 1.25,
-						"eatTime": 2.3,
-						"eatLooseItems": true,
-						"eatItemCodes": ["game:redmeat-*", "game:fish-*", "game:poultry-*", "game:bushmeat-*"],
-						"eatItemCatagories": ["Protein"],
-						"animationSpeed": 1.4,
-						"animation": "swim",
-						"eatAnimation": "attack",
-						"mincooldownHours": 1,
-						"maxcooldownHours": 4
-					},
-					{
 						"code": "fishmovefast", 
 						"priority": 1.0, 
 						"priorityForCancel": 1.35,
@@ -204,15 +193,6 @@
 						"animation": "swimfast",
 						"animationSpeed": 2.3,
 						"sound": "orca/orcaswim"
-					},
-					{
-						"code": "idle",
-						"priority": 0.9,
-						"minduration": 500,
-						"maxduration": 2000,
-						"mincooldown": 2000,
-						"maxcooldown": 30000,
-						"animation": "idle"
 					},
 					{
 						"code": "idle",
@@ -233,7 +213,7 @@
 				"maxLightLevel": 22,
 				"groupSize": { "dist": "verynarrowgaussian", "avg": 1.5, "var": 0.5 },
 				"maxQuantity": 2,
-				"insideBlockCodes": ["game:saltwater-*", "game:saltwater-still-*"],
+				"insideBlockCodes": [ "game:saltwater-still-*"],
 				"minTemp": -30,
 				"maxTemp": 40
 			},
@@ -244,7 +224,7 @@
 				"tryOnlySurface": true,
 				"maxLightLevel": 22,
 				"groupSize": { "dist": "verynarrowgaussian", "avg": 1.5, "var": 0.5 },
-				"insideBlockCodes": ["game:saltwater-*", "game:saltwater-still-*"],
+				"insideBlockCodes": [ "game:saltwater-still-*"],
 				"minTemp": -30,
 				"maxTemp": 40
 			}

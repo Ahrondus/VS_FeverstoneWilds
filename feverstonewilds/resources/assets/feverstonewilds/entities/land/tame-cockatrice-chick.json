@@ -1,17 +1,29 @@
 {
     "code": "tame-cockatrice-chick",
-    "class": "EntityPet",
+    "class": "EntityAgent",
     "hitboxSize": { "x": 0.4, "y": 0.4 },
     "deadHitboxSize": { "x": 0.4, "y": 0.4 },
     "eyeHeight": 0.15,
 	"weight": 0.1,
     "drops": [],
+  "attributes": {
+    "killedByInfoText": "feverstonewilds:deadcreature-eaten-cockatrice",
+    "creatureDiet": {
+      "foodCategories": [ "Grain" ],
+      "foodTags": [ "nibbleCrop", "meat" ],
+      "skipFoodTags": [ "rice" ]
+    },
+    "handbook": {
+      "groupcode": "feverstonewilds:creaturegroup-fswcockatrice"
+    },
+    "basketCatchable": true
+  },
     "client": {
         "renderer": "Shape",
         "shape": { "base": "entity/land/cockatrice-chick" },
         "texture": {
-            "base": "entity/land/cockatrice/cockatrice1",
-            "alternates": [ { "base": "entity/land/cockatrice/cockatrice2" } ]
+            "base": "entity/land/cockatrice/cockatriceskin1",
+            "alternates": [ { "base": "entity/land/cockatrice/cockatriceskin2" } ]
         },
         "size": 0.9,
         "sizeGrowthFactor": 0.2,
@@ -30,6 +42,7 @@
                     { "code": "bushmeat-raw", "progress": 0.15, "cooldown": 2 },
                     { "code": "redmeat-raw", "progress": 0.3, "cooldown": 3 },
                     { "code": "poultry-raw", "progress": 0.3, "cooldown": 3 },
+					{ "code": "grain-*", "progress": 0.025, "cooldown": 0.25 },
                     { "code": "petcookie-meat-perfect", "domain": "petai", "progress": 0.8, "cooldown": 3 }
                 ]
             },
@@ -39,6 +52,10 @@
                     { "type": "item", "code": "bushmeat-raw" },
                     { "type": "item", "code": "redmeat-raw" },
                     { "type": "item", "code": "poultry-raw" },
+					{ "type": "item", "code": "grain-flax" },
+					{ "type": "item", "code": "grain-spelt" },
+					{ "type": "item", "code": "grain-rye" },
+					{ "type": "item", "code": "grain-sunflower" },
                     { "type": "item", "code": "wolftaming:dogtoy" },
                     { "type": "item", "code": "petai:petcookie-meat-perfect" }
                 ]
@@ -106,6 +123,7 @@
                     { "code": "bushmeat-raw", "progress": 0.15, "cooldown": 2 },
                     { "code": "redmeat-raw", "progress": 0.3, "cooldown": 3 },
                     { "code": "poultry-raw", "progress": 0.3, "cooldown": 3 },
+					{ "code": "grain-*", "progress": 0.025, "cooldown": 0.25 },
                     { "code": "petcookie-meat-perfect", "domain": "petai", "progress": 0.8, "cooldown": 3 }
                 ]
             },
@@ -115,7 +133,10 @@
                     { "type": "item", "code": "bushmeat-raw" },
                     { "type": "item", "code": "redmeat-raw" },
                     { "type": "item", "code": "poultry-raw" },
-                    { "type": "item", "code": "wolftaming:dogtoy" },
+					{ "type": "item", "code": "grain-flax" },
+					{ "type": "item", "code": "grain-spelt" },
+					{ "type": "item", "code": "grain-rye" },
+					{ "type": "item", "code": "grain-sunflower" },
                     { "type": "item", "code": "petai:petcookie-meat-perfect" }
                 ]
             },
@@ -137,8 +158,9 @@
                 ]
             },
             { "code": "grow", "hoursToGrow": 100, 
-                "adultEntityCodes": [ "feverstonewilds:tame-cockatrice"] },
+                "adultEntityCodes": [ "feverstonewilds:tame-cockatrice-male", "feverstonewilds:tame-cockatrice-female"] },
             { "code": "taskai",
+                "aiCreatureType": "LandCreature",
                 "aitasks": [
                     {
                         "code": "simplecommand",
@@ -157,24 +179,6 @@
                         "priorityForCancel": 2.9,
                         "animation": "sleep",
                         "command": "lay"
-                    },
-                    {
-                        "code": "simplecommand",
-                        "priority": 3,
-                        "minduration": 2000,
-                        "maxduration": 3000,
-                        "priorityForCancel": 3.1,
-                        "animation": "Attack",
-                        "command": "speak",
-                        "sound": "game:creature/wolf/chick-flop"
-                    },
-                    {
-                        "code": "playfetch",
-                        "priority": 2.2,
-                        "priorityForCancel": 2.1,
-                        "movespeed": 0.02,
-                        "animationSpeed": 4,
-                        "animation": "Run"
                     },
                     {
                         "code": "stayclosetoentity",
@@ -204,17 +208,6 @@
                         "animationSpeed": 2.2
                     },
                     {
-                        "code": "seeknest",
-                        "priority": 1.4,
-                        "duringDayTimeFrames": [
-                            { "fromHour": 10, "toHour": 18 },
-                            { "fromHour": 1, "toHour": 3 }
-                        ],
-                        "movespeed": 0.004,
-                        "animationSpeed": 2,
-                        "animation": "Walk"
-                    },
-                    {
                         "code": "idle",
                         "priority": 1.35,
                         "priorityForCancel": 1.35,
@@ -233,38 +226,18 @@
                         "stopOnHurt": true
                     },
                     {
-                        "code": "idle",
-                        "priority": 1.3,
-                        "priorityForCancel": 1.35,
-                        "minduration": 2500,
-                        "maxduration": 2500,
-                        "mincooldown": 10000,
-                        "maxcooldown": 50000,
-                        "animation": "Sniff",
-                        "animationSpeed": 0.8
-                    },
-                    {
-                        "code": "idle",
-                        "priority": 1.31,
-                        "priorityForCancel": 1.35,
-                        "minduration": 1500,
-                        "maxduration": 1500,
-                        "mincooldown": 50000,
-                        "maxcooldown": 300000,
-                        "animation": "Howl",
-                        "animationSpeed": 0.8,
-                        "sound": "game:creature/wolf/chick-howl"
-                    },
-                    {
-                        "code": "idle",
-                        "priority": 1.32,
-                        "priorityForCancel": 1.35,
-                        "minduration": 2830,
-                        "maxduration": 2830,
-                        "mincooldown": 80000,
-                        "maxcooldown": 200000,
-                        "animation": "Flop",
-                        "sound": "game:creature/wolf/chick-flop"
+                        "code": "seekfoodandeat",
+                        "movespeed": 0.004,
+                        "priority": 1.35,
+                        "eatSound": "game:creature/animal-eat-small",
+                        "soundRange": 3,
+                        "soundStartMs": 800,
+                        "eatTime": 1.5,
+                        "animationSpeed": 1.4,
+                        "animation": "walk",
+                        "eatAnimation": "eat",
+                        "mincooldownHours": 1,
+                        "maxcooldownHours": 4
                     },
                     {
                         "code": "wander",
@@ -281,15 +254,10 @@
                         "animationSpeed": 0.75,
                         "priority": 1.4,
                         "priorityForCancel": 1.7,
-                        "eatItemCategories": [
-                            "Protein"
-                        ],
+                        "eatItemCategories": [ "Grain" ],
                         "eatItemCodes": [
-                            "bone",
-                            "bushmeat-raw",
-                            "redmeat-raw",
-                            "poultry-raw",
-                            "petai:petcookie-meat-perfect"
+                            "bone", "bushmeat-raw", "redmeat-raw",
+                            "poultry-raw", "petai:petcookie-meat-perfect"
                         ],
                         "useTime": 1.5,
                         "mincooldownHours": 1,
@@ -315,10 +283,10 @@
             { "code": "pettableextended", "minGeneration": 1 }
         ]
     },
-    "sounds": {
-        "hurt": "game:creature/wolf/chick-hurt",
-        "death": "game:creature/wolf/chick-hurt",
-        "idle": "game:creature/wolf/chick-bark"
-    },
+  "sounds": {
+    "hurt": "game:creature/chicken/chick*",
+    "death": "game:creature/chicken/chick*",
+    "idle": "game:creature/chicken/chick*"
+  },
     "idleSoundChance": 0.01
 }

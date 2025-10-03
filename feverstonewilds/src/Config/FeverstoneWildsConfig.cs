@@ -1,8 +1,13 @@
+using System;
+
 namespace FeverstoneWilds.Config
 {
     public class FeverstoneWildsConfig
     {
         // Land Creatures
+        public string confighint = "To disable any creature in this list, simply change any of these values from true to false.";
+        public string configexample = "For example, to remove faunlings, set FSWFaunlingEnabled to 'false'.";
+        public string landheader = "----- Land Creatures -----";
         public bool FSWBisonEnabled = true;
         public bool FSWBisonCalfEnabled = true;
         public bool FSWCockatriceEnabled = true;
@@ -17,12 +22,14 @@ namespace FeverstoneWilds.Config
         public bool FSWGiraffeEnabled = true;
         public bool FSWGolemEnabled = true;
         public bool FSWHorseEnabled = true;
+        public bool FSWHellboarEnabled = true;
         public bool FSWOstrichEnabled = true;
         public bool FSWSpiderEnabled = true;
         public bool FSWScorpionEnabled = true;
         public bool FSWToadEnabled = true;
 
         // Water Creatures
+        public string waterheader = "----- Water Creatures -----";
         public bool FSWBuromenfishEnabled = true;
         public bool FSWDiscusFishEnabled = true;
         public bool FSWEelEnabled = true;
@@ -31,6 +38,7 @@ namespace FeverstoneWilds.Config
         public bool FSWStingrayEnabled = true;
 
         // Golem Types
+        public string eachgolem = "----- Golems by Type -----";
         public bool FSWCopperGolemEnabled = true;
         public bool FSWTinGolemEnabled = true;
         public bool FSWIronGolemEnabled = true;
@@ -47,6 +55,7 @@ namespace FeverstoneWilds.Config
             FSWTameDirewolfEnabled = previousConfig.FSWTameDirewolfEnabled;
             FSWWildDirewolfPupEnabled = previousConfig.FSWWildDirewolfPupEnabled;
             FSWTameDirewolfPupEnabled = previousConfig.FSWTameDirewolfPupEnabled;
+            FSWHellboarEnabled = previousConfig.FSWHellboarEnabled;
             FSWHorseEnabled = previousConfig.FSWHorseEnabled;
             FSWFoalEnabled = previousConfig.FSWFoalEnabled;
             FSWBisonEnabled = previousConfig.FSWBisonEnabled;

@@ -6,7 +6,16 @@
 	"eyeHeight": 0.15,
 	"weight": 0.1,
 	"attributes": {
-		"netCaughtItemCode": "feverstonewilds:creature-ostrich-chick"
+		"netCaughtItemCode": "feverstonewilds:creature-ostrich-chick",
+		"basketCatchable": true,
+		"creatureDiet": {
+			"foodCategories": [ "Grain" ],
+			"foodTags": [ "cabbage", "carrot", "parsnip", "blueberry", "cranberry", "cherry", "whitecurrant", "redcurrant", "blackcurrant", "lychee" ],
+			"skipFoodTags": [ "rice" ]
+		},
+		"handbook": {
+			"groupcode": "feverstonewilds:creaturegroup-fswostrich"
+		}
 	},
 	"client": {
 		"renderer": "Shape",
@@ -96,6 +105,7 @@
 				]
 			},
 			{ "code": "taskai",
+				"aiCreatureType": "LandCreature",
 				"aitasks": [
 					{
 						"code": "fleeentity",

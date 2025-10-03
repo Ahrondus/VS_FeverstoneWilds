@@ -34,7 +34,11 @@
                 "Debug",
                 "${workspaceFolder}/CakeBuild/CakeBuild.csproj"
             ],
-            "problemMatcher": "$msCompile"
+            "problemMatcher": "$msCompile",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
         }
     ]
 }

@@ -1,0 +1,61 @@
+{
+	"code": "egg",
+	"maxstacksize": 32,
+	"variantgroups": [
+		{
+			"code": "source",
+			"states": [ "ostrich", "cockatrice" ]
+		},
+		{
+			"code": "state",
+			"states": [ "raw" ]
+		}
+	],
+	"shapeByType": {
+		"egg-ostrich-raw": { "base": "block/egg/1ostrichegg" },
+		"egg-cockatrice-raw": { "base": "block/egg/1cockatriceegg" }
+	},
+	"creativeinventory": {
+		"general": [ "*" ],
+		"items": [ "*" ]
+	},
+	"attributes": {
+		"nutritionPropsWhenInMeal": {
+			"saturation": 200,
+			"foodcategory": "Protein"
+		}
+	},
+	"nutritionPropsByType": {
+		"*-ostrich-raw": {
+			"saturation": 150,
+			"foodcategory": "Protein"
+		},
+		"*-cockatrice-raw": {
+			"saturation": 100,
+			"foodcategory": "Protein"
+		}
+	},
+	"materialDensity": 200,
+	"guiTransform": {
+		"rotation": { "x": 145, "y": 34, "z": 0 },
+		"origin": { "x": 0.5, "y": 0.15, "z": 0.5 },
+		"scale": 3.48
+	},
+	"tpHandTransform": {
+		"translation": { "x": -1, "y": -0.5, "z": -1 },
+		"rotation": { "x": 0, "y": -62, "z": -92 },
+		"scale": 0.82
+	},
+	"transitionableProps": [
+		{
+			"type": "perish",
+			"freshHours": { "avg": 120 },
+			"transitionHours": { "avg": 24 },
+			"transitionedStack": {
+				"type": "item",
+				"code": "game:rot"
+			},
+			"transitionRatio": 0.5
+		}
+	]
+}

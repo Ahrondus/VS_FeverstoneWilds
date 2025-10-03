@@ -5,6 +5,17 @@
 	"deadHitboxSize": { "x": 0.75, "y": 0.4 },
 	"eyeHeight": 0.4,
 	"drops": [],
+	"attributes": {
+		"creatureDiet": {
+			"foodTags": [ "meat" ]
+		},
+		"handbook": {
+			"groupcode": "feverstonewilds:creaturegroup-fswdirewolf"
+		},
+		"basketCatchable": true,
+		"trapChance": 0.55,
+		"trapDestroyChance": 0.05
+	},
 	"client": {
 		"renderer": "Shape",
 		"shape": { "base": "entity/land/direwolf-pup" },
@@ -16,8 +27,8 @@
 			{ "code": "nametag" },
 			{ "code": "receivecommand",
 				"availableCommands": [
-					{ "commandName": "followmaster", "commandType": "COMPLEX", "minObedience": 0.6 },
-					{ "commandName": "stay", "commandType": "COMPLEX", "minObedience": 0.1 }
+					{ "commandName": "followmaster", "commandType": "COMPLEX", "minObedience": 0.5 },
+					{ "commandName": "stay", "commandType": "COMPLEX", "minObedience": 0.2 }
 				]
 			},
 			{ "code": "tameable",
@@ -87,8 +98,8 @@
 			{ "code": "nametag" },
             { "code": "receivecommand",
                 "availableCommands": [
-					{ "commandName": "followmaster", "commandType": "COMPLEX", "minObedience": 0.6 },
-					{ "commandName": "stay", "commandType": "COMPLEX", "minObedience": 0.1 }
+					{ "commandName": "followmaster", "commandType": "COMPLEX", "minObedience": 0.5 },
+					{ "commandName": "stay", "commandType": "COMPLEX", "minObedience": 0.2 }
 				]
             },
             { "code": "tameable",
@@ -121,6 +132,7 @@
 				"adultEntityCodes": [ "feverstonewilds:direwolf-male", "feverstonewilds:direwolf-female" ] },
 			{ 
 				"code": "taskai",
+				"aiCreatureType": "LandCreature",
 				"aitasks": [
 					{
 						"code": "fleeentity",
@@ -130,7 +142,7 @@
 						"animationSpeed": 4,
 						"seekingRange": 8,
 						"animation": "Run",
-						"sound": "game:creature/direwolf/pup-bark"
+						"sound": "game:creature/wolf/pup-bark"
 					},
 					{
 						"code": "getoutofwater",
@@ -145,7 +157,7 @@
 						"animationSpeed": 0.7,
 						"priority": 2.1,
 						"priorityForCancel": 2.2,
-						"eatItemCategories": [ "Protein" ],
+						"eatItemCategories": [ "meat" ],
 						"eatItemCodes": [ "redmeat-raw", "bushmeat-raw", "poultry-raw" ],
 						"useTime": 1.5,
 						"mincooldownHours": 1,
@@ -197,7 +209,7 @@
 						"maxcooldown": 300000,
 						"animation": "Howl",
 						"animationSpeed": 0.8,
-						"sound": "game:creature/pup/pup-howl"
+						"sound": "game:creature/wolf/pup-howl*"
 					},
 					{
 						"code": "idle",
@@ -208,7 +220,7 @@
 						"mincooldown": 80000,
 						"maxcooldown": 200000,
 						"animation": "Flop",
-						"sound": "game:creature/pup/pup-flop"
+						"sound": "game:creature/wolf/pup-flop"
 					},
 					{
 						"code": "wander", 
@@ -240,9 +252,9 @@
 		]
 	},
 	"sounds": {
-		"hurt": "game:creature/pup/pup-hurt",
-		"death": "game:creature/pup/pup-hurt",
-		"idle": "game:creature/pup/pup-bark"
+		"hurt": "game:creature/wolf/pup-hurt",
+		"death": "game:creature/wolf/pup-hurt",
+		"idle": "game:creature/wolf/pup-bark"
 	},
 	"idleSoundChance": 0.015,
 	"hurtSoundChance": 0.25

@@ -1,6 +1,6 @@
 {
     "code": "tame-direwolf",
-    "class": "EntityMount",
+    "class": "EntityAgent",
     "variantgroups": [
         { "code": "gender", "states": [ "male", "female" ] }
     ],
@@ -29,37 +29,234 @@
     "drops": [],
 	"attributes": {
         "killedByInfoText": "feverstonewilds:deadcreature-tamedirewolf",
-        "riderIdleAnimation": "rideidle",
-        "mountHeight": 0.7,
-        "mountRunningSpeed": 0.09,
-        "mountWalkingSpeed": 0.02,
-        "mountAnimations": {
-            "walk": {
-                "code": "idle",
-                "animation": "idle",
-                "blendMode": "Average",
-                "mulWithWalkSpeed": true,
-                "animationSpeed": 1.1
-            },
-            "sprint": {
-                "code": "idle",
-                "animation": "idle",
-                "blendMode": "Average",
-                "mulWithWalkSpeed": true,
-                "animationSpeed": 3.3
-            },
-            "backward": {
-                "code": "idle",
-                "animation": "idle",
-                "blendMode": "Average",
-                "mulWithWalkSpeed": true,
-                "animationSpeed": 0.6
-            }
-        }
+		"creatureDiet": {
+			"foodTags": [ "meat" ]
+		},
+		"handbook": {
+			"groupcode": "feverstonewilds:creaturegroup-fswdirewolf"
+		}
     },
     "sizeByType": {
         "tame-direwolf-male": 1,
         "tame-direwolf-female": 0.95
+    },
+    "behaviorConfigs": {
+        "controlledphysics": { 
+            "stepHeight": 2.1251,
+            "stepUpSpeed": 0.1
+        },
+        "floatupwhenstuck": { "onlyWhenDead": true },
+        "rideableaccessories": {
+            "wearableSlots": [
+                { "code": "head", "forCategoryCodes": ["bridle"], "attachmentPointCode": "HeadAP" }, 
+                { "code": "face", "forCategoryCodes": ["face"], "attachmentPointCode": "FaceAP" }, 
+                { "code": "middlebackupper", "forCategoryCodes": ["saddle"], "attachmentPointCode": "MidUpperAP" },
+                { "code": "middlebackunder", "forCategoryCodes": ["blanket"], "attachmentPointCode": "MidLowerAP" },
+                { "code": "lowerback", "forCategoryCodes": ["bedroll"], "attachmentPointCode": "RearUpperAP" },
+                { "code": "lowerbackside", "forCategoryCodes": ["sidebags"], "attachmentPointCode": "RearSideAP" },
+                { "code": "frontrightsidedirewolf", "forCategoryCodes": ["utilities"], "attachmentPointCode": "RFrontAP" },
+                { "code": "frontleftsidedirewolf", "forCategoryCodes": ["utilities"], "attachmentPointCode": "LFrontAP" }
+            ]
+        },
+        "selectionboxes": {
+            "selectionBoxes": ["HeadAP", "FaceAP", "MidUpperAP", "MidLowerAP", "RearUpperAP", "RearSideAP", "RFrontAP", "LFrontAP"]
+        },
+        "rideable": {
+            "interactMountAnySeat": false,
+            "seats": [
+                { "apName": "Rider", "selectionBox": "MidUpperAP", "bodyYawLimit": 0.2, "controllable": true,
+                    "mountOffsetByType": {
+                        "*-female":{ "x": 0, "y": -1.1, "z": 0 },
+                        "*-male": { "x": 0, "y": -0.9, "z": 0 }
+                    }
+                }
+            ],
+            "controls": {
+                "idle": {
+                    "animation": "Idle",
+                    "weight": 1,
+                    "riderAnim": {
+                        "animation": "rideelk-idle",
+                        "animationSpeed": 1,
+                        "weight": 1,
+                        "withFpVariant": true,
+                        "blendMode": "Average", 
+                        "elementWeight": {
+                            "LowerTorso": 80,
+                            "UpperTorso": 80,
+                            "UpperFootR": 80,
+                            "UpperFootL": 80,
+                            "LowerFootR": 80,
+                            "LowerFootL": 80
+                        },
+                        "elementBlendMode": {
+                            "LowerTorso": "Average",
+                            "UpperTorso": "Average",
+                            "UpperFootR": "Average",
+                            "UpperFootL": "Average",
+                            "LowerFootR": "Average",
+                            "LowerFootL": "Average"
+                        }
+                    }
+                },
+                "swim": {
+                    "animation": "Swim",
+                    "animationSpeed": 1,
+                    "movespeed": 0.02,
+                    "weight": 10,
+                    "blendMode": "Average",
+                    "riderAnim": {
+                        "animation": "rideelk-walk",
+                        "animationSpeed": 1,
+                        "weight": 1,	
+                        "withFpVariant": true,
+                        "blendMode": "Average", 
+                        "elementWeight": {
+                            "LowerTorso": 80,
+                            "UpperTorso": 80,
+                            "UpperFootR": 80,
+                            "UpperFootL": 80,
+                            "LowerFootR": 80,
+                            "LowerFootL": 80
+                        },
+                        "elementBlendMode": {
+                            "LowerTorso": "Average",
+                            "UpperTorso": "Average",
+                            "UpperFootR": "Average",
+                            "UpperFootL": "Average",
+                            "LowerFootR": "Average",
+                            "LowerFootL": "Average"
+                        }
+                    }
+                },
+                "walk": {
+                    "animation": "Trot",
+                    "animationSpeed": 1.25,
+                    "weight": 10,
+                    "movespeed": 0.019,
+                    "blendMode": "Average",
+                    "riderAnim": {
+                        "animation": "rideelk-walk",
+                        "animationSpeed": 1,
+                        "weight": 1,	
+                        "withFpVariant": true,
+                        "blendMode": "Average", 
+                        "elementWeight": {
+                            "LowerTorso": 80,
+                            "UpperTorso": 80,
+                            "UpperFootR": 80,
+                            "UpperFootL": 80,
+                            "LowerFootR": 80,
+                            "LowerFootL": 80
+                        },
+                        "elementBlendMode": {
+                            "LowerTorso": "Average",
+                            "UpperTorso": "Average",
+                            "UpperFootR": "Average",
+                            "UpperFootL": "Average",
+                            "LowerFootR": "Average",
+                            "LowerFootL": "Average"
+                        }
+                    }
+                },
+                "walkback": {
+                    "animation": "walkback",
+                    "animationSpeed": 2.7,
+                    "weight": 10,
+                    "movespeed": 0.011,
+                    "easeInSpeed": 1,
+                    "easeOutSpeed": 3,
+                    "blendMode": "Average",
+                    "riderAnim": {
+                        "animation": "rideelk-walk",
+                        "animationSpeed": 1,
+                        "weight": 1,
+                        "withFpVariant": true,
+                        "blendMode": "Average", 
+                        "elementWeight": {
+                            "LowerTorso": 80,
+                            "UpperTorso": 80,
+                            "UpperFootR": 80,
+                            "UpperFootL": 80,
+                            "LowerFootR": 80,
+                            "LowerFootL": 80
+                        },
+                        "elementBlendMode": {
+                            "LowerTorso": "Average",
+                            "UpperTorso": "Average",
+                            "UpperFootR": "Average",
+                            "UpperFootL": "Average",
+                            "LowerFootR": "Average",
+                            "LowerFootL": "Average"
+                        }
+                    }
+                },
+                "sprint": {
+                    "animation": "Gallop",
+                    "weight": 10,
+                    "animationSpeed": 2,
+                    "movespeed": 0.10,
+                    "blendMode": "Average",
+                    "riderAnim": {
+                        "animation": "rideelk-run",
+                        "animationSpeed": 1.8,
+                        "weight": 1,
+                        "withFpVariant": true,
+                        "blendMode": "Average", 
+                        "elementWeight": {
+                            "LowerTorso": 80,
+                            "UpperTorso": 80,
+                            "UpperFootR": 80,
+                            "UpperFootL": 80,
+                            "LowerFootR": 80,
+                            "LowerFootL": 80
+                        },
+                        "elementBlendMode": {
+                            "LowerTorso": "Average",
+                            "UpperTorso": "Average",
+                            "UpperFootR": "Average",
+                            "UpperFootL": "Average",
+                            "LowerFootR": "Average",
+                            "LowerFootL": "Average"
+                        }
+                    }
+                },
+                "jump": {
+                    "animation": "jump",
+                    "weight": 50,
+                    "easeOutSpeed": 5,
+                    "blendMode": "Average",
+                    "animationSpeed": 1.75,
+                    "movespeed": 0.08,
+                    "riderAnim": {
+                        "animation": "rideelk-jump",
+                        "animationSpeed": 1,
+                        "weight": 10,
+                        "withFpVariant": true,
+                        "blendMode": "Average", 
+                        "elementWeight": {
+                            "LowerTorso": 160,
+                            "UpperTorso": 160,
+                            "UpperFootR": 160,
+                            "UpperFootL": 160,
+                            "LowerFootR": 160,
+                            "LowerFootL": 160
+                        },
+                        "elementBlendMode": {
+                            "LowerTorso": "Average",
+                            "UpperTorso": "Average",
+                            "UpperFootR": "Average",
+                            "UpperFootL": "Average",
+                            "LowerFootR": "Average",
+                            "LowerFootL": "Average"
+                        }
+                    }
+                }
+            }
+        },
+        "ownable": {
+            "groupCode": "mountableanimal"
+        }
     },
     "client": {
         "renderer": "Shape",
@@ -71,6 +268,10 @@
                 { "base": "entity/land/direwolf/direwolf6" }, { "base": "entity/land/direwolf/direwolf7" }
             ]
         },
+            "sizeByType": {
+        "tame-direwolf-male": 1,
+        "tame-direwolf-female": 0.95
+    },
         "behaviors": [
                 { "code": "nametag", "showtagonlywhentargeted": true },
                 { "code": "multiply", "enabledByType": { "*-male": false, "*-female": true } },
@@ -87,15 +288,6 @@
                         { "commandName": "PASSIVE", "commandType": "AGGRESSIONLEVEL", "minObedience": 0.8 }
                     ]
                 },
-                { "code": "tameable", "size": "medium",
-                    "treat": [
-                        { "code": "bone", "progress": 0.1, "cooldown": 1 },
-                        { "code": "bushmeat-raw", "progress": 0.15, "cooldown": 2 },
-                        { "code": "redmeat-raw", "progress": 0.3, "cooldown": 3 },
-                        { "code": "poultry-raw", "progress": 0.3, "cooldown": 3 },
-                        { "code": "petcookie-meat-perfect", "domain": "petai", "progress": 0.8, "cooldown": 3 }
-                    ]
-                },
                 { "code": "mouthinventory",
                     "acceptStacks": [
                         { "type": "item", "code": "bone" },
@@ -107,9 +299,13 @@
                     ]
                 },
                 { "code": "repulseagents" },
-                { "code": "controlledphysics", "stepHeight": 1.1251 },
+                { "code": "controlledphysics" },
                 { "code": "floatupwhenstuck", "onlyWhenDead": true },
-                { "code": "interpolatemount" },
+                { "code": "interpolateposition" },
+                { "code": "ownable" },
+                { "code": "selectionboxes" },
+                { "code": "rideableaccessories" },
+                { "code": "mortallywoundable" },
                 { "code": "harvestable" },
                 { "code": "ropetieable", "minGeneration": 2 }
             ],
@@ -262,6 +458,7 @@
             },
             {
                 "code": "taskai",
+                "aiCreatureType": "LandCreature",
                 "aitasks": [
                     {
                         "code": "petmeleeattack",
@@ -335,7 +532,7 @@
                         "animation": "Howl",
                         "animationSpeed": 0.5,
                         "command": "speak",
-                        "sound": "game:creature/wolf/howl"
+                        "sound": "game:creature/wolf/howl*"
                     },
                     {
                         "code": "followmaster",
@@ -436,7 +633,7 @@
                         "maxcooldown": 500000,
                         "animation": "Howl",
                         "animationSpeed": 0.5,
-                        "sound": "game:creature/wolf/howl",
+                        "sound": "game:creature/wolf/howl*",
                         "soundRange": 110
                     },
                     {
@@ -460,24 +657,11 @@
                         "preferredLightLevel": 20
                     },
                     {
-                        "code": "beamount",
-                        "priority": 8,
-                        "priorityForCancel": 8,
-                        "movespeed": 0.045,
-                        "animationSpeed": 2.2,
-                        "maxDistance": 8,
-                        "searchRange": 40,
-                        "animation": "idle"
-                    },
-                    {
                         "code": "useinventory",
                         "animation": "eat",
                         "animationSpeed": 0.75,
                         "priority": 1.6,
                         "priorityForCancel": 1.7,
-                        "eatItemCategories": [
-                            "Protein"
-                        ],
                         "eatItemCodes": [
                             "bone",
                             "bushmeat-raw",
@@ -489,6 +673,18 @@
                         "mincooldownHours": 1,
                         "maxcooldownHours": 1.5
                     },
+					{
+						"code": "seekfoodandeat",
+						"movespeed": 0.004,
+						"priority": 1.4,
+						"animationSpeed": 1.25,
+						"animation": "Walk",
+						"eatAnimation": "Eat",
+						"eatSound": "game:creature/animal-eat-small",
+						"eatTime": 1.75,
+						"mincooldownHours": 1,
+						"maxcooldownHours": 4
+					},
                     {
                         "code": "idle",
                         "priority": 0.9,
@@ -514,7 +710,7 @@
     "sounds": {
         "hurt": "game:creature/wolf/hurt",
         "death": "game:creature/wolf/hurt",
-        "idle": "game:creature/wolf/howl"
+        "idle": "game:creature/wolf/howl*"
     },
     "idleSoundChance": 0.01
 }
