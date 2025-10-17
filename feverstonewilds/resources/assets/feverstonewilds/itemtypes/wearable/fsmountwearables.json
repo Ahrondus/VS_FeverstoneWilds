@@ -22,9 +22,9 @@
 	"attributes": {
 		"attachableToEntity": {
 			"categoryCodeByType": {
-				"*-head-bridle": "bridle",
-				"*-middlebackupper-saddle": "saddle",
-				"*-lowerbackside-saddlebags": "sidebags"
+				"*-head-bridle": "bridle-{breed}",
+				"*-middlebackupper-saddle": "saddle-{breed}",
+				"*-lowerbackside-saddlebags": "sidebags-{breed}"
 			},
 			"attachedShapeByType": {
 				"*-head-bridle": { "base": "item/equipment/head/bridle-{breed}" },
@@ -47,9 +47,9 @@
 			"*-shire-lowerbackside-saddlebags": { "quantitySlots": 18 },
 			"*-quarter-lowerbackside-saddlebags": { "quantitySlots": 14 },
 			"*-donkey-lowerbackside-saddlebags": { "quantitySlots": 20 },
-			"*-bison-lowerbackside-saddlebags": { "quantitySlots": 36 },
-			"*-direwolf-lowerbackside-saddlebags": { "quantitySlots": 14 },
-			"*-ostrich-lowerbackside-saddlebags": { "quantitySlots": 12 }
+			"*-bison-lowerbackside-saddlebags": { "quantitySlots": 32 },
+			"*-direwolf-lowerbackside-saddlebags": { "quantitySlots": 12 },
+			"*-ostrich-lowerbackside-saddlebags": { "quantitySlots": 10 }
 		},
 		"interactPassthroughByType": {
 			"*-saddle": true
