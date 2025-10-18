@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using Vintagestory.API.Client;
@@ -27,32 +28,36 @@ namespace FeverstoneWilds
      * HenBox tracks the parent entity and the generation of each egg separately => in future could have 1 duck egg in a henbox for example, so that 1 duckling hatches and 2 hen chicks
      */
 
-    public class BlockEntityAnimalNestLarge : BlockEntity, IAnimalNest
+    public class BlockEntityAnimalNestLarge : BlockEntityDisplay, IAnimalNest
     {
-        // internal InventoryGeneric inventory;
-        string fullCode = "1egg";
-
-        public Size2i AtlasSize => (Api as ICoreClientAPI).BlockTextureAtlas.Size;
+        internal InventoryGeneric inventory;
+        public override InventoryBase Inventory => inventory;
+        public string inventoryClassName = "nestbox";
+        public override string InventoryClassName => inventoryClassName;
 
         public Vec3d Position => Pos.ToVec3d().Add(0.5, 0.5, 0.5);
         public string Type => "nest";
 
         public Entity occupier;
 
-        private int[] parentGenerations = new int[10];
-        private AssetLocation[] chickNames = new AssetLocation[10];
-        private double timeToIncubate;
-        private double occupiedTimeLast;
+        protected double timeToIncubate;
+        protected double occupiedTimeLast;
+        protected bool IsOccupiedClientside = false;
+
+        protected int Capacity
+        {
+            get => Block.Attributes?["quantitySlots"]?.AsInt(1) ?? 1;
+        }
 
 
         public BlockEntityAnimalNestLarge()
         {
+            container = new ConstantPerishRateContainer(() => Inventory, "inventory");
         }
 
-
-        public bool IsSuitableFor(Entity entity)
+        public virtual bool IsSuitableFor(Entity entity, string[] nestTypes)
         {
-            return entity is EntityAgent && ( entity.Code.Path == "ostrich-female" || entity.Code.Path == "tame-ostrich-female" || entity.Code.Path == "tame-cockatrice-female" );
+            return nestTypes?.Contains(((BlockHenbox)Block).NestType) == true;
         }
 
         public bool Occupied(Entity entity)
@@ -62,61 +67,49 @@ namespace FeverstoneWilds
 
         public void SetOccupier(Entity entity)
         {
+            if (occupier == entity)
+            {
+                return;
+            }
             occupier = entity;
+            MarkDirty();
         }
 
         public float DistanceWeighting => 2 / (CountEggs() + 2);
 
 
-        public bool TryAddEgg(Entity entity, string chickCode, double incubationTime)
+        public virtual bool TryAddEgg(ItemStack egg)
         {
-            if (Block.LastCodePart() == fullCode)
+            for (int i = 0; i < inventory.Count; ++i)
             {
-                if (timeToIncubate == 0)
+                if (inventory[i].Empty)
                 {
-                    timeToIncubate = incubationTime;
-                    occupiedTimeLast = entity.World.Calendar.TotalDays;
+                    inventory[i].Itemstack = egg;
+                    inventory.DidModifyItemSlot(inventory[i]);
+                    double? incubationDays = (egg.Attributes["chick"] as TreeAttribute)?.GetDouble("incubationDays");
+                    if (incubationDays != null) timeToIncubate = Math.Max(timeToIncubate, (double)incubationDays);
+                    occupiedTimeLast = Api.World.Calendar.TotalDays;
+                    MarkDirty();
+                    return true;
                 }
-                this.MarkDirty();
-                return false;
             }
-
-            timeToIncubate = 0;
-            int eggs = CountEggs();
-            parentGenerations[eggs] = entity.WatchedAttributes.GetInt("generation", 0);
-            chickNames[eggs] = chickCode == null ? null : entity.Code.CopyWithPath(chickCode);
-            eggs++;
-            if (entity.Code.SecondCodePart() == "cockatrice") {
-                Block replacementBlock = Api.World.GetBlock(new AssetLocation("feverstonewilds:" + Block.FirstCodePart() + "-cockatrice-" + eggs + (eggs > 1 ? "eggs" : "egg")));
-                if (replacementBlock == null)
-                {
-                    return false;
-                }
-                Api.World.BlockAccessor.ExchangeBlock(replacementBlock.Id, this.Pos);
-                this.Block = replacementBlock;
-                this.MarkDirty(true);
-                }
-            else {
-                Block replacementBlock = Api.World.GetBlock(new AssetLocation("feverstonewilds:" + Block.FirstCodePart() + "-ostrich-" + eggs + (eggs > 1 ? "eggs" : "egg")));
-                if (replacementBlock == null)
-                {
-                    return false;
-                }
-                Api.World.BlockAccessor.ExchangeBlock(replacementBlock.Id, this.Pos);
-                this.Block = replacementBlock;
-                this.MarkDirty(true);
-            }
-
-            return true;
+            return false;
         }
 
-        private int CountEggs()
+        public int CountEggs()
         {
-            int eggs = Block.LastCodePart()[0];
-            return eggs <= '9' && eggs >= '0' ? eggs - '0' : 0;
+            int count = 0;
+            for (int i = 0; i < inventory.Count; ++i)
+            {
+                if (!inventory[i].Empty)
+                {
+                    ++count;
+                }
+            }
+            return count;
         }
 
-        private void On1500msTick(float dt)
+        protected void On1500msTick(float dt)
         {
             if (timeToIncubate == 0) return;
 
@@ -134,16 +127,17 @@ namespace FeverstoneWilds
             if (timeToIncubate <= 0)
             {
                 timeToIncubate = 0;
-                int eggs = CountEggs();
                 Random rand = Api.World.Rand;
 
-                for (int c = 0; c < eggs; c++)
+                for (int i = 0; i < inventory.Count; ++i)
                 {
-                    AssetLocation chickName = chickNames[c];
-                    if (chickName == null) continue;
-                    int generation = parentGenerations[c];
+                    TreeAttribute chickData = (TreeAttribute)inventory[i].Itemstack?.Attributes["chick"];
+                    if (chickData != null) continue;
 
-                    EntityProperties childType = Api.World.GetEntityType(chickName);
+                    string chickCode = chickData.GetString("code");
+                    if (chickCode != null || chickCode == "") continue;
+
+                    EntityProperties childType = Api.World.GetEntityType(chickCode);
                     if (childType == null) continue;
                     Entity childEntity = Api.World.ClassRegistry.CreateEntity(childType);
                     if (childEntity == null) continue;
@@ -154,38 +148,92 @@ namespace FeverstoneWilds
 
                     childEntity.Pos.SetFrom(childEntity.ServerPos);
                     childEntity.Attributes.SetString("origin", "reproduction");
-                    childEntity.WatchedAttributes.SetInt("generation", generation + 1);
+                    childEntity.WatchedAttributes.SetInt("generation", chickData.GetInt("generation", 0));
+                    EntityAgent eagent = childEntity as EntityAgent;
+                    if (eagent != null) eagent.HerdId = chickData.GetLong("herdID", 0);
                     Api.World.SpawnEntity(childEntity);
-                }
 
-                Block replacementBlock = Api.World.GetBlock(new AssetLocation("feverstonewilds:" + Block.FirstCodePart() + "-empty"));
-                Api.World.BlockAccessor.ExchangeBlock(replacementBlock.Id, this.Pos);
-                this.Api.World.SpawnCubeParticles(Pos.ToVec3d().Add(0.5, 0.5, 0.5), new ItemStack(this.Block), 1, 20, 1, null);
-                this.Block = replacementBlock;
+                    inventory[i].Itemstack = null;
+                    inventory.DidModifyItemSlot(inventory[i]);
+                }
             }
         }
 
 
         public override void Initialize(ICoreAPI api)
         {
+            inventoryClassName = Block.Attributes?["inventoryClassName"]?.AsString() ?? inventoryClassName;
+            int capacity = Capacity;
+            if (inventory == null)
+            {
+                CreateInventory(capacity, api);
+            }
+            else if (capacity != inventory.Count)
+            {
+                api.Logger.Warning("Nest " + Block.Code + " loaded with " + inventory.Count + " capacity when it should be " + capacity + ".");
+                InventoryGeneric oldInv = inventory;
+                CreateInventory(capacity, api);
+                int from = 0;
+                for (int to = 0; to < capacity; ++to)
+                {
+                    for (; from < oldInv.Count && oldInv[from].Empty; ++from) ;
+                    if (from < oldInv.Count)
+                    {
+                        inventory[to].Itemstack = oldInv[from].Itemstack;
+                        inventory.DidModifyItemSlot(inventory[to]);
+                        ++from;
+                    }
+                }
+            }
             base.Initialize(api);
-
-            fullCode = this.Block.Attributes?["fullVariant"]?.AsString(null);
-            if (fullCode == null) fullCode = "1egg";
 
             if (api.Side == EnumAppSide.Server)
             {
+                // Update from old save format to new one
+                int eggsWithBlock = -1;
+                if (Block.Code.Path.EndsWith("empty"))
+                {
+                    eggsWithBlock = 0;
+                }
+                else if (Block.Code.Path.EndsWith("1egg"))
+                {
+                    eggsWithBlock = 1;
+                }
+                else if (Block.Code.Path.EndsWith("eggs"))
+                {
+                    int eggs = Block.LastCodePart()[0];
+                    eggsWithBlock = eggs <= '9' && eggs >= '0' ? eggs - '0' : 0;
+                }
+                if (eggsWithBlock >= 0)
+                {
+                    Block emptyNest = api.World.GetBlock(new AssetLocation(Block.FirstCodePart()));
+                    api.World.BlockAccessor.ExchangeBlock(emptyNest.Id, this.Pos);
+                    MarkDirty();
+                }
+                for (int i = 0; i < eggsWithBlock; ++i)
+                {
+                    inventory[i].Itemstack ??= new ItemStack(api.World.GetItem("egg-chicken-raw"));
+                    inventory.DidModifyItemSlot(inventory[i]);
+                }
+
+
+                IsOccupiedClientside = false;
                 api.ModLoader.GetModSystem<POIRegistry>().AddPOI(this);
                 RegisterGameTickListener(On1500msTick, 1500);
             }
         }
 
-
-        public override void OnBlockPlaced(ItemStack byItemStack = null)
+        protected void CreateInventory(int capacity, ICoreAPI api)
         {
-            base.OnBlockPlaced(byItemStack);
+            inventory = new InventoryGeneric(capacity, InventoryClassName, Pos?.ToString(), api);
+            inventory.Pos = this.Pos;
+            inventory.SlotModified += OnSlotModified;
         }
-
+        
+        protected virtual void OnSlotModified(int slot)
+        {
+            MarkDirty();
+        }
 
         public override void OnBlockRemoved()
         {
@@ -213,34 +261,137 @@ namespace FeverstoneWilds
             base.ToTreeAttributes(tree);
             tree.SetDouble("inc", timeToIncubate);
             tree.SetDouble("occ", occupiedTimeLast);
-            for (int i = 0; i < 10; i++)
-            {
-                tree.SetInt("gen" + i, parentGenerations[i]);
-                AssetLocation chickName = chickNames[i];
-                if (chickName != null) tree.SetString("chick" + i, chickName.ToShortString());
-            }
+            tree.SetBool("isOccupied", occupier != null && occupier.Alive);
         }
 
 
         public override void FromTreeAttributes(ITreeAttribute tree, IWorldAccessor worldForResolving)
         {
+            TreeAttribute invTree = (TreeAttribute)tree["inventory"];
+            if (inventory == null)
+            {
+                int capacity = invTree?.GetInt("qslots") ?? Capacity;
+                CreateInventory(capacity, worldForResolving.Api);
+            }
             base.FromTreeAttributes(tree, worldForResolving);
+
             timeToIncubate = tree.GetDouble("inc");
             occupiedTimeLast = tree.GetDouble("occ");
             for (int i = 0; i < 10; i++)
             {
-                parentGenerations[i] = tree.GetInt("gen" + i);
-                string chickName = tree.GetString("chick" + i);
-                chickNames[i] = chickName == null ? null : new AssetLocation(chickName);
+                string chickCode = tree.GetString("chick" + i);
+                if (chickCode != null)
+                {
+                    int generation = tree.GetInt("gen" + i);
+                    inventory[i].Itemstack = new ItemStack(worldForResolving.GetItem("egg-chicken-raw"));
+                    TreeAttribute chickTree = new TreeAttribute();
+                    chickTree.SetString("code", chickCode);
+                    chickTree.SetInt("generation", generation);
+                    inventory[i].Itemstack.Attributes["chick"] = chickTree;
+                    inventory.DidModifyItemSlot(inventory[i]);
+                }
             }
+            IsOccupiedClientside = tree.GetBool("isOccupied");
+            RedrawAfterReceivingTreeAttributes(worldForResolving);
         }
 
+        public virtual bool CanPlayerPlaceItem(ItemStack itemstack)
+        {
+            // Included for moddability, testibility, and because another comment indicates that letting players move eggs around is a desired future feature.
+            // Note that if players are given the ability to place eggs inside, the perish rate should be made non-zero with accompanying adjustments.
+            return false;
+        }
+        
+        public bool OnInteract(IWorldAccessor world, IPlayer byPlayer, BlockSelection blockSel) 
+        {
+            if (!world.Claims.TryAccess(byPlayer, blockSel.Position, EnumBlockAccessFlags.Use))
+            {
+                return false;
+            }
+
+            ItemSlot slot = byPlayer.InventoryManager.ActiveHotbarSlot;
+            if (CanPlayerPlaceItem(slot.Itemstack))
+            {
+                // Place egg in nest
+                for (int i = 0; i < inventory.Count; ++i)
+                {
+                    if (inventory[i].Empty)
+                    {
+                        AssetLocation sound = slot.Itemstack?.Block?.Sounds?.Place;
+                        AssetLocation itemPlaced = slot.Itemstack?.Collectible?.Code;
+                        ItemStackMoveOperation op = new ItemStackMoveOperation(Api.World, EnumMouseButton.Left, 0, EnumMergePriority.AutoMerge, 1);
+                        if (slot.TryPutInto(inventory[i], ref op) > 0)
+                        {
+                            Api.Logger.Audit(byPlayer.PlayerName + " put 1x" + itemPlaced + " into " + Block.Code + " at " + Pos);
+                            Api.World.PlaySoundAt(sound != null ? sound : new AssetLocation("sounds/player/build"), byPlayer.Entity, byPlayer, true, 16);
+                            return true;
+                        }
+                    }
+                }
+                return false;
+            }
+
+            // Try to take all eggs from nest
+            bool anyEggs = false;
+            for (int i = 0; i < inventory.Count; ++i)
+            {
+                if (!inventory[i].Empty)
+                {
+                    string audit = inventory[i].Itemstack.Collectible?.Code;
+                    int quantity = inventory[i].Itemstack.StackSize;
+
+                    bool gave = byPlayer.InventoryManager.TryGiveItemstack(inventory[i].Itemstack);
+                    int taken = quantity - (inventory[i].Itemstack?.StackSize ?? 0);
+                    if (gave)
+                    {
+                        if (inventory[i].Itemstack != null && quantity == inventory[i].Itemstack.StackSize)
+                        {
+                            ItemStack stack = inventory[i].TakeOutWhole();
+                            taken = quantity;
+                        }
+
+                        anyEggs = true;
+                        world.Api.Logger.Audit(byPlayer.PlayerName + " took " + taken + "x " + audit + " from " + Block.Code + " at " + Pos);
+                        inventory.DidModifyItemSlot(inventory[i]);
+                    }
+                    if (inventory[i].Itemstack != null && inventory[i].Itemstack.StackSize == 0)
+                    {
+                        // This can happen even if TryGiveItemstack returned false, if the player is in creative mode
+                        if (!gave)
+                        {
+                            world.Api.Logger.Audit(byPlayer.PlayerName + " voided " + taken + "x " + audit + " from " + Block.Code + " at " + Pos);
+                        }
+                        // Otherwise eggs with stack size 0 will still be displayed and still occupy a slot
+                        inventory[i].Itemstack = null;
+                        inventory.DidModifyItemSlot(inventory[i]);
+                    }
+                    // If it doesn't fit, leave it in the nest
+                }
+            }
+            if (anyEggs)
+            {
+                world.PlaySoundAt(new AssetLocation("sounds/player/collect"), blockSel.Position.X, blockSel.Position.Y, blockSel.Position.Z, byPlayer);
+            }
+            return anyEggs;
+        }
 
         public override void GetBlockInfo(IPlayer forPlayer, StringBuilder dsc)
-        {        
-            int eggCount = CountEggs();
+        {
+            int eggCount = 0;
             int fertileCount = 0;
-            for (int i = 0; i < eggCount; i++) if (chickNames[i] != null) fertileCount++;
+            for (int i = 0; i < inventory.Count; ++i)
+            {
+                if (!inventory[i].Empty)
+                {
+                    ++eggCount;
+                    TreeAttribute chickData = (TreeAttribute)inventory[i].Itemstack.Attributes["chick"];
+                    if (chickData?.GetString("code") != null)
+                    {
+                        ++fertileCount;
+                    }
+                }
+            }
+
             if (fertileCount > 0)
             {
                 if (fertileCount > 1)
@@ -255,15 +406,49 @@ namespace FeverstoneWilds
                 else if (timeToIncubate > 0)
                     dsc.AppendLine(Lang.Get("Incubation time remaining: {0:0} hours", timeToIncubate * 24));
 
-                if (occupier == null && Block.LastCodePart() == "5eggs" && (this.Block.FirstCodePart(1) == "cockatrice"))
+                if (!IsOccupiedClientside && Block.LastCodePart() == "5eggs" && (this.Block.FirstCodePart(1) == "cockatrice"))
                     dsc.AppendLine(Lang.Get("A broody Cockatrice is needed!"));
-                if (occupier == null && Block.LastCodePart() == "6eggs" && ((this.Block.FirstCodePart() == "ostrich") || (this.Block.FirstCodePart(1) == "ostrich")))
+                if (!IsOccupiedClientside && Block.LastCodePart() == "6eggs" && ((this.Block.FirstCodePart() == "ostrich") || (this.Block.FirstCodePart(1) == "ostrich")))
                     dsc.AppendLine(Lang.Get("A broody Ostrich is needed!"));
             }
             else if (eggCount > 0)
             {
                 dsc.AppendLine(Lang.Get("No eggs are fertilized"));
             }
+        }
+        
+        protected override float[][] genTransformationMatrices()
+        {
+            ModelTransform[] transforms = Block.Attributes?["displayTransforms"]?.AsArray<ModelTransform>();
+            if (transforms == null)
+            {
+                capi.Logger.Warning("No display transforms found for " + Block.Code + ", placed items may be invisible or in the wrong location.");
+                transforms = new ModelTransform[DisplayedItems];
+                for (int i = 0; i < transforms.Length; ++i)
+                {
+                    transforms[i] = new ModelTransform();
+                }
+            }
+            if (transforms.Length != DisplayedItems)
+            {
+                capi.Logger.Warning("Display transforms for " + Block.Code + " block entity do not match number of displayed items, later placed items may be invisible or in the wrong location. Items: " + DisplayedItems + ", transforms: " + transforms.Length);
+            }
+
+            float[][] tfMatrices = new float[transforms.Length][];
+            for (int i = 0; i < transforms.Length; ++i)
+            {
+                FastVec3f off = transforms[i].Translation;
+                FastVec3f rot = transforms[i].Rotation;
+                tfMatrices[i] = new Matrixf()
+                    .Translate(off.X, off.Y, off.Z)
+                    .Translate(0.5f, 0, 0.5f)
+                    .RotateX(rot.X * GameMath.DEG2RAD)
+                    .RotateY(rot.Y * GameMath.DEG2RAD)
+                    .RotateZ(rot.Z * GameMath.DEG2RAD)
+                    .Translate(-0.5f, 0, -0.5f)
+                    .Values;
+            }
+            return tfMatrices;
         }
     }
 }

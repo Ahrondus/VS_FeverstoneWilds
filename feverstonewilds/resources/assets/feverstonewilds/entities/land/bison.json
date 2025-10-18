@@ -1,16 +1,17 @@
 {
 	"code": "bison",
 	"class": "EntityAgent",
-	"variantgroups": [ 
+	"variantgroups": [
+		{ "code": "tame", "states": [ "wild", "tamed" ] },
 		{ "code": "gender", "states": [ "male", "female" ] } 
 	],
 	"collisionBoxSizeByType": {
-        "bison-male": { "x": 2.15, "y": 2.4 },
-        "bison-female": { "x":2.10, "y": 2.3 }
+        "bison-*-male": { "x": 2.15, "y": 2.4 },
+        "bison-*-female": { "x":2.10, "y": 2.3 }
     },
     "deadCollisionBoxSizeByType": {
-        "bison-male": { "x": 1.9, "y": 0.8 },
-        "bison-female": { "x": 1.9, "y": 0.8 }
+        "bison-*-male": { "x": 1.9, "y": 0.8 },
+        "bison-*-female": { "x": 1.9, "y": 0.8 }
     },
     "selectionBoxSizeByType": {
         "*-male": { "x": 2.2, "y": 2.2 },
@@ -25,12 +26,15 @@
         "*-female": 0.25
     },
 	"eyeHeight": 1.4,
-	"weight": 150,
+	"weight": 350,
 	"drops": [],
 	"fallDamage": false,
     "attributes": {
+        "tamedByType": {
+            "*-tamed-*": true,
+            "*": false
+        },
         "killedbyInfoText": "feverstonewilds:deadcreature-bisongored",
-        "riderIdleAnimation": "rideidle",
 		"creatureDiet": {
 			"foodCategories": [ "Grain" ],
 			"foodTags": [ "grass", "tamingfeedbundle", "carrot", "cabbage", "turnip", "peach", "pear", "mango" ],
@@ -50,6 +54,7 @@
             "wearableSlots": [
                     { "code": "head", "forCategoryCodes": ["bridle-bison"], "attachmentPointCode": "HeadAP" }, 
                     { "code": "face", "forCategoryCodes": ["face"], "attachmentPointCode": "FaceAP" }, 
+					{ "code": "neck", "forCategoryCodes": ["lantern"], "attachmentPointCode": "NeckAP" },
                     { "code": "middlebackupper", "forCategoryCodes": ["saddle-bison"], "attachmentPointCode": "MidUpperAP" },
                     { "code": "lowerback", "forCategoryCodes": ["bedroll", "pillion"], "attachmentPointCode": "RearUpperAP" },
                     { "code": "lowerbackside", "forCategoryCodes": ["sidebags-bison"], "attachmentPointCode": "RearSideAP" },
@@ -69,7 +74,7 @@
                 ]
         },
         "selectionboxes": {
-                "selectionBoxes": ["HeadAP", "FaceAP", "MidUpperAP", "RearUpperAP",
+                "selectionBoxes": ["HeadAP", "FaceAP", "NeckAP", "MidUpperAP", "RearUpperAP",
                                     "RearSideAP", "RFrontAP", "LFrontAP", "TempGear1AP", "TempGear2AP", "TempGear3AP"]
         },
         "gait": {
@@ -143,14 +148,8 @@
             "seats": [
                 { "apName": "Rider", "selectionBox": "MidUpperAP", "bodyYawLimit": 0.2, "controllable": true,
                     "mountOffsetByType": {
-                        "*-female-shire": { "x": 0, "y": -0.75, "z": 0 },
-                        "*-male-shire": { "x": 0, "y": -0.7, "z": 0 },
-
-                        "*-female-quarter": { "x": 0, "y": -0.65, "z": 0 },
-                        "*-male-quarter": { "x": 0, "y": -0.6, "z": 0 },
-
-                        "*-female-donkey": { "x": 0, "y": -0.85, "z": 0 },
-                        "*-male-donkey": { "x": 0, "y": -0.80, "z": 0 }
+                        "*-female": { "x": -0.25, "y": -0.15, "z": -0.05 },
+                        "*-male": { "x": -0.25, "y": -0.1, "z": -0.05 }
                     }
                 }
             ],
@@ -184,13 +183,10 @@
                     }
                 },
                 "walk": {
-                    "animation": "Trot",
-                    "animationSpeedByType": {
-                        "*-shire": 1.25,
-                        "*-quarter": 1.6
-                    },
+                    "animation": "Walk",
+                    "animationSpeed": 1.25,
                     "weight": 10,
-                    "movespeed": 0.019,
+                    "movespeed": 0.013,
                     "blendMode": "Average",
                     "riderAnim": {
                         "animation": "rideelk-walk",
@@ -218,7 +214,7 @@
                 },
                 "walkback": {
                     "animation": "walkback",
-                    "animationSpeed": 1.4,
+                    "animationSpeed": 1.2,
                     "weight": 10,
                     "movespeed": 0.011,
                     "easeInSpeed": 1,
@@ -392,38 +388,21 @@
 									{ "base": "entity/land/bison/bisonskin6" } ] }
 		},
 		"behaviors": [
-			{ "code": "nametag", "showtagonlywhentargeted": true },
+			{ "code": "gait" },
+			{ "code": "rideable",
+				"enabledByType": { "*-tamed-*": true, "*": false } },
 			{ "code": "repulseagents" }, 
-			{ "code": "controlledphysics", "stepHeight": 1.1251 }, 
-			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
-			{ "code": "interpolatemount" },
+			{ "code": "controlledphysics" }, 
+			{ "code": "floatupwhenstuck" },
+			{ "code": "interpolateposition" },
+			{ "code": "ownable" },
+			{ "code": "selectionboxes" },
+			{ "code": "rideableaccessories" },
 			{ "code": "multiply", "enabledByType": { "*-female": true, "*-male": false } },
 			{ "code": "harvestable" },
 			{ "code": "milkable", "enabledByType": { "*-female": true, "*-male": false }  },
 			{ "code": "despawn", "minPlayerDistance": 8, "belowLightLevel": 8, "minSeconds": 300 },
 			{ "code": "ropetieable", "minGeneration": 2 },
-			{ "code": "receivecommand",
-				"availableCommands": [
-					{ "commandName": "followmaster", "commandType": "COMPLEX", "minObedience": 0.4 },
-					{ "commandName": "stay", "commandType": "COMPLEX", "minObedience": 0.2 }
-				]
-			},
-			{ "code": "tameable",
-				"treat": [
-					{ "code": "vegetable-carrot", "progress": 0.10, "cooldown": 0.2 },
-					{ "code": "vegetable-cabbage", "progress": 0.03, "cooldown": 0.4 },
-					{ "code": "vegetable-turnip", "progress": 0.04, "cooldown": 0.3 },
-					{ "code": "carrotbundle", "progress": 0.15, "cooldown": 0.25 },
-					{ "code": "drygrassbundle", "progress": 0.075, "cooldown": 0.55 },
-					{ "code": "drygrass", "progress": 0.025, "cooldown": 0.25 },
-					{ "code": "fruit-peach", "progress": 0.169, "cooldown": 0.55 },
-					{ "code": "fruit-pear", "progress": 0.169, "cooldown": 0.55 },
-					{ "code": "fruit-mango", "progress": 0.169, "cooldown": 0.55 },
-					{ "code": "grain-flax", "progress": 0.075, "cooldown": 0.45 },
-					{ "code": "grain-rye", "progress": 0.075, "cooldown": 0.45 },
-					{ "code": "grain-spelt", "progress": 0.075, "cooldown": 0.45 }
-				]
-			},
 			{ "code": "mouthinventory",
 				"acceptStacks": [
 					{ "type": "item", "code": "vegetable-carrot" },
@@ -504,7 +483,9 @@
 			}
 		},
 		"behaviors": [
-            { "code": "nametag", "showtagonlywhentargeted": true },
+			{ "code": "gait" },
+			{ "code": "rideable",
+				"enabledByType": { "*-tamed-*": true, "*": false } },
 			{ "code": "repulseagents" }, 
 			{ "code": "controlledphysics" },
 			{ "code": "despawn", "minPlayerDistance": 8, "belowLightLevel": 8, "minSeconds": 300 },
@@ -547,45 +528,22 @@
 				"multiplyCooldownDaysMax": 11,
 				"portionsEatenForMultiply": 10
 			},
-			{ "code": "tameable",
-				"disobediencePerDay": 0.075,
-                    "treat": [
-                        { "code": "vegetable-carrot", "progress": 0.10, "cooldown": 0.2 },
-                        { "code": "vegetable-cabbage", "progress": 0.03, "cooldown": 0.4 },
-                        { "code": "vegetable-turnip", "progress": 0.04, "cooldown": 0.3 },
-                        { "code": "carrotbundle", "progress": 0.25, "cooldown": 0.25 },
-                        { "code": "drygrassbundle", "progress": 0.075, "cooldown": 0.55 },
-                        { "code": "drygrass", "progress": 0.025, "cooldown": 0.25 },
-                        { "code": "fruit-peach", "progress": 0.169, "cooldown": 0.55 },
-                        { "code": "fruit-pear", "progress": 0.169, "cooldown": 0.55 },
-                        { "code": "fruit-mango", "progress": 0.169, "cooldown": 0.55 },
-                        { "code": "grain-flax", "progress": 0.075, "cooldown": 0.45 },
-                        { "code": "grain-rye", "progress": 0.075, "cooldown": 0.45 },
-                        { "code": "grain-spelt", "progress": 0.075, "cooldown": 0.45 }
-                    ]
-                },
-                { "code": "mouthinventory",
-                    "acceptStacks": [
-                        { "type": "item", "code": "vegetable-carrot" },
-                        { "type": "item", "code": "vegetable-cabbage" },
-                        { "type": "item", "code": "vegetable-turnip" },
-                        { "type": "item", "code": "feverstonewilds:carrotbundle" },
-                        { "type": "item", "code": "feverstonewilds:drygrassbundle" },
-                        { "type": "item", "code": "drygrass" },
-                        { "type": "item", "code": "fruit-peach" },
-                        { "type": "item", "code": "fruit-pear" },
-                        { "type": "item", "code": "fruit-mango" },
-                        { "type": "item", "code": "grain-flax" },
-                        { "type": "item", "code": "grain-rye" },
-                        { "type": "item", "code": "grain-spelt" }
-                    ]
-                },
-			{ "code": "receivecommand",
-                    "availableCommands": [
-                        { "commandName": "followmaster", "commandType": "COMPLEX", "minObedience": 0.4 },
-                        { "commandName": "stay", "commandType": "COMPLEX", "minObedience": 0.2 }
-                    ]
-                },
+			{ "code": "mouthinventory",
+				"acceptStacks": [
+					{ "type": "item", "code": "vegetable-carrot" },
+					{ "type": "item", "code": "vegetable-cabbage" },
+					{ "type": "item", "code": "vegetable-turnip" },
+					{ "type": "item", "code": "feverstonewilds:carrotbundle" },
+					{ "type": "item", "code": "feverstonewilds:drygrassbundle" },
+					{ "type": "item", "code": "drygrass" },
+					{ "type": "item", "code": "fruit-peach" },
+					{ "type": "item", "code": "fruit-pear" },
+					{ "type": "item", "code": "fruit-mango" },
+					{ "type": "item", "code": "grain-flax" },
+					{ "type": "item", "code": "grain-rye" },
+					{ "type": "item", "code": "grain-spelt" }
+				]
+			},
 			{ 
 				"code": "emotionstates",
 				"states": [
@@ -681,37 +639,6 @@
 						"whenInEmotionState": "fleeondamage"
 					},
 					{
-						"code": "beamount",
-						"priority": 8,
-						"priorityForCancel": 8,
-						"movespeed": 0.045,
-						"animationSpeed": 2.2,
-						"maxDistance": 8,
-						"searchRange": 40,
-						"animation": "idle"
-					},
-					{
-						"code": "followmaster",
-						"priority": 3,
-						"priorityForCancel": 1.7,
-						"command": "followmaster",
-						"movespeed": 0.045,
-						"animationSpeed": 2.2,
-						"maxDistance": 8,
-						"searchRange": 40,
-						"animation": "run"
-					},
-					{
-						"code": "stay",
-						"priority": 3,
-						"priorityForCancel": 1.7,
-						"command": "stay",
-						"movespeed": 0.006,
-						"maxDistance": 10,
-						"searchRange": 40,
-						"animation": "walk"
-					},
-					{
 						"code": "getoutofwater",
 						"priority": 1.4,
 						"movespeed": 0.02,
@@ -790,18 +717,6 @@
 					},
 					{
 						"code": "idle",
-						"priority": 1.1,
-						"priorityForCancel": 1.35,
-						"minduration": 1500,
-						"maxduration": 1500,
-						"mincooldown": 6000,
-						"maxcooldown": 90000,
-						"animation": "look",
-						"animationSpeed": 1,
-						"whenNotInEmotionState": "aggressiveondamage"
-					},
-					{
-						"code": "idle",
 						"priority": 1.0,
 						"priorityForCancel": 1.35,
 						"minduration": 5333,
@@ -839,6 +754,9 @@
 					}
 				]
 			},
+			{ "code": "ownable" },
+			{ "code": "selectionboxes" },
+			{ "code": "rideableaccessories" },
 			{ "code": "milkable", "enabledByType": { "*-female": true, "*-male": false }  },
 			{ "code": "ropetieable", "minGeneration": 2 },
 			{ "code": "pettable", "minGeneration": 1 }

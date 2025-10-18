@@ -1,0 +1,249 @@
+[
+    {
+        "__comment": "===Add PetAI Compatible Behaviors===",
+        "op": "addeach",
+        "path": "/client/behaviors/-",
+        "value": [
+            { "code": "nametag", "showtagonlywhentargeted": true },
+			{ "code": "tameable",
+				"treat": [
+					{ "code": "vegetable-carrot", "progress": 0.10, "cooldown": 0.2 },
+					{ "code": "vegetable-cabbage", "progress": 0.03, "cooldown": 0.4 },
+					{ "code": "vegetable-turnip", "progress": 0.04, "cooldown": 0.3 },
+					{ "code": "carrotbundle", "progress": 0.15, "cooldown": 0.25 },
+					{ "code": "drygrassbundle", "progress": 0.075, "cooldown": 0.55 },
+					{ "code": "drygrass", "progress": 0.025, "cooldown": 0.25 },
+					{ "code": "fruit-peach", "progress": 0.169, "cooldown": 0.55 },
+					{ "code": "fruit-pear", "progress": 0.169, "cooldown": 0.55 },
+					{ "code": "fruit-mango", "progress": 0.169, "cooldown": 0.55 },
+					{ "code": "grain-flax", "progress": 0.075, "cooldown": 0.45 },
+					{ "code": "grain-rye", "progress": 0.075, "cooldown": 0.45 },
+					{ "code": "grain-spelt", "progress": 0.075, "cooldown": 0.45 }
+				]
+			}
+        ],
+        "file": "feverstonewilds:entities/land/bison.json",
+        "dependsOn": [ { "modid": "petai" } ]
+    },
+    {
+        "op": "addeach",
+        "path": "/client/behaviors/-",
+        "value": [
+            { "code": "nametag", "showtagonlywhentargeted": true },
+            { "code": "tameable",
+                    "treat": [
+                        { "code": "vegetable-carrot", "progress": 0.10, "cooldown": 0.2 },
+                        { "code": "vegetable-cabbage", "progress": 0.03, "cooldown": 0.4 },
+                        { "code": "vegetable-turnip", "progress": 0.04, "cooldown": 0.3 },
+                        { "code": "carrotbundle", "progress": 0.15, "cooldown": 0.25 },
+                        { "code": "drygrassbundle", "progress": 0.075, "cooldown": 0.55 },
+                        { "code": "drygrass", "progress": 0.025, "cooldown": 0.25 },
+                        { "code": "fruit-peach", "progress": 0.169, "cooldown": 0.55 },
+                        { "code": "fruit-pear", "progress": 0.169, "cooldown": 0.55 },
+                        { "code": "fruit-mango", "progress": 0.169, "cooldown": 0.55 },
+                        { "code": "grain-flax", "progress": 0.075, "cooldown": 0.45 },
+                        { "code": "grain-rye", "progress": 0.075, "cooldown": 0.45 },
+                        { "code": "grain-spelt", "progress": 0.075, "cooldown": 0.45 }
+                    ]
+                }
+        ],
+        "file": "feverstonewilds:entities/land/bison-calf.json",
+        "dependsOn": [ { "modid": "petai" } ]
+    },
+    {
+        "op": "addeach",
+        "path": "/server/behaviors/-",
+        "value": [
+            { "code": "nametag", "showtagonlywhentargeted": true },
+			{ "code": "tameable",
+                "tameEntityCode": "feverstonewilds:bison-tamed-{gender}",
+				"disobediencePerDay": 0.015,
+                    "treat": [
+                        { "code": "vegetable-carrot", "progress": 0.10, "cooldown": 0.2 },
+                        { "code": "vegetable-cabbage", "progress": 0.03, "cooldown": 0.4 },
+                        { "code": "vegetable-turnip", "progress": 0.04, "cooldown": 0.3 },
+                        { "code": "carrotbundle", "progress": 0.25, "cooldown": 0.25 },
+                        { "code": "drygrassbundle", "progress": 0.075, "cooldown": 0.55 },
+                        { "code": "drygrass", "progress": 0.025, "cooldown": 0.25 },
+                        { "code": "fruit-peach", "progress": 0.169, "cooldown": 0.55 },
+                        { "code": "fruit-pear", "progress": 0.169, "cooldown": 0.55 },
+                        { "code": "fruit-mango", "progress": 0.169, "cooldown": 0.55 },
+                        { "code": "grain-flax", "progress": 0.075, "cooldown": 0.45 },
+                        { "code": "grain-rye", "progress": 0.075, "cooldown": 0.45 },
+                        { "code": "grain-spelt", "progress": 0.075, "cooldown": 0.45 }
+                    ]
+                }
+        ],
+        "file": "feverstonewilds:entities/land/bison.json",
+        "dependsOn": [ { "modid": "petai" } ]
+    },
+    {
+        "op": "addeach",
+        "path": "/server/behaviors/-",
+        "value": [
+            { "code": "nametag", "showtagonlywhentargeted": true },
+            { "code": "tameable",
+                "tameEntityCode": "feverstonewilds:bison-calf-tamed-{gender}",
+				"disobediencePerDay": 0.015,
+                    "treat": [
+                        { "code": "vegetable-carrot", "progress": 0.10, "cooldown": 0.2 },
+                        { "code": "vegetable-cabbage", "progress": 0.03, "cooldown": 0.4 },
+                        { "code": "vegetable-turnip", "progress": 0.04, "cooldown": 0.3 },
+                        { "code": "carrotbundle", "progress": 0.15, "cooldown": 0.25 },
+                        { "code": "drygrassbundle", "progress": 0.075, "cooldown": 0.55 },
+                        { "code": "drygrass", "progress": 0.025, "cooldown": 0.25 },
+                        { "code": "fruit-pinkapple", "progress": 0.169, "cooldown": 0.55 },
+                        { "code": "fruit-redapple", "progress": 0.169, "cooldown": 0.55 },
+                        { "code": "fruit-yellowapple", "progress": 0.169, "cooldown": 0.55 },
+                        { "code": "grain-flax", "progress": 0.075, "cooldown": 0.45 },
+                        { "code": "grain-rye", "progress": 0.075, "cooldown": 0.45 },
+                        { "code": "grain-spelt", "progress": 0.075, "cooldown": 0.45 }
+                    ]
+                }
+        ],
+        "file": "feverstonewilds:entities/land/bison-calf.json",
+        "dependsOn": [ { "modid": "petai" } ]
+    },
+    {
+        "op": "addmerge",
+        "path": "/client/behaviors/-",
+        "value": { "code": "receivecommand",
+                    "availableCommands": [
+                        { "commandName": "followmaster", "commandType": "COMPLEX", "minObedience": 0.4 },
+                        { "commandName": "stay", "commandType": "COMPLEX", "minObedience": 0.2 }
+                    ]
+			    },
+        "file": "feverstonewilds:entities/land/bison.json",
+        "dependsOn": [ {"modid": "petai"} ]
+    },
+    {
+        "op": "addmerge",
+        "path": "/client/behaviors/-",
+        "value": { "code": "receivecommand",
+                "availableCommands": [
+                    { "commandName": "followmaster", "commandType": "COMPLEX", "minObedience": 0.4 },
+                    { "commandName": "stay", "commandType": "COMPLEX", "minObedience": 0.2 }
+                ]
+            },
+        "file": "feverstonewilds:entities/land/bison-calf.json",
+        "dependsOn": [ {"modid": "petai"} ]
+    },
+    {
+        "op": "addmerge",
+        "path": "/server/behaviors/-",
+        "value": { "code": "receivecommand",
+                    "availableCommands": [
+                        { "commandName": "followmaster", "commandType": "COMPLEX", "minObedience": 0.4 },
+                        { "commandName": "stay", "commandType": "COMPLEX", "minObedience": 0.2 }
+                    ]
+                },
+        "file": "feverstonewilds:entities/land/bison.json",
+        "dependsOn": [ {"modid": "petai"} ]
+    },
+    {
+        "op": "addmerge",
+        "path": "/server/behaviors/-",
+        "value": { "code": "receivecommand",
+                "availableCommands": [
+                    { "commandName": "followmaster", "commandType": "COMPLEX", "minObedience": 0.4 },
+                    { "commandName": "stay", "commandType": "COMPLEX", "minObedience": 0.2 }
+                ]
+            },
+        "file": "feverstonewilds:entities/land/bison-calf.json",
+        "dependsOn": [ {"modid": "petai"} ]
+    },
+    {
+        "op": "addeach",
+        "path": "/server/behaviors/13/aitasks/0",
+        "value": [ 
+					{
+						"code": "followmaster",
+						"priority": 3,
+						"priorityForCancel": 1.7,
+						"command": "followmaster",
+						"movespeed": 0.045,
+						"animationSpeed": 2.2,
+						"maxDistance": 8,
+						"searchRange": 40,
+						"animation": "run"
+					},
+					{
+						"code": "stay",
+						"priority": 3,
+						"priorityForCancel": 1.7,
+						"command": "stay",
+						"movespeed": 0.006,
+						"maxDistance": 10,
+						"searchRange": 40,
+						"animation": "walk"
+					}
+            ],
+        "file": "feverstonewilds:entities/land/bison.json",
+        "dependsOn": [ {"modid": "petai"} ]
+    },
+    {
+        "op": "addeach",
+        "path": "/server/behaviors/11/aitasks/0",
+        "value": [ 
+                {
+                    "code": "followmaster",
+                    "priority": 2,
+                    "priorityForCancel": 1.9,
+                    "command": "followmaster",
+                    "movespeed": 0.045,
+                    "animationSpeed": 2.2,
+                    "maxDistance": 8,
+                    "searchRange": 40,
+                    "animation": "Gallop",
+                    "allowTeleport": true
+                },
+                {
+                    "code": "stay",
+                    "priority": 2,
+                    "priorityForCancel": 1.9,
+                    "command": "stay",
+                    "movespeed": 0.006,
+                    "maxDistance": 5,
+                    "searchRange": 20,
+                    "animation": "Walk"
+                }
+            ],
+        "file": "feverstonewilds:entities/land/bison-calf.json",
+        "dependsOn": [ {"modid": "petai"} ]
+    },
+    {
+        "op": "remove",
+        "path": "/server/behaviors/16",
+        "file": "feverstonewilds:entities/land/bison.json",
+        "dependsOn": [ {"modid": "petai"} ]
+    },
+    {
+        "op": "remove",
+        "path": "/server/behaviors/13",
+        "file": "feverstonewilds:entities/land/bison-calf.json",
+        "dependsOn": [ {"modid": "petai"} ]
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/-",
+        "value": { "code": "pettableextended" },
+        "file": "feverstonewilds:entities/land/bison.json",
+        "dependsOn": [ {"modid": "petai"} ]
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/-",
+        "value": { "code": "pettableextended" },
+        "file": "feverstonewilds:entities/land/bison-calf.json",
+        "dependsOn": [ {"modid": "petai"} ]
+    },
+    {
+        "op": "replace",
+        "path": "/server/behaviors/10",
+        "value": { "code": "raisable", "hoursToGrow": 168,
+				"adultEntityCodes": [ "feverstonewilds:bison-male", "feverstonewilds:bison-female" ]  
+            },
+        "file": "feverstonewilds:entities/land/bison-calf.json",
+        "dependsOn": [ {"modid": "petai"} ]
+    }
+]
