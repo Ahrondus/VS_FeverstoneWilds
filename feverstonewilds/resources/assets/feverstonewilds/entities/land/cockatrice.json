@@ -52,7 +52,7 @@
 			{ "code": "harvestable" },
 			{ "code": "despawn", "minPlayerDistance": 8,
 				"belowLightLevel": 8, "minSeconds": 300 },
-			{ "code": "ropetieable", "minGeneration": 2 }
+			{ "code": "ropetieable" }
 		],
 		"animations": [
 			{
@@ -119,13 +119,13 @@
 					{ "type": "item", "code": "poultry-raw",
 						"quantity": { "avg": 10, "var": 3 } },
 					{ "type": "item", "code": "hide-raw-medium",
-						"quantity": { "avg": 1.2, "var": 0.2 } },
+						"quantity": { "avg": 1.5, "var": 0.5 } },
 					{ "type": "item", "code": "feather",
-						"quantity": { "avg": 5.2, "var": 0.2 } },
+						"quantity": { "avg": 5.5, "var": 0.5 } },
 					{ "type": "item", "code": "fat",
-						"quantity": { "avg": 1, "var": 0.3 } },
+						"quantity": { "avg": 1.25, "var": 0.25 } },
 					{ "type": "item", "code": "feverstonewilds:cockatrice-tail-raw",
-						"quantity": { "avg": 0.9, "var": 0.2 } }
+						"quantity": { "avg": 0.5, "var": 0.5 } }
 				]
 			},
 			{ "code": "breathe" },
@@ -247,7 +247,7 @@
 						"code": "seekfoodandeat",
 						"movespeed": 0.006,
 						"priority": 1.35,
-						"eatSound": "player/eat",
+						"eatSound": "game:creature/animal-eat-small",
 						"eatTime": 1.5,
 						"animationSpeed": 1.5,
 						"animation": "Walk",
@@ -280,25 +280,13 @@
 					},
 					{
 						"code": "idle",
-						"priority": 1.1,
-						"priorityForCancel": 1.35,
-						"minduration": 1500,
-						"maxduration": 1500,
-						"mincooldown": 6000,
-						"maxcooldown": 90000,
-						"animation": "look",
-						"animationSpeed": 1,
-						"whenNotInEmotionState": "aggressiveondamage"
-					},
-					{
-						"code": "idle",
 						"priority": 1.0,
 						"priorityForCancel": 1.35,
 						"minduration": 5333,
 						"maxduration": 5333,
 						"mincooldown": 6000,
 						"maxcooldown": 120000,
-						"animation": "Look"
+						"animation": "idlelook"
 					},
 					{
 						"code": "wander",

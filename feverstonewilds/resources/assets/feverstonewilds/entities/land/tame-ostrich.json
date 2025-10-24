@@ -17,34 +17,7 @@
 			"foodCategories": [ "Grain" ],
 			"foodTags": [ "cabbage", "carrot", "parsnip", "blueberry", "cranberry", "cherry", "whitecurrant", "redcurrant", "blackcurrant", "lychee" ],
 			"skipFoodTags": [ "rice" ]
-		},
-        "riderIdleAnimation": "rideidle",
-        "mountHeight": 1,
-        "mountRunningSpeed": 0.15,
-        "mountWalkingSpeed": 0.055,
-        "mountAnimations": {
-            "walk": {
-                "code": "idle",
-                "animation": "idle",
-                "blendMode": "Average",
-                "mulWithWalkSpeed": true,
-                "animationSpeed": 1.1
-            },
-            "sprint": {
-                "code": "idle",
-                "animation": "idle",
-                "blendMode": "Average",
-                "mulWithWalkSpeed": true,
-                "animationSpeed": 3.3
-            },
-            "backward": {
-                "code": "idle",
-                "animation": "idle",
-                "blendMode": "Average",
-                "mulWithWalkSpeed": true,
-                "animationSpeed": 0.6
-            }
-        }
+		}
     },
 	"client": {
 		"renderer": "Shape",

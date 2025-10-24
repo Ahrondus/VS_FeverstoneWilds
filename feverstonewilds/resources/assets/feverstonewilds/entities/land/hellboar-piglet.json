@@ -95,7 +95,6 @@
                         { "type": "item", "code": "hide-raw-medium", "quantity": { "avg": 1, "var": 0.4 } },
                         { "type": "item", "code": "fat", "quantity": { "avg": 1, "var": 0.2 } }
                     ] },
-                { "code": "deaddecay", "hourstoDecay": 96, "decayedBlock": "carcass-medium" },
                 { "code": "despawn", "minPlayerDistance": 15, "belowLightLevel": 7, "minSeconds": 300 },
                 { "code": "health", "maxHealth": 10 },
                 { "code": "breathe" },
@@ -166,7 +165,7 @@
                             "mincooldown": 2000,
                             "maxcooldown": 120000,
                             "priorityForCancel": 1.33,
-                            "animation": "Sit",
+                            "animation": "Sleep",
                             "whenNotInEmotionState": "aggressiveondamage",
                             "stopOnNearbyEntityCodes": ["player", "bear-*", 
                                                         "feverstonewilds:cockatrice"],
@@ -179,7 +178,7 @@
                     ]
                 },
                 { "code": "ropetieable", "minGeneration": 2 },
-                { "code": "pettableextended", "minGeneration": 1 }
+                { "code": "pettable", "minGeneration": 1 }
             ]
     },
     "sounds": {
