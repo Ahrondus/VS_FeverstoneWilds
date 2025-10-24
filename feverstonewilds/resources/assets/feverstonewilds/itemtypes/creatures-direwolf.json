@@ -10,8 +10,8 @@
 		}
 	],
 	"shapeByType": {
-		"*-direwolf-male": { "base": "entity/land/direwolf" },
-		"*-direwolf-female": { "base": "entity/land/direwolf" },
+		"*-direwolf-male": { "base": "entity/land/direwolf-adult" },
+		"*-direwolf-female": { "base": "entity/land/direwolf-adult" },
 		"*-direwolf-pup": { "base": "entity/land/direwolf-pup" }
 		},
 	"texturesByType": {
@@ -58,7 +58,8 @@
 	},
 	"fpHandTransform": {
 		"translation": { "x": 0.2, "y": 0, "z": 0 },
-		"rotation": { "x": -8, "y": -63, "z": -7 }
+		"rotation": { "x": -8, "y": -63, "z": -7 },
+		"scale": 0.35
 	},
 	"tpHandTransform": {
 		"translation": { "x": -0.9, "y": -0.9, "z": -0.7 },

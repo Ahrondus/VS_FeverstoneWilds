@@ -24,22 +24,7 @@
 		"size": 0.9,
 		"sizeGrowthFactor": 0.2,
 		"behaviors": [
-			{ "code": "nametag" },
-			{ "code": "receivecommand",
-				"availableCommands": [
-					{ "commandName": "followmaster", "commandType": "COMPLEX", "minObedience": 0.5 },
-					{ "commandName": "stay", "commandType": "COMPLEX", "minObedience": 0.2 }
-				]
-			},
-			{ "code": "tameable",
-				"treat": [
-					{ "code": "redmeat-raw", "progress": 0.125, "cooldown": 0.75 },
-					{ "code": "bushmeat-raw", "progress": 0.05, "cooldown": 0.5 },
-					{ "code": "poultry-raw", "progress": 0.25, "cooldown": 1 }
-				]
-			},
-			{
-				"code": "mouthinventory",
+			{ "code": "mouthinventory",
 				"acceptStacks": [
 					{ "type": "item", "code": "redmeat-raw"},
 					{ "type": "item", "code": "bushmeat-raw"},
@@ -95,23 +80,7 @@
 	},
 	"server": {
 		"behaviors": [
-			{ "code": "nametag" },
-            { "code": "receivecommand",
-                "availableCommands": [
-					{ "commandName": "followmaster", "commandType": "COMPLEX", "minObedience": 0.5 },
-					{ "commandName": "stay", "commandType": "COMPLEX", "minObedience": 0.2 }
-				]
-            },
-            { "code": "tameable",
-				"tameEntityCode": "feverstonewilds:tame-direwolf-pup",
-                "treat": [
-					{ "code": "redmeat-raw", "progress": 0.125, "cooldown": 0.75 },
-					{ "code": "bushmeat-raw", "progress": 0.05, "cooldown": 0.5 },
-					{ "code": "poultry-raw", "progress": 0.25, "cooldown": 1 }
-				]
-			},
-			{
-				"code": "mouthinventory",
+			{ "code": "mouthinventory",
 				"acceptStacks": [
 					{ "type": "item", "code": "redmeat-raw"},
 					{ "type": "item", "code": "bushmeat-raw"},
@@ -157,8 +126,8 @@
 						"animationSpeed": 0.7,
 						"priority": 2.1,
 						"priorityForCancel": 2.2,
-						"eatItemCategories": [ "meat" ],
-						"eatItemCodes": [ "redmeat-raw", "bushmeat-raw", "poultry-raw" ],
+						"eatItemCategories": [ "protein" ],
+						"eatItemCodes": [ "redmeat-raw", "bushmeat-raw", "poultry-raw", "fish-raw" ],
 						"useTime": 1.5,
 						"mincooldownHours": 1,
 						"maxcooldownHours": 1.5
@@ -248,7 +217,7 @@
 				]
 			},
 			{ "code": "ropetieable", "minGeneration": 2 },
-			{ "code": "pettableextended", "minGeneration": 1 }
+			{ "code": "pettable", "minGeneration": 1 }
 		]
 	},
 	"sounds": {

@@ -4,7 +4,7 @@
 	"hitboxSize": { "x": 0.4, "y": 0.4 },
 	"deadHitboxSize": { "x": 0.4, "y": 0.4 },
 	"eyeHeight": 0.15,
-	"weight": 0.1,
+	"weight": 15,
 	"attributes": {
 		"killedByInfoText": "feverstonewilds:deadcreature-eaten-cockatrice",
 		"creatureDiet": {
@@ -32,31 +32,15 @@
 		"size": 0.9,
 		"sizeGrowthFactor": 0.3,
 		"behaviors": [
-			{ "code": "nametag", "showtagonlywhentargeted": true },
-            { "code": "receivecommand",
-                "availableCommands": [
-                    { "commandName": "followmaster", "commandType": "COMPLEX", "minObedience": 0.4 },
-                    { "commandName": "stay", "commandType": "COMPLEX", "minObedience": 0.1 }
-                ]
-            },
-            {
-                "code": "tameable",
-				"tameEntityCode": "feverstonewilds:tame-cockatrice-chick",
-                "treat": [
-					{ "code": "bushmeat-raw", "progress": 0.05, "cooldown": 0.5 },
-                    { "code": "poultry-raw", "progress": 0.075, "cooldown": 0.6 },
-					{ "code": "redmeat-raw", "progress": 0.125, "cooldown": 0.75 },
-					{ "code": "grain-*", "progress": 0.025, "cooldown": 0.25 },
-					{ "code": "bone", "progress": 0.05, "cooldown": 0.55 }
-                ]
-            },
-            {
-                "code": "mouthinventory",
+            { "code": "mouthinventory",
                 "acceptStacks": [
 					{ "type": "item", "code": "bushmeat-raw"},
                     { "type": "item", "code": "poultry-raw" },
 					{ "type": "item", "code": "redmeat-raw" },
+					{ "type": "item", "code": "grain-flax" },
+					{ "type": "item", "code": "grain-spelt" },
 					{ "type": "item", "code": "grain-rye" },
+					{ "type": "item", "code": "grain-sunflower" },
 					{ "type": "item", "code": "bone" }
 				]
             },
@@ -66,7 +50,7 @@
 			{ "code": "interpolateposition" },
 			{ "code": "harvestable" },
 			{ "code": "despawn", "minPlayerDistance": 8, "belowLightLevel": 8, "minSeconds": 300 },
-			{ "code": "ropetieable", "minGeneration": 2 }
+			{ "code": "ropetieable" }
 		
 		],
 		"animations": [
@@ -107,41 +91,20 @@
 				"easeInSpeed": 4,
 				"easeOutSpeed": 4,
 				"blendMode": "average"
-			},
-			{
-				"code": "sit", 
-				"animation": "sit",
-				"easeInSpeed": 4,
-				"easeOutSpeed": 4,
-				"blendMode": "average" 
 			}
 		]
 	},
 	"server": {
 		"behaviors": [
-			{ "code": "nametag", "showtagonlywhentargeted": true },
-            { "code": "receivecommand",
-                "availableCommands": [
-                    { "commandName": "followmaster", "commandType": "COMPLEX", "minObedience": 0.4 },
-                    { "commandName": "stay", "commandType": "COMPLEX", "minObedience": 0.1 }
-                ]
-            },
-            { "code": "tameable",
-				"tameEntityCode": "feverstonewilds:tame-cockatrice-chick",
-                "treat": [
-					{ "code": "bushmeat-raw", "progress": 0.05, "cooldown": 0.5 },
-                    { "code": "poultry-raw", "progress": 0.075, "cooldown": 0.6 },
-					{ "code": "redmeat-raw", "progress": 0.125, "cooldown": 0.75 },
-					{ "code": "grain-*", "progress": 0.025, "cooldown": 0.25 },
-					{ "code": "bone", "progress": 0.05, "cooldown": 0.55 }
-                ]
-            },
             { "code": "mouthinventory",
                 "acceptStacks": [
 					{ "type": "item", "code": "bushmeat-raw"},
                     { "type": "item", "code": "poultry-raw" },
 					{ "type": "item", "code": "redmeat-raw" },
-					{ "type": "item", "code": "grain-{flax|spelt|rye|sunflower}" },
+					{ "type": "item", "code": "grain-flax" },
+					{ "type": "item", "code": "grain-spelt" },
+					{ "type": "item", "code": "grain-rye" },
+					{ "type": "item", "code": "grain-sunflower" },
 					{ "type": "item", "code": "bone" }
 				]
             },
@@ -216,7 +179,7 @@
 						"priorityForCancel": 2.2,
 						"eatItemCategories": [ "Grain" ],
 						"eatItemCodes": [ "redmeat-raw", "bushmeat-raw", "poultry-raw", 
-								"bone", "petai:petcookie-meat-perfect" ],
+								"fish-raw", "bone", "petai:petcookie-meat-perfect" ],
 						"useTime": 1.5,
 						"mincooldownHours": 1,
 						"maxcooldownHours": 1.5
@@ -268,7 +231,7 @@
 						"mincooldown": 2000,
 						"maxcooldown": 120000,
 						"priorityForCancel": 1.1,
-						"animation": "Sit"
+						"animation": "sleep"
 					},
 					{ 
 						"code": "lookaround", 
@@ -276,7 +239,8 @@
 					}
 				]
 			},
-			{ "code": "pettable", "minGeneration": 0 }
+			{ "code": "pettable", "minGeneration": 0 },
+			{ "code": "ropetieable", "minGeneration": 0 }
 		]
 	},
 	"sounds": {

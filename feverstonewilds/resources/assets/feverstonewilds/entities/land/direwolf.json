@@ -44,11 +44,14 @@
         "texture": { "base": "entity/land/direwolf/direwolf1",
                     "alternates": [ { "base": "entity/land/direwolf/direwolf2" }, { "base": "entity/land/direwolf/direwolf3" }, 
                                     { "base": "entity/land/direwolf/direwolf4" }, { "base": "entity/land/direwolf/direwolf5" }, 
-                                    { "base": "entity/land/direwolf/direwolf6" }, { "base": "entity/land/direwolf/direwolf7" } ] },
+                                    { "base": "entity/land/direwolf/direwolf6" }, { "base": "entity/land/direwolf/direwolf7" },
+                                    { "base": "entity/land/direwolf/direwolf8" }, { "base": "entity/land/direwolf/direwolf9" }, 
+                                    { "base": "entity/land/direwolf/direwolf10" }, { "base": "entity/land/direwolf/direwolf11" }, 
+                                    { "base": "entity/land/direwolf/direwolf12" }, { "base": "entity/land/direwolf/direwolf13" }, 
+                                    { "base": "entity/land/direwolf/direwolf14" } ] },
         "sizeByType": {
             "direwolf-male": 1,
             "direwolf-female": 0.95
-
         },
         "behaviors": [
             { "code": "multiply", "enabledByType": { "*-male": false, "*-female": true } },

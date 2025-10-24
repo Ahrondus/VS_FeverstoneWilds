@@ -6,18 +6,21 @@
     "eyeHeight": 0.15,
 	"weight": 0.1,
     "drops": [],
-  "attributes": {
-    "killedByInfoText": "feverstonewilds:deadcreature-eaten-cockatrice",
-    "creatureDiet": {
-      "foodCategories": [ "Grain" ],
-      "foodTags": [ "nibbleCrop", "meat" ],
-      "skipFoodTags": [ "rice" ]
+    "attributes": {
+        "killedByInfoText": "feverstonewilds:deadcreature-eaten-cockatrice",
+        "creatureDiet": {
+            "foodCategories": [ "Grain" ],
+            "foodTags": [ "nibbleCrop", "meat" ],
+            "skipFoodTags": [ "rice" ]
+        },
+        "handbook": {
+            "groupcode": "feverstonewilds:creaturegroup-fswcockatrice" 
+        },
+        "basketCatchable": true,
+        "trapChance": 0.35,
+        "trapDestroyChance": 0.025,
+        "tamed": true
     },
-    "handbook": {
-      "groupcode": "feverstonewilds:creaturegroup-fswcockatrice"
-    },
-    "basketCatchable": true
-  },
     "client": {
         "renderer": "Shape",
         "shape": { "base": "entity/land/cockatrice-chick" },
@@ -28,24 +31,6 @@
         "size": 0.9,
         "sizeGrowthFactor": 0.2,
         "behaviors": [
-            { "code": "nametag", "showtagonlywhentargeted": true },
-            { "code": "receivecommand",
-                "availableCommands": [
-                    { "commandName": "sit", "commandType": "SIMPLE", "minObedience": 0.2 },
-                    { "commandName": "lay", "commandType": "SIMPLE", "minObedience": 0.4 },
-                    { "commandName": "speak", "commandType": "SIMPLE", "minObedience": 0.6 }
-                ]
-            },
-            { "code": "tameable", "size": "small",
-                "treat": [
-                    { "code": "bone", "progress": 0.1, "cooldown": 1 },
-                    { "code": "bushmeat-raw", "progress": 0.15, "cooldown": 2 },
-                    { "code": "redmeat-raw", "progress": 0.3, "cooldown": 3 },
-                    { "code": "poultry-raw", "progress": 0.3, "cooldown": 3 },
-					{ "code": "grain-*", "progress": 0.025, "cooldown": 0.25 },
-                    { "code": "petcookie-meat-perfect", "domain": "petai", "progress": 0.8, "cooldown": 3 }
-                ]
-            },
             { "code": "mouthinventory",
                 "acceptStacks": [
                     { "type": "item", "code": "bone" },
@@ -64,9 +49,8 @@
             { "code": "controlledphysics", "stepHeight": 1.1251 },
             { "code": "floatupwhenstuck", "onlyWhenDead": true },
             { "code": "interpolateposition" },
-            { "code": "ropetieable", "minGeneration": 2 },
-            { "code": "harvestable", "drops": []
-		}
+            { "code": "ropetieable" },
+            { "code": "harvestable", "drops": [] }
         ],
         "animations": [
             {
@@ -109,24 +93,6 @@
     },
     "server": {
         "behaviors": [
-            { "code": "nametag", "showtagonlywhentargeted": true },
-            { "code": "receivecommand",
-                "availableCommands": [
-                    { "commandName": "sit", "commandType": "SIMPLE", "minObedience": 0.2 },
-                    { "commandName": "lay", "commandType": "SIMPLE", "minObedience": 0.4 },
-                    { "commandName": "speak", "commandType": "SIMPLE", "minObedience": 0.6 }
-                ]
-            },
-            { "code": "tameable", "size": "small",
-                "treat": [
-                    { "code": "bone", "progress": 0.1, "cooldown": 1 },
-                    { "code": "bushmeat-raw", "progress": 0.15, "cooldown": 2 },
-                    { "code": "redmeat-raw", "progress": 0.3, "cooldown": 3 },
-                    { "code": "poultry-raw", "progress": 0.3, "cooldown": 3 },
-					{ "code": "grain-*", "progress": 0.025, "cooldown": 0.25 },
-                    { "code": "petcookie-meat-perfect", "domain": "petai", "progress": 0.8, "cooldown": 3 }
-                ]
-            },
             { "code": "mouthinventory",
                 "acceptStacks": [
                     { "type": "item", "code": "bone" },
@@ -162,24 +128,6 @@
             { "code": "taskai",
                 "aiCreatureType": "LandCreature",
                 "aitasks": [
-                    {
-                        "code": "simplecommand",
-                        "priority": 3,
-                        "minduration": 2000,
-                        "maxduration": 10000,
-                        "priorityForCancel": 2.9,
-                        "animation": "sleep",
-                        "command": "sit"
-                    },
-                    {
-                        "code": "simplecommand",
-                        "priority": 3,
-                        "minduration": 5000,
-                        "maxduration": 15000,
-                        "priorityForCancel": 2.9,
-                        "animation": "sleep",
-                        "command": "lay"
-                    },
                     {
                         "code": "stayclosetoentity",
                         "priority": 1.4,
@@ -279,8 +227,8 @@
                     }
                 ]
             },
-            { "code": "ropetieable", "minGeneration": 2 },
-            { "code": "pettableextended", "minGeneration": 1 }
+            { "code": "ropetieable", "minGeneration": 0 },
+            { "code": "pettable", "minGeneration": 1 }
         ]
     },
   "sounds": {

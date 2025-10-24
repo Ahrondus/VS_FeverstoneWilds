@@ -214,9 +214,9 @@
                 },
                 "walkback": {
                     "animation": "walkback",
-                    "animationSpeed": 1.2,
+                    "animationSpeed": 0.8,
                     "weight": 10,
-                    "movespeed": 0.011,
+                    "movespeed": 0.009,
                     "easeInSpeed": 1,
                     "easeOutSpeed": 3,
                     "blendMode": "Average",
@@ -245,7 +245,7 @@
                     }
                 },
                 "sprint": {
-                    "animation": "Gallop",
+                    "animation": "Run",
                     "weight": 10,
                     "animationSpeed": 2,
                     "movespeed": 0.10,
@@ -306,7 +306,6 @@
                     }
                 },
                 "swim": {
-					"moveSpeedMultiplier": 1,
 					"animation": "walk",
 					"animationSpeed": 1,
 					"weight": 10,
@@ -336,7 +335,6 @@
 					}
 				},
 				"swimback": {
-					"moveSpeedMultiplier": 1,
 					"animation": "walkback",
 					"animationSpeed": 1,
 					"weight": 10,
