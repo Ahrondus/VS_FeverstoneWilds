@@ -42,35 +42,33 @@
     "client": {
         "renderer": "Shape",
         "shapeByType": {
-            "*-male": { "base": "entity/land/malefaunling" },
-            "*-female": { "base": "entity/land/faunling" }
+            "*-male": { "base": "entity/land/humanoid/malefaunling" },
+            "*-female": { "base": "entity/land/humanoid/faunlingfemale" }
         },
         "textureByType": {
-            "faunling-male":    
-            { "base": "entity/land/malefaunling/malefaunling1",
-            "alternates": [ { "base": "entity/land/malefaunling/malefaunling2" }, { "base": "entity/land/malefaunling/malefaunling3" }, 
-                { "base": "entity/land/malefaunling/malefaunling4" }, { "base": "entity/land/malefaunling/malefaunling5" }, 
-                { "base": "entity/land/malefaunling/malefaunling6" }, { "base": "entity/land/malefaunling/malefaunling7" }, 
-                { "base": "entity/land/malefaunling/malefaunling8" }, { "base": "entity/land/malefaunling/malefaunling9" }, 
-                { "base": "entity/land/malefaunling/malefaunling10" }, { "base": "entity/land/malefaunling/malefaunling11" }, 
-                { "base": "entity/land/malefaunling/malefaunling12" }, { "base": "entity/land/malefaunling/malefaunling13" }, 
-                { "base": "entity/land/malefaunling/malefaunling14" }, { "base": "entity/land/malefaunling/malefaunling15" }
-            ]
+            "faunling-male": { "base": "entity/land/malefaunling/malefaunling1",
+                "alternates": [ { "base": "entity/land/malefaunling/malefaunling2" }, { "base": "entity/land/malefaunling/malefaunling3" }, 
+                    { "base": "entity/land/malefaunling/malefaunling4" }, { "base": "entity/land/malefaunling/malefaunling5" }, 
+                    { "base": "entity/land/malefaunling/malefaunling6" }, { "base": "entity/land/malefaunling/malefaunling7" }, 
+                    { "base": "entity/land/malefaunling/malefaunling8" }, { "base": "entity/land/malefaunling/malefaunling9" }, 
+                    { "base": "entity/land/malefaunling/malefaunling10" }, { "base": "entity/land/malefaunling/malefaunling11" }, 
+                    { "base": "entity/land/malefaunling/malefaunling12" }, { "base": "entity/land/malefaunling/malefaunling13" }, 
+                    { "base": "entity/land/malefaunling/malefaunling14" }, { "base": "entity/land/malefaunling/malefaunling15" }
+                ]
+            },
+            "faunling-female": { "base": "entity/land/faunling/faunling1",
+                "alternates": [ { "base": "entity/land/faunling/faunling2" }, { "base": "entity/land/faunling/faunling3" }, 
+                    { "base": "entity/land/faunling/faunling4" }, { "base": "entity/land/faunling/faunling5" }, 
+                    { "base": "entity/land/faunling/faunling6" }, { "base": "entity/land/faunling/faunling7" }, 
+                    { "base": "entity/land/faunling/faunling8" }, { "base": "entity/land/faunling/faunling9" }, 
+                    { "base": "entity/land/faunling/faunling10" }, { "base": "entity/land/faunling/faunling11" }, 
+                    { "base": "entity/land/faunling/faunling12" }, { "base": "entity/land/faunling/faunling13" }, 
+                    { "base": "entity/land/faunling/faunling14" }, { "base": "entity/land/faunling/faunling15" }, 
+                    { "base": "entity/land/faunling/faunling16" }, { "base": "entity/land/faunling/faunling17" }, 
+                    { "base": "entity/land/faunling/faunling18" }
+                ] 
+            }
         },
-            "faunling-female":    
-            { "base": "entity/land/faunling/faunling1",
-            "alternates": [ { "base": "entity/land/faunling/faunling2" }, { "base": "entity/land/faunling/faunling3" }, 
-                { "base": "entity/land/faunling/faunling4" }, { "base": "entity/land/faunling/faunling5" }, 
-                { "base": "entity/land/faunling/faunling6" }, { "base": "entity/land/faunling/faunling7" }, 
-                { "base": "entity/land/faunling/faunling8" }, { "base": "entity/land/faunling/faunling9" }, 
-                { "base": "entity/land/faunling/faunling10" }, { "base": "entity/land/faunling/faunling11" }, 
-                { "base": "entity/land/faunling/faunling12" }, { "base": "entity/land/faunling/faunling13" }, 
-                { "base": "entity/land/faunling/faunling14" }, { "base": "entity/land/faunling/faunling15" }, 
-                { "base": "entity/land/faunling/faunling16" }, { "base": "entity/land/faunling/faunling17" }, 
-                { "base": "entity/land/faunling/faunling18" }
-            ] 
-		}
-    },
         "behaviors": [
             { "code": "nametag", "showtagonlywhentargeted": true },
             { "code": "repulseagents" },
@@ -116,8 +114,8 @@
         "behaviors": [
             { "code": "nametag", "showtagonlywhentargeted": true, "selectFromRandomNameByType": 
                 {
-                "*-female": ["Nadia", "Alina", "Della", "Ximuku", "Kelta", "Udemya", "Nabafae", "Shiva", "Edith", "Cara", "Midoris", "Honwish", "Eriza", "Aris", "Edel"],
-                "*-male": ["Merzost", "Valsgo", "Malafes", "Xibo", "Xival", "Samsuro", "Asubos", "Debino", "Zane", "Cedric", "Vathiel", "Vero", "Vorin", "Kain", "Knudson"]
+                    "*-female": ["Nadia", "Alina", "Della", "Ximuku", "Kelta", "Udemya", "Nabafae", "Shiva", "Edith", "Cara", "Midoris", "Honwish", "Eriza", "Aris", "Edel"],
+                    "*-male": ["Merzost", "Valsgo", "Malafes", "Xibo", "Xival", "Samsuro", "Asubos", "Debino", "Zane", "Cedric", "Vathiel", "Vero", "Vorin", "Kain", "Knudson"]
                 }
             },
             { "code": "repulseagents" },

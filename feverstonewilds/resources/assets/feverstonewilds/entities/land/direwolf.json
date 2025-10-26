@@ -40,7 +40,7 @@
     },
     "client": {
         "renderer": "Shape",
-        "shape": { "base": "entity/land/direwolf-adult" },
+        "shape": { "base": "entity/land/mammal/direwolf-adult" },
         "texture": { "base": "entity/land/direwolf/direwolf1",
                     "alternates": [ { "base": "entity/land/direwolf/direwolf2" }, { "base": "entity/land/direwolf/direwolf3" }, 
                                     { "base": "entity/land/direwolf/direwolf4" }, { "base": "entity/land/direwolf/direwolf5" }, 
@@ -146,7 +146,7 @@
                     "states": [
                         { "code": "fleeondamage", "duration": 60, "chance": 0.75, "slot": 2, "priority": 5, "accumType": "max", "whenHealthRelBelow": 0.3 },
                         { 
-                            "code": "saturated", "duration": 1200, "chance": 1, "slot": 0, "priority": 1, "accumType": "sum",
+                            "code": "saturated", "duration": 600, "chance": 1, "slot": 0, "priority": 1, "accumType": "sum",
                             "belowTempDuration": 600,
                             "belowTempThreshold": -5
                         },
@@ -314,8 +314,7 @@
                         }
                     ]
                 },
-                { "code": "ropetieable", "minGeneration": 2 },
-                { "code": "pettableextended", "minGeneration": 1 }
+                { "code": "ropetieable", "minGeneration": 2 }
             ],
         "spawnconditionsByType": {
             "*-male": {

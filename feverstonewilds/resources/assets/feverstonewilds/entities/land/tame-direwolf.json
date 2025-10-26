@@ -48,7 +48,7 @@
         "floatupwhenstuck": { "onlyWhenDead": true },
         "rideableaccessories": {
             "wearableSlots": [
-                { "code": "head", "forCategoryCodes": ["bridle-direwolf"], "attachmentPointCode": "HeadAP" }, 
+                { "code": "head", "forCategoryCodes": ["bridle-direwolf", "helmet-direwolf"], "attachmentPointCode": "HeadAP" }, 
                 { "code": "face", "forCategoryCodes": ["face"], "attachmentPointCode": "FaceAP" }, 
                 { "code": "middlebackupper", "forCategoryCodes": ["saddle-direwolf"], "attachmentPointCode": "MidUpperAP" },
                 { "code": "lowerback", "forCategoryCodes": ["bedroll"], "attachmentPointCode": "RearUpperAP" },
@@ -317,7 +317,7 @@
     },
     "client": {
         "renderer": "Shape",
-        "shape": { "base": "entity/land/direwolf-adult" },
+        "shape": { "base": "entity/land/mammal/direwolf-adult" },
         "texture": {
             "base": "entity/land/direwolf/direwolf1",
             "alternates": [ { "base": "entity/land/direwolf/direwolf2" }, { "base": "entity/land/direwolf/direwolf3" }, 
