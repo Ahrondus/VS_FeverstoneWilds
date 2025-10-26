@@ -22,7 +22,7 @@
                 ]
             }
         ],
-        "file": "feverstonehorses:entities/land/horse.json",
+        "file": "feverstonewilds:entities/land/horse.json",
         "dependsOn": [ { "modid": "petai" } ]
     },
     {
@@ -47,34 +47,7 @@
                 ]
             }
         ],
-        "file": "feverstonehorses:entities/land/foal.json",
-        "dependsOn": [ { "modid": "petai" } ]
-    },
-    {
-        "op": "addeach",
-        "path": "/server/behaviors/-",
-        "value": [
-            { "code": "nametag", "showtagonlywhentargeted": true },
-            { "code": "tameable",
-                "disobediencePerDay": 0.01,
-                "tameEntityCode": "feverstonehorses:horse-tamed-{gender}-{type}",
-                "treat": [
-                    { "code": "vegetable-carrot", "progress": 0.10, "cooldown": 0.2 },
-                    { "code": "vegetable-cabbage", "progress": 0.03, "cooldown": 0.4 },
-                    { "code": "vegetable-turnip", "progress": 0.04, "cooldown": 0.3 },
-                    { "code": "carrotbundle", "progress": 0.15, "cooldown": 0.25 },
-                    { "code": "drygrassbundle", "progress": 0.075, "cooldown": 0.55 },
-                    { "code": "drygrass", "progress": 0.025, "cooldown": 0.25 },
-                    { "code": "fruit-pinkapple", "progress": 0.169, "cooldown": 0.55 },
-                    { "code": "fruit-redapple", "progress": 0.169, "cooldown": 0.55 },
-                    { "code": "fruit-yellowapple", "progress": 0.169, "cooldown": 0.55 },
-                    { "code": "grain-flax", "progress": 0.075, "cooldown": 0.45 },
-                    { "code": "grain-rye", "progress": 0.075, "cooldown": 0.45 },
-                    { "code": "grain-spelt", "progress": 0.075, "cooldown": 0.45 }
-                ]
-            }
-        ],
-        "file": "feverstonehorses:entities/land/horse.json",
+        "file": "feverstonewilds:entities/land/foal.json",
         "dependsOn": [ { "modid": "petai" } ]
     },
     {
@@ -84,7 +57,7 @@
             { "code": "nametag", "showtagonlywhentargeted": true },
             { "code": "tameable",
                 "disobediencePerDay": 0.01,
-                "tameEntityCode": "feverstonehorses:foal-tamed-{type}",
+                "tameEntityCode": "feverstonewilds:horse-tamed-{gender}-{type}",
                 "treat": [
                     { "code": "vegetable-carrot", "progress": 0.10, "cooldown": 0.2 },
                     { "code": "vegetable-cabbage", "progress": 0.03, "cooldown": 0.4 },
@@ -101,7 +74,34 @@
                 ]
             }
         ],
-        "file": "feverstonehorses:entities/land/foal.json",
+        "file": "feverstonewilds:entities/land/horse.json",
+        "dependsOn": [ { "modid": "petai" } ]
+    },
+    {
+        "op": "addeach",
+        "path": "/server/behaviors/-",
+        "value": [
+            { "code": "nametag", "showtagonlywhentargeted": true },
+            { "code": "tameable",
+                "disobediencePerDay": 0.01,
+                "tameEntityCode": "feverstonewilds:foal-tamed-{type}",
+                "treat": [
+                    { "code": "vegetable-carrot", "progress": 0.10, "cooldown": 0.2 },
+                    { "code": "vegetable-cabbage", "progress": 0.03, "cooldown": 0.4 },
+                    { "code": "vegetable-turnip", "progress": 0.04, "cooldown": 0.3 },
+                    { "code": "carrotbundle", "progress": 0.15, "cooldown": 0.25 },
+                    { "code": "drygrassbundle", "progress": 0.075, "cooldown": 0.55 },
+                    { "code": "drygrass", "progress": 0.025, "cooldown": 0.25 },
+                    { "code": "fruit-pinkapple", "progress": 0.169, "cooldown": 0.55 },
+                    { "code": "fruit-redapple", "progress": 0.169, "cooldown": 0.55 },
+                    { "code": "fruit-yellowapple", "progress": 0.169, "cooldown": 0.55 },
+                    { "code": "grain-flax", "progress": 0.075, "cooldown": 0.45 },
+                    { "code": "grain-rye", "progress": 0.075, "cooldown": 0.45 },
+                    { "code": "grain-spelt", "progress": 0.075, "cooldown": 0.45 }
+                ]
+            }
+        ],
+        "file": "feverstonewilds:entities/land/foal.json",
         "dependsOn": [ { "modid": "petai" } ]
     },
     {
@@ -113,7 +113,7 @@
                         { "commandName": "stay", "commandType": "COMPLEX", "minObedience": 0.3 }
                     ]
                 },
-        "file": "feverstonehorses:entities/land/horse.json",
+        "file": "feverstonewilds:entities/land/horse.json",
         "dependsOn": [ {"modid": "petai"} ]
     },
     {
@@ -125,7 +125,7 @@
                         { "commandName": "stay", "commandType": "COMPLEX", "minObedience": 0.3 }
                     ]
                 },
-        "file": "feverstonehorses:entities/land/foal.json",
+        "file": "feverstonewilds:entities/land/foal.json",
         "dependsOn": [ {"modid": "petai"} ]
     },
     {
@@ -137,7 +137,7 @@
                         { "commandName": "stay", "commandType": "COMPLEX", "minObedience": 0.3 }
                     ]
                 },
-        "file": "feverstonehorses:entities/land/horse.json",
+        "file": "feverstonewilds:entities/land/horse.json",
         "dependsOn": [ {"modid": "petai"} ]
     },
     {
@@ -149,7 +149,7 @@
                         { "commandName": "stay", "commandType": "COMPLEX", "minObedience": 0.3 }
                     ]
                 },
-        "file": "feverstonehorses:entities/land/foal.json",
+        "file": "feverstonewilds:entities/land/foal.json",
         "dependsOn": [ {"modid": "petai"} ]
     },
     {
@@ -179,7 +179,7 @@
                     "animation": "Walk"
                 }
             ],
-        "file": "feverstonehorses:entities/land/horse.json",
+        "file": "feverstonewilds:entities/land/horse.json",
         "dependsOn": [ {"modid": "petai"} ]
     },
     {
@@ -209,51 +209,51 @@
                     "animation": "Walk"
                 }
             ],
-        "file": "feverstonehorses:entities/land/foal.json",
+        "file": "feverstonewilds:entities/land/foal.json",
         "dependsOn": [ {"modid": "petai"} ]
     },
     {
         "op": "remove",
         "path": "/server/behaviors/20",
-        "file": "feverstonehorses:entities/land/horse.json",
+        "file": "feverstonewilds:entities/land/horse.json",
         "dependsOn": [ {"modid": "petai"} ]
     },
     {
         "op": "remove",
         "path": "/server/behaviors/13",
-        "file": "feverstonehorses:entities/land/foal.json",
+        "file": "feverstonewilds:entities/land/foal.json",
         "dependsOn": [ {"modid": "petai"} ]
     },
     {
         "op": "add",
         "path": "/server/behaviors/-",
         "value": { "code": "pettableextended" },
-        "file": "feverstonehorses:entities/land/horse.json",
+        "file": "feverstonewilds:entities/land/horse.json",
         "dependsOn": [ {"modid": "petai"} ]
     },
     {
         "op": "add",
         "path": "/server/behaviors/-",
         "value": { "code": "pettableextended" },
-        "file": "feverstonehorses:entities/land/foal.json",
+        "file": "feverstonewilds:entities/land/foal.json",
         "dependsOn": [ {"modid": "petai"} ]
     },
     {
         "op": "replace",
         "path": "/server/behaviors/10",
         "value": { "code": "raisable", "hoursToGrow": 120,
-				"adultEntityCodesByType": { "*-tamed-percheron": ["feverstonehorses:horse-tamed-male-percheron", "feverstonehorses:horse-tamed-female-percheron" ],
-                                            "*-tamed-arabian": ["feverstonehorses:horse-tamed-male-arabian", "feverstonehorses:horse-tamed-female-arabian" ],
-                                            "*-tamed-donkey": [ "feverstonehorses:horse-tamed-male-donkey", "feverstonehorses:horse-tamed-female-donkey" ],
-                                            "*-tamed-shire": [ "feverstonehorses:horse-tamed-male-shire", "feverstonehorses:horse-tamed-female-shire" ],
-                                            "*-tamed-quarter": [ "feverstonehorses:horse-tamed-male-quarter", "feverstonehorses:horse-tamed-female-quarter" ],
-                                            "*-wild-percheron": ["feverstonehorses:horse-wild-male-percheron", "feverstonehorses:horse-wild-female-percheron" ],
-                                            "*-wild-arabian": ["feverstonehorses:horse-wild-male-arabian", "feverstonehorses:horse-wild-female-arabian" ],
-                                            "*-wild-donkey": [ "feverstonehorses:horse-wild-male-donkey", "feverstonehorses:horse-wild-female-donkey" ],
-                                            "*-wild-shire": [ "feverstonehorses:horse-wild-male-shire", "feverstonehorses:horse-wild-female-shire" ],
-                                            "*-wild-quarter": [ "feverstonehorses:horse-wild-male-quarter", "feverstonehorses:horse-wild-female-quarter" ]  }
+				"adultEntityCodesByType": { "*-tamed-percheron": ["feverstonewilds:horse-tamed-male-percheron", "feverstonewilds:horse-tamed-female-percheron" ],
+                                            "*-tamed-arabian": ["feverstonewilds:horse-tamed-male-arabian", "feverstonewilds:horse-tamed-female-arabian" ],
+                                            "*-tamed-donkey": [ "feverstonewilds:horse-tamed-male-donkey", "feverstonewilds:horse-tamed-female-donkey" ],
+                                            "*-tamed-shire": [ "feverstonewilds:horse-tamed-male-shire", "feverstonewilds:horse-tamed-female-shire" ],
+                                            "*-tamed-quarter": [ "feverstonewilds:horse-tamed-male-quarter", "feverstonewilds:horse-tamed-female-quarter" ],
+                                            "*-wild-percheron": ["feverstonewilds:horse-wild-male-percheron", "feverstonewilds:horse-wild-female-percheron" ],
+                                            "*-wild-arabian": ["feverstonewilds:horse-wild-male-arabian", "feverstonewilds:horse-wild-female-arabian" ],
+                                            "*-wild-donkey": [ "feverstonewilds:horse-wild-male-donkey", "feverstonewilds:horse-wild-female-donkey" ],
+                                            "*-wild-shire": [ "feverstonewilds:horse-wild-male-shire", "feverstonewilds:horse-wild-female-shire" ],
+                                            "*-wild-quarter": [ "feverstonewilds:horse-wild-male-quarter", "feverstonewilds:horse-wild-female-quarter" ]  }
 			},
-        "file": "feverstonehorses:entities/land/foal.json",
+        "file": "feverstonewilds:entities/land/foal.json",
         "dependsOn": [ {"modid": "petai"} ]
     }
 ]

@@ -2,578 +2,387 @@
     
     {
         "op": "add",
-        "path": "/server/behaviors/9/aitasks/0/entityCodes/0",
+        "path": "/server/behaviors/9/aitasks/3/entityCodes/0",
         "value": "feverstonewilds:bison-*",
-        "file": "game:entities/land/bear.json",
+        "file": "game:entities/animal/mammal/bear-adult.json",
         "condition": { "when": "FSWBisonEnabled", "isValue": "true" }
     },
     {
         "op": "add",
-        "path": "/server/behaviors/9/aitasks/3/entityCodesByType/*/0",
+        "path": "/server/behaviors/9/aitasks/2/entityCodesByType/*/0",
         "value": "feverstonewilds:bison-*",
-        "file": "game:entities/land/bear.json",
-        "condition": { "when": "FSWBisonEnabled", "isValue": "true" }
-    },
-    {
-        "op": "add",
-        "path": "/server/behaviors/9/aitasks/0/entityCodes/0",
-        "value": "feverstonewilds:direwolf-*",
-        "file": "game:entities/land/bear.json",
-        "condition": { "when": "FSWDirewolfEnabled", "isValue": "true" }
-    },
-    {
-        "op": "add",
-        "path": "/server/behaviors/9/aitasks/3/entityCodesByType/*/0",
-        "value": "feverstonewilds:direwolf-*",
-        "file": "game:entities/land/bear.json",
-        "condition": { "when": "FSWDirewolfEnabled", "isValue": "true" }
-    },
-    {
-        "op": "add",
-        "path": "/server/behaviors/9/aitasks/0/entityCodes/0",
-        "value": "feverstonewilds:horse-*",
-        "file": "game:entities/land/bear.json",
-        "condition": { "when": "FSWHorseEnabled", "isValue": "true" }
-    },
-    {
-        "op": "add",
-        "path": "/server/behaviors/9/aitasks/3/entityCodesByType/*/0",
-        "value": "feverstonewilds:horse-*",
-        "file": "game:entities/land/bear.json",
-        "condition": { "when": "FSWHorseEnabled", "isValue": "true" }
-    },
- 
-    {
-        "op": "add",
-        "path": "/server/behaviors/10/aitasks/1/entityCodes/0",
-        "value": "feverstonewilds:bison-calf",
-        "file": "game:entities/land/hyena-male.json",
-        "condition": { "when": "FSWBisonEnabled", "isValue": "true" }
-    },
-    {
-        "op": "add",
-        "path": "/server/behaviors/10/aitasks/3/entityCodes/0",
-        "value": "feverstonewilds:bison-calf",
-        "file": "game:entities/land/hyena-male.json",
-        "condition": { "when": "FSWBisonEnabled", "isValue": "true" }
-    },
-    {
-        "op": "add",
-        "path": "/server/behaviors/11/aitasks/1/entityCodes/0",
-        "value": "feverstonewilds:bison-calf",
-        "file": "game:entities/land/hyena-female.json",
-        "condition": { "when": "FSWBisonEnabled", "isValue": "true" }
-    },
-    {
-        "op": "add",
-        "path": "/server/behaviors/11/aitasks/3/entityCodes/0",
-        "value": "feverstonewilds:bison-calf",
-        "file": "game:entities/land/hyena-female.json",
-        "condition": { "when": "FSWBisonEnabled", "isValue": "true" }
-    },
-    {
-        "op": "add",
-        "path": "/server/behaviors/10/aitasks/1/entityCodes/0",
-        "value": "feverstonewilds:ostrich-*",
-        "file": "game:entities/land/hyena-male.json",
-        "condition": { "when": "FSWOstrichEnabled", "isValue": "true" }
-    },
-    {
-        "op": "add",
-        "path": "/server/behaviors/10/aitasks/3/entityCodes/0",
-        "value": "feverstonewilds:ostrich-*",
-        "file": "game:entities/land/hyena-male.json",
-        "condition": { "when": "FSWOstrichEnabled", "isValue": "true" }
-    },
-    {
-        "op": "add",
-        "path": "/server/behaviors/10/aitasks/1/entityCodes/0",
-        "value": "feverstonewilds:tame-ostrich-*",
-        "file": "game:entities/land/hyena-male.json",
-        "condition": { "when": "FSWOstrichEnabled", "isValue": "true" }
-    },
-    {
-        "op": "add",
-        "path": "/server/behaviors/10/aitasks/3/entityCodes/0",
-        "value": "feverstonewilds:tame-ostrich-*",
-        "file": "game:entities/land/hyena-male.json",
-        "condition": { "when": "FSWOstrichEnabled", "isValue": "true" }
-    },
-    {
-        "op": "add",
-        "path": "/server/behaviors/11/aitasks/1/entityCodes/0",
-        "value": "feverstonewilds:ostrich-*",
-        "file": "game:entities/land/hyena-female.json",
-        "condition": { "when": "FSWOstrichEnabled", "isValue": "true" }
-    },
-    {
-        "op": "add",
-        "path": "/server/behaviors/11/aitasks/3/entityCodes/0",
-        "value": "feverstonewilds:ostrich-*",
-        "file": "game:entities/land/hyena-female.json",
-        "condition": { "when": "FSWOstrichEnabled", "isValue": "true" }
-    },
-    {
-        "op": "add",
-        "path": "/server/behaviors/11/aitasks/1/entityCodes/0",
-        "value": "feverstonewilds:tame-ostrich-*",
-        "file": "game:entities/land/hyena-female.json",
-        "condition": { "when": "FSWOstrichEnabled", "isValue": "true" }
-    },
-    {
-        "op": "add",
-        "path": "/server/behaviors/11/aitasks/3/entityCodes/0",
-        "value": "feverstonewilds:tame-ostrich-*",
-        "file": "game:entities/land/hyena-female.json",
-        "condition": { "when": "FSWOstrichEnabled", "isValue": "true" }
-    },
-
-    
-    {
-        "op": "add",
-        "path": "/server/behaviors/10/aitasks/0/entityCodes/0",
-        "value": "feverstonewilds:horse-*",
-        "file": "game:entities/land/wolf-female.json",
-        "condition": { "when": "FSWHorseEnabled", "isValue": "true" }
-    },
-    {
-        "op": "add",
-        "path": "/server/behaviors/10/aitasks/1/entityCodes/0",
-        "value": "feverstonewilds:horse-*",
-        "file": "game:entities/land/wolf-female.json",
-        "condition": { "when": "FSWHorseEnabled", "isValue": "true" }
-    },
-    {
-        "op": "add",
-        "path": "/server/behaviors/10/aitasks/2/entityCodes/0",
-        "value": "feverstonewilds:horse-*",
-        "file": "game:entities/land/wolf-female.json",
-        "condition": { "when": "FSWHorseEnabled", "isValue": "true" }
-    },
-    {
-        "op": "add",
-        "path": "/server/behaviors/9/aitasks/0/entityCodes/0",
-        "value": "feverstonewilds:horse-*",
-        "file": "game:entities/land/wolf-male.json",
-        "condition": { "when": "FSWHorseEnabled", "isValue": "true" }
-    },
-    {
-        "op": "add",
-        "path": "/server/behaviors/9/aitasks/1/entityCodes/0",
-        "value": "feverstonewilds:horse-*",
-        "file": "game:entities/land/wolf-male.json",
-        "condition": { "when": "FSWHorseEnabled", "isValue": "true" }
-    },
-    {
-        "op": "add",
-        "path": "/server/behaviors/9/aitasks/2/entityCodes/0",
-        "value": "feverstonewilds:horse-*",
-        "file": "game:entities/land/wolf-male.json",
-        "condition": { "when": "FSWHorseEnabled", "isValue": "true" }
-    },
-    {
-        "op": "add",
-        "path": "/server/behaviors/10/aitasks/0/entityCodes/0",
-        "value": "feverstonewilds:horse-*",
-        "file": "game:entities/land/wolf-female.json",
-        "condition": { "when": "FSWHorseEnabled", "isValue": "true" }
-    },
-    {
-        "op": "add",
-        "path": "/server/behaviors/10/aitasks/1/entityCodes/0",
-        "value": "feverstonewilds:horse-*",
-        "file": "game:entities/land/wolf-female.json",
-        "condition": { "when": "FSWHorseEnabled", "isValue": "true" }
-    },
-    {
-        "op": "add",
-        "path": "/server/behaviors/10/aitasks/2/entityCodes/0",
-        "value": "feverstonewilds:horse-*",
-        "file": "game:entities/land/wolf-female.json",
-        "condition": { "when": "FSWHorseEnabled", "isValue": "true" }
-    },
-    {
-        "op": "add",
-        "path": "/server/behaviors/9/aitasks/0/entityCodes/0",
-        "value": "feverstonewilds:horse-*",
-        "file": "game:entities/land/wolf-male.json",
-        "condition": { "when": "FSWHorseEnabled", "isValue": "true" }
-    },
-    {
-        "op": "add",
-        "path": "/server/behaviors/9/aitasks/1/entityCodes/0",
-        "value": "feverstonewilds:horse-*",
-        "file": "game:entities/land/wolf-male.json",
-        "condition": { "when": "FSWHorseEnabled", "isValue": "true" }
-    },
-    {
-        "op": "add",
-        "path": "/server/behaviors/9/aitasks/2/entityCodes/0",
-        "value": "feverstonewilds:horse-*",
-        "file": "game:entities/land/wolf-male.json",
-        "condition": { "when": "FSWHorseEnabled", "isValue": "true" }
-    },
-    {
-        "op": "add",
-        "path": "/server/behaviors/10/aitasks/0/entityCodes/0",
-        "value": "feverstonewilds:foal-*",
-        "file": "game:entities/land/wolf-female.json",
-        "condition": { "when": "FSWHorseEnabled", "isValue": "true" }
-    },
-    {
-        "op": "add",
-        "path": "/server/behaviors/10/aitasks/1/entityCodes/0",
-        "value": "feverstonewilds:foal-*",
-        "file": "game:entities/land/wolf-female.json",
-        "condition": { "when": "FSWHorseEnabled", "isValue": "true" }
-    },
-    {
-        "op": "add",
-        "path": "/server/behaviors/10/aitasks/2/entityCodes/0",
-        "value": "feverstonewilds:foal-*",
-        "file": "game:entities/land/wolf-female.json",
-        "condition": { "when": "FSWHorseEnabled", "isValue": "true" }
-    },
-    {
-        "op": "add",
-        "path": "/server/behaviors/9/aitasks/0/entityCodes/0",
-        "value": "feverstonewilds:foal-*",
-        "file": "game:entities/land/wolf-male.json",
-        "condition": { "when": "FSWHorseEnabled", "isValue": "true" }
-    },
-    {
-        "op": "add",
-        "path": "/server/behaviors/9/aitasks/1/entityCodes/0",
-        "value": "feverstonewilds:foal-*",
-        "file": "game:entities/land/wolf-male.json",
-        "condition": { "when": "FSWHorseEnabled", "isValue": "true" }
-    },
-    {
-        "op": "add",
-        "path": "/server/behaviors/9/aitasks/2/entityCodes/0",
-        "value": "feverstonewilds:foal-*",
-        "file": "game:entities/land/wolf-male.json",
-        "condition": { "when": "FSWHorseEnabled", "isValue": "true" }
-    },
-    {
-        "op": "add",
-        "path": "/server/behaviors/10/aitasks/0/entityCodes/0",
-        "value": "feverstonewilds:direwolf-*",
-        "file": "game:entities/land/wolf-female.json",
-        "condition": { "when": "FSWDirewolfEnabled", "isValue": "true" }
-    },
-    {
-        "op": "add",
-        "path": "/server/behaviors/10/aitasks/1/entityCodes/0",
-        "value": "feverstonewilds:direwolf-*",
-        "file": "game:entities/land/wolf-female.json",
-        "condition": { "when": "FSWDirewolfEnabled", "isValue": "true" }
-    },
-    {
-        "op": "add",
-        "path": "/server/behaviors/10/aitasks/2/entityCodes/0",
-        "value": "feverstonewilds:direwolf-*",
-        "file": "game:entities/land/wolf-female.json",
-        "condition": { "when": "FSWDirewolfEnabled", "isValue": "true" }
-    },
-    {
-        "op": "add",
-        "path": "/server/behaviors/9/aitasks/1/entityCodes/0",
-        "value": "feverstonewilds:bison-*",
-        "file": "game:entities/land/wolf-male.json",
+        "file": "game:entities/animal/mammal/bear-adult.json",
         "condition": { "when": "FSWBisonEnabled", "isValue": "true" }
     },
     {
         "op": "add",
         "path": "/server/behaviors/9/aitasks/3/entityCodes/0",
+        "value": "feverstonewilds:direwolf-*",
+        "file": "game:entities/animal/mammal/bear-adult.json",
+        "condition": { "when": "FSWWildDirewolfEnabled", "isValue": "true" }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/9/aitasks/2/entityCodesByType/*/0",
+        "value": "feverstonewilds:direwolf-*",
+        "file": "game:entities/animal/mammal/bear-adult.json",
+        "condition": { "when": "FSWWildDirewolfEnabled", "isValue": "true" }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/9/aitasks/3/entityCodes/0",
+        "value": "feverstonewilds:tame-direwolf-*",
+        "file": "game:entities/animal/mammal/bear-adult.json",
+        "condition": { "when": "FSWTameDirewolfEnabled", "isValue": "true" }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/9/aitasks/2/entityCodesByType/*/0",
+        "value": "feverstonewilds:tame-direwolf-*",
+        "file": "game:entities/animal/mammal/bear-adult.json",
+        "condition": { "when": "FSWTameDirewolfEnabled", "isValue": "true" }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/9/aitasks/3/entityCodes/0",
+        "value": "feverstonewilds:horse-*",
+        "file": "game:entities/animal/mammal/bear-adult.json",
+        "condition": { "when": "FSWHorseEnabled", "isValue": "true" }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/9/aitasks/2/entityCodesByType/*/0",
+        "value": "feverstonewilds:horse-*",
+        "file": "game:entities/animal/mammal/bear-adult.json",
+        "condition": { "when": "FSWHorseEnabled", "isValue": "true" }
+    },
+ 
+    {
+        "op": "add",
+        "path": "/server/behaviors/11/aitasks/1/entityCodes/0",
+        "value": "feverstonewilds:bison-calf",
+        "file": "game:entities/animal/mammal/hyena-adult.json",
+        "condition": { "when": "FSWBisonEnabled", "isValue": "true" }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/11/aitasks/3/entityCodes/0",
+        "value": "feverstonewilds:bison-calf",
+        "file": "game:entities/animal/mammal/hyena-adult.json",
+        "condition": { "when": "FSWBisonEnabled", "isValue": "true" }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/11/aitasks/1/entityCodes/0",
+        "value": "feverstonewilds:ostrich-*",
+        "file": "game:entities/animal/mammal/hyena-adult.json",
+        "condition": { "when": "FSWOstrichEnabled", "isValue": "true" }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/11/aitasks/3/entityCodes/0",
+        "value": "feverstonewilds:ostrich-*",
+        "file": "game:entities/animal/mammal/hyena-adult.json",
+        "condition": { "when": "FSWOstrichEnabled", "isValue": "true" }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/11/aitasks/1/entityCodes/0",
+        "value": "feverstonewilds:tame-ostrich-*",
+        "file": "game:entities/animal/mammal/hyena-adult.json",
+        "condition": { "when": "FSWOstrichEnabled", "isValue": "true" }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/11/aitasks/3/entityCodes/0",
+        "value": "feverstonewilds:tame-ostrich-*",
+        "file": "game:entities/animal/mammal/hyena-adult.json",
+        "condition": { "when": "FSWOstrichEnabled", "isValue": "true" }
+    },
+    
+    {
+        "op": "add",
+        "path": "/server/behaviors/10/aitasks/0/entityCodes/0",
+        "value": "feverstonewilds:horse-*",
+        "file": "game:entities/animal/mammal/wolf-adult.json",
+        "condition": { "when": "FSWHorseEnabled", "isValue": "true" }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/10/aitasks/1/entityCodes/0",
+        "value": "feverstonewilds:horse-*",
+        "file": "game:entities/animal/mammal/wolf-adult.json",
+        "condition": { "when": "FSWHorseEnabled", "isValue": "true" }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/10/aitasks/2/entityCodes/0",
+        "value": "feverstonewilds:horse-*",
+        "file": "game:entities/animal/mammal/wolf-adult.json",
+        "condition": { "when": "FSWHorseEnabled", "isValue": "true" }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/10/aitasks/5/entityCodes/0",
+        "value": "feverstonewilds:horse-*",
+        "file": "game:entities/animal/mammal/wolf-adult.json",
+        "condition": { "when": "FSWHorseEnabled", "isValue": "true" }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/10/aitasks/0/entityCodes/0",
+        "value": "feverstonewilds:foal-*",
+        "file": "game:entities/animal/mammal/wolf-adult.json",
+        "condition": { "when": "FSWHorseEnabled", "isValue": "true" }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/10/aitasks/1/entityCodes/0",
+        "value": "feverstonewilds:foal-*",
+        "file": "game:entities/animal/mammal/wolf-adult.json",
+        "condition": { "when": "FSWHorseEnabled", "isValue": "true" }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/10/aitasks/2/entityCodes/0",
+        "value": "feverstonewilds:foal-*",
+        "file": "game:entities/animal/mammal/wolf-adult.json",
+        "condition": { "when": "FSWHorseEnabled", "isValue": "true" }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/10/aitasks/5/entityCodes/0",
+        "value": "feverstonewilds:foal-*",
+        "file": "game:entities/animal/mammal/wolf-adult.json",
+        "condition": { "when": "FSWHorseEnabled", "isValue": "true" }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/10/aitasks/0/entityCodes/0",
+        "value": "feverstonewilds:direwolf-*",
+        "file": "game:entities/animal/mammal/wolf-adult.json",
+        "condition": { "when": "FSWWildDirewolfEnabled", "isValue": "true" }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/10/aitasks/1/entityCodes/0",
+        "value": "feverstonewilds:direwolf-*",
+        "file": "game:entities/animal/mammal/wolf-adult.json",
+        "condition": { "when": "FSWWildDirewolfEnabled", "isValue": "true" }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/10/aitasks/2/entityCodes/0",
+        "value": "feverstonewilds:direwolf-*",
+        "file": "game:entities/animal/mammal/wolf-adult.json",
+        "condition": { "when": "FSWWildDirewolfEnabled", "isValue": "true" }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/10/aitasks/5/entityCodes/0",
+        "value": "feverstonewilds:direwolf-*",
+        "file": "game:entities/animal/mammal/wolf-adult.json",
+        "condition": { "when": "FSWWildDirewolfEnabled", "isValue": "true" }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/10/aitasks/0/entityCodes/0",
+        "value": "feverstonewilds:tame-direwolf-*",
+        "file": "game:entities/animal/mammal/wolf-adult.json",
+        "condition": { "when": "FSWTameDirewolfEnabled", "isValue": "true" }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/10/aitasks/1/entityCodes/0",
+        "value": "feverstonewilds:tame-direwolf-*",
+        "file": "game:entities/animal/mammal/wolf-adult.json",
+        "condition": { "when": "FSWTameDirewolfEnabled", "isValue": "true" }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/10/aitasks/2/entityCodes/0",
+        "value": "feverstonewilds:tame-direwolf-*",
+        "file": "game:entities/animal/mammal/wolf-adult.json",
+        "condition": { "when": "FSWTameDirewolfEnabled", "isValue": "true" }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/10/aitasks/5/entityCodes/0",
+        "value": "feverstonewilds:tame-direwolf-*",
+        "file": "game:entities/animal/mammal/wolf-adult.json",
+        "condition": { "when": "FSWTameDirewolfEnabled", "isValue": "true" }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/10/aitasks/0/entityCodes/0",
         "value": "feverstonewilds:bison-*",
-        "file": "game:entities/land/wolf-male.json",
+        "file": "game:entities/animal/mammal/wolf-adult.json",
         "condition": { "when": "FSWBisonEnabled", "isValue": "true" }
     },
     {
         "op": "add",
         "path": "/server/behaviors/10/aitasks/1/entityCodes/0",
         "value": "feverstonewilds:bison-*",
-        "file": "game:entities/land/wolf-female.json",
+        "file": "game:entities/animal/mammal/wolf-adult.json",
         "condition": { "when": "FSWBisonEnabled", "isValue": "true" }
     },
     {
         "op": "add",
-        "path": "/server/behaviors/10/aitasks/3/entityCodes/0",
+        "path": "/server/behaviors/10/aitasks/2/entityCodes/0",
         "value": "feverstonewilds:bison-*",
-        "file": "game:entities/land/wolf-female.json",
+        "file": "game:entities/animal/mammal/wolf-adult.json",
         "condition": { "when": "FSWBisonEnabled", "isValue": "true" }
     },
-
+    {
+        "op": "add",
+        "path": "/server/behaviors/10/aitasks/5/entityCodes/0",
+        "value": "feverstonewilds:bison-*",
+        "file": "game:entities/animal/mammal/wolf-adult.json",
+        "condition": { "when": "FSWBisonEnabled", "isValue": "true" }
+    },
     
     {
         "op": "add",
         "path": "/server/behaviors/11/aitasks/0/entityCodes/0",
         "value": "feverstonewilds:direwolf-*",
-        "file": "game:entities/land/hare-female.json",
-        "condition": { "when": "FSWDirewolfEnabled", "isValue": "true" }
+        "file": "game:entities/animal/mammal/hare-adult.json",
+        "condition": { "when": "FSWWildDirewolfEnabled", "isValue": "true" }
     },
     {
         "op": "add",
         "path": "/server/behaviors/9/aitasks/0/entityCodes/0",
         "value": "feverstonewilds:direwolf-*",
-        "file": "game:entities/land/hare-male.json",
-        "condition": { "when": "FSWDirewolfEnabled", "isValue": "true" }
-    },
-    {
-        "op": "add",
-        "path": "/server/behaviors/9/aitasks/0/entityCodes/0",
-        "value": "feverstonewilds:direwolf-*",
-        "file": "game:entities/land/hare-baby.json",
-        "condition": { "when": "FSWDirewolfEnabled", "isValue": "true" }
+        "file": "game:entities/animal/mammal/hare-baby.json",
+        "condition": { "when": "FSWWildDirewolfEnabled", "isValue": "true" }
     },
     {
         "op": "add",
         "path": "/server/behaviors/11/aitasks/0/entityCodes/0",
         "value": "feverstonewilds:tame-direwolf-*",
-        "file": "game:entities/land/hare-female.json",
-        "condition": { "when": "FSWDirewolfEnabled", "isValue": "true" }
+        "file": "game:entities/animal/mammal/hare-adult.json",
+        "condition": { "when": "FSWTameDirewolfEnabled", "isValue": "true" }
     },
     {
         "op": "add",
         "path": "/server/behaviors/9/aitasks/0/entityCodes/0",
         "value": "feverstonewilds:tame-direwolf-*",
-        "file": "game:entities/land/hare-male.json",
-        "condition": { "when": "FSWDirewolfEnabled", "isValue": "true" }
-    },
-    {
-        "op": "add",
-        "path": "/server/behaviors/9/aitasks/0/entityCodes/0",
-        "value": "feverstonewilds:tame-direwolf-*",
-        "file": "game:entities/land/hare-baby.json",
-        "condition": { "when": "FSWDirewolfEnCockatriceabled", "isValue": "true" }
+        "file": "game:entities/animal/mammal/hare-baby.json",
+        "condition": { "when": "FSWTameDirewolfEnCockatriceabled", "isValue": "true" }
     },
     {
         "op": "add",
         "path": "/server/behaviors/11/aitasks/0/entityCodes/0",
         "value": "feverstonewilds:cockatrice",
-        "file": "game:entities/land/hare-female.json",
+        "file": "game:entities/animal/mammal/hare-adult.json",
         "condition": { "when": "FSWCockatriceEnabled", "isValue": "true" }
     },
     {
         "op": "add",
         "path": "/server/behaviors/9/aitasks/0/entityCodes/0",
         "value": "feverstonewilds:cockatrice",
-        "file": "game:entities/land/hare-male.json",
-        "condition": { "when": "FSWCockatriceEnabled", "isValue": "true" }
-    },
-    {
-        "op": "add",
-        "path": "/server/behaviors/9/aitasks/0/entityCodes/0",
-        "value": "feverstonewilds:cockatrice",
-        "file": "game:entities/land/hare-baby.json",
+        "file": "game:entities/animal/mammal/mammal/hare-baby.json",
         "condition": { "when": "FSWCockatriceEnabled", "isValue": "true" }
     },
     {
         "op": "add",
         "path": "/server/behaviors/11/aitasks/0/entityCodes/0",
         "value": "feverstonewilds:tame-cockatrice",
-        "file": "game:entities/land/hare-female.json",
+        "file": "game:entities/animal/mammal/hare-adult.json",
         "condition": { "when": "FSWTameCockatriceEnabled", "isValue": "true" }
     },
     {
         "op": "add",
         "path": "/server/behaviors/9/aitasks/0/entityCodes/0",
         "value": "feverstonewilds:tame-cockatrice",
-        "file": "game:entities/land/hare-male.json",
-        "condition": { "when": "FSWTameCockatriceEnabled", "isValue": "true" }
-    },
-    {
-        "op": "add",
-        "path": "/server/behaviors/9/aitasks/0/entityCodes/0",
-        "value": "feverstonewilds:tame-cockatrice",
-        "file": "game:entities/land/hare-baby.json",
+        "file": "game:entities/animal/mammal/hare-baby.json",
         "condition": { "when": "FSWTameCockatriceEnabled", "isValue": "true" }
     },
 
     
     {
         "op": "add",
-        "path": "/server/behaviors/11/aitasks/0/entityCodes/0",
+        "path": "/server/behaviors/11/aitasks/2/entityCodes/0",
         "value": "feverstonewilds:direwolf-*",
-        "file": "game:entities/land/chicken-hen.json",
-        "condition": { "when": "FSWDirewolfEnabled", "isValue": "true" }
-    },
-    {
-        "op": "add",
-        "path": "/server/behaviors/10/aitasks/0/entityCodes/0",
-        "value": "feverstonewilds:direwolf-*",
-        "file": "game:entities/land/chicken-rooster.json",
-        "condition": { "when": "FSWDirewolfEnabled", "isValue": "true" }
+        "file": "game:entities/animal/bird/chicken-adult.json",
+        "condition": { "when": "FSWWildDirewolfEnabled", "isValue": "true" }
     },
     {
         "op": "add",
         "path": "/server/behaviors/10/aitasks/0/entityCodes/0",
         "value": "feverstonewilds:direwolf-*",
-        "file": "game:entities/land/chicken-baby.json",
-        "condition": { "when": "FSWDirewolfEnabled", "isValue": "true" }
+        "file": "game:entities/animal/bird/chicken-baby.json",
+        "condition": { "when": "FSWWildDirewolfEnabled", "isValue": "true" }
     },
     {
         "op": "add",
-        "path": "/server/behaviors/11/aitasks/0/entityCodes/0",
+        "path": "/server/behaviors/11/aitasks/2/entityCodes/0",
         "value": "feverstonewilds:tame-direwolf-*",
-        "file": "game:entities/land/chicken-hen.json",
-        "condition": { "when": "FSWDirewolfEnabled", "isValue": "true" }
-    },
-    {
-        "op": "add",
-        "path": "/server/behaviors/10/aitasks/0/entityCodes/0",
-        "value": "feverstonewilds:tame-direwolf-*",
-        "file": "game:entities/land/chicken-rooster.json",
-        "condition": { "when": "FSWDirewolfEnabled", "isValue": "true" }
+        "file": "game:entities/animal/bird/chicken-adult.json",
+        "condition": { "when": "FSWTameDirewolfEnabled", "isValue": "true" }
     },
     {
         "op": "add",
         "path": "/server/behaviors/10/aitasks/0/entityCodes/0",
         "value": "feverstonewilds:tame-direwolf-*",
-        "file": "game:entities/land/chicken-baby.json",
-        "condition": { "when": "FSWDirewolfEnabled", "isValue": "true" }
+        "file": "game:entities/animal/bird/chicken-baby.json",
+        "condition": { "when": "FSWTameDirewolfEnabled", "isValue": "true" }
     },
 
     
     {
         "op": "add",
-        "path": "/server/behaviors/9/aitasks/2/entityCodes/0",
+        "path": "/server/behaviors/11/aitasks/3/entityCodes/0",
         "value": "feverstonewilds:direwolf-*",
-        "file": "game:entities/land/fox-female-arctic.json",
-        "condition": { "when": "FSWDirewolfEnabled", "isValue": "true" }
+        "file": "game:entities/animal/mammal/fox-adult.json",
+        "condition": { "when": "FSWWildDirewolfEnabled", "isValue": "true" }
     },
     {
         "op": "add",
-        "path": "/server/behaviors/9/aitasks/2/entityCodes/0",
-        "value": "feverstonewilds:direwolf-*",
-        "file": "game:entities/land/fox-male-arctic.json",
-        "condition": { "when": "FSWDirewolfEnabled", "isValue": "true" }
-    },
-    {
-        "op": "add",
-        "path": "/server/behaviors/9/aitasks/2/entityCodes/0",
+        "path": "/server/behaviors/11/aitasks/3/entityCodes/0",
         "value": "feverstonewilds:tame-direwolf-*",
-        "file": "game:entities/land/fox-female-arctic.json",
-        "condition": { "when": "FSWDirewolfEnabled", "isValue": "true" }
+        "file": "game:entities/animal/mammal/fox-adult.json",
+        "condition": { "when": "FSWTameDirewolfEnabled", "isValue": "true" }
     },
     {
         "op": "add",
-        "path": "/server/behaviors/9/aitasks/2/entityCodes/0",
-        "value": "feverstonewilds:tame-direwolf-*",
-        "file": "game:entities/land/fox-male-arctic.json",
-        "condition": { "when": "FSWDirewolfEnabled", "isValue": "true" }
-    },
-    {
-        "op": "add",
-        "path": "/server/behaviors/9/aitasks/2/entityCodes/0",
+        "path": "/server/behaviors/11/aitasks/3/entityCodes/0",
         "value": "feverstonewilds:cockatrice",
-        "file": "game:entities/land/fox-female-arctic.json",
+        "file": "game:entities/animal/mammal/fox-adult.json",
         "condition": { "when": "FSWCockatriceEnabled", "isValue": "true" }
     },
     {
         "op": "add",
-        "path": "/server/behaviors/9/aitasks/2/entityCodes/0",
-        "value": "feverstonewilds:cockatrice",
-        "file": "game:entities/land/fox-male-arctic.json",
-        "condition": { "when": "FSWCockatriceEnabled", "isValue": "true" }
-    },
-    {
-        "op": "add",
-        "path": "/server/behaviors/9/aitasks/2/entityCodes/0",
+        "path": "/server/behaviors/11/aitasks/3/entityCodes/0",
         "value": "feverstonewilds:tame-cockatrice",
-        "file": "game:entities/land/fox-female-arctic.json",
+        "file": "game:entities/animal/mammal/fox-adult.json",
         "condition": { "when": "FSWTameCockatriceEnabled", "isValue": "true" }
     },
     {
         "op": "add",
-        "path": "/server/behaviors/9/aitasks/2/entityCodes/0",
-        "value": "feverstonewilds:tame-cockatrice",
-        "file": "game:entities/land/fox-male-arctic.json",
-        "condition": { "when": "FSWTameCockatriceEnabled", "isValue": "true" }
-    },
-    {
-        "op": "add",
-        "path": "/server/behaviors/10/aitasks/2/entityCodes/0",
+        "path": "/server/behaviors/11/aitasks/0/entityCodes/0",
         "value": "feverstonewilds:direwolf-*",
-        "file": "game:entities/land/fox-female-red.json",
-        "condition": { "when": "FSWDirewolfEnabled", "isValue": "true" }
+        "file": "game:entities/animal/mammal/fox-pup.json",
+        "condition": { "when": "FSWWildDirewolfEnabled", "isValue": "true" }
     },
     {
         "op": "add",
-        "path": "/server/behaviors/9/aitasks/2/entityCodes/0",
-        "value": "feverstonewilds:direwolf-*",
-        "file": "game:entities/land/fox-male-red.json",
-        "condition": { "when": "FSWDirewolfEnabled", "isValue": "true" }
-    },
-    {
-        "op": "add",
-        "path": "/server/behaviors/9/aitasks/0/entityCodes/0",
-        "value": "feverstonewilds:direwolf-*",
-        "file": "game:entities/land/fox-pup.json",
-        "condition": { "when": "FSWDirewolfEnabled", "isValue": "true" }
-    },
-    {
-        "op": "add",
-        "path": "/server/behaviors/10/aitasks/2/entityCodes/0",
+        "path": "/server/behaviors/11/aitasks/0/entityCodes/0",
         "value": "feverstonewilds:tame-direwolf-*",
-        "file": "game:entities/land/fox-female-red.json",
-        "condition": { "when": "FSWDirewolfEnabled", "isValue": "true" }
+        "file": "game:entities/animal/mammal/fox-pup.json",
+        "condition": { "when": "FSWTameDirewolfEnabled", "isValue": "true" }
     },
     {
         "op": "add",
-        "path": "/server/behaviors/9/aitasks/2/entityCodes/0",
-        "value": "feverstonewilds:tame-direwolf-*",
-        "file": "game:entities/land/fox-male-red.json",
-        "condition": { "when": "FSWDirewolfEnabled", "isValue": "true" }
-    },
-    {
-        "op": "add",
-        "path": "/server/behaviors/9/aitasks/0/entityCodes/0",
-        "value": "feverstonewilds:tame-direwolf-*",
-        "file": "game:entities/land/fox-pup.json",
-        "condition": { "when": "FSWDirewolfEnabled", "isValue": "true" }
-    },
-    {
-        "op": "add",
-        "path": "/server/behaviors/10/aitasks/2/entityCodes/0",
+        "path": "/server/behaviors/11/aitasks/0/entityCodes/0",
         "value": "feverstonewilds:cockatrice",
-        "file": "game:entities/land/fox-female-red.json",
+        "file": "game:entities/animal/mammal/fox-pup.json",
         "condition": { "when": "FSWCockatriceEnabled", "isValue": "true" }
     },
     {
         "op": "add",
-        "path": "/server/behaviors/9/aitasks/2/entityCodes/0",
-        "value": "feverstonewilds:cockatrice",
-        "file": "game:entities/land/fox-male-red.json",
-        "condition": { "when": "FSWCockatriceEnabled", "isValue": "true" }
-    },
-    {
-        "op": "add",
-        "path": "/server/behaviors/9/aitasks/0/entityCodes/0",
-        "value": "feverstonewilds:cockatrice",
-        "file": "game:entities/land/fox-pup.json",
-        "condition": { "when": "FSWCockatriceEnabled", "isValue": "true" }
-    },
-    {
-        "op": "add",
-        "path": "/server/behaviors/10/aitasks/2/entityCodes/0",
+        "path": "/server/behaviors/11/aitasks/0/entityCodes/0",
         "value": "feverstonewilds:tame-cockatrice",
-        "file": "game:entities/land/fox-female-red.json",
-        "condition": { "when": "FSWTameCockatriceEnabled", "isValue": "true" }
-    },
-    {
-        "op": "add",
-        "path": "/server/behaviors/9/aitasks/2/entityCodes/0",
-        "value": "feverstonewilds:tame-cockatrice",
-        "file": "game:entities/land/fox-male-red.json",
-        "condition": { "when": "FSWTameCockatriceEnabled", "isValue": "true" }
-    },
-    {
-        "op": "add",
-        "path": "/server/behaviors/9/aitasks/0/entityCodes/0",
-        "value": "feverstonewilds:tame-cockatrice",
-        "file": "game:entities/land/fox-pup.json",
+        "file": "game:entities/animal/mammal/fox-pup.json",
         "condition": { "when": "FSWTameCockatriceEnabled", "isValue": "true" }
     },
 
@@ -582,84 +391,56 @@
         "op": "add",
         "path": "/server/behaviors/10/aitasks/2/entityCodes/0",
         "value": "feverstonewilds:direwolf-*",
-        "file": "game:entities/land/raccoon-female.json",
-        "condition": { "when": "FSWDirewolfEnabled", "isValue": "true" }
-    },
-    {
-        "op": "add",
-        "path": "/server/behaviors/10/aitasks/2/entityCodes/0",
-        "value": "feverstonewilds:direwolf-*",
-        "file": "game:entities/land/raccoon-male.json",
-        "condition": { "when": "FSWDirewolfEnabled", "isValue": "true" }
+        "file": "game:entities/animal/mammal/raccoon-adult.json",
+        "condition": { "when": "FSWWildDirewolfEnabled", "isValue": "true" }
     },
     {
         "op": "add",
         "path": "/server/behaviors/10/aitasks/0/entityCodes/0",
         "value": "feverstonewilds:direwolf-*",
-        "file": "game:entities/land/raccoon-pup.json",
-        "condition": { "when": "FSWDirewolfEnabled", "isValue": "true" }
+        "file": "game:entities/animal/mammal/raccoon-pup.json",
+        "condition": { "when": "FSWWildDirewolfEnabled", "isValue": "true" }
     },
     {
         "op": "add",
         "path": "/server/behaviors/10/aitasks/2/entityCodes/0",
         "value": "feverstonewilds:tame-direwolf-*",
-        "file": "game:entities/land/raccoon-female.json",
-        "condition": { "when": "FSWDirewolfEnabled", "isValue": "true" }
-    },
-    {
-        "op": "add",
-        "path": "/server/behaviors/10/aitasks/2/entityCodes/0",
-        "value": "feverstonewilds:tame-direwolf-*",
-        "file": "game:entities/land/raccoon-male.json",
-        "condition": { "when": "FSWDirewolfEnabled", "isValue": "true" }
+        "file": "game:entities/animal/mammal/raccoon-adult.json",
+        "condition": { "when": "FSWTameDirewolfEnabled", "isValue": "true" }
     },
     {
         "op": "add",
         "path": "/server/behaviors/10/aitasks/0/entityCodes/0",
         "value": "feverstonewilds:tame-direwolf-*",
-        "file": "game:entities/land/raccoon-pup.json",
-        "condition": { "when": "FSWDirewolfEnabled", "isValue": "true" }
+        "file": "game:entities/animal/mammal/raccoon-pup.json",
+        "condition": { "when": "FSWTameDirewolfEnabled", "isValue": "true" }
     },
     {
         "op": "add",
         "path": "/server/behaviors/10/aitasks/2/entityCodes/0",
         "value": "feverstonewilds:cockatrice",
-        "file": "game:entities/land/raccoon-female.json",
-        "condition": { "when": "FSWCockatriceEnabled", "isValue": "true" }
-    },
-    {
-        "op": "add",
-        "path": "/server/behaviors/10/aitasks/2/entityCodes/0",
-        "value": "feverstonewilds:cockatrice",
-        "file": "game:entities/land/raccoon-male.json",
+        "file": "game:entities/animal/mammal/raccoon-adult.json",
         "condition": { "when": "FSWCockatriceEnabled", "isValue": "true" }
     },
     {
         "op": "add",
         "path": "/server/behaviors/10/aitasks/0/entityCodes/0",
         "value": "feverstonewilds:cockatrice",
-        "file": "game:entities/land/raccoon-pup.json",
+        "file": "game:entities/animal/mammal/raccoon-pup.json",
         "condition": { "when": "FSWCockatriceEnabled", "isValue": "true" }
     },
     {
         "op": "add",
         "path": "/server/behaviors/10/aitasks/2/entityCodes/0",
         "value": "feverstonewilds:tame-cockatrice",
-        "file": "game:entities/land/raccoon-female.json",
-        "condition": { "when": "FSWTameCockatriceEnabled", "isValue": "true" }
-    },
-    {
-        "op": "add",
-        "path": "/server/behaviors/10/aitasks/2/entityCodes/0",
-        "value": "feverstonewilds:tame-cockatrice",
-        "file": "game:entities/land/raccoon-male.json",
+        "file": "game:entities/animal/mammal/raccoon-adult.json",
         "condition": { "when": "FSWTameCockatriceEnabled", "isValue": "true" }
     },
     {
         "op": "add",
         "path": "/server/behaviors/10/aitasks/0/entityCodes/0",
         "value": "feverstonewilds:tame-cockatrice",
-        "file": "game:entities/land/raccoon-pup.json",
+        "file": "game:entities/animal/mammal/raccoon-pup.json",
         "condition": { "when": "FSWTameCockatriceEnabled", "isValue": "true" }
     }
 ]
