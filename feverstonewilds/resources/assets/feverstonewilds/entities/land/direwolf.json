@@ -86,13 +86,6 @@
 				"triggeredBy": { "defaultAnim": true }
 			},
 			{
-				"code": "idleitch", 
-				"animation": "idleitch",
-				"easeInSpeed": 4,
-				"easeOutSpeed": 4,
-				"blendMode": "average" 
-			},
-			{
 				"code": "sleep", 
 				"animation": "sleep",
 				"easeInSpeed": 4,
@@ -175,6 +168,42 @@
                             "attackDurationMs": 800,
                             "damagePlayerAtMs": 500,
                             "animation": "Attack",
+                            "animationSpeed": 2.5,
+                            "sound": "game:creature/wolf/attack"
+                        },
+                        {
+                            "code": "meleeattack",
+                            "entityCodes": ["player", "chicken-*", "drifter-*", "hare-*",
+                                            "feverstonewilds:cockatrice", "feverstonewilds:ostrich-chick",
+                                            "feverstonewilds:bison-calf" ],
+                            "priority": 2,
+                            "damage": 8,
+                            "damageTier": 2,
+                            "damageType": "SlashingAttack",
+                            "slot": 1,
+                            "mincooldown": 1500, 
+                            "maxcooldown": 1500, 
+                            "attackDurationMs": 800,
+                            "damagePlayerAtMs": 500,
+                            "animation": "Attack-Low",
+                            "animationSpeed": 2.5,
+                            "sound": "game:creature/wolf/attack"
+                        },
+                        {
+                            "code": "meleeattack",
+                            "entityCodes": ["player", "bear-*", "feverstonewilds:horse-*",
+                                            "feverstonewilds:bison-*", "feverstonewilds:giraffe"],
+                            "priority": 2,
+                            "damage": 8,
+                            "damageTier": 2,
+                            "damageType": "SlashingAttack",
+                            "slot": 1,
+                            "mincooldown": 1500, 
+                            "maxcooldown": 1500, 
+                            "attackDurationMs": 800,
+                            "damagePlayerAtMs": 500,
+                            "animation": "Attack-High",
+						    "retaliateAttacks": false,
                             "animationSpeed": 2.5,
                             "sound": "game:creature/wolf/attack"
                         },
@@ -332,10 +361,10 @@
                     },
                     "insideBlockCodes": [ "game:air", "game:tallgrass-*", "game:snowlayer-1" ],
                     "minTemp": -15,
-                    "maxTemp": 12,
+                    "maxTemp": 7,
                     "minRain": 0.25,
                     "minForest": 0.15,
-                    "companions": [ "direwolf-female", "feverstonewilds:direwolf-pup" ]
+                    "companions": [ "direwolf-female", "direwolf-pup" ]
                 },
                 "runtime": {
                     "group": "neutral",
@@ -351,10 +380,10 @@
                     },
                     "insideBlockCodes": [ "game:air", "game:tallgrass-*", "game:snowlayer-1" ],
                     "minTemp": -15,
-                    "maxTemp": 12,
+                    "maxTemp": 7,
                     "minRain": 0.15,
                     "minForest": 0.15,
-                    "companions": [ "direwolf-female", "feverstonewilds:direwolf-pup" ]
+                    "companions": [ "direwolf-female", "direwolf-pup" ]
                 }
             }                
         }

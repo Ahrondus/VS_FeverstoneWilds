@@ -333,90 +333,177 @@
             "tame-direwolf-female": 0.95
         },
         "behaviors": [
-                { "code": "multiply", "enabledByType": { "*-male": false, "*-female": true } },
-                { "code": "mouthinventory",
-                    "acceptStacks": [
-                        { "type": "item", "code": "bone" },
-                        { "type": "item", "code": "bushmeat-raw" },
-                        { "type": "item", "code": "redmeat-raw" },
-                        { "type": "item", "code": "poultry-raw" },
-                        { "type": "item", "code": "wolftaming:dogtoy" },
-                        { "type": "item", "code": "petai:petcookie-meat-perfect" }
-                    ]
-                },
-                { "code": "repulseagents" },
-                { "code": "controlledphysics" },
-                { "code": "floatupwhenstuck", "onlyWhenDead": true },
-                { "code": "interpolateposition" },
-                { "code": "gait" },
-                { "code": "rideable" },
-                { "code": "ownable" },
-                { "code": "selectionboxes" },
-                { "code": "rideableaccessories" },
-                { "code": "mortallywoundable" },
-                { "code": "harvestable" },
-                { "code": "ropetieable", "minGeneration": 1 }
-            ],
-            "animations": [
-                {
-                    "code": "hurt",
-                    "animation": "hurt",
-                    "animationSpeed": 2.2,
-                    "weight": 10,
-                    "blendMode": "addAverage"
-                },
-                {
-                    "code": "die",
-                    "animation": "death",
-                    "animationSpeed": 1.25,
-                    "weight": 10,
-                    "blendMode": "average",
-                    "triggeredBy": { "onControls": [ "dead" ] }
-                },
-                {
-                    "code": "idle",
-                    "animation": "idle",
-                    "blendMode": "addAverage",
-                    "easeOutSpeed": 4,
-                    "triggeredBy": { "defaultAnim": true }
-                },
-                {
-                    "code": "sleep",
-                    "animation": "sleep",
-                    "easeInSpeed": 4,
-                    "easeOutSpeed": 4,
-                    "blendMode": "average"
-                },
-                {
-                    "code": "sit",
-                    "animation": "sit",
-                    "easeInSpeed": 4,
-                    "easeOutSpeed": 4,
-                    "blendMode": "average"
-                },
-                {
-                    "code": "walk",
-                    "animation": "walk",
-                    "blendMode": "average",
-                    "mulWithWalkSpeed": true,
-                    "animationSpeed": 0.8,
-                    "triggeredBy": {"onControls": ["move"], "matchExact": true }
-                },
-                {
-                    "code": "run",
-                    "animation": "run",
-                    "blendMode": "average",
-                    "mulWithWalkSpeed": true,
-                    "animationSpeed": 1.1,
-                    "triggeredBy": {"onControls": ["move", "sprintMode"], "matchExact": true }
-                }
-            ]
-        },
+            { "code": "multiply", "enabledByType": { "*-male": false, "*-female": true } },
+            { "code": "mouthinventory",
+                "acceptStacks": [
+                    { "type": "item", "code": "bone" },
+                    { "type": "item", "code": "bushmeat-raw" },
+                    { "type": "item", "code": "redmeat-raw" },
+                    { "type": "item", "code": "poultry-raw" },
+                    { "type": "item", "code": "wolftaming:dogtoy" },
+                    { "type": "item", "code": "petai:petcookie-meat-perfect" }
+                ]
+            },
+            { "code": "repulseagents" },
+            { "code": "controlledphysics" },
+            { "code": "floatupwhenstuck" },
+            { "code": "interpolateposition" },
+            { "code": "gait" },
+            { "code": "rideable" },
+            { "code": "ownable" },
+            { "code": "selectionboxes" },
+            { "code": "rideableaccessories" },
+            { "code": "mortallywoundable" },
+            { "code": "harvestable" },
+            { "code": "ropetieable", "minGeneration": 1 }
+        ],
+        "animations": [
+            {
+                "code": "hurt",
+                "animation": "hurt",
+                "animationSpeed": 2.2,
+                "weight": 10,
+                "blendMode": "addAverage"
+            },
+            {
+                "code": "die",
+                "animation": "death",
+                "animationSpeed": 1.25,
+                "weight": 10,
+                "blendMode": "average",
+                "triggeredBy": { "onControls": [ "dead" ] }
+            },
+            {
+                "code": "idle",
+                "animation": "idle",
+                "blendMode": "addAverage",
+                "easeOutSpeed": 4,
+                "triggeredBy": { "defaultAnim": true }
+            },
+            {
+                "code": "sleep",
+                "animation": "sleep",
+                "easeInSpeed": 4,
+                "easeOutSpeed": 4,
+                "blendMode": "average"
+            },
+            {
+                "code": "sit",
+                "animation": "sit",
+                "easeInSpeed": 4,
+                "easeOutSpeed": 4,
+                "blendMode": "average"
+            },
+            {
+                "code": "walk",
+                "animation": "walk",
+                "blendMode": "average",
+                "mulWithWalkSpeed": true,
+                "animationSpeed": 0.8,
+                "triggeredBy": {"onControls": ["move"], "matchExact": true }
+            },
+            {
+                "code": "run",
+                "animation": "run",
+                "blendMode": "average",
+                "mulWithWalkSpeed": true,
+                "animationSpeed": 1.1,
+                "triggeredBy": {"onControls": ["move", "sprintMode"], "matchExact": true }
+            },
+			{
+				"code": "wounded-idle",
+				"animation": "wounded-idle",
+				"easeInSpeed": 3,
+				"weight": 10,
+				"blendMode": "Average"
+			},
+			{
+				"code": "wounded-stand",
+				"animation": "wounded-stand",
+				"weight": 10,
+				"blendMode": "Average"
+			},
+			{
+				"code": "turn-left",
+				"animation": "turn-left",
+				"easeInSpeed": 3,
+				"easeOutSpeed": 10,
+				"weight": 0.01,
+				"weightCapFactor": 0.85,
+				"blendMode": "Average",
+				"elementWeight": {
+					"Head": 80,
+					"Neck": 80,
+					"fur down": 80
+				},
+				"elementBlendMode": {
+					"Head": "AddAverage",
+					"Neck": "AddAverage",
+					"fur down": "AddAverage"
+				}				
+			},
+			{
+				"code": "turn-right",
+				"animation": "turn-right",
+				"easeInSpeed": 3,
+				"easeOutSpeed": 10,
+				"weightCapFactor": 0.85,
+				"weight": 0.01,
+				"blendMode": "Average",
+				"elementWeight": {
+					"Head": 80,
+					"Neck": 80,
+					"fur down": 80
+				},
+				"elementBlendMode": {
+					"Head": "AddAverage",
+					"Neck": "AddAverage",
+					"fur down": "AddAverage"
+				}				
+			},
+			{
+				"code": "idle-turn-left",
+				"animation": "turn-left",
+				"easeInSpeed": 3,
+				"easeOutSpeed": 10,
+				"weight": 0.01,
+				"blendMode": "Average",
+				"elementWeight": {
+					"Head": 5,
+					"Neck": 5,
+					"fur down": 5
+				},
+				"elementBlendMode": {
+					"Head": "AddAverage",
+					"Neck": "AddAverage",
+					"fur down": "AddAverage"
+				}				
+			},
+			{
+				"code": "idle-turn-right",
+				"animation": "turn-right",
+				"easeInSpeed": 3,
+				"easeOutSpeed": 10,
+				"weight": 0.01,
+				"blendMode": "Average",
+				"elementWeight": {
+					"Head": 5,
+					"Neck": 5,
+					"fur down": 5
+				},
+				"elementBlendMode": {
+					"Head": "AddAverage",
+					"Neck": "AddAverage",
+					"fur down": "AddAverage"
+				}				
+			}
+        ]
+    },
     "server": {
         "attributes": {
             "pathfinder": {
-                "minTurnAnglePerSec": 125,
-                "maxTurnAnglePerSec": 210
+                "minTurnAnglePerSec": 250,
+                "maxTurnAnglePerSec": 500
             }
         },
         "behaviors": [
@@ -431,7 +518,7 @@
                 ]
             },
             { "code": "repulseagents" },
-            { "code": "controlledphysics", "stepHeight": 1.1251 },
+            { "code": "controlledphysics" },
             { "code": "gait" },
             { "code": "rideable" },
             { "code": "ownable" },
@@ -440,7 +527,7 @@
             { "code": "mortallywoundable", "whenBelowHealth": 7 },
             { "code": "health", "maxhealth": 32 },
             { "code": "deaddecay", "hoursToDecay": 96, "decayedBlock": "carcass-medium" },
-            { "code": "floatupwhenstuck", "onlyWhenDead": true },
+            { "code": "floatupwhenstuck" },
             { "code": "breathe" },
             {
                 "code": "multiply",
@@ -492,16 +579,72 @@
                 "aiCreatureType": "LandCreature",
                 "aitasks": [
                     {
-                        "code": "fleeentity",
-                        "entityCodes": [
-                            "drifter-*"
-                        ],
-                        "priority": 1.6,
-                        "movespeed": 0.03,
-                        "fleeingDistance": 8,
-                        "seekingRange": 5,
-                        "animation": "Run",
-                        "animationSpeed": 1.5
+                        "code": "cometoowner",
+                        "priority": 4,
+                        "animation": "trot",
+                        "animationSpeed": 1.35,
+                        "movespeed": 0.019,
+                        "__allowTeleport": true,
+                        "teleportMaxRange": 1000,
+                        "teleportAfterRange": 200,
+                        "teleportToRange": 20
+                    },
+                    {
+                        "code": "meleeattack",
+                        "entityCodes": ["chicken-*",  "wolf-*", 
+                                        "drifter-*", "bear-*", "hare-*",
+                                        "feverstonewilds:cockatrice", "feverstonewilds:horse-*",
+                                        "feverstonewilds:ostrich-*", "feverstonewilds:ostrich-chick",
+                                        "feverstonewilds:bison-*", "feverstonewilds:bison-calf",
+                                        "feverstonewilds:giraffe"],
+                        "priority": 2,
+                        "damage": 8,
+                        "damageTier": 2,
+                        "damageType": "SlashingAttack",
+                        "slot": 1,
+                        "mincooldown": 1500, 
+                        "maxcooldown": 1500, 
+                        "attackDurationMs": 800,
+                        "damagePlayerAtMs": 500,
+                        "animation": "Attack",
+                        "animationSpeed": 2.5,
+                        "sound": "game:creature/wolf/attack"
+                    },
+                    {
+                        "code": "meleeattack",
+                        "entityCodes": ["chicken-*", "drifter-*", "hare-*",
+                                        "feverstonewilds:cockatrice", "feverstonewilds:ostrich-chick",
+                                        "feverstonewilds:bison-calf" ],
+                        "priority": 2,
+                        "damage": 8,
+                        "damageTier": 2,
+                        "damageType": "SlashingAttack",
+                        "slot": 1,
+                        "mincooldown": 1500, 
+                        "maxcooldown": 1500, 
+                        "attackDurationMs": 800,
+                        "damagePlayerAtMs": 500,
+                        "animation": "Attack-Low",
+                        "animationSpeed": 2.5,
+                        "sound": "game:creature/wolf/attack"
+                    },
+                    {
+                        "code": "meleeattack",
+                        "entityCodes": ["bear-*", "feverstonewilds:horse-*",
+                                        "feverstonewilds:bison-*", "feverstonewilds:giraffe"],
+                        "priority": 2,
+                        "damage": 8,
+                        "damageTier": 2,
+                        "damageType": "SlashingAttack",
+                        "slot": 1,
+                        "mincooldown": 1500, 
+                        "maxcooldown": 1500, 
+                        "attackDurationMs": 800,
+                        "damagePlayerAtMs": 500,
+                        "animation": "Attack-High",
+                        "retaliateAttacks": false,
+                        "animationSpeed": 2.5,
+                        "sound": "game:creature/wolf/attack"
                     },
                     {
                         "code": "idle",
@@ -517,9 +660,13 @@
                             { "fromHour": 10, "toHour": 18 },
                             { "fromHour": 1, "toHour": 3 }
                         ],
-                        "stopOnNearbyEntityCodes": [ "drifter-*" ],
+                        "stopOnNearbyEntityCodes": [ "drifter-*", "bear-*", "wolf-*",
+                                                     "feverstonewilds:direwolf", "feverstonewilds:cockatrice",
+                                                     "hyena-*", "moose-*" ],
                         "stopRange": 10,
-                        "stopOnHurt": true
+                        "stopOnHurt": true,
+                        "sound": "direwolf/direwolf-sleeping",
+                        "soundChance": 0.4
                     },
                     {
                         "code": "getoutofwater",
@@ -530,18 +677,6 @@
                     },
                     {
                         "code": "idle",
-                        "priority": 1.15,
-                        "priorityForCancel": 1.35,
-                        "minduration": 5000,
-                        "maxduration": 5000,
-                        "mincooldown": 20000,
-                        "maxcooldown": 60000,
-                        "animation": "Stretch",
-                        "animationSpeed": 1,
-                        "whenInEmotionState": "aggressiveondamage"
-                    },
-                    {
-                        "code": "idle",
                         "priority": 1.3,
                         "priorityForCancel": 1.35,
                         "minduration": 4667,
@@ -549,14 +684,14 @@
                         "mincooldown": 80000,
                         "maxcooldown": 500000,
                         "animation": "Howl",
-                        "animationSpeed": 0.5,
+                        "animationSpeed": 0.65,
                         "sound": "game:creature/wolf/howl*",
                         "soundRange": 110
                     },
                     {
                         "code": "idle",
                         "priority": 1.2,
-                        "priorityForCancel": 1.35,
+                        "priorityForCancel": 1.3,
                         "minduration": 2500,
                         "maxduration": 2500,
                         "mincooldown": 6000,
@@ -629,5 +764,6 @@
         "death": "game:creature/wolf/hurt",
         "idle": "game:creature/wolf/howl*"
     },
-    "idleSoundChance": 0.01
+    "idleSoundChance": 0.01,
+    "hurtSoundChance": 0.2
 }

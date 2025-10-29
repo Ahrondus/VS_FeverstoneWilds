@@ -194,16 +194,13 @@
         "worldgen": {
             "TriesPerChunk": { "avg": 0.006, "var": 0.005 },
             "tryOnlySurface": true,
-            "maxLightLevel": 10,
+            "minLightLevel": 12,
             "lightLevelType": "onlyBlockLight",
             "groupSizeByType": {
                 "*": { "dist": "uniform", "avg": 1, "var": 0 }
             },
             "insideBlockCodesByType": {
-                "*-andesite-*": [ "game:air" ],
-                "*-granite-*": [ "game:air" ],
-                "*-basalt-*": [ "game:air" ],
-                "*-limestone-*": [ "game:air" ]
+                "*": [ "game:air", "game:tallgrass-*" ]
             },
             "minYByType": { "*": 0.85 },
             "maxYByType": { "*": 2 },
@@ -214,7 +211,7 @@
             "group": "neutral",
             "maxQuantity": 1,
             "mindistancetoplayer": 120,
-            "maxLightLevel": 10,
+            "minLightLevel": 12,
             "lightLevelType": "onlyBlockLight",
             "tryOnlySurface": true,
             "chance": 0.00001,
@@ -222,10 +219,7 @@
                 "*": { "dist": "uniform", "avg": 1, "var": 0 }
             },
             "insideBlockCodesByType": {
-                "*-andesite-*": [ "game:air" ],
-                "*-granite-*": [ "game:air" ],
-                "*-basalt-*": [ "game:air" ],
-                "*-limestone-*": [ "game:air" ]
+                "*": [ "game:air", "game:tallgrass-*" ]
             },
             "minYByType": { "*": 0.85 },
             "maxYByType": { "*": 2 },

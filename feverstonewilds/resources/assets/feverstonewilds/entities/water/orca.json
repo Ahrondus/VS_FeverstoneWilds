@@ -210,7 +210,7 @@
 			"worldgen": {
 				"TriesPerChunk": { "avg": 0.045, "var": 0 },
 				"tryOnlySurface": true,
-				"maxLightLevel": 22,
+				"minLightLevel": 8,
 				"groupSize": { "dist": "verynarrowgaussian", "avg": 1.5, "var": 0.5 },
 				"maxQuantity": 2,
 				"insideBlockCodes": [ "game:saltwater-still-*"],

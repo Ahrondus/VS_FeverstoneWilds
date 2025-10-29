@@ -186,7 +186,7 @@
 			"worldgen": {
 				"TriesPerChunk": { "avg": 0.06, "var": 0 },
 				"tryOnlySurface": true,
-				"maxLightLevel": 7,
+				"minLightLevel": 12,
 				"groupSize": { "dist": "verynarrowgaussian", "avg": 1, "var": 1 },
 				"insideBlockCodes": [ "game:air", "game:tallgrass-*" ],
 				"minTemp": -12,
@@ -197,7 +197,7 @@
 				"tryOnlySurface": true,
 				"chance": 0.006,
 				"maxQuantity": 3,
-				"maxLightLevel": 7,
+				"minLightLevel": 12,
 				"groupSize": { "dist": "verynarrowgaussian", "avg": 1, "var": 1 },
 				"insideBlockCodes": [ "game:air", "game:tallgrass-*" ],
 				"minTemp": -12,
