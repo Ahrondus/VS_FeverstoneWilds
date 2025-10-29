@@ -22,6 +22,9 @@
 		},
 		"handbook": {
 			"groupcode": "feverstonewilds:creaturegroup-fswcockatrice"
+		},
+		"trappable": {
+			"large": { "trapChance": 0.5, "trapDestroyChance": 0.01 }
 		}
 	},
 	"client": {
@@ -42,7 +45,7 @@
 		},
 		"sizeByType": {
 			"cockatrice-male": 1,
-			"cockatrice-female": 1
+			"cockatrice-female": 0.95
 		},
 		"behaviors": [
 			{ "code": "repulseagents" },
@@ -219,6 +222,14 @@
 						"whenInEmotionState": "fleeondamage"
 					},
 					{
+						"code": "followleadholder",
+						"minGeneration": 0,
+						"priority": 1.45,
+						"animation": "Run",
+						"animationSpeed": 1.35,
+						"movespeed": 0.019
+					},
+					{
 						"code": "getoutofwater",
 						"priority": 1.4,
 						"movespeed": 0.02,
@@ -337,7 +348,7 @@
 					"minTemp": -10,
 					"maxTemp": 20,
 					"minRain": 0.43,
-					"companions": [ "cockatrice-female", "feverstonewilds:cockatrice-chick" ]
+					"companions": [ "cockatrice-female", "cockatrice-chick" ]
 				},
 				"runtime": {
 					"group": "neutral",
@@ -354,7 +365,7 @@
 					"minTemp": -10,
 					"maxTemp": 20,
 					"minRain": 0.43,
-					"companions": [ "cockatrice-female", "feverstonewilds:cockatrice-chick" ]
+					"companions": [ "cockatrice-female", "cockatrice-chick" ]
 				}
 			}
 		}

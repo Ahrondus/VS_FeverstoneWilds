@@ -764,7 +764,7 @@
 				"worldgen": {
 					"TriesPerChunk": { "avg": 0.02, "var": 0.01 },
 					"tryOnlySurface": true,
-					"minLightLevel": 8,
+					"minLightLevel": 11,
 					"groupSize": { "dist": "verynarrowgaussian", "avg": 3, "var": 4 },
 					"insideBlockCodes": ["game:air", "game:tallgrass-*", "game:snowlayer-1"],
 					"minTemp": 22,
@@ -773,7 +773,7 @@
 					"minForestOrShrubs": 0.25,
 					"maxForest": 0.75,
 					"maxShrubs": 0.75,
-					"companions": ["bison-female", "feverstonewilds:bison-calf"]
+					"companions": ["bison-female", "bison-calf"]
 				},
 				"runtime": {
 					"group": "neutral",
@@ -789,7 +789,7 @@
 					"minForestOrShrubs": 0.25,
 					"maxForest": 0.75,
 					"maxShrubs": 0.75,
-					"companions": ["bison-female", "feverstonewilds:bison-calf"]
+					"companions": ["bison-female", "bison-calf"]
 				}
 			}
 		}
