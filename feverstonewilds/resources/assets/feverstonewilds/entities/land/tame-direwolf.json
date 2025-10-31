@@ -77,7 +77,7 @@
 					"movespeed": 0.011,
 					"backwards": true,
 					"yawMultiplier": 1,
-					"sound": "game:creature/hooved/trot"
+					"sound": "direwolf-walking"
 				},
 				{
 					"code": "idle",
@@ -87,29 +87,26 @@
 					"code": "walk",
 					"movespeed": 0.019,
 					"yawMultiplier": 1.2,
-					"sound": "game:creature/hooved/trot"
+					"sound": "direwolf-walking"
 				},
 				{
 					"code": "trot",
 					"movespeed": 0.036,
 					"yawMultiplier": 0.90,
-					"fallbackGaitCode": "walk",
-					"sound": "game:creature/hooved/trot"
+					"fallbackGaitCode": "walk"
 				},
 				{
 					"code": "canter",
 					"movespeed": 0.075,
 					"yawMultiplier": 0.82,
-					"fallbackGaitCode": "trot",
-					"sound": "game:creature/hooved/trot"
+					"fallbackGaitCode": "trot"
 				},
 				{
 					"code": "sprint",
 					"movespeed": 0.1067,
 					"yawMultiplier": 1,
 					"isSprint": true,
-					"fallbackGaitCode": "walk",
-					"sound": "game:creature/hooved/gallop"
+					"fallbackGaitCode": "walk"
 				},
 				{
 					"code": "swim",
