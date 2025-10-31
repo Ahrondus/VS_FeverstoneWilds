@@ -1,29 +1,22 @@
 {
 	"code": "egg",
-	"maxstacksize": 32,
+	"class": "ItemEgg",
+	"maxstacksize": 16,
 	"variantgroups": [
-		{
-			"code": "source",
-			"states": [ "ostrich", "cockatrice" ]
-		},
-		{
-			"code": "state",
-			"states": [ "raw" ]
-		}
+		{ "code": "source", "states": [ "ostrich", "cockatrice" ] },
+		{ "code": "state", "states": [ "raw" ] }
 	],
 	"shapeByType": {
 		"egg-ostrich-raw": { "base": "block/egg/1ostrichegg" },
 		"egg-cockatrice-raw": { "base": "block/egg/1cockatriceegg" }
 	},
-	"creativeinventory": {
-		"general": [ "*" ],
-		"items": [ "*" ]
-	},
+	"creativeinventory": { "general": [ "*" ], "items": [ "*" ] },
 	"attributes": {
 		"nutritionPropsWhenInMeal": {
-			"saturation": 200,
+			"saturation": 300,
 			"foodcategory": "Protein"
-		}
+		},
+		"foodTags": [ "egg" ]
 	},
 	"nutritionPropsByType": {
 		"*-ostrich-raw": {
@@ -51,10 +44,7 @@
 			"type": "perish",
 			"freshHours": { "avg": 120 },
 			"transitionHours": { "avg": 24 },
-			"transitionedStack": {
-				"type": "item",
-				"code": "game:rot"
-			},
+			"transitionedStack": { "type": "item", "code": "game:rot" },
 			"transitionRatio": 0.5
 		}
 	]

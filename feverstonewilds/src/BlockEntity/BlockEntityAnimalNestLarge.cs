@@ -57,7 +57,7 @@ namespace FeverstoneWilds
 
         public virtual bool IsSuitableFor(Entity entity, string[] nestTypes)
         {
-            return nestTypes?.Contains(((BlockHenbox)Block).NestType) == true;
+            return nestTypes?.Contains(((BlockAnimalNest)Block).NestType) == true;
         }
 
         public bool Occupied(Entity entity)
@@ -73,6 +73,18 @@ namespace FeverstoneWilds
             }
             occupier = entity;
             MarkDirty();
+        }
+
+        public string GetOccupier(Entity entity)
+        {
+            if ( occupier != null && occupier.FirstCodePart(1) == "cockatrice")
+            {
+                return "cockatrice";
+            }
+            else
+            {
+                return "ostrich";
+            }
         }
 
         public float DistanceWeighting => 2 / (CountEggs() + 2);
@@ -189,6 +201,7 @@ namespace FeverstoneWilds
 
             if (api.Side == EnumAppSide.Server)
             {
+                string lastocc = GetOccupier(occupier);
                 // Update from old save format to new one
                 int eggsWithBlock = -1;
                 if (Block.Code.Path.EndsWith("empty"))
@@ -206,13 +219,13 @@ namespace FeverstoneWilds
                 }
                 if (eggsWithBlock >= 0)
                 {
-                    Block emptyNest = api.World.GetBlock(new AssetLocation(Block.FirstCodePart()));
+                    Block emptyNest = api.World.GetBlock(new AssetLocation("feverstonewilds:"+Block.FirstCodePart()));
                     api.World.BlockAccessor.ExchangeBlock(emptyNest.Id, this.Pos);
                     MarkDirty();
                 }
                 for (int i = 0; i < eggsWithBlock; ++i)
                 {
-                    inventory[i].Itemstack ??= new ItemStack(api.World.GetItem("egg-chicken-raw"));
+                    inventory[i].Itemstack ??= new ItemStack(api.World.GetItem("feverstonewilds:egg-"+lastocc+"-raw"));
                     inventory.DidModifyItemSlot(inventory[i]);
                 }
 
@@ -283,7 +296,7 @@ namespace FeverstoneWilds
                 if (chickCode != null)
                 {
                     int generation = tree.GetInt("gen" + i);
-                    inventory[i].Itemstack = new ItemStack(worldForResolving.GetItem("egg-chicken-raw"));
+                    inventory[i].Itemstack = new ItemStack(worldForResolving.GetItem("egg-"+Block.FirstCodePart(1)+"-raw"));
                     TreeAttribute chickTree = new TreeAttribute();
                     chickTree.SetString("code", chickCode);
                     chickTree.SetInt("generation", generation);

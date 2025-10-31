@@ -2,39 +2,27 @@
 	"code": "largenest",
 	"class": "BlockAnimalNestLarge",
 	"entityClass": "AnimalNestLarge",
-	"variantgroups": [
-        { "code": "ownerBird", "states": ["cockatrice", "ostrich"] }
-	],
 	"attributes": {
-		"nestType": "ground",
+		"placeSound": "game:sounds/block/loosestick",	
+		"nestType": "ground-large",
 		"inventoryClassName": "henbox",
-		"quantitySlotsByType": {
-			"*-ostrich-*":"6",
-			"*-cockatrice-*": "5"
-		},
+		"quantitySlots": 5,
 		"displayTransforms": [
-			{ "translation": { "x": -0.05, "y": 0.09, "z": -0.07344 }, "rotation": { "x": 3, "y": 47, "z": 0 } },
-			{ "translation": { "x": 0.01857, "y": 0.09, "z": 0.073675 }, "rotation": { "x": 4, "y": 104, "z": -5 } },
+			{ "translation": { "x": -0.15, "y": -0.01, "z": -0.07344 }, "rotation": { "x": 3, "y": 47, "z": 0 } },
+			{ "translation": { "x": 0.01857, "y": -0.09, "z": 0.073675 }, "rotation": { "x": 4, "y": 104, "z": -5 } },
+			{ "translation": { "x": 0.22, "y": 0.05, "z": 0 }, "rotation": { "x": 3, "y": 47, "z": 6 } },
 			{ "translation": { "x": 0.0899, "y": 0.09, "z": -0.03245 }, "rotation": { "x": -5, "y": -14, "z": -2 } },
-			{ "translation": { "x": 0.0899, "y": 0.09, "z": -0.03245 }, "rotation": { "x": -5, "y": -14, "z": -2 } },
-			{ "translation": { "x": 0.0899, "y": 0.09, "z": -0.03245 }, "rotation": { "x": -5, "y": -14, "z": -2 } },
-			{ "translation": { "x": 0.0899, "y": 0.09, "z": -0.03245 }, "rotation": { "x": -5, "y": -14, "z": -2 } }
+			{ "translation": { "x": 0.1, "y": 0.02, "z": -0.12 }, "rotation": { "x": -5, "y": -35, "z": -4 } }
 		],
 		"handbook": {
-			"groupBy": ["largenest-*"],
 			"extraSections": [
 				{ "title": "handbooktitle-largenest", "text": "handbooktext-henbox" }
 			]
 		}
 	},
 	"creativeinventory": { "general": ["*"] },
-	"shapeByType": {
-		"*-ostrich-*": {
-            "base": "block/wood/largenest-ostrich/largenest-empty"
-        },
-        "*-cockatrice-*": {
-            "base":"block/wood/largenest-cockatrice/largenest-empty"
-        }
+	"shape": {
+		"base": "block/wood/largenest/largenest-empty"
 	},
 	"resistance": 1,
 	"sideopaque": {

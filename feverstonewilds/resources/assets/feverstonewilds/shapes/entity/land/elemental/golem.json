@@ -1592,7 +1592,7 @@
 			"name": "move",
 			"code": "move",
 			"quantityframes": 60,
-			"onActivityStopped": "Rewind",
+			"onActivityStopped": "EaseOut",
 			"onAnimationEnd": "Repeat",
 			"keyframes": [
 				{
@@ -1702,8 +1702,8 @@
 			"name": "look",
 			"code": "look",
 			"quantityframes": 46,
-			"onActivityStopped": "Rewind",
-			"onAnimationEnd": "Stop",
+			"onActivityStopped": "PlayTillEnd",
+			"onAnimationEnd": "EaseOut",
 			"keyframes": [
 				{
 					"frame": 0,
@@ -1772,8 +1772,8 @@
 			"name": "throw",
 			"code": "throw",
 			"quantityframes": 40,
-			"onActivityStopped": "Rewind",
-			"onAnimationEnd": "Repeat",
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "EaseOut",
 			"keyframes": [
 				{
 					"frame": 0,
@@ -1894,7 +1894,7 @@
 
 		{
 			"name": "throwBoulder",
-			"code": "throwBoulder",
+			"code": "throwboulder",
 			"quantityframes": 45,
 			"onActivityStopped": "EaseOut",
 			"onAnimationEnd": "Stop",
@@ -2175,8 +2175,8 @@
 			"name": "idleDisassemble",
 			"code": "idledisassemble",
 			"quantityframes": 30,
-			"onActivityStopped": "Rewind",
-			"onAnimationEnd": "Repeat",
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "EaseOut",
 			"keyframes": [
 				{
 					"frame": 0,
@@ -2230,11 +2230,11 @@
 		},
 
 		{
-			"name": "death",
-			"code": "dead",
-			"quantityframes": 45,
-			"onActivityStopped": "Rewind",
-			"onAnimationEnd": "Repeat",
+			"name": "die",
+			"code": "death",
+			"quantityframes": 85,
+			"onActivityStopped": "PlayTillEnd",
+			"onAnimationEnd": "Hold",
 			"keyframes": [
 				{
 					"frame": 0,
@@ -2330,9 +2330,9 @@
 						"lshoulder": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"lforearm": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Cube48": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Cube50": { "offsetX": -12.45, "offsetY": 6.0, "offsetZ": -10.0, "rotationX": -67.5, "rotationY": -22.5, "rotationZ": 8.0 },
+						"Cube50": { "offsetX": -13.45, "offsetY": 6.0, "offsetZ": -10.0, "rotationX": -67.5, "rotationY": -22.5, "rotationZ": 8.0 },
 						"Cube52": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Cube54": { "offsetX": 11.0, "offsetY": 7.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -110.5 },
+						"Cube54": { "offsetX": 11.5, "offsetY": 7.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -110.5 },
 						"larmelbow": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5 }
 					}
 				},
@@ -2354,9 +2354,9 @@
 						"larmelbow": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5 },
 						"lforearm": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Cube48": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Cube50": { "offsetX": -12.45, "offsetY": 6.0, "offsetZ": -10.0, "rotationX": -67.5, "rotationY": -22.5, "rotationZ": 8.0 },
+						"Cube50": { "offsetX": -13.45, "offsetY": 6.0, "offsetZ": -10.0, "rotationX": -67.5, "rotationY": -22.5, "rotationZ": 8.0 },
 						"Cube52": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Cube54": { "offsetX": 11.0, "offsetY": 7.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -110.5 }
+						"Cube54": { "offsetX": 11.5, "offsetY": 7.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -110.5 }
 					}
 				},
 				{
@@ -2377,9 +2377,9 @@
 						"larmelbow": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5 },
 						"lforearm": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Cube48": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Cube50": { "offsetX": -12.45, "offsetY": 6.0, "offsetZ": -10.0, "rotationX": -67.5, "rotationY": -22.5, "rotationZ": 8.0 },
+						"Cube50": { "offsetX": -13.45, "offsetY": 6.0, "offsetZ": -10.0, "rotationX": -67.5, "rotationY": -22.5, "rotationZ": 8.0 },
 						"Cube52": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Cube54": { "offsetX": 11.0, "offsetY": 7.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -110.5 }
+						"Cube54": { "offsetX": 11.5, "offsetY": 7.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -110.5 }
 					}
 				},
 				{
@@ -2391,7 +2391,7 @@
 						"Cube21": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"head": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": -45.0, "rotationZ": 45.0 },
 						"rshoulder": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -45.0 },
-						"rforearm": { "offsetX": 21.25, "offsetY": 35.0, "offsetZ": 0.5, "rotationX": -7.0, "rotationY": 16.65, "rotationZ": -49.25 },
+						"rforearm": { "offsetX": 21.15, "offsetY": 35.0, "offsetZ": 0.65, "rotationX": -6.6, "rotationY": 17.05, "rotationZ": -49.45 },
 						"rfinger1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"rfinger2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"rfinger3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
@@ -2400,9 +2400,9 @@
 						"larmelbow": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5 },
 						"lforearm": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Cube48": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Cube50": { "offsetX": -12.45, "offsetY": 6.0, "offsetZ": -10.0, "rotationX": -67.5, "rotationY": -22.5, "rotationZ": 8.0 },
+						"Cube50": { "offsetX": -13.45, "offsetY": 6.0, "offsetZ": -10.0, "rotationX": -67.5, "rotationY": -22.5, "rotationZ": 8.0 },
 						"Cube52": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Cube54": { "offsetX": 11.0, "offsetY": 7.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -110.5 }
+						"Cube54": { "offsetX": 11.5, "offsetY": 7.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -110.5 }
 					}
 				},
 				{
@@ -2414,7 +2414,7 @@
 						"Cube21": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"head": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": -45.0, "rotationZ": 45.0 },
 						"rshoulder": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -45.0 },
-						"rforearm": { "offsetX": 21.25, "offsetY": 35.0, "offsetZ": 0.5, "rotationX": -7.0, "rotationY": 16.65, "rotationZ": -49.25 },
+						"rforearm": { "offsetX": 21.15, "offsetY": 35.0, "offsetZ": 0.65, "rotationX": -6.6, "rotationY": 17.05, "rotationZ": -49.45 },
 						"rfinger1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"rfinger2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"rfinger3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
@@ -2423,12 +2423,159 @@
 						"larmelbow": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5 },
 						"lforearm": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
 						"Cube48": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Cube50": { "offsetX": -12.45, "offsetY": 6.0, "offsetZ": -10.0, "rotationX": -67.5, "rotationY": -22.5, "rotationZ": 8.0 },
+						"Cube50": { "offsetX": -13.45, "offsetY": 6.0, "offsetZ": -10.0, "rotationX": -67.5, "rotationY": -22.5, "rotationZ": 8.0 },
 						"Cube52": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
-						"Cube54": { "offsetX": 11.0, "offsetY": 7.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -110.5 }
+						"Cube54": { "offsetX": 11.5, "offsetY": 7.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -110.5 }
+					}
+				},
+				{
+					"frame": 42,
+					"elements": {
+						"topchest": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"pelvus": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Cube12": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Cube21": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"head": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"rshoulder": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -45.0 },
+						"rforearm": { "offsetX": 21.05, "offsetY": 35.0, "offsetZ": 0.15, "rotationX": -7.6, "rotationY": 16.05, "rotationZ": -49.45 },
+						"rfinger1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"rfinger2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"rfinger3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"rfinger4": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"lshoulder": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"larmelbow": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5 },
+						"lforearm": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Cube48": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Cube50": { "offsetX": -13.45, "offsetY": 6.0, "offsetZ": -10.0, "rotationX": -67.5, "rotationY": -22.5, "rotationZ": 8.0 },
+						"Cube52": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Cube54": { "offsetX": 11.5, "offsetY": 7.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -110.5 }
+					}
+				},
+				{
+					"frame": 48,
+					"elements": {
+						"topchest": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"pelvus": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Cube12": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Cube21": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"head": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"rshoulder": { "offsetX": 32.0, "offsetY": -8.0, "offsetZ": -20.0, "rotationX": 29.0, "rotationY": 24.0, "rotationZ": -99.5 },
+						"rforearm": { "offsetX": -3.2, "offsetY": 54.5, "offsetZ": 6.5, "rotationX": 9.5, "rotationY": 13.0, "rotationZ": -1.7 },
+						"rfinger1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"rfinger2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"rfinger3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"rfinger4": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"lshoulder": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"larmelbow": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5 },
+						"lforearm": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Cube48": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Cube50": { "offsetX": -13.45, "offsetY": 6.0, "offsetZ": -10.0, "rotationX": -67.5, "rotationY": -22.5, "rotationZ": 8.0 },
+						"Cube52": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Cube54": { "offsetX": 11.5, "offsetY": 7.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -110.5 }
+					}
+				},
+				{
+					"frame": 57,
+					"elements": {
+						"topchest": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"pelvus": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Cube12": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Cube21": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"head": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"rshoulder": { "offsetX": 32.0, "offsetY": -8.0, "offsetZ": -20.0, "rotationX": 29.0, "rotationY": 24.0, "rotationZ": -99.5 },
+						"rforearm": { "offsetX": -3.2, "offsetY": 54.5, "offsetZ": 6.5, "rotationX": 9.5, "rotationY": 13.0, "rotationZ": -1.7 },
+						"rfinger1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"rfinger2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"rfinger3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"rfinger4": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"lshoulder": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"larmelbow": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5 },
+						"lforearm": { "offsetX": 0.0, "offsetY": -3.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Cube48": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Cube50": { "offsetX": -10.45, "offsetY": 6.3, "offsetZ": -9.0, "rotationX": -67.5, "rotationY": -22.5, "rotationZ": 8.0 },
+						"Cube52": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Cube54": { "offsetX": 8.8, "offsetY": 6.0, "offsetZ": -0.1, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -110.5 }
+					}
+				},
+				{
+					"frame": 64,
+					"elements": {
+						"topchest": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"pelvus": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Cube12": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Cube21": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"head": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"rshoulder": { "offsetX": 32.0, "offsetY": -8.0, "offsetZ": -20.0, "rotationX": 29.0, "rotationY": 24.0, "rotationZ": -99.5 },
+						"rforearm": { "offsetX": -3.2, "offsetY": 54.5, "offsetZ": 6.5, "rotationX": 9.5, "rotationY": 13.0, "rotationZ": -1.7 },
+						"rfinger1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"rfinger2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"rfinger3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"rfinger4": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"lshoulder": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"larmelbow": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5 },
+						"lforearm": { "offsetX": 9.0, "offsetY": 26.0, "offsetZ": -22.5, "rotationX": -86.0, "rotationY": 19.0, "rotationZ": 0.0 },
+						"Cube48": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Cube50": { "offsetX": -1.05, "offsetY": -3.2, "offsetZ": -5.5, "rotationX": 18.0, "rotationY": -42.0, "rotationZ": 8.0 },
+						"Cube52": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Cube54": { "offsetX": 6.5, "offsetY": 4.2, "offsetZ": 14.9, "rotationX": 86.0, "rotationY": 2.0, "rotationZ": -91.0 }
+					}
+				},
+				{
+					"frame": 84,
+					"elements": {
+						"topchest": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"pelvus": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Cube12": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Cube21": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"head": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 67.5 },
+						"rshoulder": { "offsetX": 32.0, "offsetY": -8.0, "offsetZ": -20.0, "rotationX": 29.0, "rotationY": 24.0, "rotationZ": -99.5 },
+						"rforearm": { "offsetX": -3.2, "offsetY": 54.5, "offsetZ": 6.5, "rotationX": 9.5, "rotationY": 13.0, "rotationZ": -1.7 },
+						"rfinger1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"rfinger2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"rfinger3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"rfinger4": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"lshoulder": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"larmelbow": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5 },
+						"lforearm": { "offsetX": 9.0, "offsetY": 26.0, "offsetZ": -22.5, "rotationX": -86.0, "rotationY": 19.0, "rotationZ": 0.0 },
+						"Cube48": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Cube50": { "offsetX": -1.05, "offsetY": -3.2, "offsetZ": -5.5, "rotationX": 18.0, "rotationY": -42.0, "rotationZ": 8.0 },
+						"Cube52": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Cube54": { "offsetX": 6.5, "offsetY": 4.2, "offsetZ": 14.9, "rotationX": 86.0, "rotationY": 2.0, "rotationZ": -91.0 }
 					}
 				}
 			]
+		},
+		{
+			"name": "dead",
+			"code": "dead",
+			"quantityframes": 2,
+			"onActivityStopped": "PlayTillEnd",
+			"onAnimationEnd": "Hold",
+			"keyframes": [
+				{
+					"frame": 1,
+					"elements": {
+						"topchest": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"pelvus": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Cube12": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Cube21": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"head": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 67.5 },
+						"rshoulder": { "offsetX": 32.0, "offsetY": -8.0, "offsetZ": -20.0, "rotationX": 29.0, "rotationY": 24.0, "rotationZ": -99.5 },
+						"rforearm": { "offsetX": -3.2, "offsetY": 54.5, "offsetZ": 6.5, "rotationX": 9.5, "rotationY": 13.0, "rotationZ": -1.7 },
+						"rfinger1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"rfinger2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"rfinger3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"rfinger4": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"lshoulder": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"larmelbow": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5 },
+						"lforearm": { "offsetX": 9.0, "offsetY": 26.0, "offsetZ": -22.5, "rotationX": -86.0, "rotationY": 19.0, "rotationZ": 0.0 },
+						"Cube48": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Cube50": { "offsetX": -1.05, "offsetY": -3.2, "offsetZ": -5.5, "rotationX": 18.0, "rotationY": -42.0, "rotationZ": 8.0 },
+						"Cube52": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Cube54": { "offsetX": 6.5, "offsetY": 4.2, "offsetZ": 14.9, "rotationX": 86.0, "rotationY": 2.0, "rotationZ": -91.0 }
+					}
+				}
+			]		
 		}
 	]
 }

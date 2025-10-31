@@ -19,11 +19,19 @@
 		"creatures": ["*"]
 		},
 	
-	"guiTransform": {
-		"translation": { "x": 0, "y": 7, "z": 0 },
-		"rotation": { "x": 15, "y": -120, "z": -163 },
-		"origin": { "x": 0.5, "y": 0.8, "z": 0.5 },
-		"scale": 0.39
+	"guiTransformByType": {
+		"*-hammerhead": {
+			"translation": { "x": 0, "y": 7, "z": 0 },
+			"rotation": { "x": 8, "y": -102, "z": -163 },
+			"origin": { "x": 1.2, "y": 0.5, "z": 1 },
+			"scale": 0.25
+		},
+		"*": {
+			"translation": { "x": 0, "y": 7, "z": 0 },
+			"rotation": { "x": 15, "y": -120, "z": -163 },
+			"origin": { "x": 0.5, "y": 0.8, "z": 0.5 },
+			"scale": 0.39
+		}
 	},
 	"fpHandTransform": {
 		"translation": { "x": -0.3, "y": -0.1, "z": 0.7 },

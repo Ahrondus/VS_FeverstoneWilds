@@ -168,16 +168,14 @@
 					"code": "swim",
 					"movespeed": 0.02,
 					"yawMultiplier": 1,
-					"fallbackGaitCode": "idle",
-					"sound": "game:creature/hooved/gallop"
+					"fallbackGaitCode": "idle"
 				},
 				{
 					"code": "swimback",
 					"movespeed": 0.02,
 					"backwards": true,
 					"yawMultiplier": 1,
-					"fallbackGaitCode": "idle",
-					"sound": "game:creature/hooved/gallop"
+					"fallbackGaitCode": "idle"
 				},
 				{
 					"code": "jump",
@@ -206,6 +204,38 @@
             ],
             "rideableGaitOrder": ["walkback", "idle", "walk", "sprint"],
             "controls": {
+                "walkback": {
+                    "animation": "walkback",
+                    "animationSpeed": 1.4,
+                    "weight": 10,
+                    "movespeed": 0.011,
+                    "easeInSpeed": 1,
+                    "easeOutSpeed": 3,
+                    "blendMode": "Average",
+                    "riderAnim": {
+                        "animation": "rideelk-walk",
+                        "animationSpeed": 1,
+                        "weight": 1,
+                        "withFpVariant": true,
+                        "blendMode": "Average", 
+                        "elementWeight": {
+                            "LowerTorso": 80,
+                            "UpperTorso": 80,
+                            "UpperFootR": 80,
+                            "UpperFootL": 80,
+                            "LowerFootR": 80,
+                            "LowerFootL": 80
+                        },
+                        "elementBlendMode": {
+                            "LowerTorso": "Average",
+                            "UpperTorso": "Average",
+                            "UpperFootR": "Average",
+                            "UpperFootL": "Average",
+                            "LowerFootR": "Average",
+                            "LowerFootL": "Average"
+                        }
+                    }
+                },
                 "idle": {
                     "animation": "Idle",
                     "weight": 1,
@@ -246,38 +276,6 @@
                         "animation": "rideelk-walk",
                         "animationSpeed": 1,
                         "weight": 1,	
-                        "withFpVariant": true,
-                        "blendMode": "Average", 
-                        "elementWeight": {
-                            "LowerTorso": 80,
-                            "UpperTorso": 80,
-                            "UpperFootR": 80,
-                            "UpperFootL": 80,
-                            "LowerFootR": 80,
-                            "LowerFootL": 80
-                        },
-                        "elementBlendMode": {
-                            "LowerTorso": "Average",
-                            "UpperTorso": "Average",
-                            "UpperFootR": "Average",
-                            "UpperFootL": "Average",
-                            "LowerFootR": "Average",
-                            "LowerFootL": "Average"
-                        }
-                    }
-                },
-                "walkback": {
-                    "animation": "walkback",
-                    "animationSpeed": 1.4,
-                    "weight": 10,
-                    "movespeed": 0.011,
-                    "easeInSpeed": 1,
-                    "easeOutSpeed": 3,
-                    "blendMode": "Average",
-                    "riderAnim": {
-                        "animation": "rideelk-walk",
-                        "animationSpeed": 1,
-                        "weight": 1,
                         "withFpVariant": true,
                         "blendMode": "Average", 
                         "elementWeight": {
@@ -362,6 +360,7 @@
                 "swim": {
 					"animation": "walk",
 					"animationSpeed": 1,
+                    "movespeed": 0.02,
 					"weight": 10,
 					"blendMode": "Average",
 					"riderAnim": {
@@ -390,6 +389,7 @@
 				},
 				"swimback": {
 					"animation": "walkback",
+                    "movespeed": 0.01,
 					"animationSpeed": 1,
 					"weight": 10,
 					"blendMode": "Average",

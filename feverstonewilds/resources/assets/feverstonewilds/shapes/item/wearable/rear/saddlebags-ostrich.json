@@ -1,0 +1,183 @@
+{
+	"editor": {
+		"backDropShape": "entity/land/bird/ostrich",
+		"collapsedPaths": "Root/Cube2/Cube72,Root/Cube2/Cube71,Root/Origin/body/tail,Root/Origin/body/rleg18,Root/saddle/Cube3/Cube12/Cube19,Root/saddle/Cube3,Root/saddle/Cube65,Root/saddle/Cube3/Cube12/Cube18,Root/Origin/body/lleg,Root/Cube2,Root/Cube3,Root/saddle/Cube3/Cube19,Root/saddle/Cube3/Cube18,Root/Origin/body/head0,Root/saddle/Cube69,Root/Origin/body/tail/tailrow1/tailfeather146,Root/Origin/body/Cube31/rwing,Root/Cube2/Cube66,Root/Origin/body/Cube31/lwing,Root/Cube2/Cube69,Root/Cube2/Cube65,Root/saddle/Cube3/Cube12",
+		"allAngles": false,
+		"entityTextureMode": false
+	},
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textureSizes": {
+	},
+	"textures": {
+		"tinbronze1": "game:block/metal/sheet-plain/tinbronze1",
+		"ostrichsaddle": "items/ostrichsaddle"
+	},
+	"elements": [
+		{
+			"name": "storage",
+			"stepParentName": "Neck3",
+			"from": [ 0.1, 2.8, -0.9 ],
+			"to": [ 3.1, 4.3, 5.1 ],
+			"rotationOrigin": [ 0.1, 2.8, 2.1 ],
+			"rotationX": 180.0,
+			"rotationY": 180.0,
+			"rotationZ": -85.0,
+			"faces": {
+				"north": { "texture": "#ostrichsaddle", "uv": [ 10.0, 0.0, 12.25, 1.75 ], "autoUv": false },
+				"east": { "texture": "#ostrichsaddle", "uv": [ 10.0, 0.0, 12.25, 2.0 ], "autoUv": false },
+				"south": { "texture": "#ostrichsaddle", "uv": [ 10.25, 0.0, 12.25, 2.0 ], "autoUv": false },
+				"west": { "texture": "#ostrichsaddle", "uv": [ 10.0, 0.25, 12.0, 1.75 ], "autoUv": false },
+				"up": { "texture": "#ostrichsaddle", "uv": [ 12.5, 0.25, 15.75, 1.75 ], "rotation": 270, "autoUv": false },
+				"down": { "texture": "#ostrichsaddle", "uv": [ 10.0, 0.25, 12.5, 2.0 ], "autoUv": false }
+			},
+			"children": [
+				{
+					"name": "TopFlap",
+					"from": [ 0.0, 1.4, 0.4 ],
+					"to": [ 2.0, 1.8, 5.6 ],
+					"rotationOrigin": [ 0.0, 2.0, 3.0 ],
+					"faces": {
+						"north": { "texture": "#ostrichsaddle", "uv": [ 13.5, 1.5, 15.5, 1.75 ] },
+						"east": { "texture": "#ostrichsaddle", "uv": [ 12.75, 1.5, 15.5, 1.75 ], "autoUv": false },
+						"south": { "texture": "#ostrichsaddle", "uv": [ 13.5, 1.75, 15.5, 2.0 ] },
+						"west": { "texture": "#ostrichsaddle", "uv": [ 12.75, 1.5, 15.25, 1.75 ], "autoUv": false },
+						"up": { "texture": "#ostrichsaddle", "uv": [ 12.5, 0.0, 15.75, 1.75 ], "rotation": 270, "autoUv": false },
+						"down": { "texture": "#ostrichsaddle", "uv": [ 10.75, 0.75, 11.75, 1.25 ], "autoUv": false }
+					}
+				},
+				{
+					"name": "Buckle",
+					"from": [ 1.8, 1.3, 2.35 ],
+					"to": [ 2.8, 1.9, 3.65 ],
+					"rotationOrigin": [ 3.8, 1.3, 3.0 ],
+					"rotationZ": -5.0,
+					"faces": {
+						"north": { "texture": "#tinbronze1", "uv": [ 13.5, 1.5, 14.5, 2.0 ] },
+						"east": { "texture": "#tinbronze1", "uv": [ 12.75, 1.5, 15.5, 1.75 ], "autoUv": false },
+						"south": { "texture": "#tinbronze1", "uv": [ 13.5, 2.0, 14.5, 2.5 ] },
+						"west": { "texture": "#tinbronze1", "uv": [ 12.75, 1.5, 15.25, 1.75 ], "autoUv": false },
+						"up": { "texture": "#tinbronze1", "uv": [ 12.5, 0.25, 15.75, 2.0 ], "rotation": 270, "autoUv": false },
+						"down": { "texture": "#tinbronze1", "uv": [ 10.75, 0.75, 11.75, 1.25 ], "autoUv": false }
+					}
+				},
+				{
+					"name": "Strap",
+					"from": [ 3.0, 0.0, 2.4 ],
+					"to": [ 3.5, 1.5, 3.6 ],
+					"rotationOrigin": [ 3.0, 1.0, 3.0 ],
+					"faces": {
+						"north": { "texture": "#ostrichsaddle", "uv": [ 13.5, 1.75, 15.0, 2.0 ], "rotation": 90, "autoUv": false },
+						"east": { "texture": "#ostrichsaddle", "uv": [ 10.25, 0.25, 12.25, 1.75 ], "autoUv": false },
+						"south": { "texture": "#ostrichsaddle", "uv": [ 13.5, 1.75, 14.5, 2.0 ], "rotation": 90, "autoUv": false },
+						"west": { "texture": "#ostrichsaddle", "uv": [ 12.75, 1.5, 15.25, 1.75 ], "autoUv": false },
+						"up": { "texture": "#ostrichsaddle", "uv": [ 13.25, 1.75, 15.0, 2.0 ], "rotation": 270, "autoUv": false },
+						"down": { "texture": "#ostrichsaddle", "uv": [ 13.75, 1.75, 15.0, 1.75 ], "autoUv": false }
+					},
+					"children": [
+						{
+							"name": "Strap2",
+							"from": [ -2.0, 1.5, 0.05 ],
+							"to": [ 0.5, 1.9, 1.15 ],
+							"rotationOrigin": [ 0.0, 1.5, 0.7 ],
+							"rotationZ": -5.0,
+							"faces": {
+								"north": { "texture": "#ostrichsaddle", "uv": [ 13.5, 1.5, 16.0, 2.0 ] },
+								"east": { "texture": "#ostrichsaddle", "uv": [ 12.75, 1.5, 15.5, 1.75 ], "autoUv": false },
+								"south": { "texture": "#ostrichsaddle", "uv": [ 13.5, 2.0, 16.0, 2.5 ] },
+								"west": { "texture": "#ostrichsaddle", "uv": [ 12.75, 1.5, 15.25, 1.75 ], "autoUv": false },
+								"up": { "texture": "#ostrichsaddle", "uv": [ 12.5, 0.25, 15.75, 2.0 ], "rotation": 270, "autoUv": false },
+								"down": { "texture": "#ostrichsaddle", "uv": [ 10.75, 0.75, 11.75, 1.25 ], "autoUv": false }
+							}
+						}
+					]
+				},
+				{
+					"name": "NeckStrap",
+					"from": [ 1.3, 0.2, 0.5 ],
+					"to": [ 2.3, 5.2, 1.0 ],
+					"rotationOrigin": [ 2.3, 0.2, 0.5 ],
+					"rotationX": -2.0,
+					"rotationZ": -172.0,
+					"faces": {
+						"north": { "texture": "#ostrichsaddle", "uv": [ 11.0, 2.0, 12.0, 4.5 ], "autoUv": false },
+						"east": { "texture": "#ostrichsaddle", "uv": [ 12.25, 2.25, 12.75, 3.75 ], "autoUv": false },
+						"south": { "texture": "#ostrichsaddle", "uv": [ 12.25, 2.0, 13.25, 4.5 ], "autoUv": false },
+						"west": { "texture": "#ostrichsaddle", "uv": [ 14.5, 2.0, 15.25, 4.5 ], "autoUv": false },
+						"up": { "texture": "#ostrichsaddle", "uv": [ 11.25, 3.0, 12.25, 3.5 ] },
+						"down": { "texture": "#ostrichsaddle", "uv": [ 12.5, 2.5, 13.5, 3.0 ] }
+					},
+					"children": [
+						{
+							"name": "NeckStrap2",
+							"from": [ 0.0219, 0.1555, 4.4973 ],
+							"to": [ 1.0219, 5.1555, 4.9973 ],
+							"rotationOrigin": [ 1.0219, 0.1555, 4.4973 ],
+							"rotationX": -3.9612,
+							"rotationY": 0.5562,
+							"rotationZ": 0.0192,
+							"faces": {
+								"north": { "texture": "#ostrichsaddle", "uv": [ 12.0, 2.0, 12.75, 4.25 ], "autoUv": false },
+								"east": { "texture": "#ostrichsaddle", "uv": [ 12.25, 2.0, 13.0, 4.5 ], "autoUv": false },
+								"south": { "texture": "#ostrichsaddle", "uv": [ 12.5, 2.0, 13.25, 4.5 ], "autoUv": false },
+								"west": { "texture": "#ostrichsaddle", "uv": [ 12.25, 2.0, 13.0, 4.75 ], "autoUv": false },
+								"up": { "texture": "#ostrichsaddle", "uv": [ 12.0, 2.5, 13.25, 3.25 ], "autoUv": false },
+								"down": { "texture": "#ostrichsaddle", "uv": [ 12.75, 2.75, 13.75, 3.25 ] }
+							},
+							"children": [
+								{
+									"name": "NeckStrap3",
+									"from": [ 0.02, 5.36, -4.0 ],
+									"to": [ 1.02, 9.76, -3.5 ],
+									"rotationOrigin": [ 1.0219, 5.3555, -3.9973 ],
+									"rotationX": 90.0,
+									"faces": {
+										"north": { "texture": "#ostrichsaddle", "uv": [ 13.0, 2.5, 13.5, 4.25 ], "autoUv": false },
+										"east": { "texture": "#ostrichsaddle", "uv": [ 13.0, 2.0, 13.75, 4.25 ], "autoUv": false },
+										"south": { "texture": "#ostrichsaddle", "uv": [ 13.0, 2.25, 14.0, 4.5 ], "autoUv": false },
+										"west": { "texture": "#ostrichsaddle", "uv": [ 13.75, 2.5, 14.25, 4.25 ], "autoUv": false },
+										"up": { "texture": "#ostrichsaddle", "uv": [ 12.5, 3.25, 13.5, 3.75 ] },
+										"down": { "texture": "#ostrichsaddle", "uv": [ 12.75, 2.5, 13.75, 3.0 ] }
+									}
+								},
+								{
+									"name": "StichStrap2",
+									"from": [ 0.1809, -1.7402, -0.1223 ],
+									"to": [ 0.3809, -0.9402, 0.5777 ],
+									"rotationOrigin": [ 0.1809, -0.6981, 0.4741 ],
+									"rotationX": 1.9806,
+									"rotationY": -0.2783,
+									"rotationZ": 172.0048,
+									"faces": {
+										"north": { "texture": "#ostrichsaddle", "uv": [ 13.5, 1.75, 15.0, 2.0 ], "rotation": 90, "autoUv": false },
+										"east": { "texture": "#ostrichsaddle", "uv": [ 10.25, 0.25, 12.25, 1.75 ], "autoUv": false },
+										"south": { "texture": "#ostrichsaddle", "uv": [ 13.5, 1.75, 14.5, 2.0 ], "rotation": 90, "autoUv": false },
+										"west": { "texture": "#ostrichsaddle", "uv": [ 12.75, 1.5, 15.25, 1.75 ], "autoUv": false },
+										"up": { "texture": "#ostrichsaddle", "uv": [ 13.25, 1.75, 15.0, 2.0 ], "rotation": 270, "autoUv": false },
+										"down": { "texture": "#ostrichsaddle", "uv": [ 13.75, 1.75, 15.0, 1.75 ], "autoUv": false }
+									}
+								}
+							]
+						},
+						{
+							"name": "StichStrap1",
+							"from": [ 0.2077, -1.6079, -0.07 ],
+							"to": [ 0.4077, -0.8079, 0.63 ],
+							"rotationOrigin": [ 0.2077, -0.6079, 0.5264 ],
+							"rotationX": -1.9806,
+							"rotationY": 0.2783,
+							"rotationZ": 172.0048,
+							"faces": {
+								"north": { "texture": "#ostrichsaddle", "uv": [ 13.5, 1.75, 15.0, 2.0 ], "rotation": 90, "autoUv": false },
+								"east": { "texture": "#ostrichsaddle", "uv": [ 10.25, 0.25, 12.25, 1.75 ], "autoUv": false },
+								"south": { "texture": "#ostrichsaddle", "uv": [ 13.5, 1.75, 14.5, 2.0 ], "rotation": 90, "autoUv": false },
+								"west": { "texture": "#ostrichsaddle", "uv": [ 12.75, 1.5, 15.25, 1.75 ], "autoUv": false },
+								"up": { "texture": "#ostrichsaddle", "uv": [ 13.25, 1.75, 15.0, 2.0 ], "rotation": 270, "autoUv": false },
+								"down": { "texture": "#ostrichsaddle", "uv": [ 13.75, 1.75, 15.0, 1.75 ], "autoUv": false }
+							}
+						}
+					]
+				}
+			]
+		}
+	]}
