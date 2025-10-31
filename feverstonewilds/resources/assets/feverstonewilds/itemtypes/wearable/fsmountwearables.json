@@ -2,7 +2,7 @@
 	"code": "fsmountwearables",
 	"variantgroups": [
 		{ "code": "breed",
-			"states": [ "draft", "arabian", "donkey", "shire", "quarter", "bison", "direwolf", "ostrich" ]
+			"states": [ "percheron", "arabian", "donkey", "shire", "quarter", "bison", "direwolf", "ostrich" ]
 		},
 		{ "code": "category",
 			"states": [ "head", "middlebackupper", "lowerbackside" ]
@@ -12,12 +12,12 @@
 		}
 	],
 	"allowedVariants": [
-		"fsmountwearables-draft-head-bridle", "fsmountwearables-arabian-head-bridle", "fsmountwearables-donkey-head-bridle", "fsmountwearables-shire-head-bridle",
+		"fsmountwearables-percheron-head-bridle", "fsmountwearables-arabian-head-bridle", "fsmountwearables-donkey-head-bridle", "fsmountwearables-shire-head-bridle",
 		"fsmountwearables-bison-head-bridle", "fsmountwearables-quarter-head-bridle", "fsmountwearables-direwolf-head-bridle", "fsmountwearables-ostrich-head-bridle",
-		"fsmountwearables-draft-middlebackupper-saddle", "fsmountwearables-arabian-middlebackupper-saddle", "fsmountwearables-donkey-middlebackupper-saddle", "fsmountwearables-shire-middlebackupper-saddle",
+		"fsmountwearables-percheron-middlebackupper-saddle", "fsmountwearables-arabian-middlebackupper-saddle", "fsmountwearables-donkey-middlebackupper-saddle", "fsmountwearables-shire-middlebackupper-saddle",
 		"fsmountwearables-quarter-middlebackupper-saddle","fsmountwearables-bison-middlebackupper-saddle", "fsmountwearables-direwolf-middlebackupper-saddle", "fsmountwearables-ostrich-middlebackupper-saddle",
-		"fsmountwearables-draft-lowerbackside-saddlebags", "fsmountwearables-arabian-lowerbackside-saddlebags", "fsmountwearables-donkey-lowerbackside-saddlebags", "fsmountwearables-shire-lowerbackside-saddlebags",
-		"fsmountwearables-quarter-middlebackupper-saddle", "fsmountwearables-bison-lowerbackside-saddlebags", "fsmountwearables-direwolf-lowerbackside-saddlebags", "fsmountwearables-ostrich-lowerbackside-saddlebags"
+		"fsmountwearables-percheron-lowerbackside-saddlebags", "fsmountwearables-arabian-lowerbackside-saddlebags", "fsmountwearables-donkey-lowerbackside-saddlebags", "fsmountwearables-shire-lowerbackside-saddlebags",
+		"fsmountwearables-quarter-lowerbackside-saddlebags", "fsmountwearables-bison-lowerbackside-saddlebags", "fsmountwearables-direwolf-lowerbackside-saddlebags", "fsmountwearables-ostrich-lowerbackside-saddlebags"
 	],
 	"attributes": {
 		"attachableToEntity": {
@@ -42,14 +42,14 @@
 			"*-head-bridle": true
 		},
 		"backpackByType": {
-			"*-draft-lowerbackside-saddlebags": { "quantitySlots": 24 },
+			"*-percheron-lowerbackside-saddlebags": { "quantitySlots": 24 },
 			"*-arabian-lowerbackside-saddlebags": { "quantitySlots": 12 },
 			"*-shire-lowerbackside-saddlebags": { "quantitySlots": 18 },
 			"*-quarter-lowerbackside-saddlebags": { "quantitySlots": 14 },
 			"*-donkey-lowerbackside-saddlebags": { "quantitySlots": 20 },
 			"*-bison-lowerbackside-saddlebags": { "quantitySlots": 32 },
 			"*-direwolf-lowerbackside-saddlebags": { "quantitySlots": 12 },
-			"*-ostrich-lowerbackside-saddlebags": { "quantitySlots": 10 }
+			"*-ostrich-lowerbackside-saddlebags": { "quantitySlots": 6 }
 		},
 		"interactPassthroughByType": {
 			"*-saddle": true
@@ -70,17 +70,103 @@
 		"clothing": [ "*" ]
 	},
 	"guiTransformByType": {
-		"*-bison-middlebackupper-saddle": {
+		"*-bison-*-saddle": {
 			"translation": { "x": 0, "y": 0, "z": 0 },
 			"rotation": { "x": -21, "y": -50, "z": 180 },
 			"origin": { "x": 1.25, "y": 0.5, "z": 0.5 },
 			"scale": 0.67
 		},
-		"*-saddle": {
+		"*-quarter-*-saddle": { 
 			"translation": { "x": 0, "y": 0, "z": 0 },
 			"rotation": { "x": -21, "y": -50, "z": 180 },
-			"origin": { "x": 0.5, "y": 0.5, "z": 0.5 },
-			"scale": 0.9
+			"origin": { "x": 0.5, "y": 0.14, "z": -0.2 },
+			"scale": 1.2 
+		},
+		"*-shire-*-saddle": {
+			"translation": { "x": 0, "y": 0, "z": 0 },
+			"rotation": { "x": -21, "y": -50, "z": 180 },
+			"origin": { "x": 0.3, "y": -0.25, "z": 0.5 },
+			"scale": 1.1
+		},
+		"*-donkey-*-saddle": {
+			"translation": { "x": 0, "y": 0, "z": 0 },
+			"rotation": { "x": -21, "y": -50, "z": 180 },
+			"origin": { "x": 0.5, "y": 0.14, "z": -0.2 },
+			"scale": 1.2
+		},
+		"*-direwolf-*-saddle": {
+			"translation": { "x": 0, "y": 0, "z": 0 },
+			"rotation": { "x": -21, "y": -50, "z": 180 },
+			"origin": { "x": 0.5, "y": 0.3, "z": 0.1 },
+			"scale": 1.2
+		},
+		"*-ostrich-*-saddle": {
+			"translation": { "x": 0, "y": 0, "z": 0 },
+			"rotation": { "x": 138, "y": -137, "z": -2 },
+			"origin": { "x": 0.7, "y": -0.2, "z": 0 },
+			"scale": 1.1
+		},
+		"*-shire-*-saddlebags": {
+			"rotation": { "x": -7, "y": -16, "z": -169 },
+			"origin": { "x": 0.35, "y": 0.45, "z": 0 },
+			"scale": 2
+		},
+		"*-quarter-*-saddlebags": {
+			"rotation": { "x": -7, "y": -16, "z": -169 },
+			"origin": { "x": 0.35, "y": 0.45, "z": 0 },
+			"scale": 2
+		},
+		"*-donkey-*-saddlebags": {
+			"rotation": { "x": -7, "y": -16, "z": -169 },
+			"origin": { "x": 0.35, "y": 0.45, "z": 0 },
+			"scale": 2
+		},
+		"*-direwolf-*-saddlebags": {
+			"rotation": { "x": -10, "y": -20, "z": -169 },
+			"origin": { "x": 0.30, "y": 0.45, "z": 0 },
+			"scale": 2
+		},
+		"*-bison-*-saddlebags": {
+			"rotation": { "x": -7, "y": -16, "z": -169 },
+			"origin": { "x": 0.75, "y": 0.65, "z": 0 },
+			"scale": 1.5
+		},
+		"*-ostrich-*-saddlebags": {
+			"rotation": { "x": -7, "y": -41, "z": -169 },
+			"origin": { "x": 0.12, "y": 0.28, "z": 0 },
+			"scale": 2.3
+		},
+		"*-shire-*-bridle": {
+			"rotation": { "x": -34, "y": 43, "z": -52 },
+			"origin": { "x": 0.3, "y": 0.8, "z": 0 },
+			"scaleXyz": { "x": -1.15, "y": 1.15, "z": 1.15 }
+		},
+		"*-quarter-*-bridle": {
+			"rotation": { "x": -16, "y": 43, "z": 1 },
+			"origin": { "x": 0.55, "y": 0, "z": 0 },
+			"scaleXyz": { "x": -1.2, "y": 1.2, "z": 1.2 }
+		},
+		"*-donkey-*-bridle": {
+			"translation": { "x": 3, "y": 1, "z": 20 },
+			"rotation": { "x": 25, "y": -136, "z": 9 },
+			"origin": { "x": 0.6, "y": 0, "z": 0 },
+			"scale": 1.3
+		},
+		"*-direwolf-*-bridle": {
+			"rotation": { "x": 158, "y": -143, "z": 7 },
+			"origin": { "x": 0.95, "y": -0.4, "z": 0 },
+			"scale": 1.21
+		},
+		"*-ostrich-*-bridle": {
+			"translation": { "x": 3, "y": 1, "z": 20 },
+			"rotation": { "x": 163, "y": 55, "z": -114 },
+			"origin": { "x": 0, "y": -0.4, "z": 0 },
+			"scale": 1.74
+		},
+		"*-bison-*-bridle": {
+			"rotation": { "x": -163, "y": 18, "z": 37 },
+			"origin": { "x": 1.4, "y": 0.4, "z": 0 },
+			"scaleXyz": { "x": -0.71, "y": 0.71, "z": 0.71 }
 		}
 	},
 	"groundTransform": {

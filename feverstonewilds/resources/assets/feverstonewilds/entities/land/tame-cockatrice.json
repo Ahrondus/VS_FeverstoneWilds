@@ -23,7 +23,8 @@
     "handbook": {
       "groupcode": "feverstonewilds:creaturegroup-fswcockatrice"
     },
-    "tamed": true
+    "tamed": true,
+    "eggTypes": [ { "type": "item", "code": "feverstonewilds:egg-cockatrice-raw" } ]
   },
   "client": {
     "renderer": "Shape",
@@ -189,7 +190,8 @@
 						"enabledByType": { "*-female": true, "*-male": false },
 						"priority": 1.6,
 						"layTime": 2,
-						"chickCode": "cockatrice-chick",
+						"chickCodes": ["cockatrice-chick"],
+            "nestTypes": ["ground-large"],
 						"sitDays": 0.9,
 						"incubationDays": 3.6,
 						"movespeed": 0.012,

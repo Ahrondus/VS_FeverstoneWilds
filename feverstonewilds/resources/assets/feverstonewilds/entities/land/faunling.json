@@ -55,11 +55,18 @@
                     { "base": "entity/land/malefaunling/malefaunling12" }, { "base": "entity/land/malefaunling/malefaunling13" }, 
                     { "base": "entity/land/malefaunling/malefaunling14" }, { "base": "entity/land/malefaunling/malefaunling15" }
                 ]
-            },
-            "faunling-female": { "base": "entity/land/faunling/femalefaunlingskin1",
-                "alternates": [ { "base": "entity/land/faunling/femalefaunlingskin2" }, { "base": "entity/land/faunling/femalefaunlingskin3" }, 
-                    { "base": "entity/land/faunling/femalefaunlingskin4" }, { "base": "entity/land/faunling/femalefaunlingskin5" }
-                ] 
+            }
+        },
+        "texturesByType": {
+            "faunling-female": { "faunling1": { "base": "entity/land/faunling/femalefaunlingskin1", 
+                                    "alternates": [ { "base": "entity/land/faunling/femalefaunlingskin2" }, { "base": "entity/land/faunling/femalefaunlingskin3" }, 
+                                                    { "base": "entity/land/faunling/femalefaunlingskin4" }, { "base": "entity/land/faunling/femalefaunlingskin5" } ],
+                                 "scraped": { "base": "game:item/resource/hide/scraped" },
+                                 "pudu-adult": { "base": "game:entity/animal/mammal/hooved/deer/pudu-adult" },
+                                 "linen": { "base": "game:item/bag/linensack/linen" },
+                                 "feather": { "base": "game:item/resource/feather" },
+                                 "pelt": { "base": "game:item/resource/hide/pelt" } 
+                }
             }
         },
         "behaviors": [
