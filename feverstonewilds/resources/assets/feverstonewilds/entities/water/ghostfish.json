@@ -1,5 +1,5 @@
 {
-	"code": "buromenfish",
+	"code": "ghostfish",
 	"class": "EntityFish",
 	"hitboxSize": { "x": 0.5, "y": 0.25 },
 	"eyeHeight": 0.2,
@@ -8,14 +8,8 @@
 	"client": {
 		"renderer": "Shape",
 		"size": 0.7,
-		"shape": { "base": "entity/water/buromenfish" },
-		"texture": { "base": "entity/water/buromenfish/buromenfish1",
-		            "alternates": [ { "base": "entity/water/buromenfish/buromenfish2" },
-									  { "base": "entity/water/buromenfish/buromenfish3" },
-									  { "base": "entity/water/buromenfish/buromenfish4" },
-									  { "base": "entity/water/buromenfish/buromenfish5" }
-									]
-	},
+		"shape": { "base": "entity/water/ghostfish" },
+		"texture": { "base": "entity/water/ghostfish/ghostfish" },
 		"behaviors": [
 			{ "code": "repulseagents" }, 
 			{ "code": "controlledphysics", "stepHeight": 0 }, 
@@ -69,7 +63,7 @@
 					{
 						"type": "item", 
 						"code": "fish-raw", 
-						"quantity": { "avg": 3, "var": 4 } 
+						"quantity": { "avg": 4, "var": 2 } 
 					}
 				]
 			},
