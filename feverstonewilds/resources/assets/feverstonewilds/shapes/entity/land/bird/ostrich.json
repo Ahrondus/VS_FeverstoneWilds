@@ -10267,7 +10267,33 @@
 				}
 			]
 		},
-
+		{
+			"name": "dead",
+			"code": "dead",
+			"quantityframes": 2,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Hold",
+			"keyframes": [
+				{
+					"frame": 1,
+					"elements": {
+						"body": { "offsetX": -13.0, "offsetY": -15.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5 },
+						"neck4": { "offsetX": 0.1, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 90.0 },
+						"neck5": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5 },
+						"neck6": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -67.5 },
+						"head": { "rotationX": 0.0, "rotationY": -45.0, "rotationZ": 0.0 },
+						"LLegUpper": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0, "rotationX": -45.0, "rotationY": 22.5, "rotationZ": 45.0 },
+						"LLegLower": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -67.5 },
+						"LFoot": { "offsetX": 0.0, "offsetY": 0.8, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5 },
+						"RLegUpper": { "offsetX": 0.0, "offsetY": -0.8, "offsetZ": 0.0, "rotationX": 45.0, "rotationY": 0.0, "rotationZ": 22.5 },
+						"RLegLower": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -67.5 },
+						"RFoot": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 15.0 },
+						"lwing": { "rotationX": -45.0, "rotationY": 15.0, "rotationZ": -45.0 },
+						"rwing": { "rotationX": 45.0, "rotationY": 0.0, "rotationZ": -45.0 }
+					}
+				}
+			]
+		},
 		{
 			"name": "idle",
 			"code": "idle",
