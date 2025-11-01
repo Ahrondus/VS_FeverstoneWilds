@@ -2092,10 +2092,9 @@
 				}
 			]
 		},
-
 		{
-			"name": "dead",
-			"code": "dead",
+			"name": "Die",
+			"code": "die",
 			"quantityframes": 71,
 			"onActivityStopped": "PlayTillEnd",
 			"onAnimationEnd": "Hold",
@@ -2253,6 +2252,39 @@
 				},
 				{
 					"frame": 70,
+					"elements": {
+						"MFauling": { "offsetX": -20.0, "offsetY": 8.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 90.0 },
+						"LButt cheek": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 22.5, "rotationZ": 0.0 },
+						"LThigh": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 12.0 },
+						"LShin": { "offsetX": -0.5099999904632568, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -12.5 },
+						"LAnkle": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5 },
+						"R Butt cheek": { "offsetX": -1.0199999809265137, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": -67.5, "rotationZ": -22.5 },
+						"RThigh": { "rotationX": 12.5, "rotationY": 0.0, "rotationZ": 0.0 },
+						"RShin": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": -22.5, "rotationZ": 22.5 },
+						"TailBase": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -45.0 },
+						"TailMid": { "rotationX": 22.5, "rotationY": 0.0, "rotationZ": -22.5 },
+						"TailTip": { "rotationX": 22.5, "rotationY": 0.0, "rotationZ": -45.0 },
+						"Head 27": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -67.5, "rotationY": -67.5, "rotationZ": -67.5 },
+						"R ear": { "offsetX": 0.0, "offsetY": -0.3059999942779541, "offsetZ": 0.0, "rotationX": -45.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"L ear": { "rotationX": 45.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"R arm": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 22.5, "rotationY": -22.5, "rotationZ": 0.0 },
+						"R forearm": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 7.0, "rotationZ": -67.5 },
+						"L arm": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -22.5, "rotationY": 22.5, "rotationZ": 0.0 },
+						"L forearm": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 12.5 },
+						"neck": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				}
+			]
+		},
+		{
+			"name": "Dead",
+			"code": "dead",
+			"quantityframes": 2,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Hold",
+			"keyframes": [
+				{
+					"frame": 1,
 					"elements": {
 						"MFauling": { "offsetX": -20.0, "offsetY": 8.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 90.0 },
 						"LButt cheek": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 22.5, "rotationZ": 0.0 },

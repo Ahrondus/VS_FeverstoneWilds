@@ -2198,7 +2198,6 @@
 				}
 			]
 		},
-
 		{
 			"name": "death",
 			"code": "Death",
@@ -2412,7 +2411,47 @@
 				}
 			]
 		},
-
+		{
+			"name": "Dead",
+			"code": "dead",
+			"quantityframes": 2,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Hold",
+			"keyframes": [
+				{
+					"frame": 1,
+					"elements": {
+						"Origin": {  },
+						"midbody": { "offsetX": -6.0, "offsetY": -6.0, "offsetZ": 38.0, "rotationX": 90.0, "rotationY": 0.0, "rotationZ": 45.0 },
+						"arml": { "offsetX": 1.0, "offsetY": -3.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Cube8": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -45.0 },
+						"Cube9": { "offsetX": 0.0, "offsetY": 4.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5 },
+						"footfrontl": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5 },
+						"armr": { "offsetX": 1.0, "offsetY": -1.0, "offsetZ": 0.0, "rotationX": -10.0, "rotationY": 0.0, "rotationZ": -22.5 },
+						"Cube18": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -45.0 },
+						"Cube19": { "offsetX": 2.0, "offsetY": 3.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": -22.5, "rotationZ": 67.5 },
+						"footfrontr": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5 },
+						"rump": { "offsetX": -3.0, "offsetY": -3.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5 },
+						"legl": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5 },
+						"Cube34": {  },
+						"Cube35": {  },
+						"Cube36": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 45.0 },
+						"footbackl": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5 },
+						"legr": { "offsetX": 0.0, "offsetY": 1.0, "offsetZ": 0.0, "rotationX": -15.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Cube45": {  },
+						"Cube46": {  },
+						"Cube47": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5 },
+						"footbackr": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5 },
+						"tail": { "rotationX": -45.0, "rotationY": 0.0, "rotationZ": 22.5 },
+						"tail1": { "rotationX": 22.5, "rotationY": 0.0, "rotationZ": 0.0 },
+						"tail2": { "rotationX": 22.5, "rotationY": 0.0, "rotationZ": 0.0 },
+						"neck": { "rotationX": 4.0, "rotationY": 0.0, "rotationZ": -22.5 },
+						"neck2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -5.0 },
+						"neck3": { "rotationX": 5.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				}
+			]
+		},
 		{
 			"name": "Sleep",
 			"code": "Sleep",

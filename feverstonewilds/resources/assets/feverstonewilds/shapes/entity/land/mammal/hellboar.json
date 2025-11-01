@@ -1603,7 +1603,6 @@
 				}
 			]
 		},
-
 		{
 			"name": "death",
 			"code": "death",
@@ -1717,7 +1716,36 @@
 				}
 			]
 		},
-
+		{
+			"name": "Dead",
+			"code": "dead",
+			"quantityframes": 2,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Hold",
+			"keyframes": [
+				{
+					"frame": 1,
+					"elements": {
+						"chest": { "offsetX": -3.4, "offsetY": -7.8, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"larm": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5 },
+						"Cube6": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -45.0 },
+						"Cube9": { "offsetX": 0.5, "offsetY": 1.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"bum": { "offsetX": -2.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 21.0 },
+						"tailbase": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Cube36": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5 },
+						"lleg": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Cube13": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Cube14": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 67.5 },
+						"Cube23": { "offsetX": -2.0, "offsetY": 2.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 90.0 },
+						"Cube10": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -67.5 },
+						"Cube11": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5 },
+						"neck": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 10.0 },
+						"head": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -15.0 },
+						"bot mouth": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+					}
+				}
+			]
+		},
 		{
 			"name": "walk",
 			"code": "walk",

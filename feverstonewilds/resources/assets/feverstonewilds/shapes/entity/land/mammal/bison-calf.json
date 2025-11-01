@@ -1184,10 +1184,9 @@
 				}
 			]
 		},
-
 		{
-			"name": "Death",
-			"code": "death",
+			"name": "Die",
+			"code": "die",
 			"quantityframes": 51,
 			"onActivityStopped": "Stop",
 			"onAnimationEnd": "Hold",
@@ -1351,7 +1350,39 @@
 				}
 			]
 		},
-
+		{
+			"name": "Dead",
+			"code": "dead",
+			"quantityframes": 2,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Hold",
+			"keyframes": [
+				{
+					"frame": 1,
+					"elements": {
+						"Origin": {  },
+						"chest": { "offsetX": 0.0, "offsetY": 4.2420001285076125, "offsetZ": -9.090000275373455, "rotationX": -90.0, "rotationY": 0.0, "rotationZ": -10.0 },
+						"larm": { "rotationX": 22.5, "rotationY": 0.0, "rotationZ": 22.5 },
+						"Cube16": {  },
+						"Cube17": { "rotationX": 22.5, "rotationY": 0.0, "rotationZ": -22.5 },
+						"rarm": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Cube28": {  },
+						"Cube29": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5 },
+						"neck": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"head": { "rotationX": 0.0, "rotationY": -8.0, "rotationZ": 0.0 },
+						"botmouth": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 8.0 },
+						"rump": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"tail": { "rotationX": 22.5, "rotationY": 0.0, "rotationZ": 0.0 },
+						"lleg": { "rotationX": 18.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Cube20": {  },
+						"Cube21": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 4.0 },
+						"rleg": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 15.0 },
+						"Cube24": {  },
+						"Cube25": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 4.0 }
+					}
+				}
+			]
+		},
 		{
 			"name": "Attack",
 			"code": "attack",

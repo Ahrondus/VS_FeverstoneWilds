@@ -1858,7 +1858,34 @@
 				}
 			]
 		},
-
+		{
+			"name": "Dead",
+			"code": "dead",
+			"quantityframes": 2,
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "Hold",
+			"keyframes": [
+				{
+					"frame": 1,
+					"elements": {
+						"Torso": { "offsetX": 0.0, "offsetY": 8.484, "offsetZ": -18.18, "rotationX": -90.0, "rotationY": 0.0, "rotationZ": -10.0 },
+						"LFrontShoulder": { "rotationX": 22.5, "rotationY": 0.0, "rotationZ": 22.5 },
+						"LFrontLeg2": { "rotationX": 22.5, "rotationY": 0.0, "rotationZ": -22.5 },
+						"RFrontShoulder": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"RFrontLeg2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5 },
+						"neck": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"head": { "rotationX": 0.0, "rotationY": -8.0, "rotationZ": 0.0 },
+						"botmouth": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 8.0 },
+						"rump": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Tail1": { "rotationX": 22.5, "rotationY": 0.0, "rotationZ": 0.0 },
+						"LRearLeg": { "rotationX": 18.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"LRearLeg3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 4.0 },
+						"RRearLeg": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 15.0 },
+						"RRearLeg3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 4.0 }
+					}
+				}
+			]
+		},
 		{
 			"name": "Attack",
 			"code": "attack",
