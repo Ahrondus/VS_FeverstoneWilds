@@ -103,7 +103,7 @@
                 "amount": 1
             },
             {
-                "itemCode": "game:oillamp-up",
+                "itemCode": "game:oillamp-blue-up",
                 "amount": 1
             },
             {
@@ -172,17 +172,17 @@
             "selectAmount": 2,
             "items": [
                 {
-                    "itemCode": "game:bowl-fired",
+                    "itemCode": "game:bowl-blue-fired",
                     "minAmount": 4,
                     "maxAmount": 4
                 },
                 {
-                    "itemCode": "game:claypot-burned",
+                    "itemCode": "game:claypot-blue-fired",
                     "minAmount": 1,
                     "maxAmount": 1
                 },
                 {
-                    "itemCode": "game:crock-burned-east",
+                    "itemCode": "game:crock-blue-fired",
                     "minAmount": 4,
                     "maxAmount": 4
                 }
@@ -687,7 +687,7 @@
                 {
                     "itemCode": "game:sewingkit",
                     "minAmount": 3,
-                    "maxAmount": 4
+                    "maxAmount": 5
                 }
             ]
         }
@@ -707,16 +707,16 @@
         "killObjectives": [
             {
                 "validCodes": [
-                    "bear-male-black",
-                    "bear-female-black",
-                    "bear-male-brown",
-                    "bear-female-brown",
-                    "bear-male-sun",
-                    "bear-female-sun",
-                    "bear-male-polar",
-                    "bear-female-polar",
-                    "bear-male-panda",
-                    "bear-female-panda"
+                    "bear-black-adult-male",
+                    "bear-black-adult-female",
+                    "bear-brown-adult-male",
+                    "bear-brown-adult-female",
+                    "bear-sun-adult-male",
+                    "bear-sun-adult-female",
+                    "bear-polar-adult-male",
+                    "bear-polar-adult-female",
+                    "bear-panda-adult-male",
+                    "bear-panda-adult-female"
                 ],
                 "demand": 1
             }
@@ -725,12 +725,12 @@
             "selectAmount": 1,
             "items": [
                 {
-                    "itemCode": "feverstonewilds:creature-foal-draft",
+                    "itemCode": "feverstonewilds:creature-foal-wild-shire",
                     "minAmount": 1,
                     "maxAmount": 1
                 },
                 {
-                    "itemCode": "feverstonewilds:creature-foal-arabian",
+                    "itemCode": "feverstonewilds:creature-foal-wild-quarter",
                     "minAmount": 1,
                     "maxAmount": 1
                 }
@@ -764,7 +764,7 @@
                 {
                     "itemCode": "game:creature-chicken-hen",
                     "minAmount": 1,
-                    "maxAmount": 1
+                    "maxAmount": 2
                 },
                 {
                     "itemCode": "game:creature-chicken-rooster",
@@ -789,8 +789,9 @@
         "killObjectives": [
             {
                 "validCodes": [
-                    "bullshark",
-                    "hammerhead"
+                    "shark-freshwater",
+                    "shark-saltwater",
+                    "shark-hammerhead"
                 ],
                 "demand": 1
             }
@@ -826,8 +827,8 @@
                 "args": [
                     "beemob",
                     "beemob",
-                    "hare-male-gold",
-                    "hare-female-gold"
+                    "hare-jackblack-adult-male",
+                    "hare-jackblack-adult-female"
                 ]
             },
             {
