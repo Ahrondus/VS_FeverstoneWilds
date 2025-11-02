@@ -101,7 +101,14 @@
 				"weight": 10,
 				"blendMode": "average",
 				"triggeredBy": { "onControls": ["dead"] }
-			}
+			},
+            {
+                "code": "dead",
+                "animation": "dead",
+                "blendMode": "Average",
+                "weight": 10,
+                "easeInSpeed": 3
+            }
         ]
     },
     "server": {

@@ -6293,7 +6293,7 @@
 			"name": "Wounded-Idle",
 			"code": "wounded-idle",
 			"quantityframes": 110,
-			"onActivityStopped": "Rewind",
+			"onActivityStopped": "EaseOut",
 			"onAnimationEnd": "Repeat",
 			"keyframes": [
 				{
@@ -6645,8 +6645,8 @@
 			"name": "Wounded-Stand",
 			"code": "wounded-stand",
 			"quantityframes": 131,
-			"onActivityStopped": "Rewind",
-			"onAnimationEnd": "Repeat",
+			"onActivityStopped": "EaseOut",
+			"onAnimationEnd": "EaseOut",
 			"keyframes": [
 				{
 					"frame": 0,
