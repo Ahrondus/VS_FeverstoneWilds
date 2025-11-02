@@ -34,7 +34,9 @@
 		},
 		"handbook": {
 			"groupcode": "feverstonewilds:creaturegroup-fswdirewolf"
-		}
+		},
+        "tamed": true,
+        "minGenerationToAllowHealing": 0
     },
     "sizeByType": {
         "tame-direwolf-male": 1,
@@ -388,6 +390,7 @@
             },
             { "code": "repulseagents" },
             { "code": "controlledphysics" },
+            { "code": "health" },
             { "code": "floatupwhenstuck" },
             { "code": "interpolateposition" },
             { "code": "gait" },
@@ -414,6 +417,13 @@
                 "weight": 10,
                 "blendMode": "average",
                 "triggeredBy": { "onControls": [ "dead" ] }
+            },
+            {
+                "code": "dead",
+                "animation": "dead",
+                "blendMode": "Average",
+                "weight": 10,
+                "easeInSpeed": 3
             },
             {
                 "code": "idle",
