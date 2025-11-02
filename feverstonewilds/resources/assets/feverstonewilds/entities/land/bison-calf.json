@@ -151,7 +151,7 @@
 							{ "code": "fleeondamage", "duration": 60, "chance": 0.85, "slot": 0, "priority": 5, "accumType": "max", "whenHealthRelBelow": 0.75 }]
 			},
 			{ "code": "grow", "hoursToGrow": 168, 
-				"adultEntityCodes": [ "feverstonewilds:bison-male", "feverstonewilds:bison-female" ] },
+				"adultEntityCodes": [ "feverstonewilds:bison-{tamed}-male", "feverstonewilds:bison-{tamed}-female" ] },
 			{ "code": "taskai",
 				"aiCreatureType": "LandCreature",
 				"aitasks": [

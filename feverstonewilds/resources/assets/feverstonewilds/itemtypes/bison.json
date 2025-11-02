@@ -7,13 +7,13 @@
 				"code": "type",
 				"states": [ "bison-wild-female", "bison-wild-male",
 							"bison-tamed-female", "bison-tamed-male",
-							"bison-calf"]
+							"bison-calf-wild", "bison-calf-tamed"]
 			}
 		],
 	"shapeByType": {
 		"*-male": { "base": "entity/land/mammal/bison-male" },
 		"*-female": { "base": "entity/land/mammal/bison-female" },
-		"*-calf": { "base": "entity/land/mammal/bison-calf" }
+		"*-calf-*": { "base": "entity/land/mammal/bison-calf" }
 	},
 	"texturesByType": {
 		"*": { "skin": { "base": "entity/land/bison/bisonskin1" } }

@@ -523,15 +523,15 @@
 			{ "code": "breathe" },
 			{ "code": "multiply",
 				"enabledByType": { "*-female": true, "*-male": false },
-				"spawnEntityCode": "feverstonewilds:bison-calf",
-				"requiresNearbyEntityCode": "feverstonewilds:bison-male",
+				"spawnEntityCode": "feverstonewilds:bison-calf-{tame}",
+				"requiresNearbyEntityCode": "feverstonewilds:bison-*-male",
 				"requiresNearbyEntityRange": 10,
 				"spawnQuantityMin": 1,
-				"spawnQuantityMax": 1,
+				"spawnQuantityMax": 2,
 				"pregnancyDays": 20,
 				"multiplyCooldownDaysMin": 4,
 				"multiplyCooldownDaysMax": 11,
-				"portionsEatenForMultiply": 10
+				"portionsEatenForMultiply": 16
 			},
 			{ "code": "mouthinventory",
 				"acceptStacks": [
@@ -624,7 +624,7 @@
 						"code": "stayclosetoentity",
 						"priority": 1.3,
 						"entityCodeByType": {
-							"*-female": "bison-male"
+							"*-female": "bison-{tame}-male"
 						},
 						"maxDistance": 10,
 						"searchRange": 25,
@@ -780,7 +780,7 @@
 					"minForestOrShrubs": 0.25,
 					"maxForest": 0.75,
 					"maxShrubs": 0.75,
-					"companions": ["bison-female", "bison-calf"]
+					"companions": ["bison-wild-female", "bison-calf-wild"]
 				},
 				"runtime": {
 					"group": "neutral",
@@ -796,7 +796,7 @@
 					"minForestOrShrubs": 0.25,
 					"maxForest": 0.75,
 					"maxShrubs": 0.75,
-					"companions": ["bison-female", "bison-calf-*"]
+					"companions": ["bison-wild-female", "bison-calf-wild"]
 				}
 			}
 		}
