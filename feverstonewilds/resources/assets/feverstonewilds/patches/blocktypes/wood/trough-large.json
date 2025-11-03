@@ -40,7 +40,8 @@
                                         "block/wood/trough/large/bellpepperfill3", "block/wood/trough/large/bellpepperfill3",
                                         "block/wood/trough/large/bellpepperfill4", "block/wood/trough/large/bellpepperfill4" ],
                 "textureCode": "contents-fishmeat" } ],
-        "file": "game:blocktypes/wood/trough-large.json"
+        "file": "game:blocktypes/wood/trough-large.json",
+        "dependsOn": [ { "modid": "diversediets", "inverse": true } ]
     },
     {
         "op": "addmerge",
@@ -72,6 +73,7 @@
                 ]
             }
         },
-        "file": "game:blocktypes/wood/trough-large.json"
+        "file": "game:blocktypes/wood/trough-large.json",
+        "dependsOn": [ { "modid": "diversediets", "inverse": true } ]
     }
 ]

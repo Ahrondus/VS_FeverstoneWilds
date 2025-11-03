@@ -15,7 +15,8 @@
             }
         ],
         "file": "feverstonewilds:entities/land/cockatrice-chick.json",
-        "dependsOn": [ { "modid": "petai" } ]
+        "dependsOn": [ { "modid": "petai" } ],
+        "condition": { "when": "FSWCockatriceEnabled", "isValue": "true" }
     },
     {
         "op": "addeach",
@@ -33,7 +34,8 @@
             }
         ],
         "file": "feverstonewilds:entities/land/cockatrice-chick.json",
-        "dependsOn": [ { "modid": "petai" } ]
+        "dependsOn": [ { "modid": "petai" } ],
+        "condition": { "when": "FSWCockatriceEnabled", "isValue": "true" }
     },
 
     {
@@ -59,7 +61,8 @@
             }
         ],
         "file": "feverstonewilds:entities/land/tame-cockatrice-chick.json",
-        "dependsOn": [ { "modid": "petai" } ]
+        "dependsOn": [ { "modid": "petai" } ],
+        "condition": { "when": "FSWTameCockatriceEnabled", "isValue": "true" }
     },
     {
         "op": "addeach",
@@ -84,20 +87,23 @@
             }
         ],
         "file": "feverstonewilds:entities/land/tame-cockatrice-chick.json",
-        "dependsOn": [ { "modid": "petai" } ]
+        "dependsOn": [ { "modid": "petai" } ],
+        "condition": { "when": "FSWTameCockatriceEnabled", "isValue": "true" }
     },
     {
         "op": "remove",
         "path": "/server/behaviors/11",
         "file": "feverstonewilds:entities/land/tame-cockatrice-chick.json",
-        "dependsOn": [ {"modid": "petai"} ]
+        "dependsOn": [ {"modid": "petai"} ],
+        "condition": { "when": "FSWTameCockatriceEnabled", "isValue": "true" }
     },
     {
         "op": "add",
         "path": "/server/behaviors/-",
         "value": { "code": "pettableextended" },
         "file": "feverstonewilds:entities/land/tame-cockatrice-chick.json",
-        "dependsOn": [ {"modid": "petai"} ]
+        "dependsOn": [ {"modid": "petai"} ],
+        "condition": { "when": "FSWTameCockatriceEnabled", "isValue": "true" }
     },
     {
         "op": "replace",
@@ -106,7 +112,8 @@
 				"adultEntityCodes": [ "feverstonewilds:tame-cockatrice-male", "feverstonewilds:tame-cockatrice-female" ]  
             },
         "file": "feverstonewilds:entities/land/tame-cockatrice-chick.json",
-        "dependsOn": [ {"modid": "petai"} ]
+        "dependsOn": [ {"modid": "petai"} ],
+        "condition": { "when": "FSWTameCockatriceEnabled", "isValue": "true" }
     },
     {
         "op": "addeach",
@@ -132,7 +139,8 @@
                     }
             ],
         "file": "feverstonewilds:entities/land/tame-cockatrice-chick.json",
-        "dependsOn": [ {"modid": "petai"} ]
+        "dependsOn": [ {"modid": "petai"} ],
+        "condition": { "when": "FSWTameCockatriceEnabled", "isValue": "true" }
     },
 
     {
@@ -166,7 +174,8 @@
             }
         ],
         "file": "feverstonewilds:entities/land/tame-cockatrice.json",
-        "dependsOn": [ { "modid": "petai" } ]
+        "dependsOn": [ { "modid": "petai" } ],
+        "condition": { "when": "FSWTameCockatriceEnabled", "isValue": "true" }
     },
     {
         "op": "addeach",
@@ -237,20 +246,23 @@
             }
         ],
         "file": "feverstonewilds:entities/land/tame-cockatrice.json",
-        "dependsOn": [ { "modid": "petai" } ]
+        "dependsOn": [ { "modid": "petai" } ],
+        "condition": { "when": "FSWTameCockatriceEnabled", "isValue": "true" }
     },
     {
         "op": "remove",
         "path": "/server/behaviors/12",
         "file": "feverstonewilds:entities/land/tame-cockatrice.json",
-        "dependsOn": [ {"modid": "petai"} ]
+        "dependsOn": [ {"modid": "petai"} ],
+        "condition": { "when": "FSWTameCockatriceEnabled", "isValue": "true" }
     },
     {
         "op": "add",
         "path": "/server/behaviors/-",
         "value": { "code": "pettableextended" },
         "file": "feverstonewilds:entities/land/tame-cockatrice.json",
-        "dependsOn": [ {"modid": "petai"} ]
+        "dependsOn": [ {"modid": "petai"} ],
+        "condition": { "when": "FSWTameCockatriceEnabled", "isValue": "true" }
     },
     {
         "op": "addeach",
@@ -351,6 +363,7 @@
                     }
             ],
         "file": "feverstonewilds:entities/land/tame-cockatrice-chick.json",
-        "dependsOn": [ {"modid": "petai"} ]
+        "dependsOn": [ {"modid": "petai"} ],
+        "condition": { "when": "FSWTameCockatriceEnabled", "isValue": "true" }
     }
 ]

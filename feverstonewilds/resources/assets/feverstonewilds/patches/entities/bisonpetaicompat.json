@@ -29,7 +29,8 @@
             }
         ],
         "file": "feverstonewilds:entities/land/bison.json",
-        "dependsOn": [ { "modid": "petai" } ]
+        "dependsOn": [ { "modid": "petai" } ],
+        "condition": { "when": "FSWBisonEnabled", "isValue": "true" }
     },
     {
         "op": "addeach",
@@ -60,7 +61,8 @@
             }
         ],
         "file": "feverstonewilds:entities/land/bison-calf.json",
-        "dependsOn": [ { "modid": "petai" } ]
+        "dependsOn": [ { "modid": "petai" } ],
+        "condition": { "when": "FSWBisonEnabled", "isValue": "true" }
     },
     {
         "op": "addeach",
@@ -93,7 +95,8 @@
             }
         ],
         "file": "feverstonewilds:entities/land/bison.json",
-        "dependsOn": [ { "modid": "petai" } ]
+        "dependsOn": [ { "modid": "petai" } ],
+        "condition": { "when": "FSWBisonEnabled", "isValue": "true" }
     },
     {
         "op": "addeach",
@@ -126,7 +129,8 @@
             }
         ],
         "file": "feverstonewilds:entities/land/bison-calf.json",
-        "dependsOn": [ { "modid": "petai" } ]
+        "dependsOn": [ { "modid": "petai" } ],
+        "condition": { "when": "FSWBisonEnabled", "isValue": "true" }
     },
     {
         "op": "addeach",
@@ -155,7 +159,8 @@
 					}
             ],
         "file": "feverstonewilds:entities/land/bison.json",
-        "dependsOn": [ {"modid": "petai"} ]
+        "dependsOn": [ {"modid": "petai"} ],
+        "condition": { "when": "FSWBisonEnabled", "isValue": "true" }
     },
     {
         "op": "addeach",
@@ -185,33 +190,38 @@
                 }
             ],
         "file": "feverstonewilds:entities/land/bison-calf.json",
-        "dependsOn": [ {"modid": "petai"} ]
+        "dependsOn": [ {"modid": "petai"} ],
+        "condition": { "when": "FSWBisonEnabled", "isValue": "true" }
     },
     {
         "op": "remove",
         "path": "/server/behaviors/19",
         "file": "feverstonewilds:entities/land/bison.json",
-        "dependsOn": [ {"modid": "petai"} ]
+        "dependsOn": [ {"modid": "petai"} ],
+        "condition": { "when": "FSWBisonEnabled", "isValue": "true" }
     },
     {
         "op": "remove",
         "path": "/server/behaviors/13",
         "file": "feverstonewilds:entities/land/bison-calf.json",
-        "dependsOn": [ {"modid": "petai"} ]
+        "dependsOn": [ {"modid": "petai"} ],
+        "condition": { "when": "FSWBisonEnabled", "isValue": "true" }
     },
     {
         "op": "add",
         "path": "/server/behaviors/-",
         "value": { "code": "pettableextended" },
         "file": "feverstonewilds:entities/land/bison.json",
-        "dependsOn": [ {"modid": "petai"} ]
+        "dependsOn": [ {"modid": "petai"} ],
+        "condition": { "when": "FSWBisonEnabled", "isValue": "true" }
     },
     {
         "op": "add",
         "path": "/server/behaviors/-",
         "value": { "code": "pettableextended" },
         "file": "feverstonewilds:entities/land/bison-calf.json",
-        "dependsOn": [ {"modid": "petai"} ]
+        "dependsOn": [ {"modid": "petai"} ],
+        "condition": { "when": "FSWBisonEnabled", "isValue": "true" }
     },
     {
         "op": "replace",
@@ -220,6 +230,7 @@
 				"adultEntityCodes": [ "feverstonewilds:bison-{tamed}-male", "feverstonewilds:bison-{tamed}-female" ]  
             },
         "file": "feverstonewilds:entities/land/bison-calf.json",
-        "dependsOn": [ {"modid": "petai"} ]
+        "dependsOn": [ {"modid": "petai"} ],
+        "condition": { "when": "FSWBisonEnabled", "isValue": "true" }
     }
 ]
