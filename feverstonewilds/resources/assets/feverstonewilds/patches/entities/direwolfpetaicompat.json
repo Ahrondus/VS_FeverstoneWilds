@@ -19,7 +19,8 @@
 			    }
         ],
         "file": "feverstonewilds:entities/land/direwolf-pup.json",
-        "dependsOn": [ { "modid": "petai" } ]
+        "dependsOn": [ { "modid": "petai" } ],
+        "condition": { "when": "FSWWildDirewolfEnabled", "isValue": "true" }
     },
     {
         "op": "addeach",
@@ -42,20 +43,23 @@
 			    }
         ],
         "file": "feverstonewilds:entities/land/direwolf-pup.json",
-        "dependsOn": [ { "modid": "petai" } ]
+        "dependsOn": [ { "modid": "petai" } ],
+        "condition": { "when": "FSWWildDirewolfEnabled", "isValue": "true" }
     },
     {
         "op": "remove",
         "path": "/server/behaviors/13",
         "file": "feverstonewilds:entities/land/direwolf-pup.json",
-        "dependsOn": [ {"modid": "petai"} ]
+        "dependsOn": [ {"modid": "petai"} ],
+        "condition": { "when": "FSWWildDirewolfEnabled", "isValue": "true" }
     },
     {
         "op": "add",
         "path": "/server/behaviors/-",
         "value": { "code": "pettableextended" },
         "file": "feverstonewilds:entities/land/direwolf-pup.json",
-        "dependsOn": [ {"modid": "petai"} ]
+        "dependsOn": [ {"modid": "petai"} ],
+        "condition": { "when": "FSWWildDirewolfEnabled", "isValue": "true" }
     },
 
     {
@@ -81,7 +85,8 @@
             }
         ],
         "file": "feverstonewilds:entities/land/tame-direwolf-pup.json",
-        "dependsOn": [ { "modid": "petai" } ]
+        "dependsOn": [ { "modid": "petai" } ],
+        "condition": { "when": "FSWTameDirewolfEnabled", "isValue": "true" }
     },
     {
         "op": "addeach",
@@ -106,20 +111,23 @@
             }
         ],
         "file": "feverstonewilds:entities/land/tame-direwolf-pup.json",
-        "dependsOn": [ { "modid": "petai" } ]
+        "dependsOn": [ { "modid": "petai" } ],
+        "condition": { "when": "FSWTameDirewolfEnabled", "isValue": "true" }
     },
     {
         "op": "remove",
         "path": "/server/behaviors/11",
         "file": "feverstonewilds:entities/land/tame-direwolf-pup.json",
-        "dependsOn": [ {"modid": "petai"} ]
+        "dependsOn": [ {"modid": "petai"} ],
+        "condition": { "when": "FSWTameDirewolfEnabled", "isValue": "true" }
     },
     {
         "op": "add",
         "path": "/server/behaviors/-",
         "value": { "code": "pettableextended" },
         "file": "feverstonewilds:entities/land/tame-direwolf-pup.json",
-        "dependsOn": [ {"modid": "petai"} ]
+        "dependsOn": [ {"modid": "petai"} ],
+        "condition": { "when": "FSWTameDirewolfEnabled", "isValue": "true" }
     },
     {
         "op": "replace",
@@ -128,7 +136,8 @@
 				"adultEntityCodes": [ "feverstonewilds:tame-direwolf-male", "feverstonewilds:tame-direwolf-female" ]  
             },
         "file": "feverstonewilds:entities/land/tame-direwolf-pup.json",
-        "dependsOn": [ {"modid": "petai"} ]
+        "dependsOn": [ {"modid": "petai"} ],
+        "condition": { "when": "FSWTameDirewolfEnabled", "isValue": "true" }
     },
     {
         "op": "addeach",
@@ -164,7 +173,8 @@
                     }
             ],
         "file": "feverstonewilds:entities/land/tame-direwolf-pup.json",
-        "dependsOn": [ {"modid": "petai"} ]
+        "dependsOn": [ {"modid": "petai"} ],
+        "condition": { "when": "FSWTameDirewolfEnabled", "isValue": "true" }
     },
 
     {
@@ -196,7 +206,8 @@
                 }
         ],
         "file": "feverstonewilds:entities/land/tame-direwolf.json",
-        "dependsOn": [ { "modid": "petai" } ]
+        "dependsOn": [ { "modid": "petai" } ],
+        "condition": { "when": "FSWTameDirewolfEnabled", "isValue": "true" }
     },
     {
         "op": "addeach",
@@ -227,20 +238,23 @@
             }
         ],
         "file": "feverstonewilds:entities/land/tame-direwolf.json",
-        "dependsOn": [ { "modid": "petai" } ]
+        "dependsOn": [ { "modid": "petai" } ],
+        "condition": { "when": "FSWTameDirewolfEnabled", "isValue": "true" }
     },
     {
         "op": "remove",
         "path": "/server/behaviors/11",
         "file": "feverstonewilds:entities/land/tame-direwolf-pup.json",
-        "dependsOn": [ {"modid": "petai"} ]
+        "dependsOn": [ {"modid": "petai"} ],
+        "condition": { "when": "FSWTameDirewolfEnabled", "isValue": "true" }
     },
     {
         "op": "add",
         "path": "/server/behaviors/-",
         "value": { "code": "pettableextended" },
         "file": "feverstonewilds:entities/land/tame-direwolf-pup.json",
-        "dependsOn": [ {"modid": "petai"} ]
+        "dependsOn": [ {"modid": "petai"} ],
+        "condition": { "when": "FSWTameDirewolfEnabled", "isValue": "true" }
     },
     {
         "op": "addeach",
@@ -354,6 +368,7 @@
                     }
             ],
         "file": "feverstonewilds:entities/land/tame-direwolf.json",
-        "dependsOn": [ {"modid": "petai"} ]
+        "dependsOn": [ {"modid": "petai"} ],
+        "condition": { "when": "FSWTameDirewolfEnabled", "isValue": "true" }
     }
 ]
