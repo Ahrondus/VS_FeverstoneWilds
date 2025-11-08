@@ -493,7 +493,9 @@
 				"enabledByType": { "*-tamed-*": true, "*": false } },
 			{ "code": "repulseagents" }, 
 			{ "code": "controlledphysics" },
-			{ "code": "despawn", "minPlayerDistance": 8, "belowLightLevel": 8, "minSeconds": 300 },
+			{ "code": "despawn",
+                    "enabledByType": { "*-wild-*": true, "*": false }, 
+					"minPlayerDistance": 28, "belowLightLevel": 8, "minSeconds": 600 },
 			{ "code": "health", "maxhealth": 60 },
 			{ "code": "deaddecay", "hoursToDecay": 96, "decayedBlock": "carcass-large" },
 			{ "code": "floatupwhenstuck" },
@@ -769,7 +771,7 @@
 		"spawnconditionsByType": {
 			"*-wild-male":{
 				"worldgen": {
-					"TriesPerChunk": { "avg": 0.02, "var": 0.01 },
+					"TriesPerChunk": { "avg": 0.002, "var": 0.0005 },
 					"tryOnlySurface": true,
 					"minLightLevel": 11,
 					"groupSize": { "dist": "verynarrowgaussian", "avg": 3, "var": 4 },
@@ -785,8 +787,9 @@
 				"runtime": {
 					"group": "neutral",
 					"tryOnlySurface": true,
-					"chance": 0.00006,
+					"chance": 0.00003,
 					"maxQuantity": 4,
+				    "maxQuantityByGroup": { "code": "bison-*", "maxQuantity": 4 },
 					"minLightLevel": 10,
 					"groupSize": { "dist": "verynarrowgaussian", "avg": 3, "var": 4 },
 					"insideBlockCodes": ["game:air", "game:tallgrass-*", "game:snowlayer-1"],

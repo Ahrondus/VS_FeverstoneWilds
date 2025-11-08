@@ -333,7 +333,6 @@
 			{ "code": "harvestable" },
 			{ "code": "multiplybase",
 				"enabledByType": { "*-male": false, "*-female": true } },
-			{ "code": "despawn", "minPlayerDistance": 15, "belowLightLevel": 8, "minSeconds": 300 },
 			{ "code": "ropetieable", "minGeneration": 2 },
             { "code": "mouthinventory",
                 "acceptStacks": [
@@ -441,7 +440,6 @@
             { "code": "ownable" },
             { "code": "selectionboxes" },
             { "code": "rideableaccessories" },
-			{ "code": "despawn", "minPlayerDistance": 8, "belowLightLevel": 8, "minSeconds": 300 },
 			{ "code": "health", "currenthealth": 18, "maxhealth": 18 },
 			{ "code": "deaddecay", "hoursToDecay": 96, "decayedBlock": "carcass-medium" },
 			{ "code": "floatupwhenstuck" },
@@ -525,7 +523,7 @@
 					},
 					{
 						"code": "fleeentity",
-						"entityCodes": ["player", "wolf-*", "hyena-*", "bear-*"],
+						"entityCodes": ["wolf-*", "hyena-*", "bear-*"],
 						"priority": 1.8,
 						"movespeed": 0.057,
 						"seekingRange": 12,
@@ -630,7 +628,7 @@
 						"animation": "Sleep",
 						"whenNotInEmotionState": "aggressiveondamage",
 						"duringDayTimeFrames": [ { "fromHour": 21, "toHour": 24 }, { "fromHour": 0, "toHour": 6 } ],
-						"stopOnNearbyEntityCodes": ["player"],
+						"stopOnNearbyEntityCodes": ["wolf-*", "bear-*", "direwolf-*"],
 						"stopRange": 6,
 						"stopOnHurt": true
 					},

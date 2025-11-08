@@ -321,8 +321,8 @@
             "*-female": {
                 "worldgen": {
                     "TriesPerChunk": {
-                        "avg": 0.08,
-                        "var": 0.02
+                        "avg": 0.0095,
+                        "var": 0.0005
                     },
                     "tryOnlySurface": true,
                     "minLightLevel": 11,
@@ -341,8 +341,9 @@
                 "runtime": {
                     "group": "neutral",
                     "tryOnlySurface": true,
-                    "chance": 0.00004,
+                    "chance": 0.00002,
                     "maxQuantity": 3,
+				    "maxQuantityByGroup": { "code": "faunling-*", "maxQuantity": 3 },
                     "mindistancetoplayer": 160,
                     "minLightLevel": 11,
                     "lightLevelType": "onlyBlockLight",
