@@ -24,10 +24,12 @@
     "client": {
         "renderer": "Shape",
         "shape": { "base": "entity/land/bird/cockatrice-chick" },
-        "texture": {
-            "base": "entity/land/cockatrice/cockatriceskin1",
-            "alternates": [ { "base": "entity/land/cockatrice/cockatriceskin2" } ]
-        },
+		"texture": { "base": "entity/land/cockatrice/cockatriceskin1",
+			"alternates": [ { "base": "entity/land/cockatrice/cockatriceskin2" }, { "base": "entity/land/cockatrice/cockatriceskin3" }, 
+							{ "base": "entity/land/cockatrice/cockatriceskin4" }, { "base": "entity/land/cockatrice/cockatriceskin5" }, 
+							{ "base": "entity/land/cockatrice/cockatriceskin6" }, { "base": "entity/land/cockatrice/cockatriceskin7" },
+							{ "base": "entity/land/cockatrice/cockatriceskin8" }, { "base": "entity/land/cockatrice/cockatriceskin9" }
+							] },
         "size": 0.9,
         "sizeGrowthFactor": 0.2,
         "behaviors": [

@@ -31,39 +31,61 @@ namespace FeverstoneWilds.Config
         GenerateConfig(api);
         config = LoadConfig(api);
       }
-        // Land Creatures
-        api.World.Config.SetBool("FSWBisonEnabled", config.FSWBisonEnabled);
-        api.World.Config.SetBool("FSWBisonCalfEnabled", config.FSWBisonCalfEnabled);
-        api.World.Config.SetBool("FSWCockatriceEnabled", config.FSWCockatriceEnabled);
-        api.World.Config.SetBool("FSWTameCockatriceEnabled", config.FSWCockatriceEnabled);
-        api.World.Config.SetBool("FSWWildDirewolfEnabled", config.FSWWildDirewolfEnabled);
-        api.World.Config.SetBool("FSWTameDirewolfEnabled", config.FSWTameDirewolfEnabled);
-        api.World.Config.SetBool("FSWWildDirewolfPupEnabled", config.FSWWildDirewolfPupEnabled);
-        api.World.Config.SetBool("FSWTameDirewolfPupEnabled", config.FSWTameDirewolfPupEnabled);
-        api.World.Config.SetBool("FSWFaunlingEnabled", config.FSWFaunlingEnabled);
-        api.World.Config.SetBool("FSWFoalEnabled", config.FSWFoalEnabled);
-        api.World.Config.SetBool("FSWGeodeCrabEnabled", config.FSWGeodeCrabEnabled);
-        api.World.Config.SetBool("FSWGiraffeEnabled", config.FSWGiraffeEnabled);
-        api.World.Config.SetBool("FSWGolemEnabled", config.FSWGolemEnabled);
-        api.World.Config.SetBool("FSWHellboarEnabled", config.FSWHellboarEnabled);
-        api.World.Config.SetBool("FSWHorseEnabled", config.FSWHorseEnabled);
-        api.World.Config.SetBool("FSWOstrichEnabled", config.FSWOstrichEnabled);
-        api.World.Config.SetBool("FSWSpiderEnabled", config.FSWSpiderEnabled);
-        api.World.Config.SetBool("FSWScorpionEnabled", config.FSWScorpionEnabled);
-        api.World.Config.SetBool("FSWToadEnabled", config.FSWToadEnabled);
-        
-        // Water Creatures
-        api.World.Config.SetBool("FSWBuromenfishEnabled", config.FSWBuromenfishEnabled);
-        api.World.Config.SetBool("FSWDiscusFishEnabled", config.FSWDiscusFishEnabled);
-        api.World.Config.SetBool("FSWEelEnabled", config.FSWEelEnabled);
-        api.World.Config.SetBool("FSWOrcaEnabled", config.FSWOrcaEnabled);
-        api.World.Config.SetBool("FSWSharksEnabled", config.FSWSharksEnabled);
-        api.World.Config.SetBool("FSWStingrayEnabled", config.FSWStingrayEnabled);
+      // Land Creatures
+      api.World.Config.SetBool("FSWBisonEnabled", config.FSWBisonEnabled);
+      api.World.Config.SetBool("FSWBisonCalfEnabled", config.FSWBisonCalfEnabled);
+      api.World.Config.SetBool("FSWCockatriceEnabled", config.FSWCockatriceEnabled);
+      api.World.Config.SetBool("FSWTameCockatriceEnabled", config.FSWCockatriceEnabled);
+      api.World.Config.SetBool("FSWWildDirewolfEnabled", config.FSWWildDirewolfEnabled);
+      api.World.Config.SetBool("FSWTameDirewolfEnabled", config.FSWTameDirewolfEnabled);
+      api.World.Config.SetBool("FSWWildDirewolfPupEnabled", config.FSWWildDirewolfPupEnabled);
+      api.World.Config.SetBool("FSWTameDirewolfPupEnabled", config.FSWTameDirewolfPupEnabled);
+      api.World.Config.SetBool("FSWFaunlingEnabled", config.FSWFaunlingEnabled);
+      api.World.Config.SetBool("FSWFoalEnabled", config.FSWFoalEnabled);
+      api.World.Config.SetBool("FSWGeodeCrabEnabled", config.FSWGeodeCrabEnabled);
+      api.World.Config.SetBool("FSWGiraffeEnabled", config.FSWGiraffeEnabled);
+      api.World.Config.SetBool("FSWGolemEnabled", config.FSWGolemEnabled);
+      api.World.Config.SetBool("FSWHellboarEnabled", config.FSWHellboarEnabled);
+      api.World.Config.SetBool("FSWHorseEnabled", config.FSWHorseEnabled);
+      api.World.Config.SetBool("FSWOstrichEnabled", config.FSWOstrichEnabled);
+      api.World.Config.SetBool("FSWSpiderEnabled", config.FSWSpiderEnabled);
+      api.World.Config.SetBool("FSWScorpionEnabled", config.FSWScorpionEnabled);
+      api.World.Config.SetBool("FSWToadEnabled", config.FSWToadEnabled);
+      
+      // Water Creatures
+      api.World.Config.SetBool("FSWBuromenfishEnabled", config.FSWBuromenfishEnabled);
+      api.World.Config.SetBool("FSWDiscusFishEnabled", config.FSWDiscusFishEnabled);
+      api.World.Config.SetBool("FSWEelEnabled", config.FSWEelEnabled);
+      api.World.Config.SetBool("FSWOrcaEnabled", config.FSWOrcaEnabled);
+      api.World.Config.SetBool("FSWSharksEnabled", config.FSWSharksEnabled);
+      api.World.Config.SetBool("FSWStingrayEnabled", config.FSWStingrayEnabled);
+      api.World.Config.SetBool("FSWGhostfishEnabled", config.FSWGhostfishEnabled);
 
-        // Golem Types
-        api.World.Config.SetBool("FSWCopperGolemEnabled", config.FSWCopperGolemEnabled);
-        api.World.Config.SetBool("FSWTinGolemEnabled", config.FSWTinGolemEnabled);
-        api.World.Config.SetBool("FSWIronGolemEnabled", config.FSWIronGolemEnabled);
+      // Golem Types
+      api.World.Config.SetBool("FSWCopperGolemEnabled", config.FSWCopperGolemEnabled);
+      api.World.Config.SetBool("FSWTinGolemEnabled", config.FSWTinGolemEnabled);
+      api.World.Config.SetBool("FSWIronGolemEnabled", config.FSWIronGolemEnabled);
+
+      // AnimalCages Config
+      api.World.Config.SetBool("AllowCagedFSWCreatures", config.AllowCagedFSWCreatures);
+
+      // ConfigLib
+      api.World.Config.SetFloat("BISON_SPAWN_CHANCE_WORLDGEN", config.BISON_SPAWN_CHANCE_WORLDGEN);
+      api.World.Config.SetFloat("BISON_SPAWN_CHANCE_RUNTIME", config.BISON_SPAWN_CHANCE_RUNTIME);
+      api.World.Config.SetFloat("COCKATRICE_SPAWN_CHANCE_WORLDGEN", config.COCKATRICE_SPAWN_CHANCE_WORLDGEN);
+      api.World.Config.SetFloat("COCKATRICE_SPAWN_CHANCE_RUNTIME", config.COCKATRICE_SPAWN_CHANCE_RUNTIME);
+      api.World.Config.SetFloat("DIREWOLF_SPAWN_CHANCE_WORLDGEN", config.DIREWOLF_SPAWN_CHANCE_WORLDGEN);
+      api.World.Config.SetFloat("DIREWOLF_SPAWN_CHANCE_RUNTIME", config.DIREWOLF_SPAWN_CHANCE_RUNTIME);
+      api.World.Config.SetFloat("FAUNLING_SPAWN_CHANCE_WORLDGEN", config.FAUNLING_SPAWN_CHANCE_WORLDGEN);
+      api.World.Config.SetFloat("FAUNLING_SPAWN_CHANCE_RUNTIME", config.FAUNLING_SPAWN_CHANCE_RUNTIME);
+      api.World.Config.SetFloat("GOLEM_SPAWN_CHANCE_WORLDGEN", config.GOLEM_SPAWN_CHANCE_WORLDGEN);
+      api.World.Config.SetFloat("GOLEM_SPAWN_CHANCE_RUNTIME", config.GOLEM_SPAWN_CHANCE_RUNTIME);
+      api.World.Config.SetFloat("HELLBOAR_SPAWN_CHANCE_WORLDGEN", config.HELLBOAR_SPAWN_CHANCE_WORLDGEN);
+      api.World.Config.SetFloat("HELLBOAR_SPAWN_CHANCE_RUNTIME", config.HELLBOAR_SPAWN_CHANCE_RUNTIME);
+      api.World.Config.SetFloat("HORSE_SPAWN_CHANCE_WORLDGEN", config.HORSE_SPAWN_CHANCE_WORLDGEN);
+      api.World.Config.SetFloat("HORSE_SPAWN_CHANCE_RUNTIME", config.HORSE_SPAWN_CHANCE_RUNTIME);
+      api.World.Config.SetFloat("OSTRICH_SPAWN_CHANCE_WORLDGEN", config.OSTRICH_SPAWN_CHANCE_WORLDGEN);
+      api.World.Config.SetFloat("OSTRICH_SPAWN_CHANCE_RUNTIME", config.OSTRICH_SPAWN_CHANCE_RUNTIME);
     }
 
     // Load a previous config

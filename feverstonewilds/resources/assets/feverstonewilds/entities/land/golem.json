@@ -206,6 +206,7 @@
             "groupSizeByType": {
                 "*": { "dist": "uniform", "avg": 1, "var": 0 }
             },
+			"maxQuantityByGroup": { "code": "golem-*", "maxQuantity": 1 },
             "insideBlockCodesByType": {
                 "*": [ "game:air", "game:tallgrass-*" ]
             },

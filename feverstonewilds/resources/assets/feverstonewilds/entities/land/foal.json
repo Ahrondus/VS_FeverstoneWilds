@@ -101,7 +101,9 @@
             { "code": "controlledphysics", "stepHeight": 1.1251 },
             { "code": "floatupwhenstuck", "onlyWhenDead": true },
             { "code": "interpolateposition" },
-            { "code": "despawn",  "minPlayerDistance": 8, "belowLightLevel": 8, "minSeconds": 300 },
+            { "code": "despawn",
+                    "enabledByType": { "*-wild-*": true, "*": false },
+                    "minPlayerDistance": 28, "belowLightLevel": 8, "minSeconds": 600 },
             { "code": "ropetieable" }
         ],
         "animations": [

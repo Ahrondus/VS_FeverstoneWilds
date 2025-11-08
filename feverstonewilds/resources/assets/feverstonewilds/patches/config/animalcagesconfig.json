@@ -1,0 +1,96 @@
+[
+    {
+        "op": "addeach",
+        "path": "/smallCatchableEntities/-",
+        "file": "config/defaultconfig.json",
+        "value": [
+            {
+                "name": "direwolf-pup",
+                "scale": 1
+            },
+            {
+                "name": "tame-direwolf-pup",
+                "scale": 1
+            },
+            {
+                "name": "geodecrab",
+                "scale": 1
+            },
+            {
+                "name": "cockatrice-chick",
+                "scale": 1
+            },
+            {
+                "name": "tame-cockatrice-chick",
+                "scale": 1
+            },
+            {
+                "name": "ostrich-chick-*",
+                "scale": 1
+            },
+            {
+                "name": "toad",
+                "scale": 1
+            }
+        ],
+        "dependsOn": [ { "modid": "animalcages" } ],
+        "condition": { "when": "AllowCagedFSWCreatures", "isValue": "true" }
+    },
+    {
+        "op": "addeach",
+        "path": "/mediumCatchableEntities/-",
+        "file": "config/defaultconfig.json",
+        "value": [
+            {
+                "name": "bison-calf-*",
+                "scale": 0.8
+            },
+            {
+                "name": "bison-*",
+                "scale": 0.65
+            },
+            {
+                "name": "cockatrice-*",
+                "scale": 0.8
+            },
+            {
+                "name": "direwolf-*",
+                "scale": 0.7
+            },
+            {
+                "name": "tame-cockatrice-*",
+                "scale": 0.8
+            },
+            {
+                "name": "tame-direwolf-*",
+                "scale": 0.7
+            },
+            {
+                "name": "foal-*",
+                "scale": 0.75
+            },
+            {
+                "name": "horse-*",
+                "scale": 0.75
+            },
+            {
+                "name": "taminghorse-*",
+                "scale": 0.75
+            },
+            {
+                "name": "hellboar-*",
+                "scale": 0.7
+            },
+            {
+                "name": "ostrich-*",
+                "scale": 0.75
+            },
+            {
+                "name": "tame-ostrich-*",
+                "scale": 0.75
+            }
+        ],
+        "dependsOn": [ { "modid": "animalcages" } ],
+        "condition": { "when": "AllowCagedFSWCreatures", "isValue": "true" }
+    }
+]
