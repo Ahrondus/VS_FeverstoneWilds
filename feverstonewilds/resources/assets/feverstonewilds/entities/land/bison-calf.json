@@ -2,7 +2,7 @@
 	"code": "bison-calf",
 	"class": "EntityAgent",
 	"variantgroups": [
-		{ "code": "tame", "states": [ "wild", "tamed" ] }
+		{ "code": "tamed", "states": [ "wild", "tamed" ] }
 	],
 	"hitboxSize": { "x": 1, "y": 1 },
 	"deadHitboxSize": { "x": 1, "y": 1 },
@@ -151,7 +151,10 @@
 							{ "code": "fleeondamage", "duration": 60, "chance": 0.85, "slot": 0, "priority": 5, "accumType": "max", "whenHealthRelBelow": 0.75 }]
 			},
 			{ "code": "grow", "hoursToGrow": 168, 
-				"adultEntityCodes": [ "feverstonewilds:bison-{tamed}-male", "feverstonewilds:bison-{tamed}-female" ] },
+				"adultEntityCodesByType": {
+					"*": [ "feverstonewilds:bison-{tamed}-male", "feverstonewilds:bison-{tamed}-female" ]
+				} 
+			},
 			{ "code": "taskai",
 				"aiCreatureType": "LandCreature",
 				"aitasks": [
