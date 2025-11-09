@@ -205,7 +205,7 @@
 						"animation": "Walk",
 						"mincooldownHours": 1,
 						"maxcooldownHours": 2,
-						"sitAnimation": "Sleep",
+						"sitAnimation": "sleep",
 						"requiresNearbyEntityCode": "feverstonewilds:tame-cockatrice-male",
 						"requiresNearbyEntityRange": 12,
 						"growthCapEntityCodes": ["feverstonewilds:tame-cockatrice-chick", "feverstonewilds:tame-cockatrice-female", "feverstonewilds:tame-cockatrice-male"],
@@ -233,7 +233,7 @@
             "maxduration": 800000,
             "mincooldown": 10000,
             "maxcooldown": 30000,
-            "animation": "Sleep",
+            "animation": "sleep",
             "whenNotInEmotionState": "aggressiveondamage",
             "duringDayTimeFrames": [
               { "fromHour": 10, "toHour": 18 },
@@ -294,7 +294,7 @@
             "mincooldown": 2000,
             "maxcooldown": 120000,
             "priorityForCancel": 1.33,
-            "animation": "Sit",
+            "animation": "sleep",
             "whenNotInEmotionState": "aggressiveondamage",
             "stopRange": 5
           },
