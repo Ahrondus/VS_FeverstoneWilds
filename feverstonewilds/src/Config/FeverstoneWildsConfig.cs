@@ -71,6 +71,11 @@ namespace FeverstoneWilds.Config
 
         public float FAUNLING_SPAWN_CHANCE_RUNTIME { get { return _faunling_spawn_runtime; } set { _faunling_spawn_runtime = value >= 0 ? (value*0.000005f) : 0; } }
         private float _faunling_spawn_runtime = 0.00002f;
+        public float GEODECRAB_SPAWN_CHANCE_WORLDGEN { get { return _geodecrab_spawn_worldgen; } set {_geodecrab_spawn_worldgen = value >= 0 ? (value*0.005f) : 0;} }
+        private float _geodecrab_spawn_worldgen = 0.02f;
+
+        public float GEODECRAB_SPAWN_CHANCE_RUNTIME { get { return _geodecrab_spawn_runtime; } set { _geodecrab_spawn_runtime = value >= 0 ? (value*0.000005f) : 0; } }
+        private float _geodecrab_spawn_runtime = 0.0006f;
         public float GOLEM_SPAWN_CHANCE_WORLDGEN { get { return _golem_spawn_worldgen; } set {_golem_spawn_worldgen = value >= 0 ? (value*0.002f) : 0;} }
         private float _golem_spawn_worldgen = 0.006f;
 
@@ -143,6 +148,8 @@ namespace FeverstoneWilds.Config
             DIREWOLF_SPAWN_CHANCE_RUNTIME = previousConfig.DIREWOLF_SPAWN_CHANCE_RUNTIME;
             FAUNLING_SPAWN_CHANCE_WORLDGEN = previousConfig.FAUNLING_SPAWN_CHANCE_WORLDGEN;
             FAUNLING_SPAWN_CHANCE_RUNTIME = previousConfig.FAUNLING_SPAWN_CHANCE_RUNTIME;
+            GEODECRAB_SPAWN_CHANCE_WORLDGEN = previousConfig.GEODECRAB_SPAWN_CHANCE_WORLDGEN;
+            GEODECRAB_SPAWN_CHANCE_RUNTIME = previousConfig.GEODECRAB_SPAWN_CHANCE_RUNTIME;
             GOLEM_SPAWN_CHANCE_WORLDGEN = previousConfig.GOLEM_SPAWN_CHANCE_WORLDGEN;
             GOLEM_SPAWN_CHANCE_RUNTIME = previousConfig.GOLEM_SPAWN_CHANCE_RUNTIME;
             HELLBOAR_SPAWN_CHANCE_WORLDGEN = previousConfig.HELLBOAR_SPAWN_CHANCE_WORLDGEN;
