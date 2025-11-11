@@ -7,9 +7,11 @@
         { "code": "type", "states": ["percheron", "arabian", "donkey", "shire", "quarter"] }
     ],
     "skipVariants": [ "horse-wild-male-percheron", "horse-wild-female-percheron",
-                      "horse-wild-male-arabian", "horse-wild-female-arabian" ],
+                      "horse-wild-male-arabian", "horse-wild-female-arabian",
+                      "horse-tamed-male-percheron", "horse-tamed-female-percheron",
+                      "horse-tamed-male-arabian", "horse-tamed-female-arabian" ],
     "tagsByType": {
-        "*-tamed": [ "animal", "huntable", "habitat-land", "tamed" ],
+        "*-tamed-*": [ "animal", "huntable", "habitat-land", "tamed" ],
         "*": [ "animal", "huntable", "habitat-land" ]
     },
     "weight": 355,
@@ -101,7 +103,7 @@
                     { "code": "head", "forCategoryCodes": ["bridle-{type}"], "attachmentPointCode": "HeadAP" }, 
                     { "code": "face", "forCategoryCodes": ["face"], "attachmentPointCode": "FaceAP" }, 
                     { "code": "middlebackupper", "forCategoryCodes": ["saddle-{type}"], "attachmentPointCode": "MidUpperAP" },
-                    { "code": "lowerback", "forCategoryCodes": ["bedroll", "fswpillion-{type}"], "attachmentPointCode": "RearUpperAP" },
+                    { "code": "lowerback", "forCategoryCodes": ["bedroll"], "attachmentPointCode": "RearUpperAP" },
                     { "code": "lowerbackside", "forCategoryCodes": ["sidebags-{type}"], "attachmentPointCode": "RearSideAP" },
                     {
                         "code": "frontrightside",
@@ -835,7 +837,10 @@
                         },
                         {
                             "code": "meleeattack",
-                            "entityCodes": [ "player", "wolf-*" ],
+                            "entityCodesbyType": {
+                                "*-tamed-*": [ "wolf-*", "hyena-*" ],
+                                "*": [ "player", "wolf-*", "hyena-*" ]
+                            },
                             "priority": 2,
                             "slot": 1,
                             "damageByType":{
@@ -856,7 +861,10 @@
                         },
                         {
                             "code": "fleeentity",
-                            "entityCodes": [ "player", "wolf-*", "bear-*" ],
+                            "entityCodesbyType": {
+                                "*-tamed-*": [ "wolf-*", "hyena-*", "bear-*", "direwolf-adult" ],
+                                "*": [ "player", "wolf-*", "hyena-*" ]
+                            },
                             "priority": 1.8,
                             "movespeed": 0.058,
                             "seekingRange": 24,
