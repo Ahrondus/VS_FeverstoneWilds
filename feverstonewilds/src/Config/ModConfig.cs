@@ -70,7 +70,7 @@ namespace FeverstoneWilds.Config
       api.World.Config.SetBool("AllowCagedFSWCreatures", config.AllowCagedFSWCreatures);
 
       // ConfigLib
-      api.World.Config.SetFloat("BISON_SPAWN_CHANCE_WORLDGEN", config.BISON_SPAWN_CHANCE_WORLDGEN);
+      /* api.World.Config.SetFloat("BISON_SPAWN_CHANCE_WORLDGEN", config.BISON_SPAWN_CHANCE_WORLDGEN);
       api.World.Config.SetFloat("BISON_SPAWN_CHANCE_RUNTIME", config.BISON_SPAWN_CHANCE_RUNTIME);
       api.World.Config.SetFloat("COCKATRICE_SPAWN_CHANCE_WORLDGEN", config.COCKATRICE_SPAWN_CHANCE_WORLDGEN);
       api.World.Config.SetFloat("COCKATRICE_SPAWN_CHANCE_RUNTIME", config.COCKATRICE_SPAWN_CHANCE_RUNTIME);
@@ -87,7 +87,7 @@ namespace FeverstoneWilds.Config
       api.World.Config.SetFloat("HORSE_SPAWN_CHANCE_WORLDGEN", config.HORSE_SPAWN_CHANCE_WORLDGEN);
       api.World.Config.SetFloat("HORSE_SPAWN_CHANCE_RUNTIME", config.HORSE_SPAWN_CHANCE_RUNTIME);
       api.World.Config.SetFloat("OSTRICH_SPAWN_CHANCE_WORLDGEN", config.OSTRICH_SPAWN_CHANCE_WORLDGEN);
-      api.World.Config.SetFloat("OSTRICH_SPAWN_CHANCE_RUNTIME", config.OSTRICH_SPAWN_CHANCE_RUNTIME);
+      api.World.Config.SetFloat("OSTRICH_SPAWN_CHANCE_RUNTIME", config.OSTRICH_SPAWN_CHANCE_RUNTIME); */
     }
 
     // Load a previous config

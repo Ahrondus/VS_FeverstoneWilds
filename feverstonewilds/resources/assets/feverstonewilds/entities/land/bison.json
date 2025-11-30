@@ -394,12 +394,16 @@
 			{ "code": "floatupwhenstuck" },
 			{ "code": "interpolateposition" },
 			{ "code": "ownable" },
-			{ "code": "selectionboxes" },
-			{ "code": "rideableaccessories" },
+			{ "code": "selectionboxes",
+                    "enabledByType": { "*-tamed-*": true, "*": false } },
+			{ "code": "rideableaccessories",
+                    "enabledByType": { "*-tamed-*": true, "*": false } },
 			{ "code": "multiply", "enabledByType": { "*-female": true, "*-male": false } },
 			{ "code": "harvestable" },
 			{ "code": "milkable", "enabledByType": { "*-female": true, "*-male": false }  },
-			{ "code": "despawn", "minPlayerDistance": 8, "belowLightLevel": 8, "minSeconds": 300 },
+			{ "code": "despawn",
+                    "enabledByType": { "*-tamed-*": false, "*": true },
+					"minPlayerDistance": 8, "belowLightLevel": 8, "minSeconds": 300 },
 			{ "code": "ropetieable", "minGeneration": 2 },
 			{ "code": "mouthinventory",
 				"acceptStacks": [
@@ -437,7 +441,7 @@
             {
                 "code": "dead",
                 "animation": "dead",
-                "blendMode": "Average",
+                "blendMode": "average",
                 "weight": 10,
                 "easeInSpeed": 3
             },
@@ -737,7 +741,7 @@
 						"priority": 1.0, 
 						"priorityForCancel": 1.35,
 						"movespeed": 0.006,
-						"animationSpeed": 1.68,
+						"animationSpeed": 1.2,
 						"animation": "Walk",
 						"preferredLightLevel": 24
 					},
@@ -762,8 +766,10 @@
 				]
 			},
 			{ "code": "ownable" },
-			{ "code": "selectionboxes" },
-			{ "code": "rideableaccessories" },
+			{ "code": "selectionboxes",
+                    "enabledByType": { "*-tamed-*": true, "*": false } },
+			{ "code": "rideableaccessories",
+                    "enabledByType": { "*-tamed-*": true, "*": false } },
 			{ "code": "milkable", "enabledByType": { "*-female": true, "*-male": false }  },
 			{ "code": "ropetieable", "minGeneration": 2 },
 			{ "code": "pettable", "minGeneration": 1 }

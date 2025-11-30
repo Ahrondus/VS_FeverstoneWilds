@@ -50,7 +50,7 @@ namespace FeverstoneWilds.Config
 
         // ConfigLib Config
 
-        public string configlibhints = "----- Config Lib Spawn Rates -----";
+        /* public string configlibhints = "----- Config Lib Spawn Rates -----";
         public float BISON_SPAWN_CHANCE_WORLDGEN { get { return _bison_spawn_worldgen; } set {_bison_spawn_worldgen = value >= 0 ? (value*0.0005f) : 0;} }
         private float _bison_spawn_worldgen = 0.002f;
 
@@ -95,7 +95,7 @@ namespace FeverstoneWilds.Config
         private float _ostrich_spawn_worldgen = 0.005f;
 
         public float OSTRICH_SPAWN_CHANCE_RUNTIME { get { return _ostrich_spawn_runtime; } set { _ostrich_spawn_runtime = value >= 0 ? (value*0.00001f) : 0; } }
-        private float _ostrich_spawn_runtime = 0.00002f;
+        private float _ostrich_spawn_runtime = 0.00002f; */
 
         public FeverstoneWildsConfig() { }
 
@@ -140,7 +140,7 @@ namespace FeverstoneWilds.Config
             AllowCagedFSWCreatures = previousConfig.AllowCagedFSWCreatures;
 
             // ConfigLib Configs
-            BISON_SPAWN_CHANCE_WORLDGEN = previousConfig.BISON_SPAWN_CHANCE_WORLDGEN;
+            /* BISON_SPAWN_CHANCE_WORLDGEN = previousConfig.BISON_SPAWN_CHANCE_WORLDGEN;
             BISON_SPAWN_CHANCE_RUNTIME = previousConfig.BISON_SPAWN_CHANCE_RUNTIME;
             COCKATRICE_SPAWN_CHANCE_WORLDGEN = previousConfig.COCKATRICE_SPAWN_CHANCE_WORLDGEN;
             COCKATRICE_SPAWN_CHANCE_RUNTIME = previousConfig.COCKATRICE_SPAWN_CHANCE_RUNTIME;
@@ -157,7 +157,7 @@ namespace FeverstoneWilds.Config
             HORSE_SPAWN_CHANCE_WORLDGEN = previousConfig.HORSE_SPAWN_CHANCE_WORLDGEN;
             HORSE_SPAWN_CHANCE_RUNTIME = previousConfig.HORSE_SPAWN_CHANCE_RUNTIME;
             OSTRICH_SPAWN_CHANCE_WORLDGEN = previousConfig.OSTRICH_SPAWN_CHANCE_WORLDGEN;
-            OSTRICH_SPAWN_CHANCE_RUNTIME = previousConfig.OSTRICH_SPAWN_CHANCE_RUNTIME;
+            OSTRICH_SPAWN_CHANCE_RUNTIME = previousConfig.OSTRICH_SPAWN_CHANCE_RUNTIME; */
         }
     }
 }

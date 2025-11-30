@@ -184,7 +184,7 @@
 						"knockbackStrength": 2.65,
 						"priority": 2,
 						"slot": 1,
-						"damage": 7.5,
+						"damage": 5.5,
 						"damageTier": 2,
 						"mincooldown": 1500,
 						"maxcooldown": 2500,
@@ -203,7 +203,7 @@
 						"movespeed": 0.05,
 						"animation": "Run",
 						"animationSpeed": 2.5,
-						"whenInEmotionState": "aggressive"
+						"whenInEmotionState": "aggressiveondamage"
 					},
 					{
 						"code": "seekentity",
@@ -214,7 +214,7 @@
 						"seekingRange": 20,
 						"movespeed": 0.055,
 						"animation": "Run",
-						"animationSpeed": 3,
+						"animationSpeed": 2.75,
 						"whenInEmotionState": "aggressiveondamage"
 					},
 					{
@@ -224,7 +224,7 @@
 						"movespeed": 0.052,
 						"seekingRange": 12,
 						"animation": "Run",
-						"animationSpeed": 3.5,
+						"animationSpeed": 2.7,
 						"sound": "game:creature/chicken/hen-flee",
 						"whenInEmotionState": "fleeondamage"
 					},
@@ -233,15 +233,15 @@
 						"minGeneration": 0,
 						"priority": 1.45,
 						"animation": "Run",
-						"animationSpeed": 1.35,
-						"movespeed": 0.019
+						"animationSpeed": 2.25,
+						"movespeed": 0.045
 					},
 					{
 						"code": "getoutofwater",
 						"priority": 1.4,
 						"movespeed": 0.02,
 						"animation": "Run",
-						"animationSpeed": 4
+						"animationSpeed": 2
 					},
 					{
 						"code": "idle",
