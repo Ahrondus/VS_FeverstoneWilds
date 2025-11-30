@@ -219,12 +219,19 @@
               "drifter-*"
             ],
             "priority": 1.6,
-            "movespeed": 0.03,
-            "fleeingDistance": 8,
-            "seekingRange": 5,
+            "movespeed": 0.055,
+            "seekingRange": 10,
             "animation": "Run",
-            "animationSpeed": 1.5
+            "animationSpeed": 2.5
           },
+					{
+						"code": "followleadholder",
+						"minGeneration": 0,
+						"priority": 1.5,
+						"animation": "Run",
+						"animationSpeed": 2.25,
+						"movespeed": 0.045
+					},
           {
             "code": "idle",
             "priority": 1.45,

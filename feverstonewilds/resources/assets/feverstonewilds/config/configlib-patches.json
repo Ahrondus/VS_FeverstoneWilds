@@ -1,8 +1,9 @@
 {
+  "enabled": false,
   "version": 0,
   "file": "FeverstoneWildsConfig.json",
   "patches": {
-    "float": {
+    "integer": {
         "feverstonewilds:entities/land/bison.json": {
           "server/spawnconditionsByType/*-wild-male/worldgen/TriesPerChunk/avg": "BISON_SPAWN_CHANCE_WORLDGEN",
           "server/spawnconditionsByType/*-wild-male/runtime/chance": "BISON_SPAWN_CHANCE_RUNTIME"
@@ -52,7 +53,7 @@
       "ingui": "bison_spawn_chance_worldgen",
       "comment": "Chances that Bison will attempt to spawn during worldgen",
       "weight": 1.95,
-      "type": "float",
+      "type": "integer",
       "default": 4,
       "range": {
         "min": 0.0,
@@ -65,7 +66,7 @@
       "ingui": "bison_spawn_chance_runtime",
       "comment": "Chances that Bison will attempt to spawn during runtime",
       "weight": 1.90,
-      "type": "float",
+      "type": "integer",
       "default": 3,
       "range": {
         "min": 0.0,
@@ -78,7 +79,7 @@
       "ingui": "cockatrice_spawn_chance_worldgen",
       "comment": "Chances that Cockatrice will attempt to spawn during worldgen",
       "weight": 1.95,
-      "type": "float",
+      "type": "integer",
       "default": 4,
       "range": {
         "min": 0.0,
@@ -91,7 +92,7 @@
       "ingui": "cockatrice_spawn_chance_runtime",
       "comment": "Chances that Cockatrice will attempt to spawn during runtime",
       "weight": 1.90,
-      "type": "float",
+      "type": "integer",
       "default": 3,
       "range": {
         "min": 0.0,
@@ -104,7 +105,7 @@
       "ingui": "direwolf_spawn_chance_worldgen",
       "comment": "Chances that Direwolves will attempt to spawn during worldgen",
       "weight": 1.85,
-      "type": "float",
+      "type": "integer",
       "default": 4,
       "range": {
         "min": 0.0,
@@ -117,7 +118,7 @@
       "ingui": "direwolf_spawn_chance_runtime",
       "comment": "Chances that Direwolves will attempt to spawn during runtime",
       "weight": 1.80,
-      "type": "float",
+      "type": "integer",
       "default": 4,
       "range": {
         "min": 0.0,
@@ -130,7 +131,7 @@
       "ingui": "faunling_spawn_chance_worldgen",
       "comment": "Chances that Faunlings will attempt to spawn during worldgen",
       "weight": 1.75,
-      "type": "float",
+      "type": "integer",
       "default": 4,
       "range": {
         "min": 0.0,
@@ -143,7 +144,7 @@
       "ingui": "faunling_spawn_chance_runtime",
       "comment": "Chances that Faunlings will attempt to spawn during runtime",
       "weight": 1.70,
-      "type": "float",
+      "type": "integer",
       "default": 4,
       "range": {
         "min": 0.0,
@@ -156,7 +157,7 @@
       "ingui": "geodecrab_spawn_chance_worldgen",
       "comment": "Chances that Geodecrab will attempt to spawn during worldgen",
       "weight": 1.65,
-      "type": "float",
+      "type": "integer",
       "default": 3,
       "range": {
         "min": 0.0,
@@ -169,7 +170,7 @@
       "ingui": "geodecrab_spawn_chance_runtime",
       "comment": "Chances that Geodecrab will attempt to spawn during runtime",
       "weight": 1.60,
-      "type": "float",
+      "type": "integer",
       "default": 2,
       "range": {
         "min": 0.0,
@@ -182,7 +183,7 @@
       "ingui": "golem_spawn_chance_worldgen",
       "comment": "Chances that Golems will attempt to spawn during worldgen",
       "weight": 1.65,
-      "type": "float",
+      "type": "integer",
       "default": 3,
       "range": {
         "min": 0.0,
@@ -195,7 +196,7 @@
       "ingui": "golem_spawn_chance_runtime",
       "comment": "Chances that Golems will attempt to spawn during runtime",
       "weight": 1.60,
-      "type": "float",
+      "type": "integer",
       "default": 2,
       "range": {
         "min": 0.0,
@@ -208,7 +209,7 @@
       "ingui": "hellboar_spawn_chance_worldgen",
       "comment": "Chances that Hellboar will attempt to spawn during worldgen",
       "weight": 1.55,
-      "type": "float",
+      "type": "integer",
       "default": 4,
       "range": {
         "min": 0.0,
@@ -221,7 +222,7 @@
       "ingui": "hellboar_spawn_chance_runtime",
       "comment": "Chances that Hellboar will attempt to spawn during runtime",
       "weight": 1.50,
-      "type": "float",
+      "type": "integer",
       "default": 4,
       "range": {
         "min": 0.0,
@@ -234,7 +235,7 @@
       "ingui": "horse_spawn_chance_worldgen",
       "comment": "Chances that Horses will attempt to spawn during worldgen",
       "weight": 1.45,
-      "type": "float",
+      "type": "integer",
       "default": 4,
       "range": {
         "min": 0.0,
@@ -247,7 +248,7 @@
       "ingui": "horse_spawn_chance_runtime",
       "comment": "Chances that Horses will attempt to spawn during runtime",
       "weight": 1.40,
-      "type": "float",
+      "type": "integer",
       "default": 3,
       "range": {
         "min": 0.0,
@@ -260,7 +261,7 @@
       "ingui": "ostrich_spawn_chance_worldgen",
       "comment": "Chances that Ostriches will attempt to spawn during worldgen",
       "weight": 1.35,
-      "type": "float",
+      "type": "integer",
       "default": 4,
       "range": {
         "min": 0.0,
@@ -273,7 +274,7 @@
       "ingui": "ostrich_spawn_chance_runtime",
       "comment": "Chances that Ostriches will attempt to spawn during runtime",
       "weight": 1.30,
-      "type": "float",
+      "type": "integer",
       "default": 2,
       "range": {
         "min": 0.0,

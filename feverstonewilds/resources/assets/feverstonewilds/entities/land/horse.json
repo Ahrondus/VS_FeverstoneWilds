@@ -542,8 +542,10 @@
                 { "code": "floatupwhenstuck" },
                 { "code": "interpolateposition" },
                 { "code": "ownable" },
-                { "code": "selectionboxes" },
-                { "code": "rideableaccessories" },
+                { "code": "selectionboxes",
+                    "enabledByType": { "*-tamed-*": true, "*": false } },
+                { "code": "rideableaccessories",
+                    "enabledByType": { "*-tamed-*": true, "*": false } },
                 { "code": "mortallywoundable" },
                 { "code": "health" },
                 { "code": "despawn",
@@ -863,7 +865,7 @@
                             "code": "fleeentity",
                             "entityCodesbyType": {
                                 "*-tamed-*": [ "wolf-*", "hyena-*", "bear-*", "direwolf-adult" ],
-                                "*": [ "player", "wolf-*", "hyena-*" ]
+                                "*": [ "player", "wolf-*", "hyena-*", "bear-*", "direwolf-adult" ]
                             },
                             "priority": 1.8,
                             "movespeed": 0.058,
@@ -978,18 +980,16 @@
                             "animationSpeed": 1.6,
                             "animation": "Trot",
                             "minduration": 20000,
-                            "chance": 0.02,
-                            "enabledByType": {
-                                "*-shire": true,
-                                "*": false
-                            }
+                            "chance": 0.02
                         },
                         { "code": "lookaround", "priority": 0.5 }
                     ]
                 },
-                { "code": "selectionboxes" },
+                { "code": "selectionboxes",
+                    "enabledByType": { "*-tamed-*": true, "*": false } },
                 { "code": "ownable" },
-                { "code": "rideableaccessories" },
+                { "code": "rideableaccessories",
+                    "enabledByType": { "*-tamed-*": true, "*": false } },
                 { "code": "ropetieable" },
                 { "code": "pettable", "minGeneration": 1 }
             ],
