@@ -178,7 +178,7 @@
                             "attackDurationMs": 800,
                             "damagePlayerAtMs": 500,
                             "animation": "Attack",
-                            "animationSpeed": 2.5,
+                            "animationSpeed": 1.5,
                             "sound": "game:creature/wolf/attack"
                         },
                         {
@@ -196,7 +196,7 @@
                             "attackDurationMs": 800,
                             "damagePlayerAtMs": 500,
                             "animation": "Attack-Low",
-                            "animationSpeed": 2.5,
+                            "animationSpeed": 1.5,
                             "sound": "game:creature/wolf/attack"
                         },
                         {
@@ -214,7 +214,7 @@
                             "damagePlayerAtMs": 500,
                             "animation": "Attack-High",
 						    "retaliateAttacks": false,
-                            "animationSpeed": 2.5,
+                            "animationSpeed": 1.5,
                             "sound": "game:creature/wolf/attack"
                         },
                         {
@@ -224,7 +224,7 @@
                             "movespeed": 0.052,
                             "seekingRange": 20,
                             "animation": "Run",
-                            "animationSpeed": 3,
+                            "animationSpeed": 1.1,
                             "whenInEmotionState": "fleeondamage"
                         },
                         {
@@ -238,7 +238,7 @@
                             "animation": "Run",
                             "leapAtTarget": true,
                             "leapAnimation": null,
-                            "animationSpeed": 1.6,
+                            "animationSpeed": 1.1,
                             "leapChance": 0.01,
                             "sound": "game:creature/wolf/growl",
                             "whenNotInEmotionState": "saturated"
@@ -256,10 +256,10 @@
                             "seekingRange": 15,
                             "belowTempSeekingRange": 25,
                             "belowTempThreshold": -5,
-                            "animation": "Run",
+                            "animation": "Canter",
                             "leapAtTarget": true,
                             "leapAnimation": null,
-                            "animationSpeed": 1.6,
+                            "animationSpeed": 1.1,
                             "leapChance": 0.01,
                             "sound": "game:creature/wolf/growl",
                             "whenNotInEmotionState": "saturated"
@@ -273,7 +273,7 @@
                             "animation": "Run",
                             "leapAtTarget": true,
                             "leapAnimation": null,
-                            "animationSpeed": 1.6,
+                            "animationSpeed": 1.1,
                             "leapChance": 0.01,
                             "sound": "game:creature/wolf/growl",
                             "whenInEmotionState": "aggressiveondamage"
