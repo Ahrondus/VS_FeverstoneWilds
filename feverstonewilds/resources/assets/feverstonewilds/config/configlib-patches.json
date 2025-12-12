@@ -3,42 +3,42 @@
   "version": 0,
   "file": "FeverstoneWildsConfig.json",
   "patches": {
-    "integer": {
+    "float": {
         "feverstonewilds:entities/land/bison.json": {
-          "server/spawnconditionsByType/*-wild-male/worldgen/TriesPerChunk/avg": "BISON_SPAWN_CHANCE_WORLDGEN",
-          "server/spawnconditionsByType/*-wild-male/runtime/chance": "BISON_SPAWN_CHANCE_RUNTIME"
+          "server/spawnconditionsByType/*-wild-male/worldgen/TriesPerChunk/avg": "BISON_SPAWN_CHANCE_WORLDGEN * 0.0005",
+          "server/spawnconditionsByType/*-wild-male/runtime/chance": "BISON_SPAWN_CHANCE_RUNTIME * 0.00001"
         },
         "feverstonewilds:entities/land/cockatrice.json": {
-          "server/spawnconditionsByType/*-male/worldgen/TriesPerChunk/avg": "COCKATRICE_SPAWN_CHANCE_WORLDGEN",
-          "server/spawnconditionsByType/*-male/runtime/chance": "COCKATRICE_SPAWN_CHANCE_RUNTIME"
+          "server/spawnconditionsByType/*-male/worldgen/TriesPerChunk/avg": "COCKATRICE_SPAWN_CHANCE_WORLDGEN * 0.001",
+          "server/spawnconditionsByType/*-male/runtime/chance": "COCKATRICE_SPAWN_CHANCE_RUNTIME * 0.00001"
         },
         "feverstonewilds:entities/land/direwolf.json": {
-          "server/spawnconditionsByType/*-male/worldgen/TriesPerChunk/avg": "DIREWOLF_SPAWN_CHANCE_WORLDGEN",
-          "server/spawnconditionsByType/*-male/runtime/chance": "DIREWOLF_SPAWN_CHANCE_RUNTIME"
+          "server/spawnconditionsByType/*-male/worldgen/TriesPerChunk/avg": "DIREWOLF_SPAWN_CHANCE_WORLDGEN * 0.0025",
+          "server/spawnconditionsByType/*-male/runtime/chance": "DIREWOLF_SPAWN_CHANCE_RUNTIME * 0.00001"
         },
         "feverstonewilds:entities/land/faunling.json": {
-          "server/spawnconditionsByType/*-female/worldgen/TriesPerChunk/avg": "FAUNLING_SPAWN_CHANCE_WORLDGEN",
-          "server/spawnconditionsByType/*-female/runtime/chance": "FAUNLING_SPAWN_CHANCE_RUNTIME"
+          "server/spawnconditionsByType/*-female/worldgen/TriesPerChunk/avg": "FAUNLING_SPAWN_CHANCE_WORLDGEN * 0.00025",
+          "server/spawnconditionsByType/*-female/runtime/chance": "FAUNLING_SPAWN_CHANCE_RUNTIME * 0.00001"
         },
         "feverstonewilds:entities/land/geodecrab.json": {
-          "server/spawnconditions/worldgen/TriesPerChunk/avg": "GEODECRAB_SPAWN_CHANCE_WORLDGEN",
-          "server/spawnconditions/runtime/chance": "GEODECRAB_SPAWN_CHANCE_RUNTIME"
+          "server/spawnconditions/worldgen/TriesPerChunk/avg": "GEODECRAB_SPAWN_CHANCE_WORLDGEN * 0.002",
+          "server/spawnconditions/runtime/chance": "GEODECRAB_SPAWN_CHANCE_RUNTIME * 0.0002"
         },
         "feverstonewilds:entities/land/golem.json": {
-          "server/spawnconditions/worldgen/TriesPerChunk/avg": "GOLEM_SPAWN_CHANCE_WORLDGEN",
-          "server/spawnconditions/runtime/chance": "GOLEM_SPAWN_CHANCE_RUNTIME"
+          "server/spawnconditions/worldgen/TriesPerChunk/avg": "GOLEM_SPAWN_CHANCE_WORLDGEN * 0.00125",
+          "server/spawnconditions/runtime/chance": "GOLEM_SPAWN_CHANCE_RUNTIME * 0.0000025"
         },
         "feverstonewilds:entities/land/hellboar.json": {
-          "server/spawnconditionsByType/*-male/worldgen/TriesPerChunk/avg": "HELLBOAR_SPAWN_CHANCE_WORLDGEN",
-          "server/spawnconditionsByType/*-male/runtime/chance": "HELLBOAR_SPAWN_CHANCE_RUNTIME"
+          "server/spawnconditionsByType/*-male/worldgen/TriesPerChunk/avg": "HELLBOAR_SPAWN_CHANCE_WORLDGEN * 0.00025",
+          "server/spawnconditionsByType/*-male/runtime/chance": "HELLBOAR_SPAWN_CHANCE_RUNTIME * 0.00001"
         },
         "feverstonewilds:entities/land/horse.json": {
-          "server/spawnconditionsByType/horse-wild-male-*/worldgen/TriesPerChunk/avg": "HORSE_SPAWN_CHANCE_WORLDGEN",
-          "server/spawnconditionsByType/horse-wild-male-*/runtime/chance": "HORSE_SPAWN_CHANCE_RUNTIME"
+          "server/spawnconditionsByType/horse-wild-male-*/worldgen/TriesPerChunk/avg": "HORSE_SPAWN_CHANCE_WORLDGEN * 0.00025",
+          "server/spawnconditionsByType/horse-wild-male-*/runtime/chance": "HORSE_SPAWN_CHANCE_RUNTIME * 0.00001"
         },
         "feverstonewilds:entities/land/ostrich.json": {
-          "server/spawnconditions/worldgen/TriesPerChunk/avg": "OSTRICH_SPAWN_CHANCE_WORLDGEN",
-          "server/spawnconditions/runtime/chance": "OSTRICH_SPAWN_CHANCE_RUNTIME"
+          "server/spawnconditions/worldgen/TriesPerChunk/avg": "OSTRICH_SPAWN_CHANCE_WORLDGEN * 0.00125",
+          "server/spawnconditions/runtime/chance": "OSTRICH_SPAWN_CHANCE_RUNTIME * 0.00001"
         }
     }
   },
@@ -56,8 +56,8 @@
       "type": "integer",
       "default": 4,
       "range": {
-        "min": 0.0,
-        "max": 10,
+        "min": 0,
+        "max": 50,
         "step": 1
       }
     },
@@ -69,8 +69,8 @@
       "type": "integer",
       "default": 3,
       "range": {
-        "min": 0.0,
-        "max": 10,
+        "min": 0,
+        "max": 50,
         "step": 1
       }
     },
@@ -78,12 +78,12 @@
       "code": "COCKATRICE_SPAWN_CHANCE_WORLDGEN",
       "ingui": "cockatrice_spawn_chance_worldgen",
       "comment": "Chances that Cockatrice will attempt to spawn during worldgen",
-      "weight": 1.95,
+      "weight": 1.85,
       "type": "integer",
       "default": 4,
       "range": {
-        "min": 0.0,
-        "max": 10,
+        "min": 0,
+        "max": 50,
         "step": 1
       }
     },
@@ -91,12 +91,12 @@
       "code": "COCKATRICE_SPAWN_CHANCE_RUNTIME",
       "ingui": "cockatrice_spawn_chance_runtime",
       "comment": "Chances that Cockatrice will attempt to spawn during runtime",
-      "weight": 1.90,
+      "weight": 1.80,
       "type": "integer",
       "default": 3,
       "range": {
-        "min": 0.0,
-        "max": 10,
+        "min": 0,
+        "max": 50,
         "step": 1
       }
     },
@@ -104,12 +104,12 @@
       "code": "DIREWOLF_SPAWN_CHANCE_WORLDGEN",
       "ingui": "direwolf_spawn_chance_worldgen",
       "comment": "Chances that Direwolves will attempt to spawn during worldgen",
-      "weight": 1.85,
+      "weight": 1.75,
       "type": "integer",
       "default": 4,
       "range": {
-        "min": 0.0,
-        "max": 10,
+        "min": 0,
+        "max": 50,
         "step": 1
       }
     },
@@ -117,12 +117,12 @@
       "code": "DIREWOLF_SPAWN_CHANCE_RUNTIME",
       "ingui": "direwolf_spawn_chance_runtime",
       "comment": "Chances that Direwolves will attempt to spawn during runtime",
-      "weight": 1.80,
+      "weight": 1.70,
       "type": "integer",
       "default": 4,
       "range": {
-        "min": 0.0,
-        "max": 10,
+        "min": 0,
+        "max": 50,
         "step": 1
       }
     },
@@ -130,12 +130,12 @@
       "code": "FAUNLING_SPAWN_CHANCE_WORLDGEN",
       "ingui": "faunling_spawn_chance_worldgen",
       "comment": "Chances that Faunlings will attempt to spawn during worldgen",
-      "weight": 1.75,
+      "weight": 1.65,
       "type": "integer",
       "default": 4,
       "range": {
-        "min": 0.0,
-        "max": 10,
+        "min": 0,
+        "max": 50,
         "step": 1
       }
     },
@@ -143,12 +143,12 @@
       "code": "FAUNLING_SPAWN_CHANCE_RUNTIME",
       "ingui": "faunling_spawn_chance_runtime",
       "comment": "Chances that Faunlings will attempt to spawn during runtime",
-      "weight": 1.70,
+      "weight": 1.60,
       "type": "integer",
-      "default": 4,
+      "default": 2,
       "range": {
-        "min": 0.0,
-        "max": 10,
+        "min": 0,
+        "max": 50,
         "step": 1
       }
     },
@@ -156,12 +156,12 @@
       "code": "GEODECRAB_SPAWN_CHANCE_WORLDGEN",
       "ingui": "geodecrab_spawn_chance_worldgen",
       "comment": "Chances that Geodecrab will attempt to spawn during worldgen",
-      "weight": 1.65,
+      "weight": 1.55,
       "type": "integer",
       "default": 3,
       "range": {
-        "min": 0.0,
-        "max": 10,
+        "min": 0,
+        "max": 50,
         "step": 1
       }
     },
@@ -169,12 +169,12 @@
       "code": "GEODECRAB_SPAWN_CHANCE_RUNTIME",
       "ingui": "geodecrab_spawn_chance_runtime",
       "comment": "Chances that Geodecrab will attempt to spawn during runtime",
-      "weight": 1.60,
+      "weight": 1.50,
       "type": "integer",
-      "default": 2,
+      "default": 3,
       "range": {
-        "min": 0.0,
-        "max": 10,
+        "min": 0,
+        "max": 50,
         "step": 1
       }
     },
@@ -182,12 +182,12 @@
       "code": "GOLEM_SPAWN_CHANCE_WORLDGEN",
       "ingui": "golem_spawn_chance_worldgen",
       "comment": "Chances that Golems will attempt to spawn during worldgen",
-      "weight": 1.65,
+      "weight": 1.45,
       "type": "integer",
-      "default": 3,
+      "default": 4,
       "range": {
-        "min": 0.0,
-        "max": 10,
+        "min": 0,
+        "max": 50,
         "step": 1
       }
     },
@@ -195,12 +195,12 @@
       "code": "GOLEM_SPAWN_CHANCE_RUNTIME",
       "ingui": "golem_spawn_chance_runtime",
       "comment": "Chances that Golems will attempt to spawn during runtime",
-      "weight": 1.60,
+      "weight": 1.40,
       "type": "integer",
-      "default": 2,
+      "default": 4,
       "range": {
-        "min": 0.0,
-        "max": 10,
+        "min": 0,
+        "max": 50,
         "step": 1
       }
     },
@@ -208,12 +208,12 @@
       "code": "HELLBOAR_SPAWN_CHANCE_WORLDGEN",
       "ingui": "hellboar_spawn_chance_worldgen",
       "comment": "Chances that Hellboar will attempt to spawn during worldgen",
-      "weight": 1.55,
+      "weight": 1.35,
       "type": "integer",
       "default": 4,
       "range": {
-        "min": 0.0,
-        "max": 10,
+        "min": 0,
+        "max": 50,
         "step": 1
       }
     },
@@ -221,12 +221,12 @@
       "code": "HELLBOAR_SPAWN_CHANCE_RUNTIME",
       "ingui": "hellboar_spawn_chance_runtime",
       "comment": "Chances that Hellboar will attempt to spawn during runtime",
-      "weight": 1.50,
+      "weight": 1.30,
       "type": "integer",
       "default": 4,
       "range": {
-        "min": 0.0,
-        "max": 10,
+        "min": 0,
+        "max": 50,
         "step": 1
       }
     },
@@ -234,12 +234,12 @@
       "code": "HORSE_SPAWN_CHANCE_WORLDGEN",
       "ingui": "horse_spawn_chance_worldgen",
       "comment": "Chances that Horses will attempt to spawn during worldgen",
-      "weight": 1.45,
+      "weight": 1.25,
       "type": "integer",
       "default": 4,
       "range": {
-        "min": 0.0,
-        "max": 10,
+        "min": 0,
+        "max": 50,
         "step": 1
       }
     },
@@ -247,12 +247,12 @@
       "code": "HORSE_SPAWN_CHANCE_RUNTIME",
       "ingui": "horse_spawn_chance_runtime",
       "comment": "Chances that Horses will attempt to spawn during runtime",
-      "weight": 1.40,
+      "weight": 1.20,
       "type": "integer",
       "default": 3,
       "range": {
-        "min": 0.0,
-        "max": 10,
+        "min": 0,
+        "max": 50,
         "step": 1
       }
     },
@@ -260,12 +260,12 @@
       "code": "OSTRICH_SPAWN_CHANCE_WORLDGEN",
       "ingui": "ostrich_spawn_chance_worldgen",
       "comment": "Chances that Ostriches will attempt to spawn during worldgen",
-      "weight": 1.35,
+      "weight": 1.15,
       "type": "integer",
       "default": 4,
       "range": {
-        "min": 0.0,
-        "max": 10,
+        "min": 0,
+        "max": 50,
         "step": 1
       }
     },
@@ -273,12 +273,12 @@
       "code": "OSTRICH_SPAWN_CHANCE_RUNTIME",
       "ingui": "ostrich_spawn_chance_runtime",
       "comment": "Chances that Ostriches will attempt to spawn during runtime",
-      "weight": 1.30,
+      "weight": 1.10,
       "type": "integer",
       "default": 2,
       "range": {
-        "min": 0.0,
-        "max": 10,
+        "min": 0,
+        "max": 50,
         "step": 1
       }
     }
