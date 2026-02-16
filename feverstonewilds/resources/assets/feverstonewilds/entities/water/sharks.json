@@ -4,6 +4,7 @@
 	"variantgroups": [
 		{"code": "type", "states": ["freshwater", "saltwater", "hammerhead"] }
 	],
+	"tags": ["animal", "huntable", "habitat-water", "predator", "ferocious" ],
 	"hitboxSize": { "x": 1.2, "y": 1 },
 	"eyeHeight": 0.9,
 	"drops": [],
@@ -104,8 +105,7 @@
 				"aitasks": [
 				{
 						"code": "meleeattack",
-						"entityCodes": ["player", "drifter-*", "chicken-*", "buromenfish", "discus", "pink-salmon", "wolf-*", 
-						"bear-*", "hare-*"],
+						"entityCodes": ["*"],
 						"priority": 2,
 						"damage": 8,
 						"damageTier": 2,
@@ -135,7 +135,7 @@
 						"entityCodes": ["player"],
 						"priority": 1.51,
 						"movespeed": 0.028,
-						"seekingRange": 9,
+						"seekingRange": 10,
 						"belowTempSeekingRange": 25,
 						"belowTempThreshold": -5,
 						"animation": "swim",
@@ -148,24 +148,7 @@
 					},
 					{
 						"code": "seekentity",
-						"entityCodes": ["player", "drifter-*", "chicken*", "fox", "buromenfish", "discus", "pink-salmon", "wolf*", 
-						"bear-*", "horse-*", "hare-*"],
-						"priority": 1.5,
-						"movespeed": 0.1,
-						"seekingRange": 15,
-						"belowTempSeekingRange": 25,
-						"belowTempThreshold": -5,
-						"animation": "swim",
-						"leapAtTarget": true,
-						"leapAnimation": null,
-						"animationSpeed": 2.2,
-						"leapChance": 0.01,
-						"sound": "",
-						"whenNotInEmotionState": "saturated"
-					},
-					{
-						"code": "seekentity",
-						"entityCodes": ["player"],
+						"entityCodes": ["*"],
 						"priority": 1.49,
 						"movespeed": 0.1,
 						"seekingRange": 15,
@@ -211,10 +194,11 @@
 						"animation": "idle"
 					}
 				]
-			}
+			},
+			{ "code": "entitystatetags" }
 		],
 		"spawnconditionsbyType": {
-			"shark-freshwater": {
+			"*-freshwater": {
 				"worldgen": {
 					"TriesPerChunk": { "avg": 0.035, "var": 0 },
 					"tryOnlySurface": true,
@@ -237,7 +221,7 @@
 					"maxY": 0.95
 				}
 			},
-			"shark-saltwater": {
+			"*-saltwater": {
 				"worldgen": {
 					"TriesPerChunk": { "avg": 0.035, "var": 0 },
 					"tryOnlySurface": true,

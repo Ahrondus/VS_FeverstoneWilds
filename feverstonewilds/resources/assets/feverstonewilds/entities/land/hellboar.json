@@ -1,6 +1,7 @@
 {
     "code": "hellboar",
     "class": "EntityAgent",
+    "tags":  [ "animal", "huntable", "habitat-land", "adult" ],
     "variantgroups": [
         { "code": "gender", "states": [ "male", "female" ] }
     ],
@@ -117,13 +118,16 @@
         "behaviors": [
                 { "code": "multiply",
                     "enabledByType": { "*-male": false, "*-female": true },
-				    "quantityPerDay": 0,
+                    "spawnQuantityMax": 3,
+                    "spawnQuantityMin": 1,
+                    "eatAnyway": true,
+                    "pregnancyDays": 8,
 				    "spawnEntityCode": "feverstonewilds:hellboar-piglet",
-				    "growthCapQuantity": 10,
-				    "growthCapRange": 15,
-				    "growthCapEntityCodes": ["feverstonewilds:hellboar-piglet", "feverstonewilds:hellboar-female", "feverstonewilds:hellboar-male"],
 				    "requiresNearbyEntityCode": "feverstonewilds:hellboar-male",
-				    "requiresNearbyEntityRange": 10
+				    "requiresNearbyEntityRange": 10,
+                    "multiplyCooldownDaysMin": 7,
+                    "multiplyCooldownDaysMax": 12,
+                    "portionsEatenForMultiply": 7
                 },
                 { "code": "repulseagents" },
                 { "code": "controlledphysics", "stepHeight": 1.1251 },
@@ -283,7 +287,8 @@
                     ]
                 },
                 { "code": "ropetieable", "minGeneration": 2 },
-                { "code": "pettable", "minGeneration": 1 }
+                { "code": "pettable", "minGeneration": 1 },
+			    { "code": "entitystatetags" }
             ],
         "spawnconditionsByType": {
             "*-male": {

@@ -62,7 +62,7 @@
 		},
 		"bisonleg-cooked": {
 			"satiety": 400,
-			"health": 1,
+			"health": 1.5,
 			"foodcategory": "Protein"
 		},
 		"bisonleg-charred": {
@@ -169,12 +169,12 @@
 	"combustiblePropsByType": {
 		"bisonleg-raw": {
 			"meltingPoint": 250,
-			"meltingDuration": 60,
+			"meltingDuration": 30,
 			"smeltedRatio": 1,
 			"smeltingType": "cook",
 			"smeltedStack": {
 				"type": "item",
-				"code": "bisonleg-charred"
+				"code": "bisonleg-cooked"
 			},
 			"requiresContainer": false
 		}

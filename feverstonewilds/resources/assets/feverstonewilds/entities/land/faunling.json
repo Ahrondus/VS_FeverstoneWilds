@@ -1,6 +1,7 @@
 {
     "code": "faunling",
     "class": "EntityAgent",
+    "tags":  [ "humanoid", "huntable", "habitat-land" ],
     "variantgroups": [
         { "code": "gender", "states": [ "male", "female" ] }
     ],
@@ -121,10 +122,11 @@
         "behaviors": [
             { "code": "nametag", "showtagonlywhentargeted": true, "selectFromRandomNameByType": 
                 {
-                    "*-female": ["Nadia", "Alina", "Della", "Ximuku", "Kelta", "Udemya", "Nabafae", "Shiva", "Edith", "Cara", "Midoris", "Honwish", "Eriza", "Aris", "Edel"],
+                    "*-female": ["Nadia", "Alina", "Della", "Ximuku", "Kelta", "Udemya", "Nabafae", "Shiva", "Edith", "Cara", "Midoris", "Honwish", "Eriza", "Aris", "Edel", "Milaa"],
                     "*-male": ["Merzost", "Valsgo", "Malafes", "Xibo", "Xival", "Samsuro", "Asubos", "Debino", "Zane", "Cedric", "Vathiel", "Vero", "Vorin", "Kain", "Knudson"]
                 }
             },
+            { "code": "plantSapling" },
             { "code": "repulseagents" },
             { "code": "controlledphysics", "stepHeight": 1.1251 },
             { "code": "despawn", "minPlayerDistance": 20, "belowLightLevel": 6, "minSeconds": 300 },
@@ -315,7 +317,8 @@
                         "priority": 0.5
                     }
                 ]
-            }
+            },
+			{ "code": "entitystatetags" }
         ],
         "spawnconditionsByType": {
             "*-female": {

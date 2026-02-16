@@ -263,11 +263,7 @@
                     {
                         "code": "petmeleeattack",
                         "entityCodes": [
-                            "drifter-*",
-                            "feverstonewilds:direwolf-male",
-                            "feverstonewilds:direwolf-female",
-                            "hyena-*",
-                            "squirrel-*"
+                            "*"
                         ],
                         "isCommandable": true,
                         "priority": 3,
@@ -284,13 +280,50 @@
                         "sound": "game:creature/wolf/attack"
                     },
                     {
+                        "code": "petmeleeattack",
+                        "entityCodes": [
+                            "squirrel-*", "raccoon-*", "hare-*",
+                            "direwolf-pup", "hellboar-piglet", "chicken-*",
+                            "cockatrice-*", "fox-*", "*-baby"
+                        ],
+                        "isCommandable": true,
+                        "priority": 3,
+                        "damage": 8,
+                        "damageTier": 2,
+                        "damageType": "SlashingAttack",
+                        "slot": 1,
+                        "mincooldown": 1500,
+                        "maxcooldown": 1500,
+                        "attackDurationMs": 800,
+                        "damagePlayerAtMs": 500,
+                        "animation": "Attack-Low",
+                        "animationSpeed": 2.5,
+                        "sound": "game:creature/wolf/attack"
+                    },
+                    {
+                        "code": "petmeleeattack",
+                        "entityCodes": [
+                            "bear-*", "giraffe-*", "horse-*",
+                            "bison-*", "ostrich-*", "moose-*", "elk-*"
+                        ],
+                        "isCommandable": true,
+                        "priority": 3,
+                        "damage": 8,
+                        "damageTier": 2,
+                        "damageType": "SlashingAttack",
+                        "slot": 1,
+                        "mincooldown": 1500,
+                        "maxcooldown": 1500,
+                        "attackDurationMs": 800,
+                        "damagePlayerAtMs": 500,
+                        "animation": "Attack-High",
+                        "animationSpeed": 2.5,
+                        "sound": "game:creature/wolf/attack"
+                    },
+                    {
                         "code": "petseekentity",
                         "entityCodes": [
-                            "drifter-*",
-                            "feverstonewilds:direwolf-male",
-                            "feverstonewilds:direwolf-female",
-                            "hyena-*",
-                            "squirrel-*"
+                            "*"
                         ],
                         "isCommandable": true,
                         "priority": 2.9,

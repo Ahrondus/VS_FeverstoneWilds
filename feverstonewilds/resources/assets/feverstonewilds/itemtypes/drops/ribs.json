@@ -62,7 +62,7 @@
 		},
 		"ribs-cooked": {
 			"satiety": 350,
-			"health": 0.75,
+			"health": 1.25,
 			"foodcategory": "Protein"
 		},
 		"ribs-charred": {
@@ -164,12 +164,12 @@
 	"combustiblePropsByType": {
 		"ribs-raw": {
 			"meltingPoint": 250,
-			"meltingDuration": 60,
+			"meltingDuration": 30,
 			"smeltedRatio": 1,
 			"smeltingType": "cook",
 			"smeltedStack": {
 				"type": "item",
-				"code": "ribs-charred"
+				"code": "ribs-cooked"
 			},
 			"requiresContainer": false
 		}

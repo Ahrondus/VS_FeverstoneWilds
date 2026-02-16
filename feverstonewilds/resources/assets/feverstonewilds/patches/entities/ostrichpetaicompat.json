@@ -54,6 +54,29 @@
     },
     {
         "op": "addeach",
+        "path": "/client/behaviors/-",
+        "value": [
+            { "code": "nametag", "showtagonlywhentargeted": true },
+            { "code": "tameable",
+                "treat": [
+                    { "code": "vegetable-carrot", "progress": 0.10, "cooldown": 0.2 },
+                    { "code": "vegetable-cabbage", "progress": 0.03, "cooldown": 0.4 },
+                    { "code": "vegetable-turnip", "progress": 0.04, "cooldown": 0.3 },
+                    { "code": "carrotbundle", "progress": 0.15, "cooldown": 0.25 },
+                    { "code": "fruit-pinkapple", "progress": 0.169, "cooldown": 0.55 },
+                    { "code": "fruit-redapple", "progress": 0.169, "cooldown": 0.55 },
+                    { "code": "fruit-yellowapple", "progress": 0.169, "cooldown": 0.55 },
+                    { "code": "grain-flax", "progress": 0.075, "cooldown": 0.45 },
+                    { "code": "grain-rye", "progress": 0.075, "cooldown": 0.45 },
+                    { "code": "grain-spelt", "progress": 0.075, "cooldown": 0.45 }
+                ]
+            }
+        ],
+        "file": "feverstonewilds:entities/land/tame-ostrich-chick.json",
+        "dependsOn": [ { "modid": "petai" } ]
+    },
+    {
+        "op": "addeach",
         "path": "/server/behaviors/-",
         "value": [
             { "code": "nametag", "showtagonlywhentargeted": true },
@@ -87,9 +110,9 @@
         "path": "/server/behaviors/-",
         "value": [
             { "code": "nametag", "showtagonlywhentargeted": true },
-            { "code": "tameable",
+            { "code": "tameable", "size": "small",
                 "disobediencePerDay": 0.005,
-                "tameEntityCodes": [ "feverstonewilds:tame-ostrich-male", "feverstonewilds:tame-ostrich-female" ],
+                "tameEntityCode": "feverstonewilds:tame-ostrich-chick",
                 "treat": [
                     { "code": "vegetable-carrot", "progress": 0.10, "cooldown": 0.2 },
                     { "code": "vegetable-cabbage", "progress": 0.03, "cooldown": 0.4 },
@@ -105,6 +128,29 @@
             }
         ],
         "file": "feverstonewilds:entities/land/ostrich-chick.json",
+        "dependsOn": [ { "modid": "petai" } ]
+    },
+    {
+        "op": "addeach",
+        "path": "/server/behaviors/-",
+        "value": [
+            { "code": "nametag", "showtagonlywhentargeted": true },
+            { "code": "tameable", "size": "small",
+                "treat": [
+                    { "code": "vegetable-carrot", "progress": 0.10, "cooldown": 0.2 },
+                    { "code": "vegetable-cabbage", "progress": 0.03, "cooldown": 0.4 },
+                    { "code": "vegetable-turnip", "progress": 0.04, "cooldown": 0.3 },
+                    { "code": "carrotbundle", "progress": 0.15, "cooldown": 0.25 },
+                    { "code": "fruit-pinkapple", "progress": 0.169, "cooldown": 0.55 },
+                    { "code": "fruit-redapple", "progress": 0.169, "cooldown": 0.55 },
+                    { "code": "fruit-yellowapple", "progress": 0.169, "cooldown": 0.55 },
+                    { "code": "grain-flax", "progress": 0.075, "cooldown": 0.45 },
+                    { "code": "grain-rye", "progress": 0.075, "cooldown": 0.45 },
+                    { "code": "grain-spelt", "progress": 0.075, "cooldown": 0.45 }
+                ]
+            }
+        ],
+        "file": "feverstonewilds:entities/land/tame-ostrich-chick.json",
         "dependsOn": [ { "modid": "petai" } ]
     },
     {
@@ -149,6 +195,12 @@
         "dependsOn": [ {"modid": "petai"} ]
     },
     {
+        "op": "remove",
+        "path": "/server/behaviors/10",
+        "file": "feverstonewilds:entities/land/tame-ostrich-chick.json",
+        "dependsOn": [ {"modid": "petai"} ]
+    },
+    {
         "op": "add",
         "path": "/server/behaviors/-",
         "value": { "code": "pettableextended" },
@@ -163,12 +215,28 @@
         "dependsOn": [ {"modid": "petai"} ]
     },
     {
+        "op": "add",
+        "path": "/server/behaviors/-",
+        "value": { "code": "pettableextended" },
+        "file": "feverstonewilds:entities/land/tame-ostrich-chick.json",
+        "dependsOn": [ {"modid": "petai"} ]
+    },
+    {
         "op": "replace",
         "path": "/server/behaviors/6",
         "value": { "code": "raisable", "hoursToGrow": 128,
 				"adultEntityCodes": [ "feverstonewilds:ostrich-male", "feverstonewilds:ostrich-female" ]  
             },
         "file": "feverstonewilds:entities/land/ostrich-chick.json",
+        "dependsOn": [ {"modid": "petai"} ]
+    },
+    {
+        "op": "replace",
+        "path": "/server/behaviors/6",
+        "value": { "code": "raisable", "hoursToGrow": 128,
+				"adultEntityCodes": [ "feverstonewilds:tame-ostrich-male", "feverstonewilds:tame-ostrich-female" ]  
+            },
+        "file": "feverstonewilds:entities/land/tame-ostrich-chick.json",
         "dependsOn": [ {"modid": "petai"} ]
     }
 ]

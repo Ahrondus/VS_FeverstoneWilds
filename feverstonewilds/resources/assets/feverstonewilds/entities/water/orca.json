@@ -1,6 +1,7 @@
 {
 	"code": "orca",
 	"class": "EntityFish",
+	"tags": ["animal", "huntable", "habitat-water" ],
 	"hitboxSize": { "x": 4.2, "y": 3 },
 	"eyeHeight": 0.9,
 	"drops": [],
@@ -204,7 +205,8 @@
 						"animation": "idle"
 					}
 				]
-			}
+			},
+			{ "code": "entitystatetags" }
 		],
 		"spawnconditions": {
 			"worldgen": {

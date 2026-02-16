@@ -1,6 +1,7 @@
 {
     "code": "hellboar-piglet",
     "class": "EntityAgent",
+    "tags":  [ "animal", "huntable", "habitat-land" ],
     "collisionBoxSize": { "x": 1, "y": 1.4, "z": 0.8 },
     "deadCollisionBoxSize": { "x": 0.6, "y": 1.1 },
     "selectionBoxSize": { "x": 1.2, "y": 1.4, "z": 0.8 },
@@ -185,7 +186,8 @@
                     ]
                 },
                 { "code": "ropetieable", "minGeneration": 2 },
-                { "code": "pettable", "minGeneration": 1 }
+                { "code": "pettable", "minGeneration": 1 },
+			    { "code": "entitystatetags" }
             ]
     },
     "sounds": {

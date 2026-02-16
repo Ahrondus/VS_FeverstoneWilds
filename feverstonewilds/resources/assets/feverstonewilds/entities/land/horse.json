@@ -11,8 +11,8 @@
                       "horse-tamed-male-percheron", "horse-tamed-female-percheron",
                       "horse-tamed-male-arabian", "horse-tamed-female-arabian" ],
     "tagsByType": {
-        "*-tamed-*": [ "animal", "huntable", "habitat-land", "tamed" ],
-        "*": [ "animal", "huntable", "habitat-land" ]
+        "*-tamed-*": [ "animal", "huntable", "habitat-land", "tamed", "adult" ],
+        "*": [ "animal", "huntable", "habitat-land", "adult" ]
     },
     "weight": 355,
     "hitBoxSizeByType": {
@@ -991,7 +991,8 @@
                 { "code": "rideableaccessories",
                     "enabledByType": { "*-tamed-*": true, "*": false } },
                 { "code": "ropetieable" },
-                { "code": "pettable", "minGeneration": 1 }
+                { "code": "pettable", "minGeneration": 1 },
+			    { "code": "entitystatetags" }
             ],
         "spawnconditionsByType": {
             "horse-wild-male-*": {

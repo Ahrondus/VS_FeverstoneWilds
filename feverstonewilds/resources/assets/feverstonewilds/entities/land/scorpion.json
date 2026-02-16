@@ -1,6 +1,7 @@
 {
 	"code": "scorpion",
 	"class": "EntityAgent",
+    "tags":  [ "animal", "huntable", "habitat-land" ],
 	"canClimb": true,
 	"canClimbAnywhere": true,
 	"climbTouchDistance": 0.01,
@@ -175,7 +176,8 @@
 						"priority": 0.5 
 					}
 				]
-			}
+			},
+			{ "code": "entitystatetags" }
 		],
 		"spawnconditions": {
 			"worldgen": {

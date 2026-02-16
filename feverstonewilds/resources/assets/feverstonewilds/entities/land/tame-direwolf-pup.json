@@ -1,6 +1,7 @@
 {
     "code": "tame-direwolf-pup",
     "class": "EntityAgent",
+    "tags":  [ "animal", "huntable", "habitat-land", "tamed" ],
     "hitboxSize": { "x": 0.85, "y": 0.5 },
     "deadHitboxSize": { "x": 0.75, "y": 0.4 },
     "eyeHeight": 0.4,
@@ -253,7 +254,8 @@
                 ]
             },
             { "code": "ropetieable", "minGeneration": 2 },
-            { "code": "pettable", "minGeneration": 1 }
+            { "code": "pettable", "minGeneration": 1 },
+			{ "code": "entitystatetags" }
         ]
     },
     "sounds": {

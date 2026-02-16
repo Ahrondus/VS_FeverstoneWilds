@@ -1,11 +1,11 @@
 {
     "code": "tame-cockatrice-chick",
     "class": "EntityAgent",
+    "tags":  [ "animal", "huntable", "habitat-land", "tamed" ],
     "hitboxSize": { "x": 0.4, "y": 0.4 },
     "deadHitboxSize": { "x": 0.4, "y": 0.4 },
     "eyeHeight": 0.15,
-	"weight": 0.1,
-    "drops": [],
+	"weight": 15,
     "attributes": {
         "killedByInfoText": "feverstonewilds:deadcreature-eaten-cockatrice",
         "creatureDiet": {
@@ -18,7 +18,7 @@
         },
 		"netCaughtItemCode": "feverstonewilds:creature-tame-cockatrice-chick",
         "basketCatchable": true,
-        "trapChance": 0.35,
+        "trapChance": 0.45,
         "trapDestroyChance": 0.025,
         "tamed": true
     },
@@ -44,7 +44,6 @@
 					{ "type": "item", "code": "grain-spelt" },
 					{ "type": "item", "code": "grain-rye" },
 					{ "type": "item", "code": "grain-sunflower" },
-                    { "type": "item", "code": "wolftaming:dogtoy" },
                     { "type": "item", "code": "petai:petcookie-meat-perfect" }
                 ]
             },
@@ -53,7 +52,7 @@
             { "code": "floatupwhenstuck", "onlyWhenDead": true },
             { "code": "interpolateposition" },
             { "code": "ropetieable" },
-            { "code": "harvestable", "drops": [] }
+            { "code": "harvestable" }
         ],
         "animations": [
             {
@@ -151,7 +150,7 @@
                     {
                         "code": "stayclosetoentity",
                         "priority": 1.5,
-                        "entityCode": "feverstonewilds:tame-cockatrice-female",
+                        "entityCodes": ["feverstonewilds:tame-cockatrice-female", "player" ],
                         "movespeed": 0.02,
                         "animationSpeed": 4,
                         "maxDistance": 15,
@@ -176,11 +175,12 @@
                         "animation": "Sleep",
                         "whenNotInEmotionState": "aggressiveondamage",
                         "duringDayTimeFrames": [
-                            { "fromHour": 10, "toHour": 18 },
-                            { "fromHour": 1, "toHour": 3 }
+                            { "fromHour": 19, "toHour": 24 },
+                            { "fromHour": 0, "toHour": 7 }
                         ],
-                        "stopOnNearbyEntityCodes": [ "drifter-*" ],
-                        "stopRange": 6,
+                        "stopOnNearbyEntityCodes": [ "wolf-*", "hyena-*", "bear-*", "fox-*", "direwolf-*", "hellboar-*",
+                                                     "drifter-*", "shiver-*", "bowtorn-*"],
+                        "stopRange": 8,
                         "stopOnHurt": true
                     },
                     {
@@ -238,7 +238,8 @@
                 ]
             },
             { "code": "ropetieable", "minGeneration": 0 },
-            { "code": "pettable", "minGeneration": 1 }
+            { "code": "pettable", "minGeneration": 1 },
+			{ "code": "entitystatetags" }
         ]
     },
   "sounds": {

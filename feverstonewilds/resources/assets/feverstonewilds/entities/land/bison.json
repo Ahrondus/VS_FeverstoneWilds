@@ -1,6 +1,7 @@
 {
 	"code": "bison",
 	"class": "EntityAgent",
+    "tags":  [ "animal", "huntable", "habitat-land", "adult" ],
 	"variantgroups": [
 		{ "code": "tame", "states": [ "wild", "tamed" ] },
 		{ "code": "gender", "states": [ "male", "female" ] } 
@@ -507,7 +508,7 @@
 				{
 					"type": "item", 
 					"code": "redmeat-raw", 
-					"quantity": { "avg": 25, "var": 4 } 
+					"quantity": { "avg": 18, "var": 4 } 
 				},
 				{
 					"type": "item", 
@@ -772,7 +773,8 @@
                     "enabledByType": { "*-tamed-*": true, "*": false } },
 			{ "code": "milkable", "enabledByType": { "*-female": true, "*-male": false }  },
 			{ "code": "ropetieable", "minGeneration": 2 },
-			{ "code": "pettable", "minGeneration": 1 }
+			{ "code": "pettable", "minGeneration": 1 },
+			{ "code": "entitystatetags" }
 		],
 		"spawnconditionsByType": {
 			"*-wild-male":{

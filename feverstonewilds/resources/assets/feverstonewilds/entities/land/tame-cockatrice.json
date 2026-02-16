@@ -1,6 +1,7 @@
 {
   "code": "tame-cockatrice",
   "class": "EntityAgent",
+  "tags":  [ "animal", "huntable", "habitat-land", "tamed", "adult" ],
   "variantgroups": [
     { "code": "gender", "states": [ "male", "female" ] } ],
   "hitboxSize": {
@@ -309,7 +310,8 @@
         ]
       },
       { "code": "ropetieable", "minGeneration": 1 },
-      { "code": "pettable", "minGeneration": 0 }
+      { "code": "pettable", "minGeneration": 0 },
+			{ "code": "entitystatetags" }
     ]
   },
   "sounds": {

@@ -1,6 +1,7 @@
 {
     "code": "direwolf",
     "class": "EntityAgent",
+    "tags":  [ "animal", "huntable", "habitat-land", "predator", "ferocious", "adult" ],
     "variantgroups": [
         { "code": "gender", "states": [ "male", "female" ] }
     ],
@@ -240,17 +241,18 @@
                             "leapAnimation": null,
                             "animationSpeed": 1.1,
                             "leapChance": 0.01,
-                            "sound": "game:creature/wolf/growl",
+                            "sound": "direwolf/direwolf-growl",
                             "whenNotInEmotionState": "saturated"
                         },
                         {
                             "code": "seekentity",
-                            "entityCodes": ["chicken-*",  "wolf-*", 
-                                            "drifter-*", "bear-*", "hare-*",
-                                            "feverstonewilds:cockatrice", "feverstonewilds:horse-*",
-                                            "feverstonewilds:ostrich-*", "feverstonewilds:ostrich-chick",
-                                            "feverstonewilds:bison-*", "feverstonewilds:bison-calf",
-                                            "feverstonewilds:giraffe"],
+                            "entityCodes": [ "chicken-*",  "wolf-*", "hare-*",
+                                        "drifter-*", "bowtorn-*", "shiver-*",
+                                        "cockatrice", "horse-*", "ostrich-*",
+                                        "ostrich-chick", "pig-*", "sheep-*",
+                                        "deer-*", "gazelle-*", "goat-*", "raccoon-*",
+                                        "tame-cockatrice-*", "tame-direwolf-*", "taminghorse-*",
+                                        "hellboar-*", "tame-ostrich-*" ],
                             "priority": 1.5,
                             "movespeed": 0.045,
                             "seekingRange": 15,
@@ -261,7 +263,7 @@
                             "leapAnimation": null,
                             "animationSpeed": 1.1,
                             "leapChance": 0.01,
-                            "sound": "game:creature/wolf/growl",
+                            "sound": "direwolf/direwolf-growl",
                             "whenNotInEmotionState": "saturated"
                         },
                         {
@@ -275,7 +277,7 @@
                             "leapAnimation": null,
                             "animationSpeed": 1.1,
                             "leapChance": 0.01,
-                            "sound": "game:creature/wolf/growl",
+                            "sound": "direwolf/direwolf-growl",
                             "whenInEmotionState": "aggressiveondamage"
                         },
                         {
@@ -322,7 +324,7 @@
                             "maxcooldown": 500000,
                             "animation": "Howl",
                             "animationSpeed": 0.5,
-                            "sound": "game:creature/wolf/howl*",
+                            "sound": "direwolf/direwolf-howl*",
                             "soundRange": 110
                         },
                         {
@@ -365,7 +367,8 @@
                         }
                     ]
                 },
-                { "code": "ropetieable", "minGeneration": 2 }
+                { "code": "ropetieable", "minGeneration": 2 },
+			    { "code": "entitystatetags" }
             ],
         "spawnconditionsByType": {
             "*-male": {
@@ -413,7 +416,7 @@
     "sounds": {
         "hurt": "game:creature/wolf/hurt",
         "death": "game:creature/wolf/hurt",
-        "idle": "game:creature/wolf/howl*"
+        "idle": "feverstonewilds:direwolf/direwolf-howl*"
     },
     "idleSoundChance": 0.015,
     "hurtSoundChance": 0.25

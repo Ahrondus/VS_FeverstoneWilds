@@ -1,7 +1,7 @@
 {
-	"code": "ostrich-chick",
+	"code": "tame-ostrich-chick",
 	"class": "EntityAgent",
-    "tags":  [ "animal", "huntable", "habitat-land" ],
+    "tags":  [ "animal", "huntable", "habitat-land", "tamed" ],
 	"hitboxSize": { "x": 0.3, "y": 0.2 },
 	"deadHitboxSize": { "x": 0.4, "y": 0.2 },
 	"eyeHeight": 0.15,
@@ -15,10 +15,11 @@
 		"handbook": {
 			"groupcode": "feverstonewilds:creaturegroup-fswostrich"
 		},
-		"netCaughtItemCode": "feverstonewilds:creature-ostrich-chick",
+		"netCaughtItemCode": "feverstonewilds:creature-tame-ostrich-chick",
 		"basketCatchable": true,
         "trapChance": 0.35,
-        "trapDestroyChance": 0.025
+        "trapDestroyChance": 0.025,
+        "tamed": true
 	},
 	"client": {
 		"renderer": "Shape",
@@ -106,7 +107,7 @@
 			{ "code": "deaddecay", "hoursToDecay": 2 },
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
 			{ "code": "grow", "hoursToGrow": 128,
-				"adultEntityCodes": ["feverstonewilds:ostrich-female", "feverstonewilds:ostrich-male"]
+				"adultEntityCodes": ["feverstonewilds:tame-ostrich-female", "feverstonewilds:tame-ostrich-male"]
 			},
 			{ "code": "breathe" },
 			{ "code": "emotionstates",
@@ -119,7 +120,7 @@
 				"aitasks": [
 					{
 						"code": "fleeentity",
-						"entityCodes": ["player", "wolf-male", "wolf-female", "fox-*", "hyena-male", "hyena-female", "bear-*"],
+						"entityCodes": ["wolf-male", "wolf-female", "fox-*", "hyena-male", "hyena-female", "bear-*"],
 						"priority": 1.5,
 						"movespeed": 0.03,
 						"animationSpeed": 1.4,
@@ -135,7 +136,7 @@
 					{
 						"code": "stayclosetoentity",
 						"priority": 1.3,
-						"entityCode": "feverstonewilds:ostrich-female",
+						"entityCodes": [ "feverstonewilds:ostrich-female", "player" ],
 						"movespeed": 0.01,
 						"maxDistance": 2,
 						"searchRange": 12,
@@ -182,7 +183,7 @@
 						"whenNotInEmotionState": "aggressiveondamage",
 						"duringDayTimeFrames": [ { "fromHour": 20, "toHour": 24 }, { "fromHour": 0, "toHour": 6 } ],
 						"stopOnNearbyEntityCodes": [ "wolf-*", "hyena-*", "bear-*", "fox-*", "direwolf-*", "hellboar-*",
-                                                     "drifter-*", "shiver-*", "bowtorn-*", "player"],
+                                                     "drifter-*", "shiver-*", "bowtorn-*"],
 						"stopRange": 8,
 						"stopOnHurt": true
 					},

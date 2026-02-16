@@ -1,6 +1,7 @@
 {
 	"code": "giraffe",
 	"class": "EntityAgent",
+    "tags":  [ "animal", "huntable", "habitat-land" ],
 	"hitboxSize": { "x": 2.15, "y": 2.4 },
 	"deadHitboxSize": { "x": 2.15, "y": 1.75 },
 	"eyeHeight": 1.4,
@@ -87,17 +88,17 @@
 				{
 					"type": "item", 
 					"code": "redmeat-raw", 
-					"quantity": { "avg": 35, "var": 4 } 
+					"quantity": { "avg": 20, "var": 2 } 
 				},
 				{
 					"type": "item", 
-					"code": "hide-raw-large", 
-					"quantity": { "avg": 3.2, "var": 0.2 } 
+					"code": "hide-raw-huge", 
+					"quantity": { "avg": 2.5, "var": 0.5 } 
 				},
 				{
 					"type": "item", 
 					"code": "fat", 
-					"quantity": { "avg": 5, "var": 0.3 } 
+					"quantity": { "avg": 3, "var": 1 } 
 				}
 			]
 			},
@@ -262,7 +263,8 @@
 				]
 			},
 			{ "code": "ropetieable", "minGeneration": 2 },
-			{ "code": "pettable", "minGeneration": 1 }
+			{ "code": "pettable", "minGeneration": 1 },
+			{ "code": "entitystatetags" }
 		],
 		"spawnconditions": {
 			"worldgen": {
