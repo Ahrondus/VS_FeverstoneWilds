@@ -1,6 +1,5 @@
 {
 	"code": "armor",
-	"class": "ItemWearable",
 	"variantgroups": [
 		{ "code": "bodypart", "states": [ "head", "body", "legs" ] },
 		{ "code": "type", "states": [ "hunterblack" ] }
@@ -16,16 +15,19 @@
 		}
 	},
 	"storageFlags": 128,
+	"behaviors": [ { "name": "Wearable" } ],
 	"attributes": {
-		"wearableAttachment": true,
-		"clothescategoryByType": {
-			"armor-head-*": "armorhead",
-			"armor-body-*": "armorbody",
-			"armor-legs-*": "armorlegs"
-		},
-		"disableElementsByType": {
-			"armor-head-hunterblack": ["Hair tile upper part", "Ponytail1", "Hair", "hideme"]
-		},
+		"visibleDamageEffect": true,
+		"attachableToEntity": {
+			"clothescategoryByType": {
+				"armor-head-*": "armorhead",
+				"armor-body-*": "armorbody",
+				"armor-legs-*": "armorlegs"
+			},
+			"disableElementsByType": {
+				"armor-head-hunterblack": ["Hair tile upper part", "Ponytail1", "Hair", "hideme"]
+			}
+		},		
 		"defaultProtLoss": {
 			"perTierRelativeProtectionLoss": [ 0.03, 0.15 ],
 			"perTierFlatDamageReductionLoss": [ 0.1, 0.2 ]

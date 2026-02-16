@@ -1,6 +1,5 @@
 {
 	"code": "clothes",
-	"class": "ItemWearable",
 	"variantgroups": [
 		{
 			"code": "category",
@@ -8,6 +7,7 @@
 		},
 		{
 			"code": "foot",
+			"combine": "SelectiveMultiply",
 			"onVariant": "category",
 			"states": [ "hunterblack" ]
 		}
@@ -26,7 +26,8 @@
 					"z2": 1
 				}
 			}
-		}
+		},
+		{ "name": "Wearable" }
 	],
 	"shapeByType": {
 		"*-hunterblack": {
@@ -35,6 +36,11 @@
 	},
 	"storageFlags": 128,
 	"attributes": {
+		"clothescategory": "foot",
+		"wearableAttachment": true,
+		"displaycaseable": true,
+		"shelvable": true,
+		"visibleDamageEffect": true,
 		"groundStorageTransform": {
 			"translation": {
 				"x": 0,
@@ -60,14 +66,8 @@
 			},
 			"scale": 0.9
 		},
-		"clothescategory": "foot",
-		"displaycaseable": true,
-		"shelvable": true,
 		"warmthByType": {
 			"*-hunterblack": 1
-		},
-		"wearableAttachmentByType": {
-			"*": true
 		}
 	},
 	"texturesByType": {
