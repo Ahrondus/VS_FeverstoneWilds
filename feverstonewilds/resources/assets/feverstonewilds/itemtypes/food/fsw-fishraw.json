@@ -1,0 +1,247 @@
+{
+	"code": "fsw-fishraw",
+	"behaviors": [
+		{ "name": "GroundStorable", 
+			"properties": { 
+				"layoutByType": {
+					"fsw-fishraw-reef-discus": 'Quadrants',
+					"fsw-fishraw-freshwater-buromenfish": 'Quadrants',
+					"fsw-fishraw-saltwater-ghostfish": 'SingleCenter'
+				},
+				"collisionBox": { "x1": 0, "y1": 0, "z1": 0, "x2": 1, "y2": 0.125, "z2": 1 } 
+			} 
+		},
+		{ "name": "GroundStoredProcessable",
+			"properties": {
+				"processTimeByType": {
+					"fsw-fishraw-reef-discus": 2,
+					"fsw-fishraw-freshwater-buromenfish": 3.5,
+					"fsw-fishraw-saltwater-ghostfish": 5
+				},
+				"processedStacksByType": {
+					"fsw-fishraw-reef-discus": [{ "type": "item", "code": "fish-raw", "quantity": { "avg": 1 } }],
+					"fsw-fishraw-freshwater-buromenfish": [{ "type": "item", "code": "fish-raw", "quantity": { "avg": 4 } }],
+					"fsw-fishraw-saltwater-ghostfish": [{ "type": "item", "code": "fish-raw", "quantity": { "avg": 6 } }]
+				},
+				"toolDurabilityCostByType": {
+					"fsw-fishraw-reef-discus": 1,
+					"fsw-fishraw-freshwater-buromenfish": 2,
+					"fsw-fishraw-saltwater-ghostfish": 4
+				},
+				"remainingItemByType": { 
+					"fishraw-reef-*": null,
+					"*": {
+						"type": "item", 
+						"code": "bone-tiny", 
+						"quantityBytype": {
+							"*-discus": 1,
+							"*-buromenfish": 2,
+							"*-ghostfish": 3
+						}
+					}
+				},
+				"tool": "knife",
+				"processsingSound": "player/scrape",
+				"interactionHelpCode": "groundstoredaction-flay",
+				"handbookProcessIntoTitle": "groundstoredflaydesc-title",
+				"handbookCreatedByTitle": "handbook-createdby-groundstoredflaying"
+			}
+		}
+	],
+	"variantgroups": [
+		{ "code": "habitat", "states": ["freshwater", "saltwater", "reef"] },
+		{ "code": "type", "states": [ "discus", "buromenfish", "ghostfish" ] }
+	],
+	"shape": { "base": "entity/water/{type}" },
+	"textures": { "skin": { "base": "entity/water/{type}/{type}*"} },
+	"allowedVariants": [
+		"fsw-fishraw-reef-discus",
+		"fsw-fishraw-freshwater-buromenfish",
+		"fsw-fishraw-freshwater-ghostfish",
+		"fsw-fishraw-saltwater-buromenfish",
+		"fsw-fishraw-saltwater-ghostfish"
+	],
+	"attributes": {
+        "handbook": {
+            "groupBy": [ "fsw-fishraw-*" ]
+        },
+		"isFishBaitByType": {
+			"*": false
+		},
+		"groundStorageTransformByType": {
+			"fishraw-freshwater-alewife-*": {
+				"translation": { "x": -0.1, "y": -0.16, "z": -0.02 },
+				"rotation": { "x": -90, "y": 1, "z": 30 },
+				"origin": { "x": 0.5, "y": 0.2, "z": 0.5 }
+			},
+			"fishraw-freshwater-chub-*": {
+				"translation": { "x": -0.1, "y": -0.16, "z": -0.02 },
+				"rotation": { "x": -90, "y": 1, "z": 30 },
+				"origin": { "x": 0.5, "y": 0.2, "z": 0.5 }
+			},
+			"fishraw-freshwater-tilapia-*": {
+				"translation": { "x": -0.07, "y": -0.16, "z": 0 },
+				"rotation": { "x": -90, "y": 1, "z": 30 },
+				"origin": { "x": 0.5, "y": 0.2, "z": 0.5 }
+			},
+			"fishraw-saltwater-anchovy-*": {
+				"translation": { "x": -0.1, "y": -0.16, "z": -0.02 },
+				"rotation": { "x": -90, "y": 1, "z": 30 },
+				"origin": { "x": 0.5, "y": 0.2, "z": 0.5 }
+			},
+			"fishraw-saltwater-menhaden-*": {
+				"translation": { "x": -0.1, "y": -0.16, "z": -0.02 },
+				"rotation": { "x": -90, "y": 1, "z": 30 },
+				"origin": { "x": 0.5, "y": 0.2, "z": 0.5 }
+			},
+			"fishraw-saltwater-perch-*": {
+				"translation": { "x": -0.08, "y": -0.16, "z": 0 },
+				"rotation": { "x": -90, "y": 1, "z": 30 },
+				"origin": { "x": 0.5, "y": 0.2, "z": 0.5 }
+			},
+			"fishraw-saltwater-mackerel-*": {
+				"translation": { "x": -0.05, "y": -0.16, "z": 0 },
+				"rotation": { "x": -90, "y": 0, "z": 33 },
+				"origin": { "x": 0.5, "y": 0.2, "z": 0.5 }
+			},
+			"*": {
+				"translation": { "x": 0, "y": -0.16, "z": 0 },
+				"rotation": { "x": -90, "y": 1, "z": 30 },
+				"origin": { "x": 0.5, "y": 0.2, "z": 0.5 }
+			}
+		}
+	},
+	"storageFlags": 257,
+	"maxstacksizeByType": {
+		"*-ghostfish": 4,
+		"*-buromenfish": 8,
+		"*-discus": 16
+	},
+	"creativeinventory": { "general": ["*"], "items": ["*"] },
+	"materialDensity": 600,
+	"heldRightReadyAnimationByType": {
+		"*-buromenfish": "holdbothhandslarge",
+		"*-ghostfish": "holdbothhandslarge",
+		"*-discus": "holdinglanternrighthand"
+	},
+	"heldTpIdleAnimationByType": {
+		"*-buromenfish": "holdbothhandslarge",
+		"*-ghostfish": "holdbothhandslarge",
+		"*-discus": "holdinglanternrighthand"
+	},
+	"heldLeftTpIdleAnimationbyType": {
+		"*": "holdinglanternlefthand"
+	},
+	"transitionablePropsByType": {
+		"*": [{
+			"type": "Perish",
+			"freshHours": { "avg": 36 },
+			"transitionHours": { "avg": 24 },
+			"transitionedStack": { "type": "item", "code": "rot" },
+			"transitionRatioByType": {
+				"*-ghostfish": 4,
+				"*-buromenfish": 2,
+				"*-discus": 1
+			}		
+		}]
+	},
+	"guiTransformByType": {
+		"fishraw-reef-clown-common-juvenile": {
+			"rotation": { "x": 63, "y": 2, "z": -117 },
+			"origin": { "x": 0.7, "y": 0.16, "z": 0.42 },
+			"scale": 4.87
+		},
+		"fishraw-saltwater-haddock-common-juvenile": {
+			"rotation": { "x": 63, "y": 2, "z": -117 },
+			"origin": { "x": 0.5, "y": 0.09, "z": 0.52 },
+			"scale": 2.99
+		},
+		"fishraw-saltwater-mahi-mahi-common-juvenile": {
+			"rotation": { "x": 70, "y": 1, "z": -113 },
+			"origin": { "x": 0.34, "y": 0.06, "z": 0.58 },
+			"scale": 2.99
+		},
+		"fishraw-saltwater-coelacanth-common-juvenile": {
+			"rotation": { "x": 70, "y": 1, "z": -113 },
+			"origin": { "x": 0.5, "y": 0.13, "z": 0.51 },
+			"scale": 2.99
+		},
+		"fishraw-reef-tang-banded-juvenile": {
+			"rotation": { "x": 63, "y": 2, "z": -117 },
+			"origin": { "x": 0.7, "y": 0.19, "z": 0.42 },
+			"scale": 4.18
+		}
+	},	
+	"tpHandTransformByType": {
+		"fishraw-reef-*": {
+			"translation": { "x": -0.26, "y": -0.25, "z": -0.42 },
+			"rotation": { "x": -86, "y": 0, "z": 174 },
+			"origin": { "x": 0.5, "y": 0.2, "z": 0.5 },
+			"scale": 1
+		},
+		"fishraw-saltwater-anchovy-*": {
+			"translation": { "x": -0.27, "y": -0.25, "z": -0.4 },
+			"rotation": { "x": -86, "y": 0, "z": 174 },
+			"origin": { "x": 0.5, "y": 0.2, "z": 0.5 },
+			"scale": 1
+		},
+		"fishraw-saltwater-menhaden-*": {
+			"translation": { "x": -0.27, "y": -0.25, "z": -0.4 },
+			"rotation": { "x": -86, "y": 0, "z": 174 },
+			"origin": { "x": 0.5, "y": 0.2, "z": 0.5 },
+			"scale": 1
+		},
+		"fishraw-saltwater-mackerel-*": {
+			"translation": { "x": -0.13, "y": -0.25, "z": -0.4 },
+			"rotation": { "x": -86, "y": 0, "z": 174 },
+			"origin": { "x": 0.5, "y": 0.2, "z": 0.5 },
+			"scale": 1
+		},
+		"fishraw-saltwater-herring-*": {
+			"translation": { "x": -0.13, "y": -0.25, "z": -0.4 },
+			"rotation": { "x": -86, "y": 0, "z": 174 },
+			"origin": { "x": 0.5, "y": 0.2, "z": 0.5 },
+			"scale": 1
+		}
+	},
+	"tpOffHandTransformByType": {
+		"fishraw-saltwater-sturgeon-*": {
+			"translation": { "x": -0.1, "y": -0.25, "z": -0.55 },
+			"rotation": { "x": 76, "y": 0, "z": 171 },
+			"origin": { "x": 0.5, "y": 0.2, "z": 0.5 },
+			"scale": 1
+		},
+		"fishraw-saltwater-barracuda-*": {
+			"translation": { "x": -0.1, "y": -0.25, "z": -0.55 },
+			"rotation": { "x": 76, "y": 0, "z": 171 },
+			"origin": { "x": 0.5, "y": 0.2, "z": 0.5 },
+			"scale": 1
+		},
+		"fishraw-saltwater-herring-*": {
+			"translation": { "x": -0.12, "y": -0.22, "z": -0.58 },
+			"rotation": { "x": 85, "y": 0, "z": 171 },
+			"origin": { "x": 0.5, "y": 0.2, "z": 0.5 },
+			"scale": 1
+		},
+		"fishraw-saltwater-mackerel-*": {
+			"translation": { "x": -0.12, "y": -0.22, "z": -0.58 },
+			"rotation": { "x": 85, "y": 0, "z": 171 },
+			"origin": { "x": 0.5, "y": 0.2, "z": 0.5 },
+			"scale": 1
+		},
+		"@fishraw-saltwater-perch-*": {
+			"translation": { "x": -0.23, "y": -0.22, "z": -0.59 },
+			"rotation": { "x": 86, "y": 0, "z": 171 },
+			"origin": { "x": 0.5, "y": 0.2, "z": 0.5 },
+			"scale": 1
+		}
+	},
+	"groundTransformByType": {
+		"*": {
+			"translation": { "x": -0.05, "y": 0.035, "z": 0.07 },
+			"rotation": { "x": 90, "y": 0, "z": 0 },
+			"origin": { "x": 0.5, "y": 0.125, "z": 0.5 },
+			"scale": 3
+		}
+	}
+}

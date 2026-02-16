@@ -2,10 +2,10 @@
 	"code": "discus",
 	"class": "EntityFish",
 	"tags": ["animal", "huntable", "habitat-water" ],
-	"hitboxSize": { "x": 0.5, "y": 0.25 },
-	"eyeHeight": 0.2,
-	"drops": [],
-	"habitat": "underwater",
+	"hitboxSize": { "x": 0.375, "y": 0.25 },
+	"eyeHeight": 0.125,
+	"drops": [ { "type": "item", "code": "fsw-fishraw-reef-discus" } ],
+	"habitat": "Underwater",
 	"client": {
 		"renderer": "Shape",
 		"size": 0.7,
@@ -23,7 +23,7 @@
 			{ "code": "interpolateposition" },
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
 			{ "code": "harvestable" },
-			{ "code": "despawn", "minPlayerDistance": 18, "minSeconds": 300, "belowLightLevel": 0 }
+			{ "code": "despawn", "minPlayerDistance": 18, "minSeconds": 300, "belowLightLevel": 8 }
 		],
 		"animations": [
 			{
@@ -66,14 +66,6 @@
 			{ "code": "health", "maxhealth": 1 },
 			{ "code": "deaddecay", "hoursToDecay": 96, "decayedBlock": "carcass-tiny" },
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
-			{ "code": "harvestable", "drops": [
-					{
-						"type": "item", 
-						"code": "fish-raw", 
-						"quantity": { "avg": 1, "var": 0 } 
-					}
-				]
-			},
 			{ 
 				"code": "emotionstates",
 				"states": [
@@ -93,7 +85,7 @@
 					},
 					{
 						"code": "fleeentity",
-						"entityCodes": ["player", "bullshark", "stingray", "wolf-male", "wolf-female", "fox-*", "hyena-male", "hyena-female"],
+						"entityCodes": ["player", "shark-*", "stingray", "wolf-*", "fox-*", "hyena-*"],
 						"priority": 2,
 						"movespeed": 0.06,
 						"seekingRange": 14,
@@ -101,11 +93,39 @@
 						"animationSpeed": 2
 					},
 					{
+						"code": "seekentity",
+						"id": "seekbobber",
+						"entityCodes": ["bobber-*"],
+						"searchType": "Inanimate",
+						"targetOnlyInteractableEntities": false,
+						"priority": 1.8,
+						"whenSwimming": true,
+						"seekingRange": 25,
+						"movespeed": 0.01,
+						"animation": "swim",
+						"animationSpeed": 2
+					},
+					{
+						"code": "fleeentity",
+						"id": "fleebobber",
+						"entityCodes": ["bobber-*"],
+						"priority": -1,
+						"priorityForCancel": 2,
+						"whenSwimming": true,
+						"fleeDurationMs": 10000,
+						"fleeingDistance": 30,
+						"movespeed": 0.06,
+						"seekingRange": 14,
+						"animation": "swimfast",
+						"animationSpeed": 2.3
+					},
+					{
 						"code": "wander", 
 						"priority": 1.2, 
 						"priorityForCancel": 1.35,
 						"movespeed": 0.01,
-						"animation": "swim"
+						"animation": "swim",
+						"maxDistanceToSpawn": 7
 					},
 					{
 						"code": "fishmovefast", 
@@ -134,8 +154,7 @@
 						"animation": "idle"
 					}
 				]
-			},
-			{ "code": "entitystatetags" }
+			}
 		],
 		"spawnconditions": {
 			"worldgen": {
@@ -143,21 +162,26 @@
 				"tryOnlySurface": true,
 				"maxQuantity": 5,
 				"minLightLevel": 8,
-				"groupSize": { "dist": "verynarrowgaussian", "avg": 4, "var": 1 },
-				"insideBlockCodes": ["game:water-still-*", "game:saltwater-still-*"],
-				"minTemp": 12,
-				"maxTemp": 38
+				"groupSize": { "dist": "verynarrowgaussian", "avg": 2, "var": 1 },
+				"insideBlockCodes": [ "game:coral-*" ]
 			},
 			"runtime": {
-				"group": "neutral",
+				"group": "passive",
 				"chance": 0.001,
 				"maxQuantity": 5,
 				"tryOnlySurface": true,
 				"minLightLevel": 8,
 				"groupSize": { "dist": "verynarrowgaussian", "avg": 4, "var": 1 },
-				"insideBlockCodes": ["game:water-still-*", "game:saltwater-still-*"],
+				"insideBlockCodes": [ "game:coral-*" ],
 				"minTemp": 12,
 				"maxTemp": 38
+			},
+			"climate": {
+				"habitatSize": 0,
+				"minTemp": 12,
+				"maxTemp": 38,
+				"minY": 0.7,
+				"maxY": 1.0
 			}
 		}
 	}

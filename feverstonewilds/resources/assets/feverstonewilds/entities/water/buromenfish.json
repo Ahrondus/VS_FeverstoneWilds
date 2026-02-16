@@ -2,10 +2,11 @@
 	"code": "buromenfish",
 	"class": "EntityFish",
 	"tags": ["animal", "huntable", "habitat-water" ],
+	"variantGroups": [ {"code": "habitat", "states": [ "freshwater", "saltwater" ] } ],
 	"hitboxSize": { "x": 0.5, "y": 0.25 },
 	"eyeHeight": 0.2,
 	"drops": [],
-	"habitat": "underwater",
+	"habitat": "Underwater",
 	"client": {
 		"renderer": "Shape",
 		"size": 0.7,
@@ -23,7 +24,7 @@
 			{ "code": "interpolateposition" },
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
 			{ "code": "harvestable" },
-			{ "code": "despawn", "minPlayerDistance": 18, "minSeconds": 300, "belowLightLevel": 0 }
+			{ "code": "despawn", "minPlayerDistance": 18, "minSeconds": 300, "belowLightLevel": 8 }
 		],
 		"animations": [
 			{
@@ -66,14 +67,6 @@
 			{ "code": "health", "maxhealth": 4 },
 			{ "code": "deaddecay", "hoursToDecay": 96, "decayedBlock": "carcass-tiny" },
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
-			{ "code": "harvestable", "drops": [
-					{
-						"type": "item", 
-						"code": "fish-raw", 
-						"quantity": { "avg": 3, "var": 4 } 
-					}
-				]
-			},
 			{ 
 				"code": "emotionstates",
 				"states": [
@@ -93,12 +86,41 @@
 					},
 					{
 						"code": "fleeentity",
-						"entityCodes": ["player", "wolf-male", "wolf-female", "fox-*", "hyena-male", "hyena-female"],
+						"id": "fleecreature",
+						"entityCodes": ["player", "wolf-*", "fox-*", "hyena-*",
+										"bear-*", "direwolf-*", "cockatrice-*" ],
 						"priority": 2,
 						"movespeed": 0.06,
 						"seekingRange": 14,
 						"animation": "swim",
 						"animationSpeed": 2
+					},
+					{
+						"code": "seekentity",
+						"id": "seekbobber",
+						"entityCodes": ["bobber-*"],
+						"searchType": "Inanimate",
+						"targetOnlyInteractableEntities": false,
+						"priority": 1.8,
+						"whenSwimming": true,
+						"seekingRange": 25,
+						"movespeed": 0.01,
+						"animation": "swim",
+						"animationSpeed": 2
+					},
+					{
+						"code": "fleeentity",
+						"id": "fleebobber",
+						"entityCodes": ["bobber-*"],
+						"priority": -1,
+						"priorityForCancel": 2,
+						"whenSwimming": true,
+						"fleeDurationMs": 10000,
+						"fleeingDistance": 30,
+						"movespeed": 0.06,
+						"seekingRange": 14,
+						"animation": "swimfast",
+						"animationSpeed": 2.3
 					},
 					{
 						"code": "wander", 
@@ -144,7 +166,10 @@
 				"maxQuantity": 4,
 				"minLightLevel": 8,
 				"groupSize": { "dist": "verynarrowgaussian", "avg": 3, "var": 1 },
-				"insideBlockCodes": ["game:water-still-*", "game:saltwater-still-*"],
+				"insideBlockCodesByType": {
+					"*-freshwater": ["game:water-still-*"],
+					"*-saltwater":["game:saltwater-still-*"]
+				},
 				"minTemp": -4,
 				"maxTemp": 34
 			},
@@ -155,8 +180,10 @@
 				"tryOnlySurface": true,
 				"minLightLevel": 8,
 				"groupSize": { "dist": "verynarrowgaussian", "avg": 3, "var": 1 },
-				"insideBlockCodes": ["game:water-still-*", "game:saltwater-still-*"],
-				"minTemp": -4,
+				"insideBlockCodesByType": {
+					"*-freshwater": ["game:water-still-*"],
+					"*-saltwater":["game:saltwater-still-*"]
+				},"minTemp": -4,
 				"maxTemp": 34
 			}
 		}
