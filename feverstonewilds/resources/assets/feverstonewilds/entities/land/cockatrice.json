@@ -1,6 +1,7 @@
 {
 	"code": "cockatrice",
 	"class": "EntityAgent",
+    "tags":  [ "animal", "huntable", "habitat-land", "predator", "adult" ],
 	"variantgroups": [ { "code": "gender", "states": [ "male", "female" ] } ],
 	"hitboxSize": {
 		"x": 1.15,
@@ -335,7 +336,8 @@
 				]
 			},
 			{ "code": "ropetieable", "minGeneration": 2 },
-			{ "code": "pettable", "minGeneration": 1 }
+			{ "code": "pettable", "minGeneration": 1 },
+			{ "code": "entitystatetags" }
 		],
 		"spawnconditionsByType": {
 			"*-male": {

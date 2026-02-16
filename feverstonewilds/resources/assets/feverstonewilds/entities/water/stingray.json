@@ -1,6 +1,7 @@
 {
 	"code": "stingray",
 	"class": "EntityFish",
+	"tags": ["animal", "huntable", "habitat-water" ],
 	"hitboxSize": { "x": 1.2, "y": 1 },
 	"eyeHeight": 0.9,
 	"drops": [],
@@ -168,7 +169,8 @@
 						"animation": "idle"
 					}
 				]
-			}
+			},
+			{ "code": "entitystatetags" }
 		],
 		"spawnconditions": {
 			"worldgen": {

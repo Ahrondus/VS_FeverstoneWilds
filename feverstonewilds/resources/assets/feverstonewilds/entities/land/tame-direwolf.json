@@ -1,6 +1,7 @@
 {
     "code": "tame-direwolf",
     "class": "EntityAgent",
+    "tags":  [ "animal", "huntable", "habitat-land", "predator", "ferocious", "tamed", "adult" ],
     "variantgroups": [
         { "code": "gender", "states": [ "male", "female" ] }
     ],
@@ -639,12 +640,13 @@
                     },
                     {
                         "code": "meleeattack",
-                        "entityCodes": ["chicken-*",  "wolf-*", 
-                                        "drifter-*", "bear-*", "hare-*",
-                                        "feverstonewilds:cockatrice", "feverstonewilds:horse-*",
-                                        "feverstonewilds:ostrich-*", "feverstonewilds:ostrich-chick",
-                                        "feverstonewilds:bison-*", "feverstonewilds:bison-calf",
-                                        "feverstonewilds:giraffe"],
+                        "entityCodes": [ "drifter-*", "shiver-*", "bowtorn-*",
+                            "wolf-*", "direwolf-*", "hyena-*",
+                            "bear-*", "hellboar-*", "faunling-*",
+                            "horse-*", "cockatrice-*", "ostrich-*",
+                            "foal-*", "bison-*", "bison-calf",
+                            "deer-*", "goat-*", "pig-*", "sheep-*",
+                            "elk-*", "moose-*", "gazelle-*" ],
                         "priority": 2,
                         "damage": 8,
                         "damageTier": 2,
@@ -660,9 +662,9 @@
                     },
                     {
                         "code": "meleeattack",
-                        "entityCodes": ["chicken-*", "drifter-*", "hare-*",
-                                        "feverstonewilds:cockatrice", "feverstonewilds:ostrich-chick",
-                                        "feverstonewilds:bison-calf" ],
+                        "entityCodes": [ "squirrel-*", "raccoon-*", "hare-*",
+                            "direwolf-pup", "hellboar-piglet", "chicken-*",
+                            "cockatrice-*", "fox-*", "*-baby" ],
                         "priority": 2,
                         "damage": 8,
                         "damageTier": 2,
@@ -678,8 +680,8 @@
                     },
                     {
                         "code": "meleeattack",
-                        "entityCodes": ["bear-*", "feverstonewilds:horse-*",
-                                        "feverstonewilds:bison-*", "feverstonewilds:giraffe"],
+                        "entityCodes": [ "bear-*", "giraffe-*", "horse-*",
+                            "bison-*", "ostrich-*", "moose-*", "elk-*" ],
                         "priority": 2,
                         "damage": 8,
                         "damageTier": 2,
@@ -693,6 +695,27 @@
                         "retaliateAttacks": false,
                         "animationSpeed": 2.5,
                         "sound": "game:creature/wolf/attack"
+                    },
+                    {
+                        "code": "seekentity",
+                        "entityCodes": [ "chicken-*",  "wolf-*", "hare-*",
+                                        "drifter-*", "bowtorn-*", "shiver-*",
+                                        "cockatrice", "horse-*", "ostrich-*",
+                                        "ostrich-chick", "pig-*", "sheep-*",
+                                        "deer-*", "gazelle-*", "goat-*",
+                                        "raccoon-*", "hellboar-*" ],
+                        "priority": 1.5,
+                        "movespeed": 0.045,
+                        "seekingRange": 15,
+                        "belowTempSeekingRange": 25,
+                        "belowTempThreshold": -5,
+                        "animation": "Canter",
+                        "leapAtTarget": true,
+                        "leapAnimation": null,
+                        "animationSpeed": 1.1,
+                        "leapChance": 0.01,
+                        "sound": "direwolf/direwolf-growl",
+                        "whenNotInEmotionState": "saturated"
                     },
                     {
                         "code": "idle",
@@ -712,9 +735,7 @@
                                                      "feverstonewilds:direwolf", "feverstonewilds:cockatrice",
                                                      "hyena-*", "moose-*" ],
                         "stopRange": 10,
-                        "stopOnHurt": true,
-                        "sound": "direwolf/direwolf-sleeping",
-                        "soundChance": 0.4
+                        "stopOnHurt": true
                     },
                     {
                         "code": "getoutofwater",
@@ -733,7 +754,7 @@
                         "maxcooldown": 500000,
                         "animation": "Howl",
                         "animationSpeed": 0.65,
-                        "sound": "game:creature/wolf/howl*",
+                        "sound": "direwolf/direwolf-howl*",
                         "soundRange": 110
                     },
                     {
@@ -804,13 +825,14 @@
                 ]
             },
             { "code": "ropetieable", "minGeneration": 1 },
-            { "code": "pettable", "minGeneration": 1 }
+            { "code": "pettable", "minGeneration": 1 },
+			{ "code": "entitystatetags" }
         ]
     },
     "sounds": {
         "hurt": "game:creature/wolf/hurt",
         "death": "game:creature/wolf/hurt",
-        "idle": "game:creature/wolf/howl*"
+        "idle": "feverstonewilds:direwolf/direwolf-howl*"
     },
     "idleSoundChance": 0.01,
     "hurtSoundChance": 0.2

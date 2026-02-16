@@ -50,7 +50,7 @@
 	"nutritionPropsByType": {
 		"cockatrice-tail-raw": {
 			"satiety": 120,
-			"health": -2.5,
+			"health": -1.5,
 			"foodcategory": "Protein"
 		},
 		"cockatrice-tail-partcooked": {
@@ -60,7 +60,7 @@
 		},
 		"cockatrice-tail-cooked": {
 			"satiety": 350,
-			"health": 1,
+			"health": 1.25,
 			"foodcategory": "Protein"
 		},
 		"cockatrice-tail-charred": {
@@ -167,12 +167,12 @@
 	"combustiblePropsByType": {
 		"cockatrice-tail-raw": {
 			"meltingPoint": 250,
-			"meltingDuration": 60,
+			"meltingDuration": 30,
 			"smeltedRatio": 1,
 			"smeltingType": "cook",
 			"smeltedStack": {
 				"type": "item",
-				"code": "cockatrice-tail-charred"
+				"code": "cockatrice-tail-cooked"
 			},
 			"requiresContainer": false
 		}

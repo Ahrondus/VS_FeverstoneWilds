@@ -1,6 +1,7 @@
 {
 	"code": "toad",
 	"class": "EntityAgent",
+    "tags":  [ "animal", "huntable", "habitat-land" ],
 	"hitboxSize": { "x": 0.8, "y": 1.7 },
 	"deadHitboxSize": { "x": 1.7, "y": 0.5 },
 	"eyeHeight": 1.6,
@@ -213,7 +214,8 @@
 						"priority": 0.5
 					}
 				]
-			}
+			},
+			{ "code": "entitystatetags" }
 		],
 		"spawnconditions": {
 			"worldgen": {

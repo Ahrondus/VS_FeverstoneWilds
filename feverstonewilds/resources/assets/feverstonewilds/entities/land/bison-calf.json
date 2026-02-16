@@ -1,6 +1,7 @@
 {
 	"code": "bison-calf",
 	"class": "EntityAgent",
+    "tags":  [ "animal", "huntable", "habitat-land" ],
 	"variantgroups": [
 		{ "code": "tamed", "states": [ "wild", "tamed" ] }
 	],
@@ -248,7 +249,8 @@
 				]
 			},
 			{ "code": "ropetieable", "minGeneration": 2 },
-			{ "code": "pettable", "minGeneration": 1 }
+			{ "code": "pettable", "minGeneration": 1 },
+			{ "code": "entitystatetags" }
 		]
 	},
 	"sounds": {

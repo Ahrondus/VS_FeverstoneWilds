@@ -1,6 +1,7 @@
 {
 	"code": "ostrich",
 	"class": "EntityAgent",
+    "tags":  [ "animal", "huntable", "habitat-land", "adult" ],
 	"variantgroups": [
         { "code": "gender", "states": ["male", "female"] }
 	],
@@ -289,7 +290,8 @@
 				]
 			},
 			{ "code": "ropetieable", "minGeneration": 2 },
-			{ "code": "pettable", "minGeneration": 1 }
+			{ "code": "pettable", "minGeneration": 1 },
+			{ "code": "entitystatetags" }
 		],
 		"spawnconditions": {
 				"worldgen": {

@@ -154,11 +154,11 @@ namespace FeverstoneWilds
                     Entity childEntity = Api.World.ClassRegistry.CreateEntity(childType);
                     if (childEntity == null) continue;
 
-                    childEntity.ServerPos.SetFrom(new EntityPos(this.Position.X + (rand.NextDouble() - 0.5f) / 5f, this.Position.Y, this.Position.Z + (rand.NextDouble() - 0.5f) / 5f, (float) rand.NextDouble() * GameMath.TWOPI));
-                    childEntity.ServerPos.Motion.X += (rand.NextDouble() - 0.5f) / 200f;
-                    childEntity.ServerPos.Motion.Z += (rand.NextDouble() - 0.5f) / 200f;
+                    childEntity.Pos.SetFrom(new EntityPos(this.Position.X + (rand.NextDouble() - 0.5f) / 5f, this.Position.Y, this.Position.Z + (rand.NextDouble() - 0.5f) / 5f, (float) rand.NextDouble() * GameMath.TWOPI));
+                    childEntity.Pos.Motion.X += (rand.NextDouble() - 0.5f) / 200f;
+                    childEntity.Pos.Motion.Z += (rand.NextDouble() - 0.5f) / 200f;
 
-                    childEntity.Pos.SetFrom(childEntity.ServerPos);
+                    childEntity.Pos.SetFrom(childEntity.Pos);
                     childEntity.Attributes.SetString("origin", "reproduction");
                     childEntity.WatchedAttributes.SetInt("generation", chickData.GetInt("generation", 0));
                     EntityAgent eagent = childEntity as EntityAgent;
@@ -330,13 +330,13 @@ namespace FeverstoneWilds
                 {
                     if (inventory[i].Empty)
                     {
-                        AssetLocation sound = slot.Itemstack?.Block?.Sounds?.Place;
+                        SoundAttributes? sound = slot.Itemstack?.Block?.Sounds?.Place;
                         AssetLocation itemPlaced = slot.Itemstack?.Collectible?.Code;
                         ItemStackMoveOperation op = new ItemStackMoveOperation(Api.World, EnumMouseButton.Left, 0, EnumMergePriority.AutoMerge, 1);
                         if (slot.TryPutInto(inventory[i], ref op) > 0)
                         {
                             Api.Logger.Audit(byPlayer.PlayerName + " put 1x" + itemPlaced + " into " + Block.Code + " at " + Pos);
-                            Api.World.PlaySoundAt(sound != null ? sound : new AssetLocation("sounds/player/build"), byPlayer.Entity, byPlayer, true, 16);
+                            Api.World.PlaySoundAt(sound ?? GlobalConstants.DefaultBuildSound, byPlayer.Entity, byPlayer);
                             return true;
                         }
                     }

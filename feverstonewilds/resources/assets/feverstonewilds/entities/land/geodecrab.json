@@ -1,6 +1,7 @@
 {
 	"code": "geodecrab",
 	"class": "EntityAgent",
+    "tags":  [ "animal", "huntable", "habitat-land" ],
 	"hitboxSize": { "x": 0.6, "y": 0.6 },
 	"deadHitboxSize": { "x": 0.7, "y": 0.7 },
 	"eyeHeight": 0.3,
@@ -187,7 +188,8 @@
 						"priority": 0.5
 					}
 				]
-			}
+			},
+			{ "code": "entitystatetags" }
 		],
 		"spawnconditions": {
 			"worldgen": {

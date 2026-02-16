@@ -1,6 +1,7 @@
 {
 	"code": "tame-ostrich",
 	"class": "EntityAgent",
+    "tags":  [ "animal", "huntable", "habitat-land", "tamed", "adult" ],
 	"variantgroups": [
         { "code": "gender", "states": ["male", "female"] }
 	],
@@ -18,7 +19,8 @@
 			"foodTags": [ "cabbage", "carrot", "parsnip", "blueberry", "cranberry", "cherry", "whitecurrant", "redcurrant", "blackcurrant", "lychee" ],
 			"skipFoodTags": [ "rice" ]
 		},
-        "eggTypes": [ { "type": "item", "code": "feverstonewilds:egg-ostrich-raw" } ]
+        "eggTypes": [ { "type": "item", "code": "feverstonewilds:egg-ostrich-raw" } ],
+		"tamed": true
     },
 	"behaviorConfigs": {
         "controlledphysics": { 
@@ -639,7 +641,8 @@
 				]
 			},
 			{ "code": "ropetieable", "minGeneration": 2 },
-			{ "code": "pettable", "minGeneration": 1 }
+			{ "code": "pettable", "minGeneration": 1 },
+			{ "code": "entitystatetags" }
 		]
 		},
 		"sounds": {

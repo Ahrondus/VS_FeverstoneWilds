@@ -1,6 +1,7 @@
 {
 	"code": "discus",
 	"class": "EntityFish",
+	"tags": ["animal", "huntable", "habitat-water" ],
 	"hitboxSize": { "x": 0.5, "y": 0.25 },
 	"eyeHeight": 0.2,
 	"drops": [],
@@ -133,7 +134,8 @@
 						"animation": "idle"
 					}
 				]
-			}
+			},
+			{ "code": "entitystatetags" }
 		],
 		"spawnconditions": {
 			"worldgen": {

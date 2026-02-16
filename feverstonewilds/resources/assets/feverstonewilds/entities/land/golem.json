@@ -1,6 +1,7 @@
 {
     "code": "golem",                    
     "class": "EntityAgent",
+    "tags":  [ "animal", "huntable", "habitat-land" ],
     "variantgroups": [ { "code": "rock", "states": ["andesite", "granite", "basalt", "limestone"] }, 
                        { "code": "ore", "states": ["nativecopper", "cassiterite", "hematite" ] } ],
     "skipVariants": ["*-limestone-cassiterite"],
@@ -195,7 +196,8 @@
                     "priorityForCancel": 1.35
                 }
             ]
-        }
+        },
+		{ "code": "entitystatetags" }
     ],
     "spawnconditions": {
         "worldgen": {
