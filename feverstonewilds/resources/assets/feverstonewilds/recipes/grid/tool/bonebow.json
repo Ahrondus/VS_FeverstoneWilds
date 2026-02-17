@@ -2,9 +2,9 @@
     {
         "ingredientPattern": "BIT,IKT,BIT",
         "ingredients": {
-            "B": { "type": "item", "code": "game:bone" },
-            "I": { "type": "item", "code": "feverstonewilds:bone-big" },
-            "T": { "type": "item", "code": "{bowstring}" },
+            "B": { "type": "item", "code": "game:bone", "quantity": 2 },
+            "I": { "type": "item", "code": "feverstonewilds:bone-big", "quantity": 1 },
+            "T": { "type": "item", "code": "{bowstring}", "quantity": 1 },
             "K": { "type": "item", "code": "game:knife-*", "isTool": true }
         },
         "allowedVariants": {
@@ -18,7 +18,7 @@
         "ingredientPattern": "SLB",
         "ingredients": {
             "S": { "type": "item", "code": "game:saw-*", "isTool": true },
-            "L": { "type": "item", "code": "game:leather-normal-plain" },
+            "L": { "type": "item", "code": "game:leather-normal-plain", "quantity": 2 },
             "B": { "type": "item", "code": "feverstonewilds:bonebow-simple" }
         },
         "allowedVariants": {

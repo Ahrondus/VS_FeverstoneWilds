@@ -1,7 +1,6 @@
 {
 	"code": "eel",
 	"class": "EntityFish",
-	"tags": ["animal", "huntable", "habitat-water" ],
 	"hitboxSize": { "x": 1.2, "y": 1 },
 	"eyeHeight": 0.9,
 	"drops": [],
@@ -23,7 +22,7 @@
 			{ "code": "interpolateposition" },
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
 			{ "code": "harvestable" },
-			{ "code": "despawn", "minPlayerDistance": 18, "minSeconds": 300, "belowLightLevel": 0 }
+			{ "code": "despawn", "minPlayerDistance": 18, "minSeconds": 300, "belowLightLevel": 8 }
 		],
 		"animations": [
 			{

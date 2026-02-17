@@ -2,10 +2,13 @@
 	"code": "bonebow",
 	"class": "ItemBow",
 	"variantGroups": [
-		{ "code": "quality", "states": ["simple", "reinforced"] }
+		{ "code": "quality", "states": ["primitive", "reinforced"] }
 	],
 	"maxstacksize": 1,
-	"durability": 850,
+	"durabilityByType": {
+		"*-primitive": 300,
+		"*-reinforced": 600
+	},
 	"shape": {
 		"base": "item/tool/bow/bonebow",
 		"alternates": [
@@ -19,8 +22,14 @@
 	"attributes": {
 		"heldItemPitchFollow": 1,
 		"aimAnimation": "bowaim",
-		"damage": 6,
-		"accuracyBonus": 0.3,
+		"damageByType": {
+			"*-primitive": 3.5,
+			"*-reinforced": 4
+		},
+		"accuracyBonusByType": {
+			"*-primitive": 0.25,
+			"*-reinforced": 0.35 
+		},
 		"toolrackTransform": {
 			"rotation": { "x": 2, "y": 5, "z": 0 },
 			"translation": { "x": 0.2, "y": 0.95 },

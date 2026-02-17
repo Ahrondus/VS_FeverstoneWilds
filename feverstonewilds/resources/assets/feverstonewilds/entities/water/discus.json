@@ -1,7 +1,6 @@
 {
 	"code": "discus",
 	"class": "EntityFish",
-	"tags": ["animal", "huntable", "habitat-water" ],
 	"hitboxSize": { "x": 0.375, "y": 0.25 },
 	"eyeHeight": 0.125,
 	"drops": [ { "type": "item", "code": "fsw-fishraw-reef-discus" } ],
@@ -16,7 +15,7 @@
 									  { "base": "entity/water/discus/discus4" },
 									  { "base": "entity/water/discus/discus5" }
 									]
-	},
+		},
 		"behaviors": [
 			{ "code": "repulseagents" }, 
 			{ "code": "controlledphysics", "stepHeight": 0 }, 

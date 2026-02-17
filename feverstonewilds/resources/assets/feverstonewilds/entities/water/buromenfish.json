@@ -1,7 +1,6 @@
 {
 	"code": "buromenfish",
 	"class": "EntityFish",
-	"tags": ["animal", "huntable", "habitat-water" ],
 	"variantGroups": [ {"code": "habitat", "states": [ "freshwater", "saltwater" ] } ],
 	"hitboxSize": { "x": 0.5, "y": 0.25 },
 	"eyeHeight": 0.2,
@@ -17,7 +16,7 @@
 									  { "base": "entity/water/buromenfish/buromenfish4" },
 									  { "base": "entity/water/buromenfish/buromenfish5" }
 									]
-	},
+		},
 		"behaviors": [
 			{ "code": "repulseagents" }, 
 			{ "code": "controlledphysics", "stepHeight": 0 }, 

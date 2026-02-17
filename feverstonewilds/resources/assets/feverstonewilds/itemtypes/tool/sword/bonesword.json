@@ -1,0 +1,175 @@
+{
+	"code": "bonesword",
+	"tags": ["weapon", "weapon-melee", "weapon-sword", "tool-sword"],
+	"damagedby": ["blockbreaking", "attacking"],
+	"tool": "sword",
+	"variantgroups": [
+		{ "code": "type", "states": ["primitive", "reinforced" ] },
+		{ "code": "metal", "states": [ "bone", "copper", "tinbronze", "bismuthbronze", "blackbronze", "gold", "silver", "iron", "meteoriciron", "steel" ] }
+	],
+	"allowedVariants": [
+		"bonesword-reinforced-copper",
+		"bonesword-reinforced-tinbronze",
+		"bonesword-reinforced-bismuthbronze",
+		"bonesword-reinforced-blackbronze",
+		"bonesword-reinforced-gold",
+		"bonesword-reinforced-silver",
+		"bonesword-reinforced-iron",
+		"bonesword-reinforced-meteoriciron",
+		"bonesword-reinforced-steel",
+        "bonesword-primitive-bone"
+	],
+	"shapeByType": {
+		"bonesword-primitive-bone": { "base": "item/tool/sword/bonesword" },
+		"bonesword-reinforced-*": { "base": "item/tool/sword/bonesword-reinforced" }
+	},
+	"texturesByType": {
+		"*-reinforced-*": {
+            "bone1": { "base": "game:block/creature/bone/bone1" },
+            "metal": { "base": "game:block/metal/ingot/{metal}" },
+            "aged1": { "base": "game:block/wood/planks/aged1" },
+            "wendigoskin1": { "base": "entity/land/wendigo/wendigoskin1" }
+		},
+		"*-primitive-*": {
+            "bone1": { "base": "game:block/creature/bone/bone1" },
+			"sides": { "base": "game:block/cloth/burlap/sides"},
+            "wendigoskin1": { "base": "entity/land/wendigo/wendigoskin1" }
+		}
+	},
+	"attributes": {
+		"heldItemPitchFollow": 0.9,
+		"handbook": {
+			"groupBy": ["bonesword-*"]
+		},
+		"toolrackTransformByType": {
+			"bonesword-*": {
+				"rotation": { "y": 180, "z": 1 },
+				"translation": { "x": -0.1, "y": 0.6 },
+				"scale": 1.25
+			}
+		},
+		"groundStorageTransformByType": {
+			"bonesword-*": {
+				"translation": { "x": 0, "y": 0.77, "z": -0.18 },
+				"rotation": { "x": 22, "y": 88, "z": -87 },
+				"scale": 0.88
+			}
+		},
+		"antlerMountable": true,
+		"onAntlerMountTransformByType": {
+			"bonesword-*": {
+				"translation": { "x": -0.45, "y": 0.5, "z": -0.08 },
+				"rotation": { "x": -90, "y": 0, "z": -90 },
+				"origin": { "x": 0.5, "y": 0, "z": 0.5 },
+				"scale": 0.8
+			}
+		}
+	},
+	"attributesByType": {
+		"bonesword-*": {
+			"ripHarvest": true,
+			"attachableToEntity": {
+				"categoryCode": "weapon1m",
+				"attachedShapeBySlotCode": {
+					"frontrightside": { "base": "item/wearable/hooved/elk/weaponr-blackguard" },
+					"frontleftside": { "base": "item/wearable/hooved/elk/weaponl-blackguard" }
+				}
+			}
+		},
+        "*":{
+                "attachableToEntity": { "categoryCode": "toolholding" }
+        }
+	},
+	"behaviors": [
+		{
+			"name": "GroundStorable",
+			"properties": {
+				"layout": 'WallHalves',
+				"wallOffYByType": {
+					"*": 1
+				},
+				"ctrlKey": true,
+				"selectionBox": { "x1": 0, "y1": 0, "z1": 0, "x2": 1, "y2": 0.1, "z2": 1 },
+				"collisionBox": { "x1": 0, "y1": 0, "z1": 0, "x2": 0, "y2": 0, "z2": 0 }
+			}
+		},
+		{ "name": "AnimationAuthoritative" },
+		{ "name": "Buffable" },
+		{ "name": "Sharpenable" }
+	],
+	"heldTpHitAnimationByType": {
+		"blade-forlorn-iron": "spearhit",
+		"blade-blackguard-iron": "spearhit",
+		"blade-gladius-ruined": "spearhit",
+		"*": "falx"
+	},
+	"attackRangebytype": {
+		"*": 2.25
+	},
+	"tooltierbytype": {
+		"*-primitive-bone": 2,
+		"*-copper": 2,
+		"*-gold": 5,
+		"*-silver": 5,
+		"*-bismuthbronze": 3,
+		"*-tinbronze": 3,
+		"*-blackbronze": 3,
+		"*-iron": 4,
+		"*-meteoriciron": 4,
+		"*-steel": 5
+	},
+	"attackpowerbytype": {
+		"bonesword-primitive-bone": 3.2,
+		"bonesword-reinforced-copper": 3.5,
+		"bonesword-reinforced-bismuthbronze": 4,
+		"bonesword-reinforced-tinbronze": 4.25,
+		"bonesword-reinforced-blackbronze": 4.5,
+		"bonesword-reinforced-iron": 4.8,
+		"bonesword-reinforced-meteoriciron": 5,
+		"bonesword-reinforced-steel": 5,
+		"bonesword-reinforced-gold": 5,
+		"bonesword-reinforced-silver": 5
+	},
+	"durabilitybytype": {
+		"bonesword-primitive-bone": 120,
+		"bonesword-reinforced-copper": 225,
+		"bonesword-reinforced-tinbronze": 410,
+		"bonesword-reinforced-bismuthbronze": 480,
+		"bonesword-reinforced-blackbronze": 550,
+		"bonesword-reinforced-iron": 800,
+		"bonesword-reinforced-meteoriciron": 1000,
+		"bonesword-reinforced-steel": 1975,
+		"bonesword-reinforced-gold": 1975,
+		"bonesword-reinforced-silver": 1975
+	},
+	"creativeinventoryByType": {
+		"*": { "general": ["*"], "items": ["*"], "tools": ["*"], "clutterByType": { "*-ruined": ["*"] } }
+	},
+	"guiTransformByType": {
+		"bonesword-*":
+			{
+				"translation": { "x": 0, "y": 0, "z": 0 },
+				"rotation": { "x": -89, "y": 47, "z": -13 },
+				"origin": { "x": 0.6, "y": -0.1, "z": 0.44 },
+				"scale": 1.65
+			}
+	},
+	"groundTransformByType": {
+		"bonesword-*":
+			{
+				"translation": { "x": 0, "y": 0.05, "z": 0 },
+				"rotation": { "x": 0, "y": 0, "z": 0 },
+				"origin": { "x": 0.5, "y": 0, "z": 0.5 },
+				"scale": 3.67
+			}
+	},
+	"tpHandTransformByType": {
+		"bonesword-*":
+			{
+				"translation": { "x": -1.03, "y": -0.01, "z": -0.56 },
+				"rotation": { "x": -90, "y": 0, "z": 0 },
+				"origin": { "x": 0.5, "y": 0, "z": 0.5 },
+				"scale": 0.8
+			}
+	}
+}
