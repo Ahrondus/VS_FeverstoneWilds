@@ -25,15 +25,15 @@
 	},
 	"texturesByType": {
 		"*-reinforced-*": {
-            "bone1": "game:block/creature/bone/bone1",
-            "metal": "game:block/metal/ingot/{metal}",
-            "aged1": "game:block/wood/planks/aged1",
-            "wendigoskin1": "entity/land/wendigo/wendigoskin1"
+            "bone1": { "base": "game:block/creature/bone/bone1" },
+            "metal": { "base": "game:block/metal/ingot/{metal}" },
+            "aged1": { "base": "game:block/wood/planks/aged1" },
+            "wendigoskin1": { "base": "entity/land/wendigo/wendigoskin1" }
 		},
 		"*-primitive-*": {
-            "bone1": "game:block/creature/bone/bone1",
-            "aged1": "game:block/wood/planks/aged1",
-            "wendigoskin1": "entity/land/wendigo/wendigoskin1"
+            "bone1": { "base": "game:block/creature/bone/bone1" },
+			"sides": { "base": "game:block/cloth/burlap/sides"},
+            "wendigoskin1": { "base": "entity/land/wendigo/wendigoskin1" }
 		}
 	},
 	"attributes": {

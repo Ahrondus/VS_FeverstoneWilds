@@ -4,7 +4,6 @@
 	"variantgroups": [
 		{"code": "type", "states": ["freshwater", "saltwater", "hammerhead"] }
 	],
-	"tags": ["animal", "huntable", "habitat-water", "predator", "ferocious" ],
 	"hitboxSize": { "x": 1.2, "y": 1 },
 	"eyeHeight": 0.9,
 	"drops": [],
@@ -26,14 +25,14 @@
 									  { "base": "entity/water/bullshark/bullshark4" },
 									  { "base": "entity/water/bullshark/bullshark5" }
 									]
-	},
+		},
 		"behaviors": [
 			{ "code": "repulseagents" }, 
 			{ "code": "controlledphysics", "stepHeight": 5 }, 
 			{ "code": "interpolateposition" },
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
 			{ "code": "harvestable" },
-			{ "code": "despawn", "minPlayerDistance": 18, "minSeconds": 300, "belowLightLevel": 0 }
+			{ "code": "despawn", "minPlayerDistance": 18, "minSeconds": 300, "belowLightLevel": 8 }
 		],
 		"animations": [
 			{
