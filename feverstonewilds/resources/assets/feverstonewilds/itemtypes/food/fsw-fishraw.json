@@ -5,8 +5,8 @@
 			"properties": { 
 				"layoutByType": {
 					"fsw-fishraw-reef-discus": 'Quadrants',
-					"fsw-fishraw-freshwater-buromenfish": 'Quadrants',
-					"fsw-fishraw-saltwater-ghostfish": 'SingleCenter'
+					"fsw-fishraw-*-buromenfish": 'Quadrants',
+					"fsw-fishraw-*-ghostfish": 'SingleCenter'
 				},
 				"collisionBox": { "x1": 0, "y1": 0, "z1": 0, "x2": 1, "y2": 0.125, "z2": 1 } 
 			} 
@@ -15,18 +15,18 @@
 			"properties": {
 				"processTimeByType": {
 					"fsw-fishraw-reef-discus": 2,
-					"fsw-fishraw-freshwater-buromenfish": 3.5,
-					"fsw-fishraw-saltwater-ghostfish": 5
+					"fsw-fishraw-*-buromenfish": 3.5,
+					"fsw-fishraw-*-ghostfish": 5
 				},
 				"processedStacksByType": {
 					"fsw-fishraw-reef-discus": [{ "type": "item", "code": "fish-raw", "quantity": { "avg": 1 } }],
-					"fsw-fishraw-freshwater-buromenfish": [{ "type": "item", "code": "fish-raw", "quantity": { "avg": 4 } }],
-					"fsw-fishraw-saltwater-ghostfish": [{ "type": "item", "code": "fish-raw", "quantity": { "avg": 6 } }]
+					"fsw-fishraw-*-buromenfish": [{ "type": "item", "code": "fish-raw", "quantity": { "avg": 4 } }],
+					"fsw-fishraw-*-ghostfish": [{ "type": "item", "code": "fish-raw", "quantity": { "avg": 6 } }]
 				},
 				"toolDurabilityCostByType": {
 					"fsw-fishraw-reef-discus": 1,
-					"fsw-fishraw-freshwater-buromenfish": 2,
-					"fsw-fishraw-saltwater-ghostfish": 4
+					"fsw-fishraw-*-buromenfish": 2,
+					"fsw-fishraw-*-ghostfish": 4
 				},
 				"remainingItemByType": { 
 					"fishraw-reef-*": null,
@@ -137,7 +137,7 @@
 			"type": "Perish",
 			"freshHours": { "avg": 36 },
 			"transitionHours": { "avg": 24 },
-			"transitionedStack": { "type": "item", "code": "rot" },
+			"transitionedStack": { "type": "item", "code": "game:rot" },
 			"transitionRatioByType": {
 				"*-ghostfish": 4,
 				"*-buromenfish": 2,
