@@ -19,13 +19,13 @@
 	"attributes": {
 		"visibleDamageEffect": true,
 		"attachableToEntity": {
-			"clothescategoryByType": {
+			"categoryCodeByType": {
 				"armor-head-*": "armorhead",
 				"armor-body-*": "armorbody",
 				"armor-legs-*": "armorlegs"
 			},
 			"disableElementsByType": {
-				"armor-head-hunterblack": ["Hair tile upper part", "Ponytail1", "Hair", "hideme"]
+				"armor-head-hunterblack": ["hidehat", "ponytailhigh", "hair-uncovered", "sidehigh", "sidelow", "bangs", "Hair tile upper part"]
 			}
 		},		
 		"defaultProtLoss": {

@@ -73,10 +73,11 @@
             "foodCategories": [ "Grain", "Fruit" ],
             "weightedFoodTags": [ 
                 { "weight": 0.1, "code": "grass" },
-                { "weight": 0.85, "code": "tamingfeedbundle"},
-                { "weight": 0.45, "code": "carrot"},
+                { "weight": 0.25, "code": "nibbleCrop" },
                 { "weight": 0.3, "code": "cabbage"},
                 { "weight": 0.35, "code": "turnip"},
+                { "weight": 0.45, "code": "carrot"},
+                { "weight": 0.85, "code": "tamingfeedbundle"},
                 { "weight": 1, "code": "redapple"},
                 { "weight": 1, "code": "yellowapple"},
                 { "weight": 1, "code": "pinkapple"} 
@@ -125,38 +126,64 @@
                                     "RearSideAP", "RFrontAP", "LFrontAP", "TempGear1AP", "TempGear2AP", "TempGear3AP"]
         },
         "gait": {
-			"idleGait": "idle",
+			"idleGait": { "Land": "idle", "Sea": "swimidle" },
 			"gaits": [
 				{
 					"code": "walkback",
 					"movespeed": 0.011,
 					"backwards": true,
 					"yawMultiplier": 1,
-					"sound": "game:creature/hooved/trot"
+					"sound": "game:creature/hooved/trot",
+
+                    "animation": "walkback",
+                    "animationSpeed": 1.4,
+                    "weight": 10,
+                    "easeInSpeed": 1,
+                    "easeOutSpeed": 3,
+                    "blendMode": "Average"
 				},
 				{
 					"code": "idle",
-					"yawMultiplier": 1
+					"yawMultiplier": 1,
+
+                    "animation": "idle",
+                    "weight": 1
 				},
 				{
 					"code": "walk",
 					"movespeed": 0.019,
 					"yawMultiplier": 1.2,
-					"sound": "game:creature/hooved/trot"
+					"sound": "game:creature/hooved/trot",
+
+                    "animation": "Trot",
+                    "animationSpeedByType": {
+                        "*-shire": 1.25,
+                        "*-quarter": 1.6
+                    },
+                    "weight": 1,
+                    "blendMode": "Average"
 				},
 				{
 					"code": "trot",
 					"movespeed": 0.036,
 					"yawMultiplier": 0.90,
 					"fallbackGaitCode": "walk",
-					"sound": "game:creature/hooved/trot"
+					"sound": "game:creature/hooved/trot",
+                    
+                    "animation": "Trot",
+                    "blendMode": "Average",
+                    "animationSpeed": 1.25
 				},
 				{
 					"code": "canter",
 					"movespeed": 0.075,
 					"yawMultiplier": 0.82,
 					"fallbackGaitCode": "trot",
-					"sound": "game:creature/hooved/trot"
+					"sound": "game:creature/hooved/trot",
+
+                    "animation": "Canter",
+                    "blendMode": "Average",
+                    "animationSpeed": 1.1
 				},
 				{
 					"code": "sprint",
@@ -164,27 +191,59 @@
 					"yawMultiplier": 1,
 					"isSprint": true,
 					"fallbackGaitCode": "walk",
-					"sound": "game:creature/hooved/gallop"
+					"sound": "game:creature/hooved/gallop",
+                    
+                    "animation": "Gallop",
+                    "weight": 10,
+                    "animationSpeed": 2,
+                    "blendMode": "Average"
 				},
 				{
-					"code": "swim",
+					"code": "swimforth",
 					"movespeed": 0.02,
 					"yawMultiplier": 1,
-					"fallbackGaitCode": "idle"
+                    "environment": "Sea",
+
+                    "animation": "Swim",
+                    "animationSpeed": 1.2,
+                    "weight": 10,
+                    "blendMode": "Average"
+				},
+				{
+					"code": "swimidle",
+					"movespeed": 0.02,
+					"yawMultiplier": 1,
+                    "environment": "Sea",
+
+                    "animation": "Swim",
+                    "animationSpeed": 1.2,
+                    "weight": 10,
+                    "blendMode": "Average"
 				},
 				{
 					"code": "swimback",
 					"movespeed": 0.02,
 					"backwards": true,
 					"yawMultiplier": 1,
-					"fallbackGaitCode": "idle"
+                    "environment": "Sea",
+
+                    "animation": "Swim",
+                    "animationSpeed": 1.2,
+                    "weight": 10,
+                    "blendMode": "Average"
 				},
 				{
 					"code": "jump",
 					"movespeed": 0.1067,
 					"yawMultiplier": 1,
 					"fallbackGaitCode": "walk",
-					"sound": "game:creature/hooved/gallop"
+					"sound": "game:creature/hooved/gallop",
+
+                    "animation": "jump",
+                    "weight": 50,
+                    "easeOutSpeed": 5,
+                    "blendMode": "Average",
+                    "animationSpeed": 1.75
 				}
 			]
 		},
@@ -207,13 +266,6 @@
             "rideableGaitOrder": ["walkback", "idle", "walk", "sprint"],
             "controls": {
                 "walkback": {
-                    "animation": "walkback",
-                    "animationSpeed": 1.4,
-                    "weight": 10,
-                    "movespeed": 0.011,
-                    "easeInSpeed": 1,
-                    "easeOutSpeed": 3,
-                    "blendMode": "Average",
                     "riderAnim": {
                         "animation": "rideelk-walk",
                         "animationSpeed": 1,
@@ -266,14 +318,6 @@
                     }
                 },
                 "walk": {
-                    "animation": "Trot",
-                    "animationSpeedByType": {
-                        "*-shire": 1.25,
-                        "*-quarter": 1.6
-                    },
-                    "weight": 10,
-                    "movespeed": 0.019,
-                    "blendMode": "Average",
                     "riderAnim": {
                         "animation": "rideelk-walk",
                         "animationSpeed": 1,
@@ -299,11 +343,6 @@
                     }
                 },
                 "sprint": {
-                    "animation": "Gallop",
-                    "weight": 10,
-                    "animationSpeed": 2,
-                    "movespeed": 0.10,
-                    "blendMode": "Average",
                     "riderAnim": {
                         "animation": "rideelk-run",
                         "animationSpeed": 1.8,
@@ -329,12 +368,6 @@
                     }
                 },
                 "jump": {
-                    "animation": "jump",
-                    "weight": 50,
-                    "easeOutSpeed": 5,
-                    "blendMode": "Average",
-                    "animationSpeed": 1.75,
-                    "movespeed": 0.08,
                     "riderAnim": {
                         "animation": "rideelk-jump",
                         "animationSpeed": 1,
@@ -359,12 +392,32 @@
                         }
                     }
                 },
-                "swim": {
-					"animation": "walk",
-					"animationSpeed": 1,
-                    "movespeed": 0.02,
-					"weight": 10,
-					"blendMode": "Average",
+                "swimforth": {
+					"riderAnim": {
+						"animation": "rideelk-walk",
+						"animationSpeed": 1,
+						"weight": 1,	
+						"withFpVariant": true,
+						"blendMode": "Average", 
+						"elementWeight": {
+							"LowerTorso": 80,
+							"UpperTorso": 80,
+							"UpperFootR": 80,
+							"UpperFootL": 80,
+							"LowerFootR": 80,
+							"LowerFootL": 80
+						},
+						"elementBlendMode": {
+							"LowerTorso": "Average",
+							"UpperTorso": "Average",
+							"UpperFootR": "Average",
+							"UpperFootL": "Average",
+							"LowerFootR": "Average",
+							"LowerFootL": "Average"
+						}
+					}
+				},
+                "swimidle": {
 					"riderAnim": {
 						"animation": "rideelk-walk",
 						"animationSpeed": 1,
@@ -390,11 +443,6 @@
 					}
 				},
 				"swimback": {
-					"animation": "walkback",
-                    "movespeed": 0.01,
-					"animationSpeed": 1,
-					"weight": 10,
-					"blendMode": "Average",
 					"riderAnim": {
 						"animation": "rideelk-walk",
 						"animationSpeed": 1,
@@ -628,26 +676,22 @@
             {
                 "code": "walk",
                 "animation": "walk",
-                "blendMode": "Average",
-                "animationSpeed": 1.2
+                "blendMode": "Average"
             },
             {
                 "code": "trot",
                 "animation": "Trot",
-                "blendMode": "Average",
-                "animationSpeed": 1.25
+                "blendMode": "Average"
             },
             {
                 "code": "canter",
                 "animation": "Canter",
-                "blendMode": "Average",
-                "animationSpeed": 1.1
+                "blendMode": "Average"
             },
             {
                 "code": "gallop",
                 "animation": "Gallop",
-                "blendMode": "Average",
-                "animationSpeed": 1.5
+                "blendMode": "Average"
             },
 			{
 				"code": "jump",
