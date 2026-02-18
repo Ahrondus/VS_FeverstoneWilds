@@ -1,16 +1,20 @@
 {
 	"code": "stingray",
 	"class": "EntityFish",
+	"variantGroups": [ {"code": "habitat", "states": [ "freshwater", "saltwater" ] } ],
 	"hitboxSize": { "x": 1.2, "y": 1 },
 	"eyeHeight": 0.9,
-	"drops": [],
+	"drops": [ { "type": "item", "code": "stingray-{habitat}" } ],
 	"habitat": "underwater",
 	"attributes": {
 		"killedByInfoText": "feverstonewilds:deadcreature-stingray"
 	},
 	"client": {
 		"renderer": "Shape",
-		"size": 0.7,
+		"sizeByType": {
+			"*-freshwater": 0.55,
+			"*-saltwater": 0.85
+		},
 		"shape": { "base": "entity/water/stingray" },
 		"texture": { "base": "entity/water/stingray/stingrayskin1",
 		            "alternates": [ { "base": "entity/water/stingray/stingrayskin2" },

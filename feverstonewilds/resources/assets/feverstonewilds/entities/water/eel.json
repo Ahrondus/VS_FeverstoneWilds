@@ -1,13 +1,17 @@
 {
 	"code": "eel",
 	"class": "EntityFish",
+	"variantGroups": [ {"code": "habitat", "states": [ "freshwater", "saltwater" ] } ],
 	"hitboxSize": { "x": 1.2, "y": 1 },
 	"eyeHeight": 0.9,
-	"drops": [],
+	"drops": [ { "type": "item", "code": "eel-{habitat}" } ],
 	"habitat": "underwater",
 	"client": {
 		"renderer": "Shape",
-		"size": 0.7,
+		"sizeByType": {
+			"*-freshwater": 0.55,
+			"*-saltwater": 0.75
+		},
 		"shape": { "base": "entity/water/eel" },
 		"texture": { "base": "entity/water/eel/eelskin1",
 		            "alternates": [ { "base": "entity/water/eel/eelskin2" },
@@ -183,18 +187,24 @@
 			"worldgen": {
 				"TriesPerChunk": { "avg": 0.035, "var": 0 },
 				"tryOnlySurface": true,
-				"groupSize": { "dist": "verynarrowgaussian", "avg": 3, "var": 1 },
-				"insideBlockCodes": ["game:water-still-*", "game:saltwater-still-*"],
+				"groupSize": { "dist": "verynarrowgaussian", "avg": 1.5, "var": 0.5 },
+				"insideBlockCodesByType":{
+					"*-freshwater": ["game:water-still-*"], 
+					"*-saltwater": ["game:saltwater-still-*"]
+				},
 				"minTemp": -10,
 				"maxTemp": 30
 			},
 			"runtime": {
 				"group": "neutral",
-				"maxQuantity": 8,
+				"maxQuantity": 2,
 				"chance": 0.00001,
 				"tryOnlySurface": true,
-				"groupSize": { "dist": "verynarrowgaussian", "avg": 3, "var": 1 },
-				"insideBlockCodes": ["game:water-still-*", "game:saltwater-still-*"],
+				"groupSize": { "dist": "verynarrowgaussian", "avg": 1.5, "var": 0.5 },
+				"insideBlockCodesByType":{
+					"*-freshwater": ["game:water-still-*"], 
+					"*-saltwater": ["game:saltwater-still-*"]
+				},
 				"minTemp": -10,
 				"maxTemp": 30
 			}

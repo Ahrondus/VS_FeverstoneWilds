@@ -4,11 +4,14 @@
 	"variantGroups": [ {"code": "habitat", "states": [ "freshwater", "saltwater" ] } ],
 	"hitboxSize": { "x": 0.5, "y": 0.25 },
 	"eyeHeight": 0.2,
-	"drops": [],
+	"drops": [ { "type": "item", "code": "fsw-fishraw-{habitat}-buromenfish" } ],
 	"habitat": "Underwater",
 	"client": {
 		"renderer": "Shape",
-		"size": 0.7,
+		"sizeByType": {
+			"*-freshwater": 0.6,
+			"*-saltwater": 0.8
+		},
 		"shape": { "base": "entity/water/buromenfish" },
 		"texture": { "base": "entity/water/buromenfish/buromenfish1",
 		            "alternates": [ { "base": "entity/water/buromenfish/buromenfish2" },

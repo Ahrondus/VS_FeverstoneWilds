@@ -11,7 +11,7 @@
                       "horse-tamed-male-percheron", "horse-tamed-female-percheron",
                       "horse-tamed-male-arabian", "horse-tamed-female-arabian" ],
     "tagsByType": {
-        "*-tamed-*": [ "animal", "huntable", "habitat-land", "tamed", "adult" ],
+        "*-tamed-*": [ "animal", "huntable", "habitat-land", "tamed" ],
         "*": [ "animal", "huntable", "habitat-land", "adult" ]
     },
     "weight": 355,
@@ -132,10 +132,9 @@
 					"code": "walkback",
 					"movespeed": 0.011,
 					"backwards": true,
-					"yawMultiplier": 1,
 					"sound": "game:creature/hooved/trot",
 
-                    "animation": "walkback",
+                    "animation": "Walkback",
                     "animationSpeed": 1.4,
                     "weight": 10,
                     "easeInSpeed": 1,
@@ -144,9 +143,8 @@
 				},
 				{
 					"code": "idle",
-					"yawMultiplier": 1,
 
-                    "animation": "idle",
+                    "animation": "Idle",
                     "weight": 1
 				},
 				{
@@ -155,13 +153,11 @@
 					"yawMultiplier": 1.2,
 					"sound": "game:creature/hooved/trot",
 
-                    "animation": "Trot",
+                    "animation": "Walk",
                     "animationSpeedByType": {
                         "*-shire": 1.25,
                         "*-quarter": 1.6
-                    },
-                    "weight": 1,
-                    "blendMode": "Average"
+                    }
 				},
 				{
 					"code": "trot",
@@ -181,8 +177,11 @@
 					"fallbackGaitCode": "trot",
 					"sound": "game:creature/hooved/trot",
 
-                    "animation": "Canter",
-                    "blendMode": "Average",
+                    "animationByType": {
+                        "*-quarter": "Trot",
+                        "*-donkey": "Trot",
+                        "*-shire": "Canter"
+                    },
                     "animationSpeed": 1.1
 				},
 				{
@@ -190,18 +189,20 @@
 					"movespeed": 0.1067,
 					"yawMultiplier": 1,
 					"isSprint": true,
-					"fallbackGaitCode": "walk",
+					"fallbackGaitCode": "trot",
 					"sound": "game:creature/hooved/gallop",
                     
                     "animation": "Gallop",
                     "weight": 10,
                     "animationSpeed": 2,
-                    "blendMode": "Average"
+                    "blendMode": "Average",
+                    "easeOutSpeed": 20
 				},
 				{
 					"code": "swimforth",
 					"movespeed": 0.02,
 					"yawMultiplier": 1,
+                    "fallbackGaitCode": "swimidle",
                     "environment": "Sea",
 
                     "animation": "Swim",
@@ -225,6 +226,7 @@
 					"movespeed": 0.02,
 					"backwards": true,
 					"yawMultiplier": 1,
+                    "fallbackGaitCode": "swimidle",
                     "environment": "Sea",
 
                     "animation": "Swim",
@@ -239,7 +241,7 @@
 					"fallbackGaitCode": "walk",
 					"sound": "game:creature/hooved/gallop",
 
-                    "animation": "jump",
+                    "animation": "Jump",
                     "weight": 50,
                     "easeOutSpeed": 5,
                     "blendMode": "Average",
@@ -263,7 +265,10 @@
                     }
                 }
             ],
-            "rideableGaitOrder": ["walkback", "idle", "walk", "sprint"],
+            "rideableGaitOrder": {
+                "Land": ["walkback", "idle", "walk", "sprint"],
+                "Sea": ["swimback", "swimidle", "swimforth"]
+            },
             "controls": {
                 "walkback": {
                     "riderAnim": {
@@ -291,8 +296,6 @@
                     }
                 },
                 "idle": {
-                    "animation": "Idle",
-                    "weight": 1,
                     "riderAnim": {
                         "animation": "rideelk-idle",
                         "animationSpeed": 1,
@@ -365,22 +368,20 @@
                             "LowerFootR": "Average",
                             "LowerFootL": "Average"
                         }
-                    }
-                },
-                "jump": {
-                    "riderAnim": {
-                        "animation": "rideelk-jump",
-                        "animationSpeed": 1,
-                        "weight": 10,
+                    },
+                    "passengerAnim": {
+                        "animation": "rideelk-run-passenger",
+                        "animationSpeed": 1.2,
+                        "weight": 1,
                         "withFpVariant": true,
                         "blendMode": "Average", 
                         "elementWeight": {
-                            "LowerTorso": 160,
-                            "UpperTorso": 160,
-                            "UpperFootR": 160,
-                            "UpperFootL": 160,
-                            "LowerFootR": 160,
-                            "LowerFootL": 160
+                            "LowerTorso": 80,
+                            "UpperTorso": 80,
+                            "UpperFootR": 80,
+                            "UpperFootL": 80,
+                            "LowerFootR": 80,
+                            "LowerFootL": 80
                         },
                         "elementBlendMode": {
                             "LowerTorso": "Average",
@@ -466,7 +467,33 @@
 							"LowerFootL": "Average"
 						}
 					}
-				}
+				},
+                "jump": {
+                    "riderAnim": {
+                        "animation": "rideelk-jump",
+                        "animationSpeed": 1,
+                        "weight": 10,
+                        "withFpVariant": true,
+                        "blendMode": "Average", 
+                        "elementWeight": {
+                            "LowerTorso": 160,
+                            "UpperTorso": 160,
+                            "UpperFootR": 160,
+                            "UpperFootL": 160,
+                            "LowerFootR": 160,
+                            "LowerFootL": 160
+                        },
+                        "elementBlendMode": {
+                            "LowerTorso": "Average",
+                            "UpperTorso": "Average",
+                            "UpperFootR": "Average",
+                            "UpperFootL": "Average",
+                            "LowerFootR": "Average",
+                            "LowerFootL": "Average"
+                        }
+                    },
+                    "passengerAnim": null
+                }
             }
         },
         "ownable": {
@@ -673,6 +700,12 @@
 				"weight": 10,
 				"blendMode": "Average"
 			},
+            {
+                "code": "swim",
+                "animation": "Swim",
+                "supressDefaultAnimation": true,
+                "blendMode": "Average"
+            },
             {
                 "code": "walk",
                 "animation": "walk",

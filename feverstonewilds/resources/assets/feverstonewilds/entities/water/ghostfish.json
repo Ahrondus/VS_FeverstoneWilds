@@ -4,11 +4,14 @@
 	"variantGroups": [ {"code": "habitat", "states": [ "freshwater", "saltwater" ] } ],
 	"hitboxSize": { "x": 0.5, "y": 0.25 },
 	"eyeHeight": 0.2,
-	"drops": [],
+	"drops": [ { "type": "item", "code": "fsw-fishraw-{habitat}-ghostfish" } ],
 	"habitat": "Underwater",
 	"client": {
 		"renderer": "Shape",
-		"size": 0.7,
+		"sizeByType": {
+			"*-freshwater": 0.65,
+			"*-saltwater": 0.85
+		},
 		"shape": { "base": "entity/water/ghostfish" },
 		"texture": { "base": "entity/water/ghostfish/ghostfish" },
 		"behaviors": [
@@ -60,14 +63,6 @@
 			{ "code": "health", "maxhealth": 4 },
 			{ "code": "deaddecay", "hoursToDecay": 96, "decayedBlock": "carcass-tiny" },
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
-			{ "code": "harvestable", "drops": [
-					{
-						"type": "item", 
-						"code": "fish-raw", 
-						"quantity": { "avg": 4, "var": 2 } 
-					}
-				]
-			},
 			{ 
 				"code": "emotionstates",
 				"states": [
@@ -135,9 +130,9 @@
 			"worldgen": {
 				"TriesPerChunk": { "avg": 0.25, "var": 0 },
 				"tryOnlySurface": true,
-				"maxQuantity": 4,
+				"maxQuantity": 2,
 				"minLightLevel": 8,
-				"groupSize": { "dist": "verynarrowgaussian", "avg": 3, "var": 1 },
+				"groupSize": { "dist": "verynarrowgaussian", "avg": 1.5, "var": 0.5 },
 				"insideBlockCodesByType": {
 					"*-freshwater": ["game:water-still-*"],
 					"*-saltwater":["game:saltwater-still-*"]
@@ -148,10 +143,10 @@
 			"runtime": {
 				"group": "passive",
 				"chance": 0.004,
-				"maxQuantity": 4,
+				"maxQuantity": 3,
 				"tryOnlySurface": true,
 				"minLightLevel": 8,
-				"groupSize": { "dist": "verynarrowgaussian", "avg": 3, "var": 1 },
+				"groupSize": { "dist": "verynarrowgaussian", "avg": 1.5, "var": 0.5 },
 				"insideBlockCodesByType": {
 					"*-freshwater": ["game:water-still-*"],
 					"*-saltwater":["game:saltwater-still-*"]
