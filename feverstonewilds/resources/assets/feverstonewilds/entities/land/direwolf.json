@@ -106,6 +106,30 @@
 				"easeInSpeed": 4,
 				"easeOutSpeed": 4,
 				"blendMode": "average" 
+			},
+			{
+				"code": "walk", 
+				"animation": "Walk",
+                "animationSounds": [{"frame": 5, "range": 10, "location": "direwolf/paws-step*", "pitch": { "avg": 1.0, "var": 0.15 }, "volume": {"avg": 1.4}}, 
+                                    {"frame": 13, "range": 10, "location": "direwolf/paws-step*", "pitch": { "avg": 1.0, "var": 0.15 }, "volume": {"avg": 1.4}}, 
+                                    {"frame": 33, "range": 10, "location": "direwolf/paws-step*", "pitch": { "avg": 1.0, "var": 0.15 }, "volume": {"avg": 1.4}}, 
+                                    {"frame": 42, "range": 10, "location": "direwolf/paws-step*", "pitch": { "avg": 1.0, "var": 0.15 }, "volume": {"avg": 1.4}}]
+            },
+			{
+				"code": "run", 
+				"animation": "Run",
+                "animationSounds": [{"frame": 4, "range": 15, "location": "direwolf/paws-step*", "pitch": { "avg": 1.0, "var": 0.15 }, "volume": {"avg": 1.4}}, 
+                                    {"frame": 7, "range": 15, "location": "direwolf/paws-step*", "pitch": { "avg": 1.0, "var": 0.15 }, "volume": {"avg": 1.4}}, 
+                                    {"frame": 18, "range": 15, "location": "direwolf/paws-step*", "pitch": { "avg": 1.0, "var": 0.15 }, "volume": {"avg": 1.4}}, 
+                                    {"frame": 20, "range": 15, "location": "direwolf/paws-step*", "pitch": { "avg": 1.0, "var": 0.15 }, "volume": {"avg": 1.4}}]
+            },
+            {
+                "code": "canter", 
+				"animation": "Canter",
+                "animationSounds": [{"frame": 2, "range": 15, "location": "direwolf/paws-step*", "pitch": { "avg": 1.0, "var": 0.15 }, "volume": {"avg": 1.4}}, 
+                                    {"frame": 6, "range": 15, "location": "direwolf/paws-step*", "pitch": { "avg": 1.0, "var": 0.15 }, "volume": {"avg": 1.4}}, 
+                                    {"frame": 12, "range": 15, "location": "direwolf/paws-step*", "pitch": { "avg": 1.0, "var": 0.15 }, "volume": {"avg": 1.4}}, 
+                                    {"frame": 14, "range": 15, "location": "direwolf/paws-step*", "pitch": { "avg": 1.0, "var": 0.15 }, "volume": {"avg": 1.4}}]
 			}
         ]
     },

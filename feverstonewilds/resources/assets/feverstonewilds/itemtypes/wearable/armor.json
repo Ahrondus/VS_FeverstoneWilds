@@ -18,6 +18,13 @@
 	"behaviors": [ { "name": "Wearable" } ],
 	"attributes": {
 		"visibleDamageEffect": true,
+		"footStepSound":  "game:wearable/leather*",
+		"clothesCategoryByType": {
+			"armor-head-*": "armorhead",
+			"armor-body-*": "armorbody",
+			"armor-legs-*": "armorlegs"
+		},
+		"warmth": 1,
 		"attachableToEntity": {
 			"categoryCodeByType": {
 				"armor-head-*": "armorhead",
@@ -31,9 +38,6 @@
 		"defaultProtLoss": {
 			"perTierRelativeProtectionLoss": [ 0.03, 0.15 ],
 			"perTierFlatDamageReductionLoss": [ 0.1, 0.2 ]
-		},
-		"footStepSoundByType": {
-			"armor-body-hunterblack": "game:wearable/leather*"
 		},
 		"protectionModifiersByType": {
 			"*-hunterblack": {
@@ -60,9 +64,9 @@
 	},
 	"renderAlphaTest": 0.25,
 	"durabilityByType": {
-		"*-hunterblack": 900
+		"*-hunterblack": 450
 	},
-
+	"combustibleProps": { },
 	"fpHandTransformByType": {
 		"armor-head-*": {
 			"translation": {
@@ -287,5 +291,4 @@
 			"scale": 3.1
 		}
 	}
-
 }

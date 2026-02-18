@@ -24,13 +24,13 @@
 		"bonesword-reinforced-*": { "base": "item/tool/sword/bonesword-reinforced" }
 	},
 	"texturesByType": {
-		"*-reinforced-*": {
+		"bonesword-reinforced-{metal}": {
             "bone1": { "base": "game:block/creature/bone/bone1" },
             "metal": { "base": "game:block/metal/ingot/{metal}" },
             "aged1": { "base": "game:block/wood/planks/aged1" },
             "wendigoskin1": { "base": "entity/land/wendigo/wendigoskin1" }
 		},
-		"*-primitive-*": {
+		"bonesword-primitive-bone": {
             "bone1": { "base": "game:block/creature/bone/bone1" },
 			"sides": { "base": "game:block/cloth/burlap/sides"},
             "wendigoskin1": { "base": "entity/land/wendigo/wendigoskin1" }
@@ -84,7 +84,7 @@
 		{
 			"name": "GroundStorable",
 			"properties": {
-				"layout": 'WallHalves',
+				"layout": "WallHalves",
 				"wallOffYByType": {
 					"*": 1
 				},

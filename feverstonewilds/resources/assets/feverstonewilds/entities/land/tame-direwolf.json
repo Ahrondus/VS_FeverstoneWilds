@@ -447,18 +447,35 @@
                 "easeOutSpeed": 4,
                 "blendMode": "average"
             },
-            {
-                "code": "walk",
-                "animation": "walk",
+			{
+				"code": "walk", 
+				"animation": "Walk",
                 "blendMode": "average",
-                "animationSpeed": 0.8
+                "animationSpeed": 0.8,
+                "animationSounds": [{"frame": 5, "range": 10, "location": "direwolf/paws-step*", "pitch": { "avg": 1.0, "var": 0.15 }, "volume": {"avg": 1.4}}, 
+                                    {"frame": 13, "range": 10, "location": "direwolf/paws-step*", "pitch": { "avg": 1.0, "var": 0.15 }, "volume": {"avg": 1.4}}, 
+                                    {"frame": 33, "range": 10, "location": "direwolf/paws-step*", "pitch": { "avg": 1.0, "var": 0.15 }, "volume": {"avg": 1.4}}, 
+                                    {"frame": 42, "range": 10, "location": "direwolf/paws-step*", "pitch": { "avg": 1.0, "var": 0.15 }, "volume": {"avg": 1.4}}]
+            },
+			{
+				"code": "run", 
+				"animation": "Run",
+                "blendMode": "average",
+                "animationSpeed": 1.1,
+                "animationSounds": [{"frame": 4, "range": 15, "location": "direwolf/paws-step*", "pitch": { "avg": 1.0, "var": 0.15 }, "volume": {"avg": 1.4}}, 
+                                    {"frame": 7, "range": 15, "location": "direwolf/paws-step*", "pitch": { "avg": 1.0, "var": 0.15 }, "volume": {"avg": 1.4}}, 
+                                    {"frame": 18, "range": 15, "location": "direwolf/paws-step*", "pitch": { "avg": 1.0, "var": 0.15 }, "volume": {"avg": 1.4}}, 
+                                    {"frame": 20, "range": 15, "location": "direwolf/paws-step*", "pitch": { "avg": 1.0, "var": 0.15 }, "volume": {"avg": 1.4}}]
             },
             {
-                "code": "run",
-                "animation": "run",
+                "code": "canter", 
+				"animation": "Canter",
                 "blendMode": "average",
-                "animationSpeed": 1.1
-            },
+                "animationSounds": [{"frame": 2, "range": 15, "location": "direwolf/paws-step*", "pitch": { "avg": 1.0, "var": 0.15 }, "volume": {"avg": 1.4}}, 
+                                    {"frame": 6, "range": 15, "location": "direwolf/paws-step*", "pitch": { "avg": 1.0, "var": 0.15 }, "volume": {"avg": 1.4}}, 
+                                    {"frame": 12, "range": 15, "location": "direwolf/paws-step*", "pitch": { "avg": 1.0, "var": 0.15 }, "volume": {"avg": 1.4}}, 
+                                    {"frame": 14, "range": 15, "location": "direwolf/paws-step*", "pitch": { "avg": 1.0, "var": 0.15 }, "volume": {"avg": 1.4}}]
+			},
 			{
 				"code": "wounded-idle",
 				"animation": "wounded-idle",
