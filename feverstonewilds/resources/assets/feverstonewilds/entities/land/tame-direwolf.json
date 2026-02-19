@@ -73,62 +73,114 @@
             "selectionBoxes": ["HeadAP", "FaceAP", "NeckAP", "MidUpperAP", "RearUpperAP", "RearSideAP", "RFrontAP", "LFrontAP"]
         },
         "gait": {
-			"idleGait": "idle",
+			"idleGait": { "Land": "idle", "Sea": "swimidle" },
 			"gaits": [
 				{
 					"code": "walkback",
-					"movespeed": 0.011,
+					"movespeed": 0.013,
 					"backwards": true,
-					"yawMultiplier": 1,
-					"sound": "direwolf-walking"
+
+                    "animation": "walkback",
+                    "animationSpeed": 1.2,
+                    "weight": 10,
+                    "easeInSpeed": 1,
+                    "easeOutSpeed": 3,
+                    "blendMode": "Average"
 				},
 				{
 					"code": "idle",
-					"yawMultiplier": 1
+
+                    "animation": "Idle",
+                    "weight": 1
 				},
 				{
 					"code": "walk",
-					"movespeed": 0.019,
+					"movespeed": 0.018,
 					"yawMultiplier": 1.2,
-					"sound": "direwolf-walking"
+
+                    "animation": "Walk",
+                    "animationSpeed": 1.35,
+                    "weight": 10,
+                    "blendMode": "Average"
 				},
 				{
 					"code": "trot",
 					"movespeed": 0.036,
 					"yawMultiplier": 0.90,
-					"fallbackGaitCode": "walk"
+					"fallbackGaitCode": "walk",
+                    
+                    "animation": "Trot",
+                    "blendMode": "Average",
+                    "animationSpeed": 1.25
 				},
 				{
 					"code": "canter",
 					"movespeed": 0.075,
 					"yawMultiplier": 0.82,
-					"fallbackGaitCode": "trot"
+					"fallbackGaitCode": "trot",
+
+                    "animation": "Canter",
+                    "animationSpeed": 1.1
 				},
 				{
 					"code": "sprint",
-					"movespeed": 0.1067,
+					"movespeed": 0.11,
 					"yawMultiplier": 1,
 					"isSprint": true,
-					"fallbackGaitCode": "walk"
+					"fallbackGaitCode": "trot",
+                    
+                    "animation": "Run",
+                    "weight": 10,
+                    "animationSpeed": 2,
+                    "blendMode": "Average"
 				},
 				{
-					"code": "swim",
+					"code": "swimforth",
 					"movespeed": 0.02,
 					"yawMultiplier": 1,
-					"fallbackGaitCode": "idle"
+                    "fallbackGaitCode": "swimidle",
+                    "environment": "Sea",
+
+                    "animation": "Swim",
+                    "animationSpeed": 1.2,
+                    "weight": 10,
+                    "blendMode": "Average"
+				},
+				{
+					"code": "swimidle",
+					"movespeed": 0.02,
+					"yawMultiplier": 1,
+                    "environment": "Sea",
+
+                    "animation": "Swim",
+                    "animationSpeed": 1.2,
+                    "weight": 10,
+                    "blendMode": "Average"
 				},
 				{
 					"code": "swimback",
 					"movespeed": 0.02,
 					"backwards": true,
 					"yawMultiplier": 1,
-					"fallbackGaitCode": "idle"
+                    "fallbackGaitCode": "swimidle",
+                    "environment": "Sea",
+
+                    "animation": "Swim",
+                    "animationSpeed": 1.2,
+                    "weight": 10,
+                    "blendMode": "Average"
 				},
 				{
 					"code": "jump",
 					"movespeed": 0.1067,
 					"yawMultiplier": 1,
-					"fallbackGaitCode": "walk"
+					"fallbackGaitCode": "walk",
+
+                    "animation": "Jump",
+                    "weight": 50,
+                    "easeOutSpeed": 5,
+                    "blendMode": "Average",
+                    "animationSpeed": 1.75
 				}
 			]
 		},
@@ -142,16 +194,12 @@
                     }
                 }
             ],
-            "rideableGaitOrder": ["walkback", "idle", "walk", "sprint"],
+            "rideableGaitOrder": {
+                "Land": ["walkback", "idle", "walk", "sprint"],
+                "Sea": ["swimback", "swimidle", "swimforth"]
+            },
             "controls": {
                 "walkback": {
-                    "animation": "walkback",
-                    "animationSpeed": 1.2,
-                    "weight": 10,
-                    "movespeed": 0.013,
-                    "easeInSpeed": 1,
-                    "easeOutSpeed": 3,
-                    "blendMode": "Average",
                     "riderAnim": {
                         "animation": "rideelk-walk",
                         "animationSpeed": 1,
@@ -177,8 +225,6 @@
                     }
                 },
                 "idle": {
-                    "animation": "Idle",
-                    "weight": 1,
                     "riderAnim": {
                         "animation": "rideelk-idle",
                         "animationSpeed": 1,
@@ -204,11 +250,6 @@
                     }
                 },
                 "walk": {
-                    "animation": "Walk",
-                    "animationSpeed": 1.35,
-                    "weight": 10,
-                    "movespeed": 0.018,
-                    "blendMode": "Average",
                     "riderAnim": {
                         "animation": "rideelk-walk",
                         "animationSpeed": 1,
@@ -234,11 +275,6 @@
                     }
                 },
                 "sprint": {
-                    "animation": "Run",
-                    "weight": 10,
-                    "animationSpeed": 2,
-                    "movespeed": 0.11,
-                    "blendMode": "Average",
                     "riderAnim": {
                         "animation": "rideelk-run",
                         "animationSpeed": 1.8,
@@ -294,12 +330,32 @@
                         }
                     }
                 },
-                "swim": {
-                    "animation": "Swim",
-                    "animationSpeed": 1,
-                    "movespeed": 0.02,
-                    "weight": 10,
-                    "blendMode": "Average",
+                "swimforth": {
+                    "riderAnim": {
+                        "animation": "rideelk-walk",
+                        "animationSpeed": 1,
+                        "weight": 1,	
+                        "withFpVariant": true,
+                        "blendMode": "Average", 
+                        "elementWeight": {
+                            "LowerTorso": 80,
+                            "UpperTorso": 80,
+                            "UpperFootR": 80,
+                            "UpperFootL": 80,
+                            "LowerFootR": 80,
+                            "LowerFootL": 80
+                        },
+                        "elementBlendMode": {
+                            "LowerTorso": "Average",
+                            "UpperTorso": "Average",
+                            "UpperFootR": "Average",
+                            "UpperFootL": "Average",
+                            "LowerFootR": "Average",
+                            "LowerFootL": "Average"
+                        }
+                    }
+                },
+                "swimidle": {
                     "riderAnim": {
                         "animation": "rideelk-walk",
                         "animationSpeed": 1,
@@ -325,11 +381,6 @@
                     }
                 },
 				"swimback": {
-					"animation": "walkback",
-                    "movespeed": 0.01,
-					"animationSpeed": 1,
-					"weight": 10,
-					"blendMode": "Average",
 					"riderAnim": {
 						"animation": "rideelk-walk",
 						"animationSpeed": 1,
@@ -405,6 +456,13 @@
         ],
         "animations": [
             {
+				"code": "attack",
+				"animation": "Attack",
+				"animationSpeed": 2.2,
+				"weight": 10,
+				"blendMode": "AddAverage"
+			},
+            {
                 "code": "hurt",
                 "animation": "hurt",
                 "animationSpeed": 2.2,
@@ -446,6 +504,14 @@
                 "easeInSpeed": 4,
                 "easeOutSpeed": 4,
                 "blendMode": "average"
+            },
+            {
+                "code": "swim",
+                "animation": "Swim",
+                "animationSpeed": 1,
+                "movespeed": 0.02,
+                "weight": 10,
+                "blendMode": "Average"
             },
 			{
 				"code": "walk", 
