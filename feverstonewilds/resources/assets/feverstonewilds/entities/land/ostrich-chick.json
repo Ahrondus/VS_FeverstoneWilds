@@ -106,7 +106,9 @@
 			{ "code": "deaddecay", "hoursToDecay": 2 },
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
 			{ "code": "grow", "hoursToGrow": 128,
-				"adultEntityCodes": ["feverstonewilds:ostrich-female", "feverstonewilds:ostrich-male"]
+				"orPortionsEatenForGrowing": 10,
+				"fedAdultEntityCodes": [ "feverstonewilds:tame-ostrich-male", "feverstonewilds:tame-ostrich-female", "feverstonewilds:tame-ostrich-female" ],
+				"adultEntityCodes": ["feverstonewilds:ostrich-female", "feverstonewilds:ostrich-female", "feverstonewilds:ostrich-male"]
 			},
 			{ "code": "breathe" },
 			{ "code": "emotionstates",

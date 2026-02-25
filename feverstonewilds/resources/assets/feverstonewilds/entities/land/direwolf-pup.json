@@ -106,7 +106,9 @@
 			{ "code": "emotionstates",
 				"states": [ { "code": "alarmherdondamage", "chance": 1, "slot": 1, "priority": 1, "accumType": "max" } ] },
 			{  "code": "grow", "hoursToGrow": 300,
-				"adultEntityCodes": [ "feverstonewilds:direwolf-male", "feverstonewilds:direwolf-female" ] },
+                "orPortionsEatenForGrowing": 12,
+				"fedAdultEntityCodes": [ "feverstonewilds:tame-direwolf-male", "feverstonewilds:tame-direwolf-female", "feverstonewilds:tame-direwolf-female" ],
+				"adultEntityCodes": [ "feverstonewilds:direwolf-male", "feverstonewilds:direwolf-female", "feverstonewilds:direwolf-female" ] },
 			{ 
 				"code": "taskai",
 				"aiCreatureType": "LandCreature",

@@ -125,7 +125,9 @@
 			{ "code": "deaddecay", "hoursToDecay": 1, "decayedBlock": "carcass-small" },
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
 			{ "code": "grow", "hoursToGrow": 100,
-				"adultEntityCodes": [ "feverstonewilds:cockatrice-male", "feverstonewilds:cockatrice-female" ]
+				"orPortionsEatenForGrowing": 8,
+				"fedAdultEntityCodes": [ "feverstonewilds:tame-cockatrice-male", "feverstonewilds:tame-cockatrice-female", "feverstonewilds:tame-cockatrice-female" ],
+				"adultEntityCodes": [ "feverstonewilds:cockatrice-male", "feverstonewilds:cockatrice-female", "feverstonewilds:cockatrice-female" ]
 			},
 			{ "code": "breathe" },
 			{
