@@ -40,48 +40,91 @@
             "selectionBoxes": [ "HeadAP", "NeckAP", "MidUpperAP", "RearUpperAP" ]
         },
         "gait": {
-			"idleGait": "idle",
+			"idleGait": { "Land": "idle", "Sea": "swimidle" },
 			"gaits": [
 				{
 					"code": "walkback",
-					"movespeed": 0.011,
+					"movespeed": 0.015,
 					"backwards": true,
-					"yawMultiplier": 1
+					"yawMultiplier": 1,
+
+                    "animation": "walkback",
+                    "animationSpeed": 1.2,
+                    "weight": 10,
+                    "easeInSpeed": 1,
+                    "easeOutSpeed": 3,
+                    "blendMode": "Average"
 				},
 				{
 					"code": "idle",
-					"yawMultiplier": 1
+					
+                    "animation": "Idle",
+                    "weight": 1
 				},
 				{
 					"code": "walk",
-					"movespeed": 0.019,
-					"yawMultiplier": 1.2
+					"movespeed": 0.021,
+					"yawMultiplier": 1.2,
+					
+                    "animation": "Walk",
+                    "animationSpeed": 1.35,
+                    "weight": 10,
+                    "blendMode": "Average"
 				},
 				{
 					"code": "sprint",
-					"movespeed": 0.1467,
+					"movespeed": 0.14,
 					"yawMultiplier": 1,
 					"isSprint": true,
-					"fallbackGaitCode": "walk"
+					"fallbackGaitCode": "walk",
+					
+                    "animation": "Run",
+                    "weight": 10,
+                    "animationSpeed": 2,
+                    "blendMode": "Average"
 				},
 				{
-					"code": "swim",
-					"movespeed": 0.02,
+					"code": "swimforth",
+					"movespeed": 0.018,
 					"yawMultiplier": 1,
-					"fallbackGaitCode": "idle"
+					"fallbackGaitCode": "swimidle",
+					
+                    "animation": "Swim",
+                    "animationSpeed": 1.5,
+                    "weight": 10,
+                    "blendMode": "Average"
+				},
+				{
+					"code": "swimidle",
+					"yawMultiplier": 1,
+					
+                    "animation": "Swim",
+                    "animationSpeed": 1.5,
+                    "weight": 10,
+                    "blendMode": "Average"
 				},
 				{
 					"code": "swimback",
-					"movespeed": 0.02,
+					"movespeed": 0.014,
 					"backwards": true,
 					"yawMultiplier": 1,
-					"fallbackGaitCode": "idle"
+					"fallbackGaitCode": "swimidle",
+					
+                    "animation": "Swim",
+                    "animationSpeed": 1.5,
+                    "weight": 10,
+                    "blendMode": "Average"
 				},
 				{
 					"code": "jump",
-					"movespeed": 0.1067,
-					"yawMultiplier": 1,
-					"fallbackGaitCode": "walk"
+					"movespeed": 0.08,
+					"fallbackGaitCode": "walk",
+					
+                    "animation": "jump",
+                    "weight": 50,
+                    "easeOutSpeed": 5,
+                    "blendMode": "Average",
+                    "animationSpeed": 1.75
 				}
 			]
 		},
@@ -95,16 +138,12 @@
                     }
                 }
             ],
-            "rideableGaitOrder": ["walkback", "idle", "walk", "sprint"],
+            "rideableGaitOrder": {
+				"Land": [ "walkback", "idle", "walk", "sprint" ],
+				"Sea": [ "swimback", "swimidle", "swimforth" ]
+			},
             "controls": {
                 "walkback": {
-                    "animation": "walkback",
-                    "animationSpeed": 1.2,
-                    "weight": 10,
-                    "movespeed": 0.015,
-                    "easeInSpeed": 1,
-                    "easeOutSpeed": 3,
-                    "blendMode": "Average",
                     "riderAnim": {
                         "animation": "rideelk-walk",
                         "animationSpeed": 1,
@@ -130,8 +169,6 @@
                     }
                 },
                 "idle": {
-                    "animation": "Idle",
-                    "weight": 1,
                     "riderAnim": {
                         "animation": "rideelk-idle",
                         "animationSpeed": 1,
@@ -157,11 +194,6 @@
                     }
                 },
                 "walk": {
-                    "animation": "Walk",
-                    "animationSpeed": 1.35,
-                    "weight": 10,
-                    "movespeed": 0.021,
-                    "blendMode": "Average",
                     "riderAnim": {
                         "animation": "rideelk-walk",
                         "animationSpeed": 1,
@@ -187,11 +219,6 @@
                     }
                 },
                 "sprint": {
-                    "animation": "Run",
-                    "weight": 10,
-                    "animationSpeed": 2,
-                    "movespeed": 0.14,
-                    "blendMode": "Average",
                     "riderAnim": {
                         "animation": "rideelk-run",
                         "animationSpeed": 1.4,
@@ -217,12 +244,6 @@
                     }
                 },
                 "jump": {
-                    "animation": "jump",
-                    "weight": 50,
-                    "easeOutSpeed": 5,
-                    "blendMode": "Average",
-                    "animationSpeed": 1.75,
-                    "movespeed": 0.08,
                     "riderAnim": {
                         "animation": "rideelk-jump",
                         "animationSpeed": 1,
@@ -247,12 +268,32 @@
                         }
                     }
                 },
-                "swim": {
-                    "animation": "run",
-                    "animationSpeed": 1.5,
-                    "movespeed": 0.02,
-                    "weight": 10,
-                    "blendMode": "Average",
+                "swimforth": {
+                    "riderAnim": {
+                        "animation": "rideelk-walk",
+                        "animationSpeed": 1,
+                        "weight": 1,	
+                        "withFpVariant": true,
+                        "blendMode": "Average", 
+                        "elementWeight": {
+                            "LowerTorso": 80,
+                            "UpperTorso": 80,
+                            "UpperFootR": 80,
+                            "UpperFootL": 80,
+                            "LowerFootR": 80,
+                            "LowerFootL": 80
+                        },
+                        "elementBlendMode": {
+                            "LowerTorso": "Average",
+                            "UpperTorso": "Average",
+                            "UpperFootR": "Average",
+                            "UpperFootL": "Average",
+                            "LowerFootR": "Average",
+                            "LowerFootL": "Average"
+                        }
+                    }
+                },
+                "swimidle": {
                     "riderAnim": {
                         "animation": "rideelk-walk",
                         "animationSpeed": 1,
@@ -278,11 +319,6 @@
                     }
                 },
 				"swimback": {
-					"animation": "walkback",
-                    "movespeed": 0.01,
-					"animationSpeed": 1,
-					"weight": 10,
-					"blendMode": "Average",
 					"riderAnim": {
 						"animation": "rideelk-walk",
 						"animationSpeed": 1,
