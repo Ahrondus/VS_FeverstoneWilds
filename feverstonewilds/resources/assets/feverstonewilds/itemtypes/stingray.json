@@ -3,10 +3,8 @@
 	"class": "ItemCreature",
 	"maxstackssize": 1,
 	"variantgroups": [
-			{
-				"code": "type",
-				"states": ["stingray"]
-			}
+			{ "code": "type", "states": ["stingray"] },
+			{ "code": "habitat", "states": [ "freshwater", "saltwater" ] }
 		],
 	"shape": {
 		"base": "entity/water/stingray"

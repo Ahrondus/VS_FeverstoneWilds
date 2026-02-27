@@ -1,5 +1,4 @@
 using System;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using Vintagestory.API.Client;
@@ -8,8 +7,6 @@ using Vintagestory.API.Common.Entities;
 using Vintagestory.API.Config;
 using Vintagestory.API.Datastructures;
 using Vintagestory.API.MathTools;
-using Vintagestory.API.Server;
-using Vintagestory.API.Util;
 using Vintagestory.GameContent;
 
 namespace FeverstoneWilds
@@ -30,7 +27,7 @@ namespace FeverstoneWilds
 
     public class BlockEntityAnimalNestLarge : BlockEntityDisplay, IAnimalNest
     {
-        internal InventoryGeneric inventory;
+        protected InventoryGeneric inventory;
         public override InventoryBase Inventory => inventory;
         public string inventoryClassName = "nestbox";
         public override string InventoryClassName => inventoryClassName;
@@ -65,7 +62,7 @@ namespace FeverstoneWilds
             return occupier != null && occupier != entity;
         }
 
-        public void SetOccupier(Entity entity)
+        public virtual void SetOccupier(Entity entity)
         {
             if (occupier == entity)
             {
@@ -77,7 +74,7 @@ namespace FeverstoneWilds
 
         public string GetOccupier(Entity entity)
         {
-            if ( occupier != null && occupier.FirstCodePart(1) == "cockatrice")
+            if ( occupier != null && (occupier.FirstCodePart(1) == "cockatrice" || occupier.FirstCodePart() == "cockatrice"))
             {
                 return "cockatrice";
             }
@@ -87,7 +84,7 @@ namespace FeverstoneWilds
             }
         }
 
-        public float DistanceWeighting => 2 / (CountEggs() + 2);
+        public virtual float DistanceWeighting => 2 / (CountEggs() + 2);
 
 
         public virtual bool TryAddEgg(ItemStack egg)
@@ -121,7 +118,7 @@ namespace FeverstoneWilds
             return count;
         }
 
-        protected void On1500msTick(float dt)
+        protected virtual void On1500msTick(float dt)
         {
             if (timeToIncubate == 0) return;
 
@@ -131,7 +128,7 @@ namespace FeverstoneWilds
                 if (newTime > occupiedTimeLast)
                 {
                     timeToIncubate -= newTime - occupiedTimeLast;
-                    this.MarkDirty();
+                    MarkDirty();
                 }
             }
             occupiedTimeLast = newTime;
@@ -144,25 +141,23 @@ namespace FeverstoneWilds
                 for (int i = 0; i < inventory.Count; ++i)
                 {
                     TreeAttribute chickData = (TreeAttribute)inventory[i].Itemstack?.Attributes["chick"];
-                    if (chickData != null) continue;
+                    if (chickData == null) continue;
 
                     string chickCode = chickData.GetString("code");
-                    if (chickCode != null || chickCode == "") continue;
+                    if (chickCode == null || chickCode == "") continue;
 
                     EntityProperties childType = Api.World.GetEntityType(chickCode);
                     if (childType == null) continue;
                     Entity childEntity = Api.World.ClassRegistry.CreateEntity(childType);
                     if (childEntity == null) continue;
 
-                    childEntity.Pos.SetFrom(new EntityPos(this.Position.X + (rand.NextDouble() - 0.5f) / 5f, this.Position.Y, this.Position.Z + (rand.NextDouble() - 0.5f) / 5f, (float) rand.NextDouble() * GameMath.TWOPI));
+                    childEntity.Pos.SetFrom(new EntityPos(Position.X + (rand.NextDouble() - 0.5f) / 5f, Position.Y, Position.Z + (rand.NextDouble() - 0.5f) / 5f, (float) rand.NextDouble() * GameMath.TWOPI));
                     childEntity.Pos.Motion.X += (rand.NextDouble() - 0.5f) / 200f;
                     childEntity.Pos.Motion.Z += (rand.NextDouble() - 0.5f) / 200f;
 
-                    childEntity.Pos.SetFrom(childEntity.Pos);
                     childEntity.Attributes.SetString("origin", "reproduction");
                     childEntity.WatchedAttributes.SetInt("generation", chickData.GetInt("generation", 0));
-                    EntityAgent eagent = childEntity as EntityAgent;
-                    if (eagent != null) eagent.HerdId = chickData.GetLong("herdID", 0);
+                    if (childEntity is EntityAgent eagent) eagent.HerdId = chickData.GetLong("herdID", 0);
                     Api.World.SpawnEntity(childEntity);
 
                     inventory[i].Itemstack = null;
@@ -220,7 +215,7 @@ namespace FeverstoneWilds
                 if (eggsWithBlock >= 0)
                 {
                     Block emptyNest = api.World.GetBlock(new AssetLocation("feverstonewilds:"+Block.FirstCodePart()));
-                    api.World.BlockAccessor.ExchangeBlock(emptyNest.Id, this.Pos);
+                    api.World.BlockAccessor.ExchangeBlock(emptyNest.Id, Pos);
                     MarkDirty();
                 }
                 for (int i = 0; i < eggsWithBlock; ++i)
@@ -238,8 +233,10 @@ namespace FeverstoneWilds
 
         protected void CreateInventory(int capacity, ICoreAPI api)
         {
-            inventory = new InventoryGeneric(capacity, InventoryClassName, Pos?.ToString(), api);
-            inventory.Pos = this.Pos;
+            inventory = new InventoryGeneric(capacity, InventoryClassName, Pos?.ToString(), api)
+            {
+                Pos = Pos
+            };
             inventory.SlotModified += OnSlotModified;
         }
         
@@ -297,7 +294,7 @@ namespace FeverstoneWilds
                 {
                     int generation = tree.GetInt("gen" + i);
                     inventory[i].Itemstack = new ItemStack(worldForResolving.GetItem("egg-"+Block.FirstCodePart(1)+"-raw"));
-                    TreeAttribute chickTree = new TreeAttribute();
+                    TreeAttribute chickTree = new();
                     chickTree.SetString("code", chickCode);
                     chickTree.SetInt("generation", generation);
                     inventory[i].Itemstack.Attributes["chick"] = chickTree;
@@ -332,7 +329,7 @@ namespace FeverstoneWilds
                     {
                         SoundAttributes? sound = slot.Itemstack?.Block?.Sounds?.Place;
                         AssetLocation itemPlaced = slot.Itemstack?.Collectible?.Code;
-                        ItemStackMoveOperation op = new ItemStackMoveOperation(Api.World, EnumMouseButton.Left, 0, EnumMergePriority.AutoMerge, 1);
+                        ItemStackMoveOperation op = new(Api.World, EnumMouseButton.Left, 0, EnumMergePriority.AutoMerge, 1);
                         if (slot.TryPutInto(inventory[i], ref op) > 0)
                         {
                             Api.Logger.Audit(byPlayer.PlayerName + " put 1x" + itemPlaced + " into " + Block.Code + " at " + Pos);
@@ -419,9 +416,9 @@ namespace FeverstoneWilds
                 else if (timeToIncubate > 0)
                     dsc.AppendLine(Lang.Get("Incubation time remaining: {0:0} hours", timeToIncubate * 24));
 
-                if (!IsOccupiedClientside && Block.LastCodePart() == "5eggs" && (this.Block.FirstCodePart(1) == "cockatrice"))
+                if (!IsOccupiedClientside && eggCount >= inventory.Count && inventory[2].Itemstack.Collectible.Code.SecondCodePart() == "cockatrice")
                     dsc.AppendLine(Lang.Get("A broody Cockatrice is needed!"));
-                if (!IsOccupiedClientside && Block.LastCodePart() == "6eggs" && ((this.Block.FirstCodePart() == "ostrich") || (this.Block.FirstCodePart(1) == "ostrich")))
+                if (!IsOccupiedClientside && eggCount >= inventory.Count && inventory[2].Itemstack.Collectible.Code.SecondCodePart() == "ostrich" )
                     dsc.AppendLine(Lang.Get("A broody Ostrich is needed!"));
             }
             else if (eggCount > 0)
