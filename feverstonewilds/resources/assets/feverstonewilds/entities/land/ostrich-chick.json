@@ -211,8 +211,7 @@
 	"sounds": {
 		"hurt": "game:creature/chick/chick*",
 		"death": "game:creature/chick/chick*",
-		"idle": "game:creature/chick/chick*"
+		"idle": { "path": "game:creature/chick/chick*", "range": 16, "pitch": { "avg": 0.8, "var": 0.4 } }
 	},
-	"idleSoundRange": 12,
-	"idleSoundChance": 0.01
+	"idleSoundChance": 0.25
 }

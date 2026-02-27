@@ -583,6 +583,13 @@
 						"whenInEmotionState": "aggressiveondamage"
 					},
 					{
+						"code": "getoutofwater",
+						"priority": 1.65,
+						"movespeed": 0.015,
+						"animation": "Walk",
+						"animationSpeed": 2
+					},
+					{
 						"code": "seekblockandlay",
 						"enabledByType": { "*-female": true, "*-male": false },
 						"priority": 1.6,
@@ -604,23 +611,17 @@
 						"priorityForCancel": 1.65
 					},
 					{
-						"code": "getoutofwater",
-						"priority": 1.65,
-						"movespeed": 0.015,
-						"animation": "Walk",
-						"animationSpeed": 2
-					},
-					{
 						"code": "seekfoodandeat",
 						"movespeed": 0.004,
-						"priority": 1.4,
+						"priority": 1.5,
 						"animationSpeed": 1,
 						"animation": "Walk",
 						"eatAnimation": "Eat",
 						"eatSound": "game:creature/animal-eat-small",
 						"eatTime": 1.5,
 						"mincooldownHours": 1,
-						"maxcooldownHours": 4
+						"maxcooldownHours": 4,
+						"priorityForCancel": 1.6
 					},
 					{
 						"code": "wander", 
@@ -651,9 +652,7 @@
 						"maxcooldown": 120000,
 						"priorityForCancel": 1.25,
 						"animation": "Sit",
-						"whenNotInEmotionState": "aggressiveondamage",
-						"stopOnNearbyEntityCodes": ["player"],
-						"stopRange": 5
+						"whenNotInEmotionState": "aggressiveondamage"
 					},
 					{
 						"code": "idle",
@@ -667,7 +666,7 @@
 						"whenNotInEmotionState": "aggressiveondamage",
 						"duringDayTimeFrames": [ { "fromHour": 21, "toHour": 24 }, { "fromHour": 0, "toHour": 6 } ],
 						"stopOnNearbyEntityCodes": ["wolf-*", "bear-*", "direwolf-*"],
-						"stopRange": 6,
+						"stopRange": 8,
 						"stopOnHurt": true
 					},
 					{

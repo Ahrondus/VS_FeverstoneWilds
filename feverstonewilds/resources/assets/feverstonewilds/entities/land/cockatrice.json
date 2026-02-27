@@ -18,7 +18,9 @@
 		"killedByInfoText": "feverstonewilds:deadcreature-eaten-cockatrice",
 		"creatureDiet": {
 			"foodCategories": [ "Grain" ],
-			"foodTags": [ "meat" ],
+			"weightedFoodTags": [ 
+				{ "weight": 1, "code": "meat"},
+				{ "weight": 0.9, "code": "grain" } ],
 			"skipFoodTags": [ "rice" ]
 		},
 		"handbook": {
@@ -26,7 +28,8 @@
 		},
 		"trappable": {
 			"large": { "trapChance": 0.5, "trapDestroyChance": 0.01 }
-		}
+		},
+		"eggTypes": [ { "type": "item", "code": "feverstonewilds:egg-cockatrice-raw" } ]
 	},
 	"client": {
 		"renderer": "Shape",
@@ -49,6 +52,8 @@
 			"cockatrice-female": 0.95
 		},
 		"behaviors": [
+			{ "code": "multiplybase",
+				"enabledByType": { "*-female": true, "*-male": false } },
 			{ "code": "repulseagents" },
 			{ "code": "controlledphysics", "stepHeight": 1.1251 },
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
@@ -65,6 +70,15 @@
 				"animationSpeed": 2.2,
 				"weight": 10,
 				"blendMode": "addAverage"
+			},
+			{
+				"code": "eat",
+				"animation": "Eat", 
+				"animationSpeed": 1.5,
+				"weight": 4,
+				"easeOutSpeed": 8,
+				"easeInSpeed": 5,
+				"blendMode": "AddAverage" 
 			},
 			{
 				"code": "die",
@@ -112,6 +126,12 @@
 			}
 		},
 		"behaviors": [
+			{ "code": "multiplybase",
+				"enabledByType": { "*-female": true, "*-male": false },
+				"multiplyCooldownDaysMin": 0.5,
+				"multiplyCooldownDaysMax": 2.5,
+				"portionsEatenForMultiply": 7
+			},
 			{ "code": "repulseagents" },
 			{ "code": "controlledphysics", "stepHeight": 1.1251 },
 			{
@@ -177,7 +197,7 @@
 				]
 			},
 			{ "code": "taskai",
-			"aiCreatureType": "LandCreature",
+				"aiCreatureType": "LandCreature",
 				"aitasks": [
 					{
 						"code": "meleeattack",
@@ -197,31 +217,29 @@
 					{
 						"code": "seekentity",
 						"entityCodes": [ "drifter-*", "toad-*", "spider-*", "hare-*", "raccoon-*", "fox-*" ],
-						"priority": 1.5,
+						"priority": 1.9,
 						"mincooldown": 1000,
 						"maxcooldown": 1500,
 						"seekingRange": 25,
 						"movespeed": 0.05,
 						"animation": "Run",
-						"animationSpeed": 2.5,
-						"whenInEmotionState": "aggressiveondamage"
+						"animationSpeed": 2.5
 					},
 					{
 						"code": "seekentity",
 						"entityCodes": [ "player" ],
-						"priority": 1.5,
+						"priority": 1.8,
 						"mincooldown": 1000,
 						"maxcooldown": 1500,
 						"seekingRange": 20,
 						"movespeed": 0.055,
 						"animation": "Run",
-						"animationSpeed": 2.75,
-						"whenInEmotionState": "aggressiveondamage"
+						"animationSpeed": 2.75
 					},
 					{
 						"code": "fleeentity",
 						"entityCodes": [ "player", "bear-*" ],
-						"priority": 1.5,
+						"priority": 1.7,
 						"movespeed": 0.052,
 						"seekingRange": 12,
 						"animation": "Run",
@@ -232,17 +250,64 @@
 					{
 						"code": "followleadholder",
 						"minGeneration": 0,
-						"priority": 1.45,
+						"priority": 1.6,
 						"animation": "Run",
 						"animationSpeed": 2.25,
 						"movespeed": 0.045
 					},
 					{
 						"code": "getoutofwater",
-						"priority": 1.4,
+						"priority": 1.5,
 						"movespeed": 0.02,
 						"animation": "Run",
 						"animationSpeed": 2
+					},
+					{
+						"code": "seekblockandlay",
+						"enabledByType": { "*-female": true, "*-male": false },
+						"priority": 1.45,
+						"layTime": 2,
+						"chickCodes": ["cockatrice-chick"],
+            			"nestTypes": ["ground-large"],
+						"sitDays": 0.9,
+						"incubationDays": 3.6,
+						"movespeed": 0.012,
+						"animation": "Walk",
+						"mincooldownHours": 1,
+						"maxcooldownHours": 2,
+						"sitAnimation": "sleep",
+						"requiresNearbyEntityCode": "feverstonewilds:cockatrice-male",
+						"requiresNearbyEntityRange": 12,
+						"growthCapEntityCodes": ["feverstonewilds:cockatrice-chick", "feverstonewilds:cockatrice-female", "feverstonewilds:cockatrice-male"],
+						"failBlockCode": "feverstonewilds:egg-cockatrice-1",
+						"sound": "game:creature/chicken/hurt",
+						"priorityForCancel": 1.5
+					},
+					{
+						"code": "seekfoodandeat",
+						"movespeed": 0.006,
+						"priority": 1.4,
+						"eatSound": "game:creature/animal-eat-small",
+						"eatTime": 1.5,
+						"animationSpeed": 1.5,
+						"animation": "Walk",
+						"mincooldownHours": 1,
+						"maxcooldownHours": 4,
+						"priorityForCancel": 1.45
+					},
+					{
+						"code": "stayclosetoentity",
+						"priority": 1.39,
+						"enabledByType": {
+							"*-male": false,
+							"*": true
+						},
+						"entityCode": "feverstonewilds:cockatrice-male",
+						"movespeed": 0.03,
+						"maxDistance": 8,
+						"searchRange": 24,
+						"animationSpeed": 1.8,
+						"animation": "Run"
 					},
 					{
 						"code": "idle",
@@ -261,17 +326,6 @@
 						"stopOnNearbyentityCodes": [ "player" ],
 						"stopRange": 8,
 						"stopOnHurt": true
-					},
-					{
-						"code": "seekfoodandeat",
-						"movespeed": 0.006,
-						"priority": 1.35,
-						"eatSound": "game:creature/animal-eat-small",
-						"eatTime": 1.5,
-						"animationSpeed": 1.5,
-						"animation": "Walk",
-						"mincooldownHours": 1,
-						"maxcooldownHours": 4
 					},
 					{
 						"code": "idle",
@@ -311,10 +365,9 @@
 						"code": "wander",
 						"priority": 1.0,
 						"movespeed": 0.006,
-						"animationSpeed": 1.68,
+						"animationSpeed": 1.28,
 						"animation": "Walk",
-						"preferredLightLevel": 24,
-						"priorityForCancel": 1.37
+						"priorityForCancel": 1.35
 					},
 					{
 						"code": "idle",
@@ -325,7 +378,7 @@
 						"maxcooldown": 120000,
 						"priorityForCancel": 1.33,
 						"stopOnNearbyentityCodes": [ "player" ],
-						"stopRange": 5,
+						"stopRange": 7,
 						"stopOnHurt": true,
 						"animation": "sleep"
 					},
@@ -354,8 +407,8 @@
 						"var": 1
 					},
 					"insideBlockCodes": [ "game:air", "game:tallgrass-*", "game:snowlayer-1" ],
-					"minTemp": -10,
-					"maxTemp": 20,
+					"minTemp": -5,
+					"maxTemp": 25,
 					"minRain": 0.43,
 					"companions": [ "cockatrice-female", "cockatrice-chick" ]
 				},
@@ -371,8 +424,8 @@
 						"var": 1
 					},
 					"insideBlockCodes": [ "game:air", "game:tallgrass-*", "game:snowlayer-1" ],
-					"minTemp": -10,
-					"maxTemp": 20,
+					"minTemp": -5,
+					"maxTemp": 25,
 					"minRain": 0.43,
 					"companions": [ "cockatrice-female", "cockatrice-chick" ]
 				}

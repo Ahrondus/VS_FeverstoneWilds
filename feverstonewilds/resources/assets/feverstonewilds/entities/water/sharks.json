@@ -134,30 +134,21 @@
 						"entityCodes": ["player"],
 						"priority": 1.51,
 						"movespeed": 0.028,
-						"seekingRange": 10,
-						"belowTempSeekingRange": 25,
-						"belowTempThreshold": -5,
+						"seekingRange": 15,
 						"animation": "swim",
-						"leapAtTarget": true,
-						"leapAnimation": null,
 						"animationSpeed": 2.2,
-						"leapChance": 0.01,
-						"sound": "",
-						"whenNotInEmotionState": "saturated"
+						"sound": ""
 					},
 					{
 						"code": "seekentity",
 						"entityCodes": ["*"],
 						"priority": 1.49,
-						"movespeed": 0.1,
-						"seekingRange": 15,
+						"movespeed": 0.02,
+						"seekingRange": 25,
 						"animation": "swim",
-						"leapAtTarget": true,
-						"leapAnimation": null,
 						"animationSpeed": 2.2,
-						"leapChance": 0.01,
 						"sound": "",
-						"whenInEmotionState": "aggressiveondamage"
+						"whenNotInEmotionState": "saturated"
 					},
 					{
 						"code": "fishoutofwater", 
