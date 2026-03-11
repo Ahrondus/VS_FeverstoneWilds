@@ -28,18 +28,7 @@
 					"fsw-fishraw-*-buromenfish": 2,
 					"fsw-fishraw-*-ghostfish": 4
 				},
-				"remainingItemByType": { 
-					"fishraw-reef-*": null,
-					"*": {
-						"type": "item", 
-						"code": "bone-tiny", 
-						"quantityBytype": {
-							"*-discus": 1,
-							"*-buromenfish": 2,
-							"*-ghostfish": 3
-						}
-					}
-				},
+				"remainingItem": { "type": "item", "code": "bone-fish", "quantity": 1 },
 				"tool": "knife",
 				"processsingSound": "player/scrape",
 				"interactionHelpCode": "groundstoredaction-flay",
@@ -146,30 +135,20 @@
 		}]
 	},
 	"guiTransformByType": {
-		"fishraw-reef-clown-common-juvenile": {
+		"fishraw-reef-*": {
 			"rotation": { "x": 63, "y": 2, "z": -117 },
 			"origin": { "x": 0.7, "y": 0.16, "z": 0.42 },
 			"scale": 4.87
 		},
-		"fishraw-saltwater-haddock-common-juvenile": {
+		"fishraw-*-buromenfish": {
 			"rotation": { "x": 63, "y": 2, "z": -117 },
 			"origin": { "x": 0.5, "y": 0.09, "z": 0.52 },
 			"scale": 2.99
 		},
-		"fishraw-saltwater-mahi-mahi-common-juvenile": {
+		"fishraw-*-ghostfish": {
 			"rotation": { "x": 70, "y": 1, "z": -113 },
 			"origin": { "x": 0.34, "y": 0.06, "z": 0.58 },
 			"scale": 2.99
-		},
-		"fishraw-saltwater-coelacanth-common-juvenile": {
-			"rotation": { "x": 70, "y": 1, "z": -113 },
-			"origin": { "x": 0.5, "y": 0.13, "z": 0.51 },
-			"scale": 2.99
-		},
-		"fishraw-reef-tang-banded-juvenile": {
-			"rotation": { "x": 63, "y": 2, "z": -117 },
-			"origin": { "x": 0.7, "y": 0.19, "z": 0.42 },
-			"scale": 4.18
 		}
 	},	
 	"tpHandTransformByType": {
@@ -179,59 +158,35 @@
 			"origin": { "x": 0.5, "y": 0.2, "z": 0.5 },
 			"scale": 1
 		},
-		"fishraw-saltwater-anchovy-*": {
+		"fishraw-*-buromenfish": {
 			"translation": { "x": -0.27, "y": -0.25, "z": -0.4 },
 			"rotation": { "x": -86, "y": 0, "z": 174 },
 			"origin": { "x": 0.5, "y": 0.2, "z": 0.5 },
 			"scale": 1
 		},
-		"fishraw-saltwater-menhaden-*": {
+		"fishraw-*-ghostfish": {
 			"translation": { "x": -0.27, "y": -0.25, "z": -0.4 },
-			"rotation": { "x": -86, "y": 0, "z": 174 },
-			"origin": { "x": 0.5, "y": 0.2, "z": 0.5 },
-			"scale": 1
-		},
-		"fishraw-saltwater-mackerel-*": {
-			"translation": { "x": -0.13, "y": -0.25, "z": -0.4 },
-			"rotation": { "x": -86, "y": 0, "z": 174 },
-			"origin": { "x": 0.5, "y": 0.2, "z": 0.5 },
-			"scale": 1
-		},
-		"fishraw-saltwater-herring-*": {
-			"translation": { "x": -0.13, "y": -0.25, "z": -0.4 },
 			"rotation": { "x": -86, "y": 0, "z": 174 },
 			"origin": { "x": 0.5, "y": 0.2, "z": 0.5 },
 			"scale": 1
 		}
 	},
 	"tpOffHandTransformByType": {
-		"fishraw-saltwater-sturgeon-*": {
+		"fishraw-reef-*": {
 			"translation": { "x": -0.1, "y": -0.25, "z": -0.55 },
 			"rotation": { "x": 76, "y": 0, "z": 171 },
 			"origin": { "x": 0.5, "y": 0.2, "z": 0.5 },
 			"scale": 1
 		},
-		"fishraw-saltwater-barracuda-*": {
+		"fishraw-*-buromenfish": {
 			"translation": { "x": -0.1, "y": -0.25, "z": -0.55 },
 			"rotation": { "x": 76, "y": 0, "z": 171 },
 			"origin": { "x": 0.5, "y": 0.2, "z": 0.5 },
 			"scale": 1
 		},
-		"fishraw-saltwater-herring-*": {
+		"fishraw-*-ghostfish": {
 			"translation": { "x": -0.12, "y": -0.22, "z": -0.58 },
 			"rotation": { "x": 85, "y": 0, "z": 171 },
-			"origin": { "x": 0.5, "y": 0.2, "z": 0.5 },
-			"scale": 1
-		},
-		"fishraw-saltwater-mackerel-*": {
-			"translation": { "x": -0.12, "y": -0.22, "z": -0.58 },
-			"rotation": { "x": 85, "y": 0, "z": 171 },
-			"origin": { "x": 0.5, "y": 0.2, "z": 0.5 },
-			"scale": 1
-		},
-		"@fishraw-saltwater-perch-*": {
-			"translation": { "x": -0.23, "y": -0.22, "z": -0.59 },
-			"rotation": { "x": 86, "y": 0, "z": 171 },
 			"origin": { "x": 0.5, "y": 0.2, "z": 0.5 },
 			"scale": 1
 		}
