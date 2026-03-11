@@ -14,7 +14,7 @@
         "*-tamed-*": [ "animal", "huntable", "habitat-land", "tamed" ],
         "*": [ "animal", "huntable", "habitat-land", "adult" ]
     },
-    "weight": 355,
+    "weight": 455,
     "hitBoxSizeByType": {
         "*-male-percheron": { "x": 1.75, "y": 1.9 },
         "*-female-percheron": { "x":1.65, "y": 1.9 },
@@ -126,6 +126,7 @@
                                     "RearSideAP", "RFrontAP", "LFrontAP", "TempGear1AP", "TempGear2AP", "TempGear3AP"]
         },
         "gait": {
+            "enabledByType": { "*-tamed-*": true, "*": false },
 			"idleGaits": { "Land": "idle", "Sea": "swimidle" },
 			"gaits": [
 				{
@@ -250,10 +251,11 @@
 			]
 		},
         "rideable": {
+            "enabledByType": { "*-tamed-*": true, "*": false },
             "interactMountAnySeat": false,
             "seats": [
                 { "apName": "Rider", "selectionBox": "MidUpperAP", "bodyYawLimit": 0.2, "controllable": true,
-                    "mountOffsetByType": {
+                    "riderOffsetByType": {
                         "*-female-shire": { "x": 0, "y": -0.75, "z": 0 },
                         "*-male-shire": { "x": 0, "y": -0.7, "z": 0 },
 
