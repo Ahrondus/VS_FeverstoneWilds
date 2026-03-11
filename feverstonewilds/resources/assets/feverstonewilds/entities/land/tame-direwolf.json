@@ -136,8 +136,7 @@
 				},
 				{
 					"code": "swimforth",
-					"movespeed": 0.02,
-					"yawMultiplier": 1,
+					"movespeed": 0.03,
                     "fallbackGaitCode": "swimidle",
                     "environment": "Sea",
 
@@ -148,8 +147,7 @@
 				},
 				{
 					"code": "swimidle",
-					"movespeed": 0.02,
-					"yawMultiplier": 1,
+					"movespeed": 0.0,
                     "environment": "Sea",
 
                     "animation": "Swim",
@@ -159,9 +157,8 @@
 				},
 				{
 					"code": "swimback",
-					"movespeed": 0.02,
+					"movespeed": 0.015,
 					"backwards": true,
-					"yawMultiplier": 1,
                     "fallbackGaitCode": "swimidle",
                     "environment": "Sea",
 
@@ -173,7 +170,6 @@
 				{
 					"code": "jump",
 					"movespeed": 0.1067,
-					"yawMultiplier": 1,
 					"fallbackGaitCode": "walk",
 
                     "animation": "Jump",

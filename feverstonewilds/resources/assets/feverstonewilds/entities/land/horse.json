@@ -174,7 +174,7 @@
 				{
 					"code": "canter",
 					"movespeed": 0.075,
-					"yawMultiplier": 0.82,
+					"yawMultiplier": 1,
 					"fallbackGaitCode": "trot",
 					"sound": "game:creature/hooved/trot",
 
@@ -188,8 +188,7 @@
 				{
 					"code": "sprint",
 					"movespeed": 0.1067,
-					"yawMultiplier": 1,
-					"isSprint": true,
+					"yawMultiplier": 0.8,
 					"fallbackGaitCode": "trot",
 					"sound": "game:creature/hooved/gallop",
                     
@@ -202,7 +201,6 @@
 				{
 					"code": "swimforth",
 					"movespeed": 0.02,
-					"yawMultiplier": 1,
                     "fallbackGaitCode": "swimidle",
                     "environment": "Sea",
 
@@ -213,8 +211,7 @@
 				},
 				{
 					"code": "swimidle",
-					"movespeed": 0.02,
-					"yawMultiplier": 1,
+					"movespeed": 0.0,
                     "environment": "Sea",
 
                     "animation": "Swim",
@@ -224,9 +221,8 @@
 				},
 				{
 					"code": "swimback",
-					"movespeed": 0.02,
+					"movespeed": 0.01,
 					"backwards": true,
-					"yawMultiplier": 1,
                     "fallbackGaitCode": "swimidle",
                     "environment": "Sea",
 
@@ -244,7 +240,7 @@
 
                     "animation": "Jump",
                     "weight": 50,
-                    "easeOutSpeed": 5,
+                    "easeOutSpeed": 15,
                     "blendMode": "Average",
                     "animationSpeed": 1.75
 				}

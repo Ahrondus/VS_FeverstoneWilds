@@ -79,38 +79,58 @@
                                     "RearSideAP", "RFrontAP", "LFrontAP", "TempGear1AP", "TempGear2AP", "TempGear3AP"]
         },
         "gait": {
-			"idleGait": "idle",
+			"idleGaits": { "Land": "idle", "Sea": "swimidle" },
 			"gaits": [
 				{
 					"code": "walkback",
 					"movespeed": 0.011,
 					"backwards": true,
-					"yawMultiplier": 1,
-					"sound": "game:creature/hooved/trot"
+					"sound": "game:creature/hooved/trot",
+
+                    "animation": "walkback",
+                    "animationSpeed": 1.2,
+                    "weight": 10,
+                    "easeInSpeed": 1,
+                    "easeOutSpeed": 3,
+                    "blendMode": "Average"
 				},
 				{
 					"code": "idle",
-					"yawMultiplier": 1
+
+                    "animation": "Idle",
+                    "weight": 1
 				},
 				{
 					"code": "walk",
 					"movespeed": 0.019,
 					"yawMultiplier": 1.2,
-					"sound": "game:creature/hooved/trot"
+					"sound": "game:creature/hooved/trot",
+
+                    "animation": "Walk",
+                    "animationSpeed": 1.35,
+                    "weight": 10,
+                    "blendMode": "Average"
 				},
 				{
 					"code": "trot",
 					"movespeed": 0.036,
 					"yawMultiplier": 0.90,
 					"fallbackGaitCode": "walk",
-					"sound": "game:creature/hooved/trot"
+					"sound": "game:creature/hooved/trot",
+                    
+                    "animation": "Trot",
+                    "blendMode": "Average",
+                    "animationSpeed": 1.25
 				},
 				{
 					"code": "canter",
 					"movespeed": 0.075,
 					"yawMultiplier": 0.82,
 					"fallbackGaitCode": "trot",
-					"sound": "game:creature/hooved/trot"
+					"sound": "game:creature/hooved/trot",
+
+                    "animation": "Canter",
+                    "animationSpeed": 1.1
 				},
 				{
 					"code": "sprint",
@@ -118,29 +138,52 @@
 					"yawMultiplier": 1,
 					"isSprint": true,
 					"fallbackGaitCode": "walk",
-					"sound": "game:creature/hooved/gallop"
+					"sound": "game:creature/hooved/gallop",
+                    
+                    "animation": "Run",
+                    "weight": 10,
+                    "animationSpeed": 2,
+                    "blendMode": "Average"
 				},
 				{
-					"code": "swim",
+					"code": "swimforth",
 					"movespeed": 0.02,
-					"yawMultiplier": 1,
-					"fallbackGaitCode": "idle",
-					"sound": "game:creature/hooved/gallop"
+                    "fallbackGaitCode": "swimidle",
+                    "environment": "Sea",
+
+                    "animation": "Swim",
+                    "animationSpeed": 1.2,
+                    "weight": 10,
+                    "blendMode": "Average"
+				},
+				{
+					"code": "swimidle",
+					"movespeed": 0.02,
+                    "environment": "Sea",
+
+                    "animation": "Swim",
+                    "animationSpeed": 1.2,
+                    "weight": 10,
+                    "blendMode": "Average"
 				},
 				{
 					"code": "swimback",
 					"movespeed": 0.02,
 					"backwards": true,
-					"yawMultiplier": 1,
-					"fallbackGaitCode": "idle",
-					"sound": "game:creature/hooved/gallop"
+                    "fallbackGaitCode": "swimidle",
+                    "environment": "Sea",
+
+                    "animation": "Swim",
+                    "animationSpeed": 1.2,
+                    "weight": 10,
+                    "blendMode": "Average"
 				},
 				{
 					"code": "jump",
 					"movespeed": 0.1067,
-					"yawMultiplier": 1,
-					"fallbackGaitCode": "walk",
-					"sound": "game:creature/hooved/gallop"
+					"weight": 50,
+                    "easeOutSpeed": 5,
+					"fallbackGaitCode": "walk"
 				}
 			]
 		},
@@ -154,7 +197,10 @@
                     }
                 }
             ],
-            "rideableGaitOrder": ["walkback", "idle", "walk", "sprint"],
+            "rideableGaitOrder": {
+                "Land": ["walkback", "idle", "walk", "sprint"],
+                "Sea": ["swimback", "swimidle", "swimforth"]
+            },
             "controls": {
                 "idle": {
                     "animation": "Idle",
