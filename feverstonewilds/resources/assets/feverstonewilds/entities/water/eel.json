@@ -25,7 +25,6 @@
 			{ "code": "controlledphysics", "stepHeight": 3 }, 
 			{ "code": "interpolateposition" },
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
-			{ "code": "harvestable" },
 			{ "code": "despawn", "minPlayerDistance": 18, "minSeconds": 300, "belowLightLevel": 8 }
 		],
 		"animations": [
@@ -69,14 +68,6 @@
 			{ "code": "health", "maxhealth": 15 },
 			{ "code": "deaddecay", "hoursToDecay": 96 },
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
-			{ "code": "harvestable", "drops": [
-					{
-						"type": "item", 
-						"code": "fish-raw", 
-						"quantity": { "avg": 10, "var": 3 } 
-					}
-				]
-			},
 			{ 
 				"code": "emotionstates",
 				"states": [

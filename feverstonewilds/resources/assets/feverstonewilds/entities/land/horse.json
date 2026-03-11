@@ -592,7 +592,8 @@
         "behaviors": [ 
                 { "code": "multiply",
                     "enabledByType": { "*-female-*": true, "*": false } },
-                { "code": "gait" },
+                { "code": "gait",
+                    "enabledByType": { "*-tamed": true, "*-wild": false } },
                 { "code": "rideable",
                     "enabledByType": { "*-tamed-*": true, "*": false } },
                 { "code": "mouthinventory",
@@ -835,7 +836,8 @@
                     "multiplyCooldownDaysMax": 28,
                     "portionsEatenForMultiply": 14
                 },
-                { "code": "gait" },
+                { "code": "gait",
+                    "enabledByType": { "*-tamed-*": true, "*": false } },
                 { "code": "rideable",
                     "enabledByType": { "*-tamed-*": true, "*": false } },
                 { "code": "mouthinventory",
