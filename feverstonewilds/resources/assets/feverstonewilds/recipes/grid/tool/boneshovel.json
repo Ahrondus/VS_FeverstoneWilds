@@ -1,0 +1,27 @@
+[
+    {
+        "ingredientPattern": "KI_,_T_,_B_",
+        "ingredients": {
+            "B": { "type": "item", "code": "game:bone", "quantity": 2 },
+            "I": { "type": "item", "code": "feverstonewilds:bone-big", "quantity": 1 },
+            "T": { "type": "item", "code": "game:flaxtwine", "quantity": 1 },
+            "K": { "type": "item", "code": "game:knife-*", "isTool": true }
+        },
+        "width": 3,
+        "height": 3,
+        "output": { "type": "item", "code": "feverstonewilds:boneshovel-primitive-bone", "quantity": 1 }
+    },
+    {
+        "ingredientPattern": "HBM,_S_,_L_",
+        "ingredients": {
+            "M": { "type": "item", "code": "game:metalnailsandstrips-*", "name": "metal", "allowedVariants": ["copper", "tinbronze", "bismuthbronze", "blackbronze", "iron", "meteoriciron", "steel"], "quantity": 2 },
+            "S": { "type": "item", "code": "feverstonewilds:boneshovel-primitive-bone", "quantity": 1 },
+            "L": { "type": "item", "code": "game:leather-normal-plain", "quantity": 1 },
+            "H": { "type": "item", "code": "game:hammer-*", "isTool": true },
+            "B": { "type": "item", "code": "game:bone", "quantity": 2 }
+        },
+        "width": 3,
+        "height": 3,
+        "output": { "type": "item", "code": "feverstonewilds:boneshovel-reinforced-{metal}", "quantity": 1 }
+    }
+]

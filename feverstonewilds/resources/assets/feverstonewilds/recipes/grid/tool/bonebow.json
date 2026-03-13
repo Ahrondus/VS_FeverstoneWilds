@@ -4,11 +4,11 @@
         "ingredients": {
             "B": { "type": "item", "code": "game:bone", "quantity": 2 },
             "I": { "type": "item", "code": "feverstonewilds:bone-big", "quantity": 1 },
-            "T": { "type": "item", "code": "{bowstring}", "quantity": 1 },
+            "T": { "type": "item", "code": "game:{bowstring}", "quantity": 1 },
             "K": { "type": "item", "code": "game:knife-*", "isTool": true }
         },
         "allowedVariants": {
-            "bowstring": [ "game:flaxtwine", "game:rope" ]
+            "bowstring": [ "flaxtwine", "rope" ]
         },
         "width": 3,
         "height": 3,

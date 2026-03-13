@@ -1,0 +1,203 @@
+{
+	"code": "boneshovel",
+	"tags": ["tool", "tool-shovel"],
+	"damagedby": ["blockbreaking", "attacking"],
+	"tool": "shovel",
+	"variantgroups": [
+		{ "code": "type", "states": ["primitive", "reinforced" ] },
+		{ "code": "metal", "states": [ "bone", "copper", "tinbronze", "bismuthbronze", "blackbronze", "gold", "silver", "iron", "meteoriciron", "steel" ] }
+	],
+	"allowedVariants": [
+		"boneshovel-reinforced-copper",
+		"boneshovel-reinforced-tinbronze",
+		"boneshovel-reinforced-bismuthbronze",
+		"boneshovel-reinforced-blackbronze",
+		"boneshovel-reinforced-gold",
+		"boneshovel-reinforced-silver",
+		"boneshovel-reinforced-iron",
+		"boneshovel-reinforced-meteoriciron",
+		"boneshovel-reinforced-steel",
+        "boneshovel-primitive-bone"
+	],
+	"shapeByType": {
+		"boneshovel-primitive-bone": { "base": "item/tool/shovel/boneshovel" },
+		"boneshovel-reinforced-*": { "base": "item/tool/shovel/boneshovel-reinforced" }
+	},
+	"texturesByType": {
+		"boneshovel-reinforced-{metal}": {
+            "metal": { "base": "game:block/metal/ingot/{metal}" },
+            "wendigoskin1": { "base": "entity/land/wendigo/wendigoskin1" }
+		},
+		"boneshovel-primitive-bone": {
+            "string": { "base": "game:item/resource/string" },
+			"handle": { "base": "game:item/tool/handle" },
+            "wendigoskin1": { "base": "entity/land/wendigo/wendigoskin1" }
+		}
+	},
+	"attributes": {
+		"handbook": {
+			"groupBy": ["boneshovel-*"]
+		},
+		"toolrackTransformByType": {
+			"boneshovel-*": {
+				"rotation": { "y": 180, "z": 1 },
+				"translation": { "x": -0.1, "y": 0.6 },
+				"scale": 1.25
+			}
+		},
+		"groundStorageTransformByType": {
+			"boneshovel-*": {
+				"translation": { "x": 0, "y": 0.77, "z": -0.18 },
+				"rotation": { "x": 22, "y": 88, "z": -87 },
+				"scale": 0.88
+			}
+		},
+		"antlerMountable": true,
+		"onAntlerMountTransformByType": {
+			"boneshovel-*": {
+				"translation": { "x": -0.45, "y": 0.5, "z": -0.08 },
+				"rotation": { "x": -90, "y": 0, "z": -90 },
+				"origin": { "x": 0.5, "y": 0, "z": 0.5 },
+				"scale": 0.8
+			}
+		},
+		"attachableToEntity": {
+			"categoryCode": "toolholding"
+		}
+	},
+	"behaviors": [
+		{
+			"name": "GroundStorable",
+			"properties": {
+				"layout": "WallHalves",
+				"wallOffYByType": {
+					"*": 2
+				},
+				"ctrlKey": true,
+				"selectionBox": { "x1": 0, "y1": 0, "z1": 0, "x2": 1, "y2": 0.1, "z2": 1 },
+				"collisionBox": { "x1": 0, "y1": 0, "z1": 0, "x2": 0, "y2": 0, "z2": 0 }
+			}
+		},
+		{ "name": "Buffable" }
+	],
+	"heldTpIdleAnimation": "shovelidle",
+	"heldRightReadyAnimation": "shovelready",
+	"heldTpHitAnimation": "shoveldig",
+	"heldTpUseAnimation": "interactStaticLong",
+	"miningspeedbytype": {
+		"*-primitive-bone": {
+			"soil": 3.15,
+			"sand": 3.15,
+			"gravel": 2.4,
+			"snow": 2.4
+		},
+		"*-copper": {
+			"soil": 3.4,
+			"sand": 3.4,
+			"gravel": 2.4,
+			"snow": 2.4
+		},
+		"*-gold": {
+			"soil": 5.0,
+			"sand": 5.0,
+			"gravel": 3.2,
+			"snow": 3.2
+		},
+		"*-silver": {
+			"soil": 5.0,
+			"sand": 5.0,
+			"gravel": 3.2,
+			"snow": 3.2
+		},
+		"*-bismuthbronze": {
+			"soil": 4.75,
+			"sand": 4.75,
+			"gravel": 3.0,
+			"snow": 3.0
+		},
+		"*-tinbronze": {
+			"soil": 5.0,
+			"sand": 5.0,
+			"gravel": 3.2,
+			"snow": 3.2
+		},
+		"*-blackbronze": {
+			"soil": 2.2,
+			"sand": 2.2,
+			"gravel": 1.9,
+			"snow": 1.9
+		},
+		"*-iron": {
+			"soil": 5.5,
+			"sand": 5.5,
+			"gravel": 3.7,
+			"snow": 3.7
+		},
+		"*-meteoriciron": {
+			"soil": 6.1,
+			"sand": 6.1,
+			"gravel": 4,
+			"snow": 4
+		},
+		"*-steel": {
+			"soil": 6.7,
+			"sand": 6.7,
+			"gravel": 4.2,
+			"snow": 4.2
+		}
+	},
+	"attackpowerbytype": {
+		"boneshovel-primitive-bone": 1.1,
+		"boneshovel-reinforced-copper": 1.2,
+		"boneshovel-reinforced-bismuthbronze": 1.4,
+		"boneshovel-reinforced-tinbronze": 1.55,
+		"boneshovel-reinforced-blackbronze": 1.75,
+		"boneshovel-reinforced-iron": 2,
+		"boneshovel-reinforced-meteoriciron": 2.15,
+		"boneshovel-reinforced-steel": 2.35,
+		"boneshovel-reinforced-gold": 1.25,
+		"boneshovel-reinforced-silver": 1.25
+	},
+	"durabilitybytype": {
+		"boneshovel-primitive-bone": 145,
+		"boneshovel-reinforced-copper": 380,
+		"boneshovel-reinforced-tinbronze": 570,
+		"boneshovel-reinforced-bismuthbronze": 615,
+		"boneshovel-reinforced-blackbronze": 665,
+		"boneshovel-reinforced-iron": 1100,
+		"boneshovel-reinforced-meteoriciron": 1250,
+		"boneshovel-reinforced-steel": 2775,
+		"boneshovel-reinforced-gold": 180,
+		"boneshovel-reinforced-silver": 180
+	},
+	"creativeinventoryByType": {
+		"*": { "general": ["*"], "items": ["*"], "tools": ["*"], "clutterByType": { "*-ruined": ["*"] } }
+	},
+	"guiTransformByType": {
+		"boneshovel-*":
+			{
+				"translation": { "x": 0, "y": 0, "z": 0 },
+				"rotation": { "x": -89, "y": 47, "z": -13 },
+				"origin": { "x": 0.6, "y": -0.1, "z": 0.44 },
+				"scale": 1.65
+			}
+	},
+	"groundTransformByType": {
+		"boneshovel-*":
+			{
+				"translation": { "x": 0, "y": 0.05, "z": 0 },
+				"rotation": { "x": 0, "y": 0, "z": 0 },
+				"origin": { "x": 0.5, "y": 0, "z": 0.5 },
+				"scale": 3.67
+			}
+	},
+	"tpHandTransformByType": {
+		"boneshovel-*":
+			{
+				"translation": { "x": -1.03, "y": -0.01, "z": -0.56 },
+				"rotation": { "x": -90, "y": 0, "z": 0 },
+				"origin": { "x": 0.5, "y": 0, "z": 0.5 },
+				"scale": 0.9
+			}
+	}
+}
