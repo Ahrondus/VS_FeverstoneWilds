@@ -29,6 +29,13 @@
     "drops": [],
   "attributes": {
     "killedByInfoText": "feverstonewilds:deadcreature-eaten-hellboar",
+    "creatureDiet": {
+			"foodCategories": [ "Grain", "Vegetable" ],
+			"weightedFoodTags": [ 
+				{ "weight": 1, "code": "meat"},
+				{ "weight": 0.9, "code": "grain" } ],
+			"skipFoodTags": [ "rice" ]
+	},
     "handbook": {
       "groupcode": "feverstonewilds:creaturegroup-fswhellboar"
     }
@@ -172,18 +179,18 @@
                             "damageTier": 2,
                             "damageType": "SlashingAttack",
                             "slot": 1,
-                            "mincooldown": 1500, 
+                            "mincooldown": 1000, 
                             "maxcooldown": 1500, 
                             "attackDurationMs": 800,
                             "damagePlayerAtMs": 500,
                             "animation": "Attack",
-                            "animationSpeed": 2.5,
+                            "animationSpeed": 1.5,
                             "sound": "game:creature/pig/attack"
                         },
                         {
                             "code": "fleeentity",
                             "entityCodes": ["player"],
-                            "priority": 1.6,
+                            "priority": 1.7,
                             "movespeed": 0.052,
                             "seekingRange": 20,
                             "animation": "Run",
@@ -193,7 +200,7 @@
                         {
                             "code": "seekentity",
                             "entityCodes": ["player"],
-                            "priority": 1.51,
+                            "priority": 1.6,
                             "movespeed": 0.045,
                             "seekingRange": 9,
                             "belowTempSeekingRange": 25,
@@ -213,7 +220,7 @@
                                             "feverstonewilds:ostrich-*", "feverstonewilds:tame-ostrich-*",
                                             "feverstonewilds:direwolf-*", "feverstonewilds:tame-direwolf-*",
                                             "feverstonewilds:bison-*" ],
-                            "priority": 1.5,
+                            "priority": 1.55,
                             "movespeed": 0.045,
                             "seekingRange": 15,
                             "belowTempSeekingRange": 25,
@@ -227,7 +234,7 @@
                         {
                             "code": "seekentity",
                             "entityCodes": ["player"],
-                            "priority": 1.49,
+                            "priority": 1.5,
                             "movespeed": 0.045,
                             "seekingRange": 15,
                             "animation": "Run",
@@ -235,6 +242,18 @@
                             "leapChance": 0.01,
                             "sound": "game:creature/pig/attack",
                             "whenInEmotionState": "aggressiveondamage"
+                        },
+                        {
+                            "code": "seekfoodandeat",
+                            "movespeed": 0.006,
+                            "priority": 1.49,
+                            "eatSound": "game:creature/animal-eat-small",
+                            "eatTime": 1.5,
+                            "animationSpeed": 1.5,
+                            "animation": "Walk",
+                            "mincooldownHours": 1,
+                            "maxcooldownHours": 4,
+                            "priorityForCancel": 1.5
                         },
                         {
                             "code": "idle",
