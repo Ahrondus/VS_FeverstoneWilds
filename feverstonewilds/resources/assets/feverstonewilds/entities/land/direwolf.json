@@ -5,21 +5,13 @@
     "variantgroups": [
         { "code": "gender", "states": [ "male", "female" ] }
     ],
-    "collisionBoxSizeByType": {
-        "direwolf-male": { "x": 1.4, "y": 1.8, "z": 1.1 },
-        "direwolf-female": { "x": 1.3, "y": 1.75, "z": 1.1 }
+    "hitBoxSizeByType": {
+        "direwolf-male": { "x": 1.4, "y": 1.8 },
+        "direwolf-female": { "x": 1.3, "y": 1.75 }
     },
-    "deadCollisionBoxSizeByType": {
+    "deadHitBoxSizeByType": {
         "direwolf-male": { "x": 0.8, "y": 1.3 },
         "direwolf-female": { "x": 0.8, "y": 1.3 }
-    },
-    "selectionBoxSizeByType": {
-        "*-male": { "x": 1.4, "y": 1.8, "z": 1.1 },
-        "*-female": { "x": 1.75, "y": 1.35, "z": 1.0 }
-    },
-    "deadSelectionBoxSizeByType": {
-        "*-male": { "x": 0.9, "y": 1.3 },
-        "*-female": { "x": 0.9 , "y": 1.3 }
     },
     "knockbackResistanceByType": {
         "*-male": 0.15,
@@ -64,6 +56,13 @@
             { "code": "despawn", "minPlayerDistance": 15, "belowLightLevel": 7, "minSeconds": 300 }
         ],
         "animations": [
+            {
+				"code": "attack",
+				"animation": "Attack",
+				"animationSpeed": 2.2,
+				"weight": 50,
+				"blendMode": "AddAverage"
+			},
             {
                 "code": "hurt",
                 "animation": "hurt",
@@ -183,22 +182,20 @@
                     ]
 			    },
                 { "code": "taskai",
-                "aiCreatureType": "LandCreature",
+                    "aiCreatureType": "LandCreature",
                     "aitasks": [
                         {
                             "code": "meleeattack",
-                            "entityCodes": ["player", "chicken-*",  "wolf-*", 
-                                            "drifter-*", "bear-*", "hare-*",
-                                            "feverstonewilds:cockatrice", "feverstonewilds:horse-*",
-                                            "feverstonewilds:ostrich-*", "feverstonewilds:ostrich-chick",
-                                            "feverstonewilds:bison-*", "feverstonewilds:bison-calf",
-                                            "feverstonewilds:giraffe"],
+                            "entityCodes": ["player", "tame-*", "drifter-*", "shiver-*", "bowtorn-*",
+                                            "chicken-*",  "wolf-*", "bear-*", "hare-*", "taminghorse-*",
+                                            "cockatrice-*", "horse-*", "ostrich-*",
+                                            "bison-*", "giraffe" ],
                             "priority": 3,
                             "damage": 9.5,
                             "damageTier": 2,
                             "damageType": "SlashingAttack",
                             "slot": 1,
-                            "mincooldown": 1500, 
+                            "mincooldown": 750, 
                             "maxcooldown": 1500, 
                             "attackDurationMs": 800,
                             "damagePlayerAtMs": 500,
@@ -208,15 +205,16 @@
                         },
                         {
                             "code": "meleeattack",
-                            "entityCodes": ["player", "chicken-*", "drifter-*", "hare-*",
-                                            "feverstonewilds:cockatrice", "feverstonewilds:ostrich-chick",
-                                            "feverstonewilds:bison-calf" ],
+                            "entityCodes": ["player", "drifter-*", "shiver-*",
+                                            "chicken-*",  "hare-*", "*-baby",
+                                            "cockatrice-*", "*-chick",
+                                            "bison-calf" ],
                             "priority": 2.5,
                             "damage": 9.5,
                             "damageTier": 2,
                             "damageType": "SlashingAttack",
                             "slot": 1,
-                            "mincooldown": 1500, 
+                            "mincooldown": 750, 
                             "maxcooldown": 1500, 
                             "attackDurationMs": 800,
                             "damagePlayerAtMs": 500,
@@ -226,15 +224,15 @@
                         },
                         {
                             "code": "meleeattack",
-                            "entityCodes": ["player", "bear-*", "feverstonewilds:horse-*",
-                                            "feverstonewilds:bison-*", "feverstonewilds:giraffe"],
+                            "entityCodes": ["player", "bear-*", "horse-*",
+                                            "bison-*", "giraffe"],
                             "priority": 2,
                             "damage": 9.5,
                             "damageTier": 2,
                             "damageType": "SlashingAttack",
                             "slot": 1,
-                            "mincooldown": 1500, 
-                            "maxcooldown": 1500, 
+                            "mincooldown": 7500, 
+                            "maxcooldown": 10500, 
                             "attackDurationMs": 800,
                             "damagePlayerAtMs": 500,
                             "animation": "Attack-High",
