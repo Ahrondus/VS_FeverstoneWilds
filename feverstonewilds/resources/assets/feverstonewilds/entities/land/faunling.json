@@ -103,6 +103,12 @@
 				"blendMode": "average",
 				"triggeredBy": { "onControls": ["dead"] }
 			},
+			{
+				"code": "run", 
+				"animation": "Run",
+                "animationSounds": [{"frame": 6, "range": 8, "location": "direwolf/paws-step*", "pitch": { "avg": 1.0, "var": 0.15 }, "volume": {"avg": 0.6}},
+                                    {"frame": 18, "range": 8, "location": "direwolf/paws-step*", "pitch": { "avg": 1.0, "var": 0.15 }, "volume": {"avg": 0.6}}]
+            },
             {
                 "code": "dead",
                 "animation": "dead",

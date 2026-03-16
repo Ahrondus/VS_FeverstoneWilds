@@ -455,7 +455,7 @@
 				"code": "attack",
 				"animation": "Attack",
 				"animationSpeed": 2.2,
-				"weight": 10,
+				"weight": 50,
 				"blendMode": "AddAverage"
 			},
             {
@@ -726,8 +726,8 @@
                             "foal-*", "bison-*", "bison-calf",
                             "deer-*", "goat-*", "pig-*", "sheep-*",
                             "elk-*", "moose-*", "gazelle-*" ],
-                        "priority": 2,
-                        "damage": 8,
+                        "priority": 3,
+                        "damage": 10,
                         "damageTier": 2,
                         "damageType": "SlashingAttack",
                         "slot": 1,
@@ -744,7 +744,7 @@
                         "entityCodes": [ "squirrel-*", "raccoon-*", "hare-*",
                             "direwolf-pup", "hellboar-piglet", "chicken-*",
                             "cockatrice-*", "fox-*", "*-baby" ],
-                        "priority": 2,
+                        "priority": 2.5,
                         "damage": 8,
                         "damageTier": 2,
                         "damageType": "SlashingAttack",
@@ -794,6 +794,7 @@
                         "animationSpeed": 1.1,
                         "leapChance": 0.01,
                         "sound": "direwolf/direwolf-growl",
+                        "soundChance": 0.2,
                         "whenNotInEmotionState": "saturated"
                     },
                     {
