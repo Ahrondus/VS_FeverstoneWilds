@@ -6,7 +6,9 @@
 				"layoutByType": {
 					"fsw-fishraw-reef-discus": "Quadrants",
 					"fsw-fishraw-*-buromenfish": "SingleCenter",
-					"fsw-fishraw-*-ghostfish": "SingleCenter"
+					"fsw-fishraw-*-ghostfish": "SingleCenter",
+					"fsw-fishraw-*-eel": "SingleCenter",
+					"fsw-fishraw-*-stingray": "SingleCenter"
 				},
 				"collisionBox": { "x1": 0, "y1": 0, "z1": 0, "x2": 1, "y2": 0.125, "z2": 1 } 
 			} 
@@ -15,18 +17,24 @@
 			"properties": {
 				"processTimeByType": {
 					"fsw-fishraw-reef-discus": 2,
-					"fsw-fishraw-*-buromenfish": 3.5,
-					"fsw-fishraw-*-ghostfish": 5
+					"fsw-fishraw-*-buromenfish": 3,
+					"fsw-fishraw-*-ghostfish": 2.5,
+					"fsw-fishraw-*-eel": 4,
+					"fsw-fishraw-*-stingray": 5
 				},
 				"processedStacksByType": {
 					"fsw-fishraw-reef-discus": [{ "type": "item", "code": "fish-raw", "quantity": { "avg": 1 } }],
-					"fsw-fishraw-*-buromenfish": [{ "type": "item", "code": "fish-raw", "quantity": { "avg": 4 } }],
-					"fsw-fishraw-*-ghostfish": [{ "type": "item", "code": "fish-raw", "quantity": { "avg": 6 } }]
+					"fsw-fishraw-*-buromenfish": [{ "type": "item", "code": "fish-raw", "quantity": { "avg": 3 } }],
+					"fsw-fishraw-*-ghostfish": [{ "type": "item", "code": "fish-raw", "quantity": { "avg": 2 } }],
+					"fsw-fishraw-*-eel": [{ "type": "item", "code": "fish-raw", "quantity": { "avg": 5 } }],
+					"fsw-fishraw-*-stingray": [{ "type": "item", "code": "fish-raw", "quantity": { "avg": 6 } }]
 				},
 				"toolDurabilityCostByType": {
 					"fsw-fishraw-reef-discus": 1,
 					"fsw-fishraw-*-buromenfish": 2,
-					"fsw-fishraw-*-ghostfish": 4
+					"fsw-fishraw-*-ghostfish": 4,
+					"fsw-fishraw-*-eel": 5,
+					"fsw-fishraw-*-stingray": 5
 				},
 				"remainingItem": { "type": "item", "code": "bone-fish", "quantity": 1 },
 				"tool": "knife",
@@ -39,7 +47,7 @@
 	],
 	"variantgroups": [
 		{ "code": "habitat", "states": ["freshwater", "saltwater", "reef"] },
-		{ "code": "type", "states": [ "discus", "buromenfish", "ghostfish" ] }
+		{ "code": "type", "states": [ "discus", "buromenfish", "ghostfish", "eel", "stingray" ] }
 	],
 	"shape": { "base": "entity/water/{type}" },
 	"textures": { "skin": { "base": "entity/water/{type}/{type}*"} },
@@ -47,8 +55,12 @@
 		"fsw-fishraw-reef-discus",
 		"fsw-fishraw-freshwater-buromenfish",
 		"fsw-fishraw-freshwater-ghostfish",
+		"fsw-fishraw-freshwater-eel",
+		"fsw-fishraw-freshwater-stingray",
 		"fsw-fishraw-saltwater-buromenfish",
-		"fsw-fishraw-saltwater-ghostfish"
+		"fsw-fishraw-saltwater-ghostfish",
+		"fsw-fishraw-saltwater-eel",
+		"fsw-fishraw-saltwater-stingray"
 	],
 	"attributes": {
         "handbook": {
@@ -58,40 +70,17 @@
 			"*": false
 		},
 		"groundStorageTransformByType": {
-			"fishraw-freshwater-alewife-*": {
-				"translation": { "x": -0.1, "y": -0.16, "z": -0.02 },
+			"*-eel": {
+				"translation": { "x": 0, "y": -0.16, "z": 0 },
 				"rotation": { "x": -90, "y": 1, "z": 30 },
-				"origin": { "x": 0.5, "y": 0.2, "z": 0.5 }
+				"origin": { "x": 0.5, "y": 0.2, "z": 0.5 },
+				"scale": 0.6
 			},
-			"fishraw-freshwater-chub-*": {
-				"translation": { "x": -0.1, "y": -0.16, "z": -0.02 },
+			"*-stingray": {
+				"translation": { "x": 0, "y": -0.16, "z": 0 },
 				"rotation": { "x": -90, "y": 1, "z": 30 },
-				"origin": { "x": 0.5, "y": 0.2, "z": 0.5 }
-			},
-			"fishraw-freshwater-tilapia-*": {
-				"translation": { "x": -0.07, "y": -0.16, "z": 0 },
-				"rotation": { "x": -90, "y": 1, "z": 30 },
-				"origin": { "x": 0.5, "y": 0.2, "z": 0.5 }
-			},
-			"fishraw-saltwater-anchovy-*": {
-				"translation": { "x": -0.1, "y": -0.16, "z": -0.02 },
-				"rotation": { "x": -90, "y": 1, "z": 30 },
-				"origin": { "x": 0.5, "y": 0.2, "z": 0.5 }
-			},
-			"fishraw-saltwater-menhaden-*": {
-				"translation": { "x": -0.1, "y": -0.16, "z": -0.02 },
-				"rotation": { "x": -90, "y": 1, "z": 30 },
-				"origin": { "x": 0.5, "y": 0.2, "z": 0.5 }
-			},
-			"fishraw-saltwater-perch-*": {
-				"translation": { "x": -0.08, "y": -0.16, "z": 0 },
-				"rotation": { "x": -90, "y": 1, "z": 30 },
-				"origin": { "x": 0.5, "y": 0.2, "z": 0.5 }
-			},
-			"fishraw-saltwater-mackerel-*": {
-				"translation": { "x": -0.05, "y": -0.16, "z": 0 },
-				"rotation": { "x": -90, "y": 0, "z": 33 },
-				"origin": { "x": 0.5, "y": 0.2, "z": 0.5 }
+				"origin": { "x": 0.5, "y": 0.2, "z": 0.5 },
+				"scale": 0.5
 			},
 			"*": {
 				"translation": { "x": 0, "y": -0.16, "z": 0 },
@@ -102,6 +91,8 @@
 	},
 	"storageFlags": 257,
 	"maxstacksizeByType": {
+		"*-eel": 2,
+		"*-stingray": 1,
 		"*-ghostfish": 4,
 		"*-buromenfish": 8,
 		"*-discus": 16
@@ -109,16 +100,22 @@
 	"creativeinventory": { "general": ["*"], "items": ["*"] },
 	"materialDensity": 600,
 	"heldRightReadyAnimationByType": {
-		"*-buromenfish": "holdbothhandslarge",
-		"*-ghostfish": "holdbothhandslarge",
+		"*-stingray": "holdbothhandslarge",
+		"*-eel": "holdbothhandslarge",
+		"*-buromenfish": "holdinglanternrighthand",
+		"*-ghostfish": "holdinglanternrighthand",
 		"*-discus": "holdinglanternrighthand"
 	},
 	"heldTpIdleAnimationByType": {
-		"*-buromenfish": "holdbothhandslarge",
-		"*-ghostfish": "holdbothhandslarge",
+		"*-stingray": "holdbothhandslarge",
+		"*-eel": "holdbothhandslarge",
+		"*-buromenfish": "holdinglanternrighthand",
+		"*-ghostfish": "holdinglanternrighthand",
 		"*-discus": "holdinglanternrighthand"
 	},
 	"heldLeftTpIdleAnimationbyType": {
+		"*-stingray": "holdbothhandslarge",
+		"*-eel": "holdbothhandslarge",
 		"*": "holdinglanternlefthand"
 	},
 	"transitionablePropsByType": {
@@ -128,7 +125,9 @@
 			"transitionHours": { "avg": 24 },
 			"transitionedStack": { "type": "item", "code": "game:rot" },
 			"transitionRatioByType": {
-				"*-ghostfish": 4,
+				"*-stingray": 5,
+				"*-eel": 4,
+				"*-ghostfish": 3,
 				"*-buromenfish": 2,
 				"*-discus": 1
 			}		
@@ -146,6 +145,11 @@
 			"scale": 2.99
 		},
 		"fishraw-*-ghostfish": {
+			"rotation": { "x": 70, "y": 1, "z": -113 },
+			"origin": { "x": 0.34, "y": 0.06, "z": 0.58 },
+			"scale": 2.99
+		},
+		"*": {
 			"rotation": { "x": 70, "y": 1, "z": -113 },
 			"origin": { "x": 0.34, "y": 0.06, "z": 0.58 },
 			"scale": 2.99
@@ -169,6 +173,12 @@
 			"rotation": { "x": -86, "y": 0, "z": 174 },
 			"origin": { "x": 0.5, "y": 0.2, "z": 0.5 },
 			"scale": 1
+		},
+		"*": {
+			"translation": { "x": -0.27, "y": -0.25, "z": -0.4 },
+			"rotation": { "x": -86, "y": 0, "z": 174 },
+			"origin": { "x": 0.5, "y": 0.2, "z": 0.5 },
+			"scale": 0.75
 		}
 	},
 	"tpOffHandTransformByType": {
@@ -189,14 +199,32 @@
 			"rotation": { "x": 85, "y": 0, "z": 171 },
 			"origin": { "x": 0.5, "y": 0.2, "z": 0.5 },
 			"scale": 1
+		},
+		"*": {
+			"translation": { "x": -0.27, "y": -0.25, "z": -0.4 },
+			"rotation": { "x": -86, "y": 0, "z": 174 },
+			"origin": { "x": 0.5, "y": 0.2, "z": 0.5 },
+			"scale": 0.75
 		}
 	},
 	"groundTransformByType": {
+		"*-stingray": {
+			"translation": { "x": -0.05, "y": 0.035, "z": 0.07 },
+			"rotation": { "x": 90, "y": 0, "z": 0 },
+			"origin": { "x": 0.5, "y": 0.125, "z": 0.5 },
+			"scale": 1.5
+		},
+		"*-eel": {
+			"translation": { "x": -0.05, "y": 0.035, "z": 0.07 },
+			"rotation": { "x": 90, "y": 0, "z": 0 },
+			"origin": { "x": 0.5, "y": 0.125, "z": 0.5 },
+			"scale": 1.75
+		},
 		"*": {
 			"translation": { "x": -0.05, "y": 0.035, "z": 0.07 },
 			"rotation": { "x": 90, "y": 0, "z": 0 },
 			"origin": { "x": 0.5, "y": 0.125, "z": 0.5 },
-			"scale": 3
+			"scale": 2.5
 		}
 	}
 }
