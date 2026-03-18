@@ -43,7 +43,10 @@
 
     "client": {
         "renderer": "Shape",
-        "shape": { "base": "entity/land/mammal/hellboar" },
+        "shapeByType": {
+            "*-male": { "base": "entity/land/mammal/hellboar-male" },
+            "*-female": { "base": "entity/land/mammal/hellboar-female" }
+        },
         "texture": { "base": "entity/land/hellboar/hellboarskin1",
                     "alternates": [ { "base": "entity/land/hellboar/hellboarskin2" }, { "base": "entity/land/hellboar/hellboarskin3" }, 
                                     { "base": "entity/land/hellboar/hellboarskin4" }, { "base": "entity/land/hellboar/hellboarskin5" }, 

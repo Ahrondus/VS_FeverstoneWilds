@@ -5,12 +5,13 @@
 	"variantgroups": [
 			{
 				"code": "type",
-				"states": ["giraffe"]
+				"states": ["giraffe-male", "giraffe-female", "giraffe-calf"]
 			}
 		],
-	"shape": {
-		"base": "entity/land/mammal/giraffe"
-		},
+	"shapeByType": {
+		"*-calf": { "base": "entity/land/mammal/giraffe-calf" },
+		"*": { "base": "entity/land/mammal/giraffe" }
+	},
 	"creativeinventory": {
 		"general": ["*"],
 		"items": ["*"],
