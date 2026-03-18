@@ -212,7 +212,8 @@
 						"attackDurationMs": 1250,
 						"damagePlayerAtMs": 800,
 						"animation": "Attack",
-						"animationSpeed": 2
+						"animationSpeed": 1.8,
+						"sound": "cockatrice/cockatrice-growl"
 					},
 					{
 						"code": "seekentity",
@@ -223,7 +224,7 @@
 						"seekingRange": 25,
 						"movespeed": 0.05,
 						"animation": "Run",
-						"animationSpeed": 2.5
+						"animationSpeed": 1.8
 					},
 					{
 						"code": "seekentity",
@@ -232,9 +233,9 @@
 						"mincooldown": 1000,
 						"maxcooldown": 1500,
 						"seekingRange": 20,
-						"movespeed": 0.055,
+						"movespeed": 0.048,
 						"animation": "Run",
-						"animationSpeed": 2.75
+						"animationSpeed": 1.75
 					},
 					{
 						"code": "fleeentity",
@@ -243,7 +244,7 @@
 						"movespeed": 0.052,
 						"seekingRange": 12,
 						"animation": "Run",
-						"animationSpeed": 2.7,
+						"animationSpeed": 2.0,
 						"sound": "game:creature/chicken/hen-flee",
 						"whenInEmotionState": "fleeondamage"
 					},
@@ -252,15 +253,15 @@
 						"minGeneration": 0,
 						"priority": 1.6,
 						"animation": "Run",
-						"animationSpeed": 2.25,
-						"movespeed": 0.045
+						"animationSpeed": 1.75,
+						"movespeed": 0.048
 					},
 					{
 						"code": "getoutofwater",
 						"priority": 1.5,
 						"movespeed": 0.02,
 						"animation": "Run",
-						"animationSpeed": 2
+						"animationSpeed": 1.4
 					},
 					{
 						"code": "seekblockandlay",

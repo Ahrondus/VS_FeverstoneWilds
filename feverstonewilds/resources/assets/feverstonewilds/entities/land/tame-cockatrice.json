@@ -194,6 +194,33 @@
         "aiCreatureType": "LandCreature",
         "aitasks": [
 					{
+						"code": "meleeattack",
+						"entityCodes": [ "drifter-*", "toad-*", "spider-*", "hare-*", "raccoon-*", "fox-*" ],
+						"knockbackStrength": 2.65,
+						"priority": 2,
+						"slot": 1,
+						"damage": 5.5,
+						"damageTier": 2,
+						"mincooldown": 1500,
+						"maxcooldown": 2500,
+						"attackDurationMs": 1250,
+						"damagePlayerAtMs": 800,
+						"animation": "Attack",
+						"animationSpeed": 1.8,
+						"sound": "cockatrice/cockatrice-growl"
+					},
+					{
+						"code": "seekentity",
+						"entityCodes": [ "drifter-*", "toad-*", "spider-*", "hare-*", "raccoon-*", "fox-*" ],
+						"priority": 1.9,
+						"mincooldown": 1000,
+						"maxcooldown": 1500,
+						"seekingRange": 25,
+						"movespeed": 0.05,
+						"animation": "Run",
+						"animationSpeed": 1.8
+					},
+					{
 						"code": "seekblockandlay",
 						"enabledByType": { "*-female": true, "*-male": false },
 						"priority": 1.6,
@@ -211,8 +238,8 @@
 						"requiresNearbyEntityRange": 12,
 						"growthCapEntityCodes": ["feverstonewilds:tame-cockatrice-chick", "feverstonewilds:tame-cockatrice-female", "feverstonewilds:tame-cockatrice-male"],
 						"failBlockCode": "feverstonewilds:egg-cockatrice-1",
-						"sound": "game:creature/chicken/hurt",
-						"priorityForCancel": 1.65
+						"sound": "cockatrice/cockatrice-growl",
+						"priorityForCancel": 2
 					},
           {
             "code": "fleeentity",
