@@ -134,71 +134,92 @@
 		}]
 	},
 	"guiTransformByType": {
-		"fishraw-reef-*": {
+		"fsw-fishraw-reef-*": {
 			"rotation": { "x": 63, "y": 2, "z": -117 },
-			"origin": { "x": 0.7, "y": 0.16, "z": 0.42 },
-			"scale": 4.87
+			"origin": { "x": 0.7, "y": 0.26, "z": 0.42 },
+			"scale": 3.7
 		},
-		"fishraw-*-buromenfish": {
-			"rotation": { "x": 63, "y": 2, "z": -117 },
-			"origin": { "x": 0.5, "y": 0.09, "z": 0.52 },
-			"scale": 2.99
-		},
-		"fishraw-*-ghostfish": {
+		"fsw-fishraw-*-buromenfish": {
+			"translation": { "x": 1, "y": 4, "z": 30 },
 			"rotation": { "x": 70, "y": 1, "z": -113 },
 			"origin": { "x": 0.34, "y": 0.06, "z": 0.58 },
-			"scale": 2.99
+			"scale": 1.7
+		},
+		"fsw-fishraw-*-ghostfish": {
+			"translation": { "x": -3, "y": 2, "z": 60 },
+			"rotation": { "x": 70, "y": 1, "z": -113 },
+			"origin": { "x": 0.34, "y": 0.06, "z": 0.58 },
+			"scale": 2.2
+		},
+		"fsw-fishraw-*-eel": {
+			"translation": { "x": -5, "y": 6, "z": 0 },
+			"rotation": { "x": 15, "y": -65, "z": -150 },
+			"origin": { "x": 1.34, "y": 0.06, "z": 0.58 },
+			"scale": 0.9
 		},
 		"*": {
-			"rotation": { "x": 70, "y": 1, "z": -113 },
-			"origin": { "x": 0.34, "y": 0.06, "z": 0.58 },
-			"scale": 2.99
+			"translation": { "x": 2, "y": 1, "z": 0 },
+			"rotation": { "x": -10, "y": -56, "z": -153 },
+			"origin": { "x": 1.34, "y": 1.06, "z": 0.58 },
+			"scale": 0.45
 		}
 	},	
 	"tpHandTransformByType": {
-		"fishraw-reef-*": {
-			"translation": { "x": -0.26, "y": -0.25, "z": -0.42 },
+		"fsw-fishraw-reef-*": {
+			"translation": { "x": -0.38, "y": -0.27, "z": -0.63 },
 			"rotation": { "x": -86, "y": 0, "z": 174 },
 			"origin": { "x": 0.5, "y": 0.2, "z": 0.5 },
-			"scale": 1
+			"scale": 0.8
 		},
-		"fishraw-*-buromenfish": {
-			"translation": { "x": -0.27, "y": -0.25, "z": -0.4 },
+		"fsw-fishraw-*-buromenfish": {
+			"translation": { "x": -0.38, "y": -0.47, "z": -1.05 },
 			"rotation": { "x": -86, "y": 0, "z": 174 },
 			"origin": { "x": 0.5, "y": 0.2, "z": 0.5 },
-			"scale": 1
+			"scale": 0.5
 		},
-		"fishraw-*-ghostfish": {
-			"translation": { "x": -0.27, "y": -0.25, "z": -0.4 },
+		"fsw-fishraw-*-ghostfish": {
+			"translation": { "x": -0.3, "y": -0.35, "z": -0.9 },
 			"rotation": { "x": -86, "y": 0, "z": 174 },
 			"origin": { "x": 0.5, "y": 0.2, "z": 0.5 },
-			"scale": 1
+			"scale": 0.65
 		},
-		"*": {
-			"translation": { "x": -0.27, "y": -0.25, "z": -0.4 },
-			"rotation": { "x": -86, "y": 0, "z": 174 },
+		"fsw-fishraw-*-eel": {
+			"translation": { "x": -0.57, "y": -0.33, "z": -1.09 },
+			"rotation": { "x": -84, "y": 9, "z": 168 },
 			"origin": { "x": 0.5, "y": 0.2, "z": 0.5 },
-			"scale": 0.75
+			"scale": 0.5
+		},
+		"fsw-fishraw-*-stingray": {
+			"translation": { "x": -1.57, "y": -0.25, "z": -0.7 },
+			"rotation": { "x": 7, "y": 7, "z": 170 },
+			"origin": { "x": 0.5, "y": 0.2, "z": 0.5 },
+			"scale": 0.4
 		}
 	},
 	"tpOffHandTransformByType": {
-		"fishraw-reef-*": {
+		"fsw-fishraw-reef-*": {
 			"translation": { "x": -0.1, "y": -0.25, "z": -0.55 },
 			"rotation": { "x": 76, "y": 0, "z": 171 },
 			"origin": { "x": 0.5, "y": 0.2, "z": 0.5 },
 			"scale": 1
 		},
-		"fishraw-*-buromenfish": {
+		"fsw-fishraw-*-buromenfish": {
 			"translation": { "x": -0.1, "y": -0.25, "z": -0.55 },
 			"rotation": { "x": 76, "y": 0, "z": 171 },
 			"origin": { "x": 0.5, "y": 0.2, "z": 0.5 },
 			"scale": 1
 		},
-		"fishraw-*-ghostfish": {
+		"fsw-fishraw-*-ghostfish": {
 			"translation": { "x": -0.12, "y": -0.22, "z": -0.58 },
 			"rotation": { "x": 85, "y": 0, "z": 171 },
 			"origin": { "x": 0.5, "y": 0.2, "z": 0.5 },
 			"scale": 1
+		},
+		"fsw-fishraw-*-eel": {
+			"translation": { "x": -0.57, "y": -0.3, "z": -1.67 },
+			"rotation": { "x": -88, "y": 2, "z": -165 },
+			"origin": { "x": 0.5, "y": 0.2, "z": 0.5 },
+			"scale": 0.5
 		},
 		"*": {
 			"translation": { "x": -0.27, "y": -0.25, "z": -0.4 },

@@ -23,13 +23,13 @@
 		"*-foal-wild-percheron": { "base": "entity/land/mammal/horse-percheron" },
 		"*-foal-wild-arabian": { "base": "entity/land/mammal/horse-arabian" },
 		"*-foal-wild-donkey": { "base": "entity/land/mammal/horse-donkey" },
-		"*-foal-wild-shire": { "base": "entity/land/mammal/horse-donkey" },
-		"*-foal-wild-quarter": { "base": "entity/land/mammal/horse-donkey" },
+		"*-foal-wild-shire": { "base": "entity/land/mammal/horse-shire" },
+		"*-foal-wild-quarter": { "base": "entity/land/mammal/horse-quarter" },
 		"*-foal-tamed-percheron": { "base": "entity/land/mammal/horse-percheron" },
 		"*-foal-tamed-arabian": { "base": "entity/land/mammal/horse-arabian" },
 		"*-foal-tamed-donkey": { "base": "entity/land/mammal/horse-donkey" },
-		"*-foal-tamed-shire": { "base": "entity/land/mammal/horse-donkey" },
-		"*-foal-tamed-quarter": { "base": "entity/land/mammal/horse-donkey" },
+		"*-foal-tamed-shire": { "base": "entity/land/mammal/horse-shire" },
+		"*-foal-tamed-quarter": { "base": "entity/land/mammal/horse-quarter" },
 		"*-horse-wild-male-percheron": { "base": "entity/land/mammal/horse-percheron" },
 		"*-horse-tamed-male-percheron": { "base": "entity/land/mammal/horse-percheron" },
 		"*-horse-wild-female-percheron": { "base": "entity/land/mammal/horse-percheron" },
@@ -50,7 +50,7 @@
 		"*-horse-tamed-male-donkey": { "base": "entity/land/mammal/horse-donkey" },
 		"*-horse-wild-female-donkey": { "base": "entity/land/mammal/horse-donkey" },
 		"*-horse-tamed-female-donkey": { "base": "entity/land/mammal/horse-donkey" }
-		},
+	},
 	"texturesByType": {
 		"*-foal-wild-percheron": { "skin": { "base": "entity/land/horse/horseskin2" } },
 		"*-foal-wild-arabian": { "skin": { "base": "entity/land/horse/horseskin15" } },
@@ -72,14 +72,14 @@
 		"*-female-quarter": { "skin": { "base": "entity/land/horse/horseskin25" } },
 		"*-male-donkey": { "skin": { "base": "entity/land/donkey/donkeyskin2" } },
 		"*-female-donkey": { "skin": { "base": "entity/land/donkey/donkeyskin3" } }
-		},
-		
+	},		
 	"creativeinventory": {
 		"general": ["*"],
 		"items": ["*"],
 		"creatures": ["*"]
-		},
-		
+	},
+
+	"heldTpIdleAnimation": "holdunderarm",		
 	"guiTransformByType": {
 		"creature-horse-*": {
 			"rotate": true,
@@ -102,8 +102,8 @@
 		"scale": 0.35
 	},
 	"tpHandTransform": {
-		"translation": { "x": -0.9, "y": -1.1, "z": -0.85 },
+		"translation": { "x": -0.9, "y": -1.4, "z": -1.05 },
 		"rotation": { "x": -180, "y": 0, "z": -156 },
-		"scale": 0.4
+		"scale": 0.35
 	}	
 }

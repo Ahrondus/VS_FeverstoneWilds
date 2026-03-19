@@ -16,16 +16,16 @@
 		},
 	"texturesByType": {
 		"*-ostrich-male": { "skin": { "base": "entity/land/ostrich/ostrichskin1" } },
-		"*-ostrich-female": { "skin": { "base": "entity/land/ostrich/ostrichskin1" } },
-		"*-ostrich-chick": {"skin": { "base": "entity/land/ostrich/ostrichskin1" } }
+		"*-ostrich-female": { "skin": { "base": "entity/land/ostrich/ostrichskin2" } },
+		"*-ostrich-chick": {"skin": { "base": "entity/land/ostrich/ostrichskin4" } }
 		},
-		
 	"creativeinventory": {
 		"general": ["*"],
 		"items": ["*"],
 		"creatures": ["*"]
 		},
 	
+	"heldTpIdleAnimation": "holdunderarm",
 	"guiTransformByType":{
 		"*-ostrich-chick": {
 			"translation": { "x": 0, "y": 0, "z": 0 },
@@ -54,11 +54,18 @@
 			"scale": 0.82
 		}
 	},
-	"tpHandTransform": {
-		"translation": { "x": 0.2, "y": 0, "z": 0 },
-		"rotation": { "x": -175, "y": 53, "z": -107 },
-		"origin": { "x": 0.5, "y": 0.8, "z": 0.5 },
-		"scale": 0.62
+	"tpHandTransformByType": {
+		"*-chick": {
+			"translation": { "x": -0.9, "y": 0, "z": -0.3 },
+			"rotation": { "x": -170, "y": 9, "z": -123 },
+			"origin": { "x": 0.5, "y": 0.8, "z": 0.5 },
+			"scale": 1.25
+		},
+		"*": {
+			"translation": { "x": -0.9, "y": -1.6, "z": -0.8 },
+			"rotation": { "x": -179, "y": 12, "z": -130 },
+			"origin": { "x": 0.5, "y": 0.8, "z": 0.5 },
+			"scale": 0.35
+		}
 	}
-
 }

@@ -936,7 +936,8 @@
                             "damagePlayerAtMs": 500,
                             "animation": "attackFront",
                             "animationSpeed": 1.4,
-                            "whenInEmotionState": "aggressiveondamage"
+                            "whenInEmotionState": "aggressiveondamage",
+                            "sound": "horse/horseattack"
                         },
                         {
                             "code": "fleeentity",
@@ -1074,7 +1075,7 @@
         "spawnconditionsByType": {
             "horse-wild-male-*": {
                 "worldgen": {
-                    "TriesPerChunk": { "avg": 0.0010, "var": 0.0005 },
+                    "TriesPerChunk": { "avg": 0.005, "var": 0.0005 },
                     "tryOnlySurface": true,
                     "groupSize": { "dist": "verynarrowgaussian", "avg": 1.5, "var": 0.5 },
                     "insideBlockCodes": [ "game:air", "game:tallgrass-*", "game:snowlayer-1" ],
@@ -1134,16 +1135,16 @@
     },
     "soundsByType": {
         "*-donkey": {
-            "hurt": "feverstonewilds:horse/donkeybray",
-            "death": "feverstonewilds:horse/donkeybray",
-            "idle": "feverstonewilds:horse/donkeybray"
+            "hurt": "feverstonewilds:horse/donkeybray*",
+            "death": "feverstonewilds:horse/donkeybray*",
+            "idle": "feverstonewilds:horse/donkeyidle*"
         },
         "*": {
             "hurt": "feverstonewilds:horse/horsedamage",
             "death": "feverstonewilds:horse/horsedamage",
-            "idle": "feverstonewilds:horse/neigh"
+            "idle": "feverstonewilds:horse/horseidle*"
         }
     },
-    "idleSoundChance": 0.005,
+    "idleSoundChance": 0.001,
     "hurtSoundChance": 0.01
 }
