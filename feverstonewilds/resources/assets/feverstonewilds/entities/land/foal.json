@@ -258,8 +258,8 @@
                             "*-shire": [ "feverstonewilds:horse-{tame}-male-shire", "feverstonewilds:horse-{tame}-female-shire" ],
                             "*-quarter": [ "feverstonewilds:horse-{tame}-male-quarter", "feverstonewilds:horse-{tame}-female-quarter" ]
                         },
-                        "maxDistance": 12,
-                        "searchRange": 30,
+                        "maxDistance": 6,
+                        "searchRange": 20,
                         "moveSpeed": 0.02,
                         "animation": "run",
                         "animationSpeed": 2.2
@@ -357,10 +357,17 @@
 			{ "code": "entitystatetags" }
         ]
     },
-    "sounds": {
-        "hurt": "feverstonewilds:horse/horsedamage",
-        "death": "feverstonewilds:horse/horsedamage",
-        "idle": "feverstonewilds:horse/neigh"
+    "soundsByType": {
+        "*-donkey": {
+            "hurt": "feverstonewilds:horse/donkeybray*",
+            "death": "feverstonewilds:horse/donkeybray*",
+            "idle": "feverstonewilds:horse/donkeyfoalidle"
+        },
+        "*": {
+            "hurt": "feverstonewilds:horse/horsedamage",
+            "death": "feverstonewilds:horse/horsedamage",
+            "idle": "feverstonewilds:horse/horsefoalidle"
+        }
     },
     "idleSoundChance": 0.002
 }

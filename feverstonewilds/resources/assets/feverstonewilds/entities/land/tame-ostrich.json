@@ -1,7 +1,7 @@
 {
 	"code": "tame-ostrich",
 	"class": "EntityAgent",
-    "tags":  [ "animal", "huntable", "habitat-land", "tamed", "adult" ],
+    "tags":  [ "animal", "huntable", "habitat-land", "tamed" ],
 	"variantgroups": [
         { "code": "gender", "states": ["male", "female"] }
 	],
@@ -44,9 +44,8 @@
 			"gaits": [
 				{
 					"code": "walkback",
-					"movespeed": 0.015,
+					"movespeed": 0.012,
 					"backwards": true,
-					"yawMultiplier": 1,
 
                     "animation": "walkback",
                     "animationSpeed": 1.2,
@@ -86,8 +85,8 @@
 				{
 					"code": "swimforth",
 					"movespeed": 0.018,
-					"yawMultiplier": 1,
 					"fallbackGaitCode": "swimidle",
+                    "environment": "Sea",
 					
                     "animation": "Swim",
                     "animationSpeed": 1.5,
@@ -96,7 +95,8 @@
 				},
 				{
 					"code": "swimidle",
-					"yawMultiplier": 1,
+					"movespeed": 0.0,
+                    "environment": "Sea",
 					
                     "animation": "Swim",
                     "animationSpeed": 1.5,
@@ -109,6 +109,7 @@
 					"backwards": true,
 					"yawMultiplier": 1,
 					"fallbackGaitCode": "swimidle",
+                    "environment": "Sea",
 					
                     "animation": "Swim",
                     "animationSpeed": 1.5,

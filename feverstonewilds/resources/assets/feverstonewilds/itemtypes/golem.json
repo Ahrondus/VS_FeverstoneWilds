@@ -22,13 +22,13 @@
 		"*-limestone-nativecopper": { "skin": { "base": "entity/land/golem/golemlimestonecopper" } },
 		"*-limestone-hematite": { "skin": { "base": "entity/land/golem/golemlimestoneiron" } }
 	},
-
 	"creativeinventory": {
 		"general": ["*"],
 		"items": ["*"],
 		"creatures": ["*"]
-		},
+	},
 		
+	"heldTpIdleAnimation": "holdunderarm",
 	"guiTransform": {
 		"translation": { "x": 0, "y": 0, "z": 0 },
 		"rotation": { "x": 180, "y": -109, "z": 1 },
@@ -40,9 +40,9 @@
 		"rotation": { "x": -8, "y": -63, "z": -7 }
 	},
 	"tpHandTransform": {
-		"translation": { "x": -0.9, "y": -0.9, "z": -0.7 },
-		"rotation": { "x": -180, "y": 0, "z": -156 },
-		"scale": 0.4
+		"translation": { "x": -0.9, "y": -1.1, "z": -1.8 },
+		"rotation": { "x": -95, "y": 0, "z": -110 },
+		"scale": 0.25
 	}
 	
 }

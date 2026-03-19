@@ -154,10 +154,10 @@
 				"states": [ { "code": "alarmherdondamage", "chance": 1, "slot": 1, "priority": 1, "accumType": "max" },
 							{ "code": "fleeondamage", "duration": 60, "chance": 0.85, "slot": 0, "priority": 5, "accumType": "max", "whenHealthRelBelow": 0.75 }]
 			},
-			{ "code": "grow", "hoursToGrow": 168, 
-				"adultEntityCodesByType": {
-					"*": [ "feverstonewilds:bison-{tamed}-male", "feverstonewilds:bison-{tamed}-female" ]
-				} 
+			{ "code": "grow", "hoursToGrow": 168,
+				"orPortionsEatenForGrowing": 14,
+				"fedAdultEntityCodes": [ "feverstonewilds:bison-tamed-male", "feverstonewilds:bison-tamed-female", "feverstonewilds:bison-tamed-female" ],
+				"adultEntityCodes": [ "feverstonewilds:bison-wild-male", "feverstonewilds:bison-wild-female", "feverstonewilds:bison-wild-female" ]
 			},
 			{ "code": "taskai",
 				"aiCreatureType": "LandCreature",
@@ -188,6 +188,19 @@
 						"searchRange": 25,
 						"animation": "Run",
 						"animationSpeed": 4
+					},
+					{
+						"code": "seekfoodandeat",
+						"movespeed": 0.006,
+						"priority": 1.39,
+						"eatSound": "bison/bisoneating",
+						"soundRange": 4,
+						"soundStartMs": 900,
+						"eatTime": 2.0,
+						"animationSpeed": 0.8,
+						"animation": "Walk",
+						"mincooldownHours": 1,
+						"maxcooldownHours": 4
 					},
 					{
 						"code": "idle",
@@ -233,7 +246,7 @@
 						"priority": 1.0,
 						"priorityForCancel": 1.35,
 						"movespeed": 0.004,
-						"animationSpeed": 2,
+						"animationSpeed": 1.8,
 						"animation": "Walk",
 						"preferredLightLevel": 24
 					},

@@ -201,7 +201,7 @@
     ],
     "spawnconditions": {
         "worldgen": {
-            "TriesPerChunk": { "avg": 0.005, "var": 0.0005 },
+            "TriesPerChunk": { "avg": 0.025, "var": 0.0005 },
             "tryOnlySurface": true,
             "minLightLevel": 12,
             "lightLevelType": "onlyBlockLight",
@@ -210,7 +210,8 @@
             },
 			"maxQuantityByGroup": { "code": "golem-*", "maxQuantity": 1 },
             "insideBlockCodesByType": {
-                "*": [ "game:air", "game:tallgrass-*" ]
+                "golem-*": [ "game:loosestones-{rock}-free", "game:loosestones-{rock}-snow",
+                             "game:looseores-quartz-{rock}-free", "game:looseboulders-{rock}-snow" ]
             },
             "minYByType": { "*": 0.85 },
             "maxYByType": { "*": 2 },
@@ -229,7 +230,8 @@
                 "*": { "dist": "uniform", "avg": 1, "var": 0 }
             },
             "insideBlockCodesByType": {
-                "*": [ "game:air", "game:tallgrass-*" ]
+                "golem-*": [ "game:loosestones-{rock}-free", "game:loosestones-{rock}-snow",
+                             "game:looseores-quartz-{rock}-free", "game:looseboulders-{rock}-snow" ]
             },
             "minYByType": { "*": 0.85 },
             "maxYByType": { "*": 2 },
