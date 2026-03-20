@@ -1,0 +1,92 @@
+{
+	"code": "fsw-painting",
+	"behaviorsByType": {
+		"@fsw-painting-(mistymorning|naturetwosides|newdawn|quietstorm)-.*": [
+			{ "name": "HorizontalAttachable" }, 
+			{ "name": "Multiblock", "propertiesByType": {
+					"*-north": { "sizex": 2, "sizey": 1, "sizez": 1, "cposition": { "x": 0, "y": 0, "z": 0 } },
+					"*-east": { "sizex": 1, "sizey": 1, "sizez": 2, "cposition": { "x": 0, "y": 0, "z": 0 } },
+					"*-south": { "sizex": 2, "sizey": 1, "sizez": 1, "cposition": { "x": 1, "y": 0, "z": 0 } },
+					"*-west": { "sizex": 1, "sizey": 1, "sizez": 2, "cposition": { "x": 0, "y": 0, "z": 1 } } 
+				}
+			} 
+		],
+		"@fsw-painting-(glassroses|hiddenbeauty|koipond|snailonamushroom|woodpath)-.*": [
+			{ "name": "HorizontalAttachable" }, 
+			{ "name": "Multiblock", "propertiesByType": {
+					"*-north": { "sizex": 1, "sizey": 2, "sizez": 1, "cposition": { "x": 0, "y": 0, "z": 0 } },
+					"*-east": { "sizex": 1, "sizey": 2, "sizez": 1, "cposition": { "x": 0, "y": 0, "z": 0 } },
+					"*-south": { "sizex": 1, "sizey": 2, "sizez": 1, "cposition": { "x": 0, "y": 0, "z": 0 } },
+					"*-west": { "sizex": 1, "sizey": 2, "sizez": 1, "cposition": { "x": 0, "y": 0, "z": 0 } } 
+				}
+			} 
+		],
+		"*": [{ "name": "HorizontalAttachable" }]
+	},
+	"attributes": {
+		"handbook": {
+			"groupBy": ["fsw-painting-{fsw-painting}-*"]
+		}
+	},
+	"variantgroups": [
+		{ "code": "fsw-painting", "loadFromProperties": "block/fsw-painting" },
+		{ "code": "side", "loadFromProperties": "game:abstract/horizontalorientation" }
+	],
+	"shapebytype": {
+		"@painting-(mistymorning|naturetwosides|newdawn|quietstorm)-.*": { "base": "game:block/wood/painting2x1", "rotateYByType": { "*-north": 180, "*-east": 90, "*-south": 0, "*-west": 270 } },
+		"@painting-(glassroses|hiddenbeauty|koipond|snailonamushroom|woodpath)-.*": { "base": "game:block/wood/painting1x2", "rotateYByType": { "*-north": 180, "*-east": 90, "*-south": 0, "*-west": 270 } },
+		"*": { "base": "game:block/wood/painting1x1", "rotateYByType": { "*-north": 180, "*-east": 90, "*-south": 0, "*-west": 270 } }
+	},
+	"textures": {
+		"painting": { "base": "block/fsw-painting/{fsw-painting}" }
+	},
+	"creativeinventory": { "general": ["fsw-painting-*-north"], "decorative": ["fsw-painting-*-north"] },
+	"blockmaterial": "Wood",
+	"lightAbsorption": 0,
+	"faceCullMode": "NeverCull",
+
+	"sidesolid": {
+		"all": false
+	},
+	"sideopaque": {
+		"all": false
+	},
+	"sideao": { "all": false },
+	"replaceable": 5001,
+	"resistance": 0.1,
+	"collisionbox": null,
+	"selectionbox": {
+		"x1": 0, "y1": 0, "z1": 0, 
+		"x2": 1, "y2": 1, "z2": 0.0625,
+		"rotateYByType": {
+			"*-east": 270,
+			"*-south": 180,
+			"*-west": 90,
+			"*-north": 0
+		}
+	},
+	"sounds": {
+		"place": "game:block/planks",
+		"break": "game:block/planks",
+		"hit": "game:block/planks"
+	},
+	"rainPermeable": true,
+	"materialDensity": 600,
+	"guiTransform": {
+		"rotation": { "x": -22.6, "y": 25, "z": 0 },
+		"origin": { "x": 0.5, "y": 0.5, "z": 0 },
+		"scale": 1.39
+	},
+	"groundTransform": {
+		"translation": { "x": 0, "y": 0, "z": 0 },
+		"rotation": { "x": -90, "y": 0, "z": 0 },
+		"origin": { "x": 0.5, "y": 0, "z": 0 },
+		"scale": 2.5
+	},
+	"tpHandTransform": {
+		"translation": { "x": -1, "y": -0.29, "z": 0.05 },
+		"rotation": { "x": 3, "y": 12, "z": -25 },
+		"origin": { "x": 0.5, "y": 0.5, "z": 0 },
+		"scale": 0.6
+	}
+}
