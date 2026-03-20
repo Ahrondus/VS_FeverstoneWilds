@@ -29,16 +29,16 @@
 		}
 	},
 	"variantgroups": [
-		{ "code": "fsw-painting", "loadFromProperties": "block/fsw-painting" },
+		{ "code": "fsw-painting", "loadFromProperties": "feverstonewilds:block/fsw-painting" },
 		{ "code": "side", "loadFromProperties": "game:abstract/horizontalorientation" }
 	],
 	"shapebytype": {
-		"@painting-(mistymorning|naturetwosides|newdawn|quietstorm)-.*": { "base": "game:block/wood/painting2x1", "rotateYByType": { "*-north": 180, "*-east": 90, "*-south": 0, "*-west": 270 } },
-		"@painting-(glassroses|hiddenbeauty|koipond|snailonamushroom|woodpath)-.*": { "base": "game:block/wood/painting1x2", "rotateYByType": { "*-north": 180, "*-east": 90, "*-south": 0, "*-west": 270 } },
+		"@fsw-painting-(mistymorning|naturetwosides|newdawn|quietstorm)-.*": { "base": "game:block/wood/painting2x1", "rotateYByType": { "*-north": 180, "*-east": 90, "*-south": 0, "*-west": 270 } },
+		"@fsw-painting-(glassroses|hiddenbeauty|koipond|snailonamushroom|woodpath)-.*": { "base": "game:block/wood/painting1x2", "rotateYByType": { "*-north": 180, "*-east": 90, "*-south": 0, "*-west": 270 } },
 		"*": { "base": "game:block/wood/painting1x1", "rotateYByType": { "*-north": 180, "*-east": 90, "*-south": 0, "*-west": 270 } }
 	},
 	"textures": {
-		"painting": { "base": "block/fsw-painting/{fsw-painting}" }
+		"painting": { "base": "block/painting/{fsw-painting}" }
 	},
 	"creativeinventory": { "general": ["fsw-painting-*-north"], "decorative": ["fsw-painting-*-north"] },
 	"blockmaterial": "Wood",
