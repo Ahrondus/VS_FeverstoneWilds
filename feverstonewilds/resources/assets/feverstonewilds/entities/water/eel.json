@@ -5,6 +5,9 @@
 	"hitboxSize": { "x": 1.2, "y": 1 },
 	"eyeHeight": 0.9,
 	"drops": [ { "type": "item", "code": "fsw-fishraw-{habitat}-eel" } ],
+	"attributes": {
+		"baitTags": [ "bait-meat", "bait-stinkmeat", "bait-fishtiny", "bait-fishsmall" ]
+	},
 	"habitat": "underwater",
 	"client": {
 		"renderer": "Shape",
@@ -83,19 +86,42 @@
 				"aitasks": [
 				{
 						"code": "meleeattack",
-						"entityCodes": ["chicken-baby", "discus"],
+						"entityCodes": ["player", "chicken-baby",
+										"discus", "hare-baby" ],
 						"priority": 2,
-						"damage": 8,
+						"damage": 4,
 						"damageTier": 2,
-						"damageType": "SlashingAttack",
-						"slot": 1,
-						"mincooldown": 1500, 
-						"maxcooldown": 1500, 
-						"attackDurationMs": 800,
-						"damagePlayerAtMs": 500,
+						"executionChance": 0.05,
 						"animation": "attack",
-						"animationSpeed": 2.5,
-						"sound": ""
+						"animationSpeed": 1.5,
+						"whenSwimming": true
+					},
+					{
+						"code": "seekentity",
+						"id": "seekbobber",
+						"entityCodes": ["bobber-*"],
+						"searchType": "Inanimate",
+						"targetOnlyInteractableEntities": false,
+						"priority": 1.8,
+						"whenSwimming": true,
+						"seekingRange": 25,
+						"movespeed": 0.01,
+						"animation": "swim",
+						"animationSpeed": 2
+					},
+					{
+						"code": "fleeentity",
+						"id": "fleebobber",
+						"entityCodes": ["bobber-*"],
+						"priority": -1,
+						"priorityForCancel": 2,
+						"whenSwimming": true,
+						"fleeDurationMs": 10000,
+						"fleeingDistance": 30,
+						"movespeed": 0.06,
+						"seekingRange": 14,
+						"animation": "swimfast",
+						"animationSpeed": 2.3
 					},
 					{
 						"code": "fleeentity",
@@ -106,36 +132,6 @@
 						"animation": "swim",
 						"animationSpeed": 3,
 						"whenInEmotionState": "fleeondamage"
-					},
-					{
-						"code": "seekentity",
-						"entityCodes": ["chicken-baby", "discus"],
-						"priority": 1.5,
-						"movespeed": 0.1,
-						"seekingRange": 15,
-						"belowTempSeekingRange": 25,
-						"belowTempThreshold": -5,
-						"animation": "swim",
-						"leapAtTarget": true,
-						"leapAnimation": null,
-						"animationSpeed": 2.2,
-						"leapChance": 0.01,
-						"sound": "",
-						"whenNotInEmotionState": "saturated"
-					},
-					{
-						"code": "seekentity",
-						"entityCodes": ["player"],
-						"priority": 1.49,
-						"movespeed": 0.1,
-						"seekingRange": 8,
-						"animation": "swim",
-						"leapAtTarget": true,
-						"leapAnimation": null,
-						"animationSpeed": 2.2,
-						"leapChance": 0.01,
-						"sound": "",
-						"whenInEmotionState": "aggressiveondamage"
 					},
 					{
 						"code": "fishoutofwater", 
