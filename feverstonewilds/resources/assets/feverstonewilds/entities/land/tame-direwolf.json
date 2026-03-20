@@ -397,6 +397,25 @@
         },
         "ownable": {
             "groupCode": "mountableanimal"
+        },
+        "harvestable": {
+            "drops": [
+                {
+                    "type": "item",
+                    "code": "bushmeat-raw",
+                    "quantity": { "avg": 8, "var": 2 }
+			    },
+                {
+                    "type": "item",
+                    "code": "hide-raw-large",
+                    "quantity": { "avg": 2.0 , "var": 0 }
+                },
+                {
+                    "type": "item",
+                    "code": "fat",
+                    "quantity": { "avg": 2, "var": 0.5 }
+                }
+            ]
         }
     },
     "client": {
@@ -643,6 +662,7 @@
             { "code": "rideable" },
             { "code": "ownable" },
             { "code": "selectionboxes" },
+            { "code": "harvestable" },
             { "code": "rideableaccessories" },
             { "code": "mortallywoundable", "whenBelowHealth": 7 },
             { "code": "health", "maxhealth": 32 },
