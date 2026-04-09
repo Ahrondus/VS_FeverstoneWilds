@@ -16,9 +16,9 @@
 			"groupcode": "feverstonewilds:creaturegroup-fswostrich"
 		},
 		"netCaughtItemCode": "feverstonewilds:creature-ostrich-chick",
-		"basketCatchable": true,
-        "trapChance": 0.35,
-        "trapDestroyChance": 0.025
+		"trappable": {
+			"small": { "trapChance": 0.35, "trapDestroyChance": 0.025 }
+		}
 	},
 	"client": {
 		"renderer": "Shape",

@@ -24,9 +24,10 @@
 		"creatureDiet": {
 			"foodTags": [ "meat" ]
 		},
-        "basketCatchable": true,
-        "trapChance": 0.0,
-        "trapDestroyChance": 0.65,
+        "trappable": {
+            "small": { "trapChance": 0.0, "trapDestroyChance": 0.65 },
+            "large": { "trapChance": 0.0, "trapDestroyChance": 0.15 }
+        },
 		"handbook": {
 			"groupcode": "feverstonewilds:creaturegroup-fswdirewolf"
 		}
