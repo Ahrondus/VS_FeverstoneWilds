@@ -13,6 +13,13 @@
         "killedByInfoText": "feverstonewilds:deadcreature-eaten-hellboar",
         "handbook": {
             "groupcode": "feverstonewilds:creaturegroup-fswhellboar"
+        },
+        "creatureDiet": {
+            "foodCategories": [ "Vegetable", "Fruit" ],
+			"foodTags": [ "meat" ]
+		},
+        "trappable": {
+            "large": { "trapChance": 0.35, "trapDestroyChance": 0.2 }
         }
     },
     "client": {
@@ -136,6 +143,13 @@
                             "whenInEmotionState": "fleeondamage"
                         },
                         {
+                            "code": "getoutofwater",
+                            "priority": 1.5,
+                            "movespeed": 0.015,
+                            "animation": "Walk",
+                            "animationSpeed": 2.2
+                        },
+                        {
                             "code": "idle",
                             "priority": 1.45,
                             "priorityForCancel": 1.55,
@@ -151,11 +165,16 @@
                             "stopOnHurt": true
                         },
                         {
-                            "code": "getoutofwater",
+                            "code": "seekfoodandeat",
+                            "movespeed": 0.008,
                             "priority": 1.4,
-                            "movespeed": 0.015,
+                            "animationSpeed": 1.25,
                             "animation": "Walk",
-                            "animationSpeed": 2.2
+                            "eatAnimation": "Eat",
+                            "eatSound": "game:creature/animal-eat-small",
+                            "eatTime": 1.75,
+                            "mincooldownHours": 1,
+                            "maxcooldownHours": 4
                         },
                         {
                             "code": "wander", 

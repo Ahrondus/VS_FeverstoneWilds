@@ -17,9 +17,9 @@
 			"groupcode": "feverstonewilds:creaturegroup-fswcockatrice"
 		},
 		"netCaughtItemCode": "feverstonewilds:creature-cockatrice-chick",
-		"basketCatchable": true,
-		"trapChance": 0.35,
-		"trapDestroyChance": 0.025
+		"trappable": {
+			"small": { "trapChance": 0.35, "trapDestroyChance": 0.025 }
+		}
 	},
 	"client": {
 		"renderer": "Shape",
@@ -284,8 +284,7 @@
 	"sounds": {
 		"hurt": "game:creature/chicken/chick*",
 		"death": "game:creature/chicken/chick*",
-		"idle": "cockatrice/cockatrice-chick-peeping"
+		"idle": { "path": "cockatrice/cockatrice-chick-peeping", "range": 16, "pitch": { "avg": 1, "var": 0.2 } } 
 	},
-	"idleSoundRange": 8,
-	"idleSoundChance": 0.01
+	"idleSoundChance": 1
 }
