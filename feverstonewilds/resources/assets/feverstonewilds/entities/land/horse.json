@@ -126,7 +126,7 @@
                                     "RearSideAP", "RFrontAP", "LFrontAP", "TempGear1AP", "TempGear2AP", "TempGear3AP"]
         },
         "gait": {
-            "enabledByType": { "*-tamed-*": true, "*": false },
+            "enabledByType": { "*-tamed-*": true, "taminghorse-*": true, "*": false },
 			"idleGaits": { "Land": "idle", "Sea": "swimidle" },
 			"gaits": [
 				{
@@ -247,7 +247,7 @@
 			]
 		},
         "rideable": {
-            "enabledByType": { "*-tamed-*": true, "*": false },
+            "enabledByType": { "*-tamed-*": true, "taminghorse-*": true, "*": false },
             "interactMountAnySeat": false,
             "seats": [
                 { "apName": "Rider", "selectionBox": "MidUpperAP", "bodyYawLimit": 0.2, "controllable": true,
