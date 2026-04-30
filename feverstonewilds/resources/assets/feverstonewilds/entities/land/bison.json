@@ -53,9 +53,9 @@
         "floatupwhenstuck": { "onlyWhenDead": true },
         "rideableaccessories": {
             "wearableSlots": [
-                    { "code": "head", "forCategoryCodes": ["bridle-bison"], "attachmentPointCode": "HeadAP" }, 
+                    { "code": "head", "forCategoryCodes": ["bridle-bison-{gender}"], "attachmentPointCode": "HeadAP" }, 
                     { "code": "face", "forCategoryCodes": ["face"], "attachmentPointCode": "FaceAP" }, 
-					{ "code": "neck", "forCategoryCodes": ["lantern"], "attachmentPointCode": "NeckAP" },
+					{ "code": "bison-neck-{gender}", "forCategoryCodes": ["lantern"], "attachmentPointCode": "NeckAP" },
                     { "code": "middlebackupper", "forCategoryCodes": ["saddle-bison"], "attachmentPointCode": "MidUpperAP" },
                     { "code": "lowerback", "forCategoryCodes": ["bedroll", "pillion"], "attachmentPointCode": "RearUpperAP" },
                     { "code": "lowerbackside", "forCategoryCodes": ["sidebags-bison"], "attachmentPointCode": "RearSideAP" },
@@ -69,9 +69,9 @@
                         "forCategoryCodes": ["utilities", "pot", "weaponfalx", "weapon1m", "bowshort", "bowlong" ],
                         "attachmentPointCode": "LFrontAP"
                     },
-                    { "code": "gearleft", "forCategoryCodes": ["gear"], "attachmentPointCode": "TempGear1AP" }, 
-                    { "code": "gearback", "forCategoryCodes": ["gear"], "attachmentPointCode": "TempGear2AP" }, 
-                    { "code": "gearright", "forCategoryCodes": ["gear"], "attachmentPointCode": "TempGear3AP" }
+                    { "code": "gearleft", "forCategoryCodes": ["gear"], "attachmentPointCode": "TempGear1AP", "stepParentTo": { "": { "elementName": "Gear1Parent" } } }, 
+                    { "code": "gearback", "forCategoryCodes": ["gear"], "attachmentPointCode": "TempGear2AP", "stepParentTo": { "": { "elementName": "Gear2Parent" } } }, 
+                    { "code": "gearright", "forCategoryCodes": ["gear"], "attachmentPointCode": "TempGear3AP", "stepParentTo": { "": { "elementName": "Gear3Parent" } } }
                 ]
         },
         "selectionboxes": {
@@ -432,7 +432,8 @@
             	"enabledByType": { "*-tamed-*": true, "*": false } },
 			{ "code": "rideable",
 				"enabledByType": { "*-tamed-*": true, "*": false } },
-			{ "code": "repulseagents" }, 
+			{ "code": "repulseagents" },
+			{ "code": "harvestable" }, 
 			{ "code": "controlledphysics" }, 
 			{ "code": "floatupwhenstuck" },
 			{ "code": "interpolateposition" },
@@ -442,7 +443,6 @@
 			{ "code": "rideableaccessories",
                     "enabledByType": { "*-tamed-*": true, "*": false } },
 			{ "code": "multiply", "enabledByType": { "*-female": true, "*-male": false } },
-			{ "code": "harvestable" },
 			{ "code": "milkable", "enabledByType": { "*-female": true, "*-male": false }  },
 			{ "code": "despawn",
                     "enabledByType": { "*-tamed-*": false, "*": true },
