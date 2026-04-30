@@ -1,7 +1,7 @@
 {
 	"editor": {
-		"backDropShape": "C:/Users/ahron/Documents/GitHub/VS_FeverstoneWilds/feverstonewilds/resources/assets/feverstonewilds/shapes/entity/land/mammal/direwolf-adult",
-		"collapsedPaths": "Root/LanternOrigin/rope,Root/Base1",
+		"backDropShape": "C:/Users/ahron/Documents/GitHub/VS_FeverstoneWilds/feverstonewilds/resources/assets/feverstonewilds/shapes/entity/land/mammal/bison-male",
+		"collapsedPaths": "Root/Base1,Root/LanternOrigin/rope/rope1",
 		"allAngles": false,
 		"entityTextureMode": false
 	},
@@ -21,10 +21,10 @@
 		{
 			"name": "LanternOrigin",
 			"stepParentName": "Neck",
-			"from": [ 3.0, 1.0, 3.8 ],
-			"to": [ 3.0, 1.0, 3.8 ],
-			"rotationOrigin": [ 3.0, 1.0, 3.8 ],
-			"rotationZ": 11.0,
+			"from": [ 3.0, 1.0, 6.3 ],
+			"to": [ 3.0, 1.0, 6.3 ],
+			"rotationOrigin": [ 3.0, 1.0, 6.3 ],
+			"rotationZ": -15.0,
 			"faces": {
 				"north": { "texture": "#null", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
 				"east": { "texture": "#null", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
@@ -36,24 +36,24 @@
 			"children": [
 				{
 					"name": "rope",
-					"from": [ 0.0, -1.55, -4.0 ],
-					"to": [ 0.5, 6.45, 3.9 ],
-					"rotationOrigin": [ 0.0, -2.0, -4.0 ],
-					"rotationZ": -12.5,
+					"from": [ 0.0, -1.85, -6.8 ],
+					"to": [ 0.5, 11.75, 6.3 ],
+					"rotationOrigin": [ 0.0, -2.3, -6.8 ],
+					"rotationZ": 6.5,
 					"faces": {
-						"north": { "texture": "#null", "uv": [ 0.0, 0.0, 0.5, 8.0 ] },
-						"east": { "texture": "#null", "uv": [ 0.0, 0.0, 7.5, 8.0 ] },
-						"south": { "texture": "#null", "uv": [ 0.0, 0.0, 0.5, 8.0 ] },
-						"west": { "texture": "#null", "uv": [ 0.0, 0.0, 7.5, 8.0 ] },
-						"up": { "texture": "#null", "uv": [ 0.0, 0.0, 0.5, 7.5 ] },
-						"down": { "texture": "#null", "uv": [ 0.0, 0.0, 0.5, 7.5 ] }
+						"north": { "texture": "#null", "uv": [ 0.0, 0.0, 0.5, 13.5 ] },
+						"east": { "texture": "#null", "uv": [ 0.0, 0.0, 13.0, 13.5 ] },
+						"south": { "texture": "#null", "uv": [ 0.0, 0.0, 0.5, 13.5 ] },
+						"west": { "texture": "#null", "uv": [ 0.0, 0.0, 13.0, 13.5 ] },
+						"up": { "texture": "#null", "uv": [ 0.0, 0.0, 0.5, 13.0 ] },
+						"down": { "texture": "#null", "uv": [ 0.0, 0.0, 0.5, 13.0 ] }
 					},
 					"children": [
 						{
 							"name": "rope1",
-							"from": [ -3.7301, 3.1142, 2.9 ],
-							"to": [ -3.2301, 3.6142, 4.9 ],
-							"rotationOrigin": [ 3.2699, 3.1142, 3.9 ],
+							"from": [ -3.78, 3.1142, 5.7 ],
+							"to": [ -3.28, 3.6142, 7.7 ],
+							"rotationOrigin": [ 3.2699, 3.1142, 6.7 ],
 							"rotationZ": 67.0,
 							"faces": {
 								"north": { "texture": "#rope", "uv": [ 0.5, 0.0, 1.0, 0.5 ] },
@@ -79,7 +79,26 @@
 										"west": { "texture": "#null", "uv": [ 0.0, 0.0, 0.5, 4.0 ] },
 										"up": { "texture": "#null", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
 										"down": { "texture": "#null", "uv": [ 0.0, 0.0, 0.5, 0.5 ] }
-									}
+									},
+									"children": [
+										{
+											"name": "knot2",
+											"from": [ -0.1361, 3.9, -0.47 ],
+											"to": [ 0.8639, 4.9, 0.53 ],
+											"rotationOrigin": [ 0.3645, 4.3995, 0.0346 ],
+											"rotationX": -44.8153,
+											"rotationY": -4.5913,
+											"rotationZ": 98.11,
+											"faces": {
+												"north": { "texture": "#rope", "uv": [ 5.5, 1.0, 6.5, 2.0 ] },
+												"east": { "texture": "#rope", "uv": [ 9.5, 12.0, 10.5, 13.0 ] },
+												"south": { "texture": "#rope", "uv": [ 4.0, 4.0, 5.0, 5.0 ] },
+												"west": { "texture": "#rope", "uv": [ 2.0, 8.0, 3.0, 9.0 ] },
+												"up": { "texture": "#rope", "uv": [ 14.0, 14.0, 15.0, 15.0 ] },
+												"down": { "texture": "#rope", "uv": [ 0.5, 8.0, 1.5, 9.0 ] }
+											}
+										}
+									]
 								},
 								{
 									"name": "Cube3",
@@ -96,7 +115,26 @@
 										"west": { "texture": "#null", "uv": [ 0.0, 0.0, 0.5, 4.0 ] },
 										"up": { "texture": "#null", "uv": [ 0.0, 0.0, 0.5, 0.5 ] },
 										"down": { "texture": "#null", "uv": [ 0.0, 0.0, 0.5, 0.5 ] }
-									}
+									},
+									"children": [
+										{
+											"name": "knot3",
+											"from": [ -0.25, 3.96, 0.03 ],
+											"to": [ 0.75, 4.96, 1.03 ],
+											"rotationOrigin": [ 0.2496, 4.4643, 0.5339 ],
+											"rotationX": 44.8153,
+											"rotationY": 4.5913,
+											"rotationZ": 98.11,
+											"faces": {
+												"north": { "texture": "#rope", "uv": [ 5.5, 1.0, 6.5, 2.0 ] },
+												"east": { "texture": "#rope", "uv": [ 9.5, 12.0, 10.5, 13.0 ] },
+												"south": { "texture": "#rope", "uv": [ 4.0, 4.0, 5.0, 5.0 ] },
+												"west": { "texture": "#rope", "uv": [ 2.0, 8.0, 3.0, 9.0 ] },
+												"up": { "texture": "#rope", "uv": [ 14.0, 14.0, 15.0, 15.0 ] },
+												"down": { "texture": "#rope", "uv": [ 0.5, 8.0, 1.5, 9.0 ] }
+											}
+										}
+									]
 								}
 							]
 						}
@@ -104,9 +142,9 @@
 				},
 				{
 					"name": "knot",
-					"from": [ -0.6594, -5.0781, -0.6 ],
-					"to": [ 0.3406, -4.0781, 0.4 ],
-					"rotationOrigin": [ -0.1594, -4.5781, -0.1 ],
+					"from": [ 0.14, -5.18, -0.6 ],
+					"to": [ 1.14, -4.18, 0.4 ],
+					"rotationOrigin": [ 0.6406, -4.6781, -0.1 ],
 					"rotationZ": 54.5,
 					"faces": {
 						"north": { "texture": "#rope", "uv": [ 5.5, 1.0, 6.5, 2.0 ] },
@@ -119,15 +157,15 @@
 					"children": [
 						{
 							"name": "holder 1",
-							"from": [ 0.5, -1.9, 0.25 ],
-							"to": [ 1.0, 0.6, 0.75 ],
-							"rotationOrigin": [ 0.75, 0.6, 0.5 ],
+							"from": [ 1.3, -1.3, 0.25 ],
+							"to": [ 1.8, -0.3, 0.75 ],
+							"rotationOrigin": [ 1.55, 1.2, 0.5 ],
 							"rotationZ": -55.0,
 							"faces": {
-								"north": { "texture": "#rope", "uv": [ 1.0, 12.5, 1.5, 15.0 ] },
-								"east": { "texture": "#rope", "uv": [ 6.0, 11.0, 6.5, 13.5 ] },
-								"south": { "texture": "#rope", "uv": [ 13.5, 9.0, 14.0, 11.5 ] },
-								"west": { "texture": "#rope", "uv": [ 5.5, 10.5, 6.0, 13.0 ] },
+								"north": { "texture": "#rope", "uv": [ 1.0, 12.5, 1.5, 13.5 ] },
+								"east": { "texture": "#rope", "uv": [ 6.0, 11.0, 6.5, 12.0 ] },
+								"south": { "texture": "#rope", "uv": [ 13.5, 9.0, 14.0, 10.0 ] },
+								"west": { "texture": "#rope", "uv": [ 5.5, 10.5, 6.0, 11.5 ] },
 								"up": { "texture": "#rope", "uv": [ 0.0, 8.5, 0.5, 9.0 ] },
 								"down": { "texture": "#null", "uv": [ 0.0, 0.0, 0.5, 0.5 ], "enabled": false }
 							},
@@ -319,7 +357,4 @@
 				}
 			]
 		}
-	],
-	"animations": [
-	]
-}
+	]}
