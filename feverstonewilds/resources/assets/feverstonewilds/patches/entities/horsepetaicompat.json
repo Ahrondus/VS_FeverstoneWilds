@@ -223,24 +223,5 @@
         "file": "feverstonewilds:entities/land/foal.json",
         "dependsOn": [ {"modid": "petai"} ],
         "condition": { "when": "FSWFoalEnabled", "isValue": "true" }
-    },
-    {
-        "op": "replace",
-        "path": "/server/behaviors/10",
-        "value": { "code": "raisable", "hoursToGrow": 120,
-				"adultEntityCodesByType": { "*-tamed-percheron": ["feverstonewilds:horse-tamed-male-percheron", "feverstonewilds:horse-tamed-female-percheron" ],
-                                            "*-tamed-arabian": ["feverstonewilds:horse-tamed-male-arabian", "feverstonewilds:horse-tamed-female-arabian" ],
-                                            "*-tamed-donkey": [ "feverstonewilds:horse-tamed-male-donkey", "feverstonewilds:horse-tamed-female-donkey" ],
-                                            "*-tamed-shire": [ "feverstonewilds:horse-tamed-male-shire", "feverstonewilds:horse-tamed-female-shire" ],
-                                            "*-tamed-quarter": [ "feverstonewilds:horse-tamed-male-quarter", "feverstonewilds:horse-tamed-female-quarter" ],
-                                            "*-wild-percheron": ["feverstonewilds:horse-wild-male-percheron", "feverstonewilds:horse-wild-female-percheron" ],
-                                            "*-wild-arabian": ["feverstonewilds:horse-wild-male-arabian", "feverstonewilds:horse-wild-female-arabian" ],
-                                            "*-wild-donkey": [ "feverstonewilds:horse-wild-male-donkey", "feverstonewilds:horse-wild-female-donkey" ],
-                                            "*-wild-shire": [ "feverstonewilds:horse-wild-male-shire", "feverstonewilds:horse-wild-female-shire" ],
-                                            "*-wild-quarter": [ "feverstonewilds:horse-wild-male-quarter", "feverstonewilds:horse-wild-female-quarter" ]  }
-			},
-        "file": "feverstonewilds:entities/land/foal.json",
-        "dependsOn": [ {"modid": "petai"} ],
-        "condition": { "when": "FSWFoalEnabled", "isValue": "true" }
     }
 ]

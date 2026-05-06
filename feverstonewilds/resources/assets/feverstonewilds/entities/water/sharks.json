@@ -113,19 +113,19 @@
 						"code": "meleeattack",
 						"entityCodes": ["*"],
 						"priority": 2,
+                        "minDist": 3.5,
 						"damage": 8,
 						"damageTier": 2,
 						"damageType": "SlashingAttack",
 						"slot": 1,
+						"whenSwimming": true,
 						"mincooldown": 1500, 
 						"maxcooldown": 1500, 
 						"attackDurationMs": 800,
 						"damagePlayerAtMs": 500,
 						"animation": "attack",
-						"animationSpeed": 2.5,
-						"sound": ""
+						"animationSpeed": 2.5
 					},
-					
 					{
 						"code": "fleeentity",
 						"entityCodes": ["player"],
@@ -143,8 +143,7 @@
 						"movespeed": 0.028,
 						"seekingRange": 15,
 						"animation": "swim",
-						"animationSpeed": 2.2,
-						"sound": ""
+						"animationSpeed": 2.2
 					},
 					{
 						"code": "seekentity",
@@ -154,7 +153,6 @@
 						"seekingRange": 25,
 						"animation": "swim",
 						"animationSpeed": 2.2,
-						"sound": "",
 						"whenNotInEmotionState": "saturated"
 					},
 					{
