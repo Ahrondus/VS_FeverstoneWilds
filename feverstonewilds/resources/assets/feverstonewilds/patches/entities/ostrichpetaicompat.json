@@ -220,23 +220,5 @@
         "value": { "code": "pettableextended" },
         "file": "feverstonewilds:entities/land/tame-ostrich-chick.json",
         "dependsOn": [ {"modid": "petai"} ]
-    },
-    {
-        "op": "replace",
-        "path": "/server/behaviors/6",
-        "value": { "code": "raisable", "hoursToGrow": 128,
-				"adultEntityCodes": [ "feverstonewilds:ostrich-male", "feverstonewilds:ostrich-female" ]  
-            },
-        "file": "feverstonewilds:entities/land/ostrich-chick.json",
-        "dependsOn": [ {"modid": "petai"} ]
-    },
-    {
-        "op": "replace",
-        "path": "/server/behaviors/6",
-        "value": { "code": "raisable", "hoursToGrow": 128,
-				"adultEntityCodes": [ "feverstonewilds:tame-ostrich-male", "feverstonewilds:tame-ostrich-female" ]  
-            },
-        "file": "feverstonewilds:entities/land/tame-ostrich-chick.json",
-        "dependsOn": [ {"modid": "petai"} ]
     }
 ]
