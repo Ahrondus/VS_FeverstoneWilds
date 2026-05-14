@@ -33,10 +33,10 @@ namespace FeverstoneWilds.Config
         public bool FSWBuromenfishEnabled = true;
         public bool FSWDiscusFishEnabled = true;
         public bool FSWEelEnabled = true;
+        public bool FSWGhostfishEnabled = true;
         public bool FSWOrcaEnabled = true;
         public bool FSWSharksEnabled = true;
         public bool FSWStingrayEnabled = true;
-        public bool FSWGhostfishEnabled = true;
 
         // Golem Types
         public string eachgolem = "----- Golems by Type -----";
@@ -126,10 +126,10 @@ namespace FeverstoneWilds.Config
             FSWBuromenfishEnabled = previousConfig.FSWBuromenfishEnabled;
             FSWDiscusFishEnabled = previousConfig.FSWDiscusFishEnabled;
             FSWEelEnabled = previousConfig.FSWEelEnabled;
+            FSWGhostfishEnabled = previousConfig.FSWGhostfishEnabled;
             FSWOrcaEnabled = previousConfig.FSWOrcaEnabled;
             FSWSharksEnabled = previousConfig.FSWSharksEnabled;
             FSWStingrayEnabled = previousConfig.FSWStingrayEnabled;
-            FSWGhostfishEnabled = previousConfig.FSWGhostfishEnabled;
 
             // Golem Types
             FSWCopperGolemEnabled = previousConfig.FSWCopperGolemEnabled;

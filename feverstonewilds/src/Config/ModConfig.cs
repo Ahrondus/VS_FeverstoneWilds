@@ -56,6 +56,7 @@ namespace FeverstoneWilds.Config
       api.World.Config.SetBool("FSWBuromenfishEnabled", config.FSWBuromenfishEnabled);
       api.World.Config.SetBool("FSWDiscusFishEnabled", config.FSWDiscusFishEnabled);
       api.World.Config.SetBool("FSWEelEnabled", config.FSWEelEnabled);
+      api.World.Config.SetBool("FSWGhostfishEnabled", config.FSWGhostfishEnabled);
       api.World.Config.SetBool("FSWOrcaEnabled", config.FSWOrcaEnabled);
       api.World.Config.SetBool("FSWSharksEnabled", config.FSWSharksEnabled);
       api.World.Config.SetBool("FSWStingrayEnabled", config.FSWStingrayEnabled);
