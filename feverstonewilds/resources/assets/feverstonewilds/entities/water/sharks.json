@@ -4,8 +4,15 @@
 	"variantgroups": [
 		{"code": "type", "states": ["freshwater", "saltwater", "hammerhead"] }
 	],
-	"hitboxSize": { "x": 1.2, "y": 1 },
-	"eyeHeight": 0.9,
+    "hitBoxSizeByType": {
+        "*-hammerhead": { "x": 3.25, "y": 2 },
+        "*": { "x": 3, "y": 1.75}
+    },
+    "deadHitBoxSizeByType": {
+        "*-hammerhead": { "x": 3.25, "y": 2 },
+        "*": { "x": 3, "y": 1.8 }
+    },
+	"eyeHeight": 1.65,
 	"drops": [],
 	"habitat": "underwater",
 	"attributes": {
@@ -25,14 +32,14 @@
 									  { "base": "entity/water/bullshark/bullshark4" },
 									  { "base": "entity/water/bullshark/bullshark5" }
 									]
-	},
+		},
 		"behaviors": [
 			{ "code": "repulseagents" }, 
 			{ "code": "controlledphysics", "stepHeight": 5 }, 
 			{ "code": "interpolateposition" },
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
 			{ "code": "harvestable" },
-			{ "code": "despawn", "minPlayerDistance": 18, "minSeconds": 300, "belowLightLevel": 0 }
+			{ "code": "despawn", "minPlayerDistance": 18, "minSeconds": 300, "belowLightLevel": 8 }
 		],
 		"animations": [
 			{
@@ -104,22 +111,21 @@
 				"aitasks": [
 				{
 						"code": "meleeattack",
-						"entityCodes": ["player", "drifter-*", "chicken-*", "buromenfish", "discus", "pink-salmon", "wolf-*", 
-						"bear-*", "hare-*"],
+						"entityCodes": ["*"],
 						"priority": 2,
+                        "minDist": 3.5,
 						"damage": 8,
 						"damageTier": 2,
 						"damageType": "SlashingAttack",
 						"slot": 1,
+						"whenSwimming": true,
 						"mincooldown": 1500, 
 						"maxcooldown": 1500, 
 						"attackDurationMs": 800,
 						"damagePlayerAtMs": 500,
 						"animation": "attack",
-						"animationSpeed": 2.5,
-						"sound": ""
+						"animationSpeed": 2.5
 					},
-					
 					{
 						"code": "fleeentity",
 						"entityCodes": ["player"],
@@ -135,47 +141,19 @@
 						"entityCodes": ["player"],
 						"priority": 1.51,
 						"movespeed": 0.028,
-						"seekingRange": 9,
-						"belowTempSeekingRange": 25,
-						"belowTempThreshold": -5,
-						"animation": "swim",
-						"leapAtTarget": true,
-						"leapAnimation": null,
-						"animationSpeed": 2.2,
-						"leapChance": 0.01,
-						"sound": "",
-						"whenNotInEmotionState": "saturated"
-					},
-					{
-						"code": "seekentity",
-						"entityCodes": ["player", "drifter-*", "chicken*", "fox", "buromenfish", "discus", "pink-salmon", "wolf*", 
-						"bear-*", "horse-*", "hare-*"],
-						"priority": 1.5,
-						"movespeed": 0.1,
 						"seekingRange": 15,
-						"belowTempSeekingRange": 25,
-						"belowTempThreshold": -5,
 						"animation": "swim",
-						"leapAtTarget": true,
-						"leapAnimation": null,
-						"animationSpeed": 2.2,
-						"leapChance": 0.01,
-						"sound": "",
-						"whenNotInEmotionState": "saturated"
+						"animationSpeed": 2.2
 					},
 					{
 						"code": "seekentity",
-						"entityCodes": ["player"],
+						"entityCodes": ["*"],
 						"priority": 1.49,
-						"movespeed": 0.1,
-						"seekingRange": 15,
+						"movespeed": 0.02,
+						"seekingRange": 25,
 						"animation": "swim",
-						"leapAtTarget": true,
-						"leapAnimation": null,
 						"animationSpeed": 2.2,
-						"leapChance": 0.01,
-						"sound": "",
-						"whenInEmotionState": "aggressiveondamage"
+						"whenNotInEmotionState": "saturated"
 					},
 					{
 						"code": "fishoutofwater", 
@@ -211,10 +189,11 @@
 						"animation": "idle"
 					}
 				]
-			}
+			},
+			{ "code": "entitystatetags" }
 		],
 		"spawnconditionsbyType": {
-			"shark-freshwater": {
+			"*-freshwater": {
 				"worldgen": {
 					"TriesPerChunk": { "avg": 0.035, "var": 0 },
 					"tryOnlySurface": true,
@@ -226,7 +205,7 @@
 					"maxY": 0.95
 				},
 				"runtime": {
-					"group": "neutral",
+					"group": "hostile",
 					"maxQuantity": 1,
 					"chance": 0.00001,
 					"tryOnlySurface": true,
@@ -237,7 +216,7 @@
 					"maxY": 0.95
 				}
 			},
-			"shark-saltwater": {
+			"*-saltwater": {
 				"worldgen": {
 					"TriesPerChunk": { "avg": 0.035, "var": 0 },
 					"tryOnlySurface": true,
@@ -249,7 +228,7 @@
 					"maxY": 0.95
 				},
 				"runtime": {
-					"group": "neutral",
+					"group": "hostile",
 					"maxQuantity": 2,
 					"chance": 0.00001,
 					"tryOnlySurface": true,
@@ -272,7 +251,7 @@
 					"maxY": 0.95
 				},
 				"runtime": {
-					"group": "neutral",
+					"group": "hostile",
 					"maxQuantity": 2,
 					"chance": 0.00001,
 					"tryOnlySurface": true,

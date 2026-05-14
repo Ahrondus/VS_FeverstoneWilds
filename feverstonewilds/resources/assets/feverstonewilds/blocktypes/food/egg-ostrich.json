@@ -13,35 +13,31 @@
 		}
 	},
 	"variantgroups": [
-		{ "code":"amount", "states": ["1", "2", "3", "4", "5", "6"] }
+		{ "code":"amount", "states": ["1", "2", "3", "4", "5"] }
 	],	
 	"creativeinventory": { "general": ["*"], "decorative": ["*"] },
 	"blockmaterial": "Soil",
 	"drawtype": "json",
 	"shapebytype": {
 		"*-1": { 
-			"base": "block/egg/1ostrichegg",
-			"alternates": [ { "base": "block/egg/1ostrichegg", "rotateY": 90 }, { "base": "block/egg/1ostrichegg", "rotateY": 180 }, { "base": "block/egg/1ostrichegg", "rotateY": 270 } ]
+			"base": "block/egg/ostrich-1egg",
+			"alternates": [ { "base": "block/egg/ostrich-1egg", "rotateY": 90 }, { "base": "block/egg/ostrich-1egg", "rotateY": 180 }, { "base": "block/egg/ostrich-1egg", "rotateY": 270 } ]
 		},
 		"*-2": { 
-			"base": "block/egg/2ostricheggs",
-			"alternates": [ { "base": "block/egg/2ostricheggs", "rotateY": 90 }, { "base": "block/egg/2ostricheggs", "rotateY": 180 }, { "base": "block/egg/2ostricheggs", "rotateY": 270 } ]
+			"base": "block/egg/ostrich-2eggs",
+			"alternates": [ { "base": "block/egg/ostrich-2eggs", "rotateY": 90 }, { "base": "block/egg/ostrich-2eggs", "rotateY": 180 }, { "base": "block/egg/ostrich-2eggs", "rotateY": 270 } ]
 		},
 		"*-3": { 
-			"base": "block/egg/3ostricheggs",
-			"alternates": [ { "base": "block/egg/3ostricheggs", "rotateY": 90 }, { "base": "block/egg/3ostricheggs", "rotateY": 180 }, { "base": "block/egg/3ostricheggs", "rotateY": 270 } ]
+			"base": "block/egg/ostrich-3eggs",
+			"alternates": [ { "base": "block/egg/ostrich-3eggs", "rotateY": 90 }, { "base": "block/egg/ostrich-3eggs", "rotateY": 180 }, { "base": "block/egg/ostrich-3eggs", "rotateY": 270 } ]
 		},
 		"*-4": { 
-			"base": "block/egg/4ostricheggs",
-			"alternates": [ { "base": "block/egg/4ostricheggs", "rotateY": 90 }, { "base": "block/egg/4ostricheggs", "rotateY": 180 }, { "base": "block/egg/4ostricheggs", "rotateY": 270 } ]
+			"base": "block/egg/ostrich-4eggs",
+			"alternates": [ { "base": "block/egg/ostrich-4eggs", "rotateY": 90 }, { "base": "block/egg/ostrich-4eggs", "rotateY": 180 }, { "base": "block/egg/ostrich-4eggs", "rotateY": 270 } ]
 		},
 		"*-5": { 
-			"base": "block/egg/5ostricheggs",
-			"alternates": [ { "base": "block/egg/5ostricheggs", "rotateY": 90 }, { "base": "block/egg/5ostricheggs", "rotateY": 180 }, { "base": "block/egg/5ostricheggs", "rotateY": 270 } ]
-		},
-		"*-6": { 
-			"base": "block/egg/6ostricheggs",
-			"alternates": [ { "base": "block/egg/6ostricheggs", "rotateY": 90 }, { "base": "block/egg/6ostricheggs", "rotateY": 180 }, { "base": "block/egg/6ostricheggs", "rotateY": 270 } ]
+			"base": "block/egg/ostrich-5eggs",
+			"alternates": [ { "base": "block/egg/ostrich-5eggs", "rotateY": 90 }, { "base": "block/egg/ostrich-5eggs", "rotateY": 180 }, { "base": "block/egg/ostrich-5eggs", "rotateY": 270 } ]
 		}
 	},
 	"doNotRenderAtLod2": true,
@@ -57,8 +53,7 @@
 		"*-2": [ { "type": "item", "code": "egg-ostrich-raw", "quantity": { "avg": 2 }  } ],
 		"*-3": [ { "type": "item", "code": "egg-ostrich-raw", "quantity": { "avg": 3 }  } ],
 		"*-4": [ { "type": "item", "code": "egg-ostrich-raw", "quantity": { "avg": 4 }  } ],
-		"*-5": [ { "type": "item", "code": "egg-ostrich-raw", "quantity": { "avg": 5 }  } ],
-		"*-6": [ { "type": "item", "code": "egg-ostrich-raw", "quantity": { "avg": 6 }  } ]
+		"*-5": [ { "type": "item", "code": "egg-ostrich-raw", "quantity": { "avg": 5 }  } ]
 	},
 	"materialDensity": 300,
 	"guiTransform": {

@@ -1,0 +1,67 @@
+{
+	"code": "taminghorse",
+	"tags": ["animal", "huntable", "habitat-land", "semitamed" ],
+	"inheritFrom": "entities/land/horse",
+    "allowedVariants": ["taminghorse-wild-male-percheron","taminghorse-wild-female-percheron",
+                        "taminghorse-wild-male-arabian","taminghorse-wild-female-arabian",
+                        "taminghorse-wild-male-donkey","taminghorse-wild-female-donkey",
+                        "taminghorse-wild-male-shire","taminghorse-wild-female-shire",
+                        "taminghorse-wild-male-quarter","taminghorse-wild-female-quarter"],
+	"behaviorConfigs": {
+		"selectionboxes": {
+			"selectionBoxes": ["HeadAP", "MidUpperAP"]
+		},		
+		"rideableaccessories": {
+			"wearableSlots": [
+				{ "code": "head", "forCategoryCodes": ["bridle-{type}"], "attachmentPointCode": "HeadAP" },
+				{ "code": "face", "forCategoryCodes": [], "attachmentPointCode": "FaceAP" },
+				{ "code": "neck", "forCategoryCodes": [], "attachmentPointCode": "NeckAP" },
+				{ "code": "middlebackupper", "forCategoryCodes": ["saddle-{type}"], "attachmentPointCode": "MidUpperAP" }
+			]
+		},
+		"rideable": {
+			"saddleBreakGait": "sprint",
+			"saddleBreaksRequired": { "avg": 13, "var": 5 },
+			"saddleBreakDayInterval": 1,
+			"tamedEntityCode": "feverstonewilds:horse-tamed-{gender}-{type}"
+		}
+	},
+	"client": {
+		"behaviors": [
+			{ "code": "repulseagents" },
+			{ "code": "controlledphysics" },
+			{ "code": "mortallywoundable" },
+			{ "code": "health" },
+			{ "code": "harvestable" },
+			{ "code": "interpolateposition" },
+			{ "code": "floatupwhenstuck" },
+			{ "code": "selectionboxes" },
+			{ "code": "rideableaccessories" },
+			{ "code": "gait" },
+			{ "code": "rideable" },
+			{ "code": "ropetieable" }
+		]
+	},
+	"server": {
+		"behaviors": [
+			{ "code": "repulseagents" },
+			{ "code": "controlledphysics" },
+			{ "code": "mortallywoundable", "whenBelowHealth": 7 },
+			{ "code": "health" },
+			{ "code": "harvestable" },
+			{ "code": "deaddecay" },
+			{ "code": "floatupwhenstuck" },
+			{ "code": "breathe" },
+			{ "code": "emotionstates" },
+			{ "code": "taskai" },
+			{ "code": "pettable" },
+			{ "code": "selectionboxes" },
+			{ "code": "ownable" },
+			{ "code": "rideableaccessories" },
+			{ "code": "gait" },
+			{ "code": "rideable" },
+			{ "code": "ropetieable" },
+			{ "code": "entitystatetags" }
+		]
+	}
+}

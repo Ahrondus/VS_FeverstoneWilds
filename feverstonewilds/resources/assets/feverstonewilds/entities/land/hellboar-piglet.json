@@ -1,6 +1,7 @@
 {
     "code": "hellboar-piglet",
     "class": "EntityAgent",
+    "tags":  [ "animal", "huntable", "habitat-land" ],
     "collisionBoxSize": { "x": 1, "y": 1.4, "z": 0.8 },
     "deadCollisionBoxSize": { "x": 0.6, "y": 1.1 },
     "selectionBoxSize": { "x": 1.2, "y": 1.4, "z": 0.8 },
@@ -12,17 +13,24 @@
         "killedByInfoText": "feverstonewilds:deadcreature-eaten-hellboar",
         "handbook": {
             "groupcode": "feverstonewilds:creaturegroup-fswhellboar"
+        },
+        "creatureDiet": {
+            "foodCategories": [ "Vegetable", "Fruit" ],
+			"foodTags": [ "meat" ]
+		},
+        "trappable": {
+            "large": { "trapChance": 0.35, "trapDestroyChance": 0.2 }
         }
     },
     "client": {
         "renderer": "Shape",
-        "shape": { "base": "entity/land/hellboar" },
+        "shape": { "base": "entity/land/mammal/hellboar-piglet" },
         "texture": { "base": "entity/land/hellboar/hellboarskin1",
                     "alternates": [ { "base": "entity/land/hellboar/hellboarskin2" }, { "base": "entity/land/hellboar/hellboarskin3" }, 
                                     { "base": "entity/land/hellboar/hellboarskin4" }, { "base": "entity/land/hellboar/hellboarskin5" }, 
                                     { "base": "entity/land/hellboar/hellboarskin6" }, { "base": "entity/land/hellboar/hellboarskin7" },
                                     { "base": "entity/land/hellboar/hellboarskin8" } ] },
-        "size": 0.45,
+        "size": 0.9,
         "sizeGrowthFactor": 0.3,
         "behaviors": [
             { "code": "repulseagents" },
@@ -48,6 +56,13 @@
 				"blendMode": "average",
 				"triggeredBy": { "onControls": ["dead"] }
 			},
+            {
+                "code": "dead",
+                "animation": "dead",
+                "blendMode": "Average",
+                "weight": 10,
+                "easeInSpeed": 3
+            },
 			{ 
 				"code": "idle", 
 				"animation": "idle",
@@ -95,7 +110,6 @@
                         { "type": "item", "code": "hide-raw-medium", "quantity": { "avg": 1, "var": 0.4 } },
                         { "type": "item", "code": "fat", "quantity": { "avg": 1, "var": 0.2 } }
                     ] },
-                { "code": "deaddecay", "hourstoDecay": 96, "decayedBlock": "carcass-medium" },
                 { "code": "despawn", "minPlayerDistance": 15, "belowLightLevel": 7, "minSeconds": 300 },
                 { "code": "health", "maxHealth": 10 },
                 { "code": "breathe" },
@@ -116,6 +130,7 @@
                     "adultEntityCodes": [ "feverstonewilds:hellboar-male", "feverstonewilds:hellboar-female" ]
                 },
                 { "code": "taskai",
+                "aiCreatureType": "LandCreature",
                     "aitasks": [
                         {
                             "code": "fleeentity",
@@ -126,6 +141,13 @@
                             "animation": "Run",
                             "animationSpeed": 2.3,
                             "whenInEmotionState": "fleeondamage"
+                        },
+                        {
+                            "code": "getoutofwater",
+                            "priority": 1.5,
+                            "movespeed": 0.015,
+                            "animation": "Walk",
+                            "animationSpeed": 2.2
                         },
                         {
                             "code": "idle",
@@ -143,11 +165,16 @@
                             "stopOnHurt": true
                         },
                         {
-                            "code": "getoutofwater",
+                            "code": "seekfoodandeat",
+                            "movespeed": 0.008,
                             "priority": 1.4,
-                            "movespeed": 0.015,
+                            "animationSpeed": 1.25,
                             "animation": "Walk",
-                            "animationSpeed": 2.2
+                            "eatAnimation": "Eat",
+                            "eatSound": "game:creature/animal-eat-small",
+                            "eatTime": 1.75,
+                            "mincooldownHours": 1,
+                            "maxcooldownHours": 4
                         },
                         {
                             "code": "wander", 
@@ -165,7 +192,7 @@
                             "mincooldown": 2000,
                             "maxcooldown": 120000,
                             "priorityForCancel": 1.33,
-                            "animation": "Sit",
+                            "animation": "Sleep",
                             "whenNotInEmotionState": "aggressiveondamage",
                             "stopOnNearbyEntityCodes": ["player", "bear-*", 
                                                         "feverstonewilds:cockatrice"],
@@ -178,7 +205,8 @@
                     ]
                 },
                 { "code": "ropetieable", "minGeneration": 2 },
-                { "code": "pettableextended", "minGeneration": 1 }
+                { "code": "pettable", "minGeneration": 1 },
+			    { "code": "entitystatetags" }
             ]
     },
     "sounds": {

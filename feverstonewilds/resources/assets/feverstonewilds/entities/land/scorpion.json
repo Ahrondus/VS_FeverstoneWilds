@@ -1,6 +1,7 @@
 {
 	"code": "scorpion",
 	"class": "EntityAgent",
+    "tags":  [ "animal", "huntable", "habitat-land" ],
 	"canClimb": true,
 	"canClimbAnywhere": true,
 	"climbTouchDistance": 0.01,
@@ -16,7 +17,7 @@
 	},
 	"client": {
 		"renderer": "Shape",
-		"shape": { "base": "entity/land/scorpion" },
+		"shape": { "base": "entity/land/insect/scorpion" },
 		"texture": { "base": "entity/land/scorpion/scorpionskin1" },
         "alternates": [
             {
@@ -92,6 +93,7 @@
 				]
 			},
 			{ "code": "taskai",
+				"aiCreatureType": "LandCreature",
 				"aitasks": [
 					{
 						"code": "meleeattack",
@@ -174,7 +176,8 @@
 						"priority": 0.5 
 					}
 				]
-			}
+			},
+			{ "code": "entitystatetags" }
 		],
 		"spawnconditions": {
 			"worldgen": {

@@ -1,16 +1,20 @@
 {
 	"code": "stingray",
 	"class": "EntityFish",
+	"variantGroups": [ {"code": "habitat", "states": [ "freshwater", "saltwater" ] } ],
 	"hitboxSize": { "x": 1.2, "y": 1 },
 	"eyeHeight": 0.9,
-	"drops": [],
+	"drops": [ { "type": "item", "code": "fsw-fishraw-{habitat}-stingray" } ],
 	"habitat": "underwater",
 	"attributes": {
 		"killedByInfoText": "feverstonewilds:deadcreature-stingray"
 	},
 	"client": {
 		"renderer": "Shape",
-		"size": 0.7,
+		"sizeByType": {
+			"*-freshwater": 0.55,
+			"*-saltwater": 0.85
+		},
 		"shape": { "base": "entity/water/stingray" },
 		"texture": { "base": "entity/water/stingray/stingrayskin1",
 		            "alternates": [ { "base": "entity/water/stingray/stingrayskin2" },
@@ -18,14 +22,13 @@
 									  { "base": "entity/water/stingray/stingrayskin4" },
 									  { "base": "entity/water/stingray/stingrayskin5" }
 									]
-	},
+		},
 		"behaviors": [
 			{ "code": "repulseagents" }, 
 			{ "code": "controlledphysics", "stepHeight": 0 }, 
 			{ "code": "interpolateposition" },
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
-			{ "code": "harvestable" },
-			{ "code": "despawn", "minPlayerDistance": 18, "minSeconds": 300, "belowLightLevel": 0 }
+			{ "code": "despawn", "minPlayerDistance": 18, "minSeconds": 300, "belowLightLevel": 8 }
 		],
 		"animations": [
 			{
@@ -66,16 +69,7 @@
 			{ "code": "controlledphysics", "stepHeight": 0 }, 
 			{ "code": "despawn", "minPlayerDistance": 18, "minSeconds": 300, "belowLightLevel": 0 },
 			{ "code": "health", "maxhealth": 15 },
-			{ "code": "deaddecay", "hoursToDecay": 96, "decayedBlock": "carcass-medium" },
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
-			{ "code": "harvestable", "drops": [
-					{
-						"type": "item", 
-						"code": "fish-raw", 
-						"quantity": { "avg": 5, "var": 3 } 
-					}
-				]
-			},
 			{ 
 				"code": "emotionstates",
 				"states": [
@@ -168,14 +162,15 @@
 						"animation": "idle"
 					}
 				]
-			}
+			},
+			{ "code": "entitystatetags" }
 		],
 		"spawnconditions": {
 			"worldgen": {
 				"TriesPerChunk": { "avg": 0.05, "var": 0 },
 				"tryOnlySurface": true,
 				"maxQuantity": 2,
-				"maxLightLevel": 8,
+				"minLightLevel": 8,
 				"groupSize": { "dist": "verynarrowgaussian", "avg": 1, "var": 0 },
 				"insideBlockCodes": ["game:saltwater-still-*"],
 				"maxY": 0.99,

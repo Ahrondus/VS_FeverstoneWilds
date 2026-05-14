@@ -1,80 +1,83 @@
 [
     {
         "ingredientPattern": "ELE,LSL",
+        "recipeGroup": 1,
         "ingredients": {
             "E": {
                 "type": "item",
-                "code": "game:leather-plain",
+                "code": "game:leather-normal-black",
                 "quantity": 2
             },
             "L": {
                 "type": "item",
-                "code": "game:leather-plain",
+                "code": "game:leather-normal-black",
                 "quantity": 1
             },
             "S": {
                 "type": "item",
-                "code": "feverstonewilds:direwolf-skull",
+                "code": "feverstonewilds:canineskull",
                 "quantity": 1
             }
         },
         "width": 3,
         "height": 2,
+        "name": "black hunter helmet",
         "output": {
             "type": "item",
-            "code": "feverstonewilds:hunter-helmet",
-            "quantity": 1
+            "code": "feverstonewilds:armor-head-hunterblack"
         }
     },
     
     {
         "ingredientPattern": "LCL,ELE,CPC",
+        "recipeGroup": 1,
         "ingredients": {
             "L": {
                 "type": "item",
-                "code": "game:leather-plain",
+                "code": "game:leather-normal-black",
                 "quantity": 6
             },
             "C": {
-                "type": "item",
+                "type": "block",
                 "code": "game:linen-*",
                 "quantity": 1
             },
             "E": {
                 "type": "item",
-                "code": "game:leather-plain",
+                "code": "game:leather-normal-black",
                 "quantity": 3
             },
             "P": {
                 "type": "item",
-                "code": "game:pelt-medium",
+                "code": "game:hide-pelt-medium",
                 "quantity": 1
             }
         },
         "width": 3,
         "height": 3,
+        "name": "black hunter armor",
         "output": {
             "type": "item",
-            "code": "feverstonewilds:hunter-helmet",
-            "quantity": 1
+            "code": "feverstonewilds:armor-body-hunterblack"
         }
     },
 
     {
         "ingredientPattern": "LEL,LCL,EBE",
+        "recipeGroup": 1,
         "ingredients": {
             "L": {
                 "type": "item",
-                "code": "game:leather-plain",
+                "code": "game:leather-normal-black",
                 "quantity": 2
             },
             "E": {
                 "type": "item",
-                "code": "game:leather-plain",
+                "code": "game:leather-normal-black",
                 "quantity": 1
             },
             "C": {
-                "type": "item",
+                "type": "block",
                 "code": "game:linen-*",
                 "quantity": 1
             },
@@ -86,10 +89,10 @@
         },
         "width": 3,
         "height": 3,
+        "name": "black hunter leg armor",
         "output": {
             "type": "item",
-            "code": "feverstonewilds:hunter-legs",
-            "quantity": 1
+            "code": "feverstonewilds:armor-legs-hunterblack"
         }
     }
 ]

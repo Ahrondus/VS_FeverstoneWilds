@@ -1,6 +1,7 @@
 {
     "code": "golem",                    
     "class": "EntityAgent",
+    "tags":  [ "animal", "huntable", "habitat-land" ],
     "variantgroups": [ { "code": "rock", "states": ["andesite", "granite", "basalt", "limestone"] }, 
                        { "code": "ore", "states": ["nativecopper", "cassiterite", "hematite" ] } ],
     "skipVariants": ["*-limestone-cassiterite"],
@@ -37,7 +38,7 @@
     },
     "client": {
         "renderer": "Shape",
-        "shape": { "base": "entity/land/golem" },
+        "shape": { "base": "entity/land/elemental/golem" },
         "texturesByType": {
             "*-andesite-nativecopper": { "skin": { "base": "entity/land/golem/golemandesitecopper" } },
             "*-andesite-cassiterite": { "skin": { "base": "entity/land/golem/golemandesitetin" } },
@@ -62,13 +63,20 @@
         "animations": [
             {
 				"code": "die",
-				"animation": "dead", 
+				"animation": "die", 
 				"animationSpeed": 0.8,
 				"easeInSpeed": 2,
 				"weight": 10,
 				"blendMode": "average",
                 "triggeredBy": { "onControls": ["dead"] }
-			}
+			},
+            {
+                "code": "dead",
+                "animation": "dead",
+                "blendMode": "Average",
+                "weight": 10,
+                "easeInSpeed": 3
+            }
         ]
     },
     
@@ -116,6 +124,7 @@
 			},
             {
             "code": "taskai",
+            "aiCreatureType": "LandCreature",
             "aitasks": [
                 {
                     "code": "meleeattack",
@@ -187,22 +196,22 @@
                     "priorityForCancel": 1.35
                 }
             ]
-        }
+        },
+		{ "code": "entitystatetags" }
     ],
     "spawnconditions": {
         "worldgen": {
-            "TriesPerChunk": { "avg": 0.006, "var": 0.005 },
+            "TriesPerChunk": { "avg": 0.025, "var": 0.0005 },
             "tryOnlySurface": true,
-            "maxLightLevel": 10,
+            "minLightLevel": 12,
             "lightLevelType": "onlyBlockLight",
             "groupSizeByType": {
                 "*": { "dist": "uniform", "avg": 1, "var": 0 }
             },
+			"maxQuantityByGroup": { "code": "golem-*", "maxQuantity": 1 },
             "insideBlockCodesByType": {
-                "*-andesite-*": [ "game:air" ],
-                "*-granite-*": [ "game:air" ],
-                "*-basalt-*": [ "game:air" ],
-                "*-limestone-*": [ "game:air" ]
+                "golem-*": [ "game:loosestones-{rock}-free", "game:loosestones-{rock}-snow",
+                             "game:looseores-quartz-{rock}-free", "game:looseboulders-{rock}-snow" ]
             },
             "minYByType": { "*": 0.85 },
             "maxYByType": { "*": 2 },
@@ -213,7 +222,7 @@
             "group": "neutral",
             "maxQuantity": 1,
             "mindistancetoplayer": 120,
-            "maxLightLevel": 10,
+            "minLightLevel": 12,
             "lightLevelType": "onlyBlockLight",
             "tryOnlySurface": true,
             "chance": 0.00001,
@@ -221,10 +230,8 @@
                 "*": { "dist": "uniform", "avg": 1, "var": 0 }
             },
             "insideBlockCodesByType": {
-                "*-andesite-*": [ "game:air" ],
-                "*-granite-*": [ "game:air" ],
-                "*-basalt-*": [ "game:air" ],
-                "*-limestone-*": [ "game:air" ]
+                "golem-*": [ "game:loosestones-{rock}-free", "game:loosestones-{rock}-snow",
+                             "game:looseores-quartz-{rock}-free", "game:looseboulders-{rock}-snow" ]
             },
             "minYByType": { "*": 0.85 },
             "maxYByType": { "*": 2 },

@@ -1,6 +1,7 @@
 {
 	"code": "toad",
 	"class": "EntityAgent",
+    "tags":  [ "animal", "huntable", "habitat-land" ],
 	"hitboxSize": { "x": 0.8, "y": 1.7 },
 	"deadHitboxSize": { "x": 1.7, "y": 0.5 },
 	"eyeHeight": 1.6,
@@ -131,6 +132,7 @@
 			},
 			{
 				"code": "taskai",
+				"aiCreatureType": "LandCreature",
 				"aitasks": [
 					{
 						"code": "seekentity",
@@ -169,7 +171,7 @@
 						"maxduration": 5000000,
 						"mincooldown": 10000,
 						"maxcooldown": 30000,
-						"animation": "sit",
+						"animation": "Sleep",
 						"whenNotInEmotionState": "aggressiveondamage",
 						"duringDayTimeFrames": [
 							{
@@ -193,7 +195,7 @@
 						"maxduration": 24000,
 						"mincooldown": 9000,
 						"maxcooldown": 160000,
-						"animation": "sit",
+						"animation": "Sleep",
 						"stopOnNearbyEntityCodes": [ "player" ],
 						"stopRange": 5,
 						"animationSpeed": 0.75
@@ -212,7 +214,8 @@
 						"priority": 0.5
 					}
 				]
-			}
+			},
+			{ "code": "entitystatetags" }
 		],
 		"spawnconditions": {
 			"worldgen": {

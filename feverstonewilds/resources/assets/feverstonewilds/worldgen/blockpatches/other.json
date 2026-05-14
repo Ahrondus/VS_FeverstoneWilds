@@ -6,11 +6,11 @@
         "maxTemp": 40,
         "minRain": 0,
         "maxRain": 1,
-        "quantity": { "avg": 25, "var": 15 },
+        "quantity": { "avg": 15, "var": 5 },
         "offsetX": { "avg": 0, "var": 12 },
         "offsetZ": { "avg": 0, "var": 12 },
-        "chance": 1,
-        "minWaterDepth": 1,
+        "chance": 0.21,
+        "minWaterDepth": 15,
         "placement": "UnderSeaWater"
     },
     {
@@ -20,9 +20,9 @@
         "maxTemp": 40,
         "minRain": 0,
         "maxRain": 1,
-        "quantity": { "avg": 5, "var": 5 },
-        "chance": 1,
-        "minWaterDepth": 1,
+        "quantity": { "avg": 5, "var": 2 },
+        "chance": 0.3,
+        "minWaterDepth": 7,
         "placement": "UnderSeaWater"
     }
 ]

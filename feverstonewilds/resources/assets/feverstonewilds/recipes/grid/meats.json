@@ -1,0 +1,16 @@
+[
+    {
+        "ingredientPattern": "KM",
+        "ingredients": {
+            "M": { "type": "item", "code": "feverstonewilds:{fsmeats}" },
+            "K": { "type": "item", "code": "game:knife-*", "isTool": true }
+        },
+        "allowedVariants": {
+            "fsmeats": [ "ribs-raw", "bisonleg-raw", "cockatrice-tail-raw" ]
+        },
+        "width": 2,
+        "height": 1,
+        "shapeless": true,
+        "output": { "type": "item", "code": "game:redmeat-raw", "quantity": 4 }
+    }
+]

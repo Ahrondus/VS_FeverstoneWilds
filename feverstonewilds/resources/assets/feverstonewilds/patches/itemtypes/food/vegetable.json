@@ -1,0 +1,14 @@
+[
+    {
+        "op": "addmerge",
+        "path": "/behaviors",
+        "side": "server",
+        "value": [
+            {
+                "name": "considerpetfood"
+            }
+        ],
+        "file": "game:itemtypes/food/vegetable.json",
+        "dependsOn": [ { "modid": "petai" } ]
+    }
+]

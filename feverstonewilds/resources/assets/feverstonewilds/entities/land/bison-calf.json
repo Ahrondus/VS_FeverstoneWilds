@@ -1,6 +1,13 @@
 {
 	"code": "bison-calf",
-	"class": "EntityPet",
+	"class": "EntityAgent",
+	"variantgroups": [
+		{ "code": "tamed", "states": [ "wild", "tamed" ] }
+	],
+    "tagsByType": {
+        "*-tamed": [ "animal", "huntable", "habitat-land", "tamed" ],
+        "*": [ "animal", "huntable", "habitat-land" ]
+    },
 	"hitboxSize": { "x": 1, "y": 1 },
 	"deadHitboxSize": { "x": 1, "y": 1 },
 	"eyeHeight": 0.4,
@@ -14,11 +21,14 @@
 		},
 		"handbook": {
 			"groupcode": "feverstonewilds:creaturegroup-fswbison"
+		},
+		"trappable": {
+			"large": { "trapChance": 0.4, "trapDestroyChance": 0.05 }
 		}
 	},
 	"client": {
 		"renderer": "Shape",
-		"shape": { "base": "entity/land/bison-calf" },
+		"shape": { "base": "entity/land/mammal/bison-calf" },
 		"texture": { "base": "entity/land/bison/bisonskin1",
 			"alternates": [
 				{ "base": "entity/land/bison/bisonskin2" }, { "base": "entity/land/bison/bisonskin3" },
@@ -29,45 +39,22 @@
 		"size": 0.95,
 		"sizeGrowthFactor": 0.2,
 		"behaviors": [
-			{ "code": "nametag", "showtagonlywhentargeted": true },
-            { "code": "receivecommand",
-                "availableCommands": [
-                    { "commandName": "followmaster", "commandType": "COMPLEX", "minObedience": 0.4 },
-                    { "commandName": "stay", "commandType": "COMPLEX", "minObedience": 0.2 }
-                ]
-            },
-            { "code": "tameable",
-                    "treat": [
-                        { "code": "vegetable-carrot", "progress": 0.10, "cooldown": 0.2 },
-                        { "code": "vegetable-cabbage", "progress": 0.03, "cooldown": 0.4 },
-                        { "code": "vegetable-turnip", "progress": 0.04, "cooldown": 0.3 },
-                        { "code": "carrotbundle", "progress": 0.15, "cooldown": 0.25 },
-                        { "code": "drygrassbundle", "progress": 0.075, "cooldown": 0.55 },
-                        { "code": "drygrass", "progress": 0.025, "cooldown": 0.25 },
-                        { "code": "fruit-peach", "progress": 0.169, "cooldown": 0.55 },
-                        { "code": "fruit-pear", "progress": 0.169, "cooldown": 0.55 },
-                        { "code": "fruit-mango", "progress": 0.169, "cooldown": 0.55 },
-                        { "code": "grain-flax", "progress": 0.075, "cooldown": 0.45 },
-                        { "code": "grain-rye", "progress": 0.075, "cooldown": 0.45 },
-                        { "code": "grain-spelt", "progress": 0.075, "cooldown": 0.45 }
-                    ]
-                },
-                { "code": "mouthinventory",
-                    "acceptStacks": [
-                        { "type": "item", "code": "vegetable-carrot" },
-                        { "type": "item", "code": "vegetable-cabbage" },
-                        { "type": "item", "code": "vegetable-turnip" },
-                        { "type": "item", "code": "feverstonewilds:carrotbundle" },
-                        { "type": "item", "code": "feverstonewilds:drygrassbundle" },
-                        { "type": "item", "code": "drygrass" },
-                        { "type": "item", "code": "fruit-peach" },
-                        { "type": "item", "code": "fruit-pear" },
-                        { "type": "item", "code": "fruit-mango" },
-                        { "type": "item", "code": "grain-flax" },
-                        { "type": "item", "code": "grain-rye" },
-                        { "type": "item", "code": "grain-spelt" }
-                    ]
-                },
+			{ "code": "mouthinventory",
+				"acceptStacks": [
+					{ "type": "item", "code": "vegetable-carrot" },
+					{ "type": "item", "code": "vegetable-cabbage" },
+					{ "type": "item", "code": "vegetable-turnip" },
+					{ "type": "item", "code": "feverstonewilds:carrotbundle" },
+					{ "type": "item", "code": "feverstonewilds:drygrassbundle" },
+					{ "type": "item", "code": "drygrass" },
+					{ "type": "item", "code": "fruit-peach" },
+					{ "type": "item", "code": "fruit-pear" },
+					{ "type": "item", "code": "fruit-mango" },
+					{ "type": "item", "code": "grain-flax" },
+					{ "type": "item", "code": "grain-rye" },
+					{ "type": "item", "code": "grain-spelt" }
+				]
+			},
 			{ "code": "repulseagents" },
 			{ "code": "controlledphysics", "stepHeight": 1.1251 },
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
@@ -86,12 +73,19 @@
 			},
 			{
 				"code": "die",
-				"animation": "death",
+				"animation": "die",
 				"animationSpeed": 1.25,
 				"weight": 10,
 				"blendMode": "average",
 				"triggeredBy": { "onControls": [ "dead" ] }
 			},
+            {
+                "code": "dead",
+                "animation": "dead",
+                "blendMode": "Average",
+                "weight": 10,
+                "easeInSpeed": 3
+            },
 			{
 				"code": "idle",
 				"animation": "idle",
@@ -130,24 +124,6 @@
 			}
 		},
 		"behaviors": [
-            { "code": "nametag", "showtagonlywhentargeted": true },
-            { "code": "tameable",
-				"disobediencePerDay": 0.075,
-                    "treat": [
-                        { "code": "vegetable-carrot", "progress": 0.10, "cooldown": 0.2 },
-                        { "code": "vegetable-cabbage", "progress": 0.03, "cooldown": 0.4 },
-                        { "code": "vegetable-turnip", "progress": 0.04, "cooldown": 0.3 },
-                        { "code": "carrotbundle", "progress": 0.15, "cooldown": 0.25 },
-                        { "code": "drygrassbundle", "progress": 0.075, "cooldown": 0.55 },
-                        { "code": "drygrass", "progress": 0.025, "cooldown": 0.25 },
-                        { "code": "fruit-pinkapple", "progress": 0.169, "cooldown": 0.55 },
-                        { "code": "fruit-redapple", "progress": 0.169, "cooldown": 0.55 },
-                        { "code": "fruit-yellowapple", "progress": 0.169, "cooldown": 0.55 },
-                        { "code": "grain-flax", "progress": 0.075, "cooldown": 0.45 },
-                        { "code": "grain-rye", "progress": 0.075, "cooldown": 0.45 },
-                        { "code": "grain-spelt", "progress": 0.075, "cooldown": 0.45 }
-                    ]
-                },
                 { "code": "mouthinventory",
                     "acceptStacks": [
                         { "type": "item", "code": "vegetable-carrot" },
@@ -164,12 +140,6 @@
                         { "type": "item", "code": "grain-spelt" }
                     ]
                 },
-            { "code": "receivecommand",
-                "availableCommands": [
-                    { "commandName": "followmaster", "commandType": "COMPLEX", "minObedience": 0.4 },
-                    { "commandName": "stay", "commandType": "COMPLEX", "minObedience": 0.2 }
-                ]
-            },
 			{ "code": "repulseagents" },
 			{ "code": "controlledphysics", "stepHeight": 1.1251 },
 			{ "code": "despawn", "minPlayerDistance": 8, "belowLightLevel": 8, "minSeconds": 300 },
@@ -178,8 +148,8 @@
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
 			{ "code": "harvestable",
 				"drops": [
-					{ "type": "item", "code": "redmeat-raw", "quantity": { "avg": 5.5, "var": 0.5 } },
-					{ "type": "item", "code": "hide-raw-medium", "quantity": { "avg": 2, "var": 0.5 } }
+					{ "type": "item", "code": "redmeat-raw", "quantity": { "avg": 7.5, "var": 1.5 } },
+					{ "type": "item", "code": "hide-raw-medium", "quantity": { "avg": 2.5, "var": 0.5 } }
 				]
 			},
 			{ "code": "breathe" },
@@ -187,9 +157,13 @@
 				"states": [ { "code": "alarmherdondamage", "chance": 1, "slot": 1, "priority": 1, "accumType": "max" },
 							{ "code": "fleeondamage", "duration": 60, "chance": 0.85, "slot": 0, "priority": 5, "accumType": "max", "whenHealthRelBelow": 0.75 }]
 			},
-			{ "code": "grow", "hoursToGrow": 336, 
-				"adultEntityCodes": [ "feverstonewilds:bison-male", "feverstonewilds:bison-female" ] },
+			{ "code": "grow", "hoursToGrow": 168,
+				"orPortionsEatenForGrowing": 14,
+				"fedAdultEntityCodes": [ "feverstonewilds:bison-tamed-male", "feverstonewilds:bison-tamed-female", "feverstonewilds:bison-tamed-female" ],
+				"adultEntityCodes": [ "feverstonewilds:bison-wild-male", "feverstonewilds:bison-wild-female", "feverstonewilds:bison-wild-female" ]
+			},
 			{ "code": "taskai",
+				"aiCreatureType": "LandCreature",
 				"aitasks": [
 					{
 						"code": "fleeentity",
@@ -217,6 +191,19 @@
 						"searchRange": 25,
 						"animation": "Run",
 						"animationSpeed": 4
+					},
+					{
+						"code": "seekfoodandeat",
+						"movespeed": 0.006,
+						"priority": 1.39,
+						"eatSound": "bison/bisoneating",
+						"soundRange": 4,
+						"soundStartMs": 900,
+						"eatTime": 2.0,
+						"animationSpeed": 0.8,
+						"animation": "Walk",
+						"mincooldownHours": 1,
+						"maxcooldownHours": 4
 					},
 					{
 						"code": "idle",
@@ -262,7 +249,7 @@
 						"priority": 1.0,
 						"priorityForCancel": 1.35,
 						"movespeed": 0.004,
-						"animationSpeed": 2,
+						"animationSpeed": 1.8,
 						"animation": "Walk",
 						"preferredLightLevel": 24
 					},
@@ -281,7 +268,8 @@
 				]
 			},
 			{ "code": "ropetieable", "minGeneration": 2 },
-			{ "code": "pettable", "minGeneration": 1 }
+			{ "code": "pettable", "minGeneration": 1 },
+			{ "code": "entitystatetags" }
 		]
 	},
 	"sounds": {

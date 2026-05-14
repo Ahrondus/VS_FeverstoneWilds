@@ -9,15 +9,12 @@ namespace FeverstoneWilds
 		{
 			base.Start(api);
 
-			//api.RegisterBlockClass("BlockAnimalNestCockatrice", typeof(BlockAnimalNest));
-			//api.RegisterBlockClass("BlockAnimalNestOstrich", typeof(BlockAnimalNest));
 			api.RegisterBlockClass("BlockAnimalNestLarge", typeof(BlockAnimalNest));
+			api.RegisterBlockEntityClass("AnimalNestLarge", typeof(BlockEntityAnimalNestLarge));
 
-			//api.RegisterBlockEntityClass("AnimalNestOstrich", typeof(BlockEntityAnimalNestOstrich));
-            //api.RegisterBlockEntityClass("AnimalNestCockatrice", typeof(BlockEntityAnimalNestCockatrice));
-			api.RegisterBlockEntityClass("AnimalNestLarge", typeof (BlockEntityAnimalNestLarge));
+			api.RegisterEntityBehaviorClass("plantSapling", typeof(BehaviorPlantSapling));
 
-            ModConfig.ReadConfig(api);
+			ModConfig.ReadConfig(api);
 		}
 	}
 }

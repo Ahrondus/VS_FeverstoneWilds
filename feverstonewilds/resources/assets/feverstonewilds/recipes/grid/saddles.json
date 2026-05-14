@@ -1,10 +1,10 @@
 [
     {
-        "ingredientPattern": "BLB,MLM,_C_",
+        "ingredientPattern": "_L_,MLM,_C_",
         "ingredients": {
             "L": {
                 "type": "item",
-                "code": "game:leather-plain",
+                "code": "game:leather-normal-plain",
                 "quantity": 2
             },
             "C": {
@@ -12,14 +12,9 @@
                 "code": "game:cloth-plain",
                 "quantity": 1
             },
-            "B": {
-                "type": "item",
-                "code": "game:backpack",
-                "quantity": 1
-            },
             "M": {
                 "type": "item",
-                "code": "game:metalbit-*",
+                "code": "game:metalnailsandstrips-*",
                 "quantity": 2
             }
         },
@@ -27,16 +22,17 @@
         "height": 3,
         "output": {
             "type": "item",
-            "code": "feverstonewilds:saddle-draft",
+            "code": "feverstonewilds:fsmountwearables-percheron-middlebackupper-saddle-both",
             "quantity": 1
-        }
+        },
+        "enabled": false
     },
     {
-        "ingredientPattern": "BLB,MLM,_C_",
+        "ingredientPattern": "_L_,MLM,_C_",
         "ingredients": {
             "L": {
                 "type": "item",
-                "code": "game:leather-plain",
+                "code": "game:leather-normal-plain",
                 "quantity": 2
             },
             "C": {
@@ -44,14 +40,9 @@
                 "code": "game:cloth-plain",
                 "quantity": 1
             },
-            "B": {
-                "type": "item",
-                "code": "game:linensack",
-                "quantity": 1
-            },
             "M": {
                 "type": "item",
-                "code": "game:metalbit-*",
+                "code": "game:metalnailsandstrips-*",
                 "quantity": 2
             }
         },
@@ -59,31 +50,118 @@
         "height": 3,
         "output": {
             "type": "item",
-            "code": "feverstonewilds:saddle-arabian",
+            "code": "feverstonewilds:fsmountwearables-arabian-middlebackupper-saddle-both",
             "quantity": 1
-        }
+        },
+        "enabled": false
     },
     {
-        "ingredientPattern": "MLM,BLB,CCC",
+        "ingredientPattern": "LLL,MLM,ECE",
         "ingredients": {
             "L": {
                 "type": "item",
-                "code": "game:leather-plain",
+                "code": "game:leather-normal-plain",
                 "quantity": 2
             },
             "C": {
                 "type": "item",
                 "code": "game:cloth-plain",
-                "quantity": 2
-            },
-            "B": {
-                "type": "item",
-                "code": "game:linensack",
                 "quantity": 1
             },
             "M": {
                 "type": "item",
-                "code": "game:metalbit-*",
+                "code": "game:metalnailsandstrips-*",
+                "quantity": 1
+            },
+            "E": {
+                "type": "item",
+                "code": "game:leather-normal-plain",
+                "quantity": 1
+            }
+        },
+        "width": 3,
+        "height": 3,
+        "output": {
+            "type": "item",
+            "code": "feverstonewilds:fsmountwearables-shire-middlebackupper-saddle-both",
+            "quantity": 1
+        }
+    },
+    {
+        "ingredientPattern": "LLL,MLM,_C_",
+        "ingredients": {
+            "L": {
+                "type": "item",
+                "code": "game:leather-normal-plain",
+                "quantity": 2
+            },
+            "C": {
+                "type": "item",
+                "code": "game:cloth-plain",
+                "quantity": 1
+            },
+            "M": {
+                "type": "item",
+                "code": "game:metalnailsandstrips-*",
+                "quantity": 1
+            }
+        },
+        "width": 3,
+        "height": 3,
+        "output": {
+            "type": "item",
+            "code": "feverstonewilds:fsmountwearables-quarter-middlebackupper-saddle-both",
+            "quantity": 1
+        }
+    },
+    {
+        "ingredientPattern": "LLL,MCM,_L_",
+        "ingredients": {
+            "L": {
+                "type": "item",
+                "code": "game:leather-normal-plain",
+                "quantity": 2
+            },
+            "C": {
+                "type": "item",
+                "code": "game:cloth-plain",
+                "quantity": 1
+            },
+            "M": {
+                "type": "item",
+                "code": "game:metalnailsandstrips-*",
+                "quantity": 1
+            }
+        },
+        "width": 3,
+        "height": 3,
+        "output": {
+            "type": "item",
+            "code": "feverstonewilds:fsmountwearables-donkey-middlebackupper-saddle-both",
+            "quantity": 1
+        }
+    },
+    {
+        "ingredientPattern": "LPL,MCM,_L_",
+        "ingredients": {
+            "L": {
+                "type": "item",
+                "code": "game:leather-normal-plain",
+                "quantity": 2
+            },
+            "P": {
+                "type": "item",
+                "code": "game:plank-*",
+                "quantity": 6
+            },
+            "C": {
+                "type": "item",
+                "code": "game:cloth-plain",
+                "quantity": 1
+            },
+            "M": {
+                "type": "item",
+                "code": "game:metalnailsandstrips-*",
                 "quantity": 2
             }
         },
@@ -91,44 +169,71 @@
         "height": 3,
         "output": {
             "type": "item",
-            "code": "feverstonewilds:saddle-donkey",
+            "code": "feverstonewilds:fsmountwearables-bison-middlebackupper-saddle-both",
             "quantity": 1
         }
     },
     {
-        "ingredientPattern": "BHB,MLM,CLC",
+        "ingredientPattern": "LLL,MCM,BLB",
         "ingredients": {
             "L": {
                 "type": "item",
-                "code": "game:leather-plain",
-                "quantity": 16
+                "code": "game:leather-normal-plain",
+                "quantity": 2
             },
             "C": {
                 "type": "item",
                 "code": "game:cloth-plain",
+                "quantity": 1
+            },
+            "M": {
+                "type": "item",
+                "code": "game:metalnailsandstrips-*",
+                "quantity": 1
+            },
+            "B": {
+                "type": "item",
+                "code": "game:bone",
                 "quantity": 3
-            },
-            "B": {
-                "type": "item",
-                "code": "game:backpack",
-                "quantity": 1
-            },
-            "M": {
-                "type": "item",
-                "code": "game:metalbit-*",
-                "quantity": 40
-            },
-            "H": {
-                "type": "block",
-                "code": "game:chest-*",
-                "quantity": 1
             }
         },
         "width": 3,
         "height": 3,
         "output": {
             "type": "item",
-            "code": "feverstonewilds:saddle-bison",
+            "code": "feverstonewilds:fsmountwearables-direwolf-middlebackupper-saddle-both",
+            "quantity": 1
+        }
+    },
+    {
+        "ingredientPattern": "LLL,MCM,FLF",
+        "ingredients": {
+            "L": {
+                "type": "item",
+                "code": "game:leather-normal-plain",
+                "quantity": 2
+            },
+            "C": {
+                "type": "item",
+                "code": "game:cloth-plain",
+                "quantity": 1
+            },
+            "M": {
+                "type": "item",
+                "code": "game:metalnailsandstrips-*",
+                "quantity": 1
+            },
+            "F": {
+                "type": "item",
+                "code": "game:feather",
+                "quantity": 3
+            }
+        },
+        "width": 3,
+        "height": 3,
+        "output": {
+            "type": "item",
+            "code": "feverstonewilds:fsmountwearables-ostrich-middlebackupper-saddle-both",
             "quantity": 1
         }
     }

@@ -1,13 +1,20 @@
 {
 	"code": "eel",
 	"class": "EntityFish",
+	"variantGroups": [ {"code": "habitat", "states": [ "freshwater", "saltwater" ] } ],
 	"hitboxSize": { "x": 1.2, "y": 1 },
 	"eyeHeight": 0.9,
-	"drops": [],
+	"drops": [ { "type": "item", "code": "fsw-fishraw-{habitat}-eel" } ],
+	"attributes": {
+		"baitTags": [ "bait-meat", "bait-stinkmeat", "bait-fishtiny", "bait-fishsmall" ]
+	},
 	"habitat": "underwater",
 	"client": {
 		"renderer": "Shape",
-		"size": 0.7,
+		"sizeByType": {
+			"*-freshwater": 0.55,
+			"*-saltwater": 0.75
+		},
 		"shape": { "base": "entity/water/eel" },
 		"texture": { "base": "entity/water/eel/eelskin1",
 		            "alternates": [ { "base": "entity/water/eel/eelskin2" },
@@ -21,8 +28,7 @@
 			{ "code": "controlledphysics", "stepHeight": 3 }, 
 			{ "code": "interpolateposition" },
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
-			{ "code": "harvestable" },
-			{ "code": "despawn", "minPlayerDistance": 18, "minSeconds": 300, "belowLightLevel": 0 }
+			{ "code": "despawn", "minPlayerDistance": 18, "minSeconds": 300, "belowLightLevel": 8 }
 		],
 		"animations": [
 			{
@@ -63,16 +69,7 @@
 			{ "code": "controlledphysics", "stepHeight": 3 }, 
 			{ "code": "despawn", "minPlayerDistance": 18, "minSeconds": 300, "belowLightLevel": 0 },
 			{ "code": "health", "maxhealth": 15 },
-			{ "code": "deaddecay", "hoursToDecay": 96 },
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
-			{ "code": "harvestable", "drops": [
-					{
-						"type": "item", 
-						"code": "fish-raw", 
-						"quantity": { "avg": 10, "var": 3 } 
-					}
-				]
-			},
 			{ 
 				"code": "emotionstates",
 				"states": [
@@ -89,19 +86,42 @@
 				"aitasks": [
 				{
 						"code": "meleeattack",
-						"entityCodes": ["chicken-baby", "discus"],
+						"entityCodes": ["player", "chicken-baby",
+										"discus", "hare-baby" ],
 						"priority": 2,
-						"damage": 8,
+						"damage": 4,
 						"damageTier": 2,
-						"damageType": "SlashingAttack",
-						"slot": 1,
-						"mincooldown": 1500, 
-						"maxcooldown": 1500, 
-						"attackDurationMs": 800,
-						"damagePlayerAtMs": 500,
+						"executionChance": 0.05,
 						"animation": "attack",
-						"animationSpeed": 2.5,
-						"sound": ""
+						"animationSpeed": 1.5,
+						"whenSwimming": true
+					},
+					{
+						"code": "seekentity",
+						"id": "seekbobber",
+						"entityCodes": ["bobber-*"],
+						"searchType": "Inanimate",
+						"targetOnlyInteractableEntities": false,
+						"priority": 1.8,
+						"whenSwimming": true,
+						"seekingRange": 25,
+						"movespeed": 0.01,
+						"animation": "swim",
+						"animationSpeed": 2
+					},
+					{
+						"code": "fleeentity",
+						"id": "fleebobber",
+						"entityCodes": ["bobber-*"],
+						"priority": -1,
+						"priorityForCancel": 2,
+						"whenSwimming": true,
+						"fleeDurationMs": 10000,
+						"fleeingDistance": 30,
+						"movespeed": 0.06,
+						"seekingRange": 14,
+						"animation": "swimfast",
+						"animationSpeed": 2.3
 					},
 					{
 						"code": "fleeentity",
@@ -112,36 +132,6 @@
 						"animation": "swim",
 						"animationSpeed": 3,
 						"whenInEmotionState": "fleeondamage"
-					},
-					{
-						"code": "seekentity",
-						"entityCodes": ["chicken-baby", "discus"],
-						"priority": 1.5,
-						"movespeed": 0.1,
-						"seekingRange": 15,
-						"belowTempSeekingRange": 25,
-						"belowTempThreshold": -5,
-						"animation": "swim",
-						"leapAtTarget": true,
-						"leapAnimation": null,
-						"animationSpeed": 2.2,
-						"leapChance": 0.01,
-						"sound": "",
-						"whenNotInEmotionState": "saturated"
-					},
-					{
-						"code": "seekentity",
-						"entityCodes": ["player"],
-						"priority": 1.49,
-						"movespeed": 0.1,
-						"seekingRange": 8,
-						"animation": "swim",
-						"leapAtTarget": true,
-						"leapAnimation": null,
-						"animationSpeed": 2.2,
-						"leapChance": 0.01,
-						"sound": "",
-						"whenInEmotionState": "aggressiveondamage"
 					},
 					{
 						"code": "fishoutofwater", 
@@ -176,24 +166,31 @@
 						"animation": "idle"
 					}
 				]
-			}
+			},
+			{ "code": "entitystatetags" }
 		],
 		"spawnconditions": {
 			"worldgen": {
 				"TriesPerChunk": { "avg": 0.035, "var": 0 },
 				"tryOnlySurface": true,
-				"groupSize": { "dist": "verynarrowgaussian", "avg": 3, "var": 1 },
-				"insideBlockCodes": ["game:water-still-*", "game:saltwater-still-*"],
+				"groupSize": { "dist": "verynarrowgaussian", "avg": 1.5, "var": 0.5 },
+				"insideBlockCodesByType":{
+					"*-freshwater": ["game:water-still-*"], 
+					"*-saltwater": ["game:saltwater-still-*"]
+				},
 				"minTemp": -10,
 				"maxTemp": 30
 			},
 			"runtime": {
 				"group": "neutral",
-				"maxQuantity": 8,
+				"maxQuantity": 2,
 				"chance": 0.00001,
 				"tryOnlySurface": true,
-				"groupSize": { "dist": "verynarrowgaussian", "avg": 3, "var": 1 },
-				"insideBlockCodes": ["game:water-still-*", "game:saltwater-still-*"],
+				"groupSize": { "dist": "verynarrowgaussian", "avg": 1.5, "var": 0.5 },
+				"insideBlockCodesByType":{
+					"*-freshwater": ["game:water-still-*"], 
+					"*-saltwater": ["game:saltwater-still-*"]
+				},
 				"minTemp": -10,
 				"maxTemp": 30
 			}

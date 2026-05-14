@@ -5,23 +5,32 @@
 	"variantgroups": [
 			{
 				"code": "type",
-				"states": ["giraffe"]
+				"states": ["giraffe-male", "giraffe-female", "giraffe-calf"]
 			}
 		],
-	"shape": {
-		"base": "entity/land/giraffe"
-		},
+	"shapeByType": {
+		"*-calf": { "base": "entity/land/mammal/giraffe-calf" },
+		"*": { "base": "entity/land/mammal/giraffe" }
+	},
 	"creativeinventory": {
 		"general": ["*"],
 		"items": ["*"],
 		"creatures": ["*"]
-		},
+	},
 	
-	"guiTransform": {
-		"translation": { "x": 0, "y": 0, "z": 0 },
-		"rotation": { "x": 15, "y": -120, "z": -163 },
-		"origin": { "x": 0.5, "y": 2.8, "z": 0.5 },
-		"scale": 0.25
+	"heldTpIdleAnimation": "holdunderarm",
+	"guiTransformByType": {
+		"*-calf": {
+			"rotation": { "x": -9, "y": -53, "z": -178 },
+			"origin": { "x": 0.5, "y": 1.4, "z": 0.5 },
+			"scale": 0.5
+  		},
+		"*": {
+			"translation": { "x": 2, "y": 0, "z": 0 },
+			"rotation": { "x": 15, "y": -120, "z": -163 },
+			"origin": { "x": 0.5, "y": 3.8, "z": 0.5 },
+			"scale": 0.25
+		}
 	},
 	"fpHandTransform": {
 		"translation": { "x": -0.3, "y": -0.1, "z": 0.7 },
@@ -30,7 +39,7 @@
 		"scale": 0.3
 	},
 	"tpHandTransform": {
-		"translation": { "x": -1.8, "y": -3.2, "z": -1.2 },
+		"translation": { "x": -1.8, "y": -4.2, "z": -1.2 },
 		"rotation": { "x": 173, "y": 7, "z": -174 },
 		"origin": { "x": 0.5, "y": 0.8, "z": 0.5 },
 		"scale": 0.25

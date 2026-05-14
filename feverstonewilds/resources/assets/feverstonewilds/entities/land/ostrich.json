@@ -1,6 +1,7 @@
 {
 	"code": "ostrich",
 	"class": "EntityAgent",
+    "tags":  [ "animal", "huntable", "habitat-land", "adult" ],
 	"variantgroups": [
         { "code": "gender", "states": ["male", "female"] }
 	],
@@ -15,13 +16,28 @@
 		},
 		"creatureDiet": {
 			"foodCategories": [ "Grain" ],
-			"foodTags": [ "cabbage", "carrot", "parsnip", "blueberry", "cranberry", "cherry", "whitecurrant", "redcurrant", "blackcurrant", "lychee" ],
+			"weightedFoodTags": [ 
+				{ "weight": 1, "code": "cabbage" }, 
+				{ "weight": 0.95, "code": "parsnip" },
+				{ "weight": 0.9, "code": "*berry" },
+				{ "weight": 0.85, "code": "cherry" },
+				{ "weight": 0.8, "code": "*currant" },
+				{ "weight": 0.75, "code": "grain" }
+			],
 			"skipFoodTags": [ "rice" ]
-		}
+		},
+        "eggTypes": [ { "type": "item", "code": "feverstonewilds:egg-ostrich-raw" } ]
+    },
+	"behaviorConfigs": {
+        "controlledphysics": { 
+            "stepHeight": 1.1251,
+            "stepUpSpeed": 0.1
+        },
+        "floatupwhenstuck": { "onlyWhenDead": true }
     },
 	"client": {
 		"renderer": "Shape",
-		"shape": { "base": "entity/land/ostrich" },
+		"shape": { "base": "entity/land/bird/ostrich" },
 		"texture": { "base": "entity/land/ostrich/ostrichskin1", 
 			"alternates":  [{ "base": "entity/land/ostrich/ostrichskin2" }, { "base": "entity/land/ostrich/ostrichskin3" }, 
 							{ "base": "entity/land/ostrich/ostrichskin4" }, { "base": "entity/land/ostrich/ostrichskin5" }, 
@@ -30,12 +46,12 @@
 							{ "base": "entity/land/ostrich/ostrichskin10" } ] },
 		"behaviors": [
 			{ "code": "repulseagents" }, 
-			{ "code": "controlledphysics", "stepHeight": 1.1251 }, 
-			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
+			{ "code": "controlledphysics" }, 
+			{ "code": "floatupwhenstuck" },
 			{ "code": "interpolateposition" },
 			{ "code": "harvestable" },
 			{ "code": "multiplybase",
-				"enabledByType": { "*-male": false, "*-female": true } },
+				"enabledByType": { "*-female": true, "*-male": false } },
 			{ "code": "despawn", "minPlayerDistance": 15, "belowLightLevel": 8, "minSeconds": 300 },
 			{ "code": "ropetieable", "minGeneration": 2 }
 		],
@@ -55,6 +71,13 @@
 				"blendMode": "average",
 				"triggeredBy": { "onControls": ["dead"] }
 			},
+            {
+                "code": "dead",
+                "animation": "dead",
+                "blendMode": "Average",
+                "weight": 10,
+                "easeInSpeed": 3
+            },
 			{ 
 				"code": "idle", 
 				"animation": "idle",
@@ -97,8 +120,8 @@
 		"behaviors": [
 			{ "code": "multiplybase",
 				"enabledByType": { "*-female": true, "*-male": false },
-				"multiplyCooldownDaysMin": 0,
-				"multiplyCooldownDaysMax": 1,
+				"multiplyCooldownDaysMin": 1,
+				"multiplyCooldownDaysMax": 4,
 				"portionsEatenForMultiply": 9
 			},
 			{ "code": "repulseagents" }, 
@@ -106,7 +129,7 @@
 			{ "code": "despawn", "minPlayerDistance": 8, "belowLightLevel": 8, "minSeconds": 300 },
 			{ "code": "health", "currenthealth": 15, "maxhealth": 15 },
 			{ "code": "deaddecay", "hoursToDecay": 96, "decayedBlock": "carcass-medium" },
-			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
+			{ "code": "floatupwhenstuck" },
 			{ "code": "harvestable", "drops": [
 				{
 					"type": "item", 
@@ -116,7 +139,7 @@
 				{
 					"type": "item", 
 					"code": "feather", 
-					"quantity": { "avg": 9, "var": 1.5 } 
+					"quantity": { "avg": 16, "var": 4 } 
 				},
 				{
 					"type": "item", 
@@ -137,6 +160,7 @@
 			},
 			{ 
 				"code": "taskai",
+				"aiCreatureType": "LandCreature",
 				"aitasks": [
 					{
 						"code": "meleeattack",
@@ -163,7 +187,7 @@
 						"seekingRange": 12,
 						"animation": "Run",
 						"animationSpeed": 3,
-						"sound": "creature/ostrich/hurt",
+						"sound": "creature/ostrich/ostrichhurt",
 						"whenInEmotionState": "fleeondamage"
 					},
 					{
@@ -179,13 +203,20 @@
 						"whenInEmotionState": "aggressiveondamage"
 					},
 					{
+						"code": "getoutofwater",
+						"priority": 1.65,
+						"movespeed": 0.015,
+						"animation": "Walk",
+						"animationSpeed": 2
+					},
+					{
 						"code": "seekblockandlay",
-						"enabledByType": { "*-female": true, "*-male": false },
-						"priority": 1.6,
-						"layTime": 2,
-						"chickCode": "ostrich-chick",
+						"priorityByType": { "*-female": 1.6, "*": 0 },
+						"layTime": 8,
+						"chickCodes": ["ostrich-chick"],
+						"nestTypes": [ "ground-large" ],
 						"sitDays": 0.9,
-						"incubationDays": 3.6,
+						"incubationDays": 6,
 						"movespeed": 0.012,
 						"animation": "Walk",
 						"mincooldownHours": 1,
@@ -199,23 +230,17 @@
 						"priorityForCancel": 1.65
 					},
 					{
-						"code": "getoutofwater",
-						"priority": 1.65,
-						"movespeed": 0.015,
-						"animation": "Walk",
-						"animationSpeed": 2
-					},
-					{
 						"code": "seekfoodandeat",
 						"movespeed": 0.004,
 						"priority": 1.4,
 						"animationSpeed": 1,
 						"animation": "Walk",
 						"eatAnimation": "Eat",
-						"eatSound": "game:player/eat",
+						"eatSound": "game:creature/animal-eat-small",
 						"eatTime": 1.5,
 						"mincooldownHours": 1,
-						"maxcooldownHours": 4
+						"maxcooldownHours": 4,
+						"priorityForCancel": 1.6
 					},
 					{
 						"code": "wander", 
@@ -223,8 +248,7 @@
 						"movespeed": 0.004,
 						"animationSpeed": 0.75,
 						"animation": "Walk",
-						"preferredLightLevel": 20,
-						"priorityForCancel": 1.35
+						"preferredLightLevel": 20
 					},
 					{
 						"code": "idle",
@@ -272,10 +296,11 @@
 				]
 			},
 			{ "code": "ropetieable", "minGeneration": 2 },
-			{ "code": "pettable", "minGeneration": 1 }
+			{ "code": "pettable", "minGeneration": 1 },
+			{ "code": "entitystatetags" }
 		],
 		"spawnconditions": {
-        			"worldgen": {
+				"worldgen": {
 					"TriesPerChunk": { "avg": 0.005, "var": 0 },
 					"tryOnlySurface": true,
 					"minLightLevel": 10,
@@ -284,7 +309,7 @@
 					"minTemp": 16,
 					"maxTemp": 50,
 					"minRain": 0.1,
-					"companions": [ "feverstonewilds:ostrich-female", "feverstonewilds:ostrich-male", "feverstonewilds:ostrich-chick" ]
+					"companions": [ "ostrich-female", "ostrich-male", "ostrich-chick" ]
             	},
 				"runtime": {
 					"group": "neutral",
@@ -297,14 +322,14 @@
 					"minTemp": 16,
 					"maxTemp": 50,
 					"minRain": 0.1,
-					"companions": [ "feverstonewilds-female", "feverstonewilds-male", "feverstonewilds:ostrich-chick" ]
+					"companions": [ "ostrich-female", "ostrich-male", "ostrich-chick" ]
                 }
 			}
 		},
 		"sounds": {
-		"hurt": "creature/ostrich/hurt",
-		"death": "creature/ostrich/hurt",
-		"idle": "creature/ostrich/idle"
+		"hurt": "creature/ostrich/ostrichhurt",
+		"death": "creature/ostrich/ostrichhurt",
+		"idle": "creature/ostrich/ostrichidle"
 	},
-	"idleSoundChance": 0.01
+	"idleSoundChance": 0.025
 }

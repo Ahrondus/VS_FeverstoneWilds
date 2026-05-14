@@ -1,28 +1,29 @@
 {
 	"code": "cockatrice-chick",
 	"class": "EntityAgent",
+    "tags":  [ "animal", "huntable", "habitat-land" ],
 	"hitboxSize": { "x": 0.4, "y": 0.4 },
 	"deadHitboxSize": { "x": 0.4, "y": 0.4 },
 	"eyeHeight": 0.15,
-	"weight": 0.1,
+	"weight": 15,
 	"attributes": {
 		"killedByInfoText": "feverstonewilds:deadcreature-eaten-cockatrice",
 		"creatureDiet": {
-			"foodCategories": [ "Grain", "Protein" ],
-			"foodTags": [ "nibbleCrop" ],
+			"foodCategories": [ "Grain" ],
+			"foodTags": [ "nibbleCrop", "meat" ],
 			"skipFoodTags": [ "rice" ]
 		},
 		"handbook": {
 			"groupcode": "feverstonewilds:creaturegroup-fswcockatrice"
 		},
 		"netCaughtItemCode": "feverstonewilds:creature-cockatrice-chick",
-		"basketCatchable": true,
-		"trapChance": 0.35,
-		"trapDestroyChance": 0.025
+		"trappable": {
+			"small": { "trapChance": 0.35, "trapDestroyChance": 0.025 }
+		}
 	},
 	"client": {
 		"renderer": "Shape",
-		"shape": { "base": "entity/land/cockatrice-chick" },
+		"shape": { "base": "entity/land/bird/cockatrice-chick" },
 		"texture": { "base": "entity/land/cockatrice/cockatriceskin1",
 			"alternates": [ { "base": "entity/land/cockatrice/cockatriceskin2" }, { "base": "entity/land/cockatrice/cockatriceskin3" }, 
 							{ "base": "entity/land/cockatrice/cockatriceskin4" }, { "base": "entity/land/cockatrice/cockatriceskin5" }, 
@@ -32,33 +33,18 @@
 		"size": 0.9,
 		"sizeGrowthFactor": 0.3,
 		"behaviors": [
-			{ "code": "nametag", "showtagonlywhentargeted": true },
-            { "code": "receivecommand",
-                "availableCommands": [
-                    { "commandName": "followmaster", "commandType": "COMPLEX", "minObedience": 0.4 },
-                    { "commandName": "stay", "commandType": "COMPLEX", "minObedience": 0.1 }
-                ]
-            },
-            {
-                "code": "tameable",
-				"tameEntityCode": "feverstonewilds:tame-cockatrice-chick",
-                "treat": [
-					{ "code": "bushmeat-raw", "progress": 0.05, "cooldown": 0.5 },
-                    { "code": "poultry-raw", "progress": 0.075, "cooldown": 0.6 },
-					{ "code": "redmeat-raw", "progress": 0.125, "cooldown": 0.75 },
-					{ "code": "grain-*", "progress": 0.025, "cooldown": 0.25 },
-					{ "code": "bone", "progress": 0.05, "cooldown": 0.55 }
-                ]
-            },
-            {
-                "code": "mouthinventory",
+            { "code": "mouthinventory",
                 "acceptStacks": [
-					{ "type": "item", "code": "bushmeat-raw"},
+                    { "type": "item", "code": "bone" },
+                    { "type": "item", "code": "bushmeat-raw" },
+                    { "type": "item", "code": "redmeat-raw" },
                     { "type": "item", "code": "poultry-raw" },
-					{ "type": "item", "code": "redmeat-raw" },
+					{ "type": "item", "code": "grain-flax" },
+					{ "type": "item", "code": "grain-spelt" },
 					{ "type": "item", "code": "grain-rye" },
-					{ "type": "item", "code": "bone" }
-				]
+					{ "type": "item", "code": "grain-sunflower" },
+                    { "type": "item", "code": "petai:petcookie-meat-perfect" }
+                ]
             },
 			{ "code": "repulseagents" },
 			{ "code": "controlledphysics", "stepHeight": 1.1251 }, 
@@ -66,7 +52,7 @@
 			{ "code": "interpolateposition" },
 			{ "code": "harvestable" },
 			{ "code": "despawn", "minPlayerDistance": 8, "belowLightLevel": 8, "minSeconds": 300 },
-			{ "code": "ropetieable", "minGeneration": 2 }
+			{ "code": "ropetieable" }
 		
 		],
 		"animations": [
@@ -88,12 +74,19 @@
 			},			
 			{
 				"code": "die",
-				"animation": "death", 
+				"animation": "die", 
 				"animationSpeed": 1.25,
 				"weight": 10,
 				"blendMode": "average",
 				"triggeredBy": { "onControls": ["dead"] }
 			},
+            {
+                "code": "dead",
+                "animation": "dead",
+                "blendMode": "Average",
+                "weight": 10,
+                "easeInSpeed": 3
+            },
 			{ 
 				"code": "idle", 
 				"animation": "idle",
@@ -107,54 +100,43 @@
 				"easeInSpeed": 4,
 				"easeOutSpeed": 4,
 				"blendMode": "average"
-			},
-			{
-				"code": "sit", 
-				"animation": "sit",
-				"easeInSpeed": 4,
-				"easeOutSpeed": 4,
-				"blendMode": "average" 
 			}
 		]
 	},
 	"server": {
 		"behaviors": [
-			{ "code": "nametag", "showtagonlywhentargeted": true },
-            { "code": "receivecommand",
-                "availableCommands": [
-                    { "commandName": "followmaster", "commandType": "COMPLEX", "minObedience": 0.4 },
-                    { "commandName": "stay", "commandType": "COMPLEX", "minObedience": 0.1 }
-                ]
-            },
-            { "code": "tameable",
-				"tameEntityCode": "feverstonewilds:tame-cockatrice-chick",
-                "treat": [
-					{ "code": "bushmeat-raw", "progress": 0.05, "cooldown": 0.5 },
-                    { "code": "poultry-raw", "progress": 0.075, "cooldown": 0.6 },
-					{ "code": "redmeat-raw", "progress": 0.125, "cooldown": 0.75 },
-					{ "code": "grain-*", "progress": 0.025, "cooldown": 0.25 },
-					{ "code": "bone", "progress": 0.05, "cooldown": 0.55 }
-                ]
-            },
             { "code": "mouthinventory",
                 "acceptStacks": [
-					{ "type": "item", "code": "bushmeat-raw"},
+                    { "type": "item", "code": "bone" },
+                    { "type": "item", "code": "bushmeat-raw" },
+                    { "type": "item", "code": "redmeat-raw" },
                     { "type": "item", "code": "poultry-raw" },
-					{ "type": "item", "code": "redmeat-raw" },
-					{ "type": "item", "code": "grain-{flax|spelt|rye|sunflower}" },
-					{ "type": "item", "code": "bone" }
-				]
+					{ "type": "item", "code": "grain-flax" },
+					{ "type": "item", "code": "grain-spelt" },
+					{ "type": "item", "code": "grain-rye" },
+					{ "type": "item", "code": "grain-sunflower" },
+                    { "type": "item", "code": "petai:petcookie-meat-perfect" }
+                ]
             },
 			{ "code": "repulseagents" }, 
 			{ "code": "controlledphysics", "stepHeight": 1.1251 },
 			{ "code": "despawn", "minPlayerDistance": 8, "belowLightLevel": 8, "minSeconds": 300 },
-			{ "code": "health", "currenthealth": 3, "maxhealth": 3 },
-			{ "code": "deaddecay", "hoursToDecay": 0 },
+			{ "code": "health", "maxhealth": 3 },
+			{ "code": "deaddecay", "hoursToDecay": 1, "decayedBlock": "carcass-small" },
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
 			{ "code": "grow", "hoursToGrow": 100,
-				"adultEntityCodes": [ "feverstonewilds:cockatrice-male", "feverstonewilds:cockatrice-female" ]
+				"orPortionsEatenForGrowing": 8,
+				"fedAdultEntityCodes": [ "feverstonewilds:tame-cockatrice-male", "feverstonewilds:tame-cockatrice-female", "feverstonewilds:tame-cockatrice-female" ],
+				"adultEntityCodes": [ "feverstonewilds:cockatrice-male", "feverstonewilds:cockatrice-female", "feverstonewilds:cockatrice-female" ]
 			},
 			{ "code": "breathe" },
+			{
+				"code": "harvestable",
+				"drops": [
+					{ "type": "item", "code": "poultry-raw", "quantity": { "avg": 0.5, "var": 0.5 } },
+					{ "type": "item", "code": "feather", "quantity": { "avg": 1.5, "var": 0.5 } }
+				]
+			},
 			{ "code": "emotionstates",
 				"states": [
 					{ "code": "fleeondamage", "duration": 60, "chance": 0.85, "slot": 0, "priority": 6, "accumtype": "max", "whenHealthRelBelow": 0.4 },
@@ -163,6 +145,7 @@
 				]
 			},
 			{ "code": "taskai",
+			"aiCreatureType": "LandCreature",
 				"aitasks": [
 					{
 						"code": "fleeentity",
@@ -213,9 +196,9 @@
 						"animationSpeed": 0.7,
 						"priority": 2.1,
 						"priorityForCancel": 2.2,
-						"eatItemCategories": [ "Protein", "Grain" ],
+						"eatItemCategories": [ "Grain" ],
 						"eatItemCodes": [ "redmeat-raw", "bushmeat-raw", "poultry-raw", 
-								"bone", "petai:petcookie-meat-perfect" ],
+								"fish-raw", "bone", "petai:petcookie-meat-perfect" ],
 						"useTime": 1.5,
 						"mincooldownHours": 1,
 						"maxcooldownHours": 1.5
@@ -246,7 +229,6 @@
 					{
 						"code": "meleeattack",
 						"entityCodes": ["player", "drifter-*", "toad-*", "spider-*", "hare-*", "raccoon-*", "fox-*"],
-						"knockbackStrength": 0.65,
 						"priority": 1,
 						"slot": 1,
 						"damage": 1,
@@ -259,6 +241,25 @@
 						"animationSpeed": 2,
 						"whenInEmotionState": "aggressiveondamage"
 					},
+                    {
+                        "code": "idle",
+                        "priority": 1.35,
+                        "priorityForCancel": 1.35,
+                        "minduration": 200000,
+                        "maxduration": 800000,
+                        "mincooldown": 10000,
+                        "maxcooldown": 30000,
+                        "animation": "Sleep",
+                        "whenNotInEmotionState": "aggressiveondamage",
+                        "duringDayTimeFrames": [
+                            { "fromHour": 19, "toHour": 24 },
+                            { "fromHour": 0, "toHour": 7 }
+                        ],
+                        "stopOnNearbyEntityCodes": [ "wolf-*", "hyena-*", "bear-*", "fox-*", "direwolf-*", "hellboar-*",
+                                                     "drifter-*", "shiver-*", "bowtorn-*"],
+                        "stopRange": 8,
+                        "stopOnHurt": true
+                    },
 					{
 						"code": "idle",
 						"priority": 0.9,
@@ -267,7 +268,7 @@
 						"mincooldown": 2000,
 						"maxcooldown": 120000,
 						"priorityForCancel": 1.1,
-						"animation": "Sit"
+						"animation": "sleep"
 					},
 					{ 
 						"code": "lookaround", 
@@ -275,14 +276,15 @@
 					}
 				]
 			},
-			{ "code": "pettable", "minGeneration": 0 }
+			{ "code": "pettable", "minGeneration": 0 },
+			{ "code": "ropetieable", "minGeneration": 0 },
+			{ "code": "entitystatetags" }
 		]
 	},
 	"sounds": {
 		"hurt": "game:creature/chicken/chick*",
 		"death": "game:creature/chicken/chick*",
-		"idle": "game:creature/chicken/chick*"
+		"idle": { "path": "cockatrice/cockatrice-chick-peeping", "range": 16, "pitch": { "avg": 1, "var": 0.2 } } 
 	},
-	"idleSoundRange": 8,
-	"idleSoundChance": 0.01
+	"idleSoundChance": 1
 }

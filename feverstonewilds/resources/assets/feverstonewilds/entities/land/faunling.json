@@ -1,6 +1,7 @@
 {
     "code": "faunling",
     "class": "EntityAgent",
+    "tags":  [ "humanoid", "huntable", "habitat-land" ],
     "variantgroups": [
         { "code": "gender", "states": [ "male", "female" ] }
     ],
@@ -42,35 +43,33 @@
     "client": {
         "renderer": "Shape",
         "shapeByType": {
-            "*-male": { "base": "entity/land/malefaunling" },
-            "*-female": { "base": "entity/land/faunling" }
+            "*-male": { "base": "entity/land/humanoid/malefaunling" },
+            "*-female": { "base": "entity/land/humanoid/faunlingfemale" }
         },
         "textureByType": {
-            "faunling-male":    
-            { "base": "entity/land/malefaunling/malefaunling1",
-            "alternates": [ { "base": "entity/land/malefaunling/malefaunling2" }, { "base": "entity/land/malefaunling/malefaunling3" }, 
-                { "base": "entity/land/malefaunling/malefaunling4" }, { "base": "entity/land/malefaunling/malefaunling5" }, 
-                { "base": "entity/land/malefaunling/malefaunling6" }, { "base": "entity/land/malefaunling/malefaunling7" }, 
-                { "base": "entity/land/malefaunling/malefaunling8" }, { "base": "entity/land/malefaunling/malefaunling9" }, 
-                { "base": "entity/land/malefaunling/malefaunling10" }, { "base": "entity/land/malefaunling/malefaunling11" }, 
-                { "base": "entity/land/malefaunling/malefaunling12" }, { "base": "entity/land/malefaunling/malefaunling13" }, 
-                { "base": "entity/land/malefaunling/malefaunling14" }, { "base": "entity/land/malefaunling/malefaunling15" }
-            ]
+            "faunling-male": { "base": "entity/land/malefaunling/malefaunling1",
+                "alternates": [ { "base": "entity/land/malefaunling/malefaunling2" }, { "base": "entity/land/malefaunling/malefaunling3" }, 
+                    { "base": "entity/land/malefaunling/malefaunling4" }, { "base": "entity/land/malefaunling/malefaunling5" }, 
+                    { "base": "entity/land/malefaunling/malefaunling6" }, { "base": "entity/land/malefaunling/malefaunling7" }, 
+                    { "base": "entity/land/malefaunling/malefaunling8" }, { "base": "entity/land/malefaunling/malefaunling9" }, 
+                    { "base": "entity/land/malefaunling/malefaunling10" }, { "base": "entity/land/malefaunling/malefaunling11" }, 
+                    { "base": "entity/land/malefaunling/malefaunling12" }, { "base": "entity/land/malefaunling/malefaunling13" }, 
+                    { "base": "entity/land/malefaunling/malefaunling14" }, { "base": "entity/land/malefaunling/malefaunling15" }
+                ]
+            }
         },
-            "faunling-female":    
-            { "base": "entity/land/faunling/faunling1",
-            "alternates": [ { "base": "entity/land/faunling/faunling2" }, { "base": "entity/land/faunling/faunling3" }, 
-                { "base": "entity/land/faunling/faunling4" }, { "base": "entity/land/faunling/faunling5" }, 
-                { "base": "entity/land/faunling/faunling6" }, { "base": "entity/land/faunling/faunling7" }, 
-                { "base": "entity/land/faunling/faunling8" }, { "base": "entity/land/faunling/faunling9" }, 
-                { "base": "entity/land/faunling/faunling10" }, { "base": "entity/land/faunling/faunling11" }, 
-                { "base": "entity/land/faunling/faunling12" }, { "base": "entity/land/faunling/faunling13" }, 
-                { "base": "entity/land/faunling/faunling14" }, { "base": "entity/land/faunling/faunling15" }, 
-                { "base": "entity/land/faunling/faunling16" }, { "base": "entity/land/faunling/faunling17" }, 
-                { "base": "entity/land/faunling/faunling18" }
-            ] 
-		}
-    },
+        "texturesByType": {
+            "faunling-female": { "faunling1": { "base": "entity/land/faunling/femalefaunlingskin1", 
+                                    "alternates": [ { "base": "entity/land/faunling/femalefaunlingskin2" }, { "base": "entity/land/faunling/femalefaunlingskin3" }, 
+                                                    { "base": "entity/land/faunling/femalefaunlingskin4" }, { "base": "entity/land/faunling/femalefaunlingskin5" } ],
+                                 "scraped": { "base": "game:item/resource/hide/scraped" },
+                                 "pudu-adult": { "base": "game:entity/animal/mammal/hooved/deer/pudu-adult" },
+                                 "linen": { "base": "game:item/bag/linensack/linen" },
+                                 "feather": { "base": "game:item/resource/feather" },
+                                 "pelt": { "base": "game:item/resource/hide/pelt" } 
+                }
+            }
+        },
         "behaviors": [
             { "code": "nametag", "showtagonlywhentargeted": true },
             { "code": "repulseagents" },
@@ -98,12 +97,25 @@
 			},
 			{
 				"code": "die",
-				"animation": "dead",
+				"animation": "die",
 				"easeInSpeed": 2,
 				"weight": 10,
 				"blendMode": "average",
 				"triggeredBy": { "onControls": ["dead"] }
-			}
+			},
+			{
+				"code": "run", 
+				"animation": "Run",
+                "animationSounds": [{"frame": 6, "range": 8, "location": "direwolf/paws-step*", "pitch": { "avg": 1.0, "var": 0.15 }, "volume": {"avg": 0.6}},
+                                    {"frame": 18, "range": 8, "location": "direwolf/paws-step*", "pitch": { "avg": 1.0, "var": 0.15 }, "volume": {"avg": 0.6}}]
+            },
+            {
+                "code": "dead",
+                "animation": "dead",
+                "blendMode": "Average",
+                "weight": 10,
+                "easeInSpeed": 3
+            }
         ]
     },
     "server": {
@@ -116,10 +128,11 @@
         "behaviors": [
             { "code": "nametag", "showtagonlywhentargeted": true, "selectFromRandomNameByType": 
                 {
-                "*-female": ["Nadia", "Alina", "Della", "Ximuku", "Kelta", "Udemya", "Nabafae", "Shiva", "Edith", "Cara", "Midoris", "Honwish", "Eriza", "Aris", "Edel"],
-                "*-male": ["Merzost", "Valsgo", "Malafes", "Xibo", "Xival", "Samsuro", "Asubos", "Debino", "Zane", "Cedric", "Vathiel", "Vero", "Vorin", "Kain", "Knudson"]
+                    "*-female": ["Nadia", "Alina", "Della", "Ximuku", "Kelta", "Udemya", "Nabafae", "Shiva", "Edith", "Cara", "Midoris", "Honwish", "Eriza", "Aris", "Edel", "Milaa"],
+                    "*-male": ["Merzost", "Valsgo", "Malafes", "Xibo", "Xival", "Samsuro", "Asubos", "Debino", "Zane", "Cedric", "Vathiel", "Vero", "Vorin", "Kain", "Knudson"]
                 }
             },
+            { "code": "plantSapling" },
             { "code": "repulseagents" },
             { "code": "controlledphysics", "stepHeight": 1.1251 },
             { "code": "despawn", "minPlayerDistance": 20, "belowLightLevel": 6, "minSeconds": 300 },
@@ -165,6 +178,7 @@
             },
             {
                 "code": "taskai",
+                "aiCreatureType": "LandCreature",
                 "aitasks": [
                     {
                         "code": "meleeattack",
@@ -299,7 +313,7 @@
                         "priority": 0.55,
                         "priorityForCancel": 1.35,
                         "movespeed": 0.025,
-                        "animationSpeed": 1.65,
+                        "animationSpeed": 1.45,
                         "animation": "run",
                         "minduration": 15000,
                         "chance": 0.02
@@ -309,17 +323,18 @@
                         "priority": 0.5
                     }
                 ]
-            }
+            },
+			{ "code": "entitystatetags" }
         ],
         "spawnconditionsByType": {
             "*-female": {
                 "worldgen": {
                     "TriesPerChunk": {
-                        "avg": 0.08,
-                        "var": 0.02
+                        "avg": 0.0095,
+                        "var": 0.0005
                     },
                     "tryOnlySurface": true,
-                    "maxLightLevel": 11,
+                    "minLightLevel": 11,
                     "groupSize": {
                         "dist": "verynarrowgaussian",
                         "avg": 2,
@@ -335,10 +350,11 @@
                 "runtime": {
                     "group": "neutral",
                     "tryOnlySurface": true,
-                    "chance": 0.00004,
+                    "chance": 0.00002,
                     "maxQuantity": 3,
+				    "maxQuantityByGroup": { "code": "faunling-*", "maxQuantity": 3 },
                     "mindistancetoplayer": 160,
-                    "maxLightLevel": 9,
+                    "minLightLevel": 11,
                     "lightLevelType": "onlyBlockLight",
                     "groupSize": {
                         "dist": "verynarrowgaussian",

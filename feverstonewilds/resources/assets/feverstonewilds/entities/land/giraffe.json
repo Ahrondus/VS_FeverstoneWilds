@@ -1,14 +1,25 @@
 {
 	"code": "giraffe",
 	"class": "EntityAgent",
+	"variantgroups": [ 
+		{ "code": "gender", "states": [ "male", "female" ] },
+		{ "code": "age", "states": [ "adult", "calf" ] }
+	],
+    "tagsByType": {
+        "*-adult": [ "animal", "huntable", "habitat-land", "adult" ],
+        "*": [ "animal", "huntable", "habitat-land" ]
+    },
 	"hitboxSize": { "x": 2.15, "y": 2.4 },
 	"deadHitboxSize": { "x": 2.15, "y": 1.75 },
 	"eyeHeight": 1.4,
-	"weight": 150,
+	"weight": 400,
 	"drops": [],
 	"client": {
 		"renderer": "Shape",
-		"shape": { "base": "entity/land/giraffe" },
+		"shapeByTupe": {
+			"*-adult": { "base": "entity/land/mammal/giraffe" },
+			"*-calf": { "base": "entity/land/mammal/giraffe-calf" }
+		},
 		"texture": { "base": "entity/land/giraffe/giraffeskin1",
                     "alternates": [ { "base": "entity/land/giraffe/giraffeskin2" }, { "base": "entity/land/giraffe/giraffeskin3" }, 
                                     { "base": "entity/land/giraffe/giraffeskin4" }, { "base": "entity/land/giraffe/giraffeskin5" },
@@ -33,12 +44,19 @@
 			},
 			{
 				"code": "die",
-				"animation": "death", 
+				"animation": "die", 
 				"animationSpeed": 1.25,
 				"weight": 10,
 				"blendMode": "average",
 				"triggeredBy": { "onControls": ["dead"] }
 			},
+            {
+                "code": "dead",
+                "animation": "dead",
+                "blendMode": "Average",
+                "weight": 10,
+                "easeInSpeed": 3
+            },
 			{ 
 				"code": "idle", 
 				"animation": "idle",
@@ -80,17 +98,23 @@
 				{
 					"type": "item", 
 					"code": "redmeat-raw", 
-					"quantity": { "avg": 35, "var": 4 } 
+					"quantityByType": {
+						"*-adult": { "avg": 20, "var": 2 },
+						"*-calf": { "avg": 8, "var": 2 }
+					}  
 				},
 				{
 					"type": "item", 
-					"code": "hide-raw-large", 
-					"quantity": { "avg": 3.2, "var": 0.2 } 
+					"codeByType": {
+						"*-adult": "hide-raw-huge",
+						"*-calf": "hide-raw-medium"
+					},
+					"quantity": { "avg": 2.5, "var": 0.5 } 
 				},
 				{
 					"type": "item", 
 					"code": "fat", 
-					"quantity": { "avg": 5, "var": 0.3 } 
+					"quantity": { "avg": 3, "var": 1 } 
 				}
 			]
 			},
@@ -106,9 +130,14 @@
 			},
 			{ 
 				"code": "taskai",
+				"aiCreatureType": "LandCreature",
 				"aitasks": [
 					{
 						"code": "meleeattack",
+						"enabledByType": {
+							"*-adult": true,
+							"*-calf": false
+						},
 						"entityCodes": ["hyena-male", "hyena-female"],
 						"knockbackStrength": 2.65,
 						"priority": 2,
@@ -124,6 +153,10 @@
 					},
 					{
 						"code": "seekentity",
+						"enabledByType": {
+							"*-adult": true,
+							"*-calf": false
+						},
 						"entityCodes": ["player"],
 						"priority": 1.5,
 						"mincooldown": 1000, 
@@ -136,6 +169,10 @@
 					},
 					{
 						"code": "seekentity",
+						"enabledByType": {
+							"*-adult": true,
+							"*-calf": false
+						},
 						"entityCodes": ["hyena-female", "hyena-male"],
 						"priority": 1.5,
 						"mincooldown": 1000, 
@@ -157,6 +194,20 @@
 						"whenInEmotionState": "fleeondamage"
 					},
 					{
+						"code": "fleeentity",
+						"enabledByType": {
+							"*-adult": false,
+							"*-calf": true
+						},
+						"entityCodes": ["player"],
+						"priority": 1.5,
+						"movespeed": 0.052,
+						"seekingRange": 12,
+						"animation": "Run",
+						"animationSpeed": 2.5,
+						"sound": "game:creature/sheep/hurt2"
+					},
+					{
 						"code": "getoutofwater",
 						"priority": 1.4,
 						"movespeed": 0.02,
@@ -173,7 +224,7 @@
 						"maxcooldown": 30000,
 						"animation": "Sleep",
 						"whenNotInEmotionState": "aggressiveondamage",
-						"duringDayTimeFrames": [ { "fromHour": 22, "toHour": 24 }, { "fromHour": 0, "toHour": 5 } ],
+						"duringDayTimeFrames": [ { "fromHour": 21, "toHour": 24 }, { "fromHour": 0, "toHour": 7 } ],
 						"stopOnNearbyEntityCodes": ["player"],
 						"stopRange": 8,
 						"stopOnHurt": true
@@ -200,29 +251,11 @@
 						"maxcooldown": 20000,
 						"animation": "Idle",
 						"animationSpeed": 1.25,
-						"whenNotInEmotionState": "aggressiveondamage"
-					},
-					{
-						"code": "idle",
-						"priority": 1.1,
-						"priorityForCancel": 1.35,
-						"minduration": 1500,
-						"maxduration": 1500,
-						"mincooldown": 6000,
-						"maxcooldown": 90000,
-						"animation": "look",
-						"animationSpeed": 1,
-						"whenNotInEmotionState": "aggressiveondamage"
-					},
-					{
-						"code": "idle",
-						"priority": 1.0,
-						"priorityForCancel": 1.35,
-						"minduration": 5333,
-						"maxduration": 5333,
-						"mincooldown": 6000,
-						"maxcooldown": 120000,
-						"animation": "Look"
+						"stopOnNearbyEntityCodes": ["player"],
+						"stopRange": 12,
+						"stopOnHurt": true,
+						"whenNotInEmotionState": "aggressiveondamage",
+						"sound": "feverstonewilds:giraffe/giraffeidle"
 					},
 					{
 						"code": "wander", 
@@ -233,20 +266,6 @@
 						"animation": "Walk",
 						"preferredLightLevel": 24
 					},
-					{
-						"code": "idle",
-						"priority": 0.9,
-						"minduration": 7000,
-						"maxduration": 45000,
-						"mincooldown": 6000,
-						"maxcooldown": 120000,
-						"priorityForCancel": 1.33,
-						"stopOnNearbyEntityCodes": ["player"],
-						"stopRange": 5,
-						"stopOnHurt": true,
-						"animation": "idle",
-						"sound": "feverstonewilds:giraffe/giraffeidle"
-					},
 					{ 
 						"code": "lookaround", 
 						"priority": 0.5
@@ -254,39 +273,43 @@
 				]
 			},
 			{ "code": "ropetieable", "minGeneration": 2 },
-			{ "code": "pettable", "minGeneration": 1 }
+			{ "code": "pettable", "minGeneration": 1 },
+			{ "code": "entitystatetags" }
 		],
-		"spawnconditions": {
-			"worldgen": {
-				"TriesPerChunk": { "avg": 0.045, "var": 0 },
-				"tryOnlySurface": true,
-				"minLightLevel": 8,
-				"groupSize": { "dist": "verynarrowgaussian", "avg": 3, "var": 4 },
-				"insideBlockCodes": ["game:air", "game:tallgrass-*", "game:snowlayer-1"],
-				"minTemp": 22,
-				"maxTemp": 50,
-				"minRain": 0.2,
-				"minForestOrShrubs": 0.25,
-					"maxForest": 0.75,
-					"maxShrubs": 0.75,
-				"companions": ["giraffe"]
-			},
-			"runtime": {
-				"group": "neutral",
-				"tryOnlySurface": true,
-				"chance": 0.0005,
-				"maxQuantity": 3,
-				"minLightLevel": 10,
-				"groupSize": { "dist": "verynarrowgaussian", "avg": 3, "var": 4 },
-				"insideBlockCodes": ["game:air", "game:tallgrass-*", "game:snowlayer-1"],
-				"minTemp": 22,
-				"maxTemp": 50,
-				"minRain": 0.2,
-				"minForestOrShrubs": 0.25,
-					"maxForest": 0.75,
-					"maxShrubs": 0.75,
-				"companions": ["giraffe"]
+		"spawnconditionsByType": {
+			"*-male": {
+				"worldgen": {
+					"TriesPerChunk": { "avg": 0.0045, "var": 0 },
+					"tryOnlySurface": true,
+					"minLightLevel": 11,
+					"groupSize": { "dist": "verynarrowgaussian", "avg": 3, "var": 1 },
+					"insideBlockCodes": ["game:air", "game:tallgrass-*", "game:snowlayer-1"],
+					"minTemp": 22,
+					"maxTemp": 50,
+					"minRain": 0.2,
+					"minForestOrShrubs": 0.25,
+						"maxForest": 0.75,
+						"maxShrubs": 0.75,
+					"companions": [ "giraffe-female", "giraffe-calf" ]
+				},
+				"runtime": {
+					"group": "neutral",
+					"tryOnlySurface": true,
+					"chance": 0.0003,
+					"maxQuantity": 3,
+					"minLightLevel": 11,
+					"groupSize": { "dist": "verynarrowgaussian", "avg": 3, "var": 1 },
+					"insideBlockCodes": ["game:air", "game:tallgrass-*", "game:snowlayer-1"],
+					"minTemp": 22,
+					"maxTemp": 50,
+					"minRain": 0.2,
+					"minForestOrShrubs": 0.25,
+						"maxForest": 0.75,
+						"maxShrubs": 0.75,
+					"companions": [ "giraffe", "giraffe-calf" ]
+				}
 			}
+			
 		}
 	},
 	"sounds": {

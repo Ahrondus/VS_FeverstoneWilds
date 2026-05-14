@@ -1,13 +1,12 @@
 {
 	"code": "ostrich-chick",
 	"class": "EntityAgent",
+    "tags":  [ "animal", "huntable", "habitat-land" ],
 	"hitboxSize": { "x": 0.3, "y": 0.2 },
 	"deadHitboxSize": { "x": 0.4, "y": 0.2 },
 	"eyeHeight": 0.15,
 	"weight": 0.1,
 	"attributes": {
-		"netCaughtItemCode": "feverstonewilds:creature-ostrich-chick",
-		"basketCatchable": true,
 		"creatureDiet": {
 			"foodCategories": [ "Grain" ],
 			"foodTags": [ "cabbage", "carrot", "parsnip", "blueberry", "cranberry", "cherry", "whitecurrant", "redcurrant", "blackcurrant", "lychee" ],
@@ -15,11 +14,15 @@
 		},
 		"handbook": {
 			"groupcode": "feverstonewilds:creaturegroup-fswostrich"
+		},
+		"netCaughtItemCode": "feverstonewilds:creature-ostrich-chick",
+		"trappable": {
+			"small": { "trapChance": 0.35, "trapDestroyChance": 0.025 }
 		}
 	},
 	"client": {
 		"renderer": "Shape",
-		"shape": { "base": "entity/land/ostrich-chick" },
+		"shape": { "base": "entity/land/bird/ostrich-chick" },
 		"texture": { "base": "entity/land/ostrich/ostrichskin1",
 			"alternates": [ { "base": "entity/land/ostrich/ostrichskin2" }, { "base": "entity/land/ostrich/ostrichskin3" }, 
 							{ "base": "entity/land/ostrich/ostrichskin4" }, { "base": "entity/land/ostrich/ostrichskin5" }, 
@@ -52,12 +55,19 @@
 			},			
 			{
 				"code": "die",
-				"animation": "death", 
+				"animation": "die", 
 				"animationSpeed": 1.25,
 				"weight": 10,
 				"blendMode": "average",
 				"triggeredBy": { "onControls": ["dead"] }
 			},
+            {
+                "code": "dead",
+                "animation": "dead",
+                "blendMode": "Average",
+                "weight": 10,
+                "easeInSpeed": 3
+            },
 			{ 
 				"code": "idle", 
 				"animation": "idle",
@@ -84,8 +94,8 @@
 	"server": {
 		"attributes": {
 			"pathfinder": {
-				"minTurnAnglePerSec": 1440,
-				"maxTurnAnglePerSec": 2880
+				"minTurnAnglePerSec": 130,
+				"maxTurnAnglePerSec": 250
 			}
 		},
 		"behaviors": [
@@ -96,7 +106,9 @@
 			{ "code": "deaddecay", "hoursToDecay": 2 },
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
 			{ "code": "grow", "hoursToGrow": 128,
-				"adultEntityCodes": ["feverstonewilds:ostrich-female", "feverstonewilds:ostrich-male"]
+				"orPortionsEatenForGrowing": 10,
+				"fedAdultEntityCodes": [ "feverstonewilds:tame-ostrich-male", "feverstonewilds:tame-ostrich-female", "feverstonewilds:tame-ostrich-female" ],
+				"adultEntityCodes": ["feverstonewilds:ostrich-female", "feverstonewilds:ostrich-female", "feverstonewilds:ostrich-male"]
 			},
 			{ "code": "breathe" },
 			{ "code": "emotionstates",
@@ -105,6 +117,7 @@
 				]
 			},
 			{ "code": "taskai",
+				"aiCreatureType": "LandCreature",
 				"aitasks": [
 					{
 						"code": "fleeentity",
@@ -170,7 +183,8 @@
 						"animation": "Sleep",
 						"whenNotInEmotionState": "aggressiveondamage",
 						"duringDayTimeFrames": [ { "fromHour": 20, "toHour": 24 }, { "fromHour": 0, "toHour": 6 } ],
-						"stopOnNearbyEntityCodes": ["player", "wolf-male", "wolf-female", "hyena-male", "hyena-female", "fox-*"],
+						"stopOnNearbyEntityCodes": [ "wolf-*", "hyena-*", "bear-*", "fox-*", "direwolf-*", "hellboar-*",
+                                                     "drifter-*", "shiver-*", "bowtorn-*", "player"],
 						"stopRange": 8,
 						"stopOnHurt": true
 					},
@@ -190,14 +204,14 @@
 					}
 				]
 			},
-			{ "code": "pettable", "minGeneration": 0 }
+			{ "code": "pettable", "minGeneration": 0 },
+			{ "code": "entitystatetags" }
 		]
 	},
 	"sounds": {
 		"hurt": "game:creature/chick/chick*",
 		"death": "game:creature/chick/chick*",
-		"idle": "game:creature/chick/chick*"
+		"idle": { "path": "game:creature/chick/chick*", "range": 16, "pitch": { "avg": 0.8, "var": 0.4 } }
 	},
-	"idleSoundRange": 12,
-	"idleSoundChance": 0.01
+	"idleSoundChance": 0.25
 }

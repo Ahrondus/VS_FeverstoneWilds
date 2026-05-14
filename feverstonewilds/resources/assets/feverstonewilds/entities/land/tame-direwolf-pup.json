@@ -1,21 +1,26 @@
 {
     "code": "tame-direwolf-pup",
-    "class": "EntityPet",
+    "class": "EntityAgent",
+    "tags":  [ "animal", "huntable", "habitat-land", "tamed" ],
     "hitboxSize": { "x": 0.85, "y": 0.5 },
     "deadHitboxSize": { "x": 0.75, "y": 0.4 },
     "eyeHeight": 0.4,
     "drops": [],
 	"attributes": {
 		"creatureDiet": {
-			"foodCategories": [ "Protein" ]
+			"foodTags": [ "meat" ]
 		},
 		"handbook": {
 			"groupcode": "feverstonewilds:creaturegroup-fswdirewolf"
-		}
+		},
+		"trappable": { 
+			"small": { "trapChance": 1.0, "trapDestroyChance": 0.0 }
+		},
+        "tamed": true
 	},
     "client": {
         "renderer": "Shape",
-        "shape": { "base": "entity/land/direwolf-pup" },
+        "shape": { "base": "entity/land/mammal/direwolf-pup" },
         "texture": {
             "base": "entity/land/direwolf/direwolf-pup1",
             "alternates": [ { "base": "entity/land/direwolf/direwolf-pup2" } ]
@@ -23,23 +28,6 @@
         "size": 0.9,
         "sizeGrowthFactor": 0.2,
         "behaviors": [
-            { "code": "nametag", "showtagonlywhentargeted": true },
-            { "code": "receivecommand",
-                "availableCommands": [
-                    { "commandName": "sit", "commandType": "SIMPLE", "minObedience": 0.2 },
-                    { "commandName": "lay", "commandType": "SIMPLE", "minObedience": 0.4 },
-                    { "commandName": "speak", "commandType": "SIMPLE", "minObedience": 0.6 }
-                ]
-            },
-            { "code": "tameable", "size": "small",
-                "treat": [
-                    { "code": "bone", "progress": 0.1, "cooldown": 1 },
-                    { "code": "bushmeat-raw", "progress": 0.15, "cooldown": 2 },
-                    { "code": "redmeat-raw", "progress": 0.3, "cooldown": 3 },
-                    { "code": "poultry-raw", "progress": 0.3, "cooldown": 3 },
-                    { "code": "petcookie-meat-perfect", "domain": "petai", "progress": 0.8, "cooldown": 3 }
-                ]
-            },
             { "code": "mouthinventory",
                 "acceptStacks": [
                     { "type": "item", "code": "bone" },
@@ -73,6 +61,13 @@
                 "triggeredBy": { "onControls": [ "dead" ] }
             },
             {
+                "code": "dead",
+                "animation": "dead",
+                "blendMode": "Average",
+                "weight": 10,
+                "easeInSpeed": 3
+            },
+            {
                 "code": "idle",
                 "animation": "idle",
                 "blendMode": "addAverage",
@@ -97,23 +92,6 @@
     },
     "server": {
         "behaviors": [
-            { "code": "nametag", "showtagonlywhentargeted": true },
-            { "code": "receivecommand",
-                "availableCommands": [
-                    { "commandName": "sit", "commandType": "SIMPLE", "minObedience": 0.2 },
-                    { "commandName": "lay", "commandType": "SIMPLE", "minObedience": 0.4 },
-                    { "commandName": "speak", "commandType": "SIMPLE", "minObedience": 0.6 }
-                ]
-            },
-            { "code": "tameable", "size": "small",
-                "treat": [
-                    { "code": "bone", "progress": 0.1, "cooldown": 1 },
-                    { "code": "bushmeat-raw", "progress": 0.15, "cooldown": 2 },
-                    { "code": "redmeat-raw", "progress": 0.3, "cooldown": 3 },
-                    { "code": "poultry-raw", "progress": 0.3, "cooldown": 3 },
-                    { "code": "petcookie-meat-perfect", "domain": "petai", "progress": 0.8, "cooldown": 3 }
-                ]
-            },
             { "code": "mouthinventory",
                 "acceptStacks": [
                     { "type": "item", "code": "bone" },
@@ -144,43 +122,8 @@
             { "code": "grow", "hoursToGrow": 100, 
                 "adultEntityCodes": [ "feverstonewilds:tame-direwolf-male", "feverstonewilds:tame-direwolf-female" ] },
             { "code": "taskai",
+                "aiCreatureType": "LandCreature",
                 "aitasks": [
-                    {
-                        "code": "simplecommand",
-                        "priority": 3,
-                        "minduration": 2000,
-                        "maxduration": 10000,
-                        "priorityForCancel": 2.9,
-                        "animation": "Sit",
-                        "command": "sit"
-                    },
-                    {
-                        "code": "simplecommand",
-                        "priority": 3,
-                        "minduration": 5000,
-                        "maxduration": 15000,
-                        "priorityForCancel": 2.9,
-                        "animation": "Lie",
-                        "command": "lay"
-                    },
-                    {
-                        "code": "simplecommand",
-                        "priority": 3,
-                        "minduration": 2000,
-                        "maxduration": 3000,
-                        "priorityForCancel": 3.1,
-                        "animation": "Howl",
-                        "command": "speak",
-                        "sound": "game:creature/wolf/pup-bark"
-                    },
-                    {
-                        "code": "playfetch",
-                        "priority": 2.2,
-                        "priorityForCancel": 2.1,
-                        "movespeed": 0.02,
-                        "animationSpeed": 4,
-                        "animation": "Run"
-                    },
                     {
                         "code": "stayclosetoentity",
                         "priority": 1.4,
@@ -286,9 +229,6 @@
                         "animationSpeed": 0.75,
                         "priority": 1.4,
                         "priorityForCancel": 1.7,
-                        "eatItemCategories": [
-                            "Protein"
-                        ],
                         "eatItemCodes": [
                             "bone",
                             "bushmeat-raw",
@@ -317,7 +257,8 @@
                 ]
             },
             { "code": "ropetieable", "minGeneration": 2 },
-            { "code": "pettableextended", "minGeneration": 1 }
+            { "code": "pettable", "minGeneration": 1 },
+			{ "code": "entitystatetags" }
         ]
     },
     "sounds": {

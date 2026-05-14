@@ -1,0 +1,160 @@
+{
+	"code": "ghostfish",
+	"class": "EntityFish",
+	"variantGroups": [ {"code": "habitat", "states": [ "freshwater", "saltwater" ] } ],
+	"hitboxSize": { "x": 0.5, "y": 0.25 },
+	"eyeHeight": 0.2,
+	"drops": [ { "type": "item", "code": "fsw-fishraw-{habitat}-ghostfish" } ],
+	"attributes": {
+		"baitTags": [ "bait-worm", "bait-meat", "bait-stinkmeat", "bait-fishtiny" ]
+	},
+	"habitat": "Underwater",
+	"client": {
+		"renderer": "Shape",
+		"sizeByType": {
+			"*-freshwater": 0.65,
+			"*-saltwater": 0.85
+		},
+		"shape": { "base": "entity/water/ghostfish" },
+		"texture": { "base": "entity/water/ghostfish/ghostfish" },
+		"behaviors": [
+			{ "code": "repulseagents" }, 
+			{ "code": "controlledphysics", "stepHeight": 0 }, 
+			{ "code": "interpolateposition" },
+			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
+			{ "code": "despawn", "minPlayerDistance": 18, "minSeconds": 300, "belowLightLevel": 8 }
+		],
+		"animations": [
+			{
+				"code": "hurt",
+				"animation": "hurt", 
+				"animationSpeed": 1,
+				"weight": 10,
+				"blendMode": "addAverage" 
+			},
+			{
+				"code": "swim",
+				"animation": "swim"
+			},
+			{
+				"code": "swimfast",
+				"animation": "swim"
+			},
+			{
+				"code": "die",
+				"animation": "dead"
+			},
+			{
+				"code": "flop",
+				"animation": "flopping"
+			},
+			{ 
+				"code": "idle", 
+				"animation": "idle",
+				"blendMode": "addAverage",
+				"easeOutSpeed": 4,
+				"triggeredBy": { "defaultAnim": true }
+			}
+		]
+	},
+	"server": {
+		"behaviors": [
+			{ "code": "repulseagents" }, 
+			{ "code": "controlledphysics", "stepHeight": 1.1251 }, 
+			{ "code": "despawn", "minPlayerDistance": 18, "minSeconds": 300, "belowLightLevel": 0 },
+			{ "code": "health", "maxhealth": 4 },
+			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
+			{ 
+				"code": "emotionstates",
+				"states": [
+					{ "code": "fleeondamage", "duration": 10, "chance": 1, "slot": 0, "priority": 1, "accumType": "max" }
+				]
+			},
+			{ 
+				"code": "taskai",
+				"aitasks": [
+					{
+						"code": "fishoutofwater", 
+						"priority": 2.5, 
+						"priorityForCancel": 2.6,
+						"movespeed": 0.005,
+						"animation": "flop",
+						"animationSpeed": 2
+					},
+					{
+						"code": "fleeentity",
+						"entityCodes": ["player", "wolf-male", "wolf-female", "fox-*", "hyena-male", "hyena-female"],
+						"priority": 2,
+						"movespeed": 0.06,
+						"seekingRange": 14,
+						"animation": "swim",
+						"animationSpeed": 2
+					},
+					{
+						"code": "wander", 
+						"priority": 1.2, 
+						"priorityForCancel": 1.35,
+						"movespeed": 0.01,
+						"animation": "swim"
+					},
+					{
+						"code": "fishmovefast", 
+						"priority": 1.0, 
+						"priorityForCancel": 1.35,
+						"movespeed": 0.045,
+						"animation": "swimfast",
+						"animationSpeed": 2.3
+					},
+					{
+						"code": "idle",
+						"priority": 0.9,
+						"minduration": 500,
+						"maxduration": 2000,
+						"mincooldown": 2000,
+						"maxcooldown": 30000,
+						"animation": "eat"
+					},
+					{
+						"code": "idle",
+						"priority": 0.9,
+						"minduration": 500,
+						"maxduration": 1000,
+						"mincooldown": 2000,
+						"maxcooldown": 30000,
+						"animation": "idle"
+					}
+				]
+			},
+			{ "code": "entitystatetags" }
+		],
+		"spawnconditions": {
+			"worldgen": {
+				"TriesPerChunk": { "avg": 0.25, "var": 0 },
+				"tryOnlySurface": true,
+				"maxQuantity": 2,
+				"minLightLevel": 8,
+				"groupSize": { "dist": "verynarrowgaussian", "avg": 1.5, "var": 0.5 },
+				"insideBlockCodesByType": {
+					"*-freshwater": ["game:water-still-*"],
+					"*-saltwater":["game:saltwater-still-*"]
+				},
+				"minTemp": -4,
+				"maxTemp": 34
+			},
+			"runtime": {
+				"group": "passive",
+				"chance": 0.004,
+				"maxQuantity": 3,
+				"tryOnlySurface": true,
+				"minLightLevel": 8,
+				"groupSize": { "dist": "verynarrowgaussian", "avg": 1.5, "var": 0.5 },
+				"insideBlockCodesByType": {
+					"*-freshwater": ["game:water-still-*"],
+					"*-saltwater":["game:saltwater-still-*"]
+				},
+				"minTemp": -4,
+				"maxTemp": 34
+			}
+		}
+	}
+}

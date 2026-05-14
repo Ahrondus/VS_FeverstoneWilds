@@ -9,13 +9,13 @@
 		}
 	],
 	"shapeByType": {
-		"*-hellboar-male": { "base": "entity/land/hellboar" },
-		"*-hellboar-female": { "base": "entity/land/hellboar" },
-		"*-hellboar-piglet": { "base": "entity/land/hellboar" }
+		"*-hellboar-male": { "base": "entity/land/mammal/hellboar-male" },
+		"*-hellboar-female": { "base": "entity/land/mammal/hellboar-female" },
+		"*-hellboar-piglet": { "base": "entity/land/mammal/hellboar-piglet" }
 		},
 	"texturesByType": {
-		"*-hellboar-male": { "skin": { "base": "entity/land/hellboar/hellboarskin1" } },
-		"*-hellboar-female": { "skin": { "base": "entity/land/hellboar/hellboarskin1" } },
+		"*-hellboar-male": { "skin": { "base": "entity/land/hellboar/hellboarskin2" } },
+		"*-hellboar-female": { "skin": { "base": "entity/land/hellboar/hellboarskin4" } },
 		"*-hellboar-piglet": {"skin": { "base": "entity/land/hellboar/hellboarskin1" } }
 		},
 	"creativeinventory": {
@@ -23,8 +23,15 @@
 		"items": ["*"],
 		"creatures": ["*"]
 		},
-		
+
+	"heldTpIdleAnimation": "holdunderarm",		
 	"guiTransformByType": {
+		"creature-hellboar-piglet": {
+			"rotate": "true",
+			"rotation": { "x": 180, "y": -115, "z": 6 },
+			"origin": { "x": 0.35, "y": 0.35, "z": 0.55 },
+			"scale": 1.7
+		},
 		"creature-hellboar-*": {
 			"rotate": "true",
 			"translation": { "x": 0, "y": 3, "z": 0 },
@@ -37,10 +44,17 @@
 		"translation": { "x": 0.2, "y": 0, "z": 0 },
 		"rotation": { "x": -8, "y": -63, "z": -7 }
 	},
-	"tpHandTransform": {
-		"translation": { "x": -0.9, "y": -0.9, "z": -0.7 },
-		"rotation": { "x": -180, "y": 0, "z": -156 },
-		"scale": 0.4
+	"tpHandTransformByType": {
+		"creature-hellboar-piglet": {
+			"translation": { "x": -0.7, "y": -0.1, "z": -0.43 },
+			"rotation": { "x": -180, "y": 0, "z": -156 },
+			"scale": 0.8
+		},
+		"creature-hellboar-*": {
+			"translation": { "x": -0.9, "y": -0.9, "z": -0.82 },
+			"rotation": { "x": 180, "y": 0, "z": -156 },
+			"scale": 0.4
+		}
 	}
 	
 }
