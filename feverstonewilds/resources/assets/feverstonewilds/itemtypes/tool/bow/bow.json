@@ -27,9 +27,9 @@
 			"*-primitive": 3.5,
 			"*-reinforced": 4
 		},
-		"accuracyBonusByType": {
-			"*-primitive": 0.25,
-			"*-reinforced": 0.35 
+		"statModifierByType": {
+			"*-primitive": { "rangedWeaponsAcc" : 0.225 },
+			"*-reinforced": { "rangedWeaponsAcc": 0.33 } 
 		},
 		"toolrackTransform": {
 			"rotation": { "x": 2, "y": 5, "z": 0 },
@@ -48,6 +48,20 @@
 			"origin": { "x": 0.5, "y": 0, "z": 0.5 },
 			"scale": 0.9
 		}
+	},
+	"attributesByType": {
+		"bonebow-*": {
+			"attachableToEntity": {
+				"categoryCode": "bowlong",
+				"attachedShapeBySlotCode": {
+					"frontrightside": { "base": "item/wearable/shoulders/weaponr-bonebow" },
+					"frontleftside": { "base": "item/wearable/shoulders/weaponl-bonebow" }
+				}
+			}
+		},
+        "*":{
+                "attachableToEntity": { "categoryCode": "toolholding" }
+        }
 	},
 	"behaviors": [{ 
 		"name": "GroundStorable",

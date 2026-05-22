@@ -133,10 +133,7 @@
             "interactMountAnySeat": false,
             "seats": [
                 { "apName": "Rider", "selectionBox": "MidUpperAP", "bodyYawLimit": 0.2, "controllable": true,
-                    "mountOffsetByType": {
-                        "*-female":{ "x": -0.35, "y": -0.32, "z": -0.3 },
-                        "*-male": { "x": -0.35, "y": -0.3, "z": -0.3 }
-                    }
+                    "mountOffset": { "x": -0.20, "y": -0.45, "z": 0 }
                 }
             ],
             "rideableGaitOrder": {
@@ -360,7 +357,8 @@
 							{ "base": "entity/land/ostrich/ostrichskin8" }, { "base": "entity/land/ostrich/ostrichskin9" },
 							{ "base": "entity/land/ostrich/ostrichskin10" } ] },
 		"behaviors": [
-			{ "code": "repulseagents" }, 
+			{ "code": "repulseagents" },
+			{ "code": "harvestable" }, 
 			{ "code": "controlledphysics", "stepHeight": 1.1251 }, 
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
 			{ "code": "interpolateposition" },
@@ -369,7 +367,6 @@
             { "code": "ownable" },
             { "code": "selectionboxes" },
             { "code": "rideableaccessories" },
-			{ "code": "harvestable" },
 			{ "code": "multiplybase",
 				"enabledByType": { "*-male": false, "*-female": true } },
 			{ "code": "ropetieable", "minGeneration": 2 },
@@ -471,17 +468,6 @@
 				"multiplyCooldownDaysMax": 1,
 				"portionsEatenForMultiply": 9
 			},
-            { "code": "nametag", "showtagonlywhentargeted": true },
-			{ "code": "repulseagents" }, 
-			{ "code": "controlledphysics" },
-            { "code": "gait" },
-            { "code": "rideable" },
-            { "code": "ownable" },
-            { "code": "selectionboxes" },
-            { "code": "rideableaccessories" },
-			{ "code": "health", "currenthealth": 18, "maxhealth": 18 },
-			{ "code": "deaddecay", "hoursToDecay": 96, "decayedBlock": "carcass-medium" },
-			{ "code": "floatupwhenstuck" },
 			{ "code": "harvestable", "drops": [
 				{
 					"type": "item", 
@@ -500,6 +486,18 @@
 				}
 			]
 			},
+            { "code": "nametag", "showtagonlywhentargeted": true },
+			{ "code": "repulseagents" }, 
+			{ "code": "controlledphysics" },
+            { "code": "gait" },
+            { "code": "rideable" },
+            { "code": "ownable" },
+            { "code": "selectionboxes" },
+            { "code": "rideableaccessories" },
+			{ "code": "health", "currenthealth": 18, "maxhealth": 18 },
+			{ "code": "deaddecay", "hoursToDecay": 96, "decayedBlock": "carcass-medium" },
+			{ "code": "floatupwhenstuck" },
+			
 			{ "code": "breathe" },
 			{ 
 				"code": "emotionstates",

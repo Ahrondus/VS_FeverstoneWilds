@@ -106,16 +106,6 @@
         "condition": { "when": "FSWTameCockatriceEnabled", "isValue": "true" }
     },
     {
-        "op": "replace",
-        "path": "/server/behaviors/8",
-        "value": { "code": "raisable", "hoursToGrow": 100,
-				"adultEntityCodes": [ "feverstonewilds:tame-cockatrice-male", "feverstonewilds:tame-cockatrice-female" ]  
-            },
-        "file": "feverstonewilds:entities/land/tame-cockatrice-chick.json",
-        "dependsOn": [ {"modid": "petai"} ],
-        "condition": { "when": "FSWTameCockatriceEnabled", "isValue": "true" }
-    },
-    {
         "op": "addeach",
         "path": "/server/behaviors/9/aitasks/0",
         "value": [

@@ -194,6 +194,13 @@
         "op": "add",
         "path": "/enabled",
         "value": false,
+        "file": "feverstonewilds:entities/water/ghostfish.json",
+        "condition": { "when": "FSWGhostfishEnabled", "isValue": "false" }
+    },
+    {
+        "op": "add",
+        "path": "/enabled",
+        "value": false,
         "file": "feverstonewilds:entities/water/eel.json",
         "condition": { "when": "FSWEelEnabled", "isValue": "false" }
     },

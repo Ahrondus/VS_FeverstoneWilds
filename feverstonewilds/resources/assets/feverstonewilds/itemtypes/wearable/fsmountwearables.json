@@ -9,62 +9,76 @@
 		},
 		{ "code": "type",
 			"states": [ "saddle", "bridle", "saddlebags" ]
+		},
+		{ "code": "gender",
+			"states": [ "male", "female", "both" ]
 		}
 	],
 	"allowedVariants": [
-		"fsmountwearables-percheron-head-bridle", "fsmountwearables-arabian-head-bridle", "fsmountwearables-donkey-head-bridle", "fsmountwearables-shire-head-bridle",
-		"fsmountwearables-bison-head-bridle", "fsmountwearables-quarter-head-bridle", "fsmountwearables-direwolf-head-bridle", "fsmountwearables-ostrich-head-bridle",
-		"fsmountwearables-percheron-middlebackupper-saddle", "fsmountwearables-arabian-middlebackupper-saddle", "fsmountwearables-donkey-middlebackupper-saddle", "fsmountwearables-shire-middlebackupper-saddle",
-		"fsmountwearables-quarter-middlebackupper-saddle","fsmountwearables-bison-middlebackupper-saddle", "fsmountwearables-direwolf-middlebackupper-saddle", "fsmountwearables-ostrich-middlebackupper-saddle",
-		"fsmountwearables-percheron-lowerbackside-saddlebags", "fsmountwearables-arabian-lowerbackside-saddlebags", "fsmountwearables-donkey-lowerbackside-saddlebags", "fsmountwearables-shire-lowerbackside-saddlebags",
-		"fsmountwearables-quarter-lowerbackside-saddlebags", "fsmountwearables-bison-lowerbackside-saddlebags", "fsmountwearables-direwolf-lowerbackside-saddlebags", "fsmountwearables-ostrich-lowerbackside-saddlebags"
+		"fsmountwearables-percheron-head-bridle-both", "fsmountwearables-arabian-head-bridle-both", "fsmountwearables-donkey-head-bridle-both", "fsmountwearables-shire-head-bridle-both",
+		"fsmountwearables-bison-head-bridle-male", "fsmountwearables-bison-head-bridle-female", "fsmountwearables-quarter-head-bridle-both", "fsmountwearables-direwolf-head-bridle-both", "fsmountwearables-ostrich-head-bridle-both",
+		"fsmountwearables-percheron-middlebackupper-saddle-both", "fsmountwearables-arabian-middlebackupper-saddle-both", "fsmountwearables-donkey-middlebackupper-saddle-both", "fsmountwearables-shire-middlebackupper-saddle-both",
+		"fsmountwearables-quarter-middlebackupper-saddle-both","fsmountwearables-bison-middlebackupper-saddle-both", "fsmountwearables-direwolf-middlebackupper-saddle-both", "fsmountwearables-ostrich-middlebackupper-saddle-both",
+		"fsmountwearables-percheron-lowerbackside-saddlebags-both", "fsmountwearables-arabian-lowerbackside-saddlebags-both", "fsmountwearables-donkey-lowerbackside-saddlebags-both", "fsmountwearables-shire-lowerbackside-saddlebags-both",
+		"fsmountwearables-quarter-lowerbackside-saddlebags-both", "fsmountwearables-bison-lowerbackside-saddlebags-both", "fsmountwearables-direwolf-lowerbackside-saddlebags-both", "fsmountwearables-ostrich-lowerbackside-saddlebags-both"
 	],
-	"skipVariants": ["fsmountwearables-percheron-head-bridle", "fsmountwearables-arabian-head-bridle",
-					 "fsmountwearables-percheron-middlebackupper-saddle", "fsmountwearables-arabian-middlebackupper-saddle",
-					 "fsmountwearables-percheron-lowerbackside-saddlebags", "fsmountwearables-arabian-lowerbackside-saddlebags"],
+	"skipVariants": ["fsmountwearables-percheron-head-bridle-both", "fsmountwearables-arabian-head-bridle-both",
+					 "fsmountwearables-percheron-middlebackupper-saddle-both", "fsmountwearables-arabian-middlebackupper-saddle-both",
+					 "fsmountwearables-percheron-lowerbackside-saddlebags-both", "fsmountwearables-arabian-lowerbackside-saddlebags-both"],
 	"attributes": {
 		"attachableToEntity": {
 			"categoryCodeByType": {
-				"*-head-bridle": "bridle-{breed}",
-				"*-middlebackupper-saddle": "saddle-{breed}",
-				"*-lowerbackside-saddlebags": "sidebags-{breed}"
+				"*-bison-head-bridle-male": "bridle-bison-male",				
+				"*-bison-head-bridle-female": "bridle-bison-female",
+
+				"*-head-bridle-both": "bridle-{breed}",
+				"*-middlebackupper-saddle-both": "saddle-{breed}",
+				"*-lowerbackside-saddlebags-both": "sidebags-{breed}"
 			},
-			"attachedShapeByType": {
-				"*-head-bridle": { "base": "item/wearable/head/bridle-{breed}" },
-				"*-middlebackupper-saddle": { "base": "item/wearable/back/saddle-{breed}" },
-				"*-lowerbackside-saddlebags": { "base": "item/wearable/rear/saddlebags-{breed}" }
+			"attachedShapeByType": {				
+				"*-bison-head-bridle-male": { "base": "item/wearable/head/bridle-bison-male" },				
+				"*-bison-head-bridle-female": { "base": "item/wearable/head/bridle-bison-female" },
+
+				"*-head-bridle-both": { "base": "item/wearable/head/bridle-{breed}" },
+				"*-middlebackupper-saddle-both": { "base": "item/wearable/back/saddle-{breed}" },
+				"*-lowerbackside-saddlebags-both": { "base": "item/wearable/rear/saddlebags-{breed}" }
 			}
 		},
 		"controlSchemeByType": {
-			"*-bridle": "Hold"
+			"*-bridle-both": "Hold",
+			"*-bison-*-bridle-*": "Hold"
 		},
 		"isSaddleByType": {
-			"*-middlebackupper-saddle": true
+			"*-middlebackupper-saddle-both": true
 		},
 		"isBridleByType": {
-			"*-head-bridle": true
+			"*-head-bridle-both": true,	
+			"*-bison-head-bridle-*": true
 		},
 		"backpackByType": {
-			"*-percheron-lowerbackside-saddlebags": { "quantitySlots": 24 },
-			"*-arabian-lowerbackside-saddlebags": { "quantitySlots": 12 },
-			"*-shire-lowerbackside-saddlebags": { "quantitySlots": 18 },
-			"*-quarter-lowerbackside-saddlebags": { "quantitySlots": 14 },
-			"*-donkey-lowerbackside-saddlebags": { "quantitySlots": 20 },
-			"*-bison-lowerbackside-saddlebags": { "quantitySlots": 32 },
-			"*-direwolf-lowerbackside-saddlebags": { "quantitySlots": 12 },
-			"*-ostrich-lowerbackside-saddlebags": { "quantitySlots": 6 }
+			"*-percheron-lowerbackside-saddlebags-both": { "quantitySlots": 24 },
+			"*-arabian-lowerbackside-saddlebags-both": { "quantitySlots": 12 },
+			"*-shire-lowerbackside-saddlebags-both": { "quantitySlots": 18 },
+			"*-quarter-lowerbackside-saddlebags-both": { "quantitySlots": 14 },
+			"*-donkey-lowerbackside-saddlebags-both": { "quantitySlots": 20 },
+			"*-bison-lowerbackside-saddlebags-both": { "quantitySlots": 32 },
+			"*-direwolf-lowerbackside-saddlebags-both": { "quantitySlots": 12 },
+			"*-ostrich-lowerbackside-saddlebags-both": { "quantitySlots": 6 }
 		},
 		"interactPassthroughByType": {
-			"*-saddle": true
+			"*-saddle-both": true
 		}
 	},
 	"behaviorsByType": {
-		"*-lowerbackside-saddlebags": [ { "name": "HeldBag" } ]
+		"*-lowerbackside-saddlebags-both": [ { "name": "HeldBag" } ]
 	},
 	"shapeByType": {
-		"*-saddle": { "base": "item/wearable/back/saddle-{breed}" },
-		"*-bridle": { "base": "item/wearable/head/bridle-{breed}" },
-		"*-saddlebags": { "base": "item/wearable/rear/saddlebags-{breed}" }
+		"*-bison-*-bridle-male": { "base": "item/wearable/head/bridle-bison-male" },
+		"*-bison-*-bridle-female": { "base": "item/wearable/head/bridle-bison-female" },
+
+		"*-saddle-both": { "base": "item/wearable/back/saddle-{breed}" },
+		"*-bridle-both": { "base": "item/wearable/head/bridle-{breed}" },
+		"*-saddlebags-both": { "base": "item/wearable/rear/saddlebags-{breed}" }
 	},
 	"maxstacksize": 1,
 	"creativeinventory": {
@@ -73,100 +87,100 @@
 		"clothing": [ "*" ]
 	},
 	"guiTransformByType": {
-		"*-bison-*-saddle": {
+		"*-bison-*-saddle-both": {
 			"translation": { "x": 0, "y": 0, "z": 0 },
 			"rotation": { "x": -21, "y": -50, "z": 180 },
 			"origin": { "x": 1.25, "y": 0.5, "z": 0.5 },
 			"scale": 0.67
 		},
-		"*-quarter-*-saddle": { 
+		"*-quarter-*-saddle-both": { 
 			"translation": { "x": 0, "y": 0, "z": 0 },
 			"rotation": { "x": -21, "y": -50, "z": 180 },
 			"origin": { "x": 0.5, "y": 0.14, "z": -0.2 },
 			"scale": 1.2 
 		},
-		"*-shire-*-saddle": {
+		"*-shire-*-saddle-both": {
 			"translation": { "x": 0, "y": 0, "z": 0 },
 			"rotation": { "x": -21, "y": -50, "z": 180 },
 			"origin": { "x": 0.3, "y": -0.25, "z": 0.5 },
 			"scale": 1.1
 		},
-		"*-donkey-*-saddle": {
+		"*-donkey-*-saddle-both": {
 			"translation": { "x": 0, "y": 0, "z": 0 },
 			"rotation": { "x": -21, "y": -50, "z": 180 },
 			"origin": { "x": 0.5, "y": 0.14, "z": -0.2 },
 			"scale": 1.2
 		},
-		"*-direwolf-*-saddle": {
+		"*-direwolf-*-saddle-both": {
 			"translation": { "x": 0, "y": 0, "z": 0 },
 			"rotation": { "x": -21, "y": -50, "z": 180 },
 			"origin": { "x": 0.5, "y": 0.3, "z": 0.1 },
 			"scale": 1.2
 		},
-		"*-ostrich-*-saddle": {
+		"*-ostrich-*-saddle-both": {
 			"translation": { "x": 0, "y": 0, "z": 0 },
 			"rotation": { "x": 138, "y": -137, "z": -2 },
 			"origin": { "x": 0.7, "y": -0.2, "z": 0 },
 			"scale": 1.1
 		},
-		"*-shire-*-saddlebags": {
+		"*-shire-*-saddlebags-both": {
 			"rotation": { "x": -7, "y": -16, "z": -169 },
 			"origin": { "x": 0.35, "y": 0.45, "z": 0 },
 			"scale": 2
 		},
-		"*-quarter-*-saddlebags": {
+		"*-quarter-*-saddlebags-both": {
 			"rotation": { "x": -7, "y": -16, "z": -169 },
 			"origin": { "x": 0.35, "y": 0.45, "z": 0 },
 			"scale": 2
 		},
-		"*-donkey-*-saddlebags": {
+		"*-donkey-*-saddlebags-both": {
 			"rotation": { "x": -7, "y": -16, "z": -169 },
 			"origin": { "x": 0.35, "y": 0.45, "z": 0 },
 			"scale": 2
 		},
-		"*-direwolf-*-saddlebags": {
+		"*-direwolf-*-saddlebags-both": {
 			"rotation": { "x": -10, "y": -20, "z": -169 },
 			"origin": { "x": 0.30, "y": 0.45, "z": 0 },
 			"scale": 2
 		},
-		"*-bison-*-saddlebags": {
+		"*-bison-*-saddlebags-both": {
 			"rotation": { "x": -7, "y": -16, "z": -169 },
 			"origin": { "x": 0.75, "y": 0.65, "z": 0 },
 			"scale": 1.5
 		},
-		"*-ostrich-*-saddlebags": {
+		"*-ostrich-*-saddlebags-both": {
 			"rotation": { "x": -7, "y": -41, "z": -169 },
 			"origin": { "x": 0.12, "y": 0.28, "z": 0 },
 			"scale": 2.3
 		},
-		"*-shire-*-bridle": {
+		"*-shire-*-bridle-both": {
 			"rotation": { "x": -34, "y": 43, "z": -52 },
 			"origin": { "x": 0.3, "y": 0.8, "z": 0 },
 			"scaleXyz": { "x": -1.15, "y": 1.15, "z": 1.15 }
 		},
-		"*-quarter-*-bridle": {
+		"*-quarter-*-bridle-both": {
 			"rotation": { "x": -16, "y": 43, "z": 1 },
 			"origin": { "x": 0.55, "y": 0, "z": 0 },
 			"scaleXyz": { "x": -1.2, "y": 1.2, "z": 1.2 }
 		},
-		"*-donkey-*-bridle": {
+		"*-donkey-*-bridle-both": {
 			"translation": { "x": 3, "y": 1, "z": 20 },
 			"rotation": { "x": 25, "y": -136, "z": 9 },
 			"origin": { "x": 0.6, "y": 0, "z": 0 },
 			"scale": 1.3
 		},
-		"*-direwolf-*-bridle": {
+		"*-direwolf-*-bridle-both": {
 			"rotation": { "x": 158, "y": -143, "z": 7 },
 			"origin": { "x": 0.95, "y": -0.4, "z": 0 },
 			"scale": 1.21
 		},
-		"*-ostrich-*-bridle": {
+		"*-ostrich-*-bridle-both": {
 			"translation": { "x": 3, "y": 1, "z": 20 },
 			"rotation": { "x": 163, "y": 55, "z": -114 },
 			"origin": { "x": 0, "y": -0.4, "z": 0 },
 			"scale": 1.74
 		},
-		"*-bison-*-bridle": {
+		"*-bison-*-bridle-*": {
 			"rotation": { "x": -163, "y": 18, "z": 37 },
 			"origin": { "x": 1.4, "y": 0.4, "z": 0 },
 			"scaleXyz": { "x": -0.71, "y": 0.71, "z": 0.71 }
