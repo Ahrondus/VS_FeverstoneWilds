@@ -113,7 +113,7 @@
 						"code": "meleeattack",
 						"entityCodes": ["*"],
 						"priority": 2,
-                        "minDist": 3.5,
+                        "minDist": 4.5,
 						"damage": 8,
 						"damageTier": 2,
 						"damageType": "SlashingAttack",
@@ -192,77 +192,34 @@
 			},
 			{ "code": "entitystatetags" }
 		],
-		"spawnconditionsbyType": {
-			"*-freshwater": {
-				"worldgen": {
-					"TriesPerChunk": { "avg": 0.035, "var": 0 },
-					"tryOnlySurface": true,
-					"maxQuantity": 1,
-					"groupSize": { "dist": "verynarrowgaussian", "avg": 1, "var": 0 },
-					"insideBlockCodes": ["game:water-still-*" ],
-					"minTemp": -20,
-					"maxTemp": 50,
-					"maxY": 0.95
+		"spawnconditions": {
+			"worldgen": {
+				"TriesPerChunk": { "avg": 0.035, "var": 0 },
+				"tryOnlySurface": true,
+				"maxQuantity": 1,
+				"groupSize": { "dist": "verynarrowgaussian", "avg": 1, "var": 0 },
+				"insideBlockCodesByType": {
+					"*-freshwater": ["game:water-still-*"],
+					"*": ["game:saltwater-still-*"]
 				},
-				"runtime": {
-					"group": "hostile",
-					"maxQuantity": 1,
-					"chance": 0.00001,
-					"tryOnlySurface": true,
-					"groupSize": { "dist": "verynarrowgaussian", "avg": 1, "var": 0 },
-					"insideBlockCodes": ["game:water-still-*" ],
-					"minTemp": -20,
-					"maxTemp": 50,
-					"maxY": 0.95
-				}
+				"minTemp": -20,
+				"maxTemp": 50,
+				"maxY": 0.95
 			},
-			"*-saltwater": {
-				"worldgen": {
-					"TriesPerChunk": { "avg": 0.035, "var": 0 },
-					"tryOnlySurface": true,
-					"maxQuantity": 2,
-					"groupSize": { "dist": "verynarrowgaussian", "avg": 1.5, "var": 0.5 },
-					"insideBlockCodes": [ "game:saltwater-still-*"],
-					"minTemp": -20,
-					"maxTemp": 50,
-					"maxY": 0.95
+			"runtime": {
+				"group": "hostile",
+				"maxQuantity": 1,
+				"chance": 0.00001,
+				"tryOnlySurface": true,
+				"groupSize": { "dist": "verynarrowgaussian", "avg": 1, "var": 0 },
+				"insideBlockCodesByType": {
+					"*-freshwater": ["game:water-still-*"],
+					"*": ["game:saltwater-still-*"]
 				},
-				"runtime": {
-					"group": "hostile",
-					"maxQuantity": 2,
-					"chance": 0.00001,
-					"tryOnlySurface": true,
-					"groupSize": { "dist": "verynarrowgaussian", "avg": 1.5, "var": 0.5 },
-					"insideBlockCodes": [ "game:saltwater-still-*"],
-					"minTemp": -20,
-					"maxTemp": 50,
-					"maxY": 0.95
-				}
-			},
-			"*-hammerhead": {
-				"worldgen": {
-					"TriesPerChunk": { "avg": 0.055, "var": 0 },
-					"tryOnlySurface": true,
-					"maxQuantity": 2,
-					"groupSize": { "dist": "verynarrowgaussian", "avg": 1.5, "var": 0.5 },
-					"insideBlockCodes": [ "game:saltwater-still-*"],
-					"minTemp": -20,
-					"maxTemp": 50,
-					"maxY": 0.95
-				},
-				"runtime": {
-					"group": "hostile",
-					"maxQuantity": 2,
-					"chance": 0.00001,
-					"tryOnlySurface": true,
-					"groupSize": { "dist": "verynarrowgaussian", "avg": 1.5, "var": 0.5 },
-					"insideBlockCodes": [ "game:saltwater-still-*"],
-					"minTemp": -20,
-					"maxTemp": 50,
-					"maxY": 0.95
-				}
+				"minTemp": -20,
+				"maxTemp": 50,
+				"maxY": 0.95
 			}
-
 		}
 	}
 }
