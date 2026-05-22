@@ -96,6 +96,41 @@ namespace FeverstoneWilds.Config
 
         public int OSTRICH_SPAWN_CHANCE_RUNTIME { get { return _ostrich_spawn_runtime; } set { _ostrich_spawn_runtime = value >= 0 ? value : 0; } }
         private int _ostrich_spawn_runtime = 2;
+        
+        public int BUROMENFISH_SPAWN_CHANCE_WORLDGEN { get { return _buromenfish_spawn_worldgen; } set {_buromenfish_spawn_worldgen = value >= 0 ? value : 0;} }
+        private int _buromenfish_spawn_worldgen = 2;
+        public int BUROMENFISH_SPAWN_CHANCE_RUNTIME { get { return _buromenfish_spawn_runtime; } set { _buromenfish_spawn_runtime = value >= 0 ? value : 0; } }
+        private int _buromenfish_spawn_runtime = 4;
+        public int DISCUS_SPAWN_CHANCE_WORLDGEN { get { return _discus_spawn_worldgen; } set {_discus_spawn_worldgen = value >= 0 ? value : 0;} }
+        private int _discus_spawn_worldgen = 4;
+
+        public int DISCUS_SPAWN_CHANCE_RUNTIME { get { return _discus_spawn_runtime; } set { _discus_spawn_runtime = value >= 0 ? value : 0; } }
+        private int _discus_spawn_runtime = 4;
+        public int EEL_SPAWN_CHANCE_WORLDGEN { get { return _eel_spawn_worldgen; } set {_eel_spawn_worldgen = value >= 0 ? value : 0;} }
+        private int _eel_spawn_worldgen = 4;
+
+        public int EEL_SPAWN_CHANCE_RUNTIME { get { return _eel_spawn_runtime; } set { _eel_spawn_runtime = value >= 0 ? value : 0; } }
+        private int _eel_spawn_runtime = 4;
+        public int GHOSTFISH_SPAWN_CHANCE_WORLDGEN { get { return _ghostfish_spawn_worldgen; } set {_ghostfish_spawn_worldgen = value >= 0 ? value : 0;} }
+        private int _ghostfish_spawn_worldgen = 4;
+
+        public int GHOSTFISH_SPAWN_CHANCE_RUNTIME { get { return _ghostfish_spawn_runtime; } set { _ghostfish_spawn_runtime = value >= 0 ? value : 0; } }
+        private int _ghostfish_spawn_runtime = 4;
+        public int ORCA_SPAWN_CHANCE_WORLDGEN { get { return _orca_spawn_worldgen; } set {_orca_spawn_worldgen = value >= 0 ? value : 0;} }
+        private int _orca_spawn_worldgen = 4;
+
+        public int ORCA_SPAWN_CHANCE_RUNTIME { get { return _orca_spawn_runtime; } set { _orca_spawn_runtime = value >= 0 ? value : 0; } }
+        private int _orca_spawn_runtime = 4;
+        public int SHARKS_SPAWN_CHANCE_WORLDGEN { get { return _sharks_spawn_worldgen; } set {_sharks_spawn_worldgen = value >= 0 ? value : 0;} }
+        private int _sharks_spawn_worldgen = 4;
+
+        public int SHARKS_SPAWN_CHANCE_RUNTIME { get { return _sharks_spawn_runtime; } set { _sharks_spawn_runtime = value >= 0 ? value : 0; } }
+        private int _sharks_spawn_runtime = 4;
+        public int STINGRAY_SPAWN_CHANCE_WORLDGEN { get { return _stingray_spawn_worldgen; } set {_stingray_spawn_worldgen = value >= 0 ? value : 0;} }
+        private int _stingray_spawn_worldgen = 4;
+
+        public int STINGRAY_SPAWN_CHANCE_RUNTIME { get { return _stingray_spawn_runtime; } set { _stingray_spawn_runtime = value >= 0 ? value : 0; } }
+        private int _stingray_spawn_runtime = 4;
 
         public FeverstoneWildsConfig() { }
 
@@ -140,7 +175,7 @@ namespace FeverstoneWilds.Config
             AllowCagedFSWCreatures = previousConfig.AllowCagedFSWCreatures;
 
             // ConfigLib Configs
-             BISON_SPAWN_CHANCE_WORLDGEN = previousConfig.BISON_SPAWN_CHANCE_WORLDGEN;
+            BISON_SPAWN_CHANCE_WORLDGEN = previousConfig.BISON_SPAWN_CHANCE_WORLDGEN;
             BISON_SPAWN_CHANCE_RUNTIME = previousConfig.BISON_SPAWN_CHANCE_RUNTIME;
             COCKATRICE_SPAWN_CHANCE_WORLDGEN = previousConfig.COCKATRICE_SPAWN_CHANCE_WORLDGEN;
             COCKATRICE_SPAWN_CHANCE_RUNTIME = previousConfig.COCKATRICE_SPAWN_CHANCE_RUNTIME;
@@ -158,6 +193,21 @@ namespace FeverstoneWilds.Config
             HORSE_SPAWN_CHANCE_RUNTIME = previousConfig.HORSE_SPAWN_CHANCE_RUNTIME;
             OSTRICH_SPAWN_CHANCE_WORLDGEN = previousConfig.OSTRICH_SPAWN_CHANCE_WORLDGEN;
             OSTRICH_SPAWN_CHANCE_RUNTIME = previousConfig.OSTRICH_SPAWN_CHANCE_RUNTIME;
+            
+            BUROMENFISH_SPAWN_CHANCE_WORLDGEN = previousConfig.BUROMENFISH_SPAWN_CHANCE_WORLDGEN;
+            BUROMENFISH_SPAWN_CHANCE_RUNTIME = previousConfig.BUROMENFISH_SPAWN_CHANCE_RUNTIME;
+            DISCUS_SPAWN_CHANCE_WORLDGEN = previousConfig.DISCUS_SPAWN_CHANCE_WORLDGEN;
+            DISCUS_SPAWN_CHANCE_RUNTIME = previousConfig.DISCUS_SPAWN_CHANCE_RUNTIME;
+            EEL_SPAWN_CHANCE_WORLDGEN = previousConfig.EEL_SPAWN_CHANCE_WORLDGEN;
+            EEL_SPAWN_CHANCE_RUNTIME = previousConfig.EEL_SPAWN_CHANCE_RUNTIME;
+            GHOSTFISH_SPAWN_CHANCE_WORLDGEN = previousConfig.GHOSTFISH_SPAWN_CHANCE_WORLDGEN;
+            GHOSTFISH_SPAWN_CHANCE_RUNTIME = previousConfig.GHOSTFISH_SPAWN_CHANCE_RUNTIME;
+            ORCA_SPAWN_CHANCE_WORLDGEN = previousConfig.ORCA_SPAWN_CHANCE_WORLDGEN;
+            ORCA_SPAWN_CHANCE_RUNTIME = previousConfig.ORCA_SPAWN_CHANCE_RUNTIME;
+            SHARKS_SPAWN_CHANCE_WORLDGEN = previousConfig.SHARKS_SPAWN_CHANCE_WORLDGEN;
+            SHARKS_SPAWN_CHANCE_RUNTIME = previousConfig.SHARKS_SPAWN_CHANCE_RUNTIME;
+            STINGRAY_SPAWN_CHANCE_WORLDGEN = previousConfig.STINGRAY_SPAWN_CHANCE_WORLDGEN;
+            STINGRAY_SPAWN_CHANCE_RUNTIME = previousConfig.STINGRAY_SPAWN_CHANCE_RUNTIME;
         }
     }
 }

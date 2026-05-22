@@ -39,6 +39,35 @@
         "feverstonewilds:entities/land/ostrich.json": {
           "server/spawnconditions/worldgen/TriesPerChunk/avg": "OSTRICH_SPAWN_CHANCE_WORLDGEN * 0.00125",
           "server/spawnconditions/runtime/chance": "OSTRICH_SPAWN_CHANCE_RUNTIME * 0.00001"
+        },
+
+        "feverstonewilds:entities/water/buromenfish.json": {
+          "server/spawnconditions/worldgen/TriesPerChunk/avg": "BUROMENFISH_SPAWN_CHANCE_WORLDGEN * 0.0125",
+          "server/spawnconditions/runtime/chance": "BUROMENFISH_SPAWN_CHANCE_RUNTIME * 0.001"
+        },
+        "feverstonewilds:entities/water/discus.json": {
+          "server/spawnconditions/worldgen/TriesPerChunk/avg": "DISCUS_SPAWN_CHANCE_WORLDGEN * 0.0125",
+          "server/spawnconditions/runtime/chance": "DISCUS_SPAWN_CHANCE_RUNTIME * 0.00025"
+        },
+        "feverstonewilds:entities/water/eel.json": {
+          "server/spawnconditionsbyType/worldgen/TriesPerChunk/avg": "EEL_SPAWN_CHANCE_WORLDGEN * 0.00875",
+          "server/spawnconditionsbyType/runtime/chance": "EEL_SPAWN_CHANCE_RUNTIME * 0.0000025"
+        },
+        "feverstonewilds:entities/water/ghostfish.json": {
+          "server/spawnconditions/worldgen/TriesPerChunk/avg": "GHOSTFISH_SPAWN_CHANCE_WORLDGEN * 0.00625",
+          "server/spawnconditions/runtime/chance": "GHOSTFISH_SPAWN_CHANCE_RUNTIME * 0.0001"
+        },
+        "feverstonewilds:entities/water/orca.json": {
+          "server/spawnconditions/worldgen/TriesPerChunk/avg": "ORCA_SPAWN_CHANCE_WORLDGEN * 0.01125",
+          "server/spawnconditions/runtime/chance": "ORCA_SPAWN_CHANCE_RUNTIME * 0.0000025"
+        },
+        "feverstonewilds:entities/water/sharks.json": {
+          "server/spawnconditions/worldgen/TriesPerChunk/avg": "SHARKS_SPAWN_CHANCE_WORLDGEN * 0.00875",
+          "server/spawnconditions/runtime/chance": "SHARKS_SPAWN_CHANCE_RUNTIME * 0.0000025"
+        },
+        "feverstonewilds:entities/water/stingray.json": {
+          "server/spawnconditions/worldgen/TriesPerChunk/avg": "STINGRAY_SPAWN_CHANCE_WORLDGEN * 0.0125",
+          "server/spawnconditions/runtime/chance": "STINGRAY_SPAWN_CHANCE_RUNTIME * 0.000025"
         }
     }
   },
@@ -47,6 +76,11 @@
       "type": "separator",
       "title": "Feverstone Wilds Creatures",
       "weight": 2.0
+    },
+    {
+      "type": "separator",
+      "title": "Land Creatures",
+      "weight": 1.99
     },
     {
       "code": "BISON_SPAWN_CHANCE_WORLDGEN",
@@ -276,6 +310,193 @@
       "weight": 1.10,
       "type": "integer",
       "default": 2,
+      "range": {
+        "min": 0,
+        "max": 50,
+        "step": 1
+      }
+    },
+    {
+      "type": "separator",
+      "title": "Water Creatures",
+      "weight": 1.09
+    },
+    {
+      "code": "BUROMENFISH_SPAWN_CHANCE_WORLDGEN",
+      "ingui": "buromenfish_spawn_chance_worldgen",
+      "comment": "Chances that Buromenfish will attempt to spawn during worldgen",
+      "weight": 1.05,
+      "type": "integer",
+      "default": 2,
+      "range": {
+        "min": 0,
+        "max": 50,
+        "step": 1
+      }
+    },
+    {
+      "code": "BUROMENFISH_SPAWN_CHANCE_RUNTIME",
+      "ingui": "buromenfish_spawn_chance_runtime",
+      "comment": "Chances that Buromenfish will attempt to spawn during runtime",
+      "weight": 1.0,
+      "type": "integer",
+      "default": 4,
+      "range": {
+        "min": 0,
+        "max": 50,
+        "step": 1
+      }
+    },
+    {
+      "code": "DISCUS_SPAWN_CHANCE_WORLDGEN",
+      "ingui": "discus_spawn_chance_worldgen",
+      "comment": "Chances that Discus will attempt to spawn during worldgen",
+      "weight": 1.05,
+      "type": "integer",
+      "default": 4,
+      "range": {
+        "min": 0,
+        "max": 50,
+        "step": 1
+      }
+    },
+    {
+      "code": "DISCUS_SPAWN_CHANCE_RUNTIME",
+      "ingui": "discus_spawn_chance_runtime",
+      "comment": "Chances that Discus will attempt to spawn during runtime",
+      "weight": 1.0,
+      "type": "integer",
+      "default": 4,
+      "range": {
+        "min": 0,
+        "max": 50,
+        "step": 1
+      }
+    },
+    {
+      "code": "EEL_SPAWN_CHANCE_WORLDGEN",
+      "ingui": "eel_spawn_chance_worldgen",
+      "comment": "Chances that Eel will attempt to spawn during worldgen",
+      "weight": 0.95,
+      "type": "integer",
+      "default": 4,
+      "range": {
+        "min": 0,
+        "max": 50,
+        "step": 1
+      }
+    },
+    {
+      "code": "EEL_SPAWN_CHANCE_RUNTIME",
+      "ingui": "eel_spawn_chance_runtime",
+      "comment": "Chances that Eel will attempt to spawn during runtime",
+      "weight": 0.90,
+      "type": "integer",
+      "default": 4,
+      "range": {
+        "min": 0,
+        "max": 50,
+        "step": 1
+      }
+    },
+    {
+      "code": "GHOSTFISH_SPAWN_CHANCE_WORLDGEN",
+      "ingui": "ghostfish_spawn_chance_worldgen",
+      "comment": "Chances that Ghostfish will attempt to spawn during worldgen",
+      "weight": 0.95,
+      "type": "integer",
+      "default": 4,
+      "range": {
+        "min": 0,
+        "max": 50,
+        "step": 1
+      }
+    },
+    {
+      "code": "GHOSTFISH_SPAWN_CHANCE_RUNTIME",
+      "ingui": "ghostfish_spawn_chance_runtime",
+      "comment": "Chances that Ghostfish will attempt to spawn during runtime",
+      "weight": 0.90,
+      "type": "integer",
+      "default": 4,
+      "range": {
+        "min": 0,
+        "max": 50,
+        "step": 1
+      }
+    },
+    {
+      "code": "ORCA_SPAWN_CHANCE_WORLDGEN",
+      "ingui": "orca_spawn_chance_worldgen",
+      "comment": "Chances that Orca will attempt to spawn during worldgen",
+      "weight": 0.85,
+      "type": "integer",
+      "default": 4,
+      "range": {
+        "min": 0,
+        "max": 50,
+        "step": 1
+      }
+    },
+    {
+      "code": "ORCA_SPAWN_CHANCE_RUNTIME",
+      "ingui": "orca_spawn_chance_runtime",
+      "comment": "Chances that Orca will attempt to spawn during runtime",
+      "weight": 0.80,
+      "type": "integer",
+      "default": 4,
+      "range": {
+        "min": 0,
+        "max": 50,
+        "step": 1
+      }
+    },
+    {
+      "code": "SHARKS_SPAWN_CHANCE_WORLDGEN",
+      "ingui": "sharks_spawn_chance_worldgen",
+      "comment": "Chances that Sharks will attempt to spawn during worldgen",
+      "weight": 0.75,
+      "type": "integer",
+      "default": 4,
+      "range": {
+        "min": 0,
+        "max": 50,
+        "step": 1
+      }
+    },
+    {
+      "code": "SHARKS_SPAWN_CHANCE_RUNTIME",
+      "ingui": "sharks_spawn_chance_runtime",
+      "comment": "Chances that Sharks will attempt to spawn during runtime",
+      "weight": 0.70,
+      "type": "integer",
+      "default": 4,
+      "range": {
+        "min": 0,
+        "max": 50,
+        "step": 1
+      }
+    },
+    {
+      "code": "STINGRAY_SPAWN_CHANCE_WORLDGEN",
+      "ingui": "stingray_spawn_chance_worldgen",
+      "comment": "Chances that Stingrays will attempt to spawn during worldgen",
+      "weight": 0.65,
+      "type": "integer",
+      "default": 4,
+      "range": {
+        "min": 0,
+        "max": 50,
+        "step": 1
+      }
+    },
+    {
+      "code": "STINGRAY_SPAWN_CHANCE_RUNTIME",
+      "ingui": "stingray_spawn_chance_runtime",
+      "comment": "Chances that Stingrays will attempt to spawn during runtime",
+      "weight": 0.60,
+      "type": "integer",
+      "default": 4,
       "range": {
         "min": 0,
         "max": 50,

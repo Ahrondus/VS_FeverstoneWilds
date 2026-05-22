@@ -71,7 +71,7 @@ namespace FeverstoneWilds.Config
       api.World.Config.SetBool("AllowCagedFSWCreatures", config.AllowCagedFSWCreatures);
 
       // ConfigLib
-       api.World.Config.SetFloat("BISON_SPAWN_CHANCE_WORLDGEN", config.BISON_SPAWN_CHANCE_WORLDGEN);
+      api.World.Config.SetFloat("BISON_SPAWN_CHANCE_WORLDGEN", config.BISON_SPAWN_CHANCE_WORLDGEN);
       api.World.Config.SetFloat("BISON_SPAWN_CHANCE_RUNTIME", config.BISON_SPAWN_CHANCE_RUNTIME);
       api.World.Config.SetFloat("COCKATRICE_SPAWN_CHANCE_WORLDGEN", config.COCKATRICE_SPAWN_CHANCE_WORLDGEN);
       api.World.Config.SetFloat("COCKATRICE_SPAWN_CHANCE_RUNTIME", config.COCKATRICE_SPAWN_CHANCE_RUNTIME);
@@ -89,6 +89,21 @@ namespace FeverstoneWilds.Config
       api.World.Config.SetFloat("HORSE_SPAWN_CHANCE_RUNTIME", config.HORSE_SPAWN_CHANCE_RUNTIME);
       api.World.Config.SetFloat("OSTRICH_SPAWN_CHANCE_WORLDGEN", config.OSTRICH_SPAWN_CHANCE_WORLDGEN);
       api.World.Config.SetFloat("OSTRICH_SPAWN_CHANCE_RUNTIME", config.OSTRICH_SPAWN_CHANCE_RUNTIME);
+      
+      api.World.Config.SetFloat("BUROMENFISH_SPAWN_CHANCE_WORLDGEN", config.BUROMENFISH_SPAWN_CHANCE_WORLDGEN);
+      api.World.Config.SetFloat("BUROMENFISH_SPAWN_CHANCE_RUNTIME", config.BUROMENFISH_SPAWN_CHANCE_RUNTIME);
+      api.World.Config.SetFloat("DISCUS_SPAWN_CHANCE_WORLDGEN", config.DISCUS_SPAWN_CHANCE_WORLDGEN);
+      api.World.Config.SetFloat("DISCUS_SPAWN_CHANCE_RUNTIME", config.DISCUS_SPAWN_CHANCE_RUNTIME);
+      api.World.Config.SetFloat("EEL_SPAWN_CHANCE_WORLDGEN", config.EEL_SPAWN_CHANCE_WORLDGEN);
+      api.World.Config.SetFloat("EEL_SPAWN_CHANCE_RUNTIME", config.EEL_SPAWN_CHANCE_RUNTIME);
+      api.World.Config.SetFloat("GHOSTFISH_SPAWN_CHANCE_WORLDGEN", config.GHOSTFISH_SPAWN_CHANCE_WORLDGEN);
+      api.World.Config.SetFloat("GHOSTFISH_SPAWN_CHANCE_RUNTIME", config.GHOSTFISH_SPAWN_CHANCE_RUNTIME);
+      api.World.Config.SetFloat("ORCA_SPAWN_CHANCE_WORLDGEN", config.ORCA_SPAWN_CHANCE_WORLDGEN);
+      api.World.Config.SetFloat("ORCA_SPAWN_CHANCE_RUNTIME", config.ORCA_SPAWN_CHANCE_RUNTIME);
+      api.World.Config.SetFloat("SHARKS_SPAWN_CHANCE_WORLDGEN", config.SHARKS_SPAWN_CHANCE_WORLDGEN);
+      api.World.Config.SetFloat("SHARKS_SPAWN_CHANCE_RUNTIME", config.SHARKS_SPAWN_CHANCE_RUNTIME);
+      api.World.Config.SetFloat("STINGRAY_SPAWN_CHANCE_WORLDGEN", config.STINGRAY_SPAWN_CHANCE_WORLDGEN);
+      api.World.Config.SetFloat("STINGRAY_SPAWN_CHANCE_RUNTIME", config.STINGRAY_SPAWN_CHANCE_RUNTIME);
     }
 
     // Load a previous config
