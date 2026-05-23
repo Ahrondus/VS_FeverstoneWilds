@@ -742,7 +742,7 @@
                             "wolf-*", "direwolf-*", "hyena-*",
                             "bear-*", "hellboar-*", "faunling-*",
                             "horse-wild-*", "cockatrice-*", "ostrich-*",
-                            "foal-*", "bison-wild-*",
+                            "foal-wild-*", "bison-wild-*",
                             "deer-*", "goat-*", "pig-*", "sheep-*",
                             "elk-*", "moose-*", "gazelle-*" ],
                         "priority": 3,
@@ -781,7 +781,7 @@
                     {
                         "code": "meleeattack",
                         "entityCodes": [ "bear-*", "giraffe-*", "horse-wild-*",
-                            "bison-*", "ostrich-*", "moose-*", "elk-*" ],
+                            "bison-wild-*", "ostrich-*", "moose-*", "elk-*" ],
                         "priority": 2,
                         "damage": 8,
                         "damageTier": 2,
@@ -849,7 +849,7 @@
                             { "fromHour": 1, "toHour": 3 }
                         ],
                         "stopOnNearbyEntityCodes": [ "drifter-*", "bear-*", "wolf-*",
-                                                     "feverstonewilds:direwolf", "feverstonewilds:cockatrice",
+                                                     "feverstonewilds:direwolf-*", "feverstonewilds:cockatrice-*",
                                                      "hyena-*", "moose-*" ],
                         "stopRange": 10,
                         "stopOnHurt": true
