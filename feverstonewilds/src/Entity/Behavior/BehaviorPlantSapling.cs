@@ -28,7 +28,6 @@ public class BehaviorPlantSapling : EntityBehavior
         if (!tlessi)
         {
             timer = 0f;
-            entity.World.Logger.Notification("[Faunling] -- Trying to plant a sapling...");
             TryPlant();
         }
     }

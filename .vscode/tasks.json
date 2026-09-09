@@ -20,7 +20,9 @@
             "args": [
                 "run",
                 "--project",
-                "${workspaceFolder}/CakeBuild/CakeBuild.csproj"
+                "${workspaceFolder}/CakeBuild/CakeBuild.csproj",
+                "--",
+                "--target=Package"
             ],
             "problemMatcher": "$msCompile"
         },
@@ -29,10 +31,12 @@
             "command": "dotnet",
             "type": "process",
             "args": [
-                "build",
-                "-c",
-                "Debug",
-                "${workspaceFolder}/CakeBuild/CakeBuild.csproj"
+                "run",
+                "--project",
+                "${workspaceFolder}/CakeBuild/CakeBuild.csproj",
+                "--",
+                "--target=Build",
+                "--configuration=Debug"
             ],
             "problemMatcher": "$msCompile",
             "group": {
