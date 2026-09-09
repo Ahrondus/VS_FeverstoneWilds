@@ -1,6 +1,19 @@
 {
 	"code": "cockatrice-tail",
 	"maxstacksize": 8,
+	"behaviors": [
+		{ "name": "GroundStorable",
+			"properties": { 
+				"layoutByType": {
+					"cockatrice-tail-raw": "Halves",
+					"cockatrice-tail-partcooked": "Halves",
+					"cockatrice-tail-cooked": "Halves",
+					"cockatrice-tail-charred": "Halves"
+				},
+				"collisionBox": { "x1": 0, "y1": 0, "z1": 0, "x2": 1, "y2": 0.125, "z2": 1 } 
+			} 
+		}
+	],	
 	"attributes": {
 		"foodTags": [ "meat" ],
 		"inFirePitProps": {
