@@ -3,34 +3,36 @@ using Vintagestory.API.Common;
 using Vintagestory.API.Common.Entities;
 using Vintagestory.API.Datastructures;
 using Vintagestory.API.MathTools;
-using Vintagestory.API.Util;
 using System;
+using Vintagestory.GameContent;
 
 namespace FeverstoneWilds.Flight.AiTask;
 
 // Supplies three-dimensional movement toward the task's target while flight is active.
-public class AiTaskFlightSeekEntity : AiTaskBase
+public class AiTaskFlightSeekEntity : AiTaskBaseTargetable
 {
     private readonly BehaviorFlight flight;
     private readonly float preferredAltitude;
     private readonly float seekingRange;
-    private readonly string[] entityCodes;
-    private Entity targetEntity;
+    private readonly string animation;
+    private readonly float animationSpeed;
 
     public AiTaskFlightSeekEntity(EntityAgent entity, JsonObject taskConfig, JsonObject aiConfig) : base(entity, taskConfig, aiConfig)
     {
         flight = entity.GetBehavior<BehaviorFlight>();
         preferredAltitude = taskConfig["preferredAltitude"].AsFloat(3f);
         seekingRange = taskConfig["seekingRange"].AsFloat(20f);
-        entityCodes = taskConfig["entityCodes"].AsArray<string>(Array.Empty<string>());
+        animation = taskConfig["animation"].AsString(null);
+        animationSpeed = taskConfig["animationSpeed"].AsFloat(1f);
     }
 
     public override bool ShouldExecute()
     {
-        if (flight == null || !flight.IsFlying || flight.IsLanding || entityCodes.Length == 0) return false;
+        if (!PreconditionsSatisfied()) return false;
+        if (flight == null || !flight.IsFlying || flight.IsLanding || flight.IsAttacking || !entity.Alive) return false;
 
         targetEntity = entity.World.GetNearestEntity(entity.Pos.XYZ, seekingRange, seekingRange, candidate =>
-            candidate != entity && candidate.Alive && WildcardUtil.Match(entityCodes, candidate.Code.Path)
+            IsTargetableEntity(candidate, seekingRange)
         );
 
         return targetEntity != null;
@@ -39,12 +41,13 @@ public class AiTaskFlightSeekEntity : AiTaskBase
     public override void StartExecute()
     {
         base.StartExecute();
+        flight?.SetFlightAnimation("flightseekentity", animation, animationSpeed);
         UpdateFlightTarget();
     }
 
     public override bool ContinueExecute(float dt)
     {
-        if (!flight.IsFlying || flight.IsLanding || targetEntity == null || !targetEntity.Alive) return false;
+        if (!flight.IsFlying || flight.IsLanding || flight.IsAttacking || targetEntity == null || !targetEntity.Alive || !entity.Alive) return false;
 
         UpdateFlightTarget();
         return true;
@@ -53,6 +56,7 @@ public class AiTaskFlightSeekEntity : AiTaskBase
     public override void FinishExecute(bool cancelled)
     {
         flight?.ClearFlightTarget();
+        flight?.ClearFlightAnimation("flightseekentity");
         base.FinishExecute(cancelled);
     }
 

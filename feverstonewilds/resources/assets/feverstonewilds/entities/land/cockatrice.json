@@ -146,6 +146,7 @@
 				"hoursToDecay": 56, "decayedBlock": "carcass-medium" },
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
 			{ "code": "harvestable",
+  				"quantitySlots": 8,
 				"drops": [
 					{ "type": "item", "code": "poultry-raw",
 						"quantity": { "avg": 5, "var": 2 } },

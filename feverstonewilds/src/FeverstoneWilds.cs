@@ -25,6 +25,7 @@ namespace FeverstoneWilds
 			{
 				serverApi.RegisterAiTask<AiTaskFlightWander>("flightwander");
 				serverApi.RegisterAiTask<AiTaskFlightSeekEntity>("flightseekentity");
+				serverApi.RegisterAiTask<AiTaskFlightMeleeAttack>("flightmeleeattack");
 			}
 
 			ModConfig.ReadConfig(api);

@@ -151,13 +151,14 @@
       { "code": "floatupwhenstuck", "onlyWhenDead": true },
       {
         "code": "harvestable",
-        "drops": [
-          { "type": "item", "code": "poultry-raw", "quantity": { "avg": 5, "var": 2 } },
-          { "type": "item", "code": "hide-raw-medium", "quantity": { "avg": 1.2, "var": 0.2 } },
-          { "type": "item", "code": "feather", "quantity": { "avg": 5.2, "var": 0.2 } },
-          { "type": "item", "code": "fat", "quantity": { "avg": 1, "var": 0.3  } },
-					{ "type": "item", "code": "feverstonewilds:cockatricetail-raw", "quantity": { "avg": 0.9, "var": 0.2 } }
-        ]
+  				"quantitySlots": 8,
+          "drops": [
+            { "type": "item", "code": "poultry-raw", "quantity": { "avg": 5, "var": 2 } },
+            { "type": "item", "code": "hide-raw-medium", "quantity": { "avg": 1.2, "var": 0.2 } },
+            { "type": "item", "code": "feather", "quantity": { "avg": 5.2, "var": 0.2 } },
+            { "type": "item", "code": "fat", "quantity": { "avg": 1, "var": 0.3  } },
+            { "type": "item", "code": "feverstonewilds:cockatrice-tail-raw", "quantity": { "avg": 0.9, "var": 0.2 } }
+          ]
       },
       { "code": "breathe" },
       { 
