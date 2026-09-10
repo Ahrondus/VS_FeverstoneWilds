@@ -70,13 +70,13 @@ public class BehaviorFlight : EntityBehavior
 
         flightSpeed = attributes["flightSpeed"].AsFloat(0.08f);
         verticalSpeed = attributes["verticalSpeed"].AsFloat(0.06f);
-        steering = attributes["steering"].AsFloat(0.2f);
+        steering = attributes["steering"].AsFloat(0.25f);
         arrivalDistance = attributes["arrivalDistance"].AsFloat(1.25f);
-        autoFlight = attributes["autoFlight"].AsBool(false);
-        minGroundSeconds = attributes["minGroundSeconds"].AsFloat(12f);
-        maxGroundSeconds = attributes["maxGroundSeconds"].AsFloat(28f);
-        minFlightSeconds = attributes["minFlightSeconds"].AsFloat(10f);
-        maxFlightSeconds = attributes["maxFlightSeconds"].AsFloat(20f);
+        autoFlight = attributes["autoFlight"].AsBool(true);
+        minGroundSeconds = attributes["minGroundSeconds"].AsFloat(22f);
+        maxGroundSeconds = attributes["maxGroundSeconds"].AsFloat(48f);
+        minFlightSeconds = attributes["minFlightSeconds"].AsFloat(30f);
+        maxFlightSeconds = attributes["maxFlightSeconds"].AsFloat(52f);
         takeoffSpeed = attributes["takeoffSpeed"].AsFloat(0.06f);
         landingSpeed = attributes["landingSpeed"].AsFloat(0.035f);
         landingHeight = attributes["landingHeight"].AsFloat(0.15f);

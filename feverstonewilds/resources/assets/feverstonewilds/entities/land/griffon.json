@@ -41,7 +41,6 @@
                                         { "base": "entity/land/griffon/griffonskin6" }, { "base": "entity/land/griffon/griffonskin7" } ] },
                       "griffonskin1Wing": { "base": "entity/land/griffon/griffonskin1Wing",
                         "alternates": [ { "base": "entity/land/griffon/griffonskin2Wing" }, { "base": "entity/land/griffon/griffonskin3Wing" },
-                                        { "base": "entity/land/griffon/griffonskin2Wing" }, { "base": "entity/land/griffon/griffonskin3Wing" },
                                         { "base": "entity/land/griffon/griffonskin4Wing" }, { "base": "entity/land/griffon/griffonskin5Wing" },
                                         { "base": "entity/land/griffon/griffonskin6Wing" }, { "base": "entity/land/griffon/griffonskin7Wing" } ] } 
         },
@@ -97,22 +96,39 @@
 				"triggeredBy": { "defaultAnim": true }
 			},
 			{
-				"code": "sleep", 
-				"animation": "sleep",
+				"code": "fly", 
+				"animation": "fly",
 				"easeInSpeed": 4,
 				"easeOutSpeed": 4,
 				"blendMode": "average" 
 			},
 			{
-				"code": "sit", 
-				"animation": "sit",
+				"code": "flyfast", 
+				"animation": "flyfast",
 				"easeInSpeed": 4,
 				"easeOutSpeed": 4,
 				"blendMode": "average" 
+			},
+			{
+				"code": "idleaction1", 
+				"animation": "idleaction1",
+				"easeInSpeed": 4,
+				"easeOutSpeed": 4,
+				"blendMode": "average" ,
+                "supressDefaultAnimation": true
+			},
+			{
+				"code": "idleaction2", 
+				"animation": "idleaction2",
+				"easeInSpeed": 4,
+				"easeOutSpeed": 4,
+				"blendMode": "average" ,
+                "supressDefaultAnimation": true
 			},
 			{
 				"code": "walk", 
 				"animation": "Walk",
+                "blendMode": "average",
                 "animationSounds": [{"frame": 5, "range": 10, "location": "direwolf/paws-step*", "pitch": { "avg": 1.0, "var": 0.15 }, "volume": {"avg": 1.4}}, 
                                     {"frame": 13, "range": 10, "location": "direwolf/paws-step*", "pitch": { "avg": 1.0, "var": 0.15 }, "volume": {"avg": 1.4}}, 
                                     {"frame": 33, "range": 10, "location": "direwolf/paws-step*", "pitch": { "avg": 1.0, "var": 0.15 }, "volume": {"avg": 1.4}}, 
@@ -122,6 +138,7 @@
 			{
 				"code": "run", 
 				"animation": "Run",
+                "blendMode": "average",
                 "animationSounds": [{"frame": 4, "range": 15, "location": "direwolf/paws-step*", "pitch": { "avg": 1.0, "var": 0.15 }, "volume": {"avg": 1.4}}, 
                                     {"frame": 7, "range": 15, "location": "direwolf/paws-step*", "pitch": { "avg": 1.0, "var": 0.15 }, "volume": {"avg": 1.4}}, 
                                     {"frame": 18, "range": 15, "location": "direwolf/paws-step*", "pitch": { "avg": 1.0, "var": 0.15 }, "volume": {"avg": 1.4}}, 
@@ -309,7 +326,7 @@
                             "maxcooldown": 30000,
                             "animation": "idleaction1",
                             "whenNotInEmotionState": "aggressiveondamage",
-                            "duringDayTimeFrames": [ { "fromHour": 10, "toHour": 18 }, { "fromHour": 1, "toHour": 3 } ],
+                            "duringDayTimeFrames": [ { "fromHour": 22, "toHour": 24 }, { "fromHour": 1, "toHour": 4 } ],
                             "stopOnNearbyEntityCodes": ["player"],
                             "stopRange": 10,
                             "stopOnHurt": true
