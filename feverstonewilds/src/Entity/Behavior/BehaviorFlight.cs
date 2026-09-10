@@ -14,6 +14,13 @@ namespace FeverstoneWilds.Flight.Behavior;
 public class BehaviorFlight : EntityBehavior
 {
     public const string FlyingAttribute = "feverstonewilds:isFlying";
+    public const string FlightAnimationSourceAttribute = "feverstonewilds:flightAnimationSource";
+    public const string FlightAnimationAttribute = "feverstonewilds:flightAnimation";
+    public const string FlightAnimationSpeedAttribute = "feverstonewilds:flightAnimationSpeed";
+    public const string FlightAnimationWeightAttribute = "feverstonewilds:flightAnimationWeight";
+    public const string FlightAnimationEaseInSpeedAttribute = "feverstonewilds:flightAnimationEaseInSpeed";
+    public const string FlightAnimationEaseOutSpeedAttribute = "feverstonewilds:flightAnimationEaseOutSpeed";
+    public const string FlightAnimationSuppressDefaultAttribute = "feverstonewilds:flightAnimationSuppressDefault";
 
     private float flightSpeed;
     private float verticalSpeed;
@@ -28,17 +35,32 @@ public class BehaviorFlight : EntityBehavior
     private float landingSpeed;
     private float landingHeight;
     private float landingArrivalDistance;
+    private string landingAnimation;
+    private float landingAnimationSpeed;
+    private float landingAnimationWeight;
+    private float landingAnimationStartHeight;
     private int landingScanDepth;
     private long nextStateChangeMs;
     private Vec3d targetPosition;
     private bool hasTarget;
     private bool isLanding;
+    private bool isAttacking;
+    private bool landingAnimationStarted;
+    private string clientAnimationSource;
+    private string clientAnimation;
+    private float clientAnimationSpeed;
+    private float clientAnimationWeight;
+    private float clientAnimationEaseInSpeed;
+    private float clientAnimationEaseOutSpeed;
+    private bool clientAnimationSuppressDefault;
 
     public BehaviorFlight(Entity entity) : base(entity) { }
 
     public bool IsFlying => entity.WatchedAttributes.GetBool(FlyingAttribute);
 
     public bool IsLanding => isLanding;
+
+    public bool IsAttacking => isAttacking;
 
     public override string PropertyName() => "flight";
 
@@ -59,6 +81,10 @@ public class BehaviorFlight : EntityBehavior
         landingSpeed = attributes["landingSpeed"].AsFloat(0.035f);
         landingHeight = attributes["landingHeight"].AsFloat(0.15f);
         landingArrivalDistance = attributes["landingArrivalDistance"].AsFloat(0.05f);
+        landingAnimation = attributes["landingAnimation"].AsString(null);
+        landingAnimationSpeed = attributes["landingAnimationSpeed"].AsFloat(0.7f);
+        landingAnimationWeight = attributes["landingAnimationWeight"].AsFloat(30f);
+        landingAnimationStartHeight = attributes["landingAnimationStartHeight"].AsFloat(6f);
         landingScanDepth = attributes["landingScanDepth"].AsInt(80);
     }
 
@@ -71,7 +97,36 @@ public class BehaviorFlight : EntityBehavior
         {
             hasTarget = false;
             isLanding = false;
+            landingAnimationStarted = false;
+            ClearFlightAnimation();
         }
+    }
+
+    public void SetFlightAnimation(string source, string animation, float animationSpeed, float animationWeight = 10f, bool suppressDefaultAnimation = false, float easeInSpeed = 6f, float easeOutSpeed = 6f)
+    {
+        if (entity.World.Side != EnumAppSide.Server || string.IsNullOrEmpty(source) || string.IsNullOrEmpty(animation)) return;
+
+        entity.WatchedAttributes.SetString(FlightAnimationSourceAttribute, source);
+        entity.WatchedAttributes.SetString(FlightAnimationAttribute, animation);
+        entity.WatchedAttributes.SetFloat(FlightAnimationSpeedAttribute, animationSpeed);
+        entity.WatchedAttributes.SetFloat(FlightAnimationWeightAttribute, animationWeight);
+        entity.WatchedAttributes.SetFloat(FlightAnimationEaseInSpeedAttribute, easeInSpeed);
+        entity.WatchedAttributes.SetFloat(FlightAnimationEaseOutSpeedAttribute, easeOutSpeed);
+        entity.WatchedAttributes.SetBool(FlightAnimationSuppressDefaultAttribute, suppressDefaultAnimation);
+    }
+
+    public void ClearFlightAnimation(string source = null)
+    {
+        if (entity.World.Side != EnumAppSide.Server) return;
+        if (!string.IsNullOrEmpty(source) && entity.WatchedAttributes.GetString(FlightAnimationSourceAttribute) != source) return;
+
+        entity.WatchedAttributes.SetString(FlightAnimationSourceAttribute, null);
+        entity.WatchedAttributes.SetString(FlightAnimationAttribute, null);
+        entity.WatchedAttributes.SetFloat(FlightAnimationSpeedAttribute, 0);
+        entity.WatchedAttributes.SetFloat(FlightAnimationWeightAttribute, 0);
+        entity.WatchedAttributes.SetFloat(FlightAnimationEaseInSpeedAttribute, 0);
+        entity.WatchedAttributes.SetFloat(FlightAnimationEaseOutSpeedAttribute, 0);
+        entity.WatchedAttributes.SetBool(FlightAnimationSuppressDefaultAttribute, false);
     }
 
     public void SetFlightTarget(Vec3d position)
@@ -82,11 +137,35 @@ public class BehaviorFlight : EntityBehavior
 
     public void ClearFlightTarget() => hasTarget = false;
 
+    public void StopFlightMotion()
+    {
+        if (entity.World.Side != EnumAppSide.Server) return;
+
+        hasTarget = false;
+        entity.Pos.Motion.X = 0;
+        entity.Pos.Motion.Y = 0;
+        entity.Pos.Motion.Z = 0;
+    }
+
+    public void BeginFlightAttack()
+    {
+        if (entity.World.Side != EnumAppSide.Server) return;
+
+        isAttacking = true;
+        StopFlightMotion();
+    }
+
+    public void EndFlightAttack() => isAttacking = false;
+
     public bool HasReachedTarget => !hasTarget || entity.Pos.XYZ.SquareDistanceTo(targetPosition) <= arrivalDistance * arrivalDistance;
 
     public override void OnGameTick(float deltaTime)
     {
-        if (entity.World.Side != EnumAppSide.Server) return;
+        if (entity.World.Side == EnumAppSide.Client)
+        {
+            UpdateClientFlightAnimation();
+            return;
+        }
 
         UpdateAutomaticFlightState();
 
@@ -116,14 +195,31 @@ public class BehaviorFlight : EntityBehavior
         }
 
         delta.Normalize();
+        UpdateFlightFacing(delta);
         entity.Pos.Motion.X += (delta.X * flightSpeed - entity.Pos.Motion.X) * steering;
         entity.Pos.Motion.Z += (delta.Z * flightSpeed - entity.Pos.Motion.Z) * steering;
         entity.Pos.Motion.Y += (delta.Y * currentVerticalSpeed - entity.Pos.Motion.Y) * steering;
     }
 
+    private void UpdateFlightFacing(Vec3d direction)
+    {
+        entity.Pos.Pitch = 0;
+        if (direction.X * direction.X + direction.Z * direction.Z < 0.0001) return;
+
+        float targetYaw = (float)Math.Atan2(direction.X, direction.Z);
+        float yawDelta = GameMath.AngleRadDistance(entity.Pos.Yaw, targetYaw);
+        entity.Pos.Yaw = GameMath.NormaliseAngleRad(entity.Pos.Yaw + yawDelta * steering);
+    }
+
     private void UpdateAutomaticFlightState()
     {
         if (!autoFlight) return;
+
+        if (!entity.Alive)
+        {
+            if (IsFlying) SetFlying(false);
+            return;
+        }
 
         if (isLanding) return;
 
@@ -169,6 +265,7 @@ public class BehaviorFlight : EntityBehavior
     {
         isLanding = true;
         hasTarget = false;
+        landingAnimationStarted = false;
     }
 
     private void UpdateLanding()
@@ -185,6 +282,7 @@ public class BehaviorFlight : EntityBehavior
         }
 
         SetFlightTarget(landingPosition);
+        StartLandingAnimationIfNeeded(landingPosition);
         if (IsAtFlightTarget(landingArrivalDistance))
         {
             SetFlying(false);
@@ -217,5 +315,58 @@ public class BehaviorFlight : EntityBehavior
     private bool IsAtFlightTarget(float currentArrivalDistance)
     {
         return hasTarget && entity.Pos.XYZ.SquareDistanceTo(targetPosition) <= currentArrivalDistance * currentArrivalDistance;
+    }
+
+    private void StartLandingAnimationIfNeeded(Vec3d landingPosition)
+    {
+        if (landingAnimationStarted || string.IsNullOrEmpty(landingAnimation)) return;
+        if (entity.Pos.Y - landingPosition.Y > landingAnimationStartHeight) return;
+
+        SetFlightAnimation("flightlanding", landingAnimation, landingAnimationSpeed, landingAnimationWeight, true);
+        landingAnimationStarted = true;
+    }
+
+    private void UpdateClientFlightAnimation()
+    {
+        string source = entity.WatchedAttributes.GetString(FlightAnimationSourceAttribute);
+        string animation = entity.WatchedAttributes.GetString(FlightAnimationAttribute);
+        float animationSpeed = entity.WatchedAttributes.GetFloat(FlightAnimationSpeedAttribute, 1f);
+        float animationWeight = entity.WatchedAttributes.GetFloat(FlightAnimationWeightAttribute, 10f);
+        float animationEaseInSpeed = entity.WatchedAttributes.GetFloat(FlightAnimationEaseInSpeedAttribute, 6f);
+        float animationEaseOutSpeed = entity.WatchedAttributes.GetFloat(FlightAnimationEaseOutSpeedAttribute, 6f);
+        bool suppressDefaultAnimation = entity.WatchedAttributes.GetBool(FlightAnimationSuppressDefaultAttribute);
+
+        if (source == clientAnimationSource && animation == clientAnimation && animationSpeed == clientAnimationSpeed && animationWeight == clientAnimationWeight && animationEaseInSpeed == clientAnimationEaseInSpeed && animationEaseOutSpeed == clientAnimationEaseOutSpeed && suppressDefaultAnimation == clientAnimationSuppressDefault) return;
+
+        if (entity is EntityAgent agent)
+        {
+            if (!string.IsNullOrEmpty(clientAnimationSource))
+            {
+                agent.AnimManager?.StopAnimation(clientAnimationSource);
+            }
+
+            if (!string.IsNullOrEmpty(source) && !string.IsNullOrEmpty(animation))
+            {
+                agent.AnimManager?.StartAnimation(new AnimationMetaData
+                {
+                    Animation = animation,
+                    Code = source,
+                    AnimationSpeed = animationSpeed,
+                    Weight = animationWeight,
+                    BlendMode = EnumAnimationBlendMode.Average,
+                    EaseInSpeed = animationEaseInSpeed,
+                    EaseOutSpeed = animationEaseOutSpeed,
+                    SupressDefaultAnimation = suppressDefaultAnimation
+                });
+            }
+        }
+
+        clientAnimationSource = source;
+        clientAnimation = animation;
+        clientAnimationSpeed = animationSpeed;
+        clientAnimationWeight = animationWeight;
+        clientAnimationEaseInSpeed = animationEaseInSpeed;
+        clientAnimationEaseOutSpeed = animationEaseOutSpeed;
+        clientAnimationSuppressDefault = suppressDefaultAnimation;
     }
 }

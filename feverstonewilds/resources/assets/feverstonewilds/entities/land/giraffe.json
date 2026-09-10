@@ -12,8 +12,18 @@
 	"hitboxSize": { "x": 2.15, "y": 2.4 },
 	"deadHitboxSize": { "x": 2.15, "y": 1.75 },
 	"eyeHeight": 1.4,
-	"weight": 400,
+	"weight": 700,
 	"drops": [],
+	"attributes": {
+		"creatureDiet": {
+			"foodCategories": [ "Vegetable" ],
+			"weightedFoodTags": [ 
+				{ "weight": 0.9, "code": "vegetable" } ]
+		},
+		"handbook": {
+			"groupcode": "feverstonewilds:creaturegroup-fswgiraffe"
+		}
+	},
 	"client": {
 		"renderer": "Shape",
 		"shapeByType": {
