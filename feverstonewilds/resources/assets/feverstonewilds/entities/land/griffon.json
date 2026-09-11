@@ -49,7 +49,6 @@
             "griffon-female": 0.95
         },
         "behaviors": [
-            { "code": "multiply", "enabledByType": { "*-male": false, "*-female": true } },
             { "code": "repulseagents" },
             { "code": "controlledphysics", "stepHeight": 1.1251 },
             { "code": "flight", "flightSpeed": 0.08, "verticalSpeed": 0.06, "steering": 0.2, "arrivalDistance": 1.25 },
@@ -64,7 +63,7 @@
 				"animation": "Attack",
 				"animationSpeed": 2.2,
 				"weight": 50,
-				"blendMode": "AddAverage"
+				"blendMode": "addAverage"
 			},
             {
                 "code": "hurt",
@@ -84,7 +83,7 @@
             {
                 "code": "dead",
                 "animation": "dead",
-                "blendMode": "Average",
+                "blendMode": "average",
                 "weight": 10,
                 "easeInSpeed": 3
             },

@@ -13,6 +13,13 @@ namespace FeverstoneWilds.Flight.Behavior;
 /// </summary>
 public class BehaviorFlight : EntityBehavior
 {
+    private enum EnumLandingSearchResult
+    {
+        Found,
+        NoValidGround,
+        Water
+    }
+
     public const string FlyingAttribute = "feverstonewilds:isFlying";
     public const string FlightAnimationSourceAttribute = "feverstonewilds:flightAnimationSource";
     public const string FlightAnimationAttribute = "feverstonewilds:flightAnimation";
@@ -40,6 +47,7 @@ public class BehaviorFlight : EntityBehavior
     private float landingAnimationWeight;
     private float landingAnimationStartHeight;
     private int landingScanDepth;
+    private float failedLandingDescent;
     private long nextStateChangeMs;
     private Vec3d targetPosition;
     private bool hasTarget;
@@ -85,7 +93,8 @@ public class BehaviorFlight : EntityBehavior
         landingAnimationSpeed = attributes["landingAnimationSpeed"].AsFloat(0.7f);
         landingAnimationWeight = attributes["landingAnimationWeight"].AsFloat(30f);
         landingAnimationStartHeight = attributes["landingAnimationStartHeight"].AsFloat(6f);
-        landingScanDepth = attributes["landingScanDepth"].AsInt(80);
+        landingScanDepth = attributes["landingScanDepth"].AsInt(120);
+        failedLandingDescent = attributes["failedLandingDescent"].AsFloat(8f);
     }
 
     public void SetFlying(bool value)
@@ -270,19 +279,33 @@ public class BehaviorFlight : EntityBehavior
 
     private void UpdateLanding()
     {
-        if (!TryFindLandingPosition(out Vec3d landingPosition))
+        StartLandingAnimation();
+
+        EnumLandingSearchResult landingSearchResult = TryFindLandingPosition(out Vec3d landingPosition);
+        if (landingSearchResult != EnumLandingSearchResult.Found)
         {
-            // Stay airborne rather than falling if the terrain below is unloaded
-            // or no valid non-liquid ground exists inside the scan range.
-            hasTarget = false;
-            entity.Pos.Motion.X *= 1 - steering;
-            entity.Pos.Motion.Y *= 1 - steering;
-            entity.Pos.Motion.Z *= 1 - steering;
+            ClearFlightAnimation("flightlanding");
+            isLanding = false;
+            landingAnimationStarted = false;
+
+            if (landingSearchResult == EnumLandingSearchResult.Water)
+            {
+                // Keep altitude over water rather than descending toward the lakebed.
+                double angle = entity.World.Rand.NextDouble() * GameMath.TWOPI;
+                SetFlightTarget(new Vec3d(entity.Pos.X + Math.Cos(angle) * failedLandingDescent, entity.Pos.Y, entity.Pos.Z + Math.Sin(angle) * failedLandingDescent));
+            }
+            else
+            {
+                // Descend a short distance so the next landing search can check lower terrain.
+                SetFlightTarget(new Vec3d(entity.Pos.X, Math.Max(0.5, entity.Pos.Y - failedLandingDescent), entity.Pos.Z));
+            }
+
+            SetFlightAnimation("flightfallback", "fly", 1f);
+            ScheduleNextStateChange(entity.World.ElapsedMilliseconds, minFlightSeconds, maxFlightSeconds);
             return;
         }
 
         SetFlightTarget(landingPosition);
-        StartLandingAnimationIfNeeded(landingPosition);
         if (IsAtFlightTarget(landingArrivalDistance))
         {
             SetFlying(false);
@@ -293,7 +316,7 @@ public class BehaviorFlight : EntityBehavior
         ApplyFlightMovement(landingSpeed, landingArrivalDistance);
     }
 
-    private bool TryFindLandingPosition(out Vec3d landingPosition)
+    private EnumLandingSearchResult TryFindLandingPosition(out Vec3d landingPosition)
     {
         BlockPos groundPos = entity.Pos.AsBlockPos.Copy();
         groundPos.Y--;
@@ -304,12 +327,21 @@ public class BehaviorFlight : EntityBehavior
             Block block = entity.World.BlockAccessor.GetBlock(groundPos);
             if (block.Id == 0 || block.IsLiquid() || !block.SideIsSolid(groundPos, BlockFacing.UP.Index)) continue;
 
+            BlockPos landingBlockPos = groundPos.Copy();
+            landingBlockPos.Y++;
+            Block landingBlock = entity.World.BlockAccessor.GetBlock(landingBlockPos);
+            if (landingBlock.IsLiquid())
+            {
+                landingPosition = null;
+                return EnumLandingSearchResult.Water;
+            }
+
             landingPosition = new Vec3d(entity.Pos.X, groundPos.Y + 1 + landingHeight, entity.Pos.Z);
-            return true;
+            return EnumLandingSearchResult.Found;
         }
 
         landingPosition = null;
-        return false;
+        return EnumLandingSearchResult.NoValidGround;
     }
 
     private bool IsAtFlightTarget(float currentArrivalDistance)
@@ -317,10 +349,9 @@ public class BehaviorFlight : EntityBehavior
         return hasTarget && entity.Pos.XYZ.SquareDistanceTo(targetPosition) <= currentArrivalDistance * currentArrivalDistance;
     }
 
-    private void StartLandingAnimationIfNeeded(Vec3d landingPosition)
+    private void StartLandingAnimation()
     {
         if (landingAnimationStarted || string.IsNullOrEmpty(landingAnimation)) return;
-        if (entity.Pos.Y - landingPosition.Y > landingAnimationStartHeight) return;
 
         SetFlightAnimation("flightlanding", landingAnimation, landingAnimationSpeed, landingAnimationWeight, true);
         landingAnimationStarted = true;
