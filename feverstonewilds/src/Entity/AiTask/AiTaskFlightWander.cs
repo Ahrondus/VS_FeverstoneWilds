@@ -13,6 +13,7 @@ public class AiTaskFlightWander : AiTaskBase
     private readonly BehaviorFlight flight;
     private readonly float horizontalRange;
     private readonly float verticalRange;
+    private readonly int waypointSearchAttempts;
     private readonly int waypointCount;
     private readonly string animation;
     private readonly float animationSpeed;
@@ -23,6 +24,7 @@ public class AiTaskFlightWander : AiTaskBase
     private readonly float idleAnimationEaseOutSpeed;
     private int waypointsReached;
     private bool isHovering;
+    private bool hasWaypoint;
     private long hoverUntilMs;
 
     public AiTaskFlightWander(EntityAgent entity, JsonObject taskConfig, JsonObject aiConfig) : base(entity, taskConfig, aiConfig)
@@ -30,6 +32,7 @@ public class AiTaskFlightWander : AiTaskBase
         flight = entity.GetBehavior<BehaviorFlight>();
         horizontalRange = taskConfig["horizontalRange"].AsFloat(12f);
         verticalRange = taskConfig["verticalRange"].AsFloat(5f);
+        waypointSearchAttempts = Math.Max(1, taskConfig["waypointSearchAttempts"].AsInt(6));
         waypointCount = Math.Max(1, taskConfig["waypointCount"].AsInt(1));
         animation = taskConfig["animation"].AsString(null);
         animationSpeed = taskConfig["animationSpeed"].AsFloat(1f);
@@ -49,12 +52,13 @@ public class AiTaskFlightWander : AiTaskBase
         waypointsReached = 0;
         isHovering = false;
         SetTravelAnimation();
-        SetNextFlightTarget();
+        hasWaypoint = TrySetNextFlightTarget();
     }
 
     public override bool ContinueExecute(float dt)
     {
         if (!flight.IsFlying || flight.IsLanding || flight.IsAttacking || !entity.Alive) return false;
+        if (!hasWaypoint) return false;
 
         if (isHovering)
         {
@@ -64,8 +68,8 @@ public class AiTaskFlightWander : AiTaskBase
             if (waypointsReached >= waypointCount) return false;
 
             SetTravelAnimation();
-            SetNextFlightTarget();
-            return true;
+            hasWaypoint = TrySetNextFlightTarget();
+            return hasWaypoint;
         }
 
         if (!flight.HasReachedTarget) return true;
@@ -75,8 +79,8 @@ public class AiTaskFlightWander : AiTaskBase
         {
             if (waypointsReached >= waypointCount) return false;
 
-            SetNextFlightTarget();
-            return true;
+            hasWaypoint = TrySetNextFlightTarget();
+            return hasWaypoint;
         }
 
         isHovering = true;
@@ -93,12 +97,55 @@ public class AiTaskFlightWander : AiTaskBase
         base.FinishExecute(cancelled);
     }
 
-    private void SetNextFlightTarget()
+    private bool TrySetNextFlightTarget()
     {
-        double angle = entity.World.Rand.NextDouble() * GameMath.TWOPI;
-        double distance = horizontalRange * (0.5 + entity.World.Rand.NextDouble() * 0.5);
-        double y = entity.Pos.Y + (entity.World.Rand.NextDouble() * 2 - 1) * verticalRange;
-        flight.SetFlightTarget(new Vec3d(entity.Pos.X + Math.Cos(angle) * distance, y, entity.Pos.Z + Math.Sin(angle) * distance));
+        for (int attempt = 0; attempt < waypointSearchAttempts; attempt++)
+        {
+            double angle = entity.World.Rand.NextDouble() * GameMath.TWOPI;
+            double distance = horizontalRange * (0.5 + entity.World.Rand.NextDouble() * 0.5);
+            double y = entity.Pos.Y + (entity.World.Rand.NextDouble() * 2 - 1) * verticalRange;
+            Vec3d waypoint = new(entity.Pos.X + Math.Cos(angle) * distance, y, entity.Pos.Z + Math.Sin(angle) * distance);
+
+            if (!IsFlightPathClear(waypoint)) continue;
+
+            flight.SetFlightTarget(waypoint);
+            return true;
+        }
+
+        return false;
+    }
+
+    private bool IsFlightPathClear(Vec3d waypoint)
+    {
+        Vec3d delta = waypoint.SubCopy(entity.Pos.XYZ);
+        int steps = Math.Max(1, (int)Math.Ceiling(Math.Sqrt(delta.X * delta.X + delta.Y * delta.Y + delta.Z * delta.Z)));
+
+        for (int step = 1; step <= steps; step++)
+        {
+            double progress = step / (double)steps;
+            Vec3d position = new(entity.Pos.X + delta.X * progress, entity.Pos.Y + delta.Y * progress, entity.Pos.Z + delta.Z * progress);
+            if (!IsFlightSpaceClear(position)) return false;
+        }
+
+        return true;
+    }
+
+    private bool IsFlightSpaceClear(Vec3d position)
+    {
+        BlockPos blockPos = entity.Pos.AsBlockPos.Copy();
+        int clearanceBlocks = Math.Max(1, (int)Math.Ceiling(entity.CollisionBox.YSize));
+        int x = (int)Math.Floor(position.X);
+        int y = (int)Math.Floor(position.Y);
+        int z = (int)Math.Floor(position.Z);
+
+        for (int offsetY = 0; offsetY < clearanceBlocks; offsetY++)
+        {
+            blockPos.Set(x, y + offsetY, z);
+            Block block = entity.World.BlockAccessor.GetBlock(blockPos);
+            if (block.Id != 0 || block.IsLiquid()) return false;
+        }
+
+        return true;
     }
 
     private void SetTravelAnimation()
