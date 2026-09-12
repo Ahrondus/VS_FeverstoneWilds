@@ -122,7 +122,7 @@
 				"enabledByType": { "*-female": true, "*-male": false },
 				"multiplyCooldownDaysMin": 1,
 				"multiplyCooldownDaysMax": 4,
-				"portionsEatenForMultiply": 9
+				"portionsEatenForMultiply": 3
 			},
 			{ "code": "repulseagents" }, 
 			{ "code": "controlledphysics", "stepHeight": 1.1251 },
@@ -211,6 +211,7 @@
 					},
 					{
 						"code": "seekblockandlay",
+						"enabledByType": { "*-female": true, "*-male": false },
 						"priorityByType": { "*-female": 1.6, "*": 0 },
 						"layTime": 8,
 						"chickCodes": ["ostrich-chick"],
