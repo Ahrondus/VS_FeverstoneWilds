@@ -1,0 +1,16 @@
+[
+    {
+        "file": "feverstonewilds:horse.json",
+        "op": "add",
+        "path": "/client/behaviors/-",
+        "value": { "code": "downedstowage", "rearAttachmentPoint": "RearUpperAP" },
+        "dependsOn": [ {"modid": "downed"} ]
+    },
+    {
+        "file": "feverstonewilds:horse.json",
+        "op": "add",
+        "path": "/server/behaviors/-",
+        "value": { "code": "downedstowage", "rearAttachmentPoint": "RearUpperAP" },
+        "dependsOn": [ {"modid": "downed"} ]
+    }
+]

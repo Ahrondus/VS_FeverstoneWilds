@@ -175,6 +175,13 @@
         "file": "feverstonewilds:entities/land/toad.json",
         "condition": { "when": "FSWToadEnabled", "isValue": "false" }
     },
+    {
+        "op": "add",
+        "path": "/enabled",
+        "value": false,
+        "file": "feverstonewilds:entities/land/griffon.json",
+        "condition": { "when": "FSWGriffonEnabled", "isValue": "false" }
+    },
     
     {
         "op": "add",

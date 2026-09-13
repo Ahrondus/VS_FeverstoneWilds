@@ -255,6 +255,7 @@
                         "entityCodes": [
                             "*"
                         ],
+                        "skipEntityCodes": [ "tame-*", "*-tamed-*", "taminghorse-*" ],
                         "isCommandable": true,
                         "priority": 3,
                         "damage": 8,
@@ -276,6 +277,7 @@
                             "direwolf-pup", "hellboar-piglet", "chicken-*",
                             "cockatrice-*", "fox-*", "*-baby"
                         ],
+                        "skipEntityCodes": [ "tame-*", "*-tamed-*", "taminghorse-*" ],
                         "isCommandable": true,
                         "priority": 3,
                         "damage": 8,
@@ -296,6 +298,7 @@
                             "bear-*", "giraffe-*", "horse-*",
                             "bison-*", "ostrich-*", "moose-*", "elk-*"
                         ],
+                        "skipEntityCodes": [ "tame-*", "*-tamed-*", "taminghorse-*" ],
                         "isCommandable": true,
                         "priority": 3,
                         "damage": 8,
@@ -315,6 +318,7 @@
                         "entityCodes": [
                             "*"
                         ],
+                        "skipEntityCodes": [ "tame-*", "*-tamed-*", "taminghorse-*" ],
                         "isCommandable": true,
                         "priority": 2.9,
                         "movespeed": 0.045,
