@@ -54,7 +54,15 @@ namespace FeverstoneWilds
 
         public virtual bool IsSuitableFor(Entity entity, string[] nestTypes)
         {
-            return nestTypes?.Contains(((BlockAnimalNest)Block).NestType) == true;
+            if (Block is not BlockAnimalNest nest || nestTypes?.Contains(nest.NestType) != true)
+            {
+                return false;
+            }
+
+            // An empty nest may be claimed by either supported bird.  Once it contains
+            // eggs, only that egg species may return to brood them.
+            string eggSpecies = GetNestEggSpecies();
+            return eggSpecies == null || eggSpecies == GetSpeciesFromEntity(entity);
         }
 
         public bool Occupied(Entity entity)
@@ -72,16 +80,41 @@ namespace FeverstoneWilds
             MarkDirty();
         }
 
-        public string GetOccupier(Entity entity)
+        protected static string GetSpeciesFromEntity(Entity entity)
         {
-            if ( occupier != null && (occupier.FirstCodePart(1) == "cockatrice" || occupier.FirstCodePart() == "cockatrice"))
+            return GetSpeciesFromPath(entity?.Code?.Path);
+        }
+
+        protected static string GetSpeciesFromEgg(ItemStack egg)
+        {
+            string path = egg?.Collectible?.Code?.Path;
+            if (path == null) return null;
+
+            if (path.StartsWith("egg-cockatrice-", StringComparison.Ordinal)) return "cockatrice";
+            if (path.StartsWith("egg-ostrich-", StringComparison.Ordinal)) return "ostrich";
+            return null;
+        }
+
+        protected static string GetSpeciesFromPath(string path)
+        {
+            if (path == null) return null;
+
+            if (path.Split('-').Contains("cockatrice")) return "cockatrice";
+            if (path.Split('-').Contains("ostrich")) return "ostrich";
+            return null;
+        }
+
+        protected string GetNestEggSpecies()
+        {
+            for (int i = 0; i < inventory.Count; i++)
             {
-                return "cockatrice";
+                if (!inventory[i].Empty)
+                {
+                    return GetSpeciesFromEgg(inventory[i].Itemstack);
+                }
             }
-            else
-            {
-                return "ostrich";
-            }
+
+            return null;
         }
 
         public virtual float DistanceWeighting => 2 / (CountEggs() + 2);
@@ -89,6 +122,13 @@ namespace FeverstoneWilds
 
         public virtual bool TryAddEgg(ItemStack egg)
         {
+            string eggSpecies = GetSpeciesFromEgg(egg);
+            string nestSpecies = GetNestEggSpecies();
+            if (eggSpecies == null || (nestSpecies != null && nestSpecies != eggSpecies))
+            {
+                return false;
+            }
+
             for (int i = 0; i < inventory.Count; ++i)
             {
                 if (inventory[i].Empty)
@@ -196,7 +236,6 @@ namespace FeverstoneWilds
 
             if (api.Side == EnumAppSide.Server)
             {
-                string lastocc = GetOccupier(occupier);
                 // Update from old save format to new one
                 int eggsWithBlock = -1;
                 if (Block.Code.Path.EndsWith("empty"))
@@ -220,7 +259,9 @@ namespace FeverstoneWilds
                 }
                 for (int i = 0; i < eggsWithBlock; ++i)
                 {
-                    inventory[i].Itemstack ??= new ItemStack(api.World.GetItem("feverstonewilds:egg-"+lastocc+"-raw"));
+                    // The pre-inventory format did not record a species.  Do not invent
+                    // one here: a migrated nest otherwise becomes a misleading ostrich nest.
+                    api.Logger.Warning("Unable to determine the species of a legacy egg in " + Block.Code + " at " + Pos + ".");
                     inventory.DidModifyItemSlot(inventory[i]);
                 }
 
@@ -287,13 +328,28 @@ namespace FeverstoneWilds
 
             timeToIncubate = tree.GetDouble("inc");
             occupiedTimeLast = tree.GetDouble("occ");
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < inventory.Count; i++)
             {
                 string chickCode = tree.GetString("chick" + i);
                 if (chickCode != null)
                 {
+                    string eggSpecies = GetSpeciesFromPath(chickCode);
+                    Item egg = eggSpecies == null ? null : worldForResolving.GetItem("feverstonewilds:egg-" + eggSpecies + "-raw");
+                    if (egg == null)
+                    {
+                        worldForResolving.Api.Logger.Warning("Unable to migrate legacy chick data in " + Block.Code + " at " + Pos + " because its egg species was not saved.");
+                        continue;
+                    }
+
+                    string nestSpecies = GetNestEggSpecies();
+                    if (nestSpecies != null && nestSpecies != eggSpecies)
+                    {
+                        worldForResolving.Api.Logger.Warning("Skipping a mixed-species legacy egg in " + Block.Code + " at " + Pos + ".");
+                        continue;
+                    }
+
                     int generation = tree.GetInt("gen" + i);
-                    inventory[i].Itemstack = new ItemStack(worldForResolving.GetItem("egg-"+Block.FirstCodePart(1)+"-raw"));
+                    inventory[i].Itemstack = new ItemStack(egg);
                     TreeAttribute chickTree = new();
                     chickTree.SetString("code", chickCode);
                     chickTree.SetInt("generation", generation);
@@ -416,10 +472,14 @@ namespace FeverstoneWilds
                 else if (timeToIncubate > 0)
                     dsc.AppendLine(Lang.Get("Incubation time remaining: {0:0} hours", timeToIncubate * 24));
 
-                if (!IsOccupiedClientside && eggCount >= inventory.Count && inventory[2].Itemstack.Collectible.Code.SecondCodePart() == "cockatrice")
-                    dsc.AppendLine(Lang.Get("A broody Cockatrice is needed!"));
-                if (!IsOccupiedClientside && eggCount >= inventory.Count && inventory[2].Itemstack.Collectible.Code.SecondCodePart() == "ostrich" )
-                    dsc.AppendLine(Lang.Get("A broody Ostrich is needed!"));
+                if (!IsOccupiedClientside && eggCount >= inventory.Count)
+                {
+                    string eggSpecies = GetNestEggSpecies();
+                    if (eggSpecies == "cockatrice")
+                        dsc.AppendLine(Lang.Get("A broody Cockatrice is needed!"));
+                    else if (eggSpecies == "ostrich")
+                        dsc.AppendLine(Lang.Get("A broody Ostrich is needed!"));
+                }
             }
             else if (eggCount > 0)
             {

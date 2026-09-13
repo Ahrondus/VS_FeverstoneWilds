@@ -51,6 +51,9 @@ namespace FeverstoneWilds.Config
       api.World.Config.SetBool("FSWSpiderEnabled", config.FSWSpiderEnabled);
       api.World.Config.SetBool("FSWScorpionEnabled", config.FSWScorpionEnabled);
       api.World.Config.SetBool("FSWToadEnabled", config.FSWToadEnabled);
+
+      // Complex Creatures
+      api.World.Config.SetBool("FSWGriffonEnabled", config.FSWGriffonEnabled);
       
       // Water Creatures
       api.World.Config.SetBool("FSWBuromenfishEnabled", config.FSWBuromenfishEnabled);
@@ -66,6 +69,9 @@ namespace FeverstoneWilds.Config
       api.World.Config.SetBool("FSWCopperGolemEnabled", config.FSWCopperGolemEnabled);
       api.World.Config.SetBool("FSWTinGolemEnabled", config.FSWTinGolemEnabled);
       api.World.Config.SetBool("FSWIronGolemEnabled", config.FSWIronGolemEnabled);
+      
+      // Faunling Sapling Behavior
+      api.World.Config.SetBool("FSWFaunlingSaplingEnabled", config.FSWFaunlingSaplingEnabled);
 
       // AnimalCages Config
       api.World.Config.SetBool("AllowCagedFSWCreatures", config.AllowCagedFSWCreatures);
@@ -89,6 +95,9 @@ namespace FeverstoneWilds.Config
       api.World.Config.SetFloat("HORSE_SPAWN_CHANCE_RUNTIME", config.HORSE_SPAWN_CHANCE_RUNTIME);
       api.World.Config.SetFloat("OSTRICH_SPAWN_CHANCE_WORLDGEN", config.OSTRICH_SPAWN_CHANCE_WORLDGEN);
       api.World.Config.SetFloat("OSTRICH_SPAWN_CHANCE_RUNTIME", config.OSTRICH_SPAWN_CHANCE_RUNTIME);
+
+      api.World.Config.SetFloat("GRIFFON_SPAWN_CHANCE_WORLDGEN", config.GRIFFON_SPAWN_CHANCE_WORLDGEN);
+      api.World.Config.SetFloat("GRIFFON_SPAWN_CHANCE_RUNTIME", config.GRIFFON_SPAWN_CHANCE_RUNTIME);
       
       api.World.Config.SetFloat("BUROMENFISH_SPAWN_CHANCE_WORLDGEN", config.BUROMENFISH_SPAWN_CHANCE_WORLDGEN);
       api.World.Config.SetFloat("BUROMENFISH_SPAWN_CHANCE_RUNTIME", config.BUROMENFISH_SPAWN_CHANCE_RUNTIME);

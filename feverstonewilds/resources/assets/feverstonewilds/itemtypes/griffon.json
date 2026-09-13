@@ -1,0 +1,51 @@
+{
+	"code": "creature",
+	"class": "ItemCreature",
+	"maxStackSize": 1,
+	"variantgroups": [
+		{
+			"code": "type",
+			"states": ["griffon-male", "griffon-female" ]	
+		}
+	],
+	"shapeByType": {
+		"*-griffon-male": { "base": "entity/land/mammal/griffon-adult" },
+		"*-griffon-female": { "base": "entity/land/mammal/griffon-adult" }
+	},
+	"texturesByType": {
+		"*-griffon-male": { "griffonskin1": { "base": "entity/land/griffon/griffonskin1" },
+							"griffonskin1Wing": { "base": "entity/land/griffon/griffonskin1Wing" } },
+		"*-griffon-female": { "griffonskin1": { "base": "entity/land/griffon/griffonskin2" },
+							  "griffonskin1Wing": { "base": "entity/land/griffon/griffonskin2Wing" } }
+	},
+		
+	"creativeinventory": {
+		"general": ["*"],
+		"items": ["*"],
+		"creatures": ["*"]
+	},
+
+	"heldTpIdleAnimation": "holdunderarm",		
+	"guiTransformByType": {
+		"creature-griffon-*": {
+			"rotate": "true",
+			"translation": { "x": 0, "y": 3, "z": 0 },
+			"rotation": { "x": 180, "y": -115, "z": 6 },
+			"origin": { "x": 0.75, "y": 0.75, "z": 0.5 },
+			"scale": 0.8
+		}
+	},
+	"fpHandTransform": {
+		"translation": { "x": 0.2, "y": 0, "z": 0 },
+		"rotation": { "x": -8, "y": -63, "z": -7 },
+		"scale": 0.35
+	},
+	"tpHandTransformByType": {
+		"*": {
+			"translation": { "x": -0.9, "y": -1, "z": -0.9 },
+			"rotation": { "x": -180, "y": 0, "z": -156 },
+			"scale": 0.4
+		}
+	} 
+	
+}

@@ -1,6 +1,19 @@
 {
 	"code": "ribs",
 	"maxstacksize": 8,
+	"behaviors": [
+		{ "name": "GroundStorable", 
+			"properties": { 
+				"layoutByType": {
+					"ribs-raw": "Halves",
+					"ribs-partcooked": "Halves",
+					"ribs-cooked": "Halves",
+					"ribs-charred": "Halves"
+				},
+				"collisionBox": { "x1": 0, "y1": 0, "z1": 0, "x2": 1, "y2": 0.125, "z2": 1 } 
+			} 
+		}
+	],
 	"attributes": {
 		"foodTags": [ "meat" ],
 		"inFirePitProps": {

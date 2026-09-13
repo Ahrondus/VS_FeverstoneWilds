@@ -1,6 +1,19 @@
 {
 	"code": "bisonleg",
 	"maxstacksize": 8,
+	"behaviors": [
+		{ "name": "GroundStorable",
+			"properties": { 
+				"layoutByType": {
+					"bisonleg-raw": "Halves",
+					"bisonleg-partcooked": "Halves",
+					"bisonleg-cooked": "Halves",
+					"bisonleg-charred": "Halves"
+				},
+				"collisionBox": { "x1": 0, "y1": 0, "z1": 0, "x2": 1, "y2": 0.125, "z2": 1 } 
+			} 
+		}
+	],
 	"attributes": {
 		"foodTags": [ "meat" ],
 		"inFirePitProps": {

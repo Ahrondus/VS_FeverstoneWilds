@@ -28,6 +28,10 @@ namespace FeverstoneWilds.Config
         public bool FSWScorpionEnabled = true;
         public bool FSWToadEnabled = true;
 
+        // Complex Creatures
+        public string complexheader = "----- Complex Creatures -----";
+        public bool FSWGriffonEnabled = true;
+
         // Water Creatures
         public string waterheader = "----- Water Creatures -----";
         public bool FSWBuromenfishEnabled = true;
@@ -43,6 +47,10 @@ namespace FeverstoneWilds.Config
         public bool FSWCopperGolemEnabled = true;
         public bool FSWTinGolemEnabled = true;
         public bool FSWIronGolemEnabled = true;
+
+        // Faunling Sapling Behavior
+        public string faunlingsapling = "----- Faunling Sapling Behavior -----";
+        public bool FSWFaunlingSaplingEnabled = true;
 
         // Animal Cages Config
         public string animalcages = "----- Animal Cages Config -----";
@@ -96,7 +104,12 @@ namespace FeverstoneWilds.Config
 
         public int OSTRICH_SPAWN_CHANCE_RUNTIME { get { return _ostrich_spawn_runtime; } set { _ostrich_spawn_runtime = value >= 0 ? value : 0; } }
         private int _ostrich_spawn_runtime = 2;
-        
+
+        public int GRIFFON_SPAWN_CHANCE_WORLDGEN { get { return _griffon_spawn_worldgen; } set {_griffon_spawn_worldgen = value >= 0 ? value : 0;} }
+        private int _griffon_spawn_worldgen = 2;
+        public int GRIFFON_SPAWN_CHANCE_RUNTIME { get { return _griffon_spawn_runtime; } set { _griffon_spawn_runtime = value >= 0 ? value : 0; } }
+        private int _griffon_spawn_runtime = 2;
+
         public int BUROMENFISH_SPAWN_CHANCE_WORLDGEN { get { return _buromenfish_spawn_worldgen; } set {_buromenfish_spawn_worldgen = value >= 0 ? value : 0;} }
         private int _buromenfish_spawn_worldgen = 2;
         public int BUROMENFISH_SPAWN_CHANCE_RUNTIME { get { return _buromenfish_spawn_runtime; } set { _buromenfish_spawn_runtime = value >= 0 ? value : 0; } }
@@ -157,6 +170,9 @@ namespace FeverstoneWilds.Config
             FSWScorpionEnabled = previousConfig.FSWScorpionEnabled;
             FSWToadEnabled = previousConfig.FSWToadEnabled;
 
+            // Complex Creatures
+            FSWGriffonEnabled = previousConfig.FSWGriffonEnabled;
+
             // Water Creatures
             FSWBuromenfishEnabled = previousConfig.FSWBuromenfishEnabled;
             FSWDiscusFishEnabled = previousConfig.FSWDiscusFishEnabled;
@@ -170,6 +186,9 @@ namespace FeverstoneWilds.Config
             FSWCopperGolemEnabled = previousConfig.FSWCopperGolemEnabled;
             FSWTinGolemEnabled = previousConfig.FSWTinGolemEnabled;
             FSWIronGolemEnabled = previousConfig.FSWIronGolemEnabled;
+
+            // Faunling Sapling Behavior
+            FSWFaunlingSaplingEnabled = previousConfig.FSWFaunlingSaplingEnabled;
 
             // AnimalCages Config
             AllowCagedFSWCreatures = previousConfig.AllowCagedFSWCreatures;
@@ -193,6 +212,9 @@ namespace FeverstoneWilds.Config
             HORSE_SPAWN_CHANCE_RUNTIME = previousConfig.HORSE_SPAWN_CHANCE_RUNTIME;
             OSTRICH_SPAWN_CHANCE_WORLDGEN = previousConfig.OSTRICH_SPAWN_CHANCE_WORLDGEN;
             OSTRICH_SPAWN_CHANCE_RUNTIME = previousConfig.OSTRICH_SPAWN_CHANCE_RUNTIME;
+
+            GRIFFON_SPAWN_CHANCE_WORLDGEN = previousConfig.GRIFFON_SPAWN_CHANCE_WORLDGEN;
+            GRIFFON_SPAWN_CHANCE_RUNTIME = previousConfig.GRIFFON_SPAWN_CHANCE_RUNTIME;
             
             BUROMENFISH_SPAWN_CHANCE_WORLDGEN = previousConfig.BUROMENFISH_SPAWN_CHANCE_WORLDGEN;
             BUROMENFISH_SPAWN_CHANCE_RUNTIME = previousConfig.BUROMENFISH_SPAWN_CHANCE_RUNTIME;
