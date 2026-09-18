@@ -30,14 +30,14 @@
         "floatupwhenstuck": { "onlyWhenDead": true },
         "rideableaccessories": {
             "wearableSlots": [
-                { "code": "head", "forCategoryCodes": ["bridle-ostrich"], "attachmentPointCode": "HeadAP" },
-				{ "code": "fswostrich-neck", "forCategoryCodes": ["lantern", "sidebags-ostrich"], "attachmentPointCode": "NeckAP" },
-                { "code": "middlebackupper", "forCategoryCodes": ["saddle-ostrich"], "attachmentPointCode": "MidUpperAP" },
-                { "code": "lowerback", "forCategoryCodes": ["bedroll"], "attachmentPointCode": "RearUpperAP" }
+                { "code": "head-ostrich", "forCategoryCodes": ["bridle"], "attachmentPointCode": "HeadAP" },
+				{ "code": "neck-ostrich", "forCategoryCodes": ["lantern", "sidebags"], "attachmentPointCode": "NeckAP" },
+                { "code": "middleback-ostrich", "forCategoryCodes": ["saddle"], "attachmentPointCode": "MidAP" },
+                { "code": "lowerback", "forCategoryCodes": ["bedroll"], "attachmentPointCode": "RearAP" }
             ]
         },
         "selectionboxes": {
-            "selectionBoxes": [ "HeadAP", "NeckAP", "MidUpperAP", "RearUpperAP" ]
+            "selectionBoxes": [ "HeadAP", "NeckAP", "MidAP", "RearAP" ]
         },
         "gait": {
 			"idleGaits": { "Land": "idle", "Sea": "swimidle" },
@@ -132,7 +132,7 @@
         "rideable": {
             "interactMountAnySeat": false,
             "seats": [
-                { "apName": "Rider", "selectionBox": "MidUpperAP", "bodyYawLimit": 0.2, "controllable": true,
+                { "apName": "Rider", "selectionBox": "MidAP", "bodyYawLimit": 0.2, "controllable": true,
                     "mountOffset": { "x": -0.20, "y": -0.45, "z": 0 }
                 }
             ],

@@ -53,12 +53,12 @@
         "floatupwhenstuck": { "onlyWhenDead": true },
         "rideableaccessories": {
             "wearableSlots": [
-                    { "code": "head", "forCategoryCodes": ["bridle-bison-{gender}"], "attachmentPointCode": "HeadAP" }, 
+                    { "code": "head-bison-{gender}", "forCategoryCodes": ["bridle"], "attachmentPointCode": "HeadAP" }, 
                     { "code": "face", "forCategoryCodes": ["face"], "attachmentPointCode": "FaceAP" }, 
 					{ "code": "bison-neck-{gender}", "forCategoryCodes": ["lantern"], "attachmentPointCode": "NeckAP" },
-                    { "code": "middlebackupper", "forCategoryCodes": ["saddle-bison"], "attachmentPointCode": "MidUpperAP" },
-                    { "code": "lowerback", "forCategoryCodes": ["bedroll", "pillion"], "attachmentPointCode": "RearUpperAP" },
-                    { "code": "lowerbackside", "forCategoryCodes": ["sidebags-bison"], "attachmentPointCode": "RearSideAP" },
+                    { "code": "middleback-bison", "forCategoryCodes": ["saddle"], "attachmentPointCode": "MidAP" },
+                    { "code": "lowerback", "forCategoryCodes": ["bedroll", "pillion"], "attachmentPointCode": "RearAP" },
+                    { "code": "lowerbackside-bison", "forCategoryCodes": ["sidebags"], "attachmentPointCode": "RearSideAP" },
                     {
                         "code": "frontrightside",
                         "forCategoryCodes": ["utilities", "pot", "weaponfalx", "weapon1m", "bowshort", "bowlong" ],
@@ -75,7 +75,7 @@
                 ]
         },
         "selectionboxes": {
-                "selectionBoxes": ["HeadAP", "FaceAP", "NeckAP", "MidUpperAP", "RearUpperAP",
+                "selectionBoxes": ["HeadAP", "FaceAP", "NeckAP", "MidAP", "RearAP",
                                     "RearSideAP", "RFrontAP", "LFrontAP", "TempGear1AP", "TempGear2AP", "TempGear3AP"]
         },
         "gait": {
@@ -193,7 +193,7 @@
         "rideable": {
             "interactMountAnySeat": false,
             "seats": [
-                { "apName": "Rider", "selectionBox": "MidUpperAP", "bodyYawLimit": 0.2, "controllable": true,
+                { "apName": "Rider", "selectionBox": "MidAP", "bodyYawLimit": 0.2, "controllable": true,
                     "mountOffsetByType": {
                         "*-female": { "x": -0.25, "y": -0.15, "z": -0.05 },
                         "*-male": { "x": -0.25, "y": -0.1, "z": -0.05 }

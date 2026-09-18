@@ -1,0 +1,15 @@
+[
+    {
+        "op": "add",
+        "file": "feverstonewilds:entities/land/hellboar.json",
+        "path": "/attributes/creatureDiet/weightedFoodTags/-",
+        "value": [
+            {
+                "weight": "0.95",
+                "code": "pigfeed"
+            }
+        ],
+        "dependsOn": [ { "modid": "pigfeed" } ],
+        "condition": { "when": "FSWHellboarEnabled", "isValue": "true" }
+    }
+]

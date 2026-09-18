@@ -43,12 +43,12 @@
         "floatupwhenstuck": { "onlyWhenDead": true },
         "rideableaccessories": {
             "wearableSlots": [
-                { "code": "head", "forCategoryCodes": ["bridle-direwolf", "helmet-direwolf"], "attachmentPointCode": "HeadAP" },
+                { "code": "head-direwolf", "forCategoryCodes": ["bridle", "helmet"], "attachmentPointCode": "HeadAP" },
                 { "code": "face", "forCategoryCodes": ["face"], "attachmentPointCode": "FaceAP" },
-				{ "code": "fswdirewolf-neck", "forCategoryCodes": ["lantern"], "attachmentPointCode": "NeckAP" },
-                { "code": "middlebackupper", "forCategoryCodes": ["saddle-direwolf"], "attachmentPointCode": "MidUpperAP" },
-                { "code": "lowerback", "forCategoryCodes": ["bedroll"], "attachmentPointCode": "RearUpperAP" },
-                { "code": "lowerbackside", "forCategoryCodes": ["sidebags-direwolf"], "attachmentPointCode": "RearSideAP" },
+				{ "code": "neck-direwolf", "forCategoryCodes": ["lantern"], "attachmentPointCode": "NeckAP" },
+                { "code": "middleback-direwolf", "forCategoryCodes": ["saddle"], "attachmentPointCode": "MidAP" },
+                { "code": "lowerback", "forCategoryCodes": ["bedroll"], "attachmentPointCode": "RearAP" },
+                { "code": "lowerbackside-direwolf", "forCategoryCodes": ["sidebags"], "attachmentPointCode": "RearSideAP" },
                 {
                     "code": "frontrightside",
                     "forCategoryCodes": ["utilities", "pot", "weaponfalx", "weapon1m", "bowshort", "bowlong" ],
@@ -62,7 +62,7 @@
             ]
         },
         "selectionboxes": {
-            "selectionBoxes": ["HeadAP", "FaceAP", "NeckAP", "MidUpperAP", "RearUpperAP", "RearSideAP", "RFrontAP", "LFrontAP"]
+            "selectionBoxes": ["HeadAP", "FaceAP", "NeckAP", "MidAP", "RearAP", "RearSideAP", "RFrontAP", "LFrontAP"]
         },
         "gait": {
 			"idleGaits": { "Land": "idle", "Sea": "swimidle" },
@@ -175,7 +175,7 @@
         "rideable": {
             "interactMountAnySeat": false,
             "seats": [
-                { "apName": "Rider", "selectionBox": "MidUpperAP", "bodyYawLimit": 0.2, "controllable": true,
+                { "apName": "Rider", "selectionBox": "MidAP", "bodyYawLimit": 0.2, "controllable": true,
                     "mountOffsetByType": {
                         "*-female":{ "x": -0.05, "y": -0.52, "z": 0 },
                         "*-male": { "x": -0.05, "y": -0.5, "z": 0 }
