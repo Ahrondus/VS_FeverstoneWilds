@@ -5,7 +5,7 @@
 			"states": [ "percheron", "arabian", "donkey", "shire", "quarter", "bison", "direwolf", "ostrich" ]
 		},
 		{ "code": "category",
-			"states": [ "head", "middlebackupper", "lowerbackside" ]
+			"states": [ "head", "middleback", "lowerbackside" ]
 		},
 		{ "code": "type",
 			"states": [ "saddle", "bridle", "saddlebags" ]
@@ -17,31 +17,34 @@
 	"allowedVariants": [
 		"fsmountwearables-percheron-head-bridle-both", "fsmountwearables-arabian-head-bridle-both", "fsmountwearables-donkey-head-bridle-both", "fsmountwearables-shire-head-bridle-both",
 		"fsmountwearables-bison-head-bridle-male", "fsmountwearables-bison-head-bridle-female", "fsmountwearables-quarter-head-bridle-both", "fsmountwearables-direwolf-head-bridle-both", "fsmountwearables-ostrich-head-bridle-both",
-		"fsmountwearables-percheron-middlebackupper-saddle-both", "fsmountwearables-arabian-middlebackupper-saddle-both", "fsmountwearables-donkey-middlebackupper-saddle-both", "fsmountwearables-shire-middlebackupper-saddle-both",
-		"fsmountwearables-quarter-middlebackupper-saddle-both","fsmountwearables-bison-middlebackupper-saddle-both", "fsmountwearables-direwolf-middlebackupper-saddle-both", "fsmountwearables-ostrich-middlebackupper-saddle-both",
+		"fsmountwearables-percheron-middleback-saddle-both", "fsmountwearables-arabian-middleback-saddle-both", "fsmountwearables-donkey-middleback-saddle-both", "fsmountwearables-shire-middleback-saddle-both",
+		"fsmountwearables-quarter-middleback-saddle-both","fsmountwearables-bison-middleback-saddle-both", "fsmountwearables-direwolf-middleback-saddle-both", "fsmountwearables-ostrich-middleback-saddle-both",
 		"fsmountwearables-percheron-lowerbackside-saddlebags-both", "fsmountwearables-arabian-lowerbackside-saddlebags-both", "fsmountwearables-donkey-lowerbackside-saddlebags-both", "fsmountwearables-shire-lowerbackside-saddlebags-both",
 		"fsmountwearables-quarter-lowerbackside-saddlebags-both", "fsmountwearables-bison-lowerbackside-saddlebags-both", "fsmountwearables-direwolf-lowerbackside-saddlebags-both", "fsmountwearables-ostrich-lowerbackside-saddlebags-both"
 	],
 	"skipVariants": ["fsmountwearables-percheron-head-bridle-both", "fsmountwearables-arabian-head-bridle-both",
-					 "fsmountwearables-percheron-middlebackupper-saddle-both", "fsmountwearables-arabian-middlebackupper-saddle-both",
+					 "fsmountwearables-percheron-middleback-saddle-both", "fsmountwearables-arabian-middleback-saddle-both",
 					 "fsmountwearables-percheron-lowerbackside-saddlebags-both", "fsmountwearables-arabian-lowerbackside-saddlebags-both"],
 	"attributes": {
 		"attachableToEntity": {
 			"categoryCodeByType": {
-				"*-bison-head-bridle-male": "bridle-bison-male",				
-				"*-bison-head-bridle-female": "bridle-bison-female",
-
-				"*-head-bridle-both": "bridle-{breed}",
-				"*-middlebackupper-saddle-both": "saddle-{breed}",
-				"*-lowerbackside-saddlebags-both": "sidebags-{breed}"
+				"*-head-bridle-*": "bridle",
+				"*-middleback-saddle-*": "saddle",
+				"*-lowerbackside-saddlebags-*": "sidebags"
 			},
-			"attachedShapeByType": {				
-				"*-bison-head-bridle-male": { "base": "item/wearable/head/bridle-bison-male" },				
-				"*-bison-head-bridle-female": { "base": "item/wearable/head/bridle-bison-female" },
-
-				"*-head-bridle-both": { "base": "item/wearable/head/bridle-{breed}" },
-				"*-middlebackupper-saddle-both": { "base": "item/wearable/back/saddle-{breed}" },
-				"*-lowerbackside-saddlebags-both": { "base": "item/wearable/rear/saddlebags-{breed}" }
+			"attachedShapeBySlotCodeByType": {	
+				"head-bison-*": {
+					"*-bison-head-bridle-*": { "base": "item/wearable/head/bridle-bison-{gender}" }
+				},
+				"head-{breed}": {
+					"*-head-bridle-both": { "base": "item/wearable/head/bridle-{breed}" }
+				},
+				"middleback-{breed}": {
+					"*-middleback-saddle-both": { "base": "item/wearable/back/saddle-{breed}" }
+				},
+				"lowerbackside-{breed}": {
+					"*-lowerbackside-saddlebags-both": { "base": "item/wearable/rear/saddlebags-{breed}" }
+				}			
 			}
 		},
 		"controlSchemeByType": {
@@ -49,7 +52,7 @@
 			"*-bison-*-bridle-*": "Hold"
 		},
 		"isSaddleByType": {
-			"*-middlebackupper-saddle-both": true
+			"*-middleback-saddle-both": true
 		},
 		"isBridleByType": {
 			"*-head-bridle-both": true,	
