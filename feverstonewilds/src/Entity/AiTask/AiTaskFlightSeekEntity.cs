@@ -29,7 +29,7 @@ public class AiTaskFlightSeekEntity : AiTaskBaseTargetable
     public override bool ShouldExecute()
     {
         if (!PreconditionsSatisfied()) return false;
-        if (flight == null || !flight.IsFlying || flight.IsLanding || flight.IsAttacking || !entity.Alive) return false;
+        if (flight == null || !flight.IsFlying || flight.IsLanding || flight.IsAttacking || flight.IsPlayerControlledFlight || !entity.Alive) return false;
 
         targetEntity = entity.World.GetNearestEntity(entity.Pos.XYZ, seekingRange, seekingRange, candidate =>
             IsTargetableEntity(candidate, seekingRange)
@@ -47,7 +47,7 @@ public class AiTaskFlightSeekEntity : AiTaskBaseTargetable
 
     public override bool ContinueExecute(float dt)
     {
-        if (!flight.IsFlying || flight.IsLanding || flight.IsAttacking || targetEntity == null || !targetEntity.Alive || !entity.Alive) return false;
+        if (!flight.IsFlying || flight.IsLanding || flight.IsAttacking || flight.IsPlayerControlledFlight || targetEntity == null || !targetEntity.Alive || !entity.Alive) return false;
 
         UpdateFlightTarget();
         return true;

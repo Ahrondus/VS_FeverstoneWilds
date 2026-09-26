@@ -1,16 +1,16 @@
 using System;
+using System.Collections.Generic;
 using Vintagestory.API.Common;
 using Vintagestory.API.Common.Entities;
 using Vintagestory.API.Datastructures;
 using Vintagestory.API.MathTools;
+using Vintagestory.API.Util;
 
 namespace FeverstoneWilds.Flight.Behavior;
 
-/// <summary>
-/// Supplies opt-in, creative-style aerial movement for FlyingEntityAgent.
-/// Creature JSON controls speed and steering, so drag can be introduced later
-/// without replacing the behavior or Vintage Story's collision physics.
-/// </summary>
+// Creative-style aerial movement for FlyingEntityAgent.
+// Configurable via JSON
+// Keeps Vintage Story's collision physics.
 public class BehaviorFlight : EntityBehavior
 {
     private enum EnumLandingSearchResult
@@ -48,11 +48,27 @@ public class BehaviorFlight : EntityBehavior
     private float landingAnimationStartHeight;
     private int landingScanDepth;
     private float failedLandingDescent;
+    private bool playerFlightEnabled;
+    private float playerFlightSpeed;
+    private float playerFlightSprintSpeed;
+    private float playerFlightVerticalSpeed;
+    private float playerFlightTakeoffSpeed;
+    private float playerFlightSteering;
+    private string playerFlightAnimation;
+    private string playerFlightSprintAnimation;
+    private string playerFlightIdleAnimation;
     private long nextStateChangeMs;
     private Vec3d targetPosition;
     private bool hasTarget;
     private bool isLanding;
     private bool isAttacking;
+    private bool isPlayerControlledFlight;
+    private bool clientPlayerFlightActive;
+    private bool playerFlightAscending;
+    private bool playerFlightDescending;
+    private bool playerFlightSprinting;
+    private long playerFlightInputUntilMs;
+    private string mountedFlightAnimation;
     private bool landingAnimationStarted;
     private string clientAnimationSource;
     private string clientAnimation;
@@ -61,6 +77,7 @@ public class BehaviorFlight : EntityBehavior
     private float clientAnimationEaseInSpeed;
     private float clientAnimationEaseOutSpeed;
     private bool clientAnimationSuppressDefault;
+    private string clientFlightTurnAnimation;
 
     public BehaviorFlight(Entity entity) : base(entity) { }
 
@@ -69,6 +86,38 @@ public class BehaviorFlight : EntityBehavior
     public bool IsLanding => isLanding;
 
     public bool IsAttacking => isAttacking;
+
+    public bool IsPlayerControlledFlight => isPlayerControlledFlight;
+
+    public bool PlayerFlightEnabled => playerFlightEnabled;
+
+    public bool CanPlayerDismount(float maximumHeightAboveGround)
+    {
+        if (TryFindLandingPosition(out Vec3d landingPosition) != EnumLandingSearchResult.Found) return false;
+
+        // landingPosition includes landingHeight so autonomous landing can hover just
+        // above the surface. Dismount safety needs the actual solid surface instead.
+        double groundSurfaceY = landingPosition.Y - landingHeight;
+        double heightAboveGround = entity.Pos.Y - groundSurfaceY;
+        return heightAboveGround >= 0 && heightAboveGround <= maximumHeightAboveGround;
+    }
+
+    public void EndPlayerFlightForDismount(float maximumHeightAboveGround)
+    {
+        if (entity.World.Side != EnumAppSide.Server || !CanPlayerDismount(maximumHeightAboveGround)) return;
+
+        SetFlying(false);
+
+        if (entity.GetInterface<IMountable>()?.Controller is EntityAgent controller)
+        {
+            controller.TryUnmount();
+        }
+    }
+
+    public void RequestPlayerDismount()
+    {
+        EndPlayerFlightForDismount(2f);
+    }
 
     public override string PropertyName() => "flight";
 
@@ -95,6 +144,52 @@ public class BehaviorFlight : EntityBehavior
         landingAnimationStartHeight = attributes["landingAnimationStartHeight"].AsFloat(6f);
         landingScanDepth = attributes["landingScanDepth"].AsInt(120);
         failedLandingDescent = attributes["failedLandingDescent"].AsFloat(8f);
+        playerFlightEnabled = GetPlayerFlightEnabled(attributes);
+        playerFlightSpeed = attributes["playerFlightSpeed"].AsFloat(flightSpeed);
+        playerFlightSprintSpeed = attributes["playerFlightSprintSpeed"].AsFloat(playerFlightSpeed);
+        playerFlightVerticalSpeed = attributes["playerFlightVerticalSpeed"].AsFloat(verticalSpeed);
+        playerFlightTakeoffSpeed = attributes["playerFlightTakeoffSpeed"].AsFloat(takeoffSpeed);
+        playerFlightSteering = attributes["playerFlightSteering"].AsFloat(steering);
+        playerFlightAnimation = attributes["playerFlightAnimation"].AsString("fly");
+        playerFlightSprintAnimation = attributes["playerFlightSprintAnimation"].AsString("speedfly");
+        playerFlightIdleAnimation = attributes["playerFlightIdleAnimation"].AsString("flyidle");
+
+        entity.AfterPhysicsTick += ClearOnGroundWhileFlying;
+    }
+
+    public override void OnEntityDespawn(EntityDespawnData despawn)
+    {
+        entity.AfterPhysicsTick -= ClearOnGroundWhileFlying;
+        base.OnEntityDespawn(despawn);
+    }
+
+    private void ClearOnGroundWhileFlying()
+    {
+        if (!IsFlying || !entity.OnGround) return;
+
+        entity.OnGround = false;
+        entity.MarkTagsDirty();
+    }
+
+    private bool GetPlayerFlightEnabled(JsonObject attributes)
+    {
+        bool enabled = attributes["playerFlightEnabled"].AsBool(false);
+        Dictionary<string, bool> enabledByType = attributes["playerFlightEnabledByType"].AsObject<Dictionary<string, bool>>(null);
+        if (enabledByType == null) return enabled;
+
+        int bestMatchSpecificity = -1;
+        foreach (KeyValuePair<string, bool> entry in enabledByType)
+        {
+            if (!WildcardUtil.Match(entry.Key, entity.Code.Path)) continue;
+
+            int specificity = entry.Key.Replace("*", string.Empty).Length;
+            if (specificity <= bestMatchSpecificity) continue;
+
+            bestMatchSpecificity = specificity;
+            enabled = entry.Value;
+        }
+
+        return enabled;
     }
 
     public void SetFlying(bool value)
@@ -107,8 +202,55 @@ public class BehaviorFlight : EntityBehavior
             hasTarget = false;
             isLanding = false;
             landingAnimationStarted = false;
+            playerFlightAscending = false;
+            playerFlightDescending = false;
+            playerFlightSprinting = false;
             ClearFlightAnimation();
         }
+    }
+
+    public void SetPlayerFlightInput(EnumFlightInputAction action, bool active)
+    {
+        if (action == EnumFlightInputAction.Ascend)
+        {
+            playerFlightAscending = active;
+            if (active) playerFlightDescending = false;
+        }
+        else if (action == EnumFlightInputAction.Descend)
+        {
+            playerFlightDescending = active;
+            if (active) playerFlightAscending = false;
+        }
+        else if (action == EnumFlightInputAction.Sprint)
+        {
+            playerFlightSprinting = active;
+            return;
+        }
+        else if (action == EnumFlightInputAction.RequestDismount)
+        {
+            if (active) RequestPlayerDismount();
+            return;
+        }
+
+        if (active)
+        {
+            playerFlightInputUntilMs = entity.World.ElapsedMilliseconds + 150;
+        }
+
+        if (entity.World.Side == EnumAppSide.Client && action == EnumFlightInputAction.Ascend && active)
+        {
+            clientPlayerFlightActive = true;
+        }
+
+    }
+
+    private void UpdatePlayerFlightInputTimeout()
+    {
+        if (playerFlightInputUntilMs == 0 || entity.World.ElapsedMilliseconds < playerFlightInputUntilMs) return;
+
+        playerFlightInputUntilMs = 0;
+        playerFlightAscending = false;
+        playerFlightDescending = false;
     }
 
     public void SetFlightAnimation(string source, string animation, float animationSpeed, float animationWeight = 10f, bool suppressDefaultAnimation = false, float easeInSpeed = 6f, float easeOutSpeed = 6f)
@@ -172,9 +314,16 @@ public class BehaviorFlight : EntityBehavior
     {
         if (entity.World.Side == EnumAppSide.Client)
         {
+            UpdatePlayerFlightInputTimeout();
+            UpdateClientPlayerControlledFlight();
+            SuppressClientGaitAnimation();
             UpdateClientFlightAnimation();
             return;
         }
+
+        UpdatePlayerFlightInputTimeout();
+
+        if (TryUpdatePlayerControlledFlight()) return;
 
         UpdateAutomaticFlightState();
 
@@ -210,6 +359,159 @@ public class BehaviorFlight : EntityBehavior
         entity.Pos.Motion.Y += (delta.Y * currentVerticalSpeed - entity.Pos.Motion.Y) * steering;
     }
 
+    private bool TryUpdatePlayerControlledFlight()
+    {
+        if (!playerFlightEnabled || entity.GetInterface<IMountable>() is not IMountable mountable || !mountable.IsBeingControlled())
+        {
+            if (isPlayerControlledFlight)
+            {
+                isPlayerControlledFlight = false;
+                mountedFlightAnimation = null;
+                ClearFlightAnimation("mountedflight");
+                playerFlightAscending = false;
+                playerFlightDescending = false;
+                playerFlightSprinting = false;
+
+                if (IsFlying && entity.Alive)
+                {
+                    BeginLanding();
+                }
+            }
+
+            return false;
+        }
+
+        isPlayerControlledFlight = true;
+
+        UpdatePlayerControlledFlight(mountable.ControllingControls);
+        return true;
+    }
+
+    private void UpdatePlayerControlledFlight(EntityControls controls)
+    {
+        if (controls == null) return;
+
+        bool jumping = playerFlightAscending;
+        bool sneaking = playerFlightDescending;
+        bool sprinting = playerFlightSprinting || controls.Sprint;
+
+        if (!IsFlying)
+        {
+            mountedFlightAnimation = null;
+            ClearFlightAnimation("mountedflight");
+            if (!jumping) return;
+
+            isLanding = false;
+            hasTarget = false;
+            landingAnimationStarted = false;
+            nextStateChangeMs = 0;
+            SetFlying(true);
+            entity.Pos.Motion.Y = Math.Max(entity.Pos.Motion.Y, playerFlightTakeoffSpeed);
+        }
+
+        isLanding = false;
+        hasTarget = false;
+
+        float forwardMovement = controls.Forward ? 1 : controls.Backward ? -1 : 0;
+        float horizontalSpeed = sprinting ? playerFlightSprintSpeed : playerFlightSpeed;
+        float desiredX = (float)Math.Sin(entity.Pos.Yaw) * horizontalSpeed * forwardMovement;
+        float desiredZ = (float)Math.Cos(entity.Pos.Yaw) * horizontalSpeed * forwardMovement;
+        float desiredY = jumping ? playerFlightVerticalSpeed : sneaking ? -playerFlightVerticalSpeed : 0;
+
+        entity.Pos.Motion.X += (desiredX - entity.Pos.Motion.X) * playerFlightSteering;
+        entity.Pos.Motion.Z += (desiredZ - entity.Pos.Motion.Z) * playerFlightSteering;
+        entity.Pos.Motion.Y = desiredY;
+
+        string animation = forwardMovement == 0 ? playerFlightIdleAnimation : sprinting ? playerFlightSprintAnimation : playerFlightAnimation;
+        if (animation == mountedFlightAnimation) return;
+
+        mountedFlightAnimation = animation;
+        SetFlightAnimation("mountedflight", animation, 1f, 10f, true);
+    }
+
+    private void UpdateClientPlayerControlledFlight()
+    {
+        if (!playerFlightEnabled || entity.GetInterface<IMountable>() is not IMountable mountable || !mountable.IsBeingControlled())
+        {
+            clientPlayerFlightActive = false;
+            StopClientFlightTurnAnimation();
+            return;
+        }
+
+        if (!clientPlayerFlightActive)
+        {
+            clientPlayerFlightActive = IsFlying;
+            StopClientFlightTurnAnimation();
+        }
+
+        if (!IsFlying && !playerFlightAscending)
+        {
+            clientPlayerFlightActive = false;
+            StopClientFlightTurnAnimation();
+            return;
+        }
+
+        if (!clientPlayerFlightActive)
+        {
+            StopClientFlightTurnAnimation();
+            return;
+        }
+
+        EntityControls controls = mountable.ControllingControls;
+        UpdateClientFlightTurnAnimation(controls);
+
+        float desiredY = playerFlightAscending ? playerFlightVerticalSpeed : playerFlightDescending ? -playerFlightVerticalSpeed : 0;
+        entity.Pos.Motion.Y = desiredY;
+    }
+
+    private void UpdateClientFlightTurnAnimation(EntityControls controls)
+    {
+        if (controls == null || entity is not EntityAgent agent)
+        {
+            StopClientFlightTurnAnimation();
+            return;
+        }
+
+        bool turningLeft = controls.Left && !controls.Right;
+        bool turningRight = controls.Right && !controls.Left;
+        string animation = null;
+        if (turningLeft || turningRight)
+        {
+            bool moving = controls.Forward || controls.Backward;
+            animation = moving ? (turningLeft ? "turn-left" : "turn-right") : (turningLeft ? "idle-turn-left" : "idle-turn-right");
+        }
+
+        if (animation == clientFlightTurnAnimation) return;
+
+        if (!string.IsNullOrEmpty(clientFlightTurnAnimation))
+        {
+            agent.StopAnimation(clientFlightTurnAnimation);
+        }
+
+        if (!string.IsNullOrEmpty(animation)) agent.StartAnimation(animation);
+        clientFlightTurnAnimation = animation;
+    }
+
+    private void StopClientFlightTurnAnimation()
+    {
+        if (string.IsNullOrEmpty(clientFlightTurnAnimation) || entity is not EntityAgent agent) return;
+
+        agent.StopAnimation(clientFlightTurnAnimation);
+        clientFlightTurnAnimation = null;
+    }
+
+    private void SuppressClientGaitAnimation()
+    {
+        if (!clientPlayerFlightActive || entity is not EntityAgent agent) return;
+
+        agent.AnimManager?.StopAnimation("gait");
+        agent.AnimManager?.StopAnimation("idle");
+        agent.AnimManager?.StopAnimation("walk");
+        agent.AnimManager?.StopAnimation("walkback");
+        agent.AnimManager?.StopAnimation("sprint");
+        agent.AnimManager?.StopAnimation("run");
+    }
+
     private void UpdateFlightFacing(Vec3d direction)
     {
         entity.Pos.Pitch = 0;
@@ -231,6 +533,9 @@ public class BehaviorFlight : EntityBehavior
         }
 
         if (isLanding) return;
+
+        // A tamed mount remains grounded when nobody is controlling it.
+        if (playerFlightEnabled && entity.GetInterface<IMountable>() != null) return;
 
         long now = entity.World.ElapsedMilliseconds;
 

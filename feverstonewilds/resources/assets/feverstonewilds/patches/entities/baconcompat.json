@@ -1,0 +1,22 @@
+[
+    {
+        "op": "addmerge",
+        "file": "feverstonewilds:entities/land/hellboar.json",
+        "path": "/server/bahaviors/4/drops/-",
+        "value":  {
+            "type": "item",
+            "code": "baconbaconbacon:bacon-raw",
+            "quantity": { "avg": 2.5, "var": 1.5 }
+        },
+        "dependsOn": [ { "modid": "baconbaconbacon" } ],
+        "condition": { "when": "FSWHellboarEnabled", "isValue": "true" }
+    },
+    {
+        "op": "add",
+        "file": "feverstonewilds:entities/land/hellboar.json",
+        "path": "/server/bahaviors/4/-",
+        "value": { "quantitySlots" : 6 },
+        "dependsOn": [ { "modid": "baconbaconbacon" } ],
+        "condition": { "when": "FSWHellboarEnabled", "isValue": "true" }
+    }
+]

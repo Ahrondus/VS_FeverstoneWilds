@@ -1,6 +1,7 @@
 {
   "editor": {
     "editorVersion": "VSMC2v0.5.0",
+    "allAngles": true,
     "backdrops": [],
     "attachments": []
   },
@@ -52,10 +53,11 @@
           "rotationZ": -10.0,
           "attachmentPoints": [
             {
-              "code": "Center",
-              "posX": 11.0,
-              "posY": 4.0,
-              "posZ": 5.0
+              "code": "center",
+              "posX": 17.0,
+              "posY": 2.0,
+              "posZ": 6.0,
+              "rotationZ": 10.0
             }
           ],
           "uv":[0.0,0.0],
@@ -74,12 +76,20 @@
               },
               "rotationOrigin":[12.2412,3.7618,4.8965],
               "rotationZ": 3.0,
+              "attachmentPoints": [
+                {
+                  "code": "Rider",
+                  "posX": 5.0,
+                  "posY": 8.6999998092651367,
+                  "posZ": 5.5
+                }
+              ],
               "uv":[0.0,0.0],
               "children": [
                 {
-                  "name": "StorageAP",
-                  "from":[10.4519,2.6518,12.6362],
-                  "to":[18.8519,11.0518,27.0362],
+                  "name": "MidStorage",
+                  "from":[1.4520000219345093,7.6519999504089355,-1.7000000476837158],
+                  "to":[11.851999640464783,14.052000045776367,12.699999952316283],
                   "faces": {
                     "north":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false, "autoUv": false, "snapUV": false},
                     "east":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false, "autoUv": false, "snapUV": false},
@@ -88,12 +98,31 @@
                     "up":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false, "autoUv": false, "snapUV": false},
                     "down":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false, "autoUv": false, "snapUV": false}
                   },
-                  "rotationOrigin":[10.4521,2.6519,12.6362],
-                  "rotationX": 180.0,
-                  "rotationZ": 178.0,
+                  "rotationOrigin":[1.4522000219345088,7.6520999504089353,-1.7000000476837158],
                   "attachmentPoints": [
                     {
-                      "code": "StorageAP"
+                      "code": "MidAP"
+                    }
+                  ],
+                  "uv":[0.0,0.0]
+                },
+                {
+                  "name": "MidLowerStorage",
+                  "from":[2.4520008563995361,2.1520004272460938,-1.7000000476837158],
+                  "to":[11.85200047492981,8.5520005226135254,12.699999952316283],
+                  "faces": {
+                    "north":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false, "autoUv": false, "snapUV": false},
+                    "east":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false, "autoUv": false, "snapUV": false},
+                    "south":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false, "autoUv": false, "snapUV": false},
+                    "west":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false, "autoUv": false, "snapUV": false},
+                    "up":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false, "autoUv": false, "snapUV": false},
+                    "down":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false, "autoUv": false, "snapUV": false}
+                  },
+                  "rotationOrigin":[2.4522006511688232,2.1521000862121582,-1.7000000476837158],
+                  "rotationZ": 1.4431363126732322E-07,
+                  "attachmentPoints": [
+                    {
+                      "code": "MidLowerAP"
                     }
                   ],
                   "uv":[0.0,0.0]
@@ -837,6 +866,28 @@
                               ]
                             }
                           ]
+                        },
+                        {
+                          "name": "RearSideStorage",
+                          "from":[0.30000001192092896,0.93599998950958252,-1.8999999761581421],
+                          "to":[8.300000011920929,7.9359999895095825,12.600000023841858],
+                          "faces": {
+                            "north":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false, "autoUv": false, "snapUV": false},
+                            "east":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false, "autoUv": false, "snapUV": false},
+                            "south":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false, "autoUv": false, "snapUV": false},
+                            "west":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false, "autoUv": false, "snapUV": false},
+                            "up":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false, "autoUv": false, "snapUV": false},
+                            "down":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false, "autoUv": false, "snapUV": false}
+                          },
+                          "rotationOrigin":[0.30249863862991333,0.93600142002105713,-1.8999999761581421],
+                          "rotationZ": 12.000002861022949,
+                          "attachmentPoints": [
+                            {
+                              "code": "RearSideAP"
+                            }
+                          ],
+                          "uv":[0.0,0.0],
+                          "children": []
                         }
                       ]
                     },
@@ -857,23 +908,28 @@
                       "uv":[0.0,0.0]
                     },
                     {
-                      "name": "BedrollParent",
-                      "from":[7.89,7.0,4.5],
-                      "to":[8.89,8.0,5.5],
+                      "name": "RearUpperStorage",
+                      "from":[7.8899998664855957,7.0,-0.5],
+                      "to":[15.889999866485596,12.0,11.0],
                       "faces": {
-                        "north":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false},
-                        "east":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false},
-                        "south":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false},
-                        "west":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false},
-                        "up":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false},
-                        "down":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false}
+                        "north":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false, "autoUv": false, "snapUV": false},
+                        "east":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false, "autoUv": false, "snapUV": false},
+                        "south":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false, "autoUv": false, "snapUV": false},
+                        "west":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false, "autoUv": false, "snapUV": false},
+                        "up":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false, "autoUv": false, "snapUV": false},
+                        "down":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false, "autoUv": false, "snapUV": false}
                       },
-                      "rotationOrigin":[7.8925,7.0,4.5],
-                      "rotationZ": -4.0,
+                      "rotationOrigin":[7.8924998664855961,7.0,-0.5],
+                      "rotationZ": -21.0,
+                      "attachmentPoints": [
+                        {
+                          "code": "RearAP"
+                        }
+                      ],
                       "uv":[0.0,0.0],
                       "children": [
                         {
-                          "name": "BedrollAP",
+                          "name": "BedrollParent",
                           "from":[0.0,0.0,0.0],
                           "to":[5.4,5.4,12.0],
                           "faces": {
@@ -885,12 +941,8 @@
                             "down":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false, "autoUv": false, "snapUV": false}
                           },
                           "rotationOrigin":[0.0,0.0,0.0],
-                          "attachmentPoints": [
-                            {
-                              "code": "BedrollAP"
-                            }
-                          ],
-                          "stepParentName": "BedrollParent",
+                          "rotationZ": 5.0,
+                          "stepParentName": "RearUpperStorage",
                           "uv":[0.0,0.0]
                         }
                       ]
@@ -1050,7 +1102,7 @@
                   "uv":[0.0,0.0]
                 },
                 {
-                  "name": "LanternAP",
+                  "name": "NeckStorage",
                   "from":[0.0,0.0,-0.399],
                   "to":[6.84,7.98,5.681],
                   "faces": {
@@ -1064,7 +1116,7 @@
                   "rotationOrigin":[0.0,0.0,-0.399],
                   "attachmentPoints": [
                     {
-                      "code": "LanternAP"
+                      "code": "NeckAP"
                     }
                   ],
                   "uv":[0.0,0.0]
@@ -1085,27 +1137,6 @@
                   "rotationZ": 21.5,
                   "uv":[0.0,0.0],
                   "children": [
-                    {
-                      "name": "BridleAP",
-                      "from":[0.0,-0.57,-0.57],
-                      "to":[6.84,7.41,7.41],
-                      "faces": {
-                        "north":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false, "autoUv": false, "snapUV": false},
-                        "east":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false, "autoUv": false, "snapUV": false},
-                        "south":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false, "autoUv": false, "snapUV": false},
-                        "west":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false, "autoUv": false, "snapUV": false},
-                        "up":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false, "autoUv": false, "snapUV": false},
-                        "down":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false, "autoUv": false, "snapUV": false}
-                      },
-                      "rotationOrigin":[0.0,-0.57,-0.57],
-                      "attachmentPoints": [
-                        {
-                          "code": "BridleAP"
-                        }
-                      ],
-                      "stepParentName": "neck2",
-                      "uv":[0.0,0.0]
-                    },
                     {
                       "name": "neckAdd",
                       "from":[-0.45,3.55,-0.1695],
@@ -1146,6 +1177,27 @@
                       "rotationZ": 40.5,
                       "uv":[0.0,0.0],
                       "children": [
+                        {
+                          "name": "HeadStorage",
+                          "from":[-6.0000033378601074,-0.49999913573265076,-3.5000004768371582],
+                          "to":[1.9999966621398926,6.5000008642673492,4.4999995231628418],
+                          "faces": {
+                            "north":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false, "autoUv": false, "snapUV": false},
+                            "east":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false, "autoUv": false, "snapUV": false},
+                            "south":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false, "autoUv": false, "snapUV": false},
+                            "west":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false, "autoUv": false, "snapUV": false},
+                            "up":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false, "autoUv": false, "snapUV": false},
+                            "down":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false, "autoUv": false, "snapUV": false}
+                          },
+                          "rotationOrigin":[-6.0000028610229492,-0.49999913573265076,-3.5000004768371582],
+                          "rotationZ": 2.2179265215527266E-06,
+                          "attachmentPoints": [
+                            {
+                              "code": "HeadAP"
+                            }
+                          ],
+                          "uv":[0.0,0.0]
+                        },
                         {
                           "name": "jowl",
                           "from":[-6.0286,-0.22,-2.3],
@@ -1225,7 +1277,7 @@
                               "uv":[0.0,0.0]
                             },
                             {
-                              "name": "MedallionAP",
+                              "name": "FaceStorage",
                               "from":[-5.9375,3.686,-0.95],
                               "to":[-2.7835,4.636,1.3669],
                               "faces": {
@@ -1240,7 +1292,7 @@
                               "rotationZ": 28.0,
                               "attachmentPoints": [
                                 {
-                                  "code": "MedallionAP"
+                                  "code": "FaceAP"
                                 }
                               ],
                               "uv":[0.0,0.0]
@@ -3539,9 +3591,9 @@
               ]
             },
             {
-              "name": "CookpotLeftAP",
-              "from":[2.0,-1.0,13.4],
-              "to":[8.0,4.0,18.4],
+              "name": "LeftFrontStorage",
+              "from":[7.7786840200424194,-4.7360079884529114,13.300000190734863],
+              "to":[13.778684020042419,3.2639920115470886,14.800000190734863],
               "faces": {
                 "north":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false, "autoUv": false, "snapUV": false},
                 "east":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false, "autoUv": false, "snapUV": false},
@@ -3550,19 +3602,73 @@
                 "up":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false, "autoUv": false, "snapUV": false},
                 "down":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false, "autoUv": false, "snapUV": false}
               },
-              "rotationOrigin":[2.0,-1.0,13.4],
+              "rotationOrigin":[7.7786840200424194,-4.7360079884529114,14.0],
+              "rotationZ": 40.0,
               "attachmentPoints": [
                 {
-                  "code": "CookpotLeftAP"
+                  "code": "LFrontAP"
                 }
               ],
               "stepParentName": "body",
-              "uv":[0.0,0.0]
+              "uv":[0.0,0.0],
+              "children": [
+                {
+                  "name": "SmallBowL",
+                  "from":[-1.0,0.0,0.0],
+                  "to":[0.0,1.0,1.0],
+                  "faces": {
+                    "north":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false},
+                    "east":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false},
+                    "south":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false},
+                    "west":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false},
+                    "up":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false},
+                    "down":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false}
+                  },
+                  "rotationOrigin":[-1.0,0.0,0.0],
+                  "uv":[0.0,0.0]
+                },
+                {
+                  "name": "PotParentL",
+                  "from":[-3.0,7.0,1.5],
+                  "to":[-2.0,8.0,2.5],
+                  "faces": {
+                    "north":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false},
+                    "east":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false},
+                    "south":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false},
+                    "west":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false},
+                    "up":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false},
+                    "down":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false}
+                  },
+                  "rotationOrigin":[-3.0,7.0,1.5],
+                  "rotationX": -13.0,
+                  "rotationY": 12.0,
+                  "rotationZ": -40.0,
+                  "uv":[0.0,0.0]
+                },
+                {
+                  "name": "CrockParentL",
+                  "from":[-8.0,7.6999998092651367,-3.2999999523162842],
+                  "to":[-7.0,8.6999998092651367,-2.2999999523162842],
+                  "faces": {
+                    "north":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false},
+                    "east":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false},
+                    "south":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false},
+                    "west":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false},
+                    "up":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false},
+                    "down":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false}
+                  },
+                  "rotationOrigin":[-8.0,7.6999998092651367,-3.2999999523162842],
+                  "rotationX": -16.0,
+                  "rotationY": 14.0,
+                  "rotationZ": -35.0,
+                  "uv":[0.0,0.0]
+                }
+              ]
             },
             {
-              "name": "CookpotRightAP",
-              "from":[2.0,-1.0,-6.1],
-              "to":[8.0,4.0,-1.1],
+              "name": "RightFrontStorage",
+              "from":[7.8234566450119019,-4.8785986304283142,-1.7999999523162842],
+              "to":[13.823456645011902,3.1214013695716858,-0.29999995231628418],
               "faces": {
                 "north":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false, "autoUv": false, "snapUV": false},
                 "east":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false, "autoUv": false, "snapUV": false},
@@ -3571,14 +3677,68 @@
                 "up":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false, "autoUv": false, "snapUV": false},
                 "down":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false, "autoUv": false, "snapUV": false}
               },
-              "rotationOrigin":[2.0,-1.0,-1.1],
+              "rotationOrigin":[7.8234566450119019,-4.8785986304283142,-0.99999988079071045],
+              "rotationZ": 40.0,
               "attachmentPoints": [
                 {
-                  "code": "CookpotRightAP"
+                  "code": "RFrontAP"
                 }
               ],
               "stepParentName": "body",
-              "uv":[0.0,0.0]
+              "uv":[0.0,0.0],
+              "children": [
+                {
+                  "name": "SmallBowR",
+                  "from":[0.0,0.0,0.0],
+                  "to":[1.0,1.0,1.0],
+                  "faces": {
+                    "north":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false},
+                    "east":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false},
+                    "south":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false},
+                    "west":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false},
+                    "up":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false},
+                    "down":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false}
+                  },
+                  "rotationOrigin":[0.0,0.0,0.0],
+                  "uv":[0.0,0.0]
+                },
+                {
+                  "name": "PotParentR",
+                  "from":[-2.2531076371669769,7.9484740793704987,-5.283248720690608],
+                  "to":[-1.2531076371669769,8.9484740793704987,-4.283248720690608],
+                  "faces": {
+                    "north":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false},
+                    "east":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false},
+                    "south":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false},
+                    "west":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false},
+                    "up":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false},
+                    "down":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false}
+                  },
+                  "rotationOrigin":[-2.2531076371669769,7.9484740793704987,-5.283248720690608],
+                  "rotationX": 12.0,
+                  "rotationY": -13.0,
+                  "rotationZ": -40.0,
+                  "uv":[0.0,0.0]
+                },
+                {
+                  "name": "CrockParentR",
+                  "from":[-4.7167187035083771,12.167245179414749,-10.109557244926691],
+                  "to":[-3.7167187035083771,13.167245179414749,-9.1095572449266911],
+                  "faces": {
+                    "north":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false},
+                    "east":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false},
+                    "south":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false},
+                    "west":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false},
+                    "up":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false},
+                    "down":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false}
+                  },
+                  "rotationOrigin":[-4.7167187035083771,12.167245179414749,-10.109557244926691],
+                  "rotationX": 16.0,
+                  "rotationY": -14.0,
+                  "rotationZ": -35.0,
+                  "uv":[0.0,0.0]
+                }
+              ]
             },
             {
               "name": "Wings",
@@ -7715,6 +7875,7 @@
       "name": "flyhurt",
       "code": "flyhurt",
       "quantityframes": 30,
+      "onActivityStopped": "Rewind",
       "onAnimationEnd": "Stop",
       "keyframes": [
         {
@@ -9218,6 +9379,7 @@
       "name": "hurt",
       "code": "hurt",
       "quantityframes": 8,
+      "onActivityStopped": "Rewind",
       "onAnimationEnd": "Stop",
       "keyframes": [
         {
