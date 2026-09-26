@@ -113,6 +113,20 @@
         "file": "game:entities/animal/mammal/hyena-adult.json",
         "condition": { "when": "FSWOstrichEnabled", "isValue": "true" }
     },
+    {
+        "op": "add",
+        "path": "/server/behaviors/11/aitasks/1/entityCodes/0",
+        "value": "feverstonewilds:griffon-*",
+        "file": "game:entities/animal/mammal/hyena-adult.json",
+        "condition": { "when": "FSWGriffonEnabled", "isValue": "true" }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/11/aitasks/3/entityCodes/0",
+        "value": "feverstonewilds:griffon-*",
+        "file": "game:entities/animal/mammal/hyena-adult.json",
+        "condition": { "when": "FSWGriffonEnabled", "isValue": "true" }
+    },
     
     {
         "op": "add",

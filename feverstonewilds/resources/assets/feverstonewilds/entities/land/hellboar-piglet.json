@@ -165,6 +165,16 @@
                             "stopOnHurt": true
                         },
                         {
+                            "code": "stayclosetoentity",
+                            "priority": 1.42,
+                            "entityCode": "hellboar-*",
+                            "movespeed": 0.025,
+                            "maxDistance": 7,
+                            "searchRange": 25,
+                            "animation": "Run",
+                            "animationSpeed": 1.25
+                        },
+                        {
                             "code": "seekfoodandeat",
                             "movespeed": 0.008,
                             "priority": 1.4,

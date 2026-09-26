@@ -45,7 +45,7 @@ public class AiTaskFlightMeleeAttack : AiTaskBaseTargetable
     public override bool ShouldExecute()
     {
         if (!PreconditionsSatisfied()) return false;
-        if (flight == null || !entity.Alive || !flight.IsFlying || flight.IsLanding) return false;
+        if (flight == null || !entity.Alive || !flight.IsFlying || flight.IsLanding || flight.IsPlayerControlledFlight) return false;
         if (entity.World.ElapsedMilliseconds < nextAttackAllowedMs) return false;
 
         targetEntity = entity.World.GetNearestEntity(entity.Pos.XYZ, attackRange, attackRange, candidate =>
@@ -67,7 +67,7 @@ public class AiTaskFlightMeleeAttack : AiTaskBaseTargetable
 
     public override bool ContinueExecute(float dt)
     {
-        if (!entity.Alive || !flight.IsFlying || flight.IsLanding || targetEntity == null || !targetEntity.Alive) return false;
+        if (!entity.Alive || !flight.IsFlying || flight.IsLanding || flight.IsPlayerControlledFlight || targetEntity == null || !targetEntity.Alive) return false;
         if (entity.Pos.XYZ.SquareDistanceTo(targetEntity.Pos.XYZ) > attackRange * attackRange) return false;
 
         elapsedMs += dt * 1000;
