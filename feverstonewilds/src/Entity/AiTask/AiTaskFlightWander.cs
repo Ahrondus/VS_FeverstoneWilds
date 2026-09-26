@@ -43,7 +43,7 @@ public class AiTaskFlightWander : AiTaskBase
         idleAnimationEaseOutSpeed = taskConfig["idleAnimationEaseOutSpeed"].AsFloat(6f);
     }
 
-    public override bool ShouldExecute() => PreconditionsSatisfied() && flight != null && flight.IsFlying && !flight.IsLanding && !flight.IsAttacking && entity.Alive;
+    public override bool ShouldExecute() => PreconditionsSatisfied() && flight != null && flight.IsFlying && !flight.IsLanding && !flight.IsAttacking && !flight.IsPlayerControlledFlight && entity.Alive;
 
     public override void StartExecute()
     {
@@ -57,7 +57,7 @@ public class AiTaskFlightWander : AiTaskBase
 
     public override bool ContinueExecute(float dt)
     {
-        if (!flight.IsFlying || flight.IsLanding || flight.IsAttacking || !entity.Alive) return false;
+        if (!flight.IsFlying || flight.IsLanding || flight.IsAttacking || flight.IsPlayerControlledFlight || !entity.Alive) return false;
         if (!hasWaypoint) return false;
 
         if (isHovering)

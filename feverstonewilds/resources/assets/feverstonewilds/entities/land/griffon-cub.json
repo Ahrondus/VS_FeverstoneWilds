@@ -1,7 +1,9 @@
 {
-	"code": "direwolf-pup",
+	"code": "griffon-cub",
 	"class": "EntityAgent",
-    "tags":  [ "animal", "huntable", "habitat-land" ],
+    "tags":  [ "animal", "huntable", "habitat-land" ],"variantgroups": [
+        { "code": "tamed", "states": [ "wild", "tamed" ] }
+    ],
 	"hitboxSize": { "x": 0.85, "y": 0.5 },
 	"deadHitboxSize": { "x": 0.75, "y": 0.4 },
 	"eyeHeight": 0.4,
@@ -11,7 +13,7 @@
 			"foodTags": [ "meat" ]
 		},
 		"handbook": {
-			"groupcode": "feverstonewilds:creaturegroup-fswdirewolf"
+			"groupcode": "feverstonewilds:creaturegroup-fswgriffon"
 		},
 		"trappable": { 
 			"small": { "trapChance": 0.55, "trapDestroyChance": 0.05 }
@@ -19,17 +21,25 @@
 	},
 	"client": {
 		"renderer": "Shape",
-		"shape": { "base": "entity/land/mammal/direwolf-pup" },
-		"texture": { "base": "entity/land/direwolf/direwolf-pup1", 
-			"alternates": [ { "base": "entity/land/direwolf/direwolf-pup2" } ] },
-		"size": 0.9,
+		"shape": { "base": "entity/land/mammal/griffon-adult" },
+		"textures": { "griffonskin1": { "base": "entity/land/griffon/griffonskin1",
+                        "alternates": [ { "base": "entity/land/griffon/griffonskin2" }, { "base": "entity/land/griffon/griffonskin3" }, 
+                                        { "base": "entity/land/griffon/griffonskin4" }, { "base": "entity/land/griffon/griffonskin5" }, 
+                                        { "base": "entity/land/griffon/griffonskin6" }, { "base": "entity/land/griffon/griffonskin7" } ] },
+                      "griffonskin1Wing": { "base": "entity/land/griffon/griffonskin1Wing",
+                        "alternates": [ { "base": "entity/land/griffon/griffonskin2Wing" }, { "base": "entity/land/griffon/griffonskin3Wing" },
+                                        { "base": "entity/land/griffon/griffonskin4Wing" }, { "base": "entity/land/griffon/griffonskin5Wing" },
+                                        { "base": "entity/land/griffon/griffonskin6Wing" }, { "base": "entity/land/griffon/griffonskin7Wing" } ] } 
+        },
+		"size": 0.45,
 		"sizeGrowthFactor": 0.2,
 		"behaviors": [
 			{ "code": "mouthinventory",
 				"acceptStacks": [
 					{ "type": "item", "code": "redmeat-raw"},
 					{ "type": "item", "code": "bushmeat-raw"},
-					{ "type": "item", "code": "poultry-raw"}
+					{ "type": "item", "code": "poultry-raw"},
+					{ "type": "item", "code": "fish-raw"}
 				]
 			},
 			{ "code": "repulseagents" }, 
@@ -83,7 +93,27 @@
 				"easeInSpeed": 4,
 				"easeOutSpeed": 4,
 				"blendMode": "average"
-			}
+			},
+			{
+				"code": "walk", 
+				"animation": "Walk",
+                "blendMode": "average",
+                "animationSounds": [{"frame": 5, "range": 10, "location": "direwolf/paws-step*", "pitch": { "avg": 1.0, "var": 0.15 }, "volume": {"avg": 0.6}}, 
+                                    {"frame": 13, "range": 10, "location": "direwolf/paws-step*", "pitch": { "avg": 1.0, "var": 0.15 }, "volume": {"avg": 0.6}}, 
+                                    {"frame": 33, "range": 10, "location": "direwolf/paws-step*", "pitch": { "avg": 1.0, "var": 0.15 }, "volume": {"avg": 0.6}}, 
+                                    {"frame": 42, "range": 10, "location": "direwolf/paws-step*", "pitch": { "avg": 1.0, "var": 0.15 }, "volume": {"avg": 0.6}}],
+                "supressDefaultAnimation": true
+            },
+			{
+				"code": "run", 
+				"animation": "Run",
+                "blendMode": "average",
+                "animationSounds": [{"frame": 4, "range": 15, "location": "direwolf/paws-step*", "pitch": { "avg": 1.0, "var": 0.15 }, "volume": {"avg": 0.6}}, 
+                                    {"frame": 7, "range": 15, "location": "direwolf/paws-step*", "pitch": { "avg": 1.0, "var": 0.15 }, "volume": {"avg": 0.6}}, 
+                                    {"frame": 18, "range": 15, "location": "direwolf/paws-step*", "pitch": { "avg": 1.0, "var": 0.15 }, "volume": {"avg": 0.6}}, 
+                                    {"frame": 20, "range": 15, "location": "direwolf/paws-step*", "pitch": { "avg": 1.0, "var": 0.15 }, "volume": {"avg": 0.6}}],
+                "supressDefaultAnimation": true
+            }
 		]
 	},
 	"server": {
@@ -92,12 +122,21 @@
 				"acceptStacks": [
 					{ "type": "item", "code": "redmeat-raw"},
 					{ "type": "item", "code": "bushmeat-raw"},
-					{ "type": "item", "code": "poultry-raw"}
+					{ "type": "item", "code": "poultry-raw"},
+					{ "type": "item", "code": "fish-raw"}
 				]
 			},
 			{ "code": "repulseagents" }, 
 			{ "code": "controlledphysics", "stepHeight": 1.1251 },
-			{ "code": "despawn", "minPlayerDistance": 8, "belowLightLevel": 8, "minSeconds": 300 },
+			{ "code": "despawn",
+				"enabledByType": {
+					"*-wild-*": true,
+					"*-tamed-*": false
+				},
+				"minPlayerDistance": 8,
+				"belowLightLevel": 8,
+				"minSeconds": 300
+			},
 			{ "code": "health", "currenthealth": 5, "maxhealth": 5 },
 			{ "code": "deaddecay", "hoursToDecay": 96, "decayedBlock": "carcass-small" },
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
@@ -105,23 +144,26 @@
 			{ "code": "breathe" },
 			{ "code": "emotionstates",
 				"states": [ { "code": "alarmherdondamage", "chance": 1, "slot": 1, "priority": 1, "accumType": "max" } ] },
-			{  "code": "grow", "hoursToGrow": 300,
-                "orPortionsEatenForGrowing": 12,
-				"fedAdultEntityCodes": [ "feverstonewilds:tame-direwolf-male", "feverstonewilds:tame-direwolf-female", "feverstonewilds:tame-direwolf-female" ],
-				"adultEntityCodes": [ "feverstonewilds:direwolf-male", "feverstonewilds:direwolf-female", "feverstonewilds:direwolf-female" ] },
+			{  "code": "grow", "hoursToGrow": 220,
+                "orPortionsEatenForGrowing": 9,
+				"fedAdultEntityCodes": [ "feverstonewilds:griffon-tamed-male", "feverstonewilds:griffon-tamed-female", "feverstonewilds:griffon-tamed-female" ],
+				"adultEntityCodes": [ "feverstonewilds:griffon-male", "feverstonewilds:griffon-female", "feverstonewilds:griffon-female" ] },
 			{ 
 				"code": "taskai",
 				"aiCreatureType": "LandCreature",
 				"aitasks": [
 					{
 						"code": "fleeentity",
-						"entityCodes": ["player"],
+						"entityCodesByType": { 
+							"*-wild-*": ["wolf-*", "bear-*", "direwolf-*", "drifter-*", "shiver-*", "bowtorn-*", "player"],
+							"*-tamed-*": ["wolf-*", "bear-*", "direwolf-*", "drifter-*", "shiver-*", "bowtorn-*"]
+						},
 						"priority": 1.5,
 						"movespeed": 0.03,
-						"animationSpeed": 4,
+						"animationSpeed": 1.5,
 						"seekingRange": 8,
 						"animation": "Run",
-						"sound": "game:creature/wolf/pup-bark"
+						"sound": " "
 					},
 					{
 						"code": "getoutofwater",
@@ -145,9 +187,11 @@
 					{
 						"code": "stayclosetoentity",
 						"priority": 1.4,
-						"entitycode": "direwolf-*",
+						"entityCodesByType": {
+							"*": "griffon-{tamed}-*"
+						},
 						"movespeed": 0.02,
-						"animationSpeed": 1.2,
+						"animationSpeed": 4,
 						"maxDistance": 5,
 						"searchRange": 25,
 						"animation": "Run"
@@ -172,7 +216,7 @@
 						"maxduration": 800000,
 						"mincooldown": 10000,
 						"maxcooldown": 30000,
-						"animation": "Sleep",
+						"animation": "idleaction1",
 						"whenNotInEmotionState": "aggressiveondamage",
 						"duringDayTimeFrames": [ { "fromHour": 10, "toHour": 18 }, { "fromHour": 1, "toHour": 3 } ],
 						"stopOnNearbyEntityCodes": ["player"],
@@ -180,45 +224,11 @@
 						"stopOnHurt": true
 					},
 					{
-						"code": "idle",
-						"priority": 1.3,
-						"priorityForCancel": 1.35,
-						"minduration": 2500,
-						"maxduration": 2500,
-						"mincooldown": 10000,
-						"maxcooldown": 50000,
-						"animation": "Sniff",
-						"animationSpeed": 0.8
-					},
-					{
-						"code": "idle",
-						"priority": 1.31,
-						"priorityForCancel": 1.35,
-						"minduration": 1500,
-						"maxduration": 1500,
-						"mincooldown": 50000,
-						"maxcooldown": 300000,
-						"animation": "Howl",
-						"animationSpeed": 0.8,
-						"sound": "game:creature/wolf/pup-howl*"
-					},
-					{
-						"code": "idle",
-						"priority": 1.32,
-						"priorityForCancel": 1.35,
-						"minduration": 2830,
-						"maxduration": 2830,
-						"mincooldown": 80000,
-						"maxcooldown": 200000,
-						"animation": "Flop",
-						"sound": "game:creature/wolf/pup-flop"
-					},
-					{
 						"code": "wander", 
 						"priority": 1.0, 
 						"priorityForCancel": 1.35,
 						"movespeed": 0.004,
-						"animationSpeed": 2,
+						"animationSpeed": 1,
 						"animation": "Walk",
 						"preferredLightLevel": 18
 					},
@@ -244,9 +254,9 @@
 		]
 	},
 	"sounds": {
-		"hurt": "game:creature/wolf/pup-hurt",
-		"death": "game:creature/wolf/pup-hurt",
-		"idle": "game:creature/wolf/pup-bark"
+		"hurt": " ",
+		"death": " ",
+		"idle": " "
 	},
 	"idleSoundChance": 0.015,
 	"hurtSoundChance": 0.25

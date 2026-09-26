@@ -252,17 +252,13 @@
                         "code": "stayclosetoentity",
                         "priority": 1.3,
                         "entityCodesByType":{
-                            "*-percheron": [ "feverstonewilds:horse-{tame}-male-percheron", "feverstonewilds:horse-{tame}-female-percheron" ],
-                            "*-arabian": [ "feverstonewilds:horse-{tame}-male-arabian", "feverstonewilds:horse-{tame}-female-arabian" ],
-                            "*-donkey": [ "feverstonewilds:horse-{tame}-male-donkey", "feverstonewilds:horse-{tame}-female-donkey" ],
-                            "*-shire": [ "feverstonewilds:horse-{tame}-male-shire", "feverstonewilds:horse-{tame}-female-shire" ],
-                            "*-quarter": [ "feverstonewilds:horse-{tame}-male-quarter", "feverstonewilds:horse-{tame}-female-quarter" ]
+                            "*": [ "feverstonewilds:horse-{tame}-*-{type}" ]
                         },
                         "maxDistance": 6,
                         "searchRange": 20,
                         "moveSpeed": 0.02,
                         "animation": "run",
-                        "animationSpeed": 2.2
+                        "animationSpeed": 1.4
                     },
                     {
                         "code": "followleadholder",
