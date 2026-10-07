@@ -1,10 +1,55 @@
 [
     {
         "op": "addmerge",
-        "path": "/attributesByType/*-up/attachableToEntityByType/lantern-small-*/attachedShapeBySlotCode",
+        "path": "/attributesByType/*-up/attachableToEntityByType/lantern-large-*/attachedShapeBySlotCode",
         "file": "game:blocktypes/metal/lantern.json",
         "value": {
-            "neck-direwolf": { "base": "feverstonewilds:item/wearable/neck/lantern-direwolf"}
+            "neck-direwolf": { "base": "feverstonewilds:item/wearable/neck/lantern-direwolf-large"}
+        },
+        "side": "server"
+    },
+    {
+        "op": "addmerge",
+        "path": "/attributesByType/*-up/attachableToEntityByType/lantern-large-*/attachedShapeBySlotCode",
+        "file": "game:blocktypes/metal/lantern.json",
+        "value": {
+            "neck-ostrich": { "base": "feverstonewilds:item/wearable/neck/lantern-ostrich-large" }
+        },
+        "side": "server"
+    },
+    {
+        "op": "addmerge",
+        "path": "/attributesByType/*-up/attachableToEntityByType/lantern-large-*/attachedShapeBySlotCode",
+        "file": "game:blocktypes/metal/lantern.json",
+        "value": {
+            "bison-neck-male": { "base": "feverstonewilds:item/wearable/neck/lantern-bison-male-large" }
+        },
+        "side": "server"
+    },
+    {
+        "op": "addmerge",
+        "path": "/attributesByType/*-up/attachableToEntityByType/lantern-large-*/attachedShapeBySlotCode",
+        "file": "game:blocktypes/metal/lantern.json",
+        "value": {
+            "bison-neck-female": { "base": "feverstonewilds:item/wearable/neck/lantern-bison-female-large" }
+        },
+        "side": "server"
+    },
+    {
+        "op": "addmerge",
+        "path": "/attributesByType/*-up/attachableToEntityByType/lantern-large-*/attachedShapeBySlotCode",
+        "file": "game:blocktypes/metal/lantern.json",
+        "value": {
+            "fswmiddlebackleft": { "base": "feverstonewilds:item/wearable/neck/lanternl-horse-large" }
+        },
+        "side": "server"
+    },
+    {
+        "op": "addmerge",
+        "path": "/attributesByType/*-up/attachableToEntityByType/lantern-large-*/attachedShapeBySlotCode",
+        "file": "game:blocktypes/metal/lantern.json",
+        "value": {
+            "fswmiddlebackright": { "base": "feverstonewilds:item/wearable/neck/lanternr-horse-large" }
         },
         "side": "server"
     },
@@ -13,7 +58,7 @@
         "path": "/attributesByType/*-up/attachableToEntityByType/lantern-small-*/attachedShapeBySlotCode",
         "file": "game:blocktypes/metal/lantern.json",
         "value": {
-            "neck-ostrich": { "base": "feverstonewilds:item/wearable/neck/lantern-ostrich" }
+            "neck-direwolf": { "base": "feverstonewilds:item/wearable/neck/lantern-direwolf-small"}
         },
         "side": "server"
     },
@@ -22,7 +67,7 @@
         "path": "/attributesByType/*-up/attachableToEntityByType/lantern-small-*/attachedShapeBySlotCode",
         "file": "game:blocktypes/metal/lantern.json",
         "value": {
-            "bison-neck-male": { "base": "feverstonewilds:item/wearable/neck/lantern-bison-male" }
+            "neck-ostrich": { "base": "feverstonewilds:item/wearable/neck/lantern-ostrich-small" }
         },
         "side": "server"
     },
@@ -31,7 +76,7 @@
         "path": "/attributesByType/*-up/attachableToEntityByType/lantern-small-*/attachedShapeBySlotCode",
         "file": "game:blocktypes/metal/lantern.json",
         "value": {
-            "bison-neck-female": { "base": "feverstonewilds:item/wearable/neck/lantern-bison-female" }
+            "bison-neck-male": { "base": "feverstonewilds:item/wearable/neck/lantern-bison-male-small" }
         },
         "side": "server"
     },
@@ -40,7 +85,7 @@
         "path": "/attributesByType/*-up/attachableToEntityByType/lantern-small-*/attachedShapeBySlotCode",
         "file": "game:blocktypes/metal/lantern.json",
         "value": {
-            "fswmiddlebackleft": { "base": "feverstonewilds:item/wearable/lanternl-horse" }
+            "bison-neck-female": { "base": "feverstonewilds:item/wearable/neck/lantern-bison-female-small" }
         },
         "side": "server"
     },
@@ -49,7 +94,16 @@
         "path": "/attributesByType/*-up/attachableToEntityByType/lantern-small-*/attachedShapeBySlotCode",
         "file": "game:blocktypes/metal/lantern.json",
         "value": {
-            "fswmiddlebackright": { "base": "feverstonewilds:item/wearable/lanternr-horse" }
+            "fswmiddlebackleft": { "base": "feverstonewilds:item/wearable/neck/lanternl-horse-small" }
+        },
+        "side": "server"
+    },
+    {
+        "op": "addmerge",
+        "path": "/attributesByType/*-up/attachableToEntityByType/lantern-small-*/attachedShapeBySlotCode",
+        "file": "game:blocktypes/metal/lantern.json",
+        "value": {
+            "fswmiddlebackright": { "base": "feverstonewilds:item/wearable/neck/lanternr-horse-small" }
         },
         "side": "server"
     }

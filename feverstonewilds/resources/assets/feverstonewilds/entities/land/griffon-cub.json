@@ -47,7 +47,9 @@
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
 			{ "code": "interpolateposition" },
 			{ "code": "harvestable" },
-			{ "code": "despawn", "minPlayerDistance": 8, "belowLightLevel": 8, "minSeconds": 300 },
+            { "code": "despawn",
+                "enabledByType": { "*-wild-*": true, "*": false },
+                "minPlayerDistance": 8, "belowLightLevel": 8, "minSeconds": 300 },
 			{ "code": "ropetieable", "minGeneration": 2 }
 		],
 		"animations": [
@@ -82,10 +84,19 @@
 			},
 			{
 				"code": "sleep", 
-				"animation": "sleep",
+				"animation": "idleaction1",
 				"easeInSpeed": 4,
 				"easeOutSpeed": 4,
-				"blendMode": "average"
+				"blendMode": "average",
+                "supressDefaultAnimation": true
+			},
+			{
+				"code": "lie", 
+				"animation": "idleaction2",
+				"easeInSpeed": 4,
+				"easeOutSpeed": 4,
+				"blendMode": "average",
+                "supressDefaultAnimation": true
 			},
 			{
 				"code": "sit", 
@@ -147,7 +158,7 @@
 			{  "code": "grow", "hoursToGrow": 220,
                 "orPortionsEatenForGrowing": 9,
 				"fedAdultEntityCodes": [ "feverstonewilds:griffon-tamed-male", "feverstonewilds:griffon-tamed-female", "feverstonewilds:griffon-tamed-female" ],
-				"adultEntityCodes": [ "feverstonewilds:griffon-male", "feverstonewilds:griffon-female", "feverstonewilds:griffon-female" ] },
+				"adultEntityCodes": [ "feverstonewilds:griffon-wild-male", "feverstonewilds:griffon-wild-female", "feverstonewilds:griffon-wild-female" ] },
 			{ 
 				"code": "taskai",
 				"aiCreatureType": "LandCreature",
