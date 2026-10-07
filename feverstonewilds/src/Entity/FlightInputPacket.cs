@@ -19,6 +19,5 @@ public enum EnumFlightInputAction
 {
     Ascend,
     Descend,
-    Sprint,
-    RequestDismount
+    Sprint
 }
