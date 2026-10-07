@@ -60,7 +60,7 @@
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
 			{ "code": "interpolateposition" },
 			{ "code": "harvestable" },
-			{ "code": "despawn", "minPlayerDistance": 8, "belowLightLevel": 8, "minSeconds": 300 },
+			{ "code": "despawn", "enabledByType": { "*-wild-*": true, "*": false }, "minPlayerDistance": 8, "belowLightLevel": 8, "minSeconds": 300 },
 			{ "code": "ropetieable", "minGeneration": 2 }
 		],
 		"animations": [
@@ -142,7 +142,7 @@
                 },
 			{ "code": "repulseagents" },
 			{ "code": "controlledphysics", "stepHeight": 1.1251 },
-			{ "code": "despawn", "minPlayerDistance": 8, "belowLightLevel": 8, "minSeconds": 300 },
+			{ "code": "despawn", "enabledByType": { "*-wild-*": true, "*": false }, "minPlayerDistance": 8, "belowLightLevel": 8, "minSeconds": 300 },
 			{ "code": "health", "maxhealth": 15 },
 			{ "code": "deaddecay", "hoursToDecay": 96, "decayedBlock": "carcass-medium" },
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },

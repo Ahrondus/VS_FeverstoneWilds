@@ -4,18 +4,12 @@
     "allAngles": true,
     "backdrops": [
       {
-        "shapeFilepath": "C:/Users/ahron/Documents/GitHub/VS_FeverstoneWilds/feverstonewilds/resources/assets/feverstonewilds/shapes/entity/land/mammal/horse-donkey",
+        "shapeFilepath": "entity/land/horse-quarter",
         "opacity": 1.0,
         "enabled": true
       }
     ],
-    "attachments": [
-      {
-        "shapeFilepath": "item\\wearable\\lanternr-horse",
-        "opacity": 1.0,
-        "enabled": true
-      }
-    ]
+    "attachments": [ ]
   },
   "textureWidth": 16,
   "textureHeight": 16,
@@ -66,8 +60,8 @@
   "elements": [
     {
       "name": "knot",
-      "from":[2.75,5.75,0.5],
-      "to":[3.75,6.75,1.5],
+      "from":[2.75,5.9679999351501465,3.4605391174554825],
+      "to":[3.75,6.9679999351501465,4.4605391174554825],
       "faces": {
         "north":{"texture": "#rope", "uv": [5.5, 1.0, 6.5, 2.0]},
         "east":{"texture": "#rope", "uv": [9.5, 12.0, 10.5, 13.0]},
@@ -76,10 +70,9 @@
         "up":{"texture": "#rope", "uv": [14.0, 14.0, 15.0, 15.0]},
         "down":{"texture": "#rope", "uv": [0.5, 8.0, 1.5, 9.0]}
       },
-      "rotationOrigin":[3.25,6.25,1.0],
-      "rotationX": -8.0,
+      "rotationOrigin":[3.25,6.4679999351501465,3.9605391174554825],
       "rotationZ": 55.0,
-      "stepParentName": "LanternParentL",
+      "stepParentName": "LanternParentR",
       "uv":[0.0,0.0],
       "children": [
         {
@@ -117,8 +110,8 @@
               "children": [
                 {
                   "name": "origin",
-                  "from":[-8.4376984527334571,-5.9216062230989337,-1.9582052783014015],
-                  "to":[-7.4376984527334571,-4.9216062230989337,-0.95820527830140145],
+                  "from":[-8.363960862159729,-5.6715725064277649,-2.0],
+                  "to":[-7.363960862159729,-4.6715725064277649,-1.0],
                   "faces": {
                     "north":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false},
                     "east":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false},
@@ -127,8 +120,8 @@
                     "up":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false},
                     "down":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false}
                   },
-                  "rotationOrigin":[-5.9376984527334571,-6.1216060621663928,0.54179281434996573],
-                  "rotationZ": -44.072818756103516,
+                  "rotationOrigin":[-5.863960862159729,-5.87157541513443,0.49999618530273438],
+                  "rotationZ": -45.0,
                   "stepParentName": "",
                   "uv":[0.0,0.0],
                   "children": [
