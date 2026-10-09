@@ -364,6 +364,7 @@
         "behaviors": [
             { "code": "repulseagents" },
             { "code": "controlledphysics" },
+            { "code": "harvestable" },
             { "code": "gait" },
             { "code": "flightrideable" },
             { "code": "flight",
@@ -376,7 +377,6 @@
             { "code": "interpolateposition" },
             { "code": "selectionboxes" },
             { "code": "rideableaccessories" },
-            { "code": "harvestable" },
             { "code": "despawn",
                 "enabledByType": { "*-wild-*": true, "*": false },
                 "minPlayerDistance": 15, "belowLightLevel": 7, "minSeconds": 300 }
