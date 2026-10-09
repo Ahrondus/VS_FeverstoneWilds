@@ -610,17 +610,8 @@
         "behaviors": [
                 { "code": "repulseagents" },
                 { "code": "controlledphysics" },
-                { "code": "gait" },
-                { "code": "flightrideable" },
-                { "code": "flight",
-                    "playerFlightEnabledByType": {
-                        "*-wild-*": false,
-                        "*-tamed-*": true
-                    }
-                },
                 { "code": "floatupwhenstuck" },
                 { "code": "ownable" },
-                { "code": "rideableaccessories" },
                 { "code": "harvestable",
                     "drops": [
                         { "type": "item", "code": "bushmeat-raw", "quantity": { "avg": 5, "var": 2 } },
@@ -637,6 +628,15 @@
                 { "code": "breathe" },
                 { "code": "emotionstates" },
                 { "code": "selectionboxes" },
+                { "code": "rideableaccessories" },
+                { "code": "gait" },
+                { "code": "flightrideable" },
+                { "code": "flight",
+                    "playerFlightEnabledByType": {
+                        "*-wild-*": false,
+                        "*-tamed-*": true
+                    }
+                },
                 { "code": "taskai",
                     "aiCreatureType": "LandCreature",
                     "aitasks": [
