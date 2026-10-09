@@ -32,6 +32,40 @@ namespace FeverstoneWilds.Config
         public string complexheader = "----- Complex Creatures -----";
         public bool FSWGriffonEnabled = true;
 
+        // Griffon Flight Behavior
+        public string griffonflightheader = "----- Griffon Flight Behavior -----";
+        public float FSWGriffonFlightSpeed = 0.08f;
+        public float FSWGriffonVerticalSpeed = 0.06f;
+        public float FSWGriffonSteering = 0.25f;
+        public float FSWGriffonArrivalDistance = 1.25f;
+        public bool FSWGriffonAutoFlight = true;
+        public float FSWGriffonMinGroundSeconds = 22f;
+        public float FSWGriffonMaxGroundSeconds = 48f;
+        public float FSWGriffonMinFlightSeconds = 30f;
+        public float FSWGriffonMaxFlightSeconds = 52f;
+        public float FSWGriffonTakeoffSpeed = 0.06f;
+        public float FSWGriffonLandingSpeed = 0.035f;
+        public float FSWGriffonLandingHeight = 0.15f;
+        public float FSWGriffonLandingArrivalDistance = 0.05f;
+        public string FSWGriffonLandingAnimation = "trytoland";
+        public float FSWGriffonLandingAnimationSpeed = 0.7f;
+        public float FSWGriffonLandingAnimationWeight = 30f;
+        public float FSWGriffonLandingAnimationStartHeight = 6f;
+        public int FSWGriffonLandingScanDepth = 120;
+        public float FSWGriffonFailedLandingDescent = 8f;
+        public float FSWGriffonPlayerFlightSpeed = 0.04f;
+        public float FSWGriffonPlayerFlightSprintSpeed = 0.12f;
+        public float FSWGriffonPlayerFlightVerticalSpeed = 0.06f;
+        public float FSWGriffonPlayerFlightTakeoffSpeed = 0.06f;
+        public float FSWGriffonPlayerFlightSteering = 1f;
+        public float FSWGriffonPlayerFlightTurnSpeed = 1f;
+        public float FSWGriffonPlayerFlightLandingHeight = 1f;
+        public string FSWGriffonPlayerFlightAnimation = "fly";
+        public string FSWGriffonPlayerFlightSprintAnimation = "speedfly";
+        public string FSWGriffonPlayerFlightIdleAnimation = "flyidle";
+        public string FSWGriffonPlayerFlightAscendAnimation = "flyascend";
+        public string FSWGriffonPlayerFlightDescendAnimation = "flydescend";
+
         // Water Creatures
         public string waterheader = "----- Water Creatures -----";
         public bool FSWBuromenfishEnabled = true;
@@ -189,6 +223,39 @@ namespace FeverstoneWilds.Config
 
             // Faunling Sapling Behavior
             FSWFaunlingSaplingEnabled = previousConfig.FSWFaunlingSaplingEnabled;
+
+            // Griffon Flight Behavior
+            FSWGriffonFlightSpeed = previousConfig.FSWGriffonFlightSpeed;
+            FSWGriffonVerticalSpeed = previousConfig.FSWGriffonVerticalSpeed;
+            FSWGriffonSteering = previousConfig.FSWGriffonSteering;
+            FSWGriffonArrivalDistance = previousConfig.FSWGriffonArrivalDistance;
+            FSWGriffonAutoFlight = previousConfig.FSWGriffonAutoFlight;
+            FSWGriffonMinGroundSeconds = previousConfig.FSWGriffonMinGroundSeconds;
+            FSWGriffonMaxGroundSeconds = previousConfig.FSWGriffonMaxGroundSeconds;
+            FSWGriffonMinFlightSeconds = previousConfig.FSWGriffonMinFlightSeconds;
+            FSWGriffonMaxFlightSeconds = previousConfig.FSWGriffonMaxFlightSeconds;
+            FSWGriffonTakeoffSpeed = previousConfig.FSWGriffonTakeoffSpeed;
+            FSWGriffonLandingSpeed = previousConfig.FSWGriffonLandingSpeed;
+            FSWGriffonLandingHeight = previousConfig.FSWGriffonLandingHeight;
+            FSWGriffonLandingArrivalDistance = previousConfig.FSWGriffonLandingArrivalDistance;
+            FSWGriffonLandingAnimation = previousConfig.FSWGriffonLandingAnimation;
+            FSWGriffonLandingAnimationSpeed = previousConfig.FSWGriffonLandingAnimationSpeed;
+            FSWGriffonLandingAnimationWeight = previousConfig.FSWGriffonLandingAnimationWeight;
+            FSWGriffonLandingAnimationStartHeight = previousConfig.FSWGriffonLandingAnimationStartHeight;
+            FSWGriffonLandingScanDepth = previousConfig.FSWGriffonLandingScanDepth;
+            FSWGriffonFailedLandingDescent = previousConfig.FSWGriffonFailedLandingDescent;
+            FSWGriffonPlayerFlightSpeed = previousConfig.FSWGriffonPlayerFlightSpeed;
+            FSWGriffonPlayerFlightSprintSpeed = previousConfig.FSWGriffonPlayerFlightSprintSpeed;
+            FSWGriffonPlayerFlightVerticalSpeed = previousConfig.FSWGriffonPlayerFlightVerticalSpeed;
+            FSWGriffonPlayerFlightTakeoffSpeed = previousConfig.FSWGriffonPlayerFlightTakeoffSpeed;
+            FSWGriffonPlayerFlightSteering = previousConfig.FSWGriffonPlayerFlightSteering;
+            FSWGriffonPlayerFlightTurnSpeed = previousConfig.FSWGriffonPlayerFlightTurnSpeed;
+            FSWGriffonPlayerFlightLandingHeight = previousConfig.FSWGriffonPlayerFlightLandingHeight;
+            FSWGriffonPlayerFlightAnimation = previousConfig.FSWGriffonPlayerFlightAnimation;
+            FSWGriffonPlayerFlightSprintAnimation = previousConfig.FSWGriffonPlayerFlightSprintAnimation;
+            FSWGriffonPlayerFlightIdleAnimation = previousConfig.FSWGriffonPlayerFlightIdleAnimation;
+            FSWGriffonPlayerFlightAscendAnimation = previousConfig.FSWGriffonPlayerFlightAscendAnimation;
+            FSWGriffonPlayerFlightDescendAnimation = previousConfig.FSWGriffonPlayerFlightDescendAnimation;
 
             // AnimalCages Config
             AllowCagedFSWCreatures = previousConfig.AllowCagedFSWCreatures;

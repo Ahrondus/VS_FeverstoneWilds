@@ -3,7 +3,13 @@
     "editorVersion": "VSMC2v0.5.0",
     "allAngles": true,
     "backdrops": [],
-    "attachments": []
+    "attachments": [
+      {
+        "shapeFilepath": "C:\\Users\\ahron\\AppData\\Roaming\\Vintagestory\\assets\\survival\\shapes\\item\\wearable\\hooved\\lantern1-elk",
+        "opacity": 1.0,
+        "enabled": true
+      }
+    ]
   },
   "textureWidth": 16,
   "textureHeight": 16,
@@ -1162,7 +1168,7 @@
                       "uv":[0.0,0.0]
                     },
                     {
-                      "name": "head",
+                      "name": "skull",
                       "from":[3.8475,1.71,1.805],
                       "to":[3.8475,2.7148,1.805],
                       "faces": {
@@ -1177,6 +1183,22 @@
                       "rotationZ": 40.5,
                       "uv":[0.0,0.0],
                       "children": [
+                        {
+                          "name": "Head",
+                          "from":[-0.50000360179160808,-5.4999989167434968,-1.5000003576278687],
+                          "to":[-0.40000360030149196,-5.3999989152533807,-1.4000003561377525],
+                          "faces": {
+                            "north":{"texture": "#griffonskin1", "uv": [0.0, 0.0, 0.5, 0.5], "enabled": false},
+                            "east":{"texture": "#griffonskin1", "uv": [0.0, 0.0, 0.5, 0.5], "enabled": false},
+                            "south":{"texture": "#griffonskin1", "uv": [0.0, 0.0, 0.5, 0.5], "enabled": false},
+                            "west":{"texture": "#griffonskin1", "uv": [0.0, 0.0, 0.5, 0.5], "enabled": false},
+                            "up":{"texture": "#griffonskin1", "uv": [0.0, 0.0, 0.5, 0.5], "enabled": false},
+                            "down":{"texture": "#griffonskin1", "uv": [0.0, 0.0, 0.5, 0.5], "enabled": false}
+                          },
+                          "rotationOrigin":[-0.50000264811729167,-5.4999989167436105,-1.5000003576278687],
+                          "rotationZ": 2.2179265215527266E-06,
+                          "uv":[0.0,0.0]
+                        },
                         {
                           "name": "HeadStorage",
                           "from":[-6.0000033378601074,-0.49999913573265076,-3.5000004768371582],
@@ -1295,7 +1317,24 @@
                                   "code": "FaceAP"
                                 }
                               ],
-                              "uv":[0.0,0.0]
+                              "uv":[0.0,0.0],
+                              "children": [
+                                {
+                                  "name": "Nose",
+                                  "from":[-3.2248662114143372,-1.5136083513498306,-0.3125],
+                                  "to":[-3.124866209924221,-1.4136083498597145,-0.21249999850988388],
+                                  "faces": {
+                                    "north":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false, "autoUv": false, "snapUV": false},
+                                    "east":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false, "autoUv": false, "snapUV": false},
+                                    "south":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false, "autoUv": false, "snapUV": false},
+                                    "west":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false, "autoUv": false, "snapUV": false},
+                                    "up":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false, "autoUv": false, "snapUV": false},
+                                    "down":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false, "autoUv": false, "snapUV": false}
+                                  },
+                                  "rotationOrigin":[-3.2248662114143372,-1.5136083513498306,-0.3125],
+                                  "uv":[0.0,0.0]
+                                }
+                              ]
                             },
                             {
                               "name": "headridge2",
@@ -7483,7 +7522,6 @@
             "tail5":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "tail6":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "neck1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
-            "head":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "larmWing":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 4.0, "rotationY": 49.5, "rotationZ": 45.0},
             "rarmWing":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 1.0, "rotationX": -4.0, "rotationY": -49.5, "rotationZ": 45.0},
             "ShoulderL":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
@@ -7522,7 +7560,8 @@
             "Cube179":{"offsetX": 0.0, "offsetY": 1.0, "offsetZ": 1.0, "rotationX": 0.0, "rotationY": 10.0, "rotationZ": 0.0},
             "WingSectionR4":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 1.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "shoulderWingL":{"offsetX": 0.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
-            "shoulderWingR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0}
+            "shoulderWingR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
+            "skull":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0}
           }
         },
         {
@@ -7538,7 +7577,6 @@
             "tail5":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -4.0},
             "tail6":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -1.0},
             "neck1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -2.0},
-            "head":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 1.0},
             "ShoulderL":{"offsetX": -0.05, "offsetY": -0.05, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -0.25},
             "ArmL":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -2.0},
             "larmWing":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 4.0, "rotationY": 49.5, "rotationZ": 45.0},
@@ -7574,7 +7612,8 @@
             "WingSectionR2":{"offsetX": -4.0, "offsetY": -1.0, "offsetZ": -4.0, "rotationX": 0.0, "rotationY": -73.5, "rotationZ": -2.0},
             "ShoulderR":{"offsetX": -0.05, "offsetY": -0.05, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -0.25},
             "ArmR":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -2.0},
-            "shoulderWingL":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -2.0}
+            "shoulderWingL":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -2.0},
+            "skull":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 1.0}
           }
         }
       ]
@@ -7619,7 +7658,6 @@
             "tail6":{"offsetX": -1.0, "offsetY": -0.1, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": -3.0, "rotationZ": -30.5},
             "neck1":{"offsetX": 1.0, "offsetY": -2.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 45.0},
             "neck2":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": -1.0, "rotationX": 0.0, "rotationY": -22.5, "rotationZ": 0.0},
-            "head":{"offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -34.5},
             "eyelTopLid":{"offsetX": 0.0, "offsetY": -0.4617, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "eyelBotLid":{"offsetX": -0.1026, "offsetY": 0.4104, "offsetZ": 0.1026, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "eyeRBotLid":{"offsetX": 0.0, "offsetY": -0.4617, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
@@ -7665,7 +7703,8 @@
             "Cube152":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -5.0, "rotationY": -1.0, "rotationZ": 0.0},
             "footl3":{"offsetX": 0.0, "offsetY": 1.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 45.0},
             "WingSectionL5":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -6.0, "rotationY": 39.0, "rotationZ": 0.0},
-            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5}
+            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5},
+            "skull":{"offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -34.5}
           }
         }
       ]
@@ -7686,7 +7725,6 @@
             "finger1L":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 24.5, "rotationY": -62.5, "rotationZ": -18.0},
             "neck1":{"offsetX": 1.0, "offsetY": -2.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 45.0},
             "neck2":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": -1.0, "rotationX": 0.0, "rotationY": -22.5, "rotationZ": 0.0},
-            "head":{"offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -34.5},
             "botmouth":{"rotationX": 0.0, "rotationY": -10.0, "rotationZ": 10.5},
             "tail2":{"rotationX": 0.0, "rotationY": -18.0, "rotationZ": -5.0},
             "tail3":{"rotationX": 0.0, "rotationY": -4.5, "rotationZ": -17.0},
@@ -7734,7 +7772,8 @@
             "fingerPinkyL6":{"offsetX": 1.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 67.5},
             "fingerThumbR":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 1.0, "rotationX": 0.0, "rotationY": -22.5, "rotationZ": 22.5},
             "fingerThumbL6":{"offsetX": 1.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 67.5},
-            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5}
+            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5},
+            "skull":{"offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -34.5}
           }
         }
       ]
@@ -7754,7 +7793,6 @@
             "finger1L":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 24.5, "rotationY": -62.5, "rotationZ": -18.0},
             "neck1":{"offsetX": 1.0, "offsetY": -2.0, "offsetZ": 0.0, "rotationX": 2.0, "rotationY": 0.0, "rotationZ": 58.0},
             "neck2":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": -1.0, "rotationX": 0.0, "rotationY": -15.5, "rotationZ": 0.0},
-            "head":{"offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0, "rotationX": 8.0, "rotationY": 12.0, "rotationZ": -31.5},
             "botmouth":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 4.5},
             "tail2":{"rotationX": 0.0, "rotationY": -18.0, "rotationZ": -5.0},
             "tail3":{"rotationX": 0.0, "rotationY": -4.5, "rotationZ": -17.0},
@@ -7804,7 +7842,8 @@
             "fingerThumbL6":{"offsetX": 1.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 67.5},
             "stomach":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "bum2":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
-            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5}
+            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5},
+            "skull":{"offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0, "rotationX": 8.0, "rotationY": 12.0, "rotationZ": -31.5}
           }
         },
         {
@@ -7825,7 +7864,6 @@
             "tail6":{"offsetX": -1.0, "offsetY": -0.1, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": -3.0, "rotationZ": -30.5},
             "neck1":{"offsetX": 1.0, "offsetY": -2.0, "offsetZ": 0.0, "rotationX": 2.0, "rotationY": -3.0, "rotationZ": 58.0},
             "neck2":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": -1.0, "rotationX": 0.0, "rotationY": -15.5, "rotationZ": 0.0},
-            "head":{"offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0, "rotationX": 8.0, "rotationY": 12.0, "rotationZ": -31.5},
             "eyelTopLid":{"offsetX": 0.0, "offsetY": -0.4617, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "eyelBotLid":{"offsetX": -0.1026, "offsetY": 0.15, "offsetZ": 0.1026, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "eyeRBotLid":{"offsetX": 0.0, "offsetY": -0.2, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
@@ -7866,7 +7904,8 @@
             "fingerThumbL6":{"offsetX": 1.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 67.5},
             "stomach":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -0.1, "rotationY": 1.5, "rotationZ": 0.0},
             "bum2":{"rotationX": 0.0, "rotationY": -1.0, "rotationZ": 0.0},
-            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5}
+            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5},
+            "skull":{"offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0, "rotationX": 8.0, "rotationY": 12.0, "rotationZ": -31.5}
           }
         }
       ]
@@ -7887,7 +7926,6 @@
             "finger1L":{"rotationX": 14.0, "rotationY": -67.5, "rotationZ": 0.0},
             "neck1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5},
             "neck2":{"offsetX": 0.0, "offsetY": 1.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5},
-            "head":{"offsetX": -1.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -11.0},
             "rarmWing":{"rotationX": 0.0, "rotationY": 32.0, "rotationZ": 0.0},
             "rforearm":{"rotationX": -22.5, "rotationY": 90.0, "rotationZ": 0.0},
             "finger1R":{"rotationX": -14.0, "rotationY": 67.5, "rotationZ": 0.0},
@@ -7946,7 +7984,8 @@
             "WingSectionR3":{"rotationX": 5.0, "rotationY": -1.0, "rotationZ": -3.0},
             "Fluff2":{"offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "botmouth":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
-            "LowerShinL1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0}
+            "LowerShinL1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
+            "skull":{"offsetX": -1.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -11.0}
           }
         },
         {
@@ -7958,7 +7997,6 @@
             "finger1L":{"rotationX": 22.5, "rotationY": -67.5, "rotationZ": -5.0},
             "neck1":{"rotationX": 0.0, "rotationY": 3.0, "rotationZ": 23.5},
             "neck2":{"offsetX": 0.0, "offsetY": 1.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 4.0, "rotationZ": -22.5},
-            "head":{"offsetX": -1.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 8.0, "rotationZ": -12.0},
             "rarmWing":{"rotationX": 67.5, "rotationY": 22.5, "rotationZ": 22.5},
             "rforearm":{"rotationX": -45.0, "rotationY": 67.5, "rotationZ": 0.0},
             "finger1R":{"rotationX": -22.5, "rotationY": 67.5, "rotationZ": -5.0},
@@ -7979,7 +8017,8 @@
             "bum":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "ArmL":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 44.0},
             "ArmR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 44.0},
-            "botmouth":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 7.5}
+            "botmouth":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 7.5},
+            "skull":{"offsetX": -1.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 8.0, "rotationZ": -12.0}
           }
         },
         {
@@ -7991,7 +8030,6 @@
             "finger1L":{"rotationX": 22.5, "rotationY": -67.5, "rotationZ": -5.0},
             "neck1":{"rotationX": 0.0, "rotationY": -5.0, "rotationZ": 24.5},
             "neck2":{"offsetX": 0.0, "offsetY": 1.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 6.0, "rotationZ": -22.5},
-            "head":{"offsetX": -1.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 16.0, "rotationZ": -17.0},
             "rarmWing":{"rotationX": 90.0, "rotationY": 22.5, "rotationZ": 0.0},
             "rforearm":{"rotationX": -22.5, "rotationY": 90.0, "rotationZ": 0.0},
             "finger1R":{"rotationX": -22.5, "rotationY": 67.5, "rotationZ": -5.0},
@@ -8011,7 +8049,8 @@
             "bum":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.3333},
             "ArmL":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 43.3333},
             "ArmR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 43.33},
-            "botmouth":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 13.0}
+            "botmouth":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 13.0},
+            "skull":{"offsetX": -1.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 16.0, "rotationZ": -17.0}
           }
         },
         {
@@ -8023,7 +8062,6 @@
             "finger1L":{"rotationX": -22.5, "rotationY": -67.5, "rotationZ": 0.0},
             "neck1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 23.5},
             "neck2":{"offsetX": 0.0, "offsetY": 1.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5},
-            "head":{"offsetX": -1.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -11.0},
             "rarmWing":{"rotationX": 45.0, "rotationY": 22.5, "rotationZ": 0.0},
             "rforearm":{"rotationX": 0.0, "rotationY": 90.0, "rotationZ": 0.0},
             "finger1R":{"rotationX": 22.5, "rotationY": 67.5, "rotationZ": 0.0},
@@ -8039,7 +8077,8 @@
             "legL":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.83},
             "bum":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.6667},
             "ArmL":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 44.6667},
-            "ArmR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 44.67}
+            "ArmR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 44.67},
+            "skull":{"offsetX": -1.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -11.0}
           }
         }
       ]
@@ -8059,7 +8098,6 @@
             "finger1L":{"rotationX": 14.0, "rotationY": -67.5, "rotationZ": 0.0},
             "neck1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5},
             "neck2":{"offsetX": 0.0, "offsetY": 1.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5},
-            "head":{"offsetX": -1.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -11.0},
             "rarmWing":{"rotationX": 0.0, "rotationY": 32.0, "rotationZ": 0.0},
             "rforearm":{"rotationX": -22.5, "rotationY": 90.5, "rotationZ": 0.0},
             "finger1R":{"rotationX": -14.0, "rotationY": 67.5, "rotationZ": 0.0},
@@ -8117,7 +8155,8 @@
             "bum":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "WingSectionR3":{"rotationX": 5.0, "rotationY": -1.0, "rotationZ": -3.0},
             "Fluff2":{"offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
-            "LowerShinL1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0}
+            "LowerShinL1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
+            "skull":{"offsetX": -1.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -11.0}
           }
         },
         {
@@ -8129,7 +8168,6 @@
             "finger1L":{"rotationX": 22.5, "rotationY": -67.5, "rotationZ": -5.0},
             "neck1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 23.5},
             "neck2":{"offsetX": 0.0, "offsetY": 1.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5},
-            "head":{"offsetX": -1.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -12.0},
             "rarmWing":{"rotationX": 67.5, "rotationY": 22.5, "rotationZ": 22.5},
             "rforearm":{"rotationX": -45.0, "rotationY": 77.0, "rotationZ": 0.0},
             "finger1R":{"rotationX": -22.5, "rotationY": 67.5, "rotationZ": -5.0},
@@ -8149,7 +8187,8 @@
             "legL":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 24.5},
             "bum":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "ArmL":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 44.0},
-            "ArmR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 44.0}
+            "ArmR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 44.0},
+            "skull":{"offsetX": -1.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -12.0}
           }
         },
         {
@@ -8161,7 +8200,6 @@
             "finger1L":{"rotationX": 22.5, "rotationY": -67.5, "rotationZ": -5.0},
             "neck1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 24.5},
             "neck2":{"offsetX": 0.0, "offsetY": 1.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5},
-            "head":{"offsetX": -1.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -13.0},
             "rarmWing":{"rotationX": 90.0, "rotationY": 22.5, "rotationZ": 0.0},
             "rforearm":{"rotationX": -22.5, "rotationY": 90.0, "rotationZ": 0.0},
             "finger1R":{"rotationX": -22.5, "rotationY": 67.5, "rotationZ": -5.0},
@@ -8180,7 +8218,8 @@
             "legL":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 25.17},
             "bum":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.3333},
             "ArmL":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 43.3333},
-            "ArmR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 43.33}
+            "ArmR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 43.33},
+            "skull":{"offsetX": -1.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -13.0}
           }
         },
         {
@@ -8192,7 +8231,6 @@
             "finger1L":{"rotationX": -22.5, "rotationY": -67.5, "rotationZ": 0.0},
             "neck1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 23.5},
             "neck2":{"offsetX": 0.0, "offsetY": 1.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5},
-            "head":{"offsetX": -1.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -11.0},
             "rarmWing":{"rotationX": 45.0, "rotationY": 22.5, "rotationZ": 0.0},
             "rforearm":{"rotationX": 0.0, "rotationY": 90.0, "rotationZ": 0.0},
             "finger1R":{"rotationX": 22.5, "rotationY": 67.5, "rotationZ": 0.0},
@@ -8208,7 +8246,8 @@
             "legL":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.83},
             "bum":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.6667},
             "ArmL":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 44.6667},
-            "ArmR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 44.67}
+            "ArmR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 44.67},
+            "skull":{"offsetX": -1.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -11.0}
           }
         }
       ]
@@ -8228,7 +8267,6 @@
             "finger1L":{"rotationX": 14.0, "rotationY": -67.5, "rotationZ": 0.0},
             "neck1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5},
             "neck2":{"offsetX": 0.0, "offsetY": 1.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5},
-            "head":{"offsetX": -1.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -11.0},
             "rarmWing":{"rotationX": 0.0, "rotationY": 45.0, "rotationZ": 17.0},
             "rforearm":{"rotationX": -22.5, "rotationY": 90.5, "rotationZ": 0.0},
             "finger1R":{"rotationX": -14.0, "rotationY": 67.5, "rotationZ": 0.0},
@@ -8286,7 +8324,8 @@
             "bum":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "WingSectionR3":{"rotationX": 5.0, "rotationY": -1.0, "rotationZ": -3.0},
             "Fluff2":{"offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
-            "LowerShinL1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0}
+            "LowerShinL1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
+            "skull":{"offsetX": -1.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -11.0}
           }
         },
         {
@@ -8298,7 +8337,6 @@
             "finger1L":{"rotationX": 22.5, "rotationY": -67.5, "rotationZ": -5.0},
             "neck1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 23.5},
             "neck2":{"offsetX": 0.0, "offsetY": 1.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5},
-            "head":{"offsetX": -1.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -12.0},
             "rarmWing":{"rotationX": 67.5, "rotationY": 30.5, "rotationZ": 14.5},
             "rforearm":{"rotationX": -45.0, "rotationY": 77.0, "rotationZ": 0.0},
             "finger1R":{"rotationX": -22.5, "rotationY": 67.5, "rotationZ": -5.0},
@@ -8318,7 +8356,8 @@
             "legL":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 9.5},
             "bum":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "ArmL":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 44.0},
-            "ArmR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 44.0}
+            "ArmR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 44.0},
+            "skull":{"offsetX": -1.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -12.0}
           }
         },
         {
@@ -8330,7 +8369,6 @@
             "finger1L":{"rotationX": 22.5, "rotationY": -67.5, "rotationZ": -5.0},
             "neck1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 24.5},
             "neck2":{"offsetX": 0.0, "offsetY": 1.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5},
-            "head":{"offsetX": -1.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -13.0},
             "rarmWing":{"rotationX": 90.0, "rotationY": 45.5, "rotationZ": 0.0},
             "rforearm":{"rotationX": -22.5, "rotationY": 90.0, "rotationZ": 0.0},
             "finger1R":{"rotationX": -22.5, "rotationY": 67.5, "rotationZ": -5.0},
@@ -8349,7 +8387,8 @@
             "legL":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 10.170000076293945},
             "bum":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.3333},
             "ArmL":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 43.3333},
-            "ArmR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 43.33}
+            "ArmR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 43.33},
+            "skull":{"offsetX": -1.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -13.0}
           }
         },
         {
@@ -8361,7 +8400,6 @@
             "finger1L":{"rotationX": -22.5, "rotationY": -67.5, "rotationZ": 0.0},
             "neck1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 23.5},
             "neck2":{"offsetX": 0.0, "offsetY": 1.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5},
-            "head":{"offsetX": -1.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -11.0},
             "rarmWing":{"rotationX": 45.0, "rotationY": 46.5, "rotationZ": 15.0},
             "rforearm":{"rotationX": 0.0, "rotationY": 90.0, "rotationZ": 0.0},
             "finger1R":{"rotationX": 22.5, "rotationY": 67.5, "rotationZ": 0.0},
@@ -8377,7 +8415,8 @@
             "legL":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 7.8299999237060547},
             "bum":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.6667},
             "ArmL":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 44.6667},
-            "ArmR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 44.67}
+            "ArmR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 44.67},
+            "skull":{"offsetX": -1.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -11.0}
           }
         }
       ]
@@ -8400,7 +8439,6 @@
             "tail6":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -15.0},
             "neck1":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5},
             "neck2":{"offsetX": 0.0, "offsetY": 0.8, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -14.5},
-            "head":{"offsetX": -1.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5},
             "rarmWing":{"offsetX": -1.2, "offsetY": 0.72, "offsetZ": 0.0, "rotationX": 3.0, "rotationY": 39.0, "rotationZ": 5.0},
             "rforearm":{"offsetX": -1.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -3.0, "rotationY": 98.0, "rotationZ": 0.0},
             "finger1R":{"offsetX": -1.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -1.0, "rotationY": 66.5, "rotationZ": 0.0},
@@ -8458,7 +8496,8 @@
             "LowerShinL1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5},
             "footR":{"offsetX": 1.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 90.0},
             "Cube217":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": -0.4},
-            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5}
+            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5},
+            "skull":{"offsetX": -1.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5}
           }
         },
         {
@@ -8477,7 +8516,6 @@
             "tail6":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -13.0},
             "neck1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 23.0},
             "neck2":{"offsetX": 0.0, "offsetY": 0.8, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -14.5},
-            "head":{"offsetX": -1.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -23.5},
             "rarmWing":{"offsetX": -1.2, "offsetY": 0.72, "offsetZ": 0.0, "rotationX": 3.0, "rotationY": 39.0, "rotationZ": 5.0},
             "rforearm":{"rotationX": -2.5, "rotationY": 98.0, "rotationZ": 0.0},
             "finger1R":{"offsetX": -1.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -2.0, "rotationY": 66.5, "rotationZ": 0.0},
@@ -8485,7 +8523,8 @@
             "ArmL":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 44.5},
             "ArmR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 44.5},
             "legR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 23.0},
-            "legL":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 23.0}
+            "legL":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 23.0},
+            "skull":{"offsetX": -1.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -23.5}
           }
         },
         {
@@ -8504,7 +8543,6 @@
             "tail6":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -10.0},
             "neck1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 23.5},
             "neck2":{"offsetX": 0.0, "offsetY": 0.8, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -14.5},
-            "head":{"offsetX": -1.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -24.5},
             "rarmWing":{"offsetX": -1.2, "offsetY": 0.72, "offsetZ": 0.0, "rotationX": 3.0, "rotationY": 39.0, "rotationZ": 5.0},
             "rforearm":{"rotationX": -1.5, "rotationY": 98.0, "rotationZ": 0.0},
             "finger1R":{"offsetX": -1.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -2.0, "rotationY": 66.5, "rotationZ": 0.0},
@@ -8512,7 +8550,8 @@
             "ArmL":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 44.25},
             "ArmR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 44.25},
             "legL":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.75},
-            "legR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.8571}
+            "legR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.8571},
+            "skull":{"offsetX": -1.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -24.5}
           }
         },
         {
@@ -8531,7 +8570,6 @@
             "tail6":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -12.0},
             "neck1":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 23.0},
             "neck2":{"offsetX": 0.0, "offsetY": 0.8, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -14.5},
-            "head":{"offsetX": -1.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -23.5},
             "rarmWing":{"offsetX": -1.2, "offsetY": 0.72, "offsetZ": 0.0, "rotationX": 3.0, "rotationY": 39.0, "rotationZ": 5.0},
             "rforearm":{"rotationX": -2.6, "rotationY": 98.0, "rotationZ": 0.0},
             "finger1R":{"offsetX": -1.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -1.0, "rotationY": 66.5, "rotationZ": 0.0},
@@ -8541,7 +8579,8 @@
             "ArmL":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 44.55},
             "ArmR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 44.55},
             "legR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.45},
-            "Cube217":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": -0.4}
+            "Cube217":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": -0.4},
+            "skull":{"offsetX": -1.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -23.5}
           }
         }
       ]
@@ -8561,7 +8600,6 @@
             "finger1L":{"rotationX": 14.0, "rotationY": -67.5, "rotationZ": 0.0},
             "neck1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5},
             "neck2":{"offsetX": 0.0, "offsetY": 1.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5},
-            "head":{"offsetX": -1.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -11.0},
             "rarmWing":{"rotationX": 0.0, "rotationY": 32.0, "rotationZ": 0.0},
             "rforearm":{"rotationX": -22.5, "rotationY": 90.5, "rotationZ": 0.0},
             "finger1R":{"rotationX": -14.0, "rotationY": 67.5, "rotationZ": 0.0},
@@ -8619,7 +8657,8 @@
             "bum":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "WingSectionR3":{"rotationX": 5.0, "rotationY": -1.0, "rotationZ": -3.0},
             "Fluff2":{"offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
-            "LowerShinL1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0}
+            "LowerShinL1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
+            "skull":{"offsetX": -1.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -11.0}
           }
         },
         {
@@ -8631,7 +8670,6 @@
             "finger1L":{"rotationX": 22.5, "rotationY": -67.5, "rotationZ": -5.0},
             "neck1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 23.5},
             "neck2":{"offsetX": 0.0, "offsetY": 1.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5},
-            "head":{"offsetX": -1.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -12.0},
             "rarmWing":{"rotationX": 67.5, "rotationY": 22.5, "rotationZ": 22.5},
             "rforearm":{"rotationX": -45.0, "rotationY": 77.0, "rotationZ": 0.0},
             "finger1R":{"rotationX": -22.5, "rotationY": 67.5, "rotationZ": -5.0},
@@ -8651,7 +8689,8 @@
             "legL":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 24.5},
             "bum":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "ArmL":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 44.0},
-            "ArmR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 44.0}
+            "ArmR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 44.0},
+            "skull":{"offsetX": -1.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -12.0}
           }
         },
         {
@@ -8663,7 +8702,6 @@
             "finger1L":{"rotationX": 22.5, "rotationY": -67.5, "rotationZ": -5.0},
             "neck1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 24.5},
             "neck2":{"offsetX": 0.0, "offsetY": 1.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5},
-            "head":{"offsetX": -1.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -13.0},
             "rarmWing":{"rotationX": 90.0, "rotationY": 22.5, "rotationZ": 0.0},
             "rforearm":{"rotationX": -22.5, "rotationY": 90.0, "rotationZ": 0.0},
             "finger1R":{"rotationX": -22.5, "rotationY": 67.5, "rotationZ": -5.0},
@@ -8682,7 +8720,8 @@
             "legL":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 25.17},
             "bum":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.3333},
             "ArmL":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 43.3333},
-            "ArmR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 43.33}
+            "ArmR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 43.33},
+            "skull":{"offsetX": -1.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -13.0}
           }
         },
         {
@@ -8694,7 +8733,6 @@
             "finger1L":{"rotationX": -22.5, "rotationY": -67.5, "rotationZ": 0.0},
             "neck1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 23.5},
             "neck2":{"offsetX": 0.0, "offsetY": 1.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5},
-            "head":{"offsetX": -1.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -11.0},
             "rarmWing":{"rotationX": 45.0, "rotationY": 22.5, "rotationZ": 0.0},
             "rforearm":{"rotationX": 0.0, "rotationY": 90.0, "rotationZ": 0.0},
             "finger1R":{"rotationX": 22.5, "rotationY": 67.5, "rotationZ": 0.0},
@@ -8710,7 +8748,8 @@
             "legL":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.83},
             "bum":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.6667},
             "ArmL":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 44.6667},
-            "ArmR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 44.67}
+            "ArmR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 44.67},
+            "skull":{"offsetX": -1.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -11.0}
           }
         }
       ]
@@ -8730,7 +8769,6 @@
             "finger1L":{"rotationX": 14.0, "rotationY": -67.5, "rotationZ": 0.0},
             "neck1":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 28.0},
             "neck2":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
-            "head":{"offsetX": 0.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -8.0},
             "rarmWing":{"rotationX": 0.0, "rotationY": 32.0, "rotationZ": 0.0},
             "rforearm":{"rotationX": -22.5, "rotationY": 90.5, "rotationZ": 0.0},
             "finger1R":{"rotationX": -14.0, "rotationY": 67.5, "rotationZ": 0.0},
@@ -8789,7 +8827,8 @@
             "WingSectionR3":{"rotationX": 5.0, "rotationY": -1.0, "rotationZ": -3.0},
             "Fluff2":{"offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "Wings":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 15.0},
-            "LowerShinL1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0}
+            "LowerShinL1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
+            "skull":{"offsetX": 0.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -8.0}
           }
         },
         {
@@ -8801,7 +8840,6 @@
             "finger1L":{"rotationX": 22.5, "rotationY": -67.5, "rotationZ": -5.0},
             "neck1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 28.0},
             "neck2":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
-            "head":{"offsetX": 0.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -8.0},
             "rarmWing":{"rotationX": 67.5, "rotationY": 22.5, "rotationZ": 22.5},
             "rforearm":{"rotationX": -45.0, "rotationY": 77.0, "rotationZ": 0.0},
             "finger1R":{"rotationX": -22.5, "rotationY": 67.5, "rotationZ": -5.0},
@@ -8821,7 +8859,8 @@
             "legL":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 24.5},
             "bum":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5},
             "ArmL":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5},
-            "ArmR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5}
+            "ArmR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5},
+            "skull":{"offsetX": 0.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -8.0}
           }
         },
         {
@@ -8833,7 +8872,6 @@
             "finger1L":{"rotationX": 22.5, "rotationY": -67.5, "rotationZ": -5.0},
             "neck1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 28.0},
             "neck2":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
-            "head":{"offsetX": 0.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -8.0},
             "rarmWing":{"rotationX": 90.0, "rotationY": 22.5, "rotationZ": 0.0},
             "rforearm":{"rotationX": -22.5, "rotationY": 90.0, "rotationZ": 0.0},
             "finger1R":{"rotationX": -22.5, "rotationY": 67.5, "rotationZ": -5.0},
@@ -8852,7 +8890,8 @@
             "legL":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 25.17},
             "bum":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5},
             "ArmL":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5},
-            "ArmR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5}
+            "ArmR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5},
+            "skull":{"offsetX": 0.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -8.0}
           }
         },
         {
@@ -8864,7 +8903,6 @@
             "finger1L":{"rotationX": -22.5, "rotationY": -67.5, "rotationZ": 0.0},
             "neck1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 28.0},
             "neck2":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
-            "head":{"offsetX": 0.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -8.0},
             "rarmWing":{"rotationX": 45.0, "rotationY": 22.5, "rotationZ": 0.0},
             "rforearm":{"rotationX": 0.0, "rotationY": 90.0, "rotationZ": 0.0},
             "finger1R":{"rotationX": 22.5, "rotationY": 67.5, "rotationZ": 0.0},
@@ -8880,7 +8918,8 @@
             "legL":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.83},
             "bum":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5},
             "ArmL":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5},
-            "ArmR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5}
+            "ArmR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5},
+            "skull":{"offsetX": 0.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -8.0}
           }
         }
       ]
@@ -8904,7 +8943,6 @@
             "tail6":{"offsetX": -0.7, "offsetY": -0.2, "offsetZ": 0.25, "rotationX": 0.0, "rotationY": -22.5, "rotationZ": -11.5},
             "neck1":{"offsetX": 0.8371, "offsetY": -1.3258, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 13.0, "rotationZ": 45.0},
             "neck2":{"offsetX": 0.0, "offsetY": 1.0, "offsetZ": 0.0, "rotationX": 2.0, "rotationY": 6.5, "rotationZ": -15.0},
-            "head":{"offsetX": 0.0, "offsetY": -0.9534, "offsetZ": 0.0, "rotationX": -22.5, "rotationY": 45.0, "rotationZ": -19.0},
             "rarmWing":{"offsetX": 1.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -29.5, "rotationY": -61.5, "rotationZ": 4.0},
             "rforearm":{"offsetX": 0.0, "offsetY": 1.2241, "offsetZ": 2.4482, "rotationX": 6.5, "rotationY": -58.0, "rotationZ": -18.5},
             "larmWing":{"rotationX": 31.5, "rotationY": 35.0, "rotationZ": 2.0},
@@ -8954,7 +8992,8 @@
             "Cube201":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": -4.0, "rotationX": 0.0, "rotationY": 45.0, "rotationZ": 0.0},
             "Cube199":{"rotationX": 0.0, "rotationY": 50.0, "rotationZ": 0.0},
             "WingSectionR5":{"offsetX": -17.0, "offsetY": -1.0, "offsetZ": -6.0, "rotationX": -3.0, "rotationY": -2.0, "rotationZ": 9.0},
-            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -65.5}
+            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -65.5},
+            "skull":{"offsetX": 0.0, "offsetY": -0.9534, "offsetZ": 0.0, "rotationX": -22.5, "rotationY": 45.0, "rotationZ": -19.0}
           }
         },
         {
@@ -8978,7 +9017,6 @@
             "tail6":{"offsetX": -0.7, "offsetY": -0.2, "offsetZ": 0.25, "rotationX": 0.0, "rotationY": -22.5, "rotationZ": -11.5},
             "neck1":{"offsetX": 0.6, "offsetY": -1.3258, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 13.0, "rotationZ": 44.0},
             "neck2":{"offsetX": 0.0, "offsetY": 1.0, "offsetZ": 0.0, "rotationX": 2.0, "rotationY": 6.5, "rotationZ": -15.0},
-            "head":{"offsetX": 0.0, "offsetY": -0.9534, "offsetZ": 0.0, "rotationX": -22.5, "rotationY": 45.0, "rotationZ": -19.0},
             "eyelTopLid":{"offsetX": 0.0, "offsetY": -0.4617, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "eyelBotLid":{"offsetX": 0.0, "offsetY": 0.4104, "offsetZ": 0.0513, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "eyeRBotLid":{"offsetX": 0.0, "offsetY": -0.4617, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
@@ -9001,7 +9039,8 @@
             "WingSectionR1":{"offsetX": -11.0, "offsetY": -2.0, "offsetZ": -7.0, "rotationX": -9.0, "rotationY": 43.0, "rotationZ": 20.0},
             "WingSectionR5":{"offsetX": -17.0, "offsetY": -1.0, "offsetZ": -6.0, "rotationX": -3.0, "rotationY": -2.0, "rotationZ": 9.0},
             "shoulderWingL":{"rotationX": 12.0, "rotationY": -11.0, "rotationZ": -14.0},
-            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -65.5}
+            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -65.5},
+            "skull":{"offsetX": 0.0, "offsetY": -0.9534, "offsetZ": 0.0, "rotationX": -22.5, "rotationY": 45.0, "rotationZ": -19.0}
           }
         }
       ]
@@ -9025,7 +9064,6 @@
             "tail6":{"offsetX": -0.7, "offsetY": -0.2, "offsetZ": 0.25, "rotationX": 0.0, "rotationY": -22.5, "rotationZ": -11.5},
             "neck1":{"offsetX": 0.8371, "offsetY": -1.3258, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 13.0, "rotationZ": 45.0},
             "neck2":{"offsetX": 0.0, "offsetY": 1.0, "offsetZ": 0.0, "rotationX": 2.0, "rotationY": 6.5, "rotationZ": -15.0},
-            "head":{"offsetX": 0.0, "offsetY": -0.9534, "offsetZ": 0.0, "rotationX": -22.5, "rotationY": 45.0, "rotationZ": -19.0},
             "rarmWing":{"offsetX": 1.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -29.5, "rotationY": -61.5, "rotationZ": 4.0},
             "rforearm":{"offsetX": 0.0, "offsetY": 1.2241, "offsetZ": 2.4482, "rotationX": 6.5, "rotationY": -58.0, "rotationZ": -18.5},
             "larmWing":{"rotationX": 31.5, "rotationY": 35.0, "rotationZ": 2.0},
@@ -9075,7 +9113,8 @@
             "Cube201":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": -4.0, "rotationX": 0.0, "rotationY": 45.0, "rotationZ": 0.0},
             "Cube199":{"rotationX": 0.0, "rotationY": 50.0, "rotationZ": 0.0},
             "WingSectionR5":{"offsetX": -17.0, "offsetY": -1.0, "offsetZ": -6.0, "rotationX": -3.0, "rotationY": -2.0, "rotationZ": 9.0},
-            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -65.5}
+            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -65.5},
+            "skull":{"offsetX": 0.0, "offsetY": -0.9534, "offsetZ": 0.0, "rotationX": -22.5, "rotationY": 45.0, "rotationZ": -19.0}
           }
         },
         {
@@ -9099,7 +9138,6 @@
             "tail6":{"offsetX": -0.7, "offsetY": -0.2, "offsetZ": 0.25, "rotationX": 0.0, "rotationY": -22.5, "rotationZ": -11.5},
             "neck1":{"offsetX": 0.6, "offsetY": -1.3258, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 13.0, "rotationZ": 44.0},
             "neck2":{"offsetX": 0.0, "offsetY": 1.0, "offsetZ": 0.0, "rotationX": 2.0, "rotationY": 6.5, "rotationZ": -15.0},
-            "head":{"offsetX": 0.0, "offsetY": -0.9534, "offsetZ": 0.0, "rotationX": -22.5, "rotationY": 45.0, "rotationZ": -19.0},
             "eyelTopLid":{"offsetX": 0.0, "offsetY": -0.4617, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "eyelBotLid":{"offsetX": 0.0, "offsetY": 0.4104, "offsetZ": 0.0513, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "eyeRBotLid":{"offsetX": 0.0, "offsetY": -0.4617, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
@@ -9122,7 +9160,8 @@
             "WingSectionR1":{"offsetX": -11.0, "offsetY": -2.0, "offsetZ": -7.0, "rotationX": -9.0, "rotationY": 43.0, "rotationZ": 20.0},
             "WingSectionR5":{"offsetX": -17.0, "offsetY": -1.0, "offsetZ": -6.0, "rotationX": -3.0, "rotationY": -2.0, "rotationZ": 9.0},
             "shoulderWingL":{"rotationX": 12.0, "rotationY": -11.0, "rotationZ": -14.0},
-            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -65.5}
+            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -65.5},
+            "skull":{"offsetX": 0.0, "offsetY": -0.9534, "offsetZ": 0.0, "rotationX": -22.5, "rotationY": 45.0, "rotationZ": -19.0}
           }
         }
       ]
@@ -9142,7 +9181,6 @@
             "finger1L":{"rotationX": 14.0, "rotationY": -67.5, "rotationZ": 0.0},
             "neck1":{"offsetX": 1.0, "offsetY": -1.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 51.0},
             "neck2":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
-            "head":{"offsetX": 0.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -8.0},
             "rarmWing":{"rotationX": 0.0, "rotationY": 32.0, "rotationZ": 0.0},
             "rforearm":{"rotationX": -22.5, "rotationY": 90.5, "rotationZ": 0.0},
             "finger1R":{"rotationX": -14.0, "rotationY": 67.5, "rotationZ": 0.0},
@@ -9202,7 +9240,8 @@
             "Fluff2":{"offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "Wings":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 15.0},
             "chest":{"offsetX": 1.0, "offsetY": 1.0, "offsetZ": 0.0},
-            "LowerShinL1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0}
+            "LowerShinL1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
+            "skull":{"offsetX": 0.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -8.0}
           }
         },
         {
@@ -9214,7 +9253,6 @@
             "finger1L":{"rotationX": 22.5, "rotationY": -67.5, "rotationZ": -5.0},
             "neck1":{"offsetX": 1.0, "offsetY": -1.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 51.0},
             "neck2":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
-            "head":{"offsetX": 0.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -8.0},
             "rarmWing":{"rotationX": 67.5, "rotationY": 22.5, "rotationZ": 22.5},
             "rforearm":{"rotationX": -45.0, "rotationY": 77.0, "rotationZ": 0.0},
             "finger1R":{"rotationX": -22.5, "rotationY": 67.5, "rotationZ": -5.0},
@@ -9235,7 +9273,8 @@
             "bum":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5},
             "ArmL":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5},
             "ArmR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5},
-            "chest":{"offsetX": 1.0, "offsetY": 1.0, "offsetZ": 0.0}
+            "chest":{"offsetX": 1.0, "offsetY": 1.0, "offsetZ": 0.0},
+            "skull":{"offsetX": 0.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -8.0}
           }
         },
         {
@@ -9247,7 +9286,6 @@
             "finger1L":{"rotationX": 22.5, "rotationY": -67.5, "rotationZ": -5.0},
             "neck1":{"offsetX": 1.0, "offsetY": -1.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 51.0},
             "neck2":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
-            "head":{"offsetX": 0.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -8.0},
             "rarmWing":{"rotationX": 90.0, "rotationY": 22.5, "rotationZ": 0.0},
             "rforearm":{"rotationX": -22.5, "rotationY": 90.0, "rotationZ": 0.0},
             "finger1R":{"rotationX": -22.5, "rotationY": 67.5, "rotationZ": -5.0},
@@ -9266,7 +9304,8 @@
             "legL":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 25.17},
             "bum":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5},
             "ArmL":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5},
-            "ArmR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5}
+            "ArmR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5},
+            "skull":{"offsetX": 0.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -8.0}
           }
         },
         {
@@ -9278,7 +9317,6 @@
             "finger1L":{"rotationX": -22.5, "rotationY": -67.5, "rotationZ": 0.0},
             "neck1":{"offsetX": 1.0, "offsetY": -1.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 51.0},
             "neck2":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
-            "head":{"offsetX": 0.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -8.0},
             "rarmWing":{"rotationX": 45.0, "rotationY": 22.5, "rotationZ": 0.0},
             "rforearm":{"rotationX": 0.0, "rotationY": 90.0, "rotationZ": 0.0},
             "finger1R":{"rotationX": 22.5, "rotationY": 67.5, "rotationZ": 0.0},
@@ -9294,7 +9332,8 @@
             "legL":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.83},
             "bum":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5},
             "ArmL":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5},
-            "ArmR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5}
+            "ArmR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5},
+            "skull":{"offsetX": 0.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -8.0}
           }
         }
       ]
@@ -9315,7 +9354,6 @@
             "finger1L":{"rotationX": 0.0, "rotationY": -67.5, "rotationZ": 0.0},
             "neck1":{"offsetX": 0.0, "offsetY": -0.798, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 29.0},
             "neck2":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -4.0},
-            "head":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 3.0},
             "rarmWing":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 35.0, "rotationZ": 0.0},
             "rforearm":{"rotationX": -22.5, "rotationY": -22.5, "rotationZ": 0.0},
             "finger1R":{"rotationX": 0.0, "rotationY": 67.5, "rotationZ": 0.0},
@@ -9325,7 +9363,8 @@
             "tail4":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "tail5":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "bum":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5},
-            "botmouth":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0}
+            "botmouth":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
+            "skull":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 3.0}
           }
         },
         {
@@ -9337,7 +9376,6 @@
             "finger1L":{"rotationX": 22.5, "rotationY": -67.5, "rotationZ": -5.0},
             "neck1":{"offsetX": 0.0, "offsetY": -0.798, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 15.0},
             "neck2":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -5.0},
-            "head":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 12.0},
             "rarmWing":{"rotationX": 22.5, "rotationY": 22.5, "rotationZ": 0.0},
             "rforearm":{"rotationX": -45.0, "rotationY": -22.5, "rotationZ": 0.0},
             "finger1R":{"rotationX": -22.5, "rotationY": 67.5, "rotationZ": -5.0},
@@ -9348,7 +9386,8 @@
             "tail5":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "tail6":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "bum":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5},
-            "botmouth":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5}
+            "botmouth":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5},
+            "skull":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 12.0}
           }
         },
         {
@@ -9360,7 +9399,6 @@
             "finger1L":{"rotationX": 22.5, "rotationY": -67.5, "rotationZ": -5.0},
             "neck1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 33.0},
             "neck2":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -4.0},
-            "head":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -7.0},
             "rarmWing":{"rotationX": 67.5, "rotationY": 22.5, "rotationZ": 22.5},
             "rforearm":{"rotationX": -45.0, "rotationY": -22.5, "rotationZ": 0.0},
             "finger1R":{"rotationX": -22.5, "rotationY": 67.5, "rotationZ": -5.0},
@@ -9371,7 +9409,8 @@
             "tail5":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5},
             "tail6":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "bum":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5},
-            "botmouth":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 45.0}
+            "botmouth":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 45.0},
+            "skull":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -7.0}
           }
         },
         {
@@ -9383,7 +9422,6 @@
             "finger1L":{"rotationX": 22.5, "rotationY": -67.5, "rotationZ": -5.0},
             "neck1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 33.0},
             "neck2":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -4.0},
-            "head":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -10.0},
             "rarmWing":{"rotationX": 90.0, "rotationY": 22.5, "rotationZ": 0.0},
             "rforearm":{"rotationX": -22.5, "rotationY": -22.5, "rotationZ": 0.0},
             "finger1R":{"rotationX": -22.5, "rotationY": 67.5, "rotationZ": -5.0},
@@ -9393,7 +9431,8 @@
             "tail5":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -45.0},
             "tail6":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5},
             "bum":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5},
-            "botmouth":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 19.455}
+            "botmouth":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 19.455},
+            "skull":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -10.0}
           }
         },
         {
@@ -9405,7 +9444,6 @@
             "finger1L":{"rotationX": 0.0, "rotationY": -75.0, "rotationZ": -5.0},
             "neck1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 30.0},
             "neck2":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -4.0},
-            "head":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -8.0},
             "rarmWing":{"rotationX": 90.0, "rotationY": 25.0, "rotationZ": -22.5},
             "rforearm":{"rotationX": -22.5, "rotationY": 0.0, "rotationZ": 0.0},
             "finger1R":{"rotationX": 0.0, "rotationY": 75.0, "rotationZ": 0.0},
@@ -9416,7 +9454,8 @@
             "tail5":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -45.0},
             "tail6":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5},
             "bum":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5},
-            "botmouth":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0}
+            "botmouth":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
+            "skull":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -8.0}
           }
         },
         {
@@ -9428,7 +9467,6 @@
             "finger1L":{"rotationX": -22.5, "rotationY": -90.0, "rotationZ": 0.0},
             "neck1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 28.0},
             "neck2":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -4.0},
-            "head":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 2.0},
             "rarmWing":{"offsetX": -1.2241, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 67.5, "rotationY": 25.0, "rotationZ": -22.5},
             "rforearm":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "finger1R":{"rotationX": 22.5, "rotationY": 90.0, "rotationZ": 0.0},
@@ -9438,7 +9476,8 @@
             "tail4":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "tail5":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5},
             "tail6":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5},
-            "bum":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5}
+            "bum":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5},
+            "skull":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 2.0}
           }
         },
         {
@@ -9450,7 +9489,6 @@
             "finger1L":{"rotationX": -22.5, "rotationY": -90.0, "rotationZ": 0.0},
             "neck1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 27.5},
             "neck2":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
-            "head":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 2.0},
             "rarmWing":{"rotationX": 45.0, "rotationY": 22.5, "rotationZ": -22.5},
             "rforearm":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "finger1R":{"rotationX": 22.5, "rotationY": 90.0, "rotationZ": 0.0},
@@ -9460,7 +9498,8 @@
             "tail4":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "tail5":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "tail6":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
-            "bum":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5}
+            "bum":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5},
+            "skull":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 2.0}
           }
         }
       ]
@@ -9476,7 +9515,6 @@
           "frame": 0,
           "elements": {
             "body":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
-            "head":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 5.0},
             "botmouth":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 2.0},
             "legR":{"offsetX": 0.0, "offsetY": -0.25, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -16.0},
             "Cube87":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -3.0},
@@ -9506,7 +9544,8 @@
             "larmWing":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "tail4":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "tail3":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
-            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 11.0}
+            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 11.0},
+            "skull":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 5.0}
           }
         },
         {
@@ -9518,7 +9557,6 @@
             "footR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 9.0},
             "neck1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -8.0},
             "neck2":{"offsetX": 0.0, "offsetY": -1.3, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 16.0},
-            "head":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 5.0},
             "botmouth":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 8.0},
             "ArmL":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -8.0, "rotationY": 4.0, "rotationZ": 11.0},
             "pawL":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 4.0, "rotationY": 4.0, "rotationZ": 59.0},
@@ -9539,7 +9577,8 @@
             "larmWing":{"rotationX": 3.0, "rotationY": 0.0, "rotationZ": 0.0},
             "tail3":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 2.0},
             "tail4":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -4.5},
-            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 11.0}
+            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 11.0},
+            "skull":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 5.0}
           }
         },
         {
@@ -9553,7 +9592,6 @@
             "footR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 9.0},
             "neck1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -9.0},
             "neck2":{"offsetX": 0.0, "offsetY": -2.3, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 25.0},
-            "head":{"rotationX": -7.0, "rotationY": 0.0, "rotationZ": 12.0},
             "botmouth":{"offsetX": 0.2, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 33.0},
             "ArmL":{"offsetX": 0.0, "offsetY": 2.0, "offsetZ": 0.0, "rotationX": -17.0, "rotationY": 4.0, "rotationZ": -22.5},
             "ForearmL":{"rotationX": 15.0, "rotationY": 0.0, "rotationZ": -24.0},
@@ -9574,7 +9612,8 @@
             "tail3":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -0.5},
             "tail5":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -9.4},
             "tail4":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 1.5},
-            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 11.0}
+            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 11.0},
+            "skull":{"rotationX": -7.0, "rotationY": 0.0, "rotationZ": 12.0}
           }
         },
         {
@@ -9588,7 +9627,6 @@
             "footR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -3.0},
             "neck1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 13.0},
             "neck2":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 20.0},
-            "head":{"rotationX": -11.0, "rotationY": 0.0, "rotationZ": -18.0},
             "botmouth":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 42.0},
             "ArmL":{"offsetX": -1.0, "offsetY": 2.0, "offsetZ": 0.0, "rotationX": -17.0, "rotationY": 4.0, "rotationZ": -45.0},
             "ForearmL":{"rotationX": 15.0, "rotationY": 0.0, "rotationZ": -28.5},
@@ -9607,7 +9645,8 @@
             "finger1L":{"rotationX": 0.0, "rotationY": -3.25, "rotationZ": 0.0},
             "larmWing":{"rotationX": 1.75, "rotationY": 0.0, "rotationZ": 0.0},
             "tail4":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -7.1429},
-            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 11.0}
+            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 11.0},
+            "skull":{"rotationX": -11.0, "rotationY": 0.0, "rotationZ": -18.0}
           }
         },
         {
@@ -9626,7 +9665,6 @@
             "tail6":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -4.0},
             "neck1":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 36.0},
             "neck2":{"offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 3.0},
-            "head":{"offsetX": -1.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -21.0},
             "botmouth":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 8.0},
             "ArmL":{"offsetX": -3.0, "offsetY": 2.0, "offsetZ": 0.0, "rotationX": -12.0, "rotationY": 4.0, "rotationZ": -50.0},
             "ForearmL":{"rotationX": 11.0, "rotationY": 0.0, "rotationZ": -25.5},
@@ -9641,7 +9679,8 @@
             "finger1L":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "larmWing":{"rotationX": -11.28, "rotationY": 0.0, "rotationZ": 0.0},
             "tail4":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -12.0},
-            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 11.0}
+            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 11.0},
+            "skull":{"offsetX": -1.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -21.0}
           }
         },
         {
@@ -9660,7 +9699,6 @@
             "tail6":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -4.0},
             "neck1":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 36.0},
             "neck2":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -1.0},
-            "head":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -32.0},
             "botmouth":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 3.0},
             "ArmL":{"offsetX": -2.0, "offsetY": 2.0, "offsetZ": 0.0, "rotationX": -3.0, "rotationY": 4.0, "rotationZ": -36.0},
             "ForearmL":{"rotationX": 4.0, "rotationY": 0.0, "rotationZ": -26.5},
@@ -9672,7 +9710,8 @@
             "WristR":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -48.0},
             "rarmWing":{"rotationX": 8.2061, "rotationY": 0.0, "rotationZ": 0.0},
             "larmWing":{"rotationX": -8.21, "rotationY": 0.0, "rotationZ": 0.0},
-            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 11.0}
+            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 11.0},
+            "skull":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -32.0}
           }
         },
         {
@@ -9691,7 +9730,6 @@
             "tail6":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -4.0},
             "neck1":{"offsetX": 0.0, "offsetY": 1.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 26.0},
             "neck2":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -4.0},
-            "head":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -20.0},
             "botmouth":{"offsetX": 0.0889, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 3.0},
             "ArmL":{"offsetX": -1.0, "offsetY": -1.0, "offsetZ": 0.0, "rotationX": -3.0, "rotationY": 4.0, "rotationZ": -15.0},
             "ForearmL":{"rotationX": 4.0, "rotationY": 0.0, "rotationZ": -6.5},
@@ -9703,7 +9741,8 @@
             "WristR":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -48.0},
             "rarmWing":{"rotationX": 0.103, "rotationY": 0.0, "rotationZ": 0.0},
             "larmWing":{"rotationX": -0.1, "rotationY": 0.0, "rotationZ": 0.0},
-            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 11.0}
+            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 11.0},
+            "skull":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -20.0}
           }
         }
       ]
@@ -9722,7 +9761,6 @@
             "larmWing":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "neck1":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "neck2":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
-            "head":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "rarmWing":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "tail2":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "tail3":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
@@ -9732,7 +9770,8 @@
             "stomach":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "ArmL":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "ArmR":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
-            "tail":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0}
+            "tail":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
+            "skull":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0}
           }
         },
         {
@@ -9742,7 +9781,6 @@
             "larmWing":{"offsetX": 1.2, "offsetY": 1.2, "offsetZ": -1.2, "rotationX": 0.0, "rotationY": -5.0, "rotationZ": -2.0},
             "neck1":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": -22.5, "rotationZ": -5.0},
             "neck2":{"offsetX": 0.1629, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 2.0, "rotationY": 22.5, "rotationZ": 1.5},
-            "head":{"rotationX": -6.0, "rotationY": -26.0, "rotationZ": 15.5},
             "rarmWing":{"offsetX": 0.0, "offsetY": 1.2, "offsetZ": 1.2, "rotationX": 0.0, "rotationY": 5.0, "rotationZ": -3.0},
             "tail2":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 5.0},
             "tail3":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -5.0},
@@ -9751,7 +9789,8 @@
             "stomach":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -5.0},
             "ArmL":{"offsetX": 0.0, "offsetY": 0.75, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -5.0},
             "ArmR":{"offsetX": 0.0, "offsetY": 0.75, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -5.0},
-            "tail":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0}
+            "tail":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
+            "skull":{"rotationX": -6.0, "rotationY": -26.0, "rotationZ": 15.5}
           }
         }
       ]
@@ -9774,7 +9813,6 @@
             "tail6":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -15.0},
             "neck1":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5},
             "neck2":{"offsetX": 0.0, "offsetY": 0.8, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -14.5},
-            "head":{"offsetX": -1.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5},
             "rarmWing":{"offsetX": -1.2, "offsetY": 0.72, "offsetZ": 0.0, "rotationX": 3.0, "rotationY": 39.0, "rotationZ": 5.0},
             "rforearm":{"offsetX": -1.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -3.0, "rotationY": 98.0, "rotationZ": 0.0},
             "finger1R":{"offsetX": -1.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -1.0, "rotationY": 66.5, "rotationZ": 0.0},
@@ -9832,7 +9870,8 @@
             "LowerShinL1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5},
             "footR":{"offsetX": 1.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 90.0},
             "Cube217":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": -0.4},
-            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5}
+            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5},
+            "skull":{"offsetX": -1.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5}
           }
         },
         {
@@ -9851,7 +9890,6 @@
             "tail6":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -13.0},
             "neck1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 23.0},
             "neck2":{"offsetX": 0.0, "offsetY": 0.8, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -14.5},
-            "head":{"offsetX": -1.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -23.5},
             "rarmWing":{"offsetX": -1.2, "offsetY": 0.72, "offsetZ": 0.0, "rotationX": 3.0, "rotationY": 39.0, "rotationZ": 5.0},
             "rforearm":{"rotationX": -2.5, "rotationY": 98.0, "rotationZ": 0.0},
             "finger1R":{"offsetX": -1.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -2.0, "rotationY": 66.5, "rotationZ": 0.0},
@@ -9859,7 +9897,8 @@
             "ArmL":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 44.5},
             "ArmR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 44.5},
             "legR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 23.0},
-            "legL":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 23.0}
+            "legL":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 23.0},
+            "skull":{"offsetX": -1.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -23.5}
           }
         },
         {
@@ -9878,7 +9917,6 @@
             "tail6":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -10.0},
             "neck1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 23.5},
             "neck2":{"offsetX": 0.0, "offsetY": 0.8, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -14.5},
-            "head":{"offsetX": -1.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -24.5},
             "rarmWing":{"offsetX": -1.2, "offsetY": 0.72, "offsetZ": 0.0, "rotationX": 3.0, "rotationY": 39.0, "rotationZ": 5.0},
             "rforearm":{"rotationX": -1.5, "rotationY": 98.0, "rotationZ": 0.0},
             "finger1R":{"offsetX": -1.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -2.0, "rotationY": 66.5, "rotationZ": 0.0},
@@ -9886,7 +9924,8 @@
             "ArmL":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 44.25},
             "ArmR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 44.25},
             "legL":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.75},
-            "legR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.8571}
+            "legR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.8571},
+            "skull":{"offsetX": -1.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -24.5}
           }
         },
         {
@@ -9905,7 +9944,6 @@
             "tail6":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -12.0},
             "neck1":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 23.0},
             "neck2":{"offsetX": 0.0, "offsetY": 0.8, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -14.5},
-            "head":{"offsetX": -1.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -23.5},
             "rarmWing":{"offsetX": -1.2, "offsetY": 0.72, "offsetZ": 0.0, "rotationX": 3.0, "rotationY": 39.0, "rotationZ": 5.0},
             "rforearm":{"rotationX": -2.6, "rotationY": 98.0, "rotationZ": 0.0},
             "finger1R":{"offsetX": -1.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -1.0, "rotationY": 66.5, "rotationZ": 0.0},
@@ -9915,7 +9953,8 @@
             "ArmL":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 44.55},
             "ArmR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 44.55},
             "legR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.45},
-            "Cube217":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": -0.4}
+            "Cube217":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": -0.4},
+            "skull":{"offsetX": -1.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -23.5}
           }
         }
       ]
@@ -9938,7 +9977,6 @@
             "tail6":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -15.0},
             "neck1":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5},
             "neck2":{"offsetX": 0.0, "offsetY": 0.8, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -14.5},
-            "head":{"offsetX": -1.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5},
             "rarmWing":{"offsetX": -1.2, "offsetY": 0.72, "offsetZ": 0.0, "rotationX": 3.0, "rotationY": 39.0, "rotationZ": 5.0},
             "rforearm":{"offsetX": -1.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -3.0, "rotationY": 98.0, "rotationZ": 0.0},
             "finger1R":{"offsetX": -1.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -1.0, "rotationY": 66.5, "rotationZ": 0.0},
@@ -9996,7 +10034,8 @@
             "LowerShinL1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5},
             "footR":{"offsetX": 1.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 90.0},
             "Cube217":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": -0.4},
-            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5}
+            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5},
+            "skull":{"offsetX": -1.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5}
           }
         }
       ]
@@ -10019,7 +10058,6 @@
             "tail6":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -15.0},
             "neck1":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5},
             "neck2":{"offsetX": 0.0, "offsetY": 0.8, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -14.5},
-            "head":{"offsetX": -1.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5},
             "rarmWing":{"offsetX": -1.2, "offsetY": 0.72, "offsetZ": 0.0, "rotationX": 3.0, "rotationY": 39.0, "rotationZ": 5.0},
             "rforearm":{"offsetX": -1.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -3.0, "rotationY": 98.0, "rotationZ": 0.0},
             "finger1R":{"offsetX": -1.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -1.0, "rotationY": 66.5, "rotationZ": 0.0},
@@ -10077,7 +10115,8 @@
             "LowerShinL1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5},
             "footR":{"offsetX": 1.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 90.0},
             "Cube217":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": -0.4},
-            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5}
+            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5},
+            "skull":{"offsetX": -1.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5}
           }
         }
       ]
@@ -10093,7 +10132,6 @@
           "elements": {
             "neck1":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 22.5, "rotationZ": -11.5},
             "neck2":{"rotationX": 0.0, "rotationY": 14.0, "rotationZ": 0.0},
-            "head":{"rotationX": -14.0, "rotationY": 22.5, "rotationZ": 14.0},
             "bum":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -7.0},
             "tail":{"rotationX": 0.0, "rotationY": -3.0, "rotationZ": 7.0},
             "tail2":{"rotationX": 0.0, "rotationY": -1.0, "rotationZ": 4.0},
@@ -10119,7 +10157,8 @@
             "Cube152":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 11.5},
             "ArmR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "ForearmR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
-            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0}
+            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
+            "skull":{"rotationX": -14.0, "rotationY": 22.5, "rotationZ": 14.0}
           }
         },
         {
@@ -10135,7 +10174,6 @@
             "tail6":{"rotationX": 0.0, "rotationY": -12.0, "rotationZ": 0.0},
             "neck1":{"rotationX": 0.0, "rotationY": 22.5, "rotationZ": -12.5},
             "neck2":{"rotationX": 0.0, "rotationY": 14.0, "rotationZ": 0.0},
-            "head":{"rotationX": -14.0, "rotationY": 22.5, "rotationZ": 14.0},
             "ShoulderL":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "ForearmL":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -45.0},
             "pawL":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 56.5},
@@ -10145,7 +10183,8 @@
             "legR":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -4.0},
             "legL":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 27.0},
             "Cube152":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 6.5},
-            "ForearmR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 1.0}
+            "ForearmR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 1.0},
+            "skull":{"rotationX": -14.0, "rotationY": 22.5, "rotationZ": 14.0}
           }
         },
         {
@@ -10161,7 +10200,6 @@
             "tail6":{"rotationX": 0.0, "rotationY": -8.0, "rotationZ": 0.0},
             "neck1":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 22.5, "rotationZ": -12.5},
             "neck2":{"rotationX": 0.0, "rotationY": 14.0, "rotationZ": 0.0},
-            "head":{"rotationX": -14.0, "rotationY": 22.5, "rotationZ": 14.0},
             "legR":{"offsetX": 0.0, "offsetY": -0.4, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -9.0},
             "footR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 6.0},
             "Cube152":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -4.3113},
@@ -10176,7 +10214,8 @@
             "pawR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 25.3868},
             "legL":{"offsetX": 0.0, "offsetY": -0.1, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 27.3302},
             "WristR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -11.0},
-            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 8.0}
+            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 8.0},
+            "skull":{"rotationX": -14.0, "rotationY": 22.5, "rotationZ": 14.0}
           }
         },
         {
@@ -10192,7 +10231,6 @@
             "tail6":{"rotationX": 0.0, "rotationY": -8.0, "rotationZ": 0.0},
             "neck1":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 22.5, "rotationZ": -12.5},
             "neck2":{"rotationX": 0.0, "rotationY": 14.0, "rotationZ": 0.0},
-            "head":{"rotationX": -14.0, "rotationY": 22.5, "rotationZ": 14.0},
             "ForearmL":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -20.6765},
             "pawL":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5686},
             "legR":{"offsetX": 0.0, "offsetY": -1.8, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -13.6471},
@@ -10204,7 +10242,8 @@
             "Cube87":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "ArmR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 4.1569},
             "pawR":{"offsetX": 1.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 67.5},
-            "WristR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -43.5}
+            "WristR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -43.5},
+            "skull":{"rotationX": -14.0, "rotationY": 22.5, "rotationZ": 14.0}
           }
         },
         {
@@ -10220,7 +10259,6 @@
             "tail6":{"rotationX": 0.0, "rotationY": -8.0, "rotationZ": 0.0},
             "neck1":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 22.5, "rotationZ": -12.5},
             "neck2":{"rotationX": 0.0, "rotationY": 14.0, "rotationZ": 0.0},
-            "head":{"rotationX": -14.0, "rotationY": 22.5, "rotationZ": 14.0},
             "legL":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 20.4497},
             "footl3":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -9.9646},
             "legR":{"offsetX": 0.0, "offsetY": 0.0367, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -13.09},
@@ -10235,7 +10273,8 @@
             "ForearmR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -44.0},
             "pawR":{"offsetX": 1.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 92.0},
             "ArmR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 26.0},
-            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -10.6275}
+            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -10.6275},
+            "skull":{"rotationX": -14.0, "rotationY": 22.5, "rotationZ": 14.0}
           }
         },
         {
@@ -10251,7 +10290,6 @@
             "tail6":{"rotationX": 0.0, "rotationY": 2.0, "rotationZ": 0.0},
             "neck1":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 22.5, "rotationZ": -12.5},
             "neck2":{"rotationX": 0.0, "rotationY": 14.0, "rotationZ": 0.0},
-            "head":{"rotationX": -14.0, "rotationY": 22.5, "rotationZ": 14.0},
             "legL":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 8.537},
             "footl3":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.4169},
             "legR":{"offsetX": 0.0, "offsetY": 1.0309, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 1.467},
@@ -10261,7 +10299,8 @@
             "ShoulderR":{"offsetX": 0.0, "offsetY": 2.9574, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5},
             "ForearmR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -31.1277},
             "pawR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 61.0426},
-            "ArmR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 33.8936}
+            "ArmR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 33.8936},
+            "skull":{"rotationX": -14.0, "rotationY": 22.5, "rotationZ": 14.0}
           }
         },
         {
@@ -10277,7 +10316,6 @@
             "tail6":{"rotationX": 0.0, "rotationY": 2.0, "rotationZ": 0.0},
             "neck1":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 22.5, "rotationZ": -12.5},
             "neck2":{"rotationX": 0.0, "rotationY": 14.0, "rotationZ": 0.0},
-            "head":{"rotationX": -14.0, "rotationY": 22.5, "rotationZ": 14.0},
             "legL":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -0.8424},
             "footl3":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 9.3984},
             "legR":{"offsetX": 0.0, "offsetY": 0.9807, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5},
@@ -10288,7 +10326,8 @@
             "ForearmR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "pawR":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -5.0},
             "ShoulderR":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5},
-            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 1.277}
+            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 1.277},
+            "skull":{"rotationX": -14.0, "rotationY": 22.5, "rotationZ": 14.0}
           }
         },
         {
@@ -10304,10 +10343,10 @@
             "tail6":{"rotationX": 0.0, "rotationY": 8.0, "rotationZ": 0.0},
             "neck1":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 22.5, "rotationZ": -12.5},
             "neck2":{"rotationX": 0.0, "rotationY": 14.0, "rotationZ": 0.0},
-            "head":{"rotationX": -14.0, "rotationY": 22.5, "rotationZ": 14.0},
             "legR":{"offsetX": 0.0, "offsetY": -0.7, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5},
             "footR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -14.357},
-            "legL":{"offsetX": 0.0, "offsetY": 1.4615, "offsetZ": 0.0}
+            "legL":{"offsetX": 0.0, "offsetY": 1.4615, "offsetZ": 0.0},
+            "skull":{"rotationX": -14.0, "rotationY": 22.5, "rotationZ": 14.0}
           }
         }
       ]
@@ -10323,7 +10362,7 @@
           "elements": {
             "neck1":{"rotationX": 0.0, "rotationY": 12.0, "rotationZ": 0.0},
             "neck2":{"rotationX": 0.0, "rotationY": 12.0, "rotationZ": 0.0},
-            "head":{"rotationX": 0.0, "rotationY": 5.0, "rotationZ": 0.0}
+            "skull":{"rotationX": 0.0, "rotationY": 5.0, "rotationZ": 0.0}
           }
         }
       ]
@@ -10337,9 +10376,9 @@
         {
           "frame": 0,
           "elements": {
-            "head":{"rotationX": 0.0, "rotationY": -5.0, "rotationZ": 0.0},
             "neck2":{"rotationX": 0.0, "rotationY": -12.0, "rotationZ": 0.0},
-            "neck1":{"rotationX": 0.0, "rotationY": -12.0, "rotationZ": 0.0}
+            "neck1":{"rotationX": 0.0, "rotationY": -12.0, "rotationZ": 0.0},
+            "skull":{"rotationX": 0.0, "rotationY": -5.0, "rotationZ": 0.0}
           }
         }
       ]
@@ -10355,7 +10394,7 @@
           "elements": {
             "neck1":{"rotationX": 0.0, "rotationY": 12.0, "rotationZ": 0.0},
             "neck2":{"rotationX": 0.0, "rotationY": 12.0, "rotationZ": 0.0},
-            "head":{"rotationX": 0.0, "rotationY": 5.0, "rotationZ": 0.0}
+            "skull":{"rotationX": 0.0, "rotationY": 5.0, "rotationZ": 0.0}
           }
         }
       ]
@@ -10369,9 +10408,9 @@
         {
           "frame": 0,
           "elements": {
-            "head":{"rotationX": 0.0, "rotationY": -5.0, "rotationZ": 0.0},
             "neck2":{"rotationX": 0.0, "rotationY": -12.0, "rotationZ": 0.0},
-            "neck1":{"rotationX": 0.0, "rotationY": -12.0, "rotationZ": 0.0}
+            "neck1":{"rotationX": 0.0, "rotationY": -12.0, "rotationZ": 0.0},
+            "skull":{"rotationX": 0.0, "rotationY": -5.0, "rotationZ": 0.0}
           }
         }
       ]
@@ -10409,7 +10448,6 @@
             "neck1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 18.0},
             "Fluff2":{"offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0},
             "neck2":{"offsetX": 0.0, "offsetY": 0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -13.0},
-            "head":{"offsetX": 0.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -16.0},
             "ForearmL":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -27.0},
             "pawL":{"offsetX": 1.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 90.0},
             "WristL":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -55.0},
@@ -10429,7 +10467,8 @@
             "footR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 67.5},
             "footl3":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 45.0},
             "ArmL":{"offsetX": -1.0, "offsetY": 2.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -58.0},
-            "stomach":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 1.0}
+            "stomach":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 1.0},
+            "skull":{"offsetX": 0.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -16.0}
           }
         }
       ]
@@ -10446,7 +10485,6 @@
             "body":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "neck1":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "neck2":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
-            "head":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "botmouth":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "larmWing":{"rotationX": 0.0, "rotationY": 13.0, "rotationZ": 0.0},
             "rarmWing":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
@@ -10469,7 +10507,8 @@
             "F1L1":{"rotationX": 0.0, "rotationY": 14.0, "rotationZ": -2.0},
             "F1R1":{"rotationX": 0.0, "rotationY": -14.0, "rotationZ": -2.0},
             "finger1R":{"rotationX": 0.0, "rotationY": -17.0, "rotationZ": 0.0},
-            "rforearm":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 1.0, "rotationX": 0.0, "rotationY": -11.0, "rotationZ": -11.0}
+            "rforearm":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 1.0, "rotationX": 0.0, "rotationY": -11.0, "rotationZ": -11.0},
+            "skull":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0}
           }
         },
         {
@@ -10480,7 +10519,6 @@
             "tail":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 1.0, "rotationZ": 0.0},
             "neck1":{"offsetX": 1.0, "offsetY": -1.57, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 39.0},
             "neck2":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
-            "head":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "botmouth":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "rarmWing":{"rotationX": -21.0, "rotationY": 0.0, "rotationZ": -5.0},
             "stomach":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -24.0},
@@ -10495,7 +10533,8 @@
             "tail3":{"rotationX": 0.0, "rotationY": -1.0, "rotationZ": 0.0},
             "tail4":{"rotationX": 0.0, "rotationY": -1.0, "rotationZ": 0.0},
             "tail5":{"rotationX": 0.0, "rotationY": -2.0, "rotationZ": 0.0},
-            "tail6":{"rotationX": 0.0, "rotationY": -1.0, "rotationZ": 0.0}
+            "tail6":{"rotationX": 0.0, "rotationY": -1.0, "rotationZ": 0.0},
+            "skull":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0}
           }
         },
         {
@@ -10506,7 +10545,6 @@
             "tail":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 1.0, "rotationZ": 0.0},
             "neck1":{"offsetX": 0.0, "offsetY": -1.14, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 36.0},
             "neck2":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
-            "head":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 12.5},
             "botmouth":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "rarmWing":{"rotationX": -21.0, "rotationY": 0.0, "rotationZ": -5.0},
             "stomach":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -24.0},
@@ -10515,7 +10553,8 @@
             "tail3":{"rotationX": 0.0, "rotationY": -3.9125, "rotationZ": 0.0},
             "tail4":{"rotationX": 0.0, "rotationY": -3.9125, "rotationZ": 0.0},
             "tail5":{"rotationX": 0.0, "rotationY": -3.825, "rotationZ": 0.0},
-            "tail6":{"rotationX": 0.0, "rotationY": -3.9125, "rotationZ": 0.0}
+            "tail6":{"rotationX": 0.0, "rotationY": -3.9125, "rotationZ": 0.0},
+            "skull":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 12.5}
           }
         },
         {
@@ -10526,7 +10565,6 @@
             "tail":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "neck1":{"offsetX": 0.0, "offsetY": -1.14, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 36.0},
             "neck2":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
-            "head":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 6.5},
             "botmouth":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "rarmWing":{"rotationX": -22.0, "rotationY": 0.0, "rotationZ": -5.0},
             "stomach":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -24.0},
@@ -10534,7 +10572,8 @@
             "tail3":{"rotationX": 0.0, "rotationY": -0.5909, "rotationZ": 0.0},
             "tail4":{"rotationX": 0.0, "rotationY": -2.5909, "rotationZ": 0.0},
             "tail5":{"rotationX": 0.0, "rotationY": -3.5106, "rotationZ": 0.0},
-            "tail6":{"rotationX": 0.0, "rotationY": -3.5909, "rotationZ": 0.0}
+            "tail6":{"rotationX": 0.0, "rotationY": -3.5909, "rotationZ": 0.0},
+            "skull":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 6.5}
           }
         },
         {
@@ -10545,7 +10584,6 @@
             "tail":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "neck1":{"offsetX": 0.0, "offsetY": -1.14, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 36.0},
             "neck2":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
-            "head":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 13.5},
             "botmouth":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "rarmWing":{"rotationX": -22.0, "rotationY": 0.0, "rotationZ": -5.0},
             "stomach":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -24.0},
@@ -10553,7 +10591,8 @@
             "tail3":{"rotationX": 0.0, "rotationY": 2.4532, "rotationZ": 0.0},
             "tail4":{"rotationX": 0.0, "rotationY": 1.6024, "rotationZ": 0.0},
             "tail5":{"rotationX": 0.0, "rotationY": -0.2486, "rotationZ": 0.0},
-            "tail6":{"rotationX": 0.0, "rotationY": -3.3229, "rotationZ": 0.0}
+            "tail6":{"rotationX": 0.0, "rotationY": -3.3229, "rotationZ": 0.0},
+            "skull":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 13.5}
           }
         },
         {
@@ -10563,7 +10602,6 @@
             "larmWing":{"rotationX": 31.0, "rotationY": 17.0, "rotationZ": -13.0},
             "neck1":{"offsetX": 0.0, "offsetY": -2.28, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 35.0},
             "neck2":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
-            "head":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "botmouth":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 9.0},
             "rarmWing":{"rotationX": -21.0, "rotationY": 0.0, "rotationZ": -5.0},
             "tail":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": -1.0, "rotationZ": -1.0},
@@ -10572,7 +10610,8 @@
             "tail3":{"rotationX": 0.0, "rotationY": 4.2553, "rotationZ": 0.0},
             "tail4":{"rotationX": 0.0, "rotationY": 3.4732, "rotationZ": 0.0},
             "tail5":{"rotationX": 0.0, "rotationY": 5.7714, "rotationZ": 0.0},
-            "tail6":{"rotationX": 0.0, "rotationY": 2.945, "rotationZ": 0.0}
+            "tail6":{"rotationX": 0.0, "rotationY": 2.945, "rotationZ": 0.0},
+            "skull":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0}
           }
         },
         {
@@ -10583,7 +10622,6 @@
             "tail":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": -1.0, "rotationZ": -1.0},
             "neck1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 48.0},
             "neck2":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
-            "head":{"rotationX": 16.0, "rotationY": 0.0, "rotationZ": 3.0},
             "botmouth":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5},
             "rarmWing":{"rotationX": -21.0, "rotationY": 0.0, "rotationZ": -5.0},
             "stomach":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -24.0},
@@ -10591,7 +10629,8 @@
             "tail3":{"rotationX": 0.0, "rotationY": 5.8821, "rotationZ": 0.0},
             "tail4":{"rotationX": 0.0, "rotationY": 1.1685, "rotationZ": 0.0},
             "tail5":{"rotationX": 0.0, "rotationY": 7.2652, "rotationZ": 0.0},
-            "tail6":{"rotationX": 0.0, "rotationY": 2.6867, "rotationZ": 0.0}
+            "tail6":{"rotationX": 0.0, "rotationY": 2.6867, "rotationZ": 0.0},
+            "skull":{"rotationX": 16.0, "rotationY": 0.0, "rotationZ": 3.0}
           }
         },
         {
@@ -10602,7 +10641,6 @@
             "tail":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -1.0},
             "neck1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 40.0},
             "neck2":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -11.0},
-            "head":{"rotationX": 16.0, "rotationY": 0.0, "rotationZ": 14.0},
             "botmouth":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 9.5},
             "rarmWing":{"rotationX": -20.0, "rotationY": 0.0, "rotationZ": -5.0},
             "stomach":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -24.0},
@@ -10610,7 +10648,8 @@
             "tail3":{"rotationX": 0.0, "rotationY": 0.3165, "rotationZ": 0.0},
             "tail4":{"rotationX": 0.0, "rotationY": -0.9438, "rotationZ": 0.0},
             "tail5":{"rotationX": 0.0, "rotationY": 6.5666, "rotationZ": 0.0},
-            "tail6":{"rotationX": 0.0, "rotationY": 2.4284, "rotationZ": 0.0}
+            "tail6":{"rotationX": 0.0, "rotationY": 2.4284, "rotationZ": 0.0},
+            "skull":{"rotationX": 16.0, "rotationY": 0.0, "rotationZ": 14.0}
           }
         },
         {
@@ -10621,7 +10660,6 @@
             "tail":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -1.0},
             "neck1":{"offsetX": 0.0, "offsetY": -1.14, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 18.0},
             "neck2":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -11.0},
-            "head":{"rotationX": 7.0, "rotationY": 0.0, "rotationZ": 14.0},
             "botmouth":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 9.5},
             "rarmWing":{"rotationX": -19.0, "rotationY": 0.0, "rotationZ": -5.0},
             "stomach":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -24.0},
@@ -10629,7 +10667,8 @@
             "tail3":{"rotationX": 0.0, "rotationY": -1.7172, "rotationZ": 0.0},
             "tail4":{"rotationX": 0.0, "rotationY": -3.8434, "rotationZ": 0.0},
             "tail5":{"rotationX": 0.0, "rotationY": 2.868, "rotationZ": 0.0},
-            "tail6":{"rotationX": 0.0, "rotationY": 2.17, "rotationZ": 0.0}
+            "tail6":{"rotationX": 0.0, "rotationY": 2.17, "rotationZ": 0.0},
+            "skull":{"rotationX": 7.0, "rotationY": 0.0, "rotationZ": 14.0}
           }
         },
         {
@@ -10640,14 +10679,14 @@
             "tail":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 1.0, "rotationZ": -1.0},
             "neck1":{"offsetX": -1.14, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 2.0},
             "neck2":{"offsetX": 1.14, "offsetY": 2.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -34.0},
-            "head":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -4.0},
             "botmouth":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 9.5},
             "rarmWing":{"rotationX": -20.0, "rotationY": 0.0, "rotationZ": -5.0},
             "stomach":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -24.0},
             "tail2":{"rotationX": 0.0, "rotationY": 3.6074, "rotationZ": 0.0},
             "tail3":{"rotationX": 0.0, "rotationY": -4.5128, "rotationZ": 0.0},
             "tail5":{"rotationX": 0.0, "rotationY": 2.5266, "rotationZ": 0.0},
-            "tail6":{"rotationX": 0.0, "rotationY": -1.0883, "rotationZ": 0.0}
+            "tail6":{"rotationX": 0.0, "rotationY": -1.0883, "rotationZ": 0.0},
+            "skull":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -4.0}
           }
         },
         {
@@ -10658,7 +10697,6 @@
             "tail":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 1.0, "rotationZ": -1.0},
             "neck1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 1.0},
             "neck2":{"offsetX": 1.14, "offsetY": 2.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -34.0},
-            "head":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -19.0},
             "botmouth":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5},
             "rarmWing":{"rotationX": -21.0, "rotationY": 0.0, "rotationZ": -5.0},
             "stomach":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -24.0},
@@ -10666,7 +10704,8 @@
             "tail3":{"rotationX": 0.0, "rotationY": -5.9029, "rotationZ": 0.0},
             "tail4":{"rotationX": 0.0, "rotationY": -2.9283, "rotationZ": 0.0},
             "tail5":{"rotationX": 0.0, "rotationY": 4.1852, "rotationZ": 0.0},
-            "tail6":{"rotationX": 0.0, "rotationY": -1.9412, "rotationZ": 0.0}
+            "tail6":{"rotationX": 0.0, "rotationY": -1.9412, "rotationZ": 0.0},
+            "skull":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -19.0}
           }
         },
         {
@@ -10677,7 +10716,6 @@
             "tail":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -1.0},
             "neck1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 2.0},
             "neck2":{"offsetX": 1.14, "offsetY": 2.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -34.0},
-            "head":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -10.0},
             "botmouth":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 10.5},
             "rarmWing":{"rotationX": -21.0, "rotationY": 0.0, "rotationZ": -5.0},
             "stomach":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -24.0},
@@ -10685,7 +10723,8 @@
             "tail3":{"rotationX": 0.0, "rotationY": 1.0194, "rotationZ": 0.0},
             "tail4":{"rotationX": 0.0, "rotationY": -0.4708, "rotationZ": 0.0},
             "tail5":{"rotationX": 0.0, "rotationY": 3.5312, "rotationZ": 0.0},
-            "tail6":{"rotationX": 0.0, "rotationY": -1.6379, "rotationZ": 0.0}
+            "tail6":{"rotationX": 0.0, "rotationY": -1.6379, "rotationZ": 0.0},
+            "skull":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -10.0}
           }
         },
         {
@@ -10696,7 +10735,6 @@
             "tail":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -1.0},
             "neck1":{"offsetX": -1.14, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 2.0},
             "neck2":{"offsetX": 1.14, "offsetY": 2.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -34.0},
-            "head":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -1.0},
             "botmouth":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 24.5},
             "rarmWing":{"rotationX": -21.0, "rotationY": 0.0, "rotationZ": -5.0},
             "stomach":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -24.0},
@@ -10704,7 +10742,8 @@
             "tail3":{"rotationX": 0.0, "rotationY": 2.8306, "rotationZ": 0.0},
             "tail4":{"rotationX": 0.0, "rotationY": 0.6164, "rotationZ": 0.0},
             "tail5":{"rotationX": 0.0, "rotationY": 4.8773, "rotationZ": 0.0},
-            "tail6":{"rotationX": 0.0, "rotationY": 4.6654, "rotationZ": 0.0}
+            "tail6":{"rotationX": 0.0, "rotationY": 4.6654, "rotationZ": 0.0},
+            "skull":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -1.0}
           }
         },
         {
@@ -10715,7 +10754,6 @@
             "tail":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": -1.0, "rotationZ": -1.0},
             "neck1":{"offsetX": -1.14, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 2.0},
             "neck2":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -24.0},
-            "head":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -1.0},
             "botmouth":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 5.5},
             "rarmWing":{"rotationX": -15.0, "rotationY": 0.0, "rotationZ": -5.0},
             "stomach":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -24.0},
@@ -10723,7 +10761,8 @@
             "tail3":{"rotationX": 0.0, "rotationY": 3.1873, "rotationZ": 0.0},
             "tail4":{"rotationX": 0.0, "rotationY": 1.4763, "rotationZ": 0.0},
             "tail5":{"rotationX": 0.0, "rotationY": 3.7688, "rotationZ": 0.0},
-            "tail6":{"rotationX": 0.0, "rotationY": 3.6051, "rotationZ": 0.0}
+            "tail6":{"rotationX": 0.0, "rotationY": 3.6051, "rotationZ": 0.0},
+            "skull":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -1.0}
           }
         },
         {
@@ -10734,7 +10773,6 @@
             "tail":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": -1.0, "rotationZ": -1.0},
             "neck1":{"offsetX": -1.14, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 2.0},
             "neck2":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -9.0},
-            "head":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -1.0},
             "botmouth":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 2.5},
             "rarmWing":{"rotationX": -2.0, "rotationY": 0.0, "rotationZ": -5.0},
             "stomach":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -24.0},
@@ -10742,7 +10780,8 @@
             "tail3":{"rotationX": 0.0, "rotationY": 1.0624, "rotationZ": 0.0},
             "tail4":{"rotationX": 0.0, "rotationY": -0.0447, "rotationZ": 0.0},
             "tail5":{"rotationX": 0.0, "rotationY": 2.4386, "rotationZ": 0.0},
-            "tail6":{"rotationX": 0.0, "rotationY": 2.3327, "rotationZ": 0.0}
+            "tail6":{"rotationX": 0.0, "rotationY": 2.3327, "rotationZ": 0.0},
+            "skull":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -1.0}
           }
         },
         {
@@ -10753,7 +10792,6 @@
             "tail":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -1.0},
             "neck1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 3.0},
             "neck2":{"offsetX": 1.14, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -9.0},
-            "head":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -1.0},
             "botmouth":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 2.5},
             "rarmWing":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -5.0},
             "stomach":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -24.0},
@@ -10767,7 +10805,8 @@
             "tail3":{"rotationX": 0.0, "rotationY": -1.4205, "rotationZ": 0.0},
             "tail4":{"rotationX": 0.0, "rotationY": -1.0244, "rotationZ": 0.0},
             "tail5":{"rotationX": 0.0, "rotationY": 0.3302, "rotationZ": 0.0},
-            "tail6":{"rotationX": 0.0, "rotationY": 0.2724, "rotationZ": 0.0}
+            "tail6":{"rotationX": 0.0, "rotationY": 0.2724, "rotationZ": 0.0},
+            "skull":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -1.0}
           }
         }
       ]
@@ -10808,14 +10847,14 @@
             "tail6":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "neck1":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "neck2":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
-            "head":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -7.0},
             "F1L1":{"rotationX": 0.0, "rotationY": 17.0, "rotationZ": 0.0},
             "F1R1":{"rotationX": 0.0, "rotationY": -17.0, "rotationZ": 0.0},
             "shoulderWingL":{"rotationX": 12.0, "rotationY": 0.0, "rotationZ": 0.0},
             "shoulderWingR":{"rotationX": -12.0, "rotationY": 0.0, "rotationZ": 0.0},
             "LEar":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -7.0},
             "REar":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -7.0},
-            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -17.0}
+            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -17.0},
+            "skull":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -7.0}
           }
         },
         {
@@ -10883,12 +10922,12 @@
             "ForearmR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -43.5},
             "pawR":{"offsetX": 1.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 90.0},
             "WristR":{"offsetX": 0.5, "offsetY": 0.2, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -45.0},
-            "head":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -3.5238},
             "shoulderWingL":{"rotationX": 6.1304, "rotationY": 0.0, "rotationZ": 0.0},
             "shoulderWingR":{"rotationX": -6.13, "rotationY": 0.0, "rotationZ": 0.0},
             "LEar":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -3.5652},
             "REar":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -3.57},
-            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0}
+            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
+            "skull":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -3.5238}
           }
         },
         {
@@ -10919,14 +10958,14 @@
             "ForearmR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "pawR":{"offsetX": 1.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 90.0},
             "WristR":{"offsetX": 0.5, "offsetY": 0.2, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -45.0},
-            "head":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 5.3506},
             "F1L1":{"rotationX": 0.0, "rotationY": 11.2609, "rotationZ": 0.0},
             "F1R1":{"rotationX": 0.0, "rotationY": -11.26, "rotationZ": 0.0},
             "shoulderWingR":{"rotationX": 4.2394, "rotationY": 0.0, "rotationZ": 0.0},
             "shoulderWingL":{"rotationX": -4.24, "rotationY": 0.0, "rotationZ": 0.0},
             "LEar":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 12.4807},
             "REar":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 12.48},
-            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0}
+            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
+            "skull":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 5.3506}
           }
         },
         {
@@ -10994,14 +11033,14 @@
             "ForearmR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 12.0},
             "pawR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 28.5},
             "WristR":{"offsetX": 0.5, "offsetY": 0.2, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -45.0},
-            "head":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -6.0},
             "F1L1":{"rotationX": 0.0, "rotationY": -4.8387, "rotationZ": 0.0},
             "F1R1":{"rotationX": 0.0, "rotationY": 4.84, "rotationZ": 0.0},
             "shoulderWingR":{"rotationX": 5.24, "rotationY": 0.0, "rotationZ": 0.0},
             "shoulderWingL":{"rotationX": -5.24, "rotationY": 0.0, "rotationZ": 0.0},
             "LEar":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 4.3646},
             "REar":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 4.36},
-            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5}
+            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5},
+            "skull":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -6.0}
           }
         },
         {
@@ -11032,14 +11071,14 @@
             "ForearmR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 12.0},
             "pawR":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 9.0},
             "WristR":{"offsetX": 0.5, "offsetY": 0.2, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -45.0},
-            "head":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -9.5714},
             "F1R1":{"rotationX": 0.0, "rotationY": -7.64, "rotationZ": 0.0},
             "F1L1":{"rotationX": 0.0, "rotationY": 7.6405, "rotationZ": 0.0},
             "shoulderWingR":{"rotationX": -4.6114, "rotationY": 0.0, "rotationZ": 0.0},
             "shoulderWingL":{"rotationX": 4.6114, "rotationY": 0.0, "rotationZ": 0.0},
             "REar":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -6.13},
             "LEar":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -6.1295},
-            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5}
+            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5},
+            "skull":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -9.5714}
           }
         }
       ]
@@ -11054,7 +11093,6 @@
           "frame": 0,
           "elements": {
             "neck1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 14.0},
-            "head":{"offsetX": 0.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -16.0},
             "Fluff2":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0},
             "Fluff1":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 11.0},
             "ArmL":{"offsetX": 0.0, "offsetY": 0.25, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5},
@@ -11107,7 +11145,8 @@
             "Cube197":{"offsetX": 0.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -1.0},
             "Cube201":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": -3.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -2.0},
             "WingSectionR2":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -1.0},
-            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0}
+            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
+            "skull":{"offsetX": 0.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -16.0}
           }
         },
         {
@@ -11120,7 +11159,6 @@
             "Cube152":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -4.0},
             "footl3":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "neck1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 13.0},
-            "head":{"offsetX": 0.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -16.0},
             "Fluff2":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0},
             "Fluff1":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 11.0},
             "ArmL":{"offsetX": 0.0, "offsetY": -0.6, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -5.0},
@@ -11139,7 +11177,8 @@
             "tail":{"rotationX": 0.0, "rotationY": -4.0, "rotationZ": 0.0},
             "tail3":{"rotationX": 0.0, "rotationY": 10.0, "rotationZ": 0.0},
             "Wings":{"rotationX": -1.0, "rotationY": 0.0, "rotationZ": 0.0},
-            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0}
+            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
+            "skull":{"offsetX": 0.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -16.0}
           }
         },
         {
@@ -11152,7 +11191,6 @@
             "Cube152":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -4.0},
             "footl3":{"offsetX": 0.0, "offsetY": 1.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 45.0},
             "neck1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 12.5},
-            "head":{"offsetX": 0.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -17.0},
             "Fluff2":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0},
             "Fluff1":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 11.0},
             "ArmL":{"offsetX": 0.0, "offsetY": -1.25, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 10.0},
@@ -11172,7 +11210,8 @@
             "tail":{"rotationX": 0.0, "rotationY": -3.6667, "rotationZ": 0.0},
             "tail3":{"rotationX": 0.0, "rotationY": 5.3333, "rotationZ": 0.0},
             "Wings":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
-            "LowerShinL1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5}
+            "LowerShinL1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5},
+            "skull":{"offsetX": 0.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -17.0}
           }
         },
         {
@@ -11185,7 +11224,6 @@
             "Cube152":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 5.0},
             "footl3":{"offsetX": 0.0, "offsetY": 1.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 45.0},
             "neck1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 13.0},
-            "head":{"offsetX": 0.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -16.0},
             "Fluff2":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0},
             "Fluff1":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 11.0},
             "ArmL":{"offsetX": 0.0, "offsetY": -2.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 14.5},
@@ -11206,7 +11244,8 @@
             "tail6":{"rotationX": 0.0, "rotationY": 3.6, "rotationZ": 0.0},
             "tail3":{"rotationX": 0.0, "rotationY": 1.9667, "rotationZ": 0.0},
             "Wings":{"rotationX": 1.0, "rotationY": 0.0, "rotationZ": 0.0},
-            "LowerShinL1":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5}
+            "LowerShinL1":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5},
+            "skull":{"offsetX": 0.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -16.0}
           }
         },
         {
@@ -11219,7 +11258,6 @@
             "Cube152":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 5.0},
             "footl3":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5},
             "neck1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 12.5},
-            "head":{"offsetX": 0.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -16.0},
             "Fluff2":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0},
             "Fluff1":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 11.0},
             "ArmL":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5},
@@ -11240,7 +11278,8 @@
             "tail5":{"rotationX": 0.0, "rotationY": -3.0, "rotationZ": 0.0},
             "tail6":{"rotationX": 0.0, "rotationY": 7.45, "rotationZ": 0.0},
             "Wings":{"rotationX": 2.0, "rotationY": 0.0, "rotationZ": 0.0},
-            "LowerShinL1":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0}
+            "LowerShinL1":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
+            "skull":{"offsetX": 0.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -16.0}
           }
         },
         {
@@ -11253,7 +11292,6 @@
             "Cube152":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "footl3":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 11.0},
             "neck1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 13.0},
-            "head":{"offsetX": 0.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -16.0},
             "Fluff2":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0},
             "Fluff1":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 11.0},
             "ArmL":{"offsetX": 0.0, "offsetY": 2.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -5.5},
@@ -11273,7 +11311,8 @@
             "tail6":{"rotationX": 0.0, "rotationY": -5.0333, "rotationZ": 0.0},
             "tail":{"rotationX": 0.0, "rotationY": 3.8333, "rotationZ": 0.0},
             "Wings":{"rotationX": 1.0, "rotationY": 0.0, "rotationZ": 0.0},
-            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5}
+            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5},
+            "skull":{"offsetX": 0.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -16.0}
           }
         },
         {
@@ -11286,7 +11325,6 @@
             "Cube152":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -15.5},
             "footl3":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -6.0},
             "neck1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 13.5},
-            "head":{"offsetX": 0.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -16.0},
             "Fluff2":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0},
             "Fluff1":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 11.0},
             "ArmL":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5},
@@ -11303,7 +11341,8 @@
             "bum":{"rotationX": 2.0635, "rotationY": -1.0, "rotationZ": 0.5},
             "tail4":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "Wings":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
-            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0}
+            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
+            "skull":{"offsetX": 0.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -16.0}
           }
         },
         {
@@ -11326,7 +11365,6 @@
             "tail5":{"rotationX": 0.0, "rotationY": -9.0, "rotationZ": 0.0},
             "tail6":{"rotationX": 0.0, "rotationY": -6.025, "rotationZ": 0.0},
             "neck1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 13.5},
-            "head":{"offsetX": 0.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -16.0},
             "Fluff2":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0},
             "Fluff1":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 11.0},
             "Wings":{"rotationX": -1.0, "rotationY": 0.0, "rotationZ": 0.0},
@@ -11362,7 +11400,8 @@
             "WingSectionR4":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 2.0},
             "Cube201":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": -3.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -2.0},
             "WingSectionR2":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -1.0},
-            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0}
+            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
+            "skull":{"offsetX": 0.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -16.0}
           }
         }
       ]
@@ -11377,7 +11416,6 @@
           "frame": 0,
           "elements": {
             "neck1":{"offsetX": -1.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
-            "head":{"offsetX": 0.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -10.0},
             "Fluff2":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0},
             "Fluff1":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 11.0},
             "ArmL":{"offsetX": 0.0, "offsetY": 0.25, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5},
@@ -11408,7 +11446,8 @@
             "neck2":{"offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 14.0},
             "finger1R":{"rotationX": 0.0, "rotationY": -8.0, "rotationZ": 0.0},
             "finger1L":{"rotationX": 0.0, "rotationY": 8.0, "rotationZ": 0.0},
-            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0}
+            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
+            "skull":{"offsetX": 0.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -10.0}
           }
         },
         {
@@ -11421,7 +11460,6 @@
             "Cube152":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -4.0},
             "footl3":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "neck1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
-            "head":{"offsetX": 0.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -10.0},
             "Fluff2":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0},
             "Fluff1":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 11.0},
             "ArmL":{"offsetX": 0.0, "offsetY": -0.6, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -5.0},
@@ -11440,7 +11478,8 @@
             "tail":{"rotationX": 0.0, "rotationY": -4.0, "rotationZ": 0.0},
             "tail3":{"rotationX": 0.0, "rotationY": 10.0, "rotationZ": 0.0},
             "Wings":{"rotationX": -2.0, "rotationY": 0.0, "rotationZ": 0.0},
-            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0}
+            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
+            "skull":{"offsetX": 0.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -10.0}
           }
         },
         {
@@ -11453,7 +11492,6 @@
             "Cube152":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -4.0},
             "footl3":{"offsetX": 0.0, "offsetY": 1.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 67.5},
             "neck1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
-            "head":{"offsetX": 0.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -10.0},
             "Fluff2":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0},
             "Fluff1":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 11.0},
             "ArmL":{"offsetX": 0.0, "offsetY": -1.25, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 10.0},
@@ -11473,7 +11511,8 @@
             "tail":{"rotationX": 0.0, "rotationY": -3.6667, "rotationZ": 0.0},
             "tail3":{"rotationX": 0.0, "rotationY": 5.3333, "rotationZ": 0.0},
             "Wings":{"rotationX": -1.0, "rotationY": 0.0, "rotationZ": 0.0},
-            "LowerShinL1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5}
+            "LowerShinL1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5},
+            "skull":{"offsetX": 0.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -10.0}
           }
         },
         {
@@ -11486,7 +11525,6 @@
             "Cube152":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 5.0},
             "footl3":{"offsetX": 0.0, "offsetY": 1.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 45.0},
             "neck1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
-            "head":{"offsetX": 0.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -10.0},
             "Fluff2":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0},
             "Fluff1":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 11.0},
             "ArmL":{"offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 14.5},
@@ -11507,7 +11545,8 @@
             "tail6":{"rotationX": 0.0, "rotationY": 3.6, "rotationZ": 0.0},
             "tail3":{"rotationX": 0.0, "rotationY": 1.9667, "rotationZ": 0.0},
             "Wings":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
-            "LowerShinL1":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0}
+            "LowerShinL1":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
+            "skull":{"offsetX": 0.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -10.0}
           }
         },
         {
@@ -11520,7 +11559,6 @@
             "Cube152":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 5.0},
             "footl3":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 2.0},
             "neck1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
-            "head":{"offsetX": 0.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -10.0},
             "Fluff2":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0},
             "Fluff1":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 11.0},
             "ArmL":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5},
@@ -11541,7 +11579,8 @@
             "tail5":{"rotationX": 0.0, "rotationY": -3.0, "rotationZ": 0.0},
             "tail6":{"rotationX": 0.0, "rotationY": 7.45, "rotationZ": 0.0},
             "Wings":{"rotationX": 1.0, "rotationY": 0.0, "rotationZ": 0.0},
-            "LowerShinL1":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0}
+            "LowerShinL1":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
+            "skull":{"offsetX": 0.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -10.0}
           }
         },
         {
@@ -11554,7 +11593,6 @@
             "Cube152":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "footl3":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "neck1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
-            "head":{"offsetX": 0.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -10.0},
             "Fluff2":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0},
             "Fluff1":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 11.0},
             "ArmL":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5},
@@ -11574,7 +11612,8 @@
             "tail6":{"rotationX": 0.0, "rotationY": -5.0333, "rotationZ": 0.0},
             "tail":{"rotationX": 0.0, "rotationY": 3.8333, "rotationZ": 0.0},
             "Wings":{"rotationX": 1.0, "rotationY": 0.0, "rotationZ": 0.0},
-            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5}
+            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5},
+            "skull":{"offsetX": 0.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -10.0}
           }
         },
         {
@@ -11587,7 +11626,6 @@
             "Cube152":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -15.5},
             "footl3":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -6.0},
             "neck1":{"offsetX": -1.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
-            "head":{"offsetX": 0.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -10.0},
             "Fluff2":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0},
             "Fluff1":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 11.0},
             "ArmL":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5},
@@ -11605,7 +11643,8 @@
             "tail4":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "Wings":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
             "neck2":{"offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 14.0},
-            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0}
+            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
+            "skull":{"offsetX": 0.0, "offsetY": -0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -10.0}
           }
         }
       ]
@@ -11629,7 +11668,6 @@
             "pawL":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 112.5},
             "WristL":{"offsetX": 1.0, "offsetY": 2.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -55.0},
             "neck1":{"offsetX": 0.0, "offsetY": 0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 17.0},
-            "head":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -36.0},
             "neck2":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 10.0},
             "Fluff2":{"offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -8.0},
             "ArmR":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -67.5},
@@ -11650,7 +11688,8 @@
             "tail3":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 6.0},
             "tail5":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -19.0},
             "tail6":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -4.0},
-            "LowerShinR1":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0}
+            "LowerShinR1":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
+            "skull":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -36.0}
           }
         },
         {
@@ -11668,7 +11707,6 @@
             "footl3":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -15.0},
             "neck1":{"offsetX": 0.0, "offsetY": 0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 17.0},
             "neck2":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 9.0},
-            "head":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -38.0},
             "botmouth":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 2.0},
             "Fluff2":{"offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -8.0},
             "ArmL":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -33.5},
@@ -11683,7 +11721,8 @@
             "LEar":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 2.0},
             "tail6":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 3.0},
             "tail3":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 3.0},
-            "LowerShinR1":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0}
+            "LowerShinR1":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0},
+            "skull":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -38.0}
           }
         },
         {
@@ -11702,7 +11741,6 @@
             "footl3":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -20.0},
             "neck1":{"offsetX": 0.0, "offsetY": 0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 17.0},
             "neck2":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 5.0},
-            "head":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -36.0},
             "botmouth":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 2.0},
             "Fluff2":{"offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -8.0},
             "ArmL":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -45.0},
@@ -11718,7 +11756,8 @@
             "tail3":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 3.2857},
             "tail2":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 14.3333},
             "tail":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 4.2857},
-            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 4.0}
+            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 4.0},
+            "skull":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -36.0}
           }
         },
         {
@@ -11737,7 +11776,6 @@
             "footl3":{"offsetX": 0.0, "offsetY": 1.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5},
             "neck1":{"offsetX": 0.0, "offsetY": 0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 17.0},
             "neck2":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 5.0},
-            "head":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -40.0},
             "botmouth":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 2.0},
             "Fluff2":{"offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -8.0},
             "ArmL":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -60.0},
@@ -11754,7 +11792,8 @@
             "tail6":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -14.7738},
             "tail3":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 1.5714},
             "tail4":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -12.0},
-            "LowerShinR1":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5}
+            "LowerShinR1":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5},
+            "skull":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -40.0}
           }
         },
         {
@@ -11773,7 +11812,6 @@
             "footl3":{"offsetX": 0.0, "offsetY": 1.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 67.5},
             "neck1":{"offsetX": 0.0, "offsetY": 0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 17.0},
             "neck2":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 5.0},
-            "head":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -44.0},
             "botmouth":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 2.0},
             "Fluff2":{"offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -8.0},
             "ArmL":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -60.0},
@@ -11787,7 +11825,8 @@
             "LEar":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 8.0075},
             "REar":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 8.01},
             "tail":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 3.0},
-            "LowerShinR1":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -8.0}
+            "LowerShinR1":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -8.0},
+            "skull":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -44.0}
           }
         },
         {
@@ -11806,7 +11845,6 @@
             "footl3":{"offsetX": 0.0, "offsetY": 1.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 67.5},
             "neck1":{"offsetX": 0.0, "offsetY": 0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 16.5},
             "neck2":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 5.0},
-            "head":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -46.0},
             "botmouth":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 2.0},
             "Fluff2":{"offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -8.0},
             "ArmL":{"offsetX": 0.0, "offsetY": 0.1, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -57.0},
@@ -11824,7 +11862,8 @@
             "tail3":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 5.6134},
             "tail5":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -29.1053},
             "tail6":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -14.2143},
-            "LowerShinR1":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -8.0}
+            "LowerShinR1":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -8.0},
+            "skull":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -46.0}
           }
         },
         {
@@ -11843,7 +11882,6 @@
             "footl3":{"offsetX": 0.0, "offsetY": 1.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 45.0},
             "neck1":{"offsetX": 0.0, "offsetY": 0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 16.0},
             "neck2":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 5.0},
-            "head":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -49.0},
             "botmouth":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 2.0},
             "Fluff2":{"offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -8.0},
             "ArmL":{"offsetX": 0.0, "offsetY": 1.25, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -49.0},
@@ -11862,7 +11900,8 @@
             "tail3":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 7.6729},
             "tail6":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -11.6845},
             "tail":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 11.5846},
-            "LowerShinR1":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -8.0}
+            "LowerShinR1":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -8.0},
+            "skull":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -49.0}
           }
         },
         {
@@ -11881,7 +11920,6 @@
             "footl3":{"offsetX": 0.0, "offsetY": 0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 38.0},
             "neck1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 18.0},
             "neck2":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 5.0},
-            "head":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -55.0},
             "botmouth":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 2.0},
             "Fluff2":{"offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -8.0},
             "ArmL":{"offsetX": 0.0, "offsetY": 2.25, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -26.0},
@@ -11896,7 +11934,8 @@
             "REar":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -0.2137},
             "tail":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 10.5692},
             "tail2":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 20.4965},
-            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 7.0}
+            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 7.0},
+            "skull":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -55.0}
           }
         },
         {
@@ -11915,7 +11954,6 @@
             "footl3":{"offsetX": 0.0, "offsetY": 0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 38.0},
             "neck1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 18.0},
             "neck2":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 5.0},
-            "head":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -59.0},
             "botmouth":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 2.0},
             "Fluff2":{"offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -8.0},
             "ArmL":{"offsetX": 0.0, "offsetY": 4.25, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 4.0},
@@ -11932,7 +11970,8 @@
             "tail5":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -17.9028},
             "tail6":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -2.625},
             "tail":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 11.2205},
-            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 9.0}
+            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 9.0},
+            "skull":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -59.0}
           }
         },
         {
@@ -11951,7 +11990,6 @@
             "footl3":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 33.0},
             "neck1":{"offsetX": 0.0, "offsetY": 0.5, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 17.0},
             "neck2":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 5.0},
-            "head":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -53.0},
             "botmouth":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 2.0},
             "Fluff2":{"offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -8.0},
             "ArmL":{"offsetX": 0.0, "offsetY": 4.25, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5},
@@ -11968,7 +12006,8 @@
             "tail4":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -6.0},
             "tail2":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 15.4981},
             "tail":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 5.8718},
-            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -11.0}
+            "LowerShinR1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -11.0},
+            "skull":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -53.0}
           }
         },
         {
@@ -11987,7 +12026,6 @@
             "footl3":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 21.0},
             "neck1":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 17.0},
             "neck2":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 5.0},
-            "head":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -43.0},
             "botmouth":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 2.0},
             "Fluff2":{"offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -8.0},
             "ArmL":{"offsetX": 0.0, "offsetY": 4.25, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5},
@@ -12003,7 +12041,8 @@
             "tail2":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 11.6988},
             "tail5":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": -18.5298},
             "tail":{"rotationX": 0.0, "rotationY": 0.0, "rotationZ": 5.5231},
-            "LowerShinR1":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -11.0}
+            "LowerShinR1":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -11.0},
+            "skull":{"offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -43.0}
           }
         }
       ]

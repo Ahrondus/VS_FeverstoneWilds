@@ -92,11 +92,7 @@
 					"yawMultiplier": 1.2,
 					"sound": " ",
 
-                    "animation": "Walk",
-                    "animationSpeedByType": {
-                        "*-shire": 1.25,
-                        "*-quarter": 1.6
-                    }
+                    "animation": "Walk"
 				},
 				{
 					"code": "trot",
@@ -370,8 +366,7 @@
             { "code": "controlledphysics" },
             { "code": "gait" },
             { "code": "flightrideable" },
-            { "code": "flight", "flightSpeed": 0.08, "verticalSpeed": 0.06, "steering": 0.2, "arrivalDistance": 1.25,
-                "playerFlightEnabled": false,
+            { "code": "flight",
                 "playerFlightEnabledByType": {
                     "*-wild-*": false,
                     "*-tamed-*": true
@@ -617,8 +612,7 @@
                 { "code": "controlledphysics" },
                 { "code": "gait" },
                 { "code": "flightrideable" },
-                { "code": "flight", "flightSpeed": 0.08,
-                    "verticalSpeed": 0.06, "landingAnimation": "trytoland",
+                { "code": "flight",
                     "playerFlightEnabledByType": {
                         "*-wild-*": false,
                         "*-tamed-*": true

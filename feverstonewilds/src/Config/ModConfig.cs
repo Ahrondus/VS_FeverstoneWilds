@@ -73,6 +73,39 @@ namespace FeverstoneWilds.Config
       // Faunling Sapling Behavior
       api.World.Config.SetBool("FSWFaunlingSaplingEnabled", config.FSWFaunlingSaplingEnabled);
 
+      // Griffon Flight Behaviors
+      api.World.Config.SetFloat("FSWGriffonFlightSpeed", config.FSWGriffonFlightSpeed);
+      api.World.Config.SetFloat("FSWGriffonVerticalSpeed", config.FSWGriffonVerticalSpeed);
+      api.World.Config.SetFloat("FSWGriffonSteering", config.FSWGriffonSteering);
+      api.World.Config.SetFloat("FSWGriffonArrivalDistance", config.FSWGriffonArrivalDistance);
+      api.World.Config.SetBool("FSWGriffonAutoFlight", config.FSWGriffonAutoFlight);
+      api.World.Config.SetFloat("FSWGriffonMinGroundSeconds", config.FSWGriffonMinGroundSeconds);
+      api.World.Config.SetFloat("FSWGriffonMaxGroundSeconds", config.FSWGriffonMaxGroundSeconds);
+      api.World.Config.SetFloat("FSWGriffonMinFlightSeconds", config.FSWGriffonMinFlightSeconds);
+      api.World.Config.SetFloat("FSWGriffonMaxFlightSeconds", config.FSWGriffonMaxFlightSeconds);
+      api.World.Config.SetFloat("FSWGriffonTakeoffSpeed", config.FSWGriffonTakeoffSpeed);
+      api.World.Config.SetFloat("FSWGriffonLandingSpeed", config.FSWGriffonLandingSpeed);
+      api.World.Config.SetFloat("FSWGriffonLandingHeight", config.FSWGriffonLandingHeight);
+      api.World.Config.SetFloat("FSWGriffonLandingArrivalDistance", config.FSWGriffonLandingArrivalDistance);
+      api.World.Config.SetString("FSWGriffonLandingAnimation", config.FSWGriffonLandingAnimation);
+      api.World.Config.SetFloat("FSWGriffonLandingAnimationSpeed", config.FSWGriffonLandingAnimationSpeed);
+      api.World.Config.SetFloat("FSWGriffonLandingAnimationWeight", config.FSWGriffonLandingAnimationWeight);
+      api.World.Config.SetFloat("FSWGriffonLandingAnimationStartHeight", config.FSWGriffonLandingAnimationStartHeight);
+      api.World.Config.SetInt("FSWGriffonLandingScanDepth", config.FSWGriffonLandingScanDepth);
+      api.World.Config.SetFloat("FSWGriffonFailedLandingDescent", config.FSWGriffonFailedLandingDescent);
+      api.World.Config.SetFloat("FSWGriffonPlayerFlightSpeed", config.FSWGriffonPlayerFlightSpeed);
+      api.World.Config.SetFloat("FSWGriffonPlayerFlightSprintSpeed", config.FSWGriffonPlayerFlightSprintSpeed);
+      api.World.Config.SetFloat("FSWGriffonPlayerFlightVerticalSpeed", config.FSWGriffonPlayerFlightVerticalSpeed);
+      api.World.Config.SetFloat("FSWGriffonPlayerFlightTakeoffSpeed", config.FSWGriffonPlayerFlightTakeoffSpeed);
+      api.World.Config.SetFloat("FSWGriffonPlayerFlightSteering", config.FSWGriffonPlayerFlightSteering);
+      api.World.Config.SetFloat("FSWGriffonPlayerFlightTurnSpeed", config.FSWGriffonPlayerFlightTurnSpeed);
+      api.World.Config.SetFloat("FSWGriffonPlayerFlightLandingHeight", config.FSWGriffonPlayerFlightLandingHeight);
+      api.World.Config.SetString("FSWGriffonPlayerFlightAnimation", config.FSWGriffonPlayerFlightAnimation);
+      api.World.Config.SetString("FSWGriffonPlayerFlightSprintAnimation", config.FSWGriffonPlayerFlightSprintAnimation);
+      api.World.Config.SetString("FSWGriffonPlayerFlightIdleAnimation", config.FSWGriffonPlayerFlightIdleAnimation);
+      api.World.Config.SetString("FSWGriffonPlayerFlightAscendAnimation", config.FSWGriffonPlayerFlightAscendAnimation);
+      api.World.Config.SetString("FSWGriffonPlayerFlightDescendAnimation", config.FSWGriffonPlayerFlightDescendAnimation);
+
       // AnimalCages Config
       api.World.Config.SetBool("AllowCagedFSWCreatures", config.AllowCagedFSWCreatures);
 

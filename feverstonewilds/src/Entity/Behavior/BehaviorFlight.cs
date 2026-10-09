@@ -5,6 +5,7 @@ using Vintagestory.API.Common.Entities;
 using Vintagestory.API.Datastructures;
 using Vintagestory.API.MathTools;
 using Vintagestory.API.Util;
+using Vintagestory.GameContent;
 
 namespace FeverstoneWilds.Flight.Behavior;
 
@@ -28,6 +29,12 @@ public class BehaviorFlight : EntityBehavior
     public const string FlightAnimationEaseInSpeedAttribute = "feverstonewilds:flightAnimationEaseInSpeed";
     public const string FlightAnimationEaseOutSpeedAttribute = "feverstonewilds:flightAnimationEaseOutSpeed";
     public const string FlightAnimationSuppressDefaultAttribute = "feverstonewilds:flightAnimationSuppressDefault";
+    public const string PlayerFlightSpeedAttribute = "feverstonewilds:playerFlightSpeed";
+    public const string PlayerFlightSprintSpeedAttribute = "feverstonewilds:playerFlightSprintSpeed";
+    public const string PlayerFlightVerticalSpeedAttribute = "feverstonewilds:playerFlightVerticalSpeed";
+    public const string PlayerFlightTakeoffSpeedAttribute = "feverstonewilds:playerFlightTakeoffSpeed";
+    public const string PlayerFlightSteeringAttribute = "feverstonewilds:playerFlightSteering";
+    public const string PlayerFlightTurnSpeedAttribute = "feverstonewilds:playerFlightTurnSpeed";
     private const long PlayerFlightFlapDurationMs = 15000;
     private const long PlayerFlightGlideDurationMs = 6000;
 
@@ -56,6 +63,7 @@ public class BehaviorFlight : EntityBehavior
     private float playerFlightVerticalSpeed;
     private float playerFlightTakeoffSpeed;
     private float playerFlightSteering;
+    private float playerFlightTurnSpeed;
     private float playerFlightLandingHeight;
     private string playerFlightAnimation;
     private string playerFlightSprintAnimation;
@@ -88,6 +96,8 @@ public class BehaviorFlight : EntityBehavior
     private bool clientAnimationSuppressDefault;
     private string clientFlightTurnAnimation;
     private string clientFlightBankAnimation;
+    private float playerFlightWalkX;
+    private float playerFlightWalkZ;
 
     public BehaviorFlight(Entity entity) : base(entity) { }
 
@@ -100,6 +110,8 @@ public class BehaviorFlight : EntityBehavior
     public bool IsPlayerControlledFlight => isPlayerControlledFlight;
 
     public bool PlayerFlightEnabled => playerFlightEnabled;
+
+    public float PlayerFlightTurnSpeed => GetSyncedPlayerFlightSetting(PlayerFlightTurnSpeedAttribute, playerFlightTurnSpeed);
 
     public override string PropertyName() => "flight";
 
@@ -131,13 +143,24 @@ public class BehaviorFlight : EntityBehavior
         playerFlightSprintSpeed = attributes["playerFlightSprintSpeed"].AsFloat(playerFlightSpeed);
         playerFlightVerticalSpeed = attributes["playerFlightVerticalSpeed"].AsFloat(verticalSpeed);
         playerFlightTakeoffSpeed = attributes["playerFlightTakeoffSpeed"].AsFloat(takeoffSpeed);
-        playerFlightSteering = attributes["playerFlightSteering"].AsFloat(steering);
+        playerFlightSteering = Math.Max(0, Math.Min(1, attributes["playerFlightSteering"].AsFloat(steering)));
+        playerFlightTurnSpeed = Math.Max(0, attributes["playerFlightTurnSpeed"].AsFloat(1f));
         playerFlightLandingHeight = attributes["playerFlightLandingHeight"].AsFloat(1f);
         playerFlightAnimation = attributes["playerFlightAnimation"].AsString("fly");
         playerFlightSprintAnimation = attributes["playerFlightSprintAnimation"].AsString("speedfly");
         playerFlightIdleAnimation = attributes["playerFlightIdleAnimation"].AsString("flyidle");
         playerFlightAscendAnimation = attributes["playerFlightAscendAnimation"].AsString("flyascend");
         playerFlightDescendAnimation = attributes["playerFlightDescendAnimation"].AsString("flydescend");
+
+        if (entity.World.Side == EnumAppSide.Server)
+        {
+            entity.WatchedAttributes.SetFloat(PlayerFlightSpeedAttribute, playerFlightSpeed);
+            entity.WatchedAttributes.SetFloat(PlayerFlightSprintSpeedAttribute, playerFlightSprintSpeed);
+            entity.WatchedAttributes.SetFloat(PlayerFlightVerticalSpeedAttribute, playerFlightVerticalSpeed);
+            entity.WatchedAttributes.SetFloat(PlayerFlightTakeoffSpeedAttribute, playerFlightTakeoffSpeed);
+            entity.WatchedAttributes.SetFloat(PlayerFlightSteeringAttribute, playerFlightSteering);
+            entity.WatchedAttributes.SetFloat(PlayerFlightTurnSpeedAttribute, playerFlightTurnSpeed);
+        }
 
         entity.AfterPhysicsTick += ClearOnGroundWhileFlying;
     }
@@ -160,6 +183,7 @@ public class BehaviorFlight : EntityBehavior
         entity.OnGround = false;
         entity.MarkTagsDirty();
     }
+
 
     private bool GetPlayerFlightEnabled(JsonObject attributes)
     {
@@ -205,6 +229,7 @@ public class BehaviorFlight : EntityBehavior
             playerFlightSprinting = false;
             playerFlightLandingRequested = false;
             ResetPlayerFlightAnimationPhase();
+            ResetPlayerFlightMotion();
             ClearFlightAnimation();
         }
     }
@@ -369,6 +394,7 @@ public class BehaviorFlight : EntityBehavior
                 playerFlightDescending = false;
                 playerFlightSprinting = false;
                 ResetPlayerFlightAnimationPhase();
+                ResetPlayerFlightMotion();
 
                 if (IsFlying && entity.Alive)
                 {
@@ -405,7 +431,7 @@ public class BehaviorFlight : EntityBehavior
             landingAnimationStarted = false;
             nextStateChangeMs = 0;
             SetFlying(true);
-            entity.Pos.Motion.Y = Math.Max(entity.Pos.Motion.Y, playerFlightTakeoffSpeed);
+            entity.Pos.Motion.Y = Math.Max(entity.Pos.Motion.Y, GetPlayerFlightTakeoffSpeed());
         }
 
         isLanding = false;
@@ -414,13 +440,12 @@ public class BehaviorFlight : EntityBehavior
         if (sneaking && TryLandPlayerFlight()) return;
 
         float forwardMovement = controls.Forward ? 1 : controls.Backward ? -1 : 0;
-        float horizontalSpeed = sprinting ? playerFlightSprintSpeed : playerFlightSpeed;
+        float horizontalSpeed = sprinting ? GetPlayerFlightSprintSpeed() : GetPlayerFlightSpeed();
         float desiredX = (float)Math.Sin(entity.Pos.Yaw) * horizontalSpeed * forwardMovement;
         float desiredZ = (float)Math.Cos(entity.Pos.Yaw) * horizontalSpeed * forwardMovement;
-        float desiredY = jumping ? playerFlightVerticalSpeed : sneaking ? -playerFlightVerticalSpeed : 0;
+        float desiredY = jumping ? GetPlayerFlightVerticalSpeed() : sneaking ? -GetPlayerFlightVerticalSpeed() : 0;
 
-        entity.Pos.Motion.X += (desiredX - entity.Pos.Motion.X) * playerFlightSteering;
-        entity.Pos.Motion.Z += (desiredZ - entity.Pos.Motion.Z) * playerFlightSteering;
+        ApplyPlayerFlightWalkVector(desiredX, desiredZ);
         entity.Pos.Motion.Y = desiredY;
 
         if (jumping || sneaking || forwardMovement == 0)
@@ -458,6 +483,42 @@ public class BehaviorFlight : EntityBehavior
         playerFlightGliding = false;
         playerFlightCruiseSprinting = false;
         playerFlightPhaseUntilMs = 0;
+    }
+
+    private void ResetPlayerFlightMotion()
+    {
+        playerFlightWalkX = 0;
+        playerFlightWalkZ = 0;
+
+        if (entity is EntityAgent agent)
+        {
+            agent.Controls.WalkVector.Set(0, 0, 0);
+        }
+    }
+
+    private float GetPlayerFlightSpeed() => GetSyncedPlayerFlightSetting(PlayerFlightSpeedAttribute, playerFlightSpeed);
+
+    private float GetPlayerFlightSprintSpeed() => GetSyncedPlayerFlightSetting(PlayerFlightSprintSpeedAttribute, playerFlightSprintSpeed);
+
+    private float GetPlayerFlightVerticalSpeed() => GetSyncedPlayerFlightSetting(PlayerFlightVerticalSpeedAttribute, playerFlightVerticalSpeed);
+
+    private float GetPlayerFlightTakeoffSpeed() => GetSyncedPlayerFlightSetting(PlayerFlightTakeoffSpeedAttribute, playerFlightTakeoffSpeed);
+
+    private float GetPlayerFlightSteering() => GetSyncedPlayerFlightSetting(PlayerFlightSteeringAttribute, playerFlightSteering);
+
+    private float GetSyncedPlayerFlightSetting(string attribute, float fallback)
+    {
+        return entity.World.Side == EnumAppSide.Client ? entity.WatchedAttributes.GetFloat(attribute, fallback) : fallback;
+    }
+
+    private void ApplyPlayerFlightWalkVector(float desiredX, float desiredZ)
+    {
+        if (entity is not EntityAgent agent) return;
+
+        float steering = GetPlayerFlightSteering();
+        playerFlightWalkX += (desiredX - playerFlightWalkX) * steering;
+        playerFlightWalkZ += (desiredZ - playerFlightWalkZ) * steering;
+        agent.Controls.WalkVector.Set(playerFlightWalkX, 0, playerFlightWalkZ);
     }
 
     private bool TryLandPlayerFlight()
@@ -501,7 +562,14 @@ public class BehaviorFlight : EntityBehavior
 
         UpdateClientFlightTurnAnimation(mountable.ControllingControls);
 
-        float desiredY = playerFlightAscending ? playerFlightVerticalSpeed : playerFlightDescending ? -playerFlightVerticalSpeed : 0;
+        EntityControls controls = mountable.ControllingControls;
+        float forwardMovement = controls.Forward ? 1 : controls.Backward ? -1 : 0;
+        float horizontalSpeed = (playerFlightSprinting || controls.Sprint) ? GetPlayerFlightSprintSpeed() : GetPlayerFlightSpeed();
+        float desiredX = (float)Math.Sin(entity.Pos.Yaw) * horizontalSpeed * forwardMovement;
+        float desiredZ = (float)Math.Cos(entity.Pos.Yaw) * horizontalSpeed * forwardMovement;
+        ApplyPlayerFlightWalkVector(desiredX, desiredZ);
+
+        float desiredY = playerFlightAscending ? GetPlayerFlightVerticalSpeed() : playerFlightDescending ? -GetPlayerFlightVerticalSpeed() : 0;
         entity.Pos.Motion.Y = desiredY;
     }
 
@@ -528,6 +596,7 @@ public class BehaviorFlight : EntityBehavior
         if (!clientPlayerFlightActive) return;
 
         clientPlayerFlightActive = false;
+        ResetPlayerFlightMotion();
         StopClientFlightTurnAnimation();
     }
 
