@@ -1,5 +1,6 @@
 using System;
 using FeverstoneWilds.Flight.Behavior;
+using Vintagestory.API.Client;
 using Vintagestory.API.Common;
 using Vintagestory.API.Common.Entities;
 using Vintagestory.API.MathTools;
@@ -10,12 +11,16 @@ namespace FeverstoneWilds.Flight.Behavior;
 public class BehaviorFlightRideable : EntityBehaviorRideable
 {
     private const long FlightSneakReleaseQuietMs = 250;
+    private const long FlightSwivelEaseOutDurationMs = 750;
+    private const long FlightSwivelLandingClearMs = 150;
 
     private bool waitingForFlightSneakRelease;
     private long lastFlightSneakPressMs;
     private double flightTurnMotion;
-    private bool? lastFlightTurnTraceState;
-    private long nextFlightRenderTraceAtMs;
+    private bool clientFlightSwivelEaseActive;
+    private float clientFlightSwivelStart;
+    private long clientFlightSwivelEaseStartMs;
+    private long clientFlightSwivelClearUntilMs;
 
     public BehaviorFlightRideable(Entity entity) : base(entity) { }
 
@@ -97,56 +102,53 @@ public class BehaviorFlightRideable : EntityBehaviorRideable
 
     protected override void UpdateAngleAndMotion(float deltaTime)
     {
+        EntityBehaviorGait gait = entity.GetBehavior<EntityBehaviorGait>();
         base.UpdateAngleAndMotion(deltaTime);
 
         BehaviorFlight flight = entity.GetBehavior<BehaviorFlight>();
-        if (flight?.IsFlying != true) return;
+        if (flight?.IsFlying != true)
+        {
+            if (entity.World.Side == EnumAppSide.Client)
+            {
+                if (clientFlightSwivelEaseActive)
+                {
+                    clientFlightSwivelEaseActive = false;
+                    clientFlightSwivelClearUntilMs = entity.World.ElapsedMilliseconds + FlightSwivelLandingClearMs;
+                }
+
+                if (entity.World.ElapsedMilliseconds < clientFlightSwivelClearUntilMs && entity.Properties.Client?.Renderer is EntityShapeRenderer landingRenderer)
+                {
+                    landingRenderer.nowSwivelRad = 0;
+                }
+            }
+            return;
+        }
+
+        if (gait != null)
+        {
+            gait.AngularVelocity = 0;
+        }
+
+        if (entity is EntityAgent entityAgent)
+        {
+            entityAgent.sidewaysSwivelAngle = 0;
+        }
+
+        if (entity.World.Side == EnumAppSide.Client && entity.Properties.Client?.Renderer is EntityShapeRenderer renderer)
+        {
+            if (!clientFlightSwivelEaseActive)
+            {
+                clientFlightSwivelEaseActive = true;
+                clientFlightSwivelStart = renderer.nowSwivelRad;
+                clientFlightSwivelEaseStartMs = entity.World.ElapsedMilliseconds;
+            }
+
+            float progress = Math.Min(1f, (entity.World.ElapsedMilliseconds - clientFlightSwivelEaseStartMs) / (float)FlightSwivelEaseOutDurationMs);
+            renderer.nowSwivelRad = clientFlightSwivelStart * (1f - progress);
+        }
 
         float clampedDeltaTime = Math.Min(0.5f, deltaTime);
         entity.Pos.Yaw = (entity.Pos.Yaw + (float)(flightTurnMotion * clampedDeltaTime * 30f)) % GameMath.TWOPI;
-
-        if (entity.World.Side == EnumAppSide.Client && lastFlightTurnTraceState != flight.IsFlying)
-        {
-            lastFlightTurnTraceState = flight.IsFlying;
-            EntityBehaviorGait gait = entity.GetBehavior<EntityBehaviorGait>();
-            entity.Api.Logger.Debug("[FeverstoneWilds] Flight steering gate entity=" + entity.EntityId
-                + ": flying=" + flight.IsFlying
-                + ", turnMotion=" + flightTurnMotion
-                + ", gaitAngularVelocity=" + (gait?.AngularVelocity ?? 0)
-                + ", yaw=" + entity.Pos.Yaw);
-        }
-
-        if (entity.World.Side == EnumAppSide.Client && entity.World.ElapsedMilliseconds >= nextFlightRenderTraceAtMs)
-        {
-            nextFlightRenderTraceAtMs = entity.World.ElapsedMilliseconds + 1000;
-            EntityBehaviorGait gait = entity.GetBehavior<EntityBehaviorGait>();
-            Vec3f mountAngle = MountAngle;
-            entity.Api.Logger.Debug("[FeverstoneWilds] Flight render state entity=" + entity.EntityId
-                + ": turnMotion=" + flightTurnMotion
-                + ", gaitAngularVelocity=" + (gait?.AngularVelocity ?? 0)
-                + ", mountAngle=" + mountAngle.X + "," + mountAngle.Y + "," + mountAngle.Z
-                + ", onGround=" + entity.OnGround
-                + ", seatTransform=" + GetControllingSeatTransform());
-        }
-    }
-
-    private string GetControllingSeatTransform()
-    {
-        if (entity.GetInterface<IMountable>() is not IMountable mountable) return "none";
-
-        foreach (IMountableSeat seat in mountable.Seats)
-        {
-            if (!seat.CanControl || seat.Passenger == null) continue;
-
-            float[] values = seat.RenderTransform?.Values;
-            if (values == null || values.Length < 11) return "unavailable";
-
-            return values[0] + "," + values[1] + "," + values[2]
-                + ";" + values[4] + "," + values[5] + "," + values[6]
-                + ";" + values[8] + "," + values[9] + "," + values[10];
-        }
-
-        return "no-controller";
     }
 
     public override void OnGameTick(float deltaTime)
