@@ -5,7 +5,6 @@ using Vintagestory.API.Common.Entities;
 using Vintagestory.API.Datastructures;
 using Vintagestory.API.MathTools;
 using Vintagestory.API.Util;
-using Vintagestory.GameContent;
 
 namespace FeverstoneWilds.Flight.Behavior;
 
@@ -89,10 +88,6 @@ public class BehaviorFlight : EntityBehavior
     private bool clientAnimationSuppressDefault;
     private string clientFlightTurnAnimation;
     private string clientFlightBankAnimation;
-    private string lastLoggedClientFlightTurnAnimation;
-    private string lastLoggedClientFlightBankAnimation;
-    private long clientFlightCruiseTraceAtMs;
-    private long lastOnGroundCorrectionTraceAtMs;
 
     public BehaviorFlight(Entity entity) : base(entity) { }
 
@@ -162,12 +157,6 @@ public class BehaviorFlight : EntityBehavior
             return;
         }
 
-        if (entity.World.Side == EnumAppSide.Server && entity.World.ElapsedMilliseconds >= lastOnGroundCorrectionTraceAtMs)
-        {
-            lastOnGroundCorrectionTraceAtMs = entity.World.ElapsedMilliseconds + 1000;
-            entity.Api.Logger.Debug("[FeverstoneWilds] Re-clearing OnGround during flight entity=" + entity.EntityId);
-        }
-
         entity.OnGround = false;
         entity.MarkTagsDirty();
     }
@@ -197,18 +186,11 @@ public class BehaviorFlight : EntityBehavior
     {
         if (entity.World.Side != EnumAppSide.Server) return;
 
-        bool wasFlying = IsFlying;
         entity.WatchedAttributes.SetBool(FlyingAttribute, value);
         if (value)
         {
             entity.OnGround = false;
             entity.MarkTagsDirty();
-
-            if (!wasFlying)
-            {
-                entity.Api.Logger.Debug("[FeverstoneWilds] Flight state entered entity=" + entity.EntityId
-                    + ": onGround=" + entity.OnGround);
-            }
 
             return;
         }
@@ -255,11 +237,6 @@ public class BehaviorFlight : EntityBehavior
         if (active)
         {
             playerFlightInputUntilMs = entity.World.ElapsedMilliseconds + 150;
-        }
-
-        if (entity.World.Side == EnumAppSide.Client && action == EnumFlightInputAction.Ascend && active)
-        {
-            clientPlayerFlightActive = true;
         }
 
     }
@@ -336,7 +313,6 @@ public class BehaviorFlight : EntityBehavior
         {
             UpdatePlayerFlightInputTimeout();
             UpdateClientPlayerControlledFlight();
-            TraceClientFlightCruiseState();
             SuppressClientGaitAnimation();
             UpdateClientFlightAnimation();
             return;
@@ -455,13 +431,7 @@ public class BehaviorFlight : EntityBehavior
         string animation = jumping ? playerFlightAscendAnimation : sneaking ? playerFlightDescendAnimation : forwardMovement == 0 ? playerFlightIdleAnimation : GetPlayerFlightCruiseAnimation(sprinting);
         if (animation == mountedFlightAnimation) return;
 
-        string previousAnimation = mountedFlightAnimation;
         mountedFlightAnimation = animation;
-        entity.Api.Logger.Debug("[FeverstoneWilds] Mounted flight animation entity=" + entity.EntityId
-            + ": previous=" + (previousAnimation ?? "none")
-            + ", next=" + animation
-            + ", ascending=" + jumping
-            + ", descending=" + sneaking);
         SetFlightAnimation("mountedflight", animation, 1f, 10f, true);
     }
 
@@ -529,11 +499,7 @@ public class BehaviorFlight : EntityBehavior
             StopClientFlightTurnAnimation();
         }
 
-        // Temporary diagnostic: leave mounted-flight steering active while suppressing the custom turn and bank poses.
-        if (!string.IsNullOrEmpty(clientFlightTurnAnimation) || !string.IsNullOrEmpty(clientFlightBankAnimation))
-        {
-            StopClientFlightTurnAnimation();
-        }
+        UpdateClientFlightTurnAnimation(mountable.ControllingControls);
 
         float desiredY = playerFlightAscending ? playerFlightVerticalSpeed : playerFlightDescending ? -playerFlightVerticalSpeed : 0;
         entity.Pos.Motion.Y = desiredY;
@@ -555,7 +521,6 @@ public class BehaviorFlight : EntityBehavior
         clientAnimationEaseInSpeed = 0;
         clientAnimationEaseOutSpeed = 0;
         clientAnimationSuppressDefault = false;
-        entity.Api.Logger.Debug("[FeverstoneWilds] Reset client animation state for mounted flight entity=" + entity.EntityId);
     }
 
     private void EndClientPlayerControlledFlight()
@@ -585,7 +550,6 @@ public class BehaviorFlight : EntityBehavior
             bankAnimation = turningLeft ? "flightbankleft" : "flightbankright";
         }
 
-        bool hadFlightTurnPose = !string.IsNullOrEmpty(clientFlightTurnAnimation) || !string.IsNullOrEmpty(clientFlightBankAnimation);
         bool turnChanged = turnAnimation != clientFlightTurnAnimation;
         bool bankChanged = bankAnimation != clientFlightBankAnimation;
         UpdateClientFlightPose(agent, ref clientFlightTurnAnimation, turnAnimation);
@@ -594,25 +558,6 @@ public class BehaviorFlight : EntityBehavior
         if (turnChanged || bankChanged)
         {
             agent.AnimManager.AnimationsDirty = true;
-
-            if (string.IsNullOrEmpty(clientFlightTurnAnimation) && string.IsNullOrEmpty(clientFlightBankAnimation))
-            {
-                if (hadFlightTurnPose) ResetClientFlightPoseMatrices(agent);
-                clientFlightCruiseTraceAtMs = entity.World.ElapsedMilliseconds + 750;
-                entity.Api.Logger.Debug("[FeverstoneWilds] Flight animation manager entity=" + entity.EntityId
-                    + ": active=" + string.Join(",", agent.AnimManager.ActiveAnimationsByAnimCode.Keys));
-            }
-        }
-
-        if (clientFlightTurnAnimation != lastLoggedClientFlightTurnAnimation || clientFlightBankAnimation != lastLoggedClientFlightBankAnimation)
-        {
-            lastLoggedClientFlightTurnAnimation = clientFlightTurnAnimation;
-            lastLoggedClientFlightBankAnimation = clientFlightBankAnimation;
-            entity.Api.Logger.Debug("[FeverstoneWilds] Flight animation state entity=" + entity.EntityId
-                + ": left=" + controls.Left
-                + ", right=" + controls.Right
-                + ", turn=" + (clientFlightTurnAnimation ?? "none")
-                + ", bank=" + (clientFlightBankAnimation ?? "none"));
         }
     }
 
@@ -629,25 +574,9 @@ public class BehaviorFlight : EntityBehavior
         activeAnimation = nextAnimation;
     }
 
-    private void ResetClientFlightPoseMatrices(EntityAgent agent)
-    {
-        if (agent.AnimManager?.Animator is not AnimatorBase animator) return;
-
-        Array.Copy(animator.TransformationMatricesDefaultPose, animator.Matrices, Math.Min(animator.TransformationMatricesDefaultPose.Length, animator.Matrices.Length));
-        agent.AnimManager.AnimationsDirty = true;
-        entity.Api.Logger.Debug("[FeverstoneWilds] Reset client flight pose matrices entity=" + entity.EntityId);
-    }
-
     private void StopClientFlightTurnAnimation()
     {
         if (entity is not EntityAgent agent) return;
-
-        if (!string.IsNullOrEmpty(clientFlightTurnAnimation) || !string.IsNullOrEmpty(clientFlightBankAnimation))
-        {
-            entity.Api.Logger.Debug("[FeverstoneWilds] Flight animation clear entity=" + entity.EntityId
-                + ": turn=" + (clientFlightTurnAnimation ?? "none")
-                + ", bank=" + (clientFlightBankAnimation ?? "none"));
-        }
 
         agent.StopAnimation("turn-left");
         agent.StopAnimation("turn-right");
@@ -658,88 +587,6 @@ public class BehaviorFlight : EntityBehavior
         agent.AnimManager.AnimationsDirty = true;
         clientFlightTurnAnimation = null;
         clientFlightBankAnimation = null;
-        lastLoggedClientFlightTurnAnimation = null;
-        lastLoggedClientFlightBankAnimation = null;
-        clientFlightCruiseTraceAtMs = 0;
-    }
-
-    private void TraceClientFlightCruiseState()
-    {
-        if (clientFlightCruiseTraceAtMs == 0 || entity.World.ElapsedMilliseconds < clientFlightCruiseTraceAtMs) return;
-
-        clientFlightCruiseTraceAtMs = 0;
-        if (!IsFlying || entity is not EntityAgent agent) return;
-
-        var mountAngle = entity.GetBehavior<BehaviorFlightRideable>()?.MountAngle;
-        entity.Api.Logger.Debug("[FeverstoneWilds] Flight cruise state entity=" + entity.EntityId
-            + ": ascending=" + playerFlightAscending
-            + ", descending=" + playerFlightDescending
-            + ", active=" + string.Join(",", agent.AnimManager.ActiveAnimationsByAnimCode.Keys)
-            + ", mountAngle=" + (mountAngle == null ? "none" : mountAngle.X + "," + mountAngle.Y + "," + mountAngle.Z)
-            + ", onGround=" + entity.OnGround
-            + ", posPitch=" + entity.Pos.Pitch
-            + ", posRoll=" + entity.Pos.Roll
-            + ", " + GetClientPoseTrace(agent));
-        entity.Api.Logger.Debug("[FeverstoneWilds] Flight running animations entity=" + entity.EntityId
-            + ": " + GetRunningAnimationTrace((AnimatorBase)agent.AnimManager.Animator));
-    }
-
-    private string GetClientPoseTrace(EntityAgent agent)
-    {
-        if (agent.AnimManager?.Animator is not AnimatorBase animator)
-        {
-            return "pose=unavailable";
-        }
-
-        float[] matrices = animator.Matrices;
-        float[] defaultPose = animator.TransformationMatricesDefaultPose;
-        int jointCount = Math.Min(matrices.Length, defaultPose.Length) / 12;
-        float totalDeviation = 0;
-        float rootDeviation = 0;
-        float largestDeviation = 0;
-        int largestJoint = -1;
-
-        for (int jointId = 0; jointId < jointCount; jointId++)
-        {
-            float jointDeviation = 0;
-            int matrixOffset = jointId * 12;
-            for (int valueIndex = 0; valueIndex < 12; valueIndex++)
-            {
-                jointDeviation += Math.Abs(matrices[matrixOffset + valueIndex] - defaultPose[matrixOffset + valueIndex]);
-            }
-
-            totalDeviation += jointDeviation;
-            if (jointId == 0) rootDeviation = jointDeviation;
-            if (jointDeviation > largestDeviation)
-            {
-                largestDeviation = jointDeviation;
-                largestJoint = jointId;
-            }
-        }
-
-        return "activeAnimationCount=" + animator.ActiveAnimationCount
-            + ", poseTotalDeviation=" + totalDeviation
-            + ", poseRootDeviation=" + rootDeviation
-            + ", poseLargestJoint=" + largestJoint
-            + ", poseLargestDeviation=" + largestDeviation;
-    }
-
-    private string GetRunningAnimationTrace(AnimatorBase animator)
-    {
-        List<string> runningAnimations = new();
-        foreach (RunningAnimation runningAnimation in animator.Animations)
-        {
-            if (!runningAnimation.Running && !runningAnimation.Active && !runningAnimation.NowPlaying) continue;
-
-            runningAnimations.Add(runningAnimation.meta.Code
-                + "(active=" + runningAnimation.Active
-                + ",running=" + runningAnimation.Running
-                + ",nowPlaying=" + runningAnimation.NowPlaying
-                + ",ease=" + runningAnimation.EasingFactor
-                + ",weight=" + runningAnimation.BlendedWeight + ")");
-        }
-
-        return string.Join(";", runningAnimations);
     }
 
     private void SuppressClientGaitAnimation()
@@ -947,13 +794,6 @@ public class BehaviorFlight : EntityBehavior
             agent.AnimManager.AnimationsDirty = true;
         }
 
-        if (entity.World.Side == EnumAppSide.Client)
-        {
-            entity.Api.Logger.Debug("[FeverstoneWilds] Mounted flight client animation entity=" + entity.EntityId
-                + ": previous=" + (clientAnimation ?? "none")
-                + ", next=" + (animation ?? "none"));
-        }
-
         clientAnimationSource = source;
         clientAnimation = animation;
         clientAnimationSpeed = animationSpeed;
@@ -961,10 +801,5 @@ public class BehaviorFlight : EntityBehavior
         clientAnimationEaseInSpeed = animationEaseInSpeed;
         clientAnimationEaseOutSpeed = animationEaseOutSpeed;
         clientAnimationSuppressDefault = suppressDefaultAnimation;
-
-        if (source == "mountedflight" && animation == playerFlightIdleAnimation)
-        {
-            clientFlightCruiseTraceAtMs = entity.World.ElapsedMilliseconds + 750;
-        }
     }
 }
