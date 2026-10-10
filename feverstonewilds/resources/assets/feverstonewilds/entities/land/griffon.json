@@ -641,6 +641,17 @@
                     "aiCreatureType": "LandCreature",
                     "aitasks": [
                         {
+                            "code": "cometoowner",
+                            "priority": 4,
+                            "animation": "trot",
+                            "animationSpeed": 1.35,
+                            "movespeed": 0.019,
+                            "__allowTeleport": true,
+                            "teleportMaxRange": 2000,
+                            "teleportAfterRange": 150,
+                            "teleportToRange": 15
+                        },
+                        {
                             "code": "flightmeleeattack",
                             "slot": 1,
                             "priority": 3.5,

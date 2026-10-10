@@ -30,7 +30,7 @@
 			"categoryCodeByType": {
 				"*-head-bridle-*": "bridle-{breed}",
 				"*-middleback-saddle-*": "saddle-{breed}",
-				"*-lowerbackside-saddlebags-*": "sidebags-{breed}"
+				"*-lowerbackside-saddlebags-both": "sidebags-{breed}"
 			},
 			"attachedShapeBySlotCodeByType": {	
 				"head-bison-*": {
@@ -72,6 +72,9 @@
 		"interactPassthroughByType": {
 			"*-saddle-both": true,
 			"*": false
+		},
+		"handbook": {
+			"groupBy": ["fsmountwearables-{breed}-*"]
 		}
 	},
 	"behaviorsByType": {
