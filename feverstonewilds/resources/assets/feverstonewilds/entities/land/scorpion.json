@@ -181,14 +181,14 @@
 		],
 		"spawnconditions": {
 			"worldgen": {
-				"TriesPerChunk": { "avg": 0.045, "var": 0 },
+				"TriesPerChunk": { "avg": 0.025, "var": 0 },
 				"tryOnlySurface": true,
-				"groupSize": { "dist": "verynarrowgaussian", "avg": 3, "var": 1 },
+				"groupSize": { "dist": "verynarrowgaussian", "avg": 1 },
 				"insideBlockCodes": ["game:air", "game:tallgrass-*", "game:snowlayer-1"],
 				"maxLightLevel": 7,
 				"lightLevelType": "onlyBlockLight",	
-				"minTemp": -5,
-				"maxTemp": 30,
+				"minTemp": 18,
+				"maxTemp": 40,
 				"minRain": 0.25,
 				"minForestOrShrubs": 0.25,
 				"maxForest": 0.75,
@@ -202,10 +202,10 @@
 				"maxQuantity": 4,
 				"maxLightLevel": 7,
 				"lightLevelType": "onlyBlockLight",					
-				"groupSize": { "dist": "verynarrowgaussian", "avg": 3, "var": 1 },
+				"groupSize": { "dist": "verynarrowgaussian", "avg": 1 },
 				"insideBlockCodes": ["game:air", "game:tallgrass-*"],
-				"minTemp": -5,
-				"maxTemp": 60,
+				"minTemp": 18,
+				"maxTemp": 40,
 				"companions": ["scorpion"]
 			}
 		}

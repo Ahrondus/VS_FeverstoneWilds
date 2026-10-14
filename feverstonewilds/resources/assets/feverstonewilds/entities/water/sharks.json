@@ -1,6 +1,12 @@
 {
 	"code": "shark",
-	"class": "EntityFish",
+	"class": "EntityAgent",
+	"habitatByType": {
+		"*-freshwater": "underwater",
+		"*-saltwater": "sea",
+		"*-hammerhead": "sea"
+	},
+	"tags":  [ "animal", "huntable", "habitat-water" ],
 	"variantgroups": [
 		{"code": "type", "states": ["freshwater", "saltwater", "hammerhead"] }
 	],
@@ -39,7 +45,7 @@
 			{ "code": "interpolateposition" },
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
 			{ "code": "harvestable" },
-			{ "code": "despawn", "minPlayerDistance": 18, "minSeconds": 300, "belowLightLevel": 8 }
+			{ "code": "despawn", "minPlayerDistance": 28, "minSeconds": 600 }
 		],
 		"animations": [
 			{
@@ -78,7 +84,7 @@
 		"behaviors": [
 			{ "code": "repulseagents" }, 
 			{ "code": "controlledphysics", "stepHeight": 5 }, 
-			{ "code": "despawn", "minPlayerDistance": 18, "minSeconds": 300, "belowLightLevel": 0 },
+			{ "code": "despawn", "minPlayerDistance": 30, "minSeconds": 600 },
 			{ "code": "health", "maxhealthByType": {
 				"*-freshwater": 40,
 				"*-saltwater": 45,

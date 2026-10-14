@@ -35,6 +35,7 @@ public class BehaviorFlight : EntityBehavior
     public const string PlayerFlightTakeoffSpeedAttribute = "feverstonewilds:playerFlightTakeoffSpeed";
     public const string PlayerFlightSteeringAttribute = "feverstonewilds:playerFlightSteering";
     public const string PlayerFlightTurnSpeedAttribute = "feverstonewilds:playerFlightTurnSpeed";
+    private const double MaximumFlightHeightRatio = 0.95;
     private const long PlayerFlightFlapDurationMs = 15000;
     private const long PlayerFlightGlideDurationMs = 6000;
 
@@ -162,17 +163,30 @@ public class BehaviorFlight : EntityBehavior
             entity.WatchedAttributes.SetFloat(PlayerFlightTurnSpeedAttribute, playerFlightTurnSpeed);
         }
 
-        entity.AfterPhysicsTick += ClearOnGroundWhileFlying;
+        entity.AfterPhysicsTick += OnAfterPhysicsTick;
     }
 
     public override void OnEntityDespawn(EntityDespawnData despawn)
     {
-        entity.AfterPhysicsTick -= ClearOnGroundWhileFlying;
+        entity.AfterPhysicsTick -= OnAfterPhysicsTick;
         base.OnEntityDespawn(despawn);
     }
 
-    private void ClearOnGroundWhileFlying()
+    private double MaximumFlightHeight => entity.World.BlockAccessor.MapSizeY * MaximumFlightHeightRatio;
+
+    private double LimitUpwardMotion(double motionY)
     {
+        return entity.Pos.Y >= MaximumFlightHeight ? Math.Min(0, motionY) : motionY;
+    }
+
+    private void OnAfterPhysicsTick()
+    {
+        if (!IsFlying && !clientPlayerFlightActive) return;
+
+        // Catch physics overshoot on both sides without ending flight or blocking descent.
+        entity.Pos.Y = Math.Min(entity.Pos.Y, MaximumFlightHeight);
+        entity.Pos.Motion.Y = LimitUpwardMotion(entity.Pos.Motion.Y);
+
         if (!IsFlying || !entity.OnGround) return;
 
         if (entity.World.Side == EnumAppSide.Server && isPlayerControlledFlight && playerFlightLandingRequested && TryLandPlayerFlight())
@@ -378,7 +392,7 @@ public class BehaviorFlight : EntityBehavior
         UpdateFlightFacing(delta);
         entity.Pos.Motion.X += (delta.X * flightSpeed - entity.Pos.Motion.X) * steering;
         entity.Pos.Motion.Z += (delta.Z * flightSpeed - entity.Pos.Motion.Z) * steering;
-        entity.Pos.Motion.Y += (delta.Y * currentVerticalSpeed - entity.Pos.Motion.Y) * steering;
+        entity.Pos.Motion.Y = LimitUpwardMotion(entity.Pos.Motion.Y + (delta.Y * currentVerticalSpeed - entity.Pos.Motion.Y) * steering);
     }
 
     private bool TryUpdatePlayerControlledFlight()
@@ -431,7 +445,7 @@ public class BehaviorFlight : EntityBehavior
             landingAnimationStarted = false;
             nextStateChangeMs = 0;
             SetFlying(true);
-            entity.Pos.Motion.Y = Math.Max(entity.Pos.Motion.Y, GetPlayerFlightTakeoffSpeed());
+            entity.Pos.Motion.Y = LimitUpwardMotion(Math.Max(entity.Pos.Motion.Y, GetPlayerFlightTakeoffSpeed()));
         }
 
         isLanding = false;
@@ -446,7 +460,7 @@ public class BehaviorFlight : EntityBehavior
         float desiredY = jumping ? GetPlayerFlightVerticalSpeed() : sneaking ? -GetPlayerFlightVerticalSpeed() : 0;
 
         ApplyPlayerFlightWalkVector(desiredX, desiredZ);
-        entity.Pos.Motion.Y = desiredY;
+        entity.Pos.Motion.Y = LimitUpwardMotion(desiredY);
 
         if (jumping || sneaking || forwardMovement == 0)
         {
@@ -570,7 +584,7 @@ public class BehaviorFlight : EntityBehavior
         ApplyPlayerFlightWalkVector(desiredX, desiredZ);
 
         float desiredY = playerFlightAscending ? GetPlayerFlightVerticalSpeed() : playerFlightDescending ? -GetPlayerFlightVerticalSpeed() : 0;
-        entity.Pos.Motion.Y = desiredY;
+        entity.Pos.Motion.Y = LimitUpwardMotion(desiredY);
     }
 
     private void ResetClientFlightAnimationState()
@@ -720,7 +734,7 @@ public class BehaviorFlight : EntityBehavior
         else if (now >= nextStateChangeMs)
         {
             SetFlying(true);
-            entity.Pos.Motion.Y = Math.Max(entity.Pos.Motion.Y, takeoffSpeed);
+            entity.Pos.Motion.Y = LimitUpwardMotion(Math.Max(entity.Pos.Motion.Y, takeoffSpeed));
             ScheduleNextStateChange(now, minFlightSeconds, maxFlightSeconds);
         }
     }
