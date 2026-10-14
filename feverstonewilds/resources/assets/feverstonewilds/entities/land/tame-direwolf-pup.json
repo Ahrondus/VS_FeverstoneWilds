@@ -152,6 +152,18 @@
                         "animationSpeed": 2.2
                     },
                     {
+                        "code": "seekfoodandeat",
+                        "movespeed": 0.004,
+                        "priority": 1.42,
+                        "animationSpeed": 1.25,
+                        "animation": "Walk",
+                        "eatAnimation": "Eat",
+                        "eatSound": "game:creature/animal-eat-small",
+                        "eatTime": 1.75,
+                        "mincooldownHours": 1,
+                        "maxcooldownHours": 4
+                    },
+                    {
                         "code": "seeknest",
                         "priority": 1.4,
                         "duringDayTimeFrames": [
