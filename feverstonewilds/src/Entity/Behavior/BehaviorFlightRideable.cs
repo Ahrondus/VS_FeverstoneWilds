@@ -26,7 +26,7 @@ public class BehaviorFlightRideable : EntityBehaviorRideable
 
     protected override IMountableSeat CreateSeat(string seatId, SeatConfig config)
     {
-        EntityRideableSeat seat = (EntityRideableSeat)base.CreateSeat(seatId, config);
+        EntityRideableSeat seat = new FlightRideableSeat(this, seatId, config);
         OnEntityAction vanillaOnAction = seat.Controls.OnAction;
 
         seat.Controls.OnAction = (EnumEntityAction action, bool on, ref EnumHandling handling) =>
@@ -148,7 +148,7 @@ public class BehaviorFlightRideable : EntityBehaviorRideable
         }
 
         float clampedDeltaTime = Math.Min(0.5f, deltaTime);
-        entity.Pos.Yaw = (entity.Pos.Yaw + (float)(flightTurnMotion * clampedDeltaTime * 30f)) % GameMath.TWOPI;
+        entity.Pos.Yaw = (entity.Pos.Yaw + (float)(flightTurnMotion * flight.PlayerFlightTurnSpeed * clampedDeltaTime * 30f)) % GameMath.TWOPI;
     }
 
     public override void OnGameTick(float deltaTime)

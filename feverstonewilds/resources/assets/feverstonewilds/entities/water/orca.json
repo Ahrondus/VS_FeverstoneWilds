@@ -1,11 +1,11 @@
 {
 	"code": "orca",
-	"class": "EntityFish",
+	"class": "EntityAgent",
     "hitBoxSize": { "x": 3.5, "y": 2 },
     "deadHitBoxSize": { "x": 3.5, "y": 2 },
 	"eyeHeight": 1.6,
 	"drops": [],
-	"habitat": "underwater",
+	"habitat": "sea",
 	"attributes": {
 		"killedByInfoText": "feverstonewilds:deadcreature-orca"
 	},
@@ -26,7 +26,7 @@
 			{ "code": "interpolateposition" },
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
 			{ "code": "harvestable" },
-			{ "code": "despawn", "minPlayerDistance": 28, "minSeconds": 300, "belowLightLevel": 8 }
+			{ "code": "despawn", "minPlayerDistance": 30, "minSeconds": 600 }
 		],
 		"animations": [
 			{
@@ -65,7 +65,7 @@
 		"behaviors": [
 			{ "code": "repulseagents" }, 
 			{ "code": "controlledphysics", "stepHeight": 0 }, 
-			{ "code": "despawn", "minPlayerDistance": 28, "minSeconds": 300, "belowLightLevel": 0 },
+			{ "code": "despawn", "minPlayerDistance": 30, "minSeconds": 600 },
 			{ "code": "health", "maxhealth": 85 },
 			{ "code": "deaddecay", "hoursToDecay": 96, "decayedBlock": "carcass-large" },
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
