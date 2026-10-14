@@ -26,7 +26,7 @@ public class BehaviorFlightRideable : EntityBehaviorRideable
 
     protected override IMountableSeat CreateSeat(string seatId, SeatConfig config)
     {
-        EntityRideableSeat seat = (EntityRideableSeat)base.CreateSeat(seatId, config);
+        EntityRideableSeat seat = new FlightRideableSeat(this, seatId, config);
         OnEntityAction vanillaOnAction = seat.Controls.OnAction;
 
         seat.Controls.OnAction = (EnumEntityAction action, bool on, ref EnumHandling handling) =>
