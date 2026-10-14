@@ -41,7 +41,7 @@
             "wearableSlots": [
                 { "code": "head-griffon", "forCategoryCodes": ["bridle-griffon"], "attachmentPointCode": "HeadAP" },
                 { "code": "face", "forCategoryCodes": ["face"], "attachmentPointCode": "FaceAP" },
-                { "code": "neck", "forCategoryCodes": ["lantern"], "attachmentPointCode": "NeckAP" },
+                { "code": "neck-griffon", "forCategoryCodes": ["lantern"], "attachmentPointCode": "NeckAP" },
                 { "code": "middleback-griffon", "forCategoryCodes": ["saddle-griffon"], "attachmentPointCode": "MidAP" },
                 { "code": "lowerback", "forCategoryCodes": ["bedroll"], "attachmentPointCode": "RearAP" },
                 { "code": "lowerbackside-griffon", "forCategoryCodes": ["sidebags-griffon"], "attachmentPointCode": "RearSideAP" },
@@ -92,11 +92,7 @@
 					"yawMultiplier": 1.2,
 					"sound": " ",
 
-                    "animation": "Walk",
-                    "animationSpeedByType": {
-                        "*-shire": 1.25,
-                        "*-quarter": 1.6
-                    }
+                    "animation": "Walk"
 				},
 				{
 					"code": "trot",
@@ -368,10 +364,10 @@
         "behaviors": [
             { "code": "repulseagents" },
             { "code": "controlledphysics" },
+            { "code": "harvestable" },
             { "code": "gait" },
             { "code": "flightrideable" },
-            { "code": "flight", "flightSpeed": 0.08, "verticalSpeed": 0.06, "steering": 0.2, "arrivalDistance": 1.25,
-                "playerFlightEnabled": false,
+            { "code": "flight",
                 "playerFlightEnabledByType": {
                     "*-wild-*": false,
                     "*-tamed-*": true
@@ -381,7 +377,6 @@
             { "code": "interpolateposition" },
             { "code": "selectionboxes" },
             { "code": "rideableaccessories" },
-            { "code": "harvestable" },
             { "code": "despawn",
                 "enabledByType": { "*-wild-*": true, "*": false },
                 "minPlayerDistance": 15, "belowLightLevel": 7, "minSeconds": 300 }
@@ -434,8 +429,8 @@
 			{
 				"code": "glide",
 				"animation": "glide",
-				"easeInSpeed": 4,
-				"easeOutSpeed": 4,
+				"easeInSpeed": 2,
+				"easeOutSpeed": 2,
 				"blendMode": "average"
 			},
 			{
@@ -456,50 +451,50 @@
 			{
 				"code": "flyascend",
 				"animation": "flyascend",
-				"easeInSpeed": 4,
-				"easeOutSpeed": 4,
+				"easeInSpeed": 2,
+				"easeOutSpeed": 3,
 				"blendMode": "average",
                 "supressDefaultAnimation": true
 			},
 			{
 				"code": "flydescend",
 				"animation": "flydescend",
-				"easeInSpeed": 4,
-				"easeOutSpeed": 4,
+				"easeInSpeed": 2,
+				"easeOutSpeed": 3,
 				"blendMode": "average",
                 "supressDefaultAnimation": true
 			},
 			{
 				"code": "flightbankleft",
 				"animation": "flightbankleft",
-				"easeInSpeed": 6,
-				"easeOutSpeed": 10,
-				"weight": 8,
+				"easeInSpeed": 2,
+				"easeOutSpeed": 3,
+				"weight": 5,
 				"blendMode": "average",
                 "supressDefaultAnimation": true
 			},
 			{
 				"code": "flightbankright",
 				"animation": "flightbankright",
-				"easeInSpeed": 6,
-				"easeOutSpeed": 10,
-				"weight": 8,
+				"easeInSpeed": 2,
+				"easeOutSpeed": 3,
+				"weight": 5,
 				"blendMode": "average",
                 "supressDefaultAnimation": true
 			},
 			{
 				"code": "idleaction1", 
 				"animation": "idleaction1",
-				"easeInSpeed": 4,
-				"easeOutSpeed": 4,
+				"easeInSpeed": 2,
+				"easeOutSpeed": 3,
 				"blendMode": "average" ,
                 "supressDefaultAnimation": true
 			},
 			{
 				"code": "idleaction2", 
 				"animation": "idleaction2",
-				"easeInSpeed": 4,
-				"easeOutSpeed": 4,
+				"easeInSpeed": 2,
+				"easeOutSpeed": 3,
 				"blendMode": "average" ,
                 "supressDefaultAnimation": true
 			},
@@ -615,18 +610,8 @@
         "behaviors": [
                 { "code": "repulseagents" },
                 { "code": "controlledphysics" },
-                { "code": "gait" },
-                { "code": "flightrideable" },
-                { "code": "flight", "flightSpeed": 0.08,
-                    "verticalSpeed": 0.06, "landingAnimation": "trytoland",
-                    "playerFlightEnabledByType": {
-                        "*-wild-*": false,
-                        "*-tamed-*": true
-                    }
-                },
                 { "code": "floatupwhenstuck" },
                 { "code": "ownable" },
-                { "code": "rideableaccessories" },
                 { "code": "harvestable",
                     "drops": [
                         { "type": "item", "code": "bushmeat-raw", "quantity": { "avg": 5, "var": 2 } },
@@ -643,9 +628,29 @@
                 { "code": "breathe" },
                 { "code": "emotionstates" },
                 { "code": "selectionboxes" },
+                { "code": "rideableaccessories" },
+                { "code": "gait" },
+                { "code": "flightrideable" },
+                { "code": "flight",
+                    "playerFlightEnabledByType": {
+                        "*-wild-*": false,
+                        "*-tamed-*": true
+                    }
+                },
                 { "code": "taskai",
                     "aiCreatureType": "LandCreature",
                     "aitasks": [
+                        {
+                            "code": "cometoowner",
+                            "priority": 4,
+                            "animation": "trot",
+                            "animationSpeed": 1.35,
+                            "movespeed": 0.019,
+                            "__allowTeleport": true,
+                            "teleportMaxRange": 2000,
+                            "teleportAfterRange": 150,
+                            "teleportToRange": 15
+                        },
                         {
                             "code": "flightmeleeattack",
                             "slot": 1,

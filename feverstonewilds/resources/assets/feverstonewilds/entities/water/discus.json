@@ -24,7 +24,7 @@
 			{ "code": "controlledphysics", "stepHeight": 0 }, 
 			{ "code": "interpolateposition" },
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
-			{ "code": "despawn", "minPlayerDistance": 18, "minSeconds": 300, "belowLightLevel": 8 }
+			{ "code": "despawn", "minPlayerDistance": 28, "minSeconds": 600 }
 		],
 		"animations": [
 			{
@@ -63,7 +63,7 @@
 		"behaviors": [
 			{ "code": "repulseagents" }, 
 			{ "code": "controlledphysics", "stepHeight": 1.1251 }, 
-			{ "code": "despawn", "minPlayerDistance": 18,  "minSeconds": 300, "belowLightLevel": 0 },
+			{ "code": "despawn", "minPlayerDistance": 28,  "minSeconds": 600 },
 			{ "code": "health", "maxhealth": 1 },
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
 			{ 

@@ -179,9 +179,9 @@
 		],
 		"spawnconditions": {
 			"worldgen": {
-				"TriesPerChunk": { "avg": 0.075, "var": 0 },
+				"TriesPerChunk": { "avg": 0.015, "var": 0 },
 				"tryOnlySurface": true,
-				"groupSize": { "dist": "verynarrowgaussian", "avg": 3, "var": 1 },
+				"groupSize": { "dist": "verynarrowgaussian", "avg": 1 },
 				"insideBlockCodes": ["game:air", "game:tallgrass-*", "game:snowlayer-1"],
 				"maxLightLevel": 7,
 				"lightLevelType": "onlyBlockLight",	
@@ -200,7 +200,7 @@
 				"maxQuantity": 4,
 				"maxLightLevel": 7,
 				"lightLevelType": "onlyBlockLight",					
-				"groupSize": { "dist": "verynarrowgaussian", "avg": 3, "var": 1 },
+				"groupSize": { "dist": "verynarrowgaussian", "avg": 1 },
 				"insideBlockCodes": ["game:air", "game:tallgrass-*", "game:snowlayer-1"],
 				"minTemp": -5,
 				"maxTemp": 25,

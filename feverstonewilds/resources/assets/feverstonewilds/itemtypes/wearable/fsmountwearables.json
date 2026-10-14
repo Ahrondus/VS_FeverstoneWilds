@@ -30,7 +30,7 @@
 			"categoryCodeByType": {
 				"*-head-bridle-*": "bridle-{breed}",
 				"*-middleback-saddle-*": "saddle-{breed}",
-				"*-lowerbackside-saddlebags-*": "sidebags-{breed}"
+				"*-lowerbackside-saddlebags-both": "sidebags-{breed}"
 			},
 			"attachedShapeBySlotCodeByType": {	
 				"head-bison-*": {
@@ -67,11 +67,14 @@
 			"*-bison-lowerbackside-saddlebags-both": { "quantitySlots": 32 },
 			"*-direwolf-lowerbackside-saddlebags-both": { "quantitySlots": 12 },
 			"*-ostrich-lowerbackside-saddlebags-both": { "quantitySlots": 6 },
-			"*-griffon-lowerbackside-saddlebags-both": { "quantitySlots": 10 }
+			"*-griffon-lowerbackside-saddlebags-both": { "quantitySlots": 12 }
 		},
 		"interactPassthroughByType": {
 			"*-saddle-both": true,
 			"*": false
+		},
+		"handbook": {
+			"groupBy": ["fsmountwearables-{breed}-*"]
 		}
 	},
 	"behaviorsByType": {

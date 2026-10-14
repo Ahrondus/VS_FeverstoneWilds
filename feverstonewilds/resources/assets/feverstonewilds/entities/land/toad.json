@@ -220,7 +220,7 @@
 		"spawnconditions": {
 			"worldgen": {
 				"TriesPerChunk": {
-					"avg": 0.08,
+					"avg": 0.04,
 					"var": 0
 				},
 				"tryOnlySurface": true,
@@ -240,9 +240,9 @@
 			"runtime": {
 				"group": "neutral",
 				"tryOnlySurface": true,
-				"chance": 0.0006,
-				"maxQuantity": 3,
-				"maxLightLevel": 6,
+				"chance": 0.0004,
+				"maxQuantity": 2,
+				"minLightLevel": 8,
 				"lightLevelType": "onlyBlockLight",
 				"groupSize": {
 					"dist": "verynarrowgaussian",

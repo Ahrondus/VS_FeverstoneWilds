@@ -119,9 +119,9 @@
                         "forCategoryCodes": ["utilities", "pot", "weaponfalx", "weapon1m", "bowshort", "bowlong" ],
                         "attachmentPointCode": "LFrontAP"
                     },
-                    { "code": "gearleft", "forCategoryCodes": ["gear"], "attachmentPointCode": "TempGear1AP" }, 
-                    { "code": "gearback", "forCategoryCodes": ["gear"], "attachmentPointCode": "TempGear2AP" }, 
-                    { "code": "gearright", "forCategoryCodes": ["gear"], "attachmentPointCode": "TempGear3AP" }
+                    { "code": "gearleft", "forCategoryCodes": ["gear"], "attachmentPointCode": "TempGear1AP", "stepParentTo": { "": { "elementName": "GearParent1" } } }, 
+                    { "code": "gearback", "forCategoryCodes": ["gear"], "attachmentPointCode": "TempGear2AP", "stepParentTo": { "": { "elementName": "GearParent2" } } }, 
+                    { "code": "gearright", "forCategoryCodes": ["gear"], "attachmentPointCode": "TempGear3AP", "stepParentTo": { "": { "elementName": "GearParent3" } } }
                 ]
         },
         "selectionboxes": {
@@ -582,12 +582,27 @@
             "*-female-quarter": 0.925
         },
         "behaviors": [ 
-                { "code": "multiply",
-                    "enabledByType": { "*-female-*": true, "*": false } },
+                { "code": "repulseagents" },
+                { "code": "controlledphysics" },
+                { "code": "mortallywoundable" },
+                { "code": "health" },
+                { "code": "interpolateposition" },
+                { "code": "floatupwhenstuck" },
+                { "code": "harvestable" },
+                { "code": "selectionboxes",
+                    "enabledByType": { "*-tamed-*": true, "*": false } },
+                { "code": "ownable" },
+                { "code": "rideableaccessories",
+                    "enabledByType": { "*-tamed-*": true, "*": false } },
                 { "code": "gait",
                     "enabledByType": { "*-tamed": true, "*-wild": false } },
                 { "code": "rideable",
                     "enabledByType": { "*-tamed-*": true, "*": false } },
+                { "code": "despawn",
+                    "enabledByType": { "*-wild-*": true, "*": false },
+                     "minPlayerDistance": 12, "belowLightLevel": 8, "minSeconds": 600 },
+                { "code": "multiply",
+                    "enabledByType": { "*-female-*": true, "*": false } },
                 { "code": "mouthinventory",
                     "acceptStacks": [
                         { "type": "item", "code": "vegetable-carrot" },
@@ -604,21 +619,6 @@
                         { "type": "item", "code": "grain-spelt" }
                     ]
                 },
-                { "code": "repulseagents" },
-                { "code": "harvestable" },
-                { "code": "controlledphysics" },
-                { "code": "floatupwhenstuck" },
-                { "code": "interpolateposition" },
-                { "code": "ownable" },
-                { "code": "selectionboxes",
-                    "enabledByType": { "*-tamed-*": true, "*": false } },
-                { "code": "rideableaccessories",
-                    "enabledByType": { "*-tamed-*": true, "*": false } },
-                { "code": "mortallywoundable" },
-                { "code": "health" },
-                { "code": "despawn",
-                    "enabledByType": { "*-wild-*": true, "*": false },
-                     "minPlayerDistance": 12, "belowLightLevel": 8, "minSeconds": 600 },
                 { "code": "ropetieable" }
             ],
         "animations": [
@@ -814,51 +814,14 @@
             }
         },
         "behaviors": [
-                {
-                    "code": "multiply",
-                    "enabledByType": { "*-female-*": true, "*": false },
-                    "spawnEntityCode": "feverstonewilds:foal-{tamed}-{type}",
-                    "requiresNearbyEntityCode": "feverstonewilds:horse-*-male-*",
-                    "requiresNearbyEntityRange": 10,
-                    "spawnQuantityMax": 1,
-                    "spawnQuantityMin": 1,
-                    "eatAnyway": true,
-                    "pregnancyDays": 14,
-                    "multiplyCooldownDaysMin": 21,
-                    "multiplyCooldownDaysMax": 28,
-                    "portionsEatenForMultiply": 14
-                },
-                { "code": "gait",
-                    "enabledByType": { "*-tamed-*": true, "*": false } },
-                { "code": "rideable",
-                    "enabledByType": { "*-tamed-*": true, "*": false } },
-                { "code": "mouthinventory",
-                    "acceptStacks": [
-                        { "type": "item", "code": "vegetable-carrot" },
-                        { "type": "item", "code": "vegetable-cabbage" },
-                        { "type": "item", "code": "vegetable-turnip" },
-                        { "type": "item", "code": "feverstonewilds:carrotbundle" },
-                        { "type": "item", "code": "feverstonewilds:drygrassbundle" },
-                        { "type": "item", "code": "drygrass" },
-                        { "type": "item", "code": "fruit-pinkapple" },
-                        { "type": "item", "code": "fruit-redapple" },
-                        { "type": "item", "code": "fruit-yellowapple" },
-                        { "type": "item", "code": "grain-flax" },
-                        { "type": "item", "code": "grain-rye" },
-                        { "type": "item", "code": "grain-spelt" }
-                    ]
-                },
                 { "code": "repulseagents" },
                 { "code": "controlledphysics" },
                 { "code": "mortallywoundable",
                     "enabledByType": { "*-tamed-*": true, "*": false },
                     "whenBelowHealth": 7 },
-                { "code": "despawn",
-                    "enabledByType": { "*-wild-*": true, "*": false },
-                     "minPlayerDistance": 28, "belowLightLevel": 8, "minSeconds": 600 },
+                { "code": "health" },
                 { "code": "deaddecay",  "hoursToDecay": 96, "decayedBlock": "carcass-large" },
                 { "code": "floatupwhenstuck" },
-                { "code": "health" },
                 { "code": "harvestable",
                     "drops": [
                         { "type": "item", "code": "redmeat-raw",
@@ -893,6 +856,39 @@
                 },
                 { "code": "breathe" },
                 { "code": "emotionstates" },
+                {
+                    "code": "multiply",
+                    "enabledByType": { "*-female-*": true, "*": false },
+                    "spawnEntityCode": "feverstonewilds:foal-{tamed}-{type}",
+                    "requiresNearbyEntityCode": "feverstonewilds:horse-*-male-*",
+                    "requiresNearbyEntityRange": 10,
+                    "spawnQuantityMax": 1,
+                    "spawnQuantityMin": 1,
+                    "eatAnyway": true,
+                    "pregnancyDays": 14,
+                    "multiplyCooldownDaysMin": 21,
+                    "multiplyCooldownDaysMax": 28,
+                    "portionsEatenForMultiply": 14
+                },
+                { "code": "mouthinventory",
+                    "acceptStacks": [
+                        { "type": "item", "code": "vegetable-carrot" },
+                        { "type": "item", "code": "vegetable-cabbage" },
+                        { "type": "item", "code": "vegetable-turnip" },
+                        { "type": "item", "code": "feverstonewilds:carrotbundle" },
+                        { "type": "item", "code": "feverstonewilds:drygrassbundle" },
+                        { "type": "item", "code": "drygrass" },
+                        { "type": "item", "code": "fruit-pinkapple" },
+                        { "type": "item", "code": "fruit-redapple" },
+                        { "type": "item", "code": "fruit-yellowapple" },
+                        { "type": "item", "code": "grain-flax" },
+                        { "type": "item", "code": "grain-rye" },
+                        { "type": "item", "code": "grain-spelt" }
+                    ]
+                },
+                { "code": "despawn",
+                    "enabledByType": { "*-wild-*": true, "*": false },
+                     "minPlayerDistance": 28, "belowLightLevel": 8, "minSeconds": 600 },
                 {
                     "code": "taskai",
                     "aiCreatureType": "LandCreature",
@@ -1057,13 +1053,17 @@
                         { "code": "lookaround", "priority": 0.5 }
                     ]
                 },
+                { "code": "pettable", "minGeneration": 1 },
                 { "code": "selectionboxes",
                     "enabledByType": { "*-tamed-*": true, "*": false } },
                 { "code": "ownable" },
                 { "code": "rideableaccessories",
                     "enabledByType": { "*-tamed-*": true, "*": false } },
+                { "code": "gait",
+                    "enabledByType": { "*-tamed-*": true, "*": false } },
+                { "code": "rideable",
+                    "enabledByType": { "*-tamed-*": true, "*": false } },
                 { "code": "ropetieable" },
-                { "code": "pettable", "minGeneration": 1 },
 			    { "code": "entitystatetags" }
             ],
         "spawnconditionsByType": {
