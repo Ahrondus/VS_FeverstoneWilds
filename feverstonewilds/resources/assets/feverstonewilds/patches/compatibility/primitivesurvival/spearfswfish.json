@@ -1,0 +1,58 @@
+[
+    {
+        "op": "addmerge",
+        "file": "primitivesurvival:itemtypes/fishing/fishingspearfromattributes.json",
+        "path": "/attributes/variantGroups/fish/-",
+        "value": "feverstonewilds:buromenfish-freshwater",
+        "dependsOn": [ {"modid": "primitivesurvival"} ],
+        "condition": { "when": "FSWBuromenfishEnabled", "isValue": "true" }
+    },
+    {
+        "op": "addmerge",
+        "file": "primitivesurvival:itemtypes/fishing/fishingspearfromattributes.json",
+        "path": "/attributes/variantGroups/fish/-",
+        "value": "feverstonewilds:ghostfish-freshwater",
+        "dependsOn": [ {"modid": "primitivesurvival"} ],
+        "condition": { "when": "FSWGhostfishEnabled", "isValue": "true" }
+    },
+    {
+        "op": "addmerge",
+        "file": "primitivesurvival:itemtypes/fishing/fishingspearfromattributes.json",
+        "path": "/attributes/variantGroups/fish/-",
+        "value": "feverstonewilds:eel-freshwater",
+        "dependsOn": [ {"modid": "primitivesurvival"} ],
+        "condition": { "when": "FSWEelEnabled", "isValue": "true" }
+    },
+    {
+        "op": "addmerge",
+        "file": "primitivesurvival:itemtypes/fishing/fishingspearfromattributes.json",
+        "path": "/attributes/variantGroups/fish/-",
+        "value": "feverstonewilds:buromenfish-saltwater",
+        "dependsOn": [ {"modid": "primitivesurvival"} ],
+        "condition": { "when": "FSWBuromenfishEnabled", "isValue": "true" }
+    },
+    {
+        "op": "addmerge",
+        "file": "primitivesurvival:itemtypes/fishing/fishingspearfromattributes.json",
+        "path": "/attributes/variantGroups/fish/-",
+        "value": "feverstonewilds:ghostfish-saltwater",
+        "dependsOn": [ {"modid": "primitivesurvival"} ],
+        "condition": { "when": "FSWGhostfishEnabled", "isValue": "true" }
+    },
+    {
+        "op": "addmerge",
+        "file": "primitivesurvival:itemtypes/fishing/fishingspearfromattributes.json",
+        "path": "/attributes/variantGroups/fish/-",
+        "value": "feverstonewilds:eel-saltwater",
+        "dependsOn": [ {"modid": "primitivesurvival"} ],
+        "condition": { "when": "FSWEelEnabled", "isValue": "true" }
+    },
+    {
+        "op": "addmerge",
+        "file": "primitivesurvival:itemtypes/fishing/fishingspearfromattributes.json",
+        "path": "/attributes/variantGroups/fish/-",
+        "value": "feverstonewilds:discus",
+        "dependsOn": [ {"modid": "primitivesurvival"} ],
+        "condition": { "when": "FSWDiscusFishEnabled", "isValue": "true" }
+    }
+]

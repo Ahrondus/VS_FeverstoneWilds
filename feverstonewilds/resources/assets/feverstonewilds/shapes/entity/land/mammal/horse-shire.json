@@ -1,24 +1,9 @@
 {
   "editor": {
     "editorVersion": "VSMC2v0.5.0",
+    "allAngles": true,
     "backdrops": [],
-    "attachments": [
-      {
-        "shapeFilepath": "C:\\Users\\ahron\\AppData\\Roaming\\Vintagestory\\assets\\survival\\shapes\\item\\wearable\\hooved\\elk\\tempgear1",
-        "opacity": 1.0,
-        "enabled": true
-      },
-      {
-        "shapeFilepath": "C:\\Users\\ahron\\AppData\\Roaming\\Vintagestory\\assets\\survival\\shapes\\item\\wearable\\hooved\\elk\\tempgear2",
-        "opacity": 1.0,
-        "enabled": true
-      },
-      {
-        "shapeFilepath": "C:\\Users\\ahron\\AppData\\Roaming\\Vintagestory\\assets\\survival\\shapes\\item\\wearable\\hooved\\elk\\tempgear3",
-        "opacity": 1.0,
-        "enabled": true
-      }
-    ]
+    "attachments": [ ]
   },
   "textureWidth": 16,
   "textureHeight": 16,
@@ -2407,6 +2392,21 @@
                           "rotationOrigin":[1.0,-6.0,3.0],
                           "rotationZ": -21.0,
                           "uv":[0.0,0.0]
+                        },
+                        {
+                          "name": "Head",
+                          "from":[1.5,-1.0,0.0],
+                          "to":[2.5,0.0,1.0],
+                          "faces": {
+                            "north":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false},
+                            "east":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false},
+                            "south":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false},
+                            "west":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false},
+                            "up":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false},
+                            "down":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false}
+                          },
+                          "rotationOrigin":[1.5,-1.0,0.0],
+                          "uv":[0.0,0.0]
                         }
                       ]
                     },
@@ -2439,12 +2439,12 @@
                   "from":[-2.0,-1.0,-1.5],
                   "to":[8.0,6.0,4.5],
                   "faces": {
-                    "north":{"texture": "#skin", "uv": [0.0, 0.0, 10.0, 7.0], "enabled": false},
-                    "east":{"texture": "#skin", "uv": [0.0, 0.0, 6.0, 7.0], "enabled": false},
-                    "south":{"texture": "#skin", "uv": [0.0, 0.0, 10.0, 7.0], "enabled": false},
-                    "west":{"texture": "#skin", "uv": [0.0, 0.0, 6.0, 7.0], "enabled": false},
-                    "up":{"texture": "#skin", "uv": [0.0, 0.0, 10.0, 6.0], "enabled": false},
-                    "down":{"texture": "#skin", "uv": [0.0, 0.0, 10.0, 6.0], "enabled": false}
+                    "north":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false, "autoUv": false, "snapUV": false},
+                    "east":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false, "autoUv": false, "snapUV": false},
+                    "south":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false, "autoUv": false, "snapUV": false},
+                    "west":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false, "autoUv": false, "snapUV": false},
+                    "up":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false, "autoUv": false, "snapUV": false},
+                    "down":{"texture": "#", "uv": [0.0, 0.0, 1.0, 1.0], "enabled": false, "autoUv": false, "snapUV": false}
                   },
                   "rotationOrigin":[3.0,1.5,1.5],
                   "rotationZ": -6.0,
@@ -3668,6 +3668,7 @@
       "name": "PawandShake",
       "code": "pawandshake",
       "quantityframes": 70,
+      "onActivityStopped": "Rewind",
       "keyframes": [
         {
           "frame": 0,

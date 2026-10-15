@@ -1,0 +1,98 @@
+[
+    {
+        "op": "add",
+        "path": "/behaviors/1/properties/processedStacksByType/fsw-fishraw-reef-discus/1",
+        "value": {
+            "type": "item",
+            "code": "primitivesurvival:fisheggs-raw-normal",
+            "quantity": {
+                "avg": 0.20,
+                "var": 0.5
+            }
+        },
+        "file": "feverstonewilds:itemtypes/food/fsw-fishraw.json",
+        "side": "Server",
+        "dependsOn": [{"modid": "primitivesurvival"}],
+        "condition": {"when": "FSWDiscusFishEnabled", "isValue": "true"}
+    },
+    {
+        "op": "add",
+        "path": "/behaviors/1/properties/processedStacksByType/fsw-fishraw-reef-discus/2",
+        "value": {
+            "type": "item",
+            "code": "primitivesurvival:fisheggs-raw-ovulated",
+            "quantity": {
+                "avg": 0.20,
+                "var": 0.5
+            }
+        },
+        "file": "feverstonewilds:itemtypes/food/fsw-fishraw.json",
+        "side": "Server",
+        "dependsOn": [{"modid": "primitivesurvival"}],
+        "condition": {"when": "FSWDiscusFishEnabled", "isValue": "true"}
+    },
+    {
+        "op": "add",
+        "path": "/behaviors/1/properties/processedStacksByType/fsw-fishraw-*-buromenfish/1",
+        "value": {
+            "type": "item",
+            "code": "primitivesurvival:fisheggs-raw-normal",
+            "quantity": {
+                "avg": 0.20,
+                "var": 0.5
+            }
+        },
+        "file": "feverstonewilds:itemtypes/food/fsw-fishraw.json",
+        "side": "Server",
+        "dependsOn": [{"modid": "primitivesurvival"}],
+        "condition": {"when": "FSWBuromenfishEnabled", "isValue": "true"}
+    },
+    {
+        "op": "add",
+        "path": "/behaviors/1/properties/processedStacksByType/fsw-fishraw-*-buromenfish/2",
+        "value": {
+            "type": "item",
+            "code": "primitivesurvival:fisheggs-raw-ovulated",
+            "quantity": {
+                "avg": 0.20,
+                "var": 0.5
+            }
+        },
+        "file": "feverstonewilds:itemtypes/food/fsw-fishraw.json",
+        "side": "Server",
+        "dependsOn": [{"modid": "primitivesurvival"}],
+        "condition": {"when": "FSWBuromenfishEnabled", "isValue": "true"}
+    },
+    {
+        "op": "add",
+        "path": "/behaviors/1/properties/processedStacksByType/fsw-fishraw-*-ghostfish/1",
+        "value": {
+            "type": "item",
+            "code": "primitivesurvival:fisheggs-raw-normal",
+            "quantity": {
+                "avg": 0.20,
+                "var": 0.5
+            }
+        },
+        "file": "feverstonewilds:itemtypes/food/fsw-fishraw.json",
+        "side": "Server",
+        "dependsOn": [{"modid": "primitivesurvival"}],
+        "condition": {"when": "FSWGhostfishEnabled", "isValue": "true"}
+    },
+    {
+        "op": "add",
+        "path": "/behaviors/1/properties/processedStacksByType/fsw-fishraw-*-ghostfish/2",
+        "value": {
+            "type": "item",
+            "code": "primitivesurvival:fisheggs-raw-ovulated",
+            "quantity": {
+                "avg": 0.20,
+                "var": 0.5
+            }
+        },
+        "file": "feverstonewilds:itemtypes/food/fsw-fishraw.json",
+        "side": "Server",
+        "dependsOn": [{"modid": "primitivesurvival"}],
+        "condition": {"when": "FSWGhostfishEnabled", "isValue": "true"}
+    }
+]
