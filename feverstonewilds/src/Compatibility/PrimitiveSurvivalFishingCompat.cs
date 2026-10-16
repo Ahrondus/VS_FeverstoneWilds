@@ -11,7 +11,7 @@ using Vintagestory.API.Server;
 
 namespace FeverstoneWilds.Compatibility;
 
-// No reference to Primitive Survival: discover and patch its methods only when installed.
+// Primitive Survival: discover and patch its methods when installed.
 public class PrimitiveSurvivalFishingCompat : ModSystem
 {
     private const string PatchId = "feverstonewilds.primitivesurvival.fishing";
@@ -120,7 +120,7 @@ public class PrimitiveSurvivalFishingCompat : ModSystem
         slot.Itemstack.Collectible.DamageItem(byEntity.World, byEntity, slot, 1);
         if (slot.Itemstack == null)
         {
-            // A spear breaking on the catch must not destroy the fish item.
+            // A spear breaking on the catch must not destroy the fish with it.
             byEntity.World.SpawnItemEntity(new ItemStack(item), byEntity.Pos.XYZ.AddCopy(0, 0.5, 0));
         }
         slot.MarkDirty();
