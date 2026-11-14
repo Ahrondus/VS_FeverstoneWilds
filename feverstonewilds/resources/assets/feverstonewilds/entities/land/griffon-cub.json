@@ -1,7 +1,8 @@
 {
 	"code": "griffon-cub",
 	"class": "EntityAgent",
-    "tags":  [ "animal", "huntable", "habitat-land" ],"variantgroups": [
+    "tags":  [ "animal", "huntable", "habitat-land" ],
+	"variantgroups": [
         { "code": "tamed", "states": [ "wild", "tamed" ] }
     ],
 	"hitboxSize": { "x": 0.85, "y": 0.5 },
@@ -21,17 +22,8 @@
 	},
 	"client": {
 		"renderer": "Shape",
-		"shape": { "base": "entity/land/mammal/griffon-adult" },
-		"textures": { "griffonskin1": { "base": "entity/land/griffon/griffonskin1",
-                        "alternates": [ { "base": "entity/land/griffon/griffonskin2" }, { "base": "entity/land/griffon/griffonskin3" }, 
-                                        { "base": "entity/land/griffon/griffonskin4" }, { "base": "entity/land/griffon/griffonskin5" }, 
-                                        { "base": "entity/land/griffon/griffonskin6" }, { "base": "entity/land/griffon/griffonskin7" } ] },
-                      "griffonskin1Wing": { "base": "entity/land/griffon/griffonskin1Wing",
-                        "alternates": [ { "base": "entity/land/griffon/griffonskin2Wing" }, { "base": "entity/land/griffon/griffonskin3Wing" },
-                                        { "base": "entity/land/griffon/griffonskin4Wing" }, { "base": "entity/land/griffon/griffonskin5Wing" },
-                                        { "base": "entity/land/griffon/griffonskin6Wing" }, { "base": "entity/land/griffon/griffonskin7Wing" } ] } 
-        },
-		"size": 0.45,
+		"shape": { "base": "entity/land/mammal/griffon-cub" },
+		"texture": { "base": "entity/land/griffon/griffon-cub-skin1" },
 		"sizeGrowthFactor": 0.2,
 		"behaviors": [
 			{ "code": "mouthinventory",
@@ -71,7 +63,7 @@
             {
                 "code": "dead",
                 "animation": "dead",
-                "blendMode": "Average",
+                "blendMode": "average",
                 "weight": 10,
                 "easeInSpeed": 3
             },
