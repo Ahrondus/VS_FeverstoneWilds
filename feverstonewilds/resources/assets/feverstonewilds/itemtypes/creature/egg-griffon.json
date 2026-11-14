@@ -1,0 +1,94 @@
+{
+  "code": "creature-griffon-egg",
+  "class": "ItemCreature",
+  "maxStackSize": 32,
+  "shape": {
+    "base": "block/egg/griffon-1egg"
+  },
+  "texture": {
+    "base": "block/nests/griffonegg"
+  },
+  "creativeinventory": {
+    "general": [
+      "*"
+    ],
+    "items": [
+      "*"
+    ],
+    "fswilds": [
+      "*"
+    ]
+  },
+  "attributes": {
+    "entityCode": "feverstonewilds:griffon-egg",
+    "nutritionPropsWhenInMeal": {
+      "satiety": 400,
+      "foodcategory": "Protein"
+    },
+    "foodTags": [
+      "egg"
+    ]
+  },
+  "materialDensity": 200,
+  "guiTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": -30,
+      "y": -20,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0,
+      "z": 0.5
+    },
+    "scale": 3.5
+  },
+  "tpHandTransform": {
+    "translation": {
+      "x": -0.8,
+      "y": -0.25,
+      "z": -0.6
+    },
+    "scale": 0.71
+  },
+  "groundTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 0,
+      "z": 0.5
+    },
+    "scale": 3
+  },
+  "transitionableProps": [
+    {
+      "type": "Perish",
+      "freshHours": {
+        "avg": 840
+      },
+      "transitionHours": {
+        "avg": 24
+      },
+      "transitionedStack": {
+        "type": "item",
+        "code": "game:rot"
+      },
+      "transitionRatio": 0.5
+    }
+  ],
+  "entityCode": "griffon-egg"
+}

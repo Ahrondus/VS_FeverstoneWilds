@@ -1,0 +1,77 @@
+{
+  "code": "griffon-egg-hatching-1",
+  "class": "EntityAgent",
+  "habitat": "Land",
+  "tags": [
+    "habitat-land"
+  ],
+  "hitboxSize": {
+    "x": 0.35,
+    "y": 0.5
+  },
+  "deadHitboxSize": {
+    "x": 0.35,
+    "y": 0.5
+  },
+  "eyeHeight": 0.2,
+  "drops": [],
+  "attributes": {
+    "feverstonewildsGriffonEgg": true
+  },
+  "client": {
+    "renderer": "Shape",
+    "shape": {
+      "base": "block/egg/griffon-1egg-hatching-1-death-animated"
+    },
+    "behaviors": [
+      {
+        "code": "passivephysics",
+        "triggerOnCollide": true
+      },
+      {
+        "code": "interpolateposition"
+      }
+    ],
+    "animations": [
+      {
+        "code": "breakondeath",
+        "animation": "breakondeath",
+        "animationSpeed": 100,
+        "weight": 10,
+        "blendMode": "Average",
+        "triggeredBy": {
+          "onControls": [
+            "dead"
+          ]
+        }
+      }
+    ]
+  },
+  "server": {
+    "behaviors": [
+      {
+        "code": "griffoneggpickup"
+      },
+      {
+        "code": "passivephysics",
+        "triggerOnCollide": true
+      },
+      {
+        "code": "health",
+        "currenthealth": 2,
+        "maxhealth": 2
+      },
+      {
+        "code": "grow",
+        "hoursToGrow": 96,
+        "adultEntityCodes": [
+          "feverstonewilds:griffon-egg-hatching-2"
+        ]
+      },
+      {
+        "code": "deaddecay",
+        "hoursToDecay": 0.001
+      }
+    ]
+  }
+}

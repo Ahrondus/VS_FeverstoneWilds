@@ -1,0 +1,78 @@
+{
+  "code": "wild-griffon-nest-eggs",
+  "class": "EntityAgent",
+  "habitat": "Land",
+  "tags": [
+    "habitat-land"
+  ],
+  "hitboxSize": {
+    "x": 1.6,
+    "y": 0.35
+  },
+  "deadHitboxSize": {
+    "x": 1.6,
+    "y": 0.35
+  },
+  "eyeHeight": 0.15,
+  "drops": [
+    {
+      "type": "item",
+      "code": "feverstonewilds:creature-griffon-egg",
+      "quantity": {
+        "avg": 1,
+        "var": 1
+      }
+    },
+    {
+      "type": "item",
+      "code": "feverstonewilds:creature-griffon-egg-broken",
+      "quantity": {
+        "avg": 0.5,
+        "var": 0.5
+      }
+    }
+  ],
+  "client": {
+    "renderer": "Shape",
+    "shape": {
+      "base": "block/wood/griffon-nest/griffon-wild-nest-death-animated"
+    },
+    "behaviors": [
+      {
+        "code": "passivephysics",
+        "triggerOnCollide": true
+      },
+      {
+        "code": "interpolateposition"
+      }
+    ],
+    "animations": [
+      {
+        "code": "emptyondeath",
+        "animation": "emptyondeath",
+        "animationSpeed": 100,
+        "onControls": [
+          "dead"
+        ],
+        "defaultAnim": false
+      }
+    ]
+  },
+  "server": {
+    "behaviors": [
+      {
+        "code": "passivephysics",
+        "triggerOnCollide": true
+      },
+      {
+        "code": "health",
+        "currenthealth": 1,
+        "maxhealth": 1
+      },
+      {
+        "code": "deaddecay",
+        "hoursToDecay": 0.001
+      }
+    ]
+  }
+}
