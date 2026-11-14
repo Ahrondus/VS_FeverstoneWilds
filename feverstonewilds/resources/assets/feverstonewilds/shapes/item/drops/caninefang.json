@@ -1,0 +1,48 @@
+{
+	"editor": {
+		"allAngles": false,
+		"entityTextureMode": false
+	},
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textureSizes": {
+	},
+	"textures": {
+		"skullandsaddle": "textures/skullandsaddle"
+	},
+	"elements": [
+		{
+			"name": "Fang_L",
+			"from": [ 7.59, 0.1, 7.2 ],
+			"to": [ 8.49, 1.1, 7.7 ],
+			"rotationOrigin": [ 8.089, 0.18, 7.55 ],
+			"rotationX": 90.0,
+			"rotationY": 0.0,
+			"rotationZ": 112.5,
+			"faces": {
+				"north": { "texture": "#skullandsaddle", "uv": [ 2.25, 7.0, 3.0, 8.0 ] },
+				"east": { "texture": "#skullandsaddle", "uv": [ 2.25, 7.0, 2.75, 8.0 ] },
+				"south": { "texture": "#skullandsaddle", "uv": [ 2.0, 6.25, 2.75, 7.25 ] },
+				"west": { "texture": "#skullandsaddle", "uv": [ 1.0, 6.5, 1.5, 7.5 ] },
+				"up": { "texture": "#skullandsaddle", "uv": [ 2.0, 7.5, 2.75, 8.0 ] },
+				"down": { "texture": "#skullandsaddle", "uv": [ 2.0, 6.25, 2.75, 6.75 ] }
+			},
+			"children": [
+				{
+					"name": "Fang_tip_L",
+					"from": [ 0.34, -0.57, 0.18 ],
+					"to": [ 0.94, 0.43, 0.48 ],
+					"rotationOrigin": [ 1.0, 0.03, 0.2 ],
+					"rotationZ": 15.0,
+					"faces": {
+						"north": { "texture": "#skullandsaddle", "uv": [ 2.0, 8.75, 2.5, 9.75 ] },
+						"east": { "texture": "#skullandsaddle", "uv": [ 1.0, 7.0, 1.25, 8.0 ] },
+						"south": { "texture": "#skullandsaddle", "uv": [ 3.5, 8.5, 4.0, 9.5 ] },
+						"west": { "texture": "#skullandsaddle", "uv": [ 2.5, 7.5, 2.75, 8.5 ] },
+						"up": { "texture": "#skullandsaddle", "uv": [ 1.75, 8.25, 2.25, 8.5 ] },
+						"down": { "texture": "#skullandsaddle", "uv": [ 2.5, 8.0, 3.0, 8.25 ] }
+					}
+				}
+			]
+		}
+	]}

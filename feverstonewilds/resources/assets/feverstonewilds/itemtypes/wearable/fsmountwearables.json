@@ -1,0 +1,143 @@
+{
+	"code": "fsmountwearables",
+	"variantgroups": [
+		{ "code": "breed",
+			"states": [ "percheron", "arabian", "donkey", "shire", "quarter", "bison", "direwolf", "ostrich", "griffon" ]
+		},
+		{ "code": "category",
+			"states": [ "head", "middleback", "lowerbackside" ]
+		},
+		{ "code": "type",
+			"states": [ "saddle", "bridle", "saddlebags" ]
+		},
+		{ "code": "gender",
+			"states": [ "male", "female", "both" ]
+		}
+	],
+	"allowedVariants": [
+		"fsmountwearables-percheron-head-bridle-both", "fsmountwearables-arabian-head-bridle-both", "fsmountwearables-donkey-head-bridle-both", "fsmountwearables-shire-head-bridle-both", "fsmountwearables-griffon-head-bridle-both",
+		"fsmountwearables-bison-head-bridle-male", "fsmountwearables-bison-head-bridle-female", "fsmountwearables-quarter-head-bridle-both", "fsmountwearables-direwolf-head-bridle-both", "fsmountwearables-ostrich-head-bridle-both",
+		"fsmountwearables-percheron-middleback-saddle-both", "fsmountwearables-arabian-middleback-saddle-both", "fsmountwearables-donkey-middleback-saddle-both", "fsmountwearables-shire-middleback-saddle-both", "fsmountwearables-griffon-middleback-saddle-both",
+		"fsmountwearables-quarter-middleback-saddle-both","fsmountwearables-bison-middleback-saddle-both", "fsmountwearables-direwolf-middleback-saddle-both", "fsmountwearables-ostrich-middleback-saddle-both",
+		"fsmountwearables-percheron-lowerbackside-saddlebags-both", "fsmountwearables-arabian-lowerbackside-saddlebags-both", "fsmountwearables-donkey-lowerbackside-saddlebags-both", "fsmountwearables-shire-lowerbackside-saddlebags-both", "fsmountwearables-griffon-lowerbackside-saddlebags-both",
+		"fsmountwearables-quarter-lowerbackside-saddlebags-both", "fsmountwearables-bison-lowerbackside-saddlebags-both", "fsmountwearables-direwolf-lowerbackside-saddlebags-both", "fsmountwearables-ostrich-lowerbackside-saddlebags-both"
+	],
+	"skipVariants": ["fsmountwearables-percheron-head-bridle-both", "fsmountwearables-arabian-head-bridle-both",
+					 "fsmountwearables-percheron-middleback-saddle-both", "fsmountwearables-arabian-middleback-saddle-both",
+					 "fsmountwearables-percheron-lowerbackside-saddlebags-both", "fsmountwearables-arabian-lowerbackside-saddlebags-both"],
+	"attributes": {
+		"attachableToEntity": {
+			"categoryCodeByType": {
+				"*-head-bridle-*": "bridle-{breed}",
+				"*-middleback-saddle-*": "saddle-{breed}",
+				"*-lowerbackside-saddlebags-both": "sidebags-{breed}"
+			},
+			"attachedShapeBySlotCodeByType": {	
+				"head-bison-*": {
+					"fsmountwearables-bison-head-bridle-{gender}": { "base": "item/wearable/head/bridle-bison-{gender}" }
+				},
+				"head-*": {
+					"fsmountwearables-{breed}-head-bridle-both": { "base": "item/wearable/head/bridle-{breed}" }
+				},
+				"middleback-*": {
+					"fsmountwearables-{breed}-middleback-saddle-both": { "base": "item/wearable/back/saddle-{breed}" }
+				},
+				"lowerbackside-*": {
+					"fsmountwearables-{breed}-lowerbackside-saddlebags-both": { "base": "item/wearable/rear/saddlebags-{breed}" }
+				}			
+			}
+		},
+		"controlSchemeByType": {
+			"*-bridle-both": "Hold",
+			"*-bison-*-bridle-*": "Hold"
+		},
+		"isSaddleByType": {
+			"*-middleback-saddle-both": true
+		},
+		"isBridleByType": {
+			"*-head-bridle-both": true,	
+			"*-bison-head-bridle-*": true
+		},
+		"backpackByType": {
+			"*-percheron-lowerbackside-saddlebags-both": { "quantitySlots": 24 },
+			"*-arabian-lowerbackside-saddlebags-both": { "quantitySlots": 12 },
+			"*-shire-lowerbackside-saddlebags-both": { "quantitySlots": 18 },
+			"*-quarter-lowerbackside-saddlebags-both": { "quantitySlots": 14 },
+			"*-donkey-lowerbackside-saddlebags-both": { "quantitySlots": 20 },
+			"*-bison-lowerbackside-saddlebags-both": { "quantitySlots": 32 },
+			"*-direwolf-lowerbackside-saddlebags-both": { "quantitySlots": 12 },
+			"*-ostrich-lowerbackside-saddlebags-both": { "quantitySlots": 6 },
+			"*-griffon-lowerbackside-saddlebags-both": { "quantitySlots": 12 }
+		},
+		"interactPassthroughByType": {
+			"*-saddle-both": true,
+			"*": false
+		},
+		"handbook": {
+			"groupBy": ["fsmountwearables-{breed}-*"]
+		}
+	},
+	"behaviorsByType": {
+		"*-lowerbackside-saddlebags-both": [ { "name": "HeldBag" } ]
+	},
+	"shapeByType": {
+		"*-bison-*-bridle-male": { "base": "item/wearable/head/bridle-bison-male" },
+		"*-bison-*-bridle-female": { "base": "item/wearable/head/bridle-bison-female" },
+
+		"*-saddle-both": { "base": "item/wearable/back/saddle-{breed}" },
+		"*-bridle-both": { "base": "item/wearable/head/bridle-{breed}" },
+		"*-saddlebags-both": { "base": "item/wearable/rear/saddlebags-{breed}" }
+	},
+	"maxstacksize": 1,
+	"creativeinventory": {
+		"general": [ "*" ],
+		"items": [ "*" ],
+		"clothing": [ "*" ]
+	},
+	"guiTransformByType": {
+		"*-bison-*-saddle-both": {
+			"translation": { "x": 0, "y": 0, "z": 0 },
+			"rotation": { "x": -21, "y": -50, "z": 180 },
+			"origin": { "x": 1.25, "y": 0.5, "z": 0.5 },
+			"scale": 0.67
+		},
+		"*-saddle-both": { 
+			"translation": { "x": 0, "y": 0, "z": 0 },
+			"rotation": { "x": -21, "y": -50, "z": 180 },
+			"origin": { "x": 0.5, "y": 0.14, "z": -0.2 },
+			"scale": 1.2 
+		},
+		"*-bison-*-saddlebags-both": {
+			"rotation": { "x": -7, "y": -16, "z": -169 },
+			"origin": { "x": 0.75, "y": 0.65, "z": 0 },
+			"scale": 1.5
+		},
+		"*-saddlebags-both": {
+			"rotation": { "x": -7, "y": -16, "z": -169 },
+			"origin": { "x": 0.35, "y": 0.45, "z": 0 },
+			"scale": 2
+		},
+		"*-bison-*-bridle-*": {
+			"rotation": { "x": -163, "y": 18, "z": 37 },
+			"origin": { "x": 1.4, "y": 0.4, "z": 0 },
+			"scaleXyz": { "x": -0.71, "y": 0.71, "z": 0.71 }
+		},
+		"*-bridle-both": {
+			"rotation": { "x": -34, "y": 43, "z": -52 },
+			"origin": { "x": 0.3, "y": 0.8, "z": 0 },
+			"scaleXyz": { "x": -1.15, "y": 1.15, "z": 1.15 }
+		}
+	},
+	"groundTransform": {
+		"scale": 2
+	},
+	"fpHandTransform": {
+		"translation": { "x": -0.3, "y": 0.2, "z": 0 },
+		"rotation": { "x": -180, "y": -113, "z": 171 }
+	},
+	"tpHandTransform": {
+		"translation": { "x": -1, "y": -0.75, "z": -1.25 },
+		"rotation": { "x": 90, "y": 0, "z": -156 },
+		"scale": 0.45
+	}
+}

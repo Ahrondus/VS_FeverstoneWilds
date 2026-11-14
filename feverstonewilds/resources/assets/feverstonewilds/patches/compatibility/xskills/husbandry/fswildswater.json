@@ -1,0 +1,56 @@
+  [
+    {
+    "file": "feverstonewilds:entities/water/sharks",
+    "op": "addmerge",
+
+    "path": "/client/behaviors",
+    "value": [
+      {
+        "code": "XSkillsAnimal",
+        "xp": 2.0,
+        "catchable": "false"
+      }
+    ],
+		"dependsOn": [ { "modid": "xskills" } ]	
+  },
+  {
+    "file": "feverstonewilds:entities/water/sharks",
+    "op": "addmerge",
+    "path": "/server/behaviors",
+    "value": [
+      {
+        "code": "XSkillsAnimal",
+        "xp": 2.0,
+        "catchable": "false"
+      }
+    ],
+		"dependsOn": [ { "modid": "xskills" } ]		
+  }, 
+  {
+    "file": "feverstonewilds:entities/water/orca",
+    "op": "addmerge",
+
+    "path": "/client/behaviors",
+    "value": [
+      {
+        "code": "XSkillsAnimal",
+        "xp": 2.5,
+        "catchable": "true"
+      }
+    ],
+		"dependsOn": [ { "modid": "xskills" } ]	
+  },
+  {
+    "file": "feverstonewilds:entities/water/orca",
+    "op": "addmerge",
+    "path": "/server/behaviors",
+    "value": [
+      {
+        "code": "XSkillsAnimal",
+        "xp": 2.5,
+        "catchable": "true"
+      }
+    ],
+		"dependsOn": [ { "modid": "xskills" } ]		
+  }
+]

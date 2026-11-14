@@ -1,0 +1,45 @@
+{
+	"editor": {
+		"collapsedPaths": "Root/origin/chest/stomach/rleg,Root/origin/chest/stomach/tail,Root/origin/chest/stomach/lleg,Root/origin/chest/neck/neck2/head/featherfrill",
+		"allAngles": false,
+		"entityTextureMode": false
+	},
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textureSizes": {
+	},
+	"textures": {
+		"cockatriceegg": "block/nests/cockatriceegg"
+	},
+	"elements": [
+		{
+			"name": "Cube2",
+			"from": [ 7.2, 0.0, 7.2 ],
+			"to": [ 8.7, 1.5, 8.7 ],
+			"rotationOrigin": [ 8.0, 0.0, 8.0 ],
+			"faces": {
+				"north": { "texture": "#cockatriceegg", "uv": [ 0.75, 1.75, 3.0, 3.75 ], "autoUv": false },
+				"east": { "texture": "#cockatriceegg", "uv": [ 5.75, 2.5, 7.5, 4.5 ], "autoUv": false },
+				"south": { "texture": "#cockatriceegg", "uv": [ 5.0, 0.5, 7.25, 2.5 ], "autoUv": false },
+				"west": { "texture": "#cockatriceegg", "uv": [ 3.25, 4.25, 5.0, 6.5 ], "autoUv": false },
+				"up": { "texture": "#cockatriceegg", "uv": [ 5.25, 0.25, 7.0, 2.5 ], "autoUv": false },
+				"down": { "texture": "#cockatriceegg", "uv": [ 3.25, 6.0, 2.25, 7.25 ], "autoUv": false }
+			},
+			"children": [
+				{
+					"name": "Cube3",
+					"from": [ 0.1, 1.5, 0.1 ],
+					"to": [ 1.4, 2.5, 1.4 ],
+					"rotationOrigin": [ 0.8, 2.0, 0.8 ],
+					"faces": {
+						"north": { "texture": "#cockatriceegg", "uv": [ 2.25, 5.0, 4.0, 6.75 ], "autoUv": false },
+						"east": { "texture": "#cockatriceegg", "uv": [ 0.25, 0.25, 2.0, 2.0 ], "autoUv": false },
+						"south": { "texture": "#cockatriceegg", "uv": [ 4.5, 4.25, 7.0, 6.25 ], "autoUv": false },
+						"west": { "texture": "#cockatriceegg", "uv": [ 5.5, 4.5, 7.0, 6.25 ], "autoUv": false },
+						"up": { "texture": "#cockatriceegg", "uv": [ 2.25, 5.75, 3.5, 7.5 ], "autoUv": false },
+						"down": { "texture": "#cockatriceegg", "uv": [ 0.25, 0.25, 1.0, 1.0 ], "autoUv": false }
+					}
+				}
+			]
+		}
+	]}

@@ -1,22 +1,49 @@
 {
 	"code": "ghostfish",
 	"class": "EntityFish",
+	"variantGroups": [ {"code": "habitat", "states": [ "freshwater", "saltwater" ] } ],
 	"hitboxSize": { "x": 0.5, "y": 0.25 },
 	"eyeHeight": 0.2,
+<<<<<<<< HEAD:feverstonewilds/resources/assets/feverstonewilds/entities/water/buromenfish.json
 	"drops": [],
-	"habitat": "Underwater",
+	"habitat": "underwater",
 	"client": {
 		"renderer": "Shape",
 		"size": 0.7,
+		"shape": { "base": "entity/water/buromenfish" },
+		"texture": { "base": "entity/water/buromenfish/buromenfish1",
+		            "alternates": [ { "base": "entity/water/buromenfish/buromenfish2" },
+									  { "base": "entity/water/buromenfish/buromenfish3" },
+									  { "base": "entity/water/buromenfish/buromenfish4" },
+									  { "base": "entity/water/buromenfish/buromenfish5" }
+									]
+	},
+========
+	"drops": [ { "type": "item", "code": "fsw-fishraw-{habitat}-ghostfish" } ],
+	"attributes": {
+		"baitTags": [ "bait-worm", "bait-meat", "bait-stinkmeat", "bait-fishtiny" ]
+	},
+	"habitat": "Underwater",
+	"client": {
+		"renderer": "Shape",
+		"sizeByType": {
+			"*-freshwater": 0.65,
+			"*-saltwater": 0.85
+		},
 		"shape": { "base": "entity/water/ghostfish" },
-		"texture": { "base": "entity/fish/ghostfish/ghostfish" },
+		"texture": { "base": "entity/water/ghostfish/ghostfish" },
+>>>>>>>> Dev-Rondo:feverstonewilds/resources/assets/feverstonewilds/entities/water/ghostfish.json
 		"behaviors": [
 			{ "code": "repulseagents" }, 
 			{ "code": "controlledphysics", "stepHeight": 0 }, 
 			{ "code": "interpolateposition" },
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
+<<<<<<<< HEAD:feverstonewilds/resources/assets/feverstonewilds/entities/water/buromenfish.json
 			{ "code": "harvestable" },
-			{ "code": "despawn", "minPlayerDistance": 8, "belowLightLevel": 8, "minSeconds": 300 }
+			{ "code": "despawn", "minPlayerDistance": 18, "minSeconds": 300, "belowLightLevel": 0 }
+========
+			{ "code": "despawn", "minPlayerDistance": 30, "minSeconds": 600 }
+>>>>>>>> Dev-Rondo:feverstonewilds/resources/assets/feverstonewilds/entities/water/ghostfish.json
 		],
 		"animations": [
 			{
@@ -24,7 +51,7 @@
 				"animation": "hurt", 
 				"animationSpeed": 1,
 				"weight": 10,
-				"blendMode": "AddAverage" 
+				"blendMode": "addAverage" 
 			},
 			{
 				"code": "swim",
@@ -45,8 +72,7 @@
 			{ 
 				"code": "idle", 
 				"animation": "idle",
-				"blendMode": "AddAverage",
-				"animationSpeed": 0.33,
+				"blendMode": "addAverage",
 				"easeOutSpeed": 4,
 				"triggeredBy": { "defaultAnim": true }
 			}
@@ -56,18 +82,13 @@
 		"behaviors": [
 			{ "code": "repulseagents" }, 
 			{ "code": "controlledphysics", "stepHeight": 1.1251 }, 
-			{ "code": "despawn", "minPlayerDistance": 12, "belowLightLevel": 8, "minSeconds": 200 },
-			{ "code": "health", "currenthealth": 2, "maxhealth": 2 },
-			{ "code": "deaddecay", "hoursToDecay": 96, "decayedBlock": "carcass-tiny" },
+<<<<<<<< HEAD:feverstonewilds/resources/assets/feverstonewilds/entities/water/buromenfish.json
+			{ "code": "despawn", "minPlayerDistance": 18, "minSeconds": 300, "belowLightLevel": 0 },
+========
+			{ "code": "despawn", "minPlayerDistance": 30, "minSeconds": 600 },
+>>>>>>>> Dev-Rondo:feverstonewilds/resources/assets/feverstonewilds/entities/water/ghostfish.json
+			{ "code": "health", "maxhealth": 4 },
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
-			{ "code": "harvestable", "drops": [
-					{
-						"type": "item", 
-						"code": "fish-raw", 
-						"quantity": { "avg": 1, "var": 0 } 
-					}
-				]
-			},
 			{ 
 				"code": "emotionstates",
 				"states": [
@@ -87,7 +108,7 @@
 					},
 					{
 						"code": "fleeentity",
-						"entityCodes": ["player", "wolf-male", "wolf-female", "fox-*", "hyena-male", "bullshark", "stingray", "orca", "eel", "hyena-female"],
+						"entityCodes": ["player", "wolf-male", "wolf-female", "fox-*", "hyena-male", "hyena-female"],
 						"priority": 2,
 						"movespeed": 0.06,
 						"seekingRange": 14,
@@ -98,14 +119,13 @@
 						"code": "wander", 
 						"priority": 1.2, 
 						"priorityForCancel": 1.35,
-						"movespeed": 0.015,
-						"animationSpeed": 0.9,
+						"movespeed": 0.01,
 						"animation": "swim"
 					},
 					{
 						"code": "fishmovefast", 
 						"priority": 1.0, 
-						"priorityForCancel": 1.5,
+						"priorityForCancel": 1.35,
 						"movespeed": 0.045,
 						"animation": "swimfast",
 						"animationSpeed": 2.3
@@ -113,11 +133,10 @@
 					{
 						"code": "idle",
 						"priority": 0.9,
-						"priorityForCancel": 1.5,
-						"minduration": 1000,
-						"maxduration": 6000,
+						"minduration": 500,
+						"maxduration": 2000,
 						"mincooldown": 2000,
-						"maxcooldown": 20000,
+						"maxcooldown": 30000,
 						"animation": "eat"
 					},
 					{
@@ -130,27 +149,47 @@
 						"animation": "idle"
 					}
 				]
-			}
+			},
+			{ "code": "entitystatetags" }
 		],
 		"spawnconditions": {
 			"worldgen": {
-				"TriesPerChunk": { "avg": 0.5, "var": 0 },
+				"TriesPerChunk": { "avg": 0.025, "var": 0 },
 				"tryOnlySurface": true,
-				"minLightLevel": 3,
-				"groupSize": { "dist": "verynarrowgaussian", "avg": 2, "var": 3 },
-				"insideBlockCodes": ["water-*"],
-				"minTemp": 4,
-				"maxTemp": 20
+<<<<<<<< HEAD:feverstonewilds/resources/assets/feverstonewilds/entities/water/buromenfish.json
+				"maxQuantity": 4,
+				"groupSize": { "dist": "verynarrowgaussian", "avg": 3, "var": 1 },
+				"insideBlockCodes": ["game:water-*", "game:saltwater-*", "game:saltwater-still-*"],
+========
+				"maxQuantity": 2,
+				"minLightLevel": 8,
+				"groupSize": { "dist": "verynarrowgaussian", "avg": 1.5, "var": 0.5 },
+				"insideBlockCodesByType": {
+					"*-freshwater": ["game:water-still-*"],
+					"*-saltwater":["game:saltwater-still-*"]
+				},
+>>>>>>>> Dev-Rondo:feverstonewilds/resources/assets/feverstonewilds/entities/water/ghostfish.json
+				"minTemp": -4,
+				"maxTemp": 34
 			},
 			"runtime": {
-				"group": "neutral",
-				"chance": 0.01,
+				"group": "passive",
+				"chance": 0.0004,
+				"maxQuantity": 3,
 				"tryOnlySurface": true,
-				"minLightLevel": 3,
-				"groupSize": { "dist": "verynarrowgaussian", "avg": 2, "var": 3 },
-				"insideBlockCodes": ["water-*"],
-				"minTemp": 4,
-				"maxTemp": 20
+<<<<<<<< HEAD:feverstonewilds/resources/assets/feverstonewilds/entities/water/buromenfish.json
+				"groupSize": { "dist": "verynarrowgaussian", "avg": 3, "var": 1 },
+				"insideBlockCodes": ["game:water-*", "game:saltwater-*", "game:saltwater-still-*"],
+========
+				"minLightLevel": 8,
+				"groupSize": { "dist": "verynarrowgaussian", "avg": 1.5, "var": 0.5 },
+				"insideBlockCodesByType": {
+					"*-freshwater": ["game:water-still-*"],
+					"*-saltwater":["game:saltwater-still-*"]
+				},
+>>>>>>>> Dev-Rondo:feverstonewilds/resources/assets/feverstonewilds/entities/water/ghostfish.json
+				"minTemp": -4,
+				"maxTemp": 34
 			}
 		}
 	}

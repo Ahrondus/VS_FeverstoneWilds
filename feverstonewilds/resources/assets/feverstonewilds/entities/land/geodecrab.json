@@ -1,6 +1,7 @@
 {
 	"code": "geodecrab",
 	"class": "EntityAgent",
+    "tags":  [ "animal", "huntable", "habitat-land" ],
 	"hitboxSize": { "x": 0.6, "y": 0.6 },
 	"deadHitboxSize": { "x": 0.7, "y": 0.7 },
 	"eyeHeight": 0.3,
@@ -13,12 +14,12 @@
 		{
 			"type": "item",
 			"code": "game:salt",
-			"quantity": { "avg": 1.3, "var": 0.5 }
+			"quantity": { "avg": 1.5, "var": 0.5 }
 		}
 	],
 	"client": {
 		"renderer": "Shape",
-		"shape": { "base": "entity/land/oregeodecrab" },
+		"shape": { "base": "entity/land/elemental/oregeodecrab" },
 		"texture": { "base": "entity/land/geodecrab/geodecrab" },
 		"behaviors": [
 			{ "code": "repulseagents" },
@@ -44,7 +45,14 @@
 				"animationSpeed": 0.8,
 				"weight": 10,
 				"triggeredBy": { "onControls": ["dead"] }
-			}
+			},
+            {
+                "code": "dead",
+                "animation": "dead",
+                "blendMode": "Average",
+                "weight": 10,
+                "easeInSpeed": 3
+            }
 		]
 	},
 	"server": {
@@ -105,12 +113,13 @@
 				]
 			},
 			{"code": "taskai",
+			"aiCreatureType": "LandCreature",
 				"aitasks": [
 					{
 						"code": "fleeentity",
 						"entityCodes": [ "player" ],
 						"priority": 1.5,
-						"movespeed": 0.032,
+						"movespeed": 0.030,
 						"seekingRange": 12,
 						"animation": "run",
 						"animationSpeed": 3.5
@@ -139,17 +148,6 @@
 						"stopOnNearbyEntityCodes": [ "player" ],
 						"stopRange": 6,
 						"stopOnHurt": true
-					},
-					{
-						"code": "seekfoodandeat",
-						"movespeed": 0.004,
-						"priority": 1.35,
-						"eatSound": "player/eat",
-						"eatTime": 1.5,
-						"animationSpeed": 0.5,
-						"animation": "run",
-						"mincooldownHours": 1,
-						"maxcooldownHours": 4
 					},
 					{
 						"code": "idle",
@@ -190,13 +188,14 @@
 						"priority": 0.5
 					}
 				]
-			}
+			},
+			{ "code": "entitystatetags" }
 		],
 		"spawnconditions": {
 			"worldgen": {
-				"TriesPerChunk": { "avg": 0.06, "var": 0 },
+				"TriesPerChunk": { "avg": 0.006, "var": 0 },
 				"tryOnlySurface": true,
-				"maxLightLevel": 7,
+				"minLightLevel": 12,
 				"groupSize": { "dist": "verynarrowgaussian", "avg": 1, "var": 1 },
 				"insideBlockCodes": [ "game:air", "game:tallgrass-*" ],
 				"minTemp": -12,
@@ -205,9 +204,9 @@
 			"runtime": {
 				"group": "passive",
 				"tryOnlySurface": true,
-				"chance": 0.006,
+				"chance": 0.0006,
 				"maxQuantity": 3,
-				"maxLightLevel": 7,
+				"minLightLevel": 12,
 				"groupSize": { "dist": "verynarrowgaussian", "avg": 1, "var": 1 },
 				"insideBlockCodes": [ "game:air", "game:tallgrass-*" ],
 				"minTemp": -12,

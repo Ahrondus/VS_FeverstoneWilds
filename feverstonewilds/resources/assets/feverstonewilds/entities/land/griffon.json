@@ -1,0 +1,914 @@
+{
+    "code": "griffon",
+    "class": "FlyingEntityAgent",
+    "tags":  [ "animal", "huntable", "habitat-land", "predator", "ferocious", "adult" ],
+    "variantgroups": [
+        { "code": "tamed", "states": [ "wild", "tamed" ] },
+        { "code": "gender", "states": [ "male", "female" ] }
+    ],
+    "hitBoxSizeByType": {
+        "griffon-*-male": { "x": 1.4, "y": 1.8 },
+        "griffon-*-female": { "x": 1.3, "y": 1.75 }
+    },
+    "deadHitBoxSizeByType": {
+        "griffon-*-male": { "x": 0.8, "y": 1.3 },
+        "griffon-*-female": { "x": 0.8, "y": 1.3 }
+    },
+    "knockbackResistanceByType": {
+        "*-male": 0.15,
+        "*-female": 0.10
+    },
+    "eyeheight": 1.1,
+    "drops": [],
+    "attributes": {
+        "killedByInfoText": "feverstonewilds:deadcreature-eaten-griffon",
+		"creatureDiet": {
+			"foodTags": [ "meat" ]
+		},
+        "trappable": {
+            "small": { "trapChance": 0.0, "trapDestroyChance": 0.65 },
+            "large": { "trapChance": 0.0, "trapDestroyChance": 0.15 }
+        },
+		"handbook": {
+			"groupcode": "feverstonewilds:creaturegroup-fswgriffon"
+		}
+    },
+    "behaviorConfigs": {
+        "controlledphysics": { "stepHeight": 1.1251, "stepUpSpeed": 0.1 },
+        "floatupwhenstuck": { "onlyWhenDead": true },
+        "rideableaccessories": {
+            "enabledByType": { "*-tamed-*": true, "*-wild-*": false },
+            "wearableSlots": [
+                { "code": "head-griffon", "forCategoryCodes": ["bridle-griffon"], "attachmentPointCode": "HeadAP" },
+                { "code": "face", "forCategoryCodes": ["face"], "attachmentPointCode": "FaceAP" },
+                { "code": "neck-griffon", "forCategoryCodes": ["lantern"], "attachmentPointCode": "NeckAP" },
+                { "code": "middleback-griffon", "forCategoryCodes": ["saddle-griffon"], "attachmentPointCode": "MidAP" },
+                { "code": "lowerback", "forCategoryCodes": ["bedroll"], "attachmentPointCode": "RearAP" },
+                { "code": "lowerbackside-griffon", "forCategoryCodes": ["sidebags-griffon"], "attachmentPointCode": "RearSideAP" },
+                {
+                    "code": "frontrightside",
+                    "forCategoryCodes": ["utilities", "pot", "weaponfalx", "weapon1m", "bowshort", "bowlong" ],
+                    "attachmentPointCode": "RFrontAP"
+                },
+                {
+                    "code": "frontleftside",
+                    "forCategoryCodes": ["utilities", "pot", "weaponfalx", "weapon1m", "bowshort", "bowlong" ],
+                    "attachmentPointCode": "LFrontAP"
+                }
+            ]
+        },
+        "selectionboxes": {
+            "enabledByType": { "*-tamed-*": true, "*-wild-*": false },
+            "selectionBoxes": [ "HeadAP", "FaceAP", "NeckAP", "MidAP", "RearAP",
+                                "RearSideAP", "RFrontAP", "LFrontAP" ]
+        
+        },
+        "gait": {
+            "enabledByType": { "*-tamed-*": true, "*": false },
+			"idleGaits": { "Land": "idle", "Sea": "swimidle" },
+			"gaits": [
+				{
+					"code": "walkback",
+					"movespeed": 0.011,
+					"backwards": true,
+					"sound": " ",
+
+                    "animation": "Walkback",
+                    "animationSpeed": 1.4,
+                    "weight": 10,
+                    "easeInSpeed": 1,
+                    "easeOutSpeed": 3,
+                    "blendMode": "Average"
+				},
+				{
+					"code": "idle",
+
+                    "animation": "Idle",
+                    "weight": 1
+				},
+				{
+					"code": "walk",
+					"movespeed": 0.019,
+					"yawMultiplier": 1.2,
+					"sound": " ",
+
+                    "animation": "Walk"
+				},
+				{
+					"code": "trot",
+					"movespeed": 0.036,
+					"yawMultiplier": 0.90,
+					"fallbackGaitCode": "walk",
+					"sound": " ",
+                    
+                    "animation": "Trot",
+                    "blendMode": "Average",
+                    "animationSpeed": 1.25
+				},
+				{
+					"code": "sprint",
+					"movespeed": 0.1067,
+					"yawMultiplier": 0.8,
+					"fallbackGaitCode": "trot",
+					"sound": " ",
+                    
+                    "animation": "Run",
+                    "weight": 10,
+                    "animationSpeed": 2,
+                    "blendMode": "Average",
+                    "easeOutSpeed": 20
+				},
+				{
+					"code": "swimforth",
+					"movespeed": 0.02,
+                    "fallbackGaitCode": "swimidle",
+                    "environment": "Sea",
+
+                    "animation": "Swim",
+                    "animationSpeed": 1.2,
+                    "weight": 10,
+                    "blendMode": "Average"
+				},
+				{
+					"code": "swimidle",
+					"movespeed": 0.0,
+                    "environment": "Sea",
+
+                    "animation": "Swim",
+                    "animationSpeed": 1.2,
+                    "weight": 10,
+                    "blendMode": "Average"
+				},
+				{
+					"code": "swimback",
+					"movespeed": 0.01,
+					"backwards": true,
+                    "fallbackGaitCode": "swimidle",
+                    "environment": "Sea",
+
+                    "animation": "Swim",
+                    "animationSpeed": 1.2,
+                    "weight": 10,
+                    "blendMode": "Average"
+				},
+				{
+					"code": "jump",
+					"movespeed": 0.1067,
+					"yawMultiplier": 1,
+					"fallbackGaitCode": "walk",
+					"sound": " ",
+
+                    "animation": "Jump",
+                    "weight": 50,
+                    "easeOutSpeed": 15,
+                    "blendMode": "Average",
+                    "animationSpeed": 1.75
+				}
+			]
+		},
+        "flightrideable": {
+            "enabledByType": { "*-tamed-*": true, "*-wild-*": false },
+            "interactMountAnySeat": false,
+            "seats": [
+                { "apName": "Rider", "selectionBox": "MidAP", "bodyYawLimit": 0.2, "controllable": true,
+                    "riderOffset": { "x": 0, "y": -0.55, "z": 0 }
+                }
+            ],
+            "rideableGaitOrder": {
+                "Land": ["walkback", "idle", "walk", "sprint"],
+                "Sea": ["swimback", "swimidle", "swimforth"]
+            },
+            "controls": {
+                "walkback": {
+                    "riderAnim": {
+                        "animation": "rideelk-walk",
+                        "animationSpeed": 1,
+                        "weight": 1,
+                        "withFpVariant": true,
+                        "blendMode": "Average", 
+                        "elementWeight": {
+                            "stomach": 80,
+                            "body": 80
+                        },
+                        "elementBlendMode": {
+                            "stomach": "Average",
+                            "body": "Average"
+                        }
+                    }
+                },
+                "idle": {
+                    "riderAnim": {
+                        "animation": "rideelk-idle",
+                        "animationSpeed": 1,
+                        "weight": 1,
+                        "withFpVariant": true,
+                        "blendMode": "Average", 
+                        "elementWeight": {
+                            "stomach": 80,
+                            "body": 80
+                        },
+                        "elementBlendMode": {
+                            "stomach": "Average",
+                            "body": "Average"
+                        }
+                    }
+                },
+                "walk": {
+                    "riderAnim": {
+                        "animation": "rideelk-walk",
+                        "animationSpeed": 1,
+                        "weight": 1,	
+                        "withFpVariant": true,
+                        "blendMode": "Average", 
+                        "elementWeight": {
+                            "stomach": 80,
+                            "body": 80
+                        },
+                        "elementBlendMode": {
+                            "stomach": "Average",
+                            "body": "Average"
+                        }
+                    }
+                },
+                "sprint": {
+                    "riderAnim": {
+                        "animation": "rideelk-walk",
+                        "animationSpeed": 1.8,
+                        "weight": 1,
+                        "withFpVariant": true,
+                        "blendMode": "Average", 
+                        "elementWeight": {
+                            "stomach": 80,
+                            "body": 80
+                        },
+                        "elementBlendMode": {
+                            "stomach": "Average",
+                            "body": "Average"
+                        }
+                    },
+                    "passengerAnim": {
+                        "animation": "rideelk-run-passenger",
+                        "animationSpeed": 1.2,
+                        "weight": 1,
+                        "withFpVariant": true,
+                        "blendMode": "Average", 
+                        "elementWeight": {
+                            "stomach": 80,
+                            "body": 80
+                        },
+                        "elementBlendMode": {
+                            "stomach": "Average",
+                            "body": "Average"
+                        }
+                    }
+                },
+                "swimforth": {
+					"riderAnim": {
+						"animation": "rideelk-walk",
+						"animationSpeed": 1,
+						"weight": 1,	
+						"withFpVariant": true,
+						"blendMode": "Average", 
+						"elementWeight": {
+							"stomach": 80,
+							"body": 80
+						},
+						"elementBlendMode": {
+							"stomach": "Average",
+							"body": "Average"
+						}
+					}
+				},
+                "swimidle": {
+					"riderAnim": {
+						"animation": "rideelk-walk",
+						"animationSpeed": 1,
+						"weight": 1,	
+						"withFpVariant": true,
+						"blendMode": "Average", 
+						"elementWeight": {
+							"stomach": 80,
+							"body": 80
+						},
+						"elementBlendMode": {
+							"stomach": "Average",
+							"body": "Average"
+						}
+					}
+				},
+				"swimback": {
+					"riderAnim": {
+						"animation": "rideelk-walk",
+						"animationSpeed": 1,
+						"weight": 1,	
+						"withFpVariant": true,
+						"blendMode": "Average", 
+						"elementWeight": {
+							"stomach": 80,
+							"body": 80
+						},
+						"elementBlendMode": {
+							"stomach": "Average",
+							"body": "Average"
+						}
+					}
+				},
+                "jump": {
+                    "riderAnim": {
+                        "animation": "rideelk-jump",
+                        "animationSpeed": 1,
+                        "weight": 10,
+                        "withFpVariant": true,
+                        "blendMode": "Average", 
+                        "elementWeight": {
+                            "stomach": 160,
+                            "body": 160
+                        },
+                        "elementBlendMode": {
+                            "stomach": "Average",
+                            "body": "Average"
+                        }
+                    },
+                    "passengerAnim": null
+                }
+            }
+        },
+        "ownable": {
+            "groupCode": "mountableanimal"
+        },
+        "emotionstates": {
+            "states": [
+                        { "code": "fleeondamage", "duration": 60, "chance": 0.75, "slot": 2, "priority": 5, "accumType": "max", "whenHealthRelBelow": 0.3 },
+                        { "code": "saturated", "duration": 600, "chance": 1, "slot": 0, "priority": 1, "accumType": "sum", "belowTempDuration": 600, "belowTempThreshold": -5 },
+                        { "code": "aggressiveondamage", "duration": 30, "chance": 1, "slot": 2, "priority": 2, "accumType": "noaccum" },
+                        { "code": "alarmherdondamage", "chance": 1, "slot": 1, "priority": 1, "accumType": "max" }
+            ]
+        }
+    },
+    "client": {
+        "renderer": "Shape",
+        "shape": { "base": "entity/land/mammal/griffon-adult" },
+        "textures": { "griffonskin1": { "base": "entity/land/griffon/griffonskin1",
+                        "alternates": [ { "base": "entity/land/griffon/griffonskin2" }, { "base": "entity/land/griffon/griffonskin3" }, 
+                                        { "base": "entity/land/griffon/griffonskin4" }, { "base": "entity/land/griffon/griffonskin5" }, 
+                                        { "base": "entity/land/griffon/griffonskin6" }, { "base": "entity/land/griffon/griffonskin7" } ] },
+                      "griffonskin1Wing": { "base": "entity/land/griffon/griffonskin1Wing",
+                        "alternates": [ { "base": "entity/land/griffon/griffonskin2Wing" }, { "base": "entity/land/griffon/griffonskin3Wing" },
+                                        { "base": "entity/land/griffon/griffonskin4Wing" }, { "base": "entity/land/griffon/griffonskin5Wing" },
+                                        { "base": "entity/land/griffon/griffonskin6Wing" }, { "base": "entity/land/griffon/griffonskin7Wing" } ] } 
+        },
+        "sizeByType": {
+            "griffon-*-male": 1,
+            "griffon-*-female": 0.95
+        },
+        "behaviors": [
+            { "code": "repulseagents" },
+            { "code": "controlledphysics" },
+            { "code": "harvestable" },
+            { "code": "gait" },
+            { "code": "flightrideable" },
+            { "code": "flight",
+                "playerFlightEnabledByType": {
+                    "*-wild-*": false,
+                    "*-tamed-*": true
+                }
+            },
+            { "code": "floatupwhenstuck" },
+            { "code": "interpolateposition" },
+            { "code": "selectionboxes" },
+            { "code": "rideableaccessories" },
+            { "code": "despawn",
+                "enabledByType": { "*-wild-*": true, "*": false },
+                "minPlayerDistance": 15, "belowLightLevel": 7, "minSeconds": 300 }
+        ],
+        "animations": [
+            {
+				"code": "attack",
+				"animation": "Attack",
+				"animationSpeed": 2.2,
+				"weight": 50,
+				"blendMode": "addAverage"
+			},
+            {
+                "code": "hurt",
+                "animation": "hurt",
+                "animationSpeed": 2.2,
+                "weight": 10,
+                "blendMode": "addAverage"
+            },
+			{
+				"code": "die",
+				"animation": "die", 
+				"animationSpeed": 1.25,
+				"weight": 10,
+				"blendMode": "average",
+				"triggeredBy": { "onControls": ["dead"] }
+			},
+            {
+                "code": "dead",
+                "animation": "dead",
+                "blendMode": "average",
+                "weight": 10,
+                "easeInSpeed": 3
+            },
+			{ 
+				"code": "idle", 
+				"animation": "idle",
+				"blendMode": "addAverage",
+				"easeOutSpeed": 4,
+				"triggeredBy": { "defaultAnim": true }
+			},
+			{
+				"code": "fly", 
+				"animation": "fly",
+				"easeInSpeed": 4,
+				"easeOutSpeed": 4,
+				"blendMode": "average",
+                "supressDefaultAnimation": true 
+			},
+			{
+				"code": "glide",
+				"animation": "glide",
+				"easeInSpeed": 2,
+				"easeOutSpeed": 2,
+				"blendMode": "average"
+			},
+			{
+				"code": "speedfly", 
+				"animation": "speedfly",
+				"easeInSpeed": 4,
+				"easeOutSpeed": 4,
+				"blendMode": "average" 
+			},
+			{
+				"code": "flyidle",
+				"animation": "flyidle",
+				"easeInSpeed": 4,
+				"easeOutSpeed": 4,
+				"blendMode": "average",
+                "supressDefaultAnimation": true
+			},
+			{
+				"code": "flyascend",
+				"animation": "flyascend",
+				"easeInSpeed": 2,
+				"easeOutSpeed": 3,
+				"blendMode": "average",
+                "supressDefaultAnimation": true
+			},
+			{
+				"code": "flydescend",
+				"animation": "flydescend",
+				"easeInSpeed": 2,
+				"easeOutSpeed": 3,
+				"blendMode": "average",
+                "supressDefaultAnimation": true
+			},
+			{
+				"code": "flightbankleft",
+				"animation": "flightbankleft",
+				"easeInSpeed": 2,
+				"easeOutSpeed": 3,
+				"weight": 5,
+				"blendMode": "average",
+                "supressDefaultAnimation": true
+			},
+			{
+				"code": "flightbankright",
+				"animation": "flightbankright",
+				"easeInSpeed": 2,
+				"easeOutSpeed": 3,
+				"weight": 5,
+				"blendMode": "average",
+                "supressDefaultAnimation": true
+			},
+			{
+				"code": "idleaction1", 
+				"animation": "idleaction1",
+				"easeInSpeed": 2,
+				"easeOutSpeed": 3,
+				"blendMode": "average" ,
+                "supressDefaultAnimation": true
+			},
+			{
+				"code": "idleaction2", 
+				"animation": "idleaction2",
+				"easeInSpeed": 2,
+				"easeOutSpeed": 3,
+				"blendMode": "average" ,
+                "supressDefaultAnimation": true
+			},
+			{
+				"code": "walk", 
+				"animation": "Walk",
+                "blendMode": "average",
+                "animationSounds": [{"frame": 5, "range": 10, "location": "direwolf/paws-step*", "pitch": { "avg": 1.0, "var": 0.15 }, "volume": {"avg": 1.4}}, 
+                                    {"frame": 13, "range": 10, "location": "direwolf/paws-step*", "pitch": { "avg": 1.0, "var": 0.15 }, "volume": {"avg": 1.4}}, 
+                                    {"frame": 33, "range": 10, "location": "direwolf/paws-step*", "pitch": { "avg": 1.0, "var": 0.15 }, "volume": {"avg": 1.4}}, 
+                                    {"frame": 42, "range": 10, "location": "direwolf/paws-step*", "pitch": { "avg": 1.0, "var": 0.15 }, "volume": {"avg": 1.4}}],
+                "supressDefaultAnimation": true
+            },
+			{
+				"code": "run", 
+				"animation": "Run",
+                "blendMode": "average",
+                "animationSounds": [{"frame": 4, "range": 15, "location": "direwolf/paws-step*", "pitch": { "avg": 1.0, "var": 0.15 }, "volume": {"avg": 1.4}}, 
+                                    {"frame": 7, "range": 15, "location": "direwolf/paws-step*", "pitch": { "avg": 1.0, "var": 0.15 }, "volume": {"avg": 1.4}}, 
+                                    {"frame": 18, "range": 15, "location": "direwolf/paws-step*", "pitch": { "avg": 1.0, "var": 0.15 }, "volume": {"avg": 1.4}}, 
+                                    {"frame": 20, "range": 15, "location": "direwolf/paws-step*", "pitch": { "avg": 1.0, "var": 0.15 }, "volume": {"avg": 1.4}}],
+                "supressDefaultAnimation": true
+            },
+            {
+                "code": "turn-left",
+                "animation": "turnleft",
+                "easeInSpeed": 3,
+                "easeOutSpeed": 10,
+                "weight": 8,
+                "weightCapFactor": 0.85,
+                "blendMode": "average",
+                "elementWeight": {
+                    "head": 80,
+                    "neck1": 80,
+                    "neck2": 80
+                },
+                "elementBlendMode": {
+                    "head": "addAverage",
+                    "neck1": "addAverage",
+                    "neck2": "addAverage"
+                },
+                "supressDefaultAnimation": true
+            },
+            {
+                "code": "turn-right",
+                "animation": "turnright",
+                "easeInSpeed": 3,
+                "easeOutSpeed": 10,
+                "weight": 8,
+                "weightCapFactor": 0.85,
+                "blendMode": "average",
+                "elementWeight": {
+                    "head": 80,
+                    "neck1": 80,
+                    "neck2": 80
+                },
+                "elementBlendMode": {
+                    "head": "addAverage",
+                    "neck1": "addAverage",
+                    "neck2": "addAverage"
+                },
+                "supressDefaultAnimation": true
+            },
+            {
+                "code": "idle-turn-left",
+                "animation": "idle-turn-left",
+                "easeInSpeed": 3,
+                "easeOutSpeed": 10,
+                "weight": 8,
+                "weightCapFactor": 0.85,
+                "blendMode": "average",
+                "elementWeight": {
+                    "head": 5,
+                    "neck1": 5,
+                    "neck2": 5
+                },
+                "elementBlendMode": {
+                    "head": "addAverage",
+                    "neck1": "addAverage",
+                    "neck2": "addAverage"
+                },
+                "supressDefaultAnimation": true
+            },
+            {
+                "code": "idle-turn-right",
+                "animation": "idle-turn-right",
+                "easeInSpeed": 3,
+                "easeOutSpeed": 10,
+                "weight": 8,
+                "weightCapFactor": 0.85,
+                "blendMode": "average",
+                "elementWeight": {
+                    "head": 5,
+                    "neck1": 5,
+                    "neck2": 5
+                },
+                "elementBlendMode": {
+                    "head": "addAverage",
+                    "neck1": "addAverage",
+                    "neck2": "addAverage"
+                },
+                "supressDefaultAnimation": true
+            }
+        ]
+    },
+    "server": {
+        "attributes": {
+            "pathfinder": {
+                "minTurnAnglePerSec": 125,
+                "maxTurnAnglePerSec": 210
+            }
+        },
+        "behaviors": [
+                { "code": "repulseagents" },
+                { "code": "controlledphysics" },
+                { "code": "floatupwhenstuck" },
+                { "code": "ownable" },
+                { "code": "harvestable",
+                    "drops": [
+                        { "type": "item", "code": "bushmeat-raw", "quantity": { "avg": 5, "var": 2 } },
+                        { "type": "item", "code": "hide-raw-medium", "quantity": { "avg": 2, "var": 1 } },
+                        { "type": "item", "code": "fat", "quantity": { "avg": 1.5, "var": 0.5 } },
+                        { "type": "item", "code": "feverstonewilds:bone-big", "quantity": { "avg": 1, "var": 0.5 } }
+
+                    ] },
+                { "code": "deaddecay", "hourstoDecay": 96, "decayedBlock": "carcass-medium" },
+                { "code": "despawn",
+                    "enabledByType": { "*-tamed-*": false, "*-wild-*": true },
+                    "minPlayerDistance": 15, "belowLightLevel": 7, "minSeconds": 300 },
+                { "code": "health", "maxHealth": 24 },
+                { "code": "breathe" },
+                { "code": "emotionstates" },
+                { "code": "selectionboxes" },
+                { "code": "rideableaccessories" },
+                { "code": "gait" },
+                { "code": "flightrideable" },
+                { "code": "flight",
+                    "playerFlightEnabledByType": {
+                        "*-wild-*": false,
+                        "*-tamed-*": true
+                    }
+                },
+                { "code": "taskai",
+                    "aiCreatureType": "LandCreature",
+                    "aitasks": [
+                        {
+                            "code": "cometoowner",
+                            "priority": 4,
+                            "animation": "trot",
+                            "animationSpeed": 1.35,
+                            "movespeed": 0.019,
+                            "__allowTeleport": true,
+                            "teleportMaxRange": 2000,
+                            "teleportAfterRange": 150,
+                            "teleportToRange": 15
+                        },
+                        {
+                            "code": "flightmeleeattack",
+                            "slot": 1,
+                            "priority": 3.5,
+                            "entityCodesByType": {
+                                "*-wild-*": [ "player", "tame-*", "drifter-*", "shiver-*", "bowtorn-*",
+                                            "chicken-*",  "wolf-*", "bear-*", "hare-*", "taminghorse-*",
+                                            "cockatrice-*", "horse-*", "ostrich-*", "pig-*", "gazelle-*", 
+                                            "raccoon-*", "hellboar-*", "bison-*", "giraffe", "deer-*", 
+                                            "goat-*", "sheep-*", "fox-*" ],
+                                "*-tamed-*": [ "chicken-*", "hare-*", "raccoon-*", "sheep-*", "goat-*" ]
+                            },
+                            "attackRange": 2.5,
+                            "damage": 7.5,
+                            "damageTier": 2,
+                            "damageType": "SlashingAttack",
+                            "mincooldown": 750,
+                            "maxcooldown": 1500,
+                            "attackDurationMs": 800,
+                            "damageAtMs": 500,
+                            "animation": "airattack",
+                            "animationSpeed": 1.0
+                        },
+                        {
+                            "code": "flightseekentity",
+                            "slot": 0,
+                            "priority": 2.0,
+                            "seekingRange": 12,
+                            "preferredAltitude": 3,
+                            "animation": "speedfly",
+                            "animationSpeed": 1.0,
+                            "entityCodesByType": {
+                                "*-wild-*": [ "player", "tame-*", "drifter-*", "shiver-*", "bowtorn-*",
+                                            "chicken-*",  "wolf-*", "bear-*", "hare-*", "taminghorse-*",
+                                            "cockatrice-*", "horse-*", "ostrich-*", "pig-*", "gazelle-*", 
+                                            "raccoon-*", "hellboar-*", "bison-*", "giraffe", "deer-*", 
+                                            "goat-*", "sheep-*", "fox-*" ],
+                                "*-tamed-*": [ "chicken-*", "hare-*", "raccoon-*", "sheep-*", "goat-*" ]
+                            },
+                            "whenNotInEmotionState": "saturated"
+                        },
+                        {
+                            "code": "flightwander",
+                            "enabledByType": { "*-wild-*": true, "*-tamed-*": false },
+                            "slot": 0,
+                            "priority": 1.9,
+                            "horizontalRange": 16,
+                            "verticalRange": 6,
+                            "waypointCount": 2,
+                            "animation": "fly",
+                            "animationSpeed": 1.0,
+                            "idleAnimation": "flyidle",
+                            "idleAnimationSpeed": 1.0,
+                            "idleDurationMs": 3500,
+                            "idleAnimationEaseInSpeed": 2.0,
+                            "idleAnimationEaseOutSpeed": 2.0
+                        },
+                        {
+                            "code": "meleeattack",
+                            "entityCodesByType": {
+                                "*-wild-*": ["player", "tame-*", "drifter-*", "shiver-*", "bowtorn-*",
+                                            "chicken-*",  "wolf-*", "bear-*", "hare-*", "taminghorse-*",
+                                            "cockatrice-*", "horse-*", "ostrich-*", "pig-*", "gazelle-*", 
+                                            "raccoon-*", "hellboar-*", "bison-*", "giraffe", "deer-*", 
+                                            "goat-*", "sheep-*", "fox-*" ],
+                                "*-tamed-*": [ "chicken-*", "hare-*", "raccoon-*", "sheep-*", "goat-*" ]
+                            },
+                            "priority": 3,
+                            "damage": 9.5,
+                            "damageTier": 2,
+                            "damageType": "SlashingAttack",
+                            "slot": 1,
+                            "mincooldown": 750, 
+                            "maxcooldown": 1500, 
+                            "attackDurationMs": 800,
+                            "damagePlayerAtMs": 500,
+                            "animation": "Attack",
+                            "animationSpeed": 1.5,
+                            "sound": " "
+                        },
+                        {
+                            "code": "fleeentity",
+                            "entityCodesByType": {
+                                "*-wild-*": [ "player", "wolf-*", "bear-*", "drifter-*", "shiver-*", "bowtorn-*", "direwolf-*", "tame-direwolf-*" ],
+                                "*-tamed-*": [ "wolf-*", "bear-*", "direwolf-*", "drifter-*", "shiver-*", "bowtorn-*" ]
+                            },
+                            "priority": 1.6,
+                            "movespeed": 0.052,
+                            "seekingRange": 20,
+                            "animation": "Run",
+                            "animationSpeed": 1.1,
+                            "whenInEmotionState": "fleeondamage"
+                        },
+                        {
+                            "code": "seekentity",
+                            "entityCodesByType": {
+                                "*-wild-*": ["player", "tame-cockatrice-*", "drifter-*", "shiver-*", "bowtorn-*",
+                                            "chicken-*", "hare-*", "taminghorse-*", "foal-*",
+                                            "cockatrice-*", "horse-*", "ostrich-*", "pig-*", "gazelle-*", 
+                                            "raccoon-*", "hellboar-*", "deer-*", "goat-*", "sheep-*", "fox-*" ],
+                                "*-tamed-*": [ "chicken-*", "hare-*", "raccoon-*", "sheep-*", "goat-*" ]
+                            },
+                            "priority": 1.51,
+                            "movespeed": 0.052,
+                            "seekingRange": 9,
+                            "belowTempSeekingRange": 25,
+                            "belowTempThreshold": -5,
+                            "animation": "Run",
+                            "animationSpeed": 1.1,
+                            "sound": " ",
+                            "whenNotInEmotionState": "saturated"
+                        },
+                        {
+                            "code": "seekentity",
+                            "entityCodesByType": {
+                                "*-wild-*": [ "player", "chicken-*",  "wolf-*", "hare-*",
+                                            "drifter-*", "bowtorn-*", "shiver-*",
+                                            "cockatrice", "horse-*", "ostrich-*",
+                                            "ostrich-chick", "pig-*", "sheep-*",
+                                            "deer-*", "gazelle-*", "goat-*", "raccoon-*",
+                                            "tame-cockatrice-*", "taminghorse-*",
+                                            "hellboar-*", "tame-ostrich-*", "faunling-*"  ],
+                                "*-tamed-*": [ "chicken-*", "hare-*", "raccoon-*", "sheep-*", "goat-*" ]
+                            },
+                            "priority": 1.5,
+                            "movespeed": 0.045,
+                            "seekingRange": 15,
+                            "belowTempSeekingRange": 25,
+                            "belowTempThreshold": -5,
+                            "animation": "trot",
+                            "animationSpeed": 1,
+                            "sound": " ",
+                            "whenNotInEmotionState": "saturated"
+                        },
+                        {
+                            "code": "seekentity",
+                            "entityCodes": ["player"],
+                            "priority": 1.49,
+                            "movespeed": 0.052,
+                            "seekingRange": 18,
+                            "animation": "Run",
+                            "animationSpeed": 1,
+                            "sound": " ",
+                            "whenInEmotionState": "aggressiveondamage"
+                        },
+                        {
+                            "code": "idle",
+                            "priority": 1.45,
+                            "priorityForCancel": 1.55,
+                            "minduration": 200000,
+                            "maxduration": 800000,
+                            "mincooldown": 10000,
+                            "maxcooldown": 30000,
+                            "animation": "idleaction1",
+                            "whenNotInEmotionState": "aggressiveondamage",
+                            "duringDayTimeFrames": [ { "fromHour": 22, "toHour": 24 }, { "fromHour": 1, "toHour": 4 } ],
+                            "stopOnNearbyEntityCodes": ["player"],
+                            "stopRange": 10,
+                            "stopOnHurt": true
+                        },
+                        {
+                            "code": "getoutofwater",
+                            "priority": 1.4,
+                            "movespeed": 0.015,
+                            "animation": "Walk",
+                            "animationSpeed": 2.2
+                        },
+                        {
+                            "code": "seekfoodandeat",
+                            "movespeed": 0.004,
+                            "priority": 1.4,
+                            "animationSpeed": 1.25,
+                            "animation": "Walk",
+                            "eatAnimation": "Eat",
+                            "eatSound": "game:creature/animal-eat-small",
+                            "eatTime": 1.75,
+                            "mincooldownHours": 1,
+                            "maxcooldownHours": 4
+                        },
+                        {
+                            "code": "wander", 
+                            "priority": 1.0, 
+                            "priorityForCancel": 1.35,
+                            "movespeed": 0.006,
+                            "animation": "Walk",
+                            "preferredLightLevel": 20
+                        },
+                        {
+                            "code": "idle",
+                            "priority": 0.9,
+                            "minduration": 5000,
+                            "maxduration": 30000,
+                            "mincooldown": 2000,
+                            "maxcooldown": 120000,
+                            "priorityForCancel": 1.33,
+                            "animation": "idleaction2",
+                            "whenNotInEmotionState": "aggressiveondamage",
+                            "stopOnNearbyEntityCodes": ["player", "bear-*", 
+                                                        "feverstonewilds:cockatrice"],
+                            "stopRange": 5
+                        },
+                        { 
+                            "code": "lookaround", 
+                            "priority": 0.5
+                        }
+                    ]
+                },
+                { "code": "ropetieable", "minGeneration": 2 },
+			    { "code": "entitystatetags" }
+            ],
+        "spawnconditionsByType": {
+            "*-wild-male": {
+                "worldgen": {
+                    "TriesPerChunk": {
+                        "avg": 0.010,
+                        "var": 0.005
+                    },
+                    "tryOnlySurface": true,
+                    "minLightLevel": 10,
+                    "groupSize": {
+                        "dist": "narrowgaussian",
+                        "avg": 2,
+                        "var": 1
+                    },
+                    "insideBlockCodes": [ "game:air", "game:tallgrass-*", "game:snowlayer-1" ],
+                    "minTemp": 5,
+                    "maxTemp": 25,
+                    "minRain": 0.25,
+                    "minForest": 0.15,
+                    "companions": [ "griffon-wild-female", "griffon-cub-wild" ]
+                },
+                "runtime": {
+                    "group": "neutral",
+                    "tryOnlySurface": true,
+                    "chance": 0.00004,
+                    "maxQuantity": 1,
+                    "maxLightLevel": 7,
+                    "lightLevelType": "onlyBlockLight",
+                    "groupSize": {
+                        "dist": "narrowgaussian",
+                        "avg": 2,
+                        "var": 1
+                    },
+                    "insideBlockCodes": [ "game:air", "game:tallgrass-*", "game:snowlayer-1" ],
+                    "minTemp": 5,
+                    "maxTemp": 25,
+                    "minRain": 0.15,
+                    "minForest": 0.15,
+                    "companions": [ "griffon-wild-female", "griffon-cub-wild" ]
+                }
+            }                
+        }
+    },
+    "sounds": {
+        "hurt": " ",
+        "death": " ",
+        "idle": " "
+    },
+    "idleSoundChance": 0.015,
+    "hurtSoundChance": 0.25
+}

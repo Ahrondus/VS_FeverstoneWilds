@@ -723,10 +723,9 @@
 				}
 			]
 		},
-
 		{
-			"name": "death",
-			"code": "dead",
+			"name": "die",
+			"code": "die",
 			"quantityframes": 30,
 			"onActivityStopped": "PlayTillEnd",
 			"onAnimationEnd": "Hold",
@@ -812,7 +811,44 @@
 				}
 			]
 		},
-
+		{
+			"name": "dead",
+			"code": "dead",
+			"quantityframes": 2,
+			"onActivityStopped": "PlayTillEnd",
+			"onAnimationEnd": "Hold",
+			"keyframes": [
+				{
+					"frame": 1,
+					"elements": {
+						"root": { "offsetX": 0.0, "offsetY": 7.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 15.0 },
+						"body": {  },
+						"Cube5": {  },
+						"Cube9": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -15.0 },
+						"Cube12": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -10.0 },
+						"Cube13": { "offsetX": -0.5, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5 },
+						"Cube17": { "offsetX": -1.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5 },
+						"Cube35": { "offsetX": -0.5, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5 },
+						"rwing": {  },
+						"Rin1": { "offsetX": 0.0, "offsetY": -3.0, "offsetZ": 0.0, "rotationX": -15.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"REdge5": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5 },
+						"REdge7": { "offsetX": 7.0, "offsetY": -8.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -45.0 },
+						"Rin2": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -15.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Rin3": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": -15.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"REdge4": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 },
+						"REdge6": { "offsetX": 0.0, "offsetY": -4.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5 },
+						"Lwing": {  },
+						"Lin1": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 22.5, "rotationY": 0.0, "rotationZ": 0.0 },
+						"LEdge5": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -15.0 },
+						"LEdge7": { "offsetX": 6.0, "offsetY": -9.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -45.0 },
+						"Lin2": { "offsetX": 0.0, "offsetY": -2.0, "offsetZ": 0.0, "rotationX": 15.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Lin3": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0, "rotationX": 15.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"LEdge4": { "offsetX": 0.0, "offsetY": -1.0, "offsetZ": 0.0 },
+						"LEdge6": { "offsetX": 0.0, "offsetY": -4.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": -22.5 }
+					}
+				}
+			]
+		},
 		{
 			"name": "idle",
 			"code": "idle",

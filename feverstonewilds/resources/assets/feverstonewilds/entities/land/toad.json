@@ -1,6 +1,7 @@
 {
 	"code": "toad",
 	"class": "EntityAgent",
+    "tags":  [ "animal", "huntable", "habitat-land" ],
 	"hitboxSize": { "x": 0.8, "y": 1.7 },
 	"deadHitboxSize": { "x": 1.7, "y": 0.5 },
 	"eyeHeight": 1.6,
@@ -131,6 +132,7 @@
 			},
 			{
 				"code": "taskai",
+				"aiCreatureType": "LandCreature",
 				"aitasks": [
 					{
 						"code": "seekentity",
@@ -169,7 +171,7 @@
 						"maxduration": 5000000,
 						"mincooldown": 10000,
 						"maxcooldown": 30000,
-						"animation": " ",
+						"animation": "Sleep",
 						"whenNotInEmotionState": "aggressiveondamage",
 						"duringDayTimeFrames": [
 							{
@@ -186,17 +188,6 @@
 						"stopOnHurt": true
 					},
 					{
-						"code": "seekfoodandeat",
-						"movespeed": 0.004,
-						"priority": 1.35,
-						"eatSound": "player/eat",
-						"eatTime": 1.5,
-						"animationSpeed": 1.4,
-						"animation": "walk",
-						"mincooldownHours": 1,
-						"maxcooldownHours": 4
-					},
-					{
 						"code": "idle",
 						"priority": 1.1,
 						"priorityForCancel": 1.35,
@@ -204,7 +195,7 @@
 						"maxduration": 24000,
 						"mincooldown": 9000,
 						"maxcooldown": 160000,
-						"animation": "sit",
+						"animation": "Sleep",
 						"stopOnNearbyEntityCodes": [ "player" ],
 						"stopRange": 5,
 						"animationSpeed": 0.75
@@ -219,28 +210,17 @@
 						"preferredLightLevel": 10
 					},
 					{
-						"code": "idle",
-						"priority": 0.9,
-						"minduration": 7000,
-						"maxduration": 45000,
-						"mincooldown": 6000,
-						"maxcooldown": 120000,
-						"priorityForCancel": 1.33,
-						"stopOnHurt": true,
-						"animation": "idleLook",
-						"animationSpeed": 0.75
-					},
-					{
 						"code": "lookaround",
 						"priority": 0.5
 					}
 				]
-			}
+			},
+			{ "code": "entitystatetags" }
 		],
 		"spawnconditions": {
 			"worldgen": {
 				"TriesPerChunk": {
-					"avg": 0.08,
+					"avg": 0.04,
 					"var": 0
 				},
 				"tryOnlySurface": true,
@@ -251,7 +231,7 @@
 					"avg": 1,
 					"var": 2
 				},
-				"insideBlockCodes": [ "game:air", "game:tallgrass-*", "game:water" ],
+				"insideBlockCodes": [ "game:air", "game:tallgrass-*", "game:freshwater-*" ],
 				"minTemp": -2,
 				"maxTemp": 25,
 				"minRain": 0.25,
@@ -260,16 +240,16 @@
 			"runtime": {
 				"group": "neutral",
 				"tryOnlySurface": true,
-				"chance": 0.0006,
-				"maxQuantity": 3,
-				"maxLightLevel": 6,
+				"chance": 0.0004,
+				"maxQuantity": 2,
+				"minLightLevel": 8,
 				"lightLevelType": "onlyBlockLight",
 				"groupSize": {
 					"dist": "verynarrowgaussian",
 					"avg": 3,
 					"var": 2
 				},
-				"insideBlockCodes": [ "game:air", "game:tallgrass-*", "game:water" ],
+				"insideBlockCodes": [ "game:air", "game:tallgrass-*", "game:freshwater-*" ],
 				"minTemp": -2,
 				"maxTemp": 25,
 				"minRain": 0.25,

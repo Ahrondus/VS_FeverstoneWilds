@@ -5,13 +5,15 @@
 	"variantgroups": [
 			{
 				"code": "type",
-				"states": ["bison-female", "bison-male", "bison-calf"]
+				"states": [ "bison-wild-female", "bison-wild-male",
+							"bison-tamed-female", "bison-tamed-male",
+							"bison-calf-wild", "bison-calf-tamed"]
 			}
 		],
 	"shapeByType": {
-		"*-male": { "base": "entity/land/bison-male" },
-		"*-female": { "base": "entity/land/bison-female" },
-		"*-calf": { "base": "entity/land/bison-calf" }
+		"*-male": { "base": "entity/land/mammal/bison-male" },
+		"*-female": { "base": "entity/land/mammal/bison-female" },
+		"*-calf-*": { "base": "entity/land/mammal/bison-calf" }
 	},
 	"texturesByType": {
 		"*": { "skin": { "base": "entity/land/bison/bisonskin1" } }
@@ -20,13 +22,21 @@
 		"general": ["*"],
 		"items": ["*"],
 		"creatures": ["*"]
+	},
+
+	"heldTpIdleAnimation": "holdunderarm",	
+	"guiTransformByType": {
+		"*-calf": {
+			"rotation": { "x": -2, "y": -56, "z": -176 },
+			"origin": { "x": 0.5, "y": 0.8, "z": 0.5 },
+			"scale": 0.8
 		},
-	
-	"guiTransform": {
-		"translation": { "x": 0, "y": 7, "z": 0 },
-		"rotation": { "x": 15, "y": -120, "z": -163 },
-		"origin": { "x": 0.5, "y": 0.8, "z": 0.5 },
-		"scale": 0.39
+		"*": {
+			"translation": { "x": 3, "y": 7, "z": 0 },
+			"rotation": { "x": 7, "y": -62, "z": -165 },
+			"origin": { "x": 0.5, "y": 0.8, "z": 0.5 },
+			"scale": 0.5
+		}
 	},
 	"fpHandTransform": {
 		"translation": { "x": -0.3, "y": -0.1, "z": 0.7 },
@@ -34,11 +44,18 @@
 		"origin": { "x": 0.5, "y": 0.8, "z": 0.5 },
 		"scale": 0.3
 	},
-	"tpHandTransform": {
-		"translation": { "x": -1.8, "y": -2.2, "z": -1.2 },
-		"rotation": { "x": 127, "y": 7, "z": -174 },
-		"origin": { "x": 0.5, "y": 0.8, "z": 0.5 },
-		"scale": 0.25
-	}
-	
+	"tpHandTransformByType": {
+		"*-calf": {
+			"translation": { "x": -1.2, "y": -1.1, "z": -0.9 },
+			"rotation": { "x": 180, "y": -4, "z": -175 },
+			"origin": { "x": 0.5, "y": 0.8, "z": 0.5 },
+			"scale": 0.4
+		},
+		"*": {
+			"translation": { "x": -1.9, "y": -2.5, "z": -1.4 },
+			"rotation": { "x": 180, "y": 0, "z": -167 },
+			"origin": { "x": 0.5, "y": 0.8, "z": 0.5 },
+			"scale": 0.25
+		}
+	}	
 }

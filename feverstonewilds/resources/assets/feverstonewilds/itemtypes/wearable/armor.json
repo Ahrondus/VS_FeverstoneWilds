@@ -1,29 +1,13 @@
 {
 	"code": "armor",
-	"class": "ItemWearable",
 	"variantgroups": [
-		{
-			"code": "bodypart",
-			"states": [ "head", "body", "legs" ]
-		},
-		{
-			"code": "type",
-			"states": [
-				"hunterblack"
-			]
-		}
-	],
-	"skipVariants": [
-	],
-	"allowedVariants": [
-		"armor-head-hunterblack",
-		"armor-body-hunterblack",
-		"armor-legs-hunterblack"
+		{ "code": "bodypart", "states": [ "head", "body", "legs" ] },
+		{ "code": "type", "states": [ "hunterblack" ] }
 	],
 	"shapeByType": {
-		"armor-head-hunterblack": { "base": "item/equipment/hunterhelmblack" },
-		"armor-body-hunterblack": { "base": "item/equipment/huntertopblack" },
-		"armor-legs-hunterblack": { "base": "item/equipment/hunterpantsblack" }
+		"armor-head-hunterblack": { "base": "entity/humanoid/seraph/armor/hunter/hunterhelm-black" },
+		"armor-body-hunterblack": { "base": "entity/humanoid/seraph/armor/hunter/huntertop-black" },
+		"armor-legs-hunterblack": { "base": "entity/humanoid/seraph/armor/hunter/hunterpants-black" }
 	},
 	"texturesByType": {
 		"*": {
@@ -31,21 +15,29 @@
 		}
 	},
 	"storageFlags": 128,
+	"behaviors": [ { "name": "Wearable" } ],
 	"attributes": {
-		"wearableAttachment": true,
-		"clothescategoryByType": {
+		"visibleDamageEffect": true,
+		"footStepSound":  "game:wearable/leather*",
+		"clothesCategoryByType": {
 			"armor-head-*": "armorhead",
 			"armor-body-*": "armorbody",
 			"armor-legs-*": "armorlegs"
 		},
-		"disableElementsByType": {
-			"armor-head-hunterblack": ["Hair tile upper part", "Ponytail1", "Hair", "hideme"]
-		},
+		"warmth": 1,
+		"attachableToEntity": {
+			"categoryCodeByType": {
+				"armor-head-*": "armorhead",
+				"armor-body-*": "armorbody",
+				"armor-legs-*": "armorlegs"
+			},
+			"disableElementsByType": {
+				"armor-head-hunterblack": ["hidehat", "ponytailhigh", "hair-uncovered", "sidehigh", "sidelow", "bangs", "Hair tile upper part"]
+			}
+		},		
 		"defaultProtLoss": {
 			"perTierRelativeProtectionLoss": [ 0.03, 0.15 ],
 			"perTierFlatDamageReductionLoss": [ 0.1, 0.2 ]
-		},
-		"footStepSoundByType": {
 		},
 		"protectionModifiersByType": {
 			"*-hunterblack": {
@@ -72,9 +64,9 @@
 	},
 	"renderAlphaTest": 0.25,
 	"durabilityByType": {
-		"*-hunterblack": 900
+		"*-hunterblack": 450
 	},
-
+	"combustibleProps": { },
 	"fpHandTransformByType": {
 		"armor-head-*": {
 			"translation": {
@@ -299,5 +291,4 @@
 			"scale": 3.1
 		}
 	}
-
 }

@@ -1,0 +1,32 @@
+[
+    {
+        "ingredientPattern": "BIT,IKT,BIT",
+        "ingredients": {
+            "B": { "type": "item", "code": "game:bone", "quantity": 2 },
+            "I": { "type": "item", "code": "feverstonewilds:bone-big", "quantity": 1 },
+            "T": { "type": "item", "code": "game:{bowstring}", "quantity": 1 },
+            "K": { "type": "item", "code": "game:knife-*", "isTool": true }
+        },
+        "allowedVariants": {
+            "bowstring": [ "flaxtwine", "rope" ]
+        },
+        "width": 3,
+        "height": 3,
+        "output": { "type": "item", "code": "feverstonewilds:bonebow-primitive", "quantity": 1 }
+    },
+    {
+        "ingredientPattern": "SLB",
+        "ingredients": {
+            "S": { "type": "item", "code": "game:saw-*", "isTool": true },
+            "L": { "type": "item", "code": "game:leather-normal-plain", "quantity": 2 },
+            "B": { "type": "item", "code": "feverstonewilds:bonebow-primitive" }
+        },
+        "allowedVariants": {
+            "bowstring": [ "game:flaxtwine", "game:rope" ]
+        },
+        "shapeless": true,
+        "width": 1,
+        "height": 3,
+        "output": { "type": "item", "code": "feverstonewilds:bonebow-reinforced", "quantity": 1 }
+    }
+]
