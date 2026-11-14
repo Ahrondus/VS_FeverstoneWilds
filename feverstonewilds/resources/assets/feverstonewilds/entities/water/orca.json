@@ -1,21 +1,4 @@
 {
-<<<<<<<< HEAD:feverstonewilds/resources/assets/feverstonewilds/entities/water/eel.json
-	"code": "eel",
-	"class": "EntityFish",
-	"hitboxSize": { "x": 1.2, "y": 1 },
-	"eyeHeight": 0.9,
-	"drops": [],
-	"habitat": "underwater",
-	"client": {
-		"renderer": "Shape",
-		"size": 0.7,
-		"shape": { "base": "entity/water/eel" },
-		"texture": { "base": "entity/water/eel/eelskin1",
-		            "alternates": [ { "base": "entity/water/eel/eelskin2" },
-									  { "base": "entity/water/eel/eelskin3" },
-									  { "base": "entity/water/eel/eelskin4" },
-									  { "base": "entity/water/eel/eelskin5" }
-========
 	"code": "orca",
 	"class": "EntityAgent",
     "hitBoxSize": { "x": 3.5, "y": 2 },
@@ -35,7 +18,6 @@
 									  { "base": "entity/water/orca/orcaskin3" },
 									  { "base": "entity/water/orca/orcaskin4" },
 									  { "base": "entity/water/orca/orcaskin5" }
->>>>>>>> Dev-Rondo:feverstonewilds/resources/assets/feverstonewilds/entities/water/orca.json
 									]
 		},
 		"behaviors": [
@@ -44,11 +26,7 @@
 			{ "code": "interpolateposition" },
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
 			{ "code": "harvestable" },
-<<<<<<<< HEAD:feverstonewilds/resources/assets/feverstonewilds/entities/water/eel.json
-			{ "code": "despawn", "minPlayerDistance": 18, "minSeconds": 300, "belowLightLevel": 0 }
-========
 			{ "code": "despawn", "minPlayerDistance": 30, "minSeconds": 600 }
->>>>>>>> Dev-Rondo:feverstonewilds/resources/assets/feverstonewilds/entities/water/orca.json
 		],
 		"animations": [
 			{
@@ -85,18 +63,11 @@
 	},
 	"server": {
 		"behaviors": [
-			{ "code": "repulseagents" }, 
-<<<<<<<< HEAD:feverstonewilds/resources/assets/feverstonewilds/entities/water/eel.json
-			{ "code": "controlledphysics", "stepHeight": 3 }, 
-			{ "code": "despawn", "minPlayerDistance": 18, "minSeconds": 300, "belowLightLevel": 0 },
-			{ "code": "health", "maxhealth": 15 },
-			{ "code": "deaddecay", "hoursToDecay": 96 },
-========
+			{ "code": "repulseagents" },
 			{ "code": "controlledphysics", "stepHeight": 0 }, 
 			{ "code": "despawn", "minPlayerDistance": 30, "minSeconds": 600 },
 			{ "code": "health", "maxhealth": 85 },
 			{ "code": "deaddecay", "hoursToDecay": 96, "decayedBlock": "carcass-large" },
->>>>>>>> Dev-Rondo:feverstonewilds/resources/assets/feverstonewilds/entities/water/orca.json
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
 			{ "code": "harvestable", "drops": [
 					{
@@ -127,12 +98,8 @@
 				"aitasks": [
 				{
 						"code": "meleeattack",
-<<<<<<<< HEAD:feverstonewilds/resources/assets/feverstonewilds/entities/water/eel.json
-						"entityCodes": ["chicken-baby", "discus"],
-========
 						"entityCodes": ["shark-*", "dolphin", "drifter-*", "chicken-*", "fox", "buromenfish", "discus", "pink-salmon", "wolf-*",
 						"bear-*", "horse-*", "hare-*"],
->>>>>>>> Dev-Rondo:feverstonewilds/resources/assets/feverstonewilds/entities/water/orca.json
 						"priority": 2,
 						"damage": 25,
 						"damageTier": 3,
@@ -158,9 +125,6 @@
 					},
 					{
 						"code": "seekentity",
-<<<<<<<< HEAD:feverstonewilds/resources/assets/feverstonewilds/entities/water/eel.json
-						"entityCodes": ["chicken-baby", "discus"],
-========
 						"entityCodes": ["player"],
 						"priority": 1.51,
 						"movespeed": 0.032,
@@ -178,7 +142,6 @@
 						"code": "seekentity",
 						"entityCodes": ["shark-*", "dolphin", "drifter-*", "chicken-*", "fox", "buromenfish", "discus", "pink-salmon", "wolf-*", 
 						"bear-*", "horse-*", "hare-*"],
->>>>>>>> Dev-Rondo:feverstonewilds/resources/assets/feverstonewilds/entities/water/orca.json
 						"priority": 1.5,
 						"movespeed": 0.1,
 						"seekingRange": 15,
@@ -228,35 +191,8 @@
 						"priorityForCancel": 1.35,
 						"movespeed": 0.055,
 						"animation": "swimfast",
-<<<<<<<< HEAD:feverstonewilds/resources/assets/feverstonewilds/entities/water/eel.json
-						"animationSpeed": 2.3
-					},
-					{
-						"code": "seekfoodandeat",
-						"movespeed": 0.010,
-						"priority": 1.25,
-						"eatTime": 2.3,
-						"eatLooseItems": true,
-						"eatItemCodes": ["game:redmeat-*", "game:fish-*", "game:poultry-*", "game:bushmeat-*"],
-						"eatItemCatagories": ["Protein"],
-						"animationSpeed": 1.4,
-						"animation": "swim",
-						"eatAnimation": "attack",
-						"mincooldownHours": 1,
-						"maxcooldownHours": 4
-					},
-					{
-						"code": "idle",
-						"priority": 0.9,
-						"minduration": 500,
-						"maxduration": 2000,
-						"mincooldown": 2000,
-						"maxcooldown": 30000,
-						"animation": "eat"
-========
 						"animationSpeed": 2.3,
 						"sound": "orca/orcaswim"
->>>>>>>> Dev-Rondo:feverstonewilds/resources/assets/feverstonewilds/entities/water/orca.json
 					},
 					{
 						"code": "idle",
@@ -273,14 +209,6 @@
 		],
 		"spawnconditions": {
 			"worldgen": {
-<<<<<<<< HEAD:feverstonewilds/resources/assets/feverstonewilds/entities/water/eel.json
-				"TriesPerChunk": { "avg": 0.035, "var": 0 },
-				"tryOnlySurface": true,
-				"groupSize": { "dist": "verynarrowgaussian", "avg": 3, "var": 1 },
-				"insideBlockCodes": ["game:water-*"],
-				"minTemp": -10,
-				"maxTemp": 30
-========
 				"TriesPerChunk": { "avg": 0.045, "var": 0 },
 				"tryOnlySurface": true,
 				"minLightLevel": 8,
@@ -289,25 +217,17 @@
 				"insideBlockCodes": [ "game:saltwater-still-*"],
 				"minTemp": -30,
 				"maxTemp": 40
->>>>>>>> Dev-Rondo:feverstonewilds/resources/assets/feverstonewilds/entities/water/orca.json
 			},
 			"runtime": {
 				"group": "neutral",
 				"maxQuantity": 8,
 				"chance": 0.00001,
 				"tryOnlySurface": true,
-<<<<<<<< HEAD:feverstonewilds/resources/assets/feverstonewilds/entities/water/eel.json
-				"groupSize": { "dist": "verynarrowgaussian", "avg": 3, "var": 1 },
-				"insideBlockCodes": ["game:water-*"],
-				"minTemp": -10,
-				"maxTemp": 30
-========
 				"maxLightLevel": 22,
 				"groupSize": { "dist": "verynarrowgaussian", "avg": 1.5, "var": 0.5 },
 				"insideBlockCodes": [ "game:saltwater-still-*"],
 				"minTemp": -30,
 				"maxTemp": 40
->>>>>>>> Dev-Rondo:feverstonewilds/resources/assets/feverstonewilds/entities/water/orca.json
 			}
 		}
 	},
