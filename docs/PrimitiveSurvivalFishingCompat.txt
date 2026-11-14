@@ -1,0 +1,44 @@
+Feverstone Wilds: optional Primitive Survival spear-fishing compatibility
+
+Target verified: Vintage Story 1.22.7, FSW 3.0.1, Primitive Survival 5.1.4.
+
+Integration
+- src/Compatibility/PrimitiveSurvivalFishingCompat.cs is an automatically discovered ModSystem.
+- The project references Lib/0Harmony.dll shipped with Vintage Story, with Private=false.
+- No Primitive Survival assembly reference, NuGet package, or modinfo dependency is added.
+- Without Primitive Survival installed, Start returns without registering any patches.
+- With PS installed, reflection locates three methods; missing signatures disable the integration with a warning.
+- Existing spearfswfish.json remains useful: its seven attribute variants match the entity-code mapping and enable creative occupied spears. It is not the catch whitelist.
+
+How it works
+1. A prefix intercepts PS's hit handler only for the seven mapped FSW entities. Other targets use PS unchanged.
+2. The spear's existing fish attribute stores the full FSW entity code. The corresponding raw fish item is resolved before removing the entity.
+3. Removing a catch spawns the mapped FSW raw fish, then clears the attribute. This runs on the server; clients receive the changed stack.
+4. A mesh prefix asks PS to build an empty spear from a cloned stack, then appends the mapped FSW item mesh using its own textures and the target atlas. PS's existing caching continues to operate.
+5. The patch has its own Harmony owner ID and is removed when the last participating ModSystem disposes. Client/server instances in singleplayer share one patch set.
+
+Supported fish
+Discus; freshwater/saltwater buromenfish, ghostfish, and eel. Stingrays are not included because they were absent from the requested JSON patch.
+
+Building and installation
+Build and package FSW normally. Do not bundle Primitive Survival or 0Harmony.dll in the mod archive; the game supplies Harmony. Install the rebuilt FSW on the client and server. No additional compatibility mod is required.
+The existing VINTAGE_STORY build property must point to the installed game directory.
+
+Verification completed
+- Compilation against installed VS libraries.
+- All three Harmony prefixes attached and detached successfully against the installed PS 5.1.4 DLL in a separate verification process.
+- No interactive gameplay or rendering test was performed.
+
+In-game checks still required
+- Restart the game after replacing the FSW build.
+- Confirm the log says: [FSW] Optional Primitive Survival fishing compatibility enabled.
+- Catch each of the seven variants with both wood and bamboo spears; inspect the held fish and hold right-click to remove it.
+- Check the correct raw fish item drops, and the spear returns to empty.
+- Check held, inventory, and ground-stored occupied spear rendering. Mesh placement uses PS's transform; species-specific size/position tuning may be needed.
+- Check a one-durability spear: it should break and drop the caught fish.
+- Check a vanilla fish, singleplayer world reload, and multiplayer.
+- Launch without PS and confirm FSW still loads normally.
+- Remove all FSW fish from spears before disabling this compatibility in a later build; unmodified PS cannot decode those saved fish attributes.
+
+Future maintenance
+The reflection signatures are checked, but future PS releases could preserve signatures while changing behavior. Recheck compatibility after PS updates. Add new species to FishItems and the conditional JSON variant list together.
