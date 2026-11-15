@@ -35,5 +35,19 @@ namespace FeverstoneWilds
 
             ModConfig.ReadConfig(api);
 		}
+
+		private void OnFlightInput(IServerPlayer player, FlightInputPacket packet)
+		{
+			if (packet == null) return;
+
+			var entity = player.Entity.World.GetEntityById(packet.EntityId);
+			var flight = entity?.GetBehavior<BehaviorFlight>();
+			IMountable mountable = entity?.GetInterface<IMountable>();
+			IMountableSeat seat = mountable == null ? null : MountableUtil.GetSeatOfMountedEntity(mountable, player.Entity);
+
+			if (flight == null || !flight.PlayerFlightEnabled || seat?.CanControl != true) return;
+
+			flight.SetPlayerFlightInput(packet.Action, packet.Active);
+		}
 	}
 }
