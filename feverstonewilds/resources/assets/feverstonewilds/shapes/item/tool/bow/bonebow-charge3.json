@@ -6,17 +6,15 @@
 	"textureWidth": 8,
 	"textureHeight": 8,
 	"textureSizes": {
-		"string": [16,16],
-		"arrow": [8,8],
+		"iron": [16,16],
 		"aged": [16,16],
-		"feather2": [16,16],
-		"bone": [16,16],
-		"stick": [16,16],
-		"beeswax": [8,8],
-		"leather": [16,16]
+		"feather": [16,16]
 	},
 	"textures": {
-		"bonebowskin": "items/tool/bonebowskin"
+		"feather": "game:item/tool/feather",
+		"aged": "game:block/wood/debarked/aged",
+		"iron": "game:block/metal/ingot/iron",
+		"bonebowskin": "items/tool/bow/bonebowskin"
 	},
 	"elements": [
 		{
@@ -41,7 +39,7 @@
 					"shade": false,
 					"rotationOrigin": [ 0.7, 0.0, 1.0 ],
 					"faces": {
-						"south": { "texture": "#feather2", "uv": [ 6.5, 11.0, 9.5, 15.0 ], "rotation": 90 }
+						"south": { "texture": "#feather", "uv": [ 6.5, 11.0, 9.5, 15.0 ], "rotation": 90 }
 					}
 				},
 				{
@@ -52,7 +50,7 @@
 					"rotationOrigin": [ 0.9, 1.0, 0.0 ],
 					"rotationX": -90.0,
 					"faces": {
-						"south": { "texture": "#feather2", "uv": [ 6.5, 10.5, 9.5, 14.5 ], "rotation": 90 }
+						"south": { "texture": "#feather", "uv": [ 6.5, 10.5, 9.5, 14.5 ], "rotation": 90 }
 					}
 				},
 				{

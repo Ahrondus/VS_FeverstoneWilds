@@ -63,7 +63,7 @@
 	},
 	"server": {
 		"behaviors": [
-			{ "code": "repulseagents" },
+			{ "code": "repulseagents" }, 
 			{ "code": "controlledphysics", "stepHeight": 0 }, 
 			{ "code": "despawn", "minPlayerDistance": 30, "minSeconds": 600 },
 			{ "code": "health", "maxhealth": 85 },
@@ -113,6 +113,7 @@
 						"animationSpeed": 2.5,
 						"sound": ""
 					},
+					
 					{
 						"code": "fleeentity",
 						"entityCodes": ["player"],
@@ -160,7 +161,7 @@
 						"entityCodes": ["player"],
 						"priority": 1.49,
 						"movespeed": 0.1,
-						"seekingRange": 8,
+						"seekingRange": 15,
 						"animation": "swim",
 						"leapAtTarget": true,
 						"leapAnimation": null,
@@ -220,7 +221,7 @@
 			},
 			"runtime": {
 				"group": "neutral",
-				"maxQuantity": 8,
+				"maxQuantity": 2,
 				"chance": 0.00001,
 				"tryOnlySurface": true,
 				"maxLightLevel": 22,

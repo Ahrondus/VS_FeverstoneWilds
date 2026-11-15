@@ -608,6 +608,37 @@
             }
         },
         "behaviors": [
+{
+  "code": "fsweggreproduction",
+  "enabledByType": { "*-tamed-female": true, "*": false },
+  "portionsEatenForMultiply": 12,
+  "multiplyCooldownDaysMin": 5,
+  "multiplyCooldownDaysMax": 12,
+  "eatAnyway": true,
+  "nesting": {
+    "nestType": "feverstonewilds:griffon",
+    "readyNest": "feverstonewilds:griffonnest-ready",
+    "constructionBlocks": [ "feverstonewilds:griffonnest-construction1", "feverstonewilds:griffonnest-construction2" ],
+    "eggItem": "feverstonewilds:creature-griffon-egg",
+    "eggEntity": "feverstonewilds:griffon-egg",
+    "chickCodes": [ "feverstonewilds:griffon-cub-tamed" ],
+    "mateCode": "feverstonewilds:griffon-tamed-male",
+    "mateRange": 10,
+    "clutchSize": 3,
+    "maxNestsInArea": 3,
+    "nestAreaRadius": 16,
+    "incubationDays": 12,
+    "laySeconds": 5,
+    "digSeconds": 3,
+    "minSearchDistance": 4,
+    "maxSearchDistance": 6,
+    "movespeed": 0.025,
+    "searchAnimation": "walk",
+    "digAnimation": "eat",
+    "broodAnimation": "idle"
+  }
+},
+
                 { "code": "repulseagents" },
                 { "code": "controlledphysics" },
                 { "code": "floatupwhenstuck" },
@@ -640,6 +671,13 @@
                 { "code": "taskai",
                     "aiCreatureType": "LandCreature",
                     "aitasks": [
+                        {
+                            "code": "fswnesting",
+                            "enabledByType": { "*-tamed-female": true, "*": false },
+                            "priority": 2.5,
+                            "slot": 0
+                        },
+
                         {
                             "code": "cometoowner",
                             "priority": 4,

@@ -60,7 +60,7 @@
 	"server": {
 		"behaviors": [
 			{ "code": "repulseagents" }, 
-			{ "code": "controlledphysics", "stepHeight": 1.1251 },
+			{ "code": "controlledphysics", "stepHeight": 1.1251 }, 
 			{ "code": "despawn", "minPlayerDistance": 30, "minSeconds": 600 },
 			{ "code": "health", "maxhealth": 4 },
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },

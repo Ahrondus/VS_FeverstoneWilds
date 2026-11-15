@@ -5,6 +5,7 @@ using FeverstoneWilds.Flight.AiTask;
 using FeverstoneWilds.Flight.Behavior;
 using Vintagestory.API.Server;
 using Vintagestory.GameContent;
+using FeverstoneWilds.Nesting;
 
 namespace FeverstoneWilds
 {
@@ -14,9 +15,13 @@ namespace FeverstoneWilds
 		{
 			base.Start(api);
 
-			//api.RegisterBlockClass("BlockAnimalNestLarge", typeof(BlockAnimalNest));
+			api.RegisterBlockClass("BlockAnimalNestLarge", typeof(BlockAnimalNest));
 
-			//api.RegisterBlockEntityClass("AnimalNestLarge", typeof (BlockEntityAnimalNestLarge));
+			api.RegisterBlockEntityClass("AnimalNestLarge", typeof(BlockEntityAnimalNestLarge));
+			api.RegisterBlockClass("FswBreedingNest", typeof(BlockAnimalNest));
+			api.RegisterBlockEntityClass("FswBreedingNest", typeof(BlockEntityFswBreedingNest));
+			api.RegisterEntityBehaviorClass("fsweggreproduction", typeof(EntityBehaviorFswReproduction));
+			api.RegisterEntityBehaviorClass("fswegg", typeof(EntityBehaviorFswEgg));
 
 			api.RegisterEntityBehaviorClass("plantSapling", typeof(BehaviorPlantSapling));
 			api.RegisterEntityBehaviorClass("flight", typeof(BehaviorFlight));
@@ -25,6 +30,7 @@ namespace FeverstoneWilds
 
 			if (api is ICoreServerAPI serverApi)
 			{
+				serverApi.RegisterAiTask<AiTaskFswNesting>("fswnesting");
 				serverApi.Network.RegisterChannel(FlightInputNetwork.ChannelName)
 					.RegisterMessageType<FlightInputPacket>()
 					.SetMessageHandler<FlightInputPacket>(OnFlightInput);
@@ -34,6 +40,12 @@ namespace FeverstoneWilds
 			}
 
             ModConfig.ReadConfig(api);
+		}
+
+		public override void StartClientSide(Vintagestory.API.Client.ICoreClientAPI capi)
+		{
+			base.StartClientSide(capi);
+			FlightInputNetwork.RegisterClient(capi);
 		}
 
 		private void OnFlightInput(IServerPlayer player, FlightInputPacket packet)

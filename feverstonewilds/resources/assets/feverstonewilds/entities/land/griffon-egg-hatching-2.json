@@ -50,7 +50,18 @@
   "server": {
     "behaviors": [
       {
-        "code": "griffoneggpickup"
+        "code": "fswegg",
+        "eggItem": "feverstonewilds:creature-griffon-egg",
+        "brokenEntity": "feverstonewilds:griffon-egg-broken",
+        "stageEntities": [
+          "feverstonewilds:griffon-egg",
+          "feverstonewilds:griffon-egg-hatching-1",
+          "feverstonewilds:griffon-egg-hatching-2"
+        ],
+        "chickCodes": [
+          "feverstonewilds:griffon-cub-tamed"
+        ],
+        "incubationDays": 12
       },
       {
         "code": "passivephysics",
@@ -60,13 +71,6 @@
         "code": "health",
         "currenthealth": 2,
         "maxhealth": 2
-      },
-      {
-        "code": "grow",
-        "hoursToGrow": 96,
-        "adultEntityCodes": [
-          "feverstonewilds:griffon-cub-tamed"
-        ]
       },
       {
         "code": "deaddecay",

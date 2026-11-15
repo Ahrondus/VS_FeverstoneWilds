@@ -72,6 +72,7 @@ public class BehaviorFlight : EntityBehavior
     private string playerFlightAscendAnimation;
     private string playerFlightDescendAnimation;
     private long nextStateChangeMs;
+    private long nestingGroundUntilMs;
     private Vec3d targetPosition;
     private bool hasTarget;
     private bool isLanding;
@@ -103,6 +104,14 @@ public class BehaviorFlight : EntityBehavior
     public BehaviorFlight(Entity entity) : base(entity) { }
 
     public bool IsFlying => entity.WatchedAttributes.GetBool(FlyingAttribute);
+
+    // Nest AI requests an ordinary landing, then keeps automatic takeoff paused.
+    public void HoldGroundForNesting()
+    {
+        if (entity.World.Side != EnumAppSide.Server || isPlayerControlledFlight) return;
+        nestingGroundUntilMs = entity.World.ElapsedMilliseconds + 5000;
+        if (IsFlying && !isLanding) BeginLanding();
+    }
 
     public bool IsLanding => isLanding;
 
@@ -696,6 +705,11 @@ public class BehaviorFlight : EntityBehavior
 
     private void UpdateAutomaticFlightState()
     {
+        if (entity.World.ElapsedMilliseconds < nestingGroundUntilMs)
+        {
+            nextStateChangeMs = 0;
+            return;
+        }
         if (!autoFlight) return;
 
         if (!entity.Alive)
