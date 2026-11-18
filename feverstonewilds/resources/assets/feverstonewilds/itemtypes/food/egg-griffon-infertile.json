@@ -1,0 +1,28 @@
+{
+  "code": "egg-griffon-infertile",
+  "class": "Item",
+  "maxStackSize": 32,
+  "shape": { "base": "feverstonewilds:block/egg/griffon-1egg" },
+  "textures": { "griffonegg": { "base": "feverstonewilds:block/nests/griffonegg" } },
+  "creativeinventory": { "general": ["*"], "items": ["*"], "fswilds": ["*"] },
+  "nutritionProps": { "satiety": 200, "foodcategory": "Protein" },
+  "attributes": {
+    "nutritionPropsWhenInMeal": { "satiety": 400, "foodcategory": "Protein" },
+    "foodTags": ["egg"]
+  },
+  "materialDensity": 200,
+  "guiTransform": {
+    "rotation": { "x": -30, "y": -20, "z": 0 },
+    "origin": { "x": 0.5, "y": 0, "z": 0.5 },
+    "scale": 3.5
+  },
+  "tpHandTransform": { "translation": { "x": -0.8, "y": -0.25, "z": -0.6 }, "scale": 0.71 },
+  "groundTransform": { "origin": { "x": 0.5, "y": 0, "z": 0.5 }, "scale": 3 },
+  "transitionableProps": [ {
+    "type": "Perish",
+    "freshHours": { "avg": 120 },
+    "transitionHours": { "avg": 24 },
+    "transitionedStack": { "type": "item", "code": "game:rot" },
+    "transitionRatio": 0.5
+  } ]
+}

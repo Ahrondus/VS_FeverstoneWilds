@@ -1,0 +1,576 @@
+{
+  "editor": {
+    "editorVersion": "VSMC2v0.5.0",
+    "allAngles": true,
+    "backdrops": [],
+    "attachments": []
+  },
+  "textureWidth": 16,
+  "textureHeight": 16,
+  "textureSizes": {
+    "oak": [
+      16,
+      16
+    ],
+    "feather": [
+      16,
+      16
+    ],
+    "twigsblock": [
+      16,
+      16
+    ]
+  },
+  "textures": {
+    "oak": "game:block/wood/debarked/oak",
+    "feather": "game:item/resource/feather",
+    "twigsblock": "feverstonewilds:block/nests/twigsblock",
+    "griffonegg": "feverstonewilds:block/nests/griffonegg"
+  },
+  "elements": [
+    {
+      "name": "Origin",
+      "from": [
+        7.5,
+        0.0,
+        8.0
+      ],
+      "to": [
+        7.5,
+        0.0,
+        8.0
+      ],
+      "faces": {
+        "north": {
+          "texture": "#",
+          "uv": [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          "enabled": false,
+          "autoUv": false,
+          "snapUV": false
+        },
+        "east": {
+          "texture": "#",
+          "uv": [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          "enabled": false,
+          "autoUv": false,
+          "snapUV": false
+        },
+        "south": {
+          "texture": "#",
+          "uv": [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          "enabled": false,
+          "autoUv": false,
+          "snapUV": false
+        },
+        "west": {
+          "texture": "#",
+          "uv": [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          "enabled": false,
+          "autoUv": false,
+          "snapUV": false
+        },
+        "up": {
+          "texture": "#",
+          "uv": [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          "enabled": false,
+          "autoUv": false,
+          "snapUV": false
+        },
+        "down": {
+          "texture": "#",
+          "uv": [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          "enabled": false,
+          "autoUv": false,
+          "snapUV": false
+        }
+      },
+      "rotationOrigin": [
+        8.0,
+        0.0,
+        8.0
+      ],
+      "uv": [
+        0.0,
+        0.0
+      ],
+      "children": [
+        {
+          "name": "Twig_Group",
+          "from": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "to": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "faces": {
+            "north": {
+              "texture": "#",
+              "uv": [
+                0.0,
+                0.0,
+                1.0,
+                1.0
+              ],
+              "enabled": false
+            },
+            "east": {
+              "texture": "#",
+              "uv": [
+                0.0,
+                0.0,
+                1.0,
+                1.0
+              ],
+              "enabled": false
+            },
+            "south": {
+              "texture": "#",
+              "uv": [
+                0.0,
+                0.0,
+                1.0,
+                1.0
+              ],
+              "enabled": false
+            },
+            "west": {
+              "texture": "#",
+              "uv": [
+                0.0,
+                0.0,
+                1.0,
+                1.0
+              ],
+              "enabled": false
+            },
+            "up": {
+              "texture": "#",
+              "uv": [
+                0.0,
+                0.0,
+                1.0,
+                1.0
+              ],
+              "enabled": false
+            },
+            "down": {
+              "texture": "#",
+              "uv": [
+                0.0,
+                0.0,
+                1.0,
+                1.0
+              ],
+              "enabled": false
+            }
+          },
+          "rotationOrigin": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "uv": [
+            0.0,
+            0.0
+          ],
+          "children": [
+            {
+              "name": "Twigs_1",
+              "from": [
+                -11.5,
+                0.0,
+                -5.0
+              ],
+              "to": [
+                -7.5,
+                3.0,
+                5.0
+              ],
+              "faces": {
+                "north": {
+                  "texture": "#twigsblock",
+                  "uv": [
+                    0.0,
+                    0.0,
+                    4.0,
+                    3.0
+                  ]
+                },
+                "east": {
+                  "texture": "#twigsblock",
+                  "uv": [
+                    0.0,
+                    0.0,
+                    10.0,
+                    3.0
+                  ]
+                },
+                "south": {
+                  "texture": "#twigsblock",
+                  "uv": [
+                    0.0,
+                    0.0,
+                    4.0,
+                    3.0
+                  ]
+                },
+                "west": {
+                  "texture": "#twigsblock",
+                  "uv": [
+                    0.0,
+                    0.0,
+                    10.0,
+                    3.0
+                  ]
+                },
+                "up": {
+                  "texture": "#twigsblock",
+                  "uv": [
+                    0.0,
+                    0.0,
+                    10.0,
+                    4.0
+                  ],
+                  "windMode": [
+                    -1,
+                    -1,
+                    -1,
+                    -1
+                  ],
+                  "rotation": 90.0
+                },
+                "down": {
+                  "texture": "#",
+                  "uv": [
+                    0.0,
+                    0.0,
+                    1.0,
+                    1.0
+                  ],
+                  "enabled": false,
+                  "autoUv": false,
+                  "snapUV": false
+                }
+              },
+              "rotationOrigin": [
+                -11.5,
+                0.0,
+                -5.0
+              ],
+              "uv": [
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "name": "Twigs_2",
+              "from": [
+                -4.5,
+                0.0,
+                -12.1716
+              ],
+              "to": [
+                -0.5,
+                3.01,
+                -2.1716
+              ],
+              "faces": {
+                "north": {
+                  "texture": "#twigsblock",
+                  "uv": [
+                    0.0,
+                    0.0,
+                    4.0,
+                    3.0
+                  ]
+                },
+                "east": {
+                  "texture": "#twigsblock",
+                  "uv": [
+                    0.0,
+                    0.0,
+                    10.0,
+                    3.0
+                  ]
+                },
+                "south": {
+                  "texture": "#twigsblock",
+                  "uv": [
+                    0.0,
+                    0.0,
+                    4.0,
+                    3.0
+                  ]
+                },
+                "west": {
+                  "texture": "#twigsblock",
+                  "uv": [
+                    0.0,
+                    0.0,
+                    10.0,
+                    3.0
+                  ]
+                },
+                "up": {
+                  "texture": "#twigsblock",
+                  "uv": [
+                    0.0,
+                    0.0,
+                    10.0,
+                    4.0
+                  ],
+                  "windMode": [
+                    -1,
+                    -1,
+                    -1,
+                    -1
+                  ],
+                  "rotation": 90.0
+                },
+                "down": {
+                  "texture": "#",
+                  "uv": [
+                    0.0,
+                    0.0,
+                    1.0,
+                    1.0
+                  ],
+                  "enabled": false,
+                  "autoUv": false,
+                  "snapUV": false
+                }
+              },
+              "rotationOrigin": [
+                -4.5,
+                0.0,
+                -12.1716
+              ],
+              "rotationY": -45.0,
+              "uv": [
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "name": "Twigs_3",
+              "from": [
+                -4.5,
+                0.0,
+                -12.0
+              ],
+              "to": [
+                5.5,
+                3.0,
+                -8.0
+              ],
+              "faces": {
+                "north": {
+                  "texture": "#twigsblock",
+                  "uv": [
+                    0.0,
+                    0.0,
+                    10.0,
+                    3.0
+                  ]
+                },
+                "east": {
+                  "texture": "#twigsblock",
+                  "uv": [
+                    0.0,
+                    0.0,
+                    4.0,
+                    3.0
+                  ]
+                },
+                "south": {
+                  "texture": "#twigsblock",
+                  "uv": [
+                    0.0,
+                    0.0,
+                    10.0,
+                    3.0
+                  ]
+                },
+                "west": {
+                  "texture": "#twigsblock",
+                  "uv": [
+                    0.0,
+                    0.0,
+                    4.0,
+                    3.0
+                  ]
+                },
+                "up": {
+                  "texture": "#twigsblock",
+                  "uv": [
+                    0.0,
+                    0.0,
+                    10.0,
+                    4.0
+                  ]
+                },
+                "down": {
+                  "texture": "#",
+                  "uv": [
+                    0.0,
+                    0.0,
+                    1.0,
+                    1.0
+                  ],
+                  "enabled": false,
+                  "autoUv": false,
+                  "snapUV": false
+                }
+              },
+              "rotationOrigin": [
+                -4.5,
+                0.0,
+                -12.0
+              ],
+              "uv": [
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "name": "Twigs_Floor",
+              "from": [
+                -8.0,
+                1.0,
+                -8.0
+              ],
+              "to": [
+                9.0,
+                1.0,
+                8.0
+              ],
+              "faces": {
+                "north": {
+                  "texture": "#",
+                  "uv": [
+                    0.0,
+                    0.0,
+                    1.0,
+                    1.0
+                  ],
+                  "enabled": false,
+                  "autoUv": false,
+                  "snapUV": false
+                },
+                "east": {
+                  "texture": "#",
+                  "uv": [
+                    0.0,
+                    0.0,
+                    1.0,
+                    1.0
+                  ],
+                  "enabled": false,
+                  "autoUv": false,
+                  "snapUV": false
+                },
+                "south": {
+                  "texture": "#",
+                  "uv": [
+                    0.0,
+                    0.0,
+                    1.0,
+                    1.0
+                  ],
+                  "enabled": false,
+                  "autoUv": false,
+                  "snapUV": false
+                },
+                "west": {
+                  "texture": "#",
+                  "uv": [
+                    0.0,
+                    0.0,
+                    1.0,
+                    1.0
+                  ],
+                  "enabled": false,
+                  "autoUv": false,
+                  "snapUV": false
+                },
+                "up": {
+                  "texture": "#twigsblock",
+                  "uv": [
+                    0.0,
+                    0.75,
+                    9.375,
+                    9.25
+                  ],
+                  "windMode": [
+                    -1,
+                    -1,
+                    -1,
+                    -1
+                  ],
+                  "autoUv": false,
+                  "snapUV": false
+                },
+                "down": {
+                  "texture": "#",
+                  "uv": [
+                    0.0,
+                    0.0,
+                    1.0,
+                    1.0
+                  ],
+                  "enabled": false,
+                  "autoUv": false,
+                  "snapUV": false
+                }
+              },
+              "rotationOrigin": [
+                -8.0,
+                1.0,
+                -8.0
+              ],
+              "uv": [
+                0.0,
+                0.0
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "animations": []
+}

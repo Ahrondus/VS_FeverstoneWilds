@@ -428,6 +428,8 @@
 									{ "base": "entity/land/bison/bisonskin6" } ] }
 		},
 		"behaviors": [
+            { "code": "fswildsbehavior", "enabledByType": { "*-tamed-*": true, "*-tamed": true, "*": false } },
+            { "code": "nametag", "enabledByType": { "*-tamed-*": true, "*-tamed": true, "*": false } },
 			{ "code": "gait",
             	"enabledByType": { "*-tamed-*": true, "*": false } },
 			{ "code": "rideable",
@@ -466,6 +468,7 @@
 			}
 		],
 		"animations": [
+            { "code": "attack", "animation": "attack", "animationSpeed": 2, "weight": 50, "blendMode": "Average", "supressDefaultAnimation": true },
 			{
 				"code": "hurt",
 				"animation": "hurt", 
@@ -535,6 +538,8 @@
 			}
 		},
 		"behaviors": [
+            { "code": "fswildsbehavior", "enabledByType": { "*-tamed-*": true, "*-tamed": true, "*": false } },
+            { "code": "nametag", "enabledByType": { "*-tamed-*": true, "*-tamed": true, "*": false } },
 			{ "code": "gait",
             	"enabledByType": { "*-tamed-*": true, "*": false } },
 			{ "code": "rideable",
@@ -613,6 +618,8 @@
 				"code": "taskai",
 				"aiCreatureType": "LandCreature",
 				"aitasks": [
+            { "code": "fswfollowowner", "enabledByType": { "*-tamed-*": true, "*-tamed": true, "*": false }, "priority": 6, "slot": 0, "animation": "walk" },
+            { "code": "fswcompanionassist", "enabledByType": { "*-tamed-*": true, "*-tamed": true, "*": false }, "priority": 5, "slot": 0, "animation": "walk", "damage": 7.5 },
 					{
 						"code": "meleeattack",
 						"entityCodes": ["player", "hyena-male", "hyena-female", "wolf-*", "bear-*",

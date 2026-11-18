@@ -13,21 +13,21 @@
 	"shapeByType": {
 		"*-griffon-*-male": { "base": "entity/land/mammal/griffon-adult" },
 		"*-griffon-*-female": { "base": "entity/land/mammal/griffon-adult" },
-		"*-griffon-cub-*": { "base": "entity/land/mammal/griffon-adult" }
+		"*-griffon-cub-*": { "base": "entity/land/mammal/griffon-cub" }
 	},
 	"texturesByType": {
-		"*-griffon-*-male": { "griffonskin1": { "base": "entity/land/griffon/griffonskin1" },
-							"griffonskin1Wing": { "base": "entity/land/griffon/griffonskin1Wing" } },
-		"*-griffon-*-female": { "griffonskin1": { "base": "entity/land/griffon/griffonskin2" },
-							  "griffonskin1Wing": { "base": "entity/land/griffon/griffonskin2Wing" } },
-		"*-griffon-cub-*": { "griffonskin1": { "base": "entity/land/griffon/griffonskin3" },
-							  "griffonskin1Wing": { "base": "entity/land/griffon/griffonskin3Wing" } }
+		"*-griffon-*-male": { "griffonskin8": { "base": "entity/land/griffon/griffonskin1" },
+							"griffonskin8Wing": { "base": "entity/land/griffon/griffonskin1Wing" } },
+		"*-griffon-*-female": { "griffonskin8": { "base": "entity/land/griffon/griffonskin2" },
+							  "griffonskin8Wing": { "base": "entity/land/griffon/griffonskin2Wing" } },
+		"*-griffon-cub-*": { "griffon-cub-skin1": { "base": "entity/land/griffon/griffon-cub-skin1" } }
 	},
 		
 	"creativeinventory": {
 		"general": ["*"],
 		"items": ["*"],
-		"creatures": ["*"]
+		"creatures": ["*"],
+    	"fswilds": [ "*" ]
 	},
 
 	"heldTpIdleAnimation": "holdunderarm",		

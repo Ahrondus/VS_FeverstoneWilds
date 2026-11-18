@@ -53,6 +53,8 @@
       "tame-cockatrice-female": 0.92
     },
     "behaviors": [
+            { "code": "fswildsbehavior" },
+            { "code": "nametag" },
 			{ "code": "multiplybase",
 				"enabledByType": { "*-male": false, "*-female": true } },
       {
@@ -124,6 +126,8 @@
   },
   "server": {
     "behaviors": [
+            { "code": "fswildsbehavior" },
+            { "code": "nametag" },
 			{ "code": "multiplybase",
 				"enabledByType": { "*-female": true, "*-male": false },
 				"multiplyCooldownDaysMin": 0,
@@ -197,6 +201,8 @@
         "code": "taskai",
         "aiCreatureType": "LandCreature",
         "aitasks": [
+            { "code": "fswfollowowner", "priority": 6, "slot": 0, "animation": "walk" },
+            { "code": "fswcompanionassist", "priority": 5, "slot": 0, "animation": "walk", "damage": 5.5 },
 					{
 						"code": "meleeattack",
 						"entityCodes": [ "drifter-*", "toad-*", "spider-*", "hare-*", "raccoon-*", "fox-*" ],
