@@ -102,11 +102,12 @@ public class BehaviorFlightRideable : EntityBehaviorRideable
 
     protected override void UpdateAngleAndMotion(float deltaTime)
     {
-        EntityBehaviorGait gait = entity.GetBehavior<EntityBehaviorGait>();
-        base.UpdateAngleAndMotion(deltaTime);
-
         BehaviorFlight flight = entity.GetBehavior<BehaviorFlight>();
-        if (flight?.IsFlying != true)
+        bool isFlying = flight?.IsFlying == true;
+        bool updateMotion = !isFlying || entity.World.Side == EnumAppSide.Server || flight.IsControlledByLocalPlayer;
+        if (updateMotion) base.UpdateAngleAndMotion(deltaTime);
+
+        if (!isFlying)
         {
             if (entity.World.Side == EnumAppSide.Client)
             {
@@ -124,6 +125,7 @@ public class BehaviorFlightRideable : EntityBehaviorRideable
             return;
         }
 
+        EntityBehaviorGait gait = entity.GetBehavior<EntityBehaviorGait>();
         if (gait != null)
         {
             gait.AngularVelocity = 0;
@@ -146,6 +148,8 @@ public class BehaviorFlightRideable : EntityBehaviorRideable
             float progress = Math.Min(1f, (entity.World.ElapsedMilliseconds - clientFlightSwivelEaseStartMs) / (float)FlightSwivelEaseOutDurationMs);
             renderer.nowSwivelRad = clientFlightSwivelStart * (1f - progress);
         }
+
+        if (!updateMotion) return;
 
         float clampedDeltaTime = Math.Min(0.5f, deltaTime);
         entity.Pos.Yaw = (entity.Pos.Yaw + (float)(flightTurnMotion * flight.PlayerFlightTurnSpeed * clampedDeltaTime * 30f)) % GameMath.TWOPI;
