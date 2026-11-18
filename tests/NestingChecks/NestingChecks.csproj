@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="$(VINTAGE_STORY)/Lib/0Harmony.dll" />
+    <Reference Include="$(VINTAGE_STORY)/Lib/cairo-sharp.dll" />
+    <ProjectReference Include="../../feverstonewilds/feverstonewilds.csproj" />
+    <Reference Include="$(VINTAGE_STORY)/VintagestoryAPI.dll" />
+    <Reference Include="$(VINTAGE_STORY)/Mods/VSEssentials.dll" />
+    <Reference Include="$(VINTAGE_STORY)/Mods/VSSurvivalMod.dll" />
+    <Reference Include="$(VINTAGE_STORY)/Lib/Newtonsoft.Json.dll" />
+    <Reference Include="$(VINTAGE_STORY)/Lib/protobuf-net.dll" />
+  </ItemGroup>
+</Project>

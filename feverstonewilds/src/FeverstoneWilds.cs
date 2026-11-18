@@ -5,25 +5,43 @@ using FeverstoneWilds.Flight.AiTask;
 using FeverstoneWilds.Flight.Behavior;
 using Vintagestory.API.Server;
 using Vintagestory.GameContent;
+using FeverstoneWilds.Nesting;
 
 namespace FeverstoneWilds
 {
-		public class FWildsCore : ModSystem
+	public class FWildsCore : ModSystem
 	{
 		public override void Start(ICoreAPI api)
 		{
 			base.Start(api);
 
 			api.RegisterBlockClass("BlockAnimalNestLarge", typeof(BlockAnimalNest));
+
 			api.RegisterBlockEntityClass("AnimalNestLarge", typeof(BlockEntityAnimalNestLarge));
+			api.RegisterBlockClass("FswBreedingNest", typeof(BlockAnimalNest));
+			api.RegisterBlockEntityClass("FswBreedingNest", typeof(BlockEntityFswBreedingNest));
+			api.RegisterBlockEntityBehaviorClass("GriffonNestClutch", typeof(GriffonNestClutch));
+			api.RegisterEntityBehaviorClass("fsweggreproduction", typeof(EntityBehaviorFswReproduction));
+			api.RegisterEntityBehaviorClass("fswegg", typeof(EntityBehaviorFswEgg));
+			api.RegisterItemClass("FswEgg", typeof(ItemFswEgg));
+			api.RegisterEntityBehaviorClass("griffonfeathervariant", typeof(BehaviorGriffonFeathers));
+			api.RegisterEntityBehaviorClass("griffonmarkings", typeof(BehaviorGriffonMarkings));
+			api.RegisterEntityBehaviorClass("griffongrow", typeof(BehaviorGriffonGrow));
+			api.RegisterEntityBehaviorClass("griffongrowthsize", typeof(BehaviorGriffonGrowthSize));
+			api.RegisterEntityBehaviorClass("griffonnestshelldrop", typeof(GriffonNestShellDrop));
 
 			api.RegisterEntityBehaviorClass("plantSapling", typeof(BehaviorPlantSapling));
+			api.RegisterEntityBehaviorClass("fswentitylight", typeof(BehaviorEntityLight));
 			api.RegisterEntityBehaviorClass("flight", typeof(BehaviorFlight));
 			api.RegisterEntityBehaviorClass("flightrideable", typeof(BehaviorFlightRideable));
+            api.RegisterEntityBehaviorClass("direwolfrideable", typeof(FeverstoneWilds.Commands.DirewolfRideable));
 			api.RegisterEntity("FlyingEntityAgent", typeof(FlyingEntityAgent));
 
 			if (api is ICoreServerAPI serverApi)
 			{
+				serverApi.RegisterAiTask<AiTaskFswNesting>("fswnesting");
+				serverApi.RegisterAiTask<AiTaskGriffonSeekNestAndLay>("griffonseeknestandlay");
+                serverApi.RegisterAiTask<AiTaskGriffonGuardNest>("griffonguardnest");
 				serverApi.Network.RegisterChannel(FlightInputNetwork.ChannelName)
 					.RegisterMessageType<FlightInputPacket>()
 					.SetMessageHandler<FlightInputPacket>(OnFlightInput);
@@ -32,7 +50,7 @@ namespace FeverstoneWilds
 				serverApi.RegisterAiTask<AiTaskFlightMeleeAttack>("flightmeleeattack");
 			}
 
-			ModConfig.ReadConfig(api);
+            ModConfig.ReadConfig(api);
 		}
 
 		public override void StartClientSide(Vintagestory.API.Client.ICoreClientAPI capi)
@@ -54,6 +72,5 @@ namespace FeverstoneWilds
 
 			flight.SetPlayerFlightInput(packet.Action, packet.Active);
 		}
-
 	}
 }

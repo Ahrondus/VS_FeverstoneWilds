@@ -32,6 +32,8 @@
 							{ "base": "entity/land/ostrich/ostrichskin10" } ] },
 		"sizeGrowthFactor": 0.3,
 		"behaviors": [
+            { "code": "fswildsbehavior" },
+            { "code": "nametag" },
 			{ "code": "controlledphysics", "stepHeight": 1.1251 }, 
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
 			{ "code": "interpolateposition" },
@@ -100,13 +102,15 @@
 			}
 		},
 		"behaviors": [
+            { "code": "fswildsbehavior" },
+            { "code": "nametag" },
 			{ "code": "repulseagents" }, 
 			{ "code": "controlledphysics", "stepHeight": 1.1251 },
 			{ "code": "despawn", "enabledByType": { "*": false }, "minPlayerDistance": 8, "belowLightLevel": 8, "minSeconds": 300 },
 			{ "code": "health", "currenthealth": 4.5, "maxhealth": 4.5 },
 			{ "code": "deaddecay", "hoursToDecay": 2 },
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
-			{ "code": "grow", "hoursToGrow": 128,
+			{ "code": "fswcommandgrow", "hoursToGrow": 128,
 				"adultEntityCodes": ["feverstonewilds:tame-ostrich-female", "feverstonewilds:tame-ostrich-male"]
 			},
 			{ "code": "breathe" },
@@ -118,6 +122,8 @@
 			{ "code": "taskai",
 				"aiCreatureType": "LandCreature",
 				"aitasks": [
+            { "code": "fswfollowowner", "priority": 6, "slot": 0, "animation": "walk" },
+            { "code": "fswcompanionassist", "priority": 5, "slot": 0, "animation": "walk", "damage": 2 },
 					{
 						"code": "fleeentity",
 						"entityCodes": ["wolf-male", "wolf-female", "fox-*", "hyena-male", "hyena-female", "bear-*"],

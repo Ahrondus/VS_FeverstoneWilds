@@ -1,0 +1,47 @@
+{
+  "code": "griffon-egg-broken",
+  "class": "EntityAgent",
+  "habitat": "Land",
+  "tags": [
+    "habitat-land"
+  ],
+  "hitboxSize": {
+    "x": 0.35,
+    "y": 0.5
+  },
+  "deadHitboxSize": {
+    "x": 0.35,
+    "y": 0.5
+  },
+  "eyeHeight": 0.2,
+  "drops": [],
+  "attributes": {
+    "feverstonewildsGriffonEgg": true
+  },
+  "client": {
+    "renderer": "Shape",
+    "shape": {
+      "base": "block/egg/griffon-brokenegg"
+    },
+    "behaviors": [
+      {
+        "code": "passivephysics",
+        "triggerOnCollide": true
+      },
+      {
+        "code": "interpolateposition"
+      }
+    ]
+  },
+  "server": {
+    "behaviors": [
+      {
+        "code": "passivephysics",
+        "triggerOnCollide": true
+      },
+      {
+        "code": "griffonbrokeneggtimer"
+      }
+    ]
+  }
+}

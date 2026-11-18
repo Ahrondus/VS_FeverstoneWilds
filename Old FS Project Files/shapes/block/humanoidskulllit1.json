@@ -1,0 +1,82 @@
+{
+	"editor": {
+		"allAngles": false,
+		"entityTextureMode": false
+	},
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textureSizes": {
+	},
+	"textures": {
+		"candle": "C:/Users/Poiso/AppData/Roaming/Vintagestory/assets/survival/textures/block/candle",
+		"skullhumaniod-small": "C:/Users/Poiso/AppData/Roaming/Vintagestory/assets/survival/textures/block/creature/skullhumaniod-small"
+	},
+	"elements": [
+		{
+			"name": "origin",
+			"from": [ 8.0, 0.0, 8.0 ],
+			"to": [ 8.0, 0.0, 8.0 ],
+			"rotationOrigin": [ 8.0, 0.0, 8.0 ],
+			"faces": {
+			},
+			"children": [
+				{
+					"name": "skull",
+					"from": [ -2.0, -0.5, -2.5 ],
+					"to": [ 3.0, 4.5, 2.52 ],
+					"rotationOrigin": [ 0.0, 1.2, 0.0 ],
+					"rotationZ": -15.0,
+					"faces": {
+						"north": { "texture": "#skullhumaniod-small", "uv": [ 3.0, 11.0, 8.0, 16.0 ] },
+						"east": { "texture": "#skullhumaniod-small", "uv": [ 5.5, 11.0, 10.5, 16.0 ] },
+						"south": { "texture": "#skullhumaniod-small", "uv": [ 8.0, 11.0, 13.0, 16.0 ] },
+						"west": { "texture": "#skullhumaniod-small", "uv": [ 2.5, 2.0, 7.0, 7.0 ], "autoUv": false },
+						"up": { "texture": "#skullhumaniod-small", "uv": [ 11.0, 0.0, 16.0, 5.0 ], "rotation": 90 }
+					},
+					"children": [
+						{
+							"name": "inside skull",
+							"from": [ 0.1, -0.01, 0.01 ],
+							"to": [ 4.9, 4.99, 5.01 ],
+							"rotationOrigin": [ 0.1, -0.5, -0.2 ],
+							"faces": {
+								"north": { "texture": "#skullhumaniod-small", "uv": [ 3.0, 11.0, 7.5, 16.0 ] },
+								"east": { "texture": "#skullhumaniod-small", "uv": [ 5.5, 11.0, 10.5, 16.0 ] },
+								"south": { "texture": "#skullhumaniod-small", "uv": [ 8.0, 11.0, 12.5, 16.0 ] },
+								"west": { "texture": "#skullhumaniod-small", "uv": [ 2.5, 2.0, 7.0, 7.0 ], "autoUv": false, "windMode": [-1,-1,-1,-1] },
+								"up": { "texture": "#skullhumaniod-small", "uv": [ 10.0, 3.5, 14.5, 8.5 ] }
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "candle",
+			"from": [ 7.0, 0.0, 7.0 ],
+			"to": [ 9.0, 2.0, 9.0 ],
+			"rotationOrigin": [ 8.0, 0.0, 8.0 ],
+			"faces": {
+				"north": { "texture": "#candle", "uv": [ 0.0, 13.0, 2.0, 15.0 ] },
+				"east": { "texture": "#candle", "uv": [ 4.0, 13.0, 6.0, 15.0 ] },
+				"south": { "texture": "#candle", "uv": [ 9.0, 13.0, 11.0, 15.0 ] },
+				"west": { "texture": "#candle", "uv": [ 11.0, 13.0, 13.0, 15.0 ] },
+				"up": { "texture": "#candle", "uv": [ 12.0, 2.0, 14.0, 4.0 ] },
+				"down": { "texture": "#candle", "uv": [ 12.0, 14.0, 14.0, 16.0 ] }
+			},
+			"children": [
+				{
+					"name": "top",
+					"from": [ 0.8, 2.0, 0.8 ],
+					"to": [ 1.2, 2.5, 1.2 ],
+					"faces": {
+						"north": { "texture": "#candle", "uv": [ 0.0, 0.0, 0.0, 0.5 ] },
+						"east": { "texture": "#candle", "uv": [ 0.0, 0.0, 0.0, 0.5 ] },
+						"south": { "texture": "#candle", "uv": [ 0.0, 0.0, 0.0, 0.5 ] },
+						"west": { "texture": "#candle", "uv": [ 0.0, 0.0, 0.0, 0.5 ] },
+						"up": { "texture": "#candle", "uv": [ 0.0, 0.0, 0.0, 0.0 ] }
+					}
+				}
+			]
+		}
+	]}

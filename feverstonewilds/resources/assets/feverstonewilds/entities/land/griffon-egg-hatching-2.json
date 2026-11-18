@@ -1,0 +1,83 @@
+{
+  "code": "griffon-egg-hatching-2",
+  "class": "EntityAgent",
+  "habitat": "Land",
+  "tags": [
+    "habitat-land"
+  ],
+  "hitboxSize": {
+    "x": 0.35,
+    "y": 0.5
+  },
+  "deadHitboxSize": {
+    "x": 0.35,
+    "y": 0.5
+  },
+  "eyeHeight": 0.2,
+  "drops": [],
+  "attributes": {
+    "feverstonewildsGriffonEgg": true
+  },
+  "client": {
+    "renderer": "Shape",
+    "shape": {
+      "base": "block/egg/griffon-1egg-hatching-2-death-animated"
+    },
+    "behaviors": [
+      { "code": "fswegg", "requiresHeat": true },
+      {
+        "code": "passivephysics",
+        "triggerOnCollide": true
+      },
+      {
+        "code": "interpolateposition"
+      }
+    ],
+    "animations": [
+      {
+        "code": "breakondeath",
+        "animation": "breakondeath",
+        "animationSpeed": 100,
+        "weight": 10,
+        "blendMode": "Average",
+        "triggeredBy": {
+          "onControls": [
+            "dead"
+          ]
+        }
+      }
+    ]
+  },
+  "server": {
+    "behaviors": [
+      {
+        "code": "fswegg",
+        "eggItem": "feverstonewilds:creature-griffon-egg",
+        "brokenEntity": "feverstonewilds:griffon-egg-broken",
+        "hatchingSound": "feverstonewilds:sounds/egg/egghatchsound",
+        "stageEntities": [
+          "feverstonewilds:griffon-egg",
+          "feverstonewilds:griffon-egg-hatching-1",
+          "feverstonewilds:griffon-egg-hatching-2"
+        ],
+        "chickCodes": [
+          "feverstonewilds:griffon-cub-tamed"
+        ],
+        "incubationDays": 20, "requiresHeat": true, "heatRadius": 3
+      },
+      {
+        "code": "passivephysics",
+        "triggerOnCollide": true
+      },
+      {
+        "code": "health",
+        "currenthealth": 2,
+        "maxhealth": 2
+      },
+      {
+        "code": "deaddecay",
+        "hoursToDecay": 0.001
+      }
+    ]
+  }
+}
