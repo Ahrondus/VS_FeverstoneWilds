@@ -357,6 +357,8 @@
 							{ "base": "entity/land/ostrich/ostrichskin8" }, { "base": "entity/land/ostrich/ostrichskin9" },
 							{ "base": "entity/land/ostrich/ostrichskin10" } ] },
 		"behaviors": [
+            { "code": "fswildsbehavior" },
+            { "code": "nametag" },
 			{ "code": "repulseagents" },
 			{ "code": "harvestable" }, 
 			{ "code": "controlledphysics", "stepHeight": 1.1251 }, 
@@ -386,6 +388,7 @@
             }
 		],
 		"animations": [
+            { "code": "attack", "animation": "attack", "animationSpeed": 2, "weight": 50, "blendMode": "Average", "supressDefaultAnimation": true },
 			{
 				"code": "hurt",
 				"animation": "hurt", 
@@ -462,6 +465,8 @@
             }
 		},
 		"behaviors": [
+            { "code": "fswildsbehavior" },
+            { "code": "nametag" },
 			{ "code": "multiplybase",
 				"enabledByType": { "*-female": true, "*-male": false },
 				"multiplyCooldownDaysMin": 0,
@@ -526,6 +531,8 @@
 				"code": "taskai",
 				"aiCreatureType": "LandCreature",
 				"aitasks": [
+            { "code": "fswfollowowner", "priority": 6, "slot": 0, "animation": "walk" },
+            { "code": "fswcompanionassist", "priority": 5, "slot": 0, "animation": "walk", "damage": 8 },
                     {
                         "code": "useinventory",
                         "animation": "eat",

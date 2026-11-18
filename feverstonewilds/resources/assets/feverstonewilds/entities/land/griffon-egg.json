@@ -24,6 +24,7 @@
       "base": "block/egg/griffon-1egg-death-animated"
     },
     "behaviors": [
+      { "code": "fswegg", "requiresHeat": true },
       {
         "code": "passivephysics",
         "triggerOnCollide": true
@@ -53,6 +54,7 @@
         "code": "fswegg",
         "eggItem": "feverstonewilds:creature-griffon-egg",
         "brokenEntity": "feverstonewilds:griffon-egg-broken",
+        "hatchingSound": "feverstonewilds:sounds/egg/egghatchsound",
         "stageEntities": [
           "feverstonewilds:griffon-egg",
           "feverstonewilds:griffon-egg-hatching-1",
@@ -61,7 +63,7 @@
         "chickCodes": [
           "feverstonewilds:griffon-cub-tamed"
         ],
-        "incubationDays": 12
+        "incubationDays": 20, "requiresHeat": true, "heatRadius": 3
       },
       {
         "code": "passivephysics",

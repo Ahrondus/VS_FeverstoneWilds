@@ -1,92 +1,39 @@
-# Configurable egg nesting
+# Griffon nesting
 
-This ports the tamed Utahraptor construction/laying/brooding sequence from the
-provided PaleoWilds source into Feverstone Wilds without a dependency on PaleoWilds.
+Tamed female griffons use vanilla `AiTaskSeekBlockAndLay` through a small flight-aware subclass. Nest seeking, laying, egg fertility data, brooding, and incubation use the installed vanilla implementation. The subclass requests landing for an available nest, prevents laying while mounted, and retains vanilla ground-laying fallback. Griffons never construct nests.
 
-## Griffon behavior
+## Domestic nest
 
-- Only `griffon-tamed-female` receives `fsweggreproduction` and `fswnesting`.
-- Twelve portions and a living tamed male within ten blocks reserve one clutch
-  of three fertile eggs. Food alone permits building but never fertile laying.
-- As with vanilla MultiplyBase, a newly initialized female has a randomized
-  initial breeding cooldown. The configured cooldown is five to twelve game days.
-- A female builds a nearby nest in two stages, taking a four-to-six block material
-  searching excursion and a three-second construction action for each stage.
-- At most three compatible nests, including unfinished/full nests, are built in
-  the local sixteen-block area. A removed nest can be replaced.
-- She prefers her own nest, then a compatible communal nest. Each egg takes five
-  real seconds to lay. If construction/nest space is unavailable, she lays the
-  canonical collectible egg entities on the ground.
-- Pending clutch size is saved after each successfully laid egg. Interrupting or
-  reloading cannot restart a fresh three-egg clutch from the same mating.
-- A full nest incubates for twelve game days of actual nearby brooding. Time away,
-  expired claims, another floor/dimension, and unloaded time do not advance it.
-- Inventory and incubation belong to the nest, so another female can resume the
-  same clutch. A claim prevents simultaneous construction, laying or brooding.
-- Vanilla egg inventory handling renders one, two or three eggs and preserves
-  chick type, generation and herd data when hatching.
-- Loose eggs progress through the existing three visual stages over twelve game
-  days, support collection, and become the existing broken-egg entity when hit.
-  Stage replacements preserve the original incubation timestamp and chick data.
-- The ordinary flight system lands the female and pauses automatic takeoff while
-  nesting. Riding and higher-priority combat/owner tasks can interrupt nesting.
+`feverstonewilds:griffonnest-ready` uses vanilla `BlockHenbox` and `HenBox`, with three egg slots and the domestic empty-nest model. Only the ready variant is generated. Breaking the empty nest returns the domestic nest block. Wild griffon nest entities remain separate.
 
-The adult model has no sit, search or dig animations. The defaults use `walk`
-for searching, `eat` for construction and `idle` for brooding. Set the corresponding
-animation names when species-specific animations become available.
+The grid recipe is `SFS,SSS`, width 3, height 2 (bottom crafting row empty). Each S takes three sticks; F takes thirty feathers. Total: fifteen sticks and thirty feathers for one domestic nest.
 
-Ostrich and cockatrice entity definitions and `seekblockandlay` configuration are
-unchanged. Their large nest now derives from the current `BlockHenbox` and
-`BlockEntityHenBox`, restoring current `IAnimalNest` signatures, inventory-based
-egg collection and incubation. The existing `largenest.json` asset is retained. Both core registrations are enabled.
+## Laying and incubation
 
-This change does not alter wild griffon spawning or the existing wild nest entity.
-Collected egg items use the existing `ItemCreature` placement behavior; placing
-one starts a new loose-egg incubation, matching the reference's collect/place cycle.
+Only tamed adult females receive vanilla `multiplybase` feeding and the `griffonseeknestandlay` task. Vanilla laying consumes food; a living tamed male within ten blocks allows fertile eggs. Griffon `eggTypes` selects the griffon egg item, and hatchlings are tamed griffon cubs. The nest type is `feverstonewilds:griffon`. Laying takes five seconds, incubation is twelve game days, and the vanilla sitting cycle is 0.9 days with one-to-two-hour task cooldowns. No custom three-egg clutch reservation or construction task runs on griffons.
 
-## Adding another creature
-
-1. Add the `fsweggreproduction` server behavior to the intended adult female
-   variants. Use the griffon's behavior as the complete JSON example. Set
-   `portionsEatenForMultiply`, cooldowns and all values inside `nesting`.
-2. Add a `fswnesting` movement-slot AI task. Choose a priority below any combat
-   or owner orders that should interrupt it. Other entity variants need neither
-   the behavior nor the task. Do not also enable live-birth `multiply` for these
-   variants.
-3. Supply a unique `nestType`, a ready block and ordered `constructionBlocks`.
-   Blocks use class/entityClass `FswBreedingNest`. Every variant must have the
-   same inventory size, `inventoryClassName` and `displayTransforms`. The ready
-   variant has `constructionStage: 0`; construction variants use positive stages.
-   Keep the nest's `quantitySlots` equal to `clutchSize`.
-4. Supply fully qualified `eggItem`, `eggEntity`, `mateCode`, and `chickCodes`.
-   Asset validation disables breeding and logs the species if required assets
-   are missing. Nest construction itself uses no griffon-specific identifiers.
-5. Add `fswegg` to all loose egg stages, replacing `grow` and other incubation or
-   pickup behaviors. Set the same `eggItem`, `brokenEntity`, ordered
-   `stageEntities`, fallback `chickCodes`, and `incubationDays` on every stage.
-   Retain the broken entity's cleanup behavior. The number of visual stages is
-   independent of clutch size.
-6. Add models, textures, item/entity definitions and language entries for that
-   creature. Add a separate nest family rather than sharing an incompatible
-   species' ready block.
+Loose griffon eggs require twenty game days of heat to hatch. Active vanilla heat sources within three blocks on each axis count, including fluid heat sources. Incubation pauses when cold, picked up, or unloaded; accumulated progress survives pickup and hatching-stage changes. Cold eggs show “Needs heat to hatch.” in their hover panel. Nest incubation remains twelve days of brooding. Ostrich and cockatrice definitions are unchanged.
 
 ## Validation
 
-With `VINTAGE_STORY` pointing at the game install:
+Build and run `tests/NestingChecks` with `VINTAGE_STORY` set to the installed game directory. In-game: craft and place the domestic nest, feed a tamed female, keep a tamed male nearby, then observe laying and brooding. Verify that no construction blocks appear, and that eggs hatch into tamed cubs. Build checks cannot establish in-game navigation or placement.
 
-```powershell
-dotnet build feverstonewilds/feverstonewilds.csproj
-dotnet run --project tests/NestingChecks
-```
+The older reusable custom construction classes remain available for other creatures, but griffons no longer reference them.
 
-The test executable uses the installed game implementation with minimal world
-stubs for clutch accounting, claims, incubation, serialization and hatching, plus
-checks of species activation and existing poultry tasks. It needs no test package.
+## Growth stages
 
-An in-game smoke test is still required: use a test world, feed a male/female
-pair, allow the initial breeding cooldown, observe both construction stages and
-three eggs, interrupt/resume laying, leave/reload while brooding, collect eggs,
-test an area at the three-nest cap, and verify an ostrich and cockatrice still
-lay and hatch in their large nest. Inspect server and client logs for asset or
-animation errors. A successful build is not proof of in-game pathfinding or mesh
-placement.
+Cub -> juvenile -> adolescent -> adult. Each transition takes 216 in-game hours (nine days), for 27 days from hatching to adulthood. Feeding never accelerates these transitions: no fed-adult growth targets are configured. Juveniles use the cub shape at 1.45 scale; adolescents use griffon-adolescent at 0.8 scale. Existing gender-neutral cub entity codes remain compatible, with sex selected on entering the juvenile stage and preserved thereafter. Wild/tamed status is retained at every transition. Non-adult stages have no breeding or riding tasks.
+
+Visual size grows gradually over each nine-day stage: cub scale 1.0–1.45, juvenile scale 1.45–3.390692, and adolescent scale 0.8–1.0 (males) or 0.8–0.95 (females) on its separate model. Stage age is saved by vanilla grow data; no feeding acceleration is added.
+
+Young griffons apply size explicitly on the client using saved stage start time. Juvenile end scale matches the adolescent model's starting rest-pose height (cub shape height 7.964001 model units; adolescent height 33.754357 at scale 0.8). Different body proportions still change when the model switches.
+
+## One mother per clutch
+
+Domestic griffon nests retain vanilla HenBox inventory and incubation, with a persistent GriffonNestClutch block-entity behavior. The first successful egg records its mother's entity ID. Other females cannot use that nest until every egg is gone. The same mother can finish filling three slots; once full, or once any eggs are removed or hatch, additions stop for the remainder of that clutch. Brooding and leaving do not release the lock. Empty nests reset it. Existing eggs without mother metadata are sealed against additions and assigned to the first brooding female; their contents and incubation progress are preserved. Remaining infertile eggs must be collected before the nest becomes available.
+
+## Ground fallback
+
+Fed females use vanilla's 30% ground-laying fallback when no available nest is found, including nests locked to another clutch. Vanilla also controls delayed fallback after unsuccessful seeking. The configured fallback block is egg-griffon-1, collected as one infertile griffon food egg; it expires after 72 game hours like vanilla ground chicken eggs. Ground-laid blocks do not incubate in place. Player-placed egg entities retain their existing heat requirement and twenty-day incubation.
+
+Ground fallback eggs drop egg-griffon-infertile, a separate ordinary food item stacking to 32, providing 200 protein satiety and spoiling after 120 fresh hours plus 24 transition hours. They have no entity placement or incubation behavior. Nest eggs remain creature-griffon-egg with individual saved incubation progress.

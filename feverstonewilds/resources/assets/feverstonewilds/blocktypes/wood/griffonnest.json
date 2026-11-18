@@ -1,207 +1,109 @@
 {
-  "code": "griffonnest",
-  "class": "FswBreedingNest",
-  "entityClass": "FswBreedingNest",
-  "variantgroups": [
-    {
-      "code": "stage",
-      "states": [
-        "construction1",
-        "construction2",
-        "ready"
-      ]
-    }
-  ],
-  "attributesByType": {
-    "*-construction1": {
-      "nestType": "feverstonewilds:griffon",
-      "inventoryClassName": "fswbreedingnest",
-      "quantitySlots": 3,
-      "displayTransforms": [
-        {
-          "translation": {
-            "x": -0.17,
-            "y": 0.10,
-            "z": -0.10
-          },
-          "rotation": {
-            "x": 0,
-            "y": 25,
-            "z": 0
-          },
-          "scale": 1
-        },
-        {
-          "translation": {
-            "x": 0.17,
-            "y": 0.10,
-            "z": -0.10
-          },
-          "rotation": {
-            "x": 0,
-            "y": 115,
-            "z": 0
-          },
-          "scale": 1
-        },
-        {
-          "translation": {
-            "x": 0,
-            "y": 0.12,
-            "z": 0.17
-          },
-          "rotation": {
-            "x": 0,
-            "y": 235,
-            "z": 0
-          },
-          "scale": 1
-        }
-      ],
-      "constructionStage": 1
-    },
-    "*-construction2": {
-      "nestType": "feverstonewilds:griffon",
-      "inventoryClassName": "fswbreedingnest",
-      "quantitySlots": 3,
-      "displayTransforms": [
-        {
-          "translation": {
-            "x": -0.17,
-            "y": 0.10,
-            "z": -0.10
-          },
-          "rotation": {
-            "x": 0,
-            "y": 25,
-            "z": 0
-          },
-          "scale": 1
-        },
-        {
-          "translation": {
-            "x": 0.17,
-            "y": 0.10,
-            "z": -0.10
-          },
-          "rotation": {
-            "x": 0,
-            "y": 115,
-            "z": 0
-          },
-          "scale": 1
-        },
-        {
-          "translation": {
-            "x": 0,
-            "y": 0.12,
-            "z": 0.17
-          },
-          "rotation": {
-            "x": 0,
-            "y": 235,
-            "z": 0
-          },
-          "scale": 1
-        }
-      ],
-      "constructionStage": 2
-    },
-    "*-ready": {
-      "nestType": "feverstonewilds:griffon",
-      "inventoryClassName": "fswbreedingnest",
-      "quantitySlots": 3,
-      "displayTransforms": [
-        {
-          "translation": {
-            "x": -0.17,
-            "y": 0.10,
-            "z": -0.10
-          },
-          "rotation": {
-            "x": 0,
-            "y": 25,
-            "z": 0
-          },
-          "scale": 1
-        },
-        {
-          "translation": {
-            "x": 0.17,
-            "y": 0.10,
-            "z": -0.10
-          },
-          "rotation": {
-            "x": 0,
-            "y": 115,
-            "z": 0
-          },
-          "scale": 1
-        },
-        {
-          "translation": {
-            "x": 0,
-            "y": 0.12,
-            "z": 0.17
-          },
-          "rotation": {
-            "x": 0,
-            "y": 235,
-            "z": 0
-          },
-          "scale": 1
-        }
-      ],
-      "constructionStage": 0
-    }
-  },
-  "shapeByType": {
-    "*-construction1": {
-      "base": "block/wood/griffon-nest/griffon-construction1"
-    },
-    "*-construction2": {
-      "base": "block/wood/griffon-nest/griffon-construction2"
-    },
-    "*-ready": {
-      "base": "block/wood/griffon-nest/griffon-wild-nest-empty"
-    }
-  },
-  "creativeinventory": {
-    "general": [
-      "*"
-    ],
-    "fswilds": [
-      "*"
-    ]
-  },
-  "resistance": 1,
-  "blockmaterial": "Wood",
-  "sideopaque": {
-    "all": false
-  },
-  "sidesolid": {
-    "all": false
-  },
-  "sideao": {
-    "all": false
-  },
-  "lightAbsorption": 0,
-  "collisionbox": {
-    "x1": 0.10,
-    "y1": 0,
-    "z1": 0.10,
-    "x2": 0.90,
-    "y2": 0.12,
-    "z2": 0.90
-  },
-  "selectionbox": {
-    "x1": 0.05,
-    "y1": 0,
-    "z1": 0.05,
-    "x2": 0.95,
-    "y2": 0.30,
-    "z2": 0.95
-  },
-  "drops": [],
-  "heldTpIdleAnimation": "holdbothhandslarge"
+    "code":  "griffonnest",
+    "class":  "BlockHenbox",
+    "entityClass":  "HenBox",
+    "entityBehaviors": [ { "name": "GriffonNestClutch" } ],
+    "variantgroups":  [
+                          {
+                              "code":  "stage",
+                              "states":  [
+                                             "ready"
+                                         ]
+                          }
+                      ],
+    "creativeinventory":  {
+                              "general":  [
+                                              "*"
+                                          ],
+                              "fswilds":  [
+                                              "*"
+                                          ]
+                          },
+    "resistance":  1,
+    "blockmaterial":  "Wood",
+    "sideopaque":  {
+                       "all":  false
+                   },
+    "sidesolid":  {
+                      "all":  false
+                  },
+    "sideao":  {
+                   "all":  false
+               },
+    "lightAbsorption":  0,
+    "collisionbox":  {
+                         "x1":  0.10,
+                         "y1":  0,
+                         "z1":  0.10,
+                         "x2":  0.90,
+                         "y2":  0.12,
+                         "z2":  0.90
+                     },
+    "selectionbox":  {
+                         "x1":  0.05,
+                         "y1":  0,
+                         "z1":  0.05,
+                         "x2":  0.95,
+                         "y2":  0.30,
+                         "z2":  0.95
+                     },
+    "drops":  [
+                  {
+                      "type":  "block",
+                      "code":  "feverstonewilds:griffonnest-ready",
+                      "quantity":  {
+                                       "avg":  1
+                                   }
+                  }
+              ],
+    "heldTpIdleAnimation":  "holdbothhandslarge",
+    "attributes":  {
+                       "nestType":  "feverstonewilds:griffon",
+                       "inventoryClassName":  "henbox",
+                       "quantitySlots":  3,
+                       "displayTransforms":  [
+                                                 {
+                                                     "translation":  {
+                                                                         "x":  -0.17,
+                                                                         "y":  0.10,
+                                                                         "z":  -0.10
+                                                                     },
+                                                     "rotation":  {
+                                                                      "x":  0,
+                                                                      "y":  25,
+                                                                      "z":  0
+                                                                  },
+                                                     "scale":  1
+                                                 },
+                                                 {
+                                                     "translation":  {
+                                                                         "x":  0.17,
+                                                                         "y":  0.10,
+                                                                         "z":  -0.10
+                                                                     },
+                                                     "rotation":  {
+                                                                      "x":  0,
+                                                                      "y":  115,
+                                                                      "z":  0
+                                                                  },
+                                                     "scale":  1
+                                                 },
+                                                 {
+                                                     "translation":  {
+                                                                         "x":  0,
+                                                                         "y":  0.12,
+                                                                         "z":  0.17
+                                                                     },
+                                                     "rotation":  {
+                                                                      "x":  0,
+                                                                      "y":  235,
+                                                                      "z":  0
+                                                                  },
+                                                     "scale":  1
+                                                 }
+                                             ]
+                   },
+    "shape":  {
+                  "base":  "feverstonewilds:block/wood/griffon-nest/griffon-wild-nest-empty"
+              }
 }

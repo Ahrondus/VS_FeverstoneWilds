@@ -357,6 +357,23 @@ public class BehaviorFlight : EntityBehavior
 
     public override void OnGameTick(float deltaTime)
     {
+        if (GriffonHealthState.IsIncapacitated(entity))
+        {
+            if (entity.World.Side == EnumAppSide.Server)
+            {
+                if (IsFlying || isPlayerControlledFlight) SetFlying(false);
+                hasTarget = false;
+            }
+            else
+            {
+                if (clientAnimation != null) entity.AnimManager?.StopAnimation(clientAnimation);
+                if (clientFlightTurnAnimation != null) entity.AnimManager?.StopAnimation(clientFlightTurnAnimation);
+                if (clientFlightBankAnimation != null) entity.AnimManager?.StopAnimation(clientFlightBankAnimation);
+                clientAnimation = null;
+                clientFlightTurnAnimation = clientFlightBankAnimation = null;
+            }
+            return;
+        }
         if (entity.World.Side == EnumAppSide.Client)
         {
             UpdatePlayerFlightInputTimeout();

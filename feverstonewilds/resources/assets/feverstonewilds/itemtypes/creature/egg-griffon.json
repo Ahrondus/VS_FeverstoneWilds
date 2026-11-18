@@ -1,7 +1,7 @@
 {
   "code": "creature-griffon-egg",
-  "class": "ItemCreature",
-  "maxStackSize": 32,
+  "class": "FswEgg",
+  "maxStackSize": 1,
   "shape": {
     "base": "block/egg/griffon-1egg"
   },
@@ -20,6 +20,8 @@
     ]
   },
   "attributes": {
+    "incubationDays": 20,
+    "stageEntities": [ "feverstonewilds:griffon-egg", "feverstonewilds:griffon-egg-hatching-1", "feverstonewilds:griffon-egg-hatching-2" ],
     "entityCode": "feverstonewilds:griffon-egg",
     "nutritionPropsWhenInMeal": {
       "satiety": 400,

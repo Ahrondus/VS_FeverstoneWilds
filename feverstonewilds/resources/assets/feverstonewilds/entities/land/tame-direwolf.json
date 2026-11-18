@@ -6,12 +6,12 @@
         { "code": "gender", "states": [ "male", "female" ] }
     ],
     "hitBoxSizeByType": {
-        "direwolf-male": { "x": 1.4, "y": 1.8 },
-        "direwolf-female": { "x": 1.3, "y": 1.75 }
+        "tame-direwolf-male": { "x": 1.4, "y": 1.8 },
+        "tame-direwolf-female": { "x": 1.3, "y": 1.75 }
     },
     "deadHitBoxSizeByType": {
-        "direwolf-male": { "x": 0.8, "y": 1.3 },
-        "direwolf-female": { "x": 0.8, "y": 1.3 }
+        "tame-direwolf-male": { "x": 0.8, "y": 1.3 },
+        "tame-direwolf-female": { "x": 0.8, "y": 1.3 }
     },
     "knockbackResistanceByType": {
         "*-male": 0.15,
@@ -172,7 +172,7 @@
 				}
 			]
 		},
-        "rideable": {
+        "direwolfrideable": {
             "interactMountAnySeat": false,
             "seats": [
                 { "apName": "Rider", "selectionBox": "MidAP", "bodyYawLimit": 0.2, "controllable": true,
@@ -180,7 +180,9 @@
                         "*-female":{ "x": -0.05, "y": -0.52, "z": 0 },
                         "*-male": { "x": -0.05, "y": -0.5, "z": 0 }
                     }
-                }
+                },
+                { "apName": "FaceAP", "selectionBox": "DirewolfCarry", "bodyYawLimit": 3.14, "controllable": false,
+                    "riderOffset": { "x": 0, "y": 0, "z": 0 } }
             ],
             "rideableGaitOrder": {
                 "Land": ["walkback", "idle", "walk", "sprint"],
@@ -436,6 +438,8 @@
             "tame-direwolf-female": 0.95
         },
         "behaviors": [
+            { "code": "fswildsbehavior" },
+            { "code": "nametag", "showtagonlywhentargeted": true },
             { "code": "multiply", "enabledByType": { "*-male": false, "*-female": true } },
             { "code": "mouthinventory",
                 "acceptStacks": [
@@ -461,7 +465,7 @@
             { "code": "floatupwhenstuck" },
             { "code": "interpolateposition" },
             { "code": "gait" },
-            { "code": "rideable" },
+            { "code": "direwolfrideable" },
             { "code": "ownable" },
             { "code": "selectionboxes" },
             { "code": "rideableaccessories" },
@@ -653,6 +657,8 @@
             }
         },
         "behaviors": [
+            { "code": "fswildsbehavior" },
+            { "code": "nametag", "showtagonlywhentargeted": true },
             { "code": "mouthinventory",
                 "acceptStacks": [
                     { "type": "item", "code": "bone" },
@@ -667,7 +673,7 @@
             { "code": "harvestable" },
             { "code": "controlledphysics" },
             { "code": "gait" },
-            { "code": "rideable" },
+            { "code": "direwolfrideable" },
             { "code": "ownable" },
             { "code": "selectionboxes" },
             { "code": "rideableaccessories" },
@@ -725,6 +731,8 @@
                 "code": "taskai",
                 "aiCreatureType": "LandCreature",
                 "aitasks": [
+            { "code": "fswfollowowner", "priority": 6, "slot": 0, "animation": "walk" },
+            { "code": "fswcompanionassist", "priority": 5, "slot": 0, "animation": "walk", "damage": 10 },
                     {
                         "code": "cometoowner",
                         "priority": 4,
@@ -743,9 +751,8 @@
                             "bear-*", "hellboar-*", "faunling-*",
                             "horse-wild-*", "cockatrice-*", "ostrich-*",
                             "foal-wild-*", "bison-wild-*",
-                            "deer-*", "goat-*", "pig-*", "sheep-*",
-                            "elk-*", "moose-*", "gazelle-*" ],
-                        "skipEntityCodes": [ "tame-*", "*-tamed-*", "taminghorse-*" ],
+                            "deer-*", "elk-*", "moose-*", "gazelle-*" ],
+                        "skipEntityCodes": [ "sheep-*", "goat-*", "chicken-*", "pig-*", "tame-*", "*-tamed-*", "taminghorse-*" ],
                         "priority": 3,
                         "damage": 10,
                         "damageTier": 2,
@@ -763,9 +770,8 @@
                     {
                         "code": "meleeattack",
                         "entityCodes": [ "squirrel-*", "raccoon-*", "hare-*",
-                            "direwolf-pup", "hellboar-piglet", "chicken-*",
-                            "*-chick", "fox-*", "*-baby" ],
-                        "skipEntityCodes": [ "tame-*", "*-tamed-*", "taminghorse-*" ],
+                            "direwolf-pup", "hellboar-piglet", "*-chick", "fox-*", "*-baby" ],
+                        "skipEntityCodes": [ "sheep-*", "goat-*", "chicken-*", "pig-*", "tame-*", "*-tamed-*", "taminghorse-*" ],
                         "priority": 2.5,
                         "damage": 8,
                         "damageTier": 2,
@@ -784,7 +790,7 @@
                         "code": "meleeattack",
                         "entityCodes": [ "bear-*", "giraffe-*", "horse-wild-*",
                             "bison-wild-*", "ostrich-*", "moose-*", "elk-*" ],
-                        "skipEntityCodes": [ "tame-*", "*-tamed-*", "taminghorse-*" ],
+                        "skipEntityCodes": [ "sheep-*", "goat-*", "chicken-*", "pig-*", "tame-*", "*-tamed-*", "taminghorse-*" ],
                         "priority": 2,
                         "damage": 8,
                         "damageTier": 2,
@@ -803,7 +809,7 @@
                         "entityCodes": ["drifter-*", "bowtorn-*", "shiver-*", 
                                         "cockatrice-*", "hellboar-*", "wolf-*",
                                         "direwolf-*", "bear-*" ],
-                        "skipEntityCodes": [ "tame-*", "*-tamed-*", "taminghorse-*" ],
+                        "skipEntityCodes": [ "sheep-*", "goat-*", "chicken-*", "pig-*", "tame-*", "*-tamed-*", "taminghorse-*" ],
                         "priority": 1.65,
                         "movespeed": 0.045,
                         "seekingRange": 15,
@@ -819,12 +825,11 @@
                     },
                     {
                         "code": "seekentity",
-                        "entityCodes": [ "chicken-*", "wolf-*", "hare-*",
+                        "entityCodes": [ "wolf-*", "hare-*",
                                         "cockatrice-*", "horse-wild-*", "ostrich-*",
-                                        "pig-*", "sheep-*", "raccoon-*",
-                                        "deer-*", "gazelle-*", "goat-*",
-                                        "hellboar-*" ],
-                        "skipEntityCodes": [ "tame-*", "*-tamed-*", "taminghorse-*" ],
+                                        "raccoon-*",
+                                        "deer-*", "gazelle-*", "hellboar-*" ],
+                        "skipEntityCodes": [ "sheep-*", "goat-*", "chicken-*", "pig-*", "tame-*", "*-tamed-*", "taminghorse-*" ],
                         "priority": 1.5,
                         "movespeed": 0.045,
                         "seekingRange": 15,

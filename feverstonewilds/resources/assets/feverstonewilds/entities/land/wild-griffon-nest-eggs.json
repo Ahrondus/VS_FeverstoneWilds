@@ -22,14 +22,6 @@
         "avg": 1,
         "var": 1
       }
-    },
-    {
-      "type": "item",
-      "code": "feverstonewilds:creature-griffon-egg-broken",
-      "quantity": {
-        "avg": 0.5,
-        "var": 0.5
-      }
     }
   ],
   "client": {
@@ -60,6 +52,9 @@
   },
   "server": {
     "behaviors": [
+      {
+        "code": "griffonnestshelldrop"
+      },
       {
         "code": "passivephysics",
         "triggerOnCollide": true

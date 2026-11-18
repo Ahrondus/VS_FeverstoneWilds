@@ -1,0 +1,24 @@
+{
+  "code": "egg-griffon-1",
+  "behaviors": [
+    { "name": "UnstableFalling" },
+    { "name": "RightClickPickup", "properties": { "dropsPickupMode": true } }
+  ],
+  "entityClass": "Transient",
+  "attributes": {
+    "transientProps": { "convertFrom": "*", "convertTo": "air", "inGameHours": "72" }
+  },
+  "blockmaterial": "Soil",
+  "drawtype": "json",
+  "shape": { "base": "feverstonewilds:block/egg/griffon-1egg" },
+  "textures": { "griffonegg": { "base": "feverstonewilds:block/nests/griffonegg" } },
+  "lightAbsorption": 0,
+  "sidesolid": { "all": false },
+  "sideopaque": { "all": false },
+  "replaceable": 100,
+  "resistance": 0.25,
+  "selectionbox": { "x1": 0.15, "y1": 0, "z1": 0.15, "x2": 0.85, "y2": 0.7, "z2": 0.85 },
+  "collisionbox": null,
+  "drops": [ { "type": "item", "code": "feverstonewilds:egg-griffon-infertile", "quantity": { "avg": 1 } } ],
+  "materialDensity": 300
+}

@@ -80,6 +80,8 @@
             "foal-*-quarter": 0.53
         },
         "behaviors": [
+            { "code": "fswildsbehavior", "enabledByType": { "*-tamed-*": true, "*-tamed": true, "*": false } },
+            { "code": "nametag", "enabledByType": { "*-tamed-*": true, "*-tamed": true, "*": false } },
             { "code": "mouthinventory",
                 "acceptStacks": [
                     { "type": "item", "code": "vegetable-carrot" },
@@ -154,6 +156,8 @@
             }
         },
         "behaviors": [
+            { "code": "fswildsbehavior", "enabledByType": { "*-tamed-*": true, "*-tamed": true, "*": false } },
+            { "code": "nametag", "enabledByType": { "*-tamed-*": true, "*-tamed": true, "*": false } },
             { "code": "mouthinventory",
                 "acceptStacks": [
                     { "type": "item", "code": "vegetable-carrot" },
@@ -221,7 +225,7 @@
 					}
                 ]
             },
-			{ "code": "grow", "hoursToGrow": 178,
+			{ "code": "fswcommandgrow", "hoursToGrow": 178,
                 "orPortionsEatenForGrowing": 12,
 				"fedAdultEntityCodesByType": { "*-percheron": ["feverstonewilds:taminghorse-wild-male-percheron", "feverstonewilds:taminghorse-wild-female-percheron"],
                                                "*-arabian": ["feverstonewilds:taminghorse-wild-male-arabian", "feverstonewilds:taminghorse-wild-female-arabian"],
@@ -238,6 +242,8 @@
                 "code": "taskai",
                 "aiCreatureType": "LandCreature",
                 "aitasks": [
+            { "code": "fswfollowowner", "enabledByType": { "*-tamed-*": true, "*-tamed": true, "*": false }, "priority": 6, "slot": 0, "animation": "walk" },
+            { "code": "fswcompanionassist", "enabledByType": { "*-tamed-*": true, "*-tamed": true, "*": false }, "priority": 5, "slot": 0, "animation": "walk", "damage": 2 },
                     {
                         "code": "fleeentity",
                         "entityCodes": [ "player", "wolf-*", "bear-*" ],

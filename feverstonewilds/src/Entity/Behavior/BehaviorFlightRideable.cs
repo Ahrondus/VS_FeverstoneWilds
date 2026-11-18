@@ -21,8 +21,44 @@ public class BehaviorFlightRideable : EntityBehaviorRideable
     private float clientFlightSwivelStart;
     private long clientFlightSwivelEaseStartMs;
     private long clientFlightSwivelClearUntilMs;
+    private bool wasAttackPressed;
+    private bool wasGrabPressed;
 
     public BehaviorFlightRideable(Entity entity) : base(entity) { }
+
+    bool IsGriffon => entity.Code?.Domain == "feverstonewilds" && entity.Code.Path.StartsWith("griffon-");
+
+    bool IsRiderSelection(int index)
+    {
+        var boxes = entity.GetBehavior<EntityBehaviorSelectionBoxes>()?.selectionBoxes;
+        if (index <= 0 || boxes == null || index > boxes.Length) return false;
+        string point = boxes[index - 1].AttachPoint.Code;
+        return Array.Exists(Seats ?? Array.Empty<IMountableSeat>(), seat => seat.Config != null &&
+            seat.Config.Controllable && (seat.Config.SelectionBox == point || seat.Config.APName == point));
+    }
+
+    public override void OnInteract(EntityAgent byEntity, ItemSlot itemslot, Vec3d hitPosition,
+        EnumInteractMode mode, ref EnumHandling handled)
+    {
+        // FaceAP is reserved for ability-driven pickup, including when the rider seat is occupied.
+        if (IsGriffon && !Commands.FSWildsBehavior.CanRideCompanion(entity, byEntity))
+        {
+            handled = EnumHandling.PreventSubsequent;
+            if (entity.Api is ICoreClientAPI client)
+                client.TriggerIngameError(this, "griffon-private", "This mount is private. Only its owner may use it.");
+            return;
+        }
+        if (IsGriffon && !IsRiderSelection((byEntity as EntityPlayer)?.EntitySelection?.SelectionBoxIndex ?? -1)) return;
+        base.OnInteract(byEntity, itemslot, hitPosition, mode, ref handled);
+    }
+
+    public override WorldInteraction[] GetInteractionHelp(IClientWorldAccessor world, EntitySelection selection,
+        IClientPlayer player, ref EnumHandling handled)
+    {
+        if (IsGriffon && !Commands.FSWildsBehavior.CanRideCompanion(entity, player.Entity)) return Array.Empty<WorldInteraction>();
+        if (IsGriffon && !IsRiderSelection(selection.SelectionBoxIndex)) return Array.Empty<WorldInteraction>();
+        return base.GetInteractionHelp(world, selection, player, ref handled);
+    }
 
     protected override IMountableSeat CreateSeat(string seatId, SeatConfig config)
     {
@@ -154,6 +190,23 @@ public class BehaviorFlightRideable : EntityBehaviorRideable
     public override void OnGameTick(float deltaTime)
     {
         base.OnGameTick(deltaTime);
+
+        if (entity.Api is ICoreClientAPI capi)
+        {
+            int attackKey = capi.Input.GetHotKeyByCode("fsw-griffon-attack")?.CurrentMapping?.KeyCode ?? (int)GlKeys.F;
+            int grabKey = capi.Input.GetHotKeyByCode("fsw-griffon-grab")?.CurrentMapping?.KeyCode ?? (int)GlKeys.R;
+            bool attackPressed = attackKey >= 0 && attackKey < capi.Input.KeyboardKeyStateRaw.Length && capi.Input.KeyboardKeyStateRaw[attackKey];
+            bool grabPressed = grabKey >= 0 && grabKey < capi.Input.KeyboardKeyStateRaw.Length && capi.Input.KeyboardKeyStateRaw[grabKey];
+            var rider = capi.World.Player?.Entity;
+            if (rider?.MountedOn?.Entity?.EntityId == entity.EntityId)
+            {
+                var abilities = capi.ModLoader.GetModSystem<Commands.GriffonMountedAbilities>();
+                if (attackPressed && !wasAttackPressed) abilities?.RequestAbility(false);
+                if (grabPressed && !wasGrabPressed) abilities?.RequestAbility(true);
+            }
+            wasAttackPressed = attackPressed;
+            wasGrabPressed = grabPressed;
+        }
 
         if (entity.World.Side != EnumAppSide.Client || !waitingForFlightSneakRelease) return;
 

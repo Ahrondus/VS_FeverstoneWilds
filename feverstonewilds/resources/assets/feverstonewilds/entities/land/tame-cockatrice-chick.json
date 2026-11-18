@@ -34,6 +34,8 @@
         "size": 0.9,
         "sizeGrowthFactor": 0.2,
         "behaviors": [
+            { "code": "fswildsbehavior" },
+            { "code": "nametag" },
             { "code": "mouthinventory",
                 "acceptStacks": [
                     { "type": "item", "code": "bone" },
@@ -102,6 +104,8 @@
     },
     "server": {
         "behaviors": [
+            { "code": "fswildsbehavior" },
+            { "code": "nametag" },
             { "code": "mouthinventory",
                 "acceptStacks": [
                     { "type": "item", "code": "bone" },
@@ -132,11 +136,13 @@
                     }
                 ]
             },
-            { "code": "grow", "hoursToGrow": 100, 
+            { "code": "fswcommandgrow", "hoursToGrow": 100, 
                 "adultEntityCodes": [ "feverstonewilds:tame-cockatrice-male", "feverstonewilds:tame-cockatrice-female"] },
             { "code": "taskai",
                 "aiCreatureType": "LandCreature",
                 "aitasks": [
+            { "code": "fswfollowowner", "priority": 6, "slot": 0, "animation": "walk" },
+            { "code": "fswcompanionassist", "priority": 5, "slot": 0, "animation": "walk", "damage": 2 },
                     {
                         "code": "stayclosetoentity",
                         "priority": 1.4,

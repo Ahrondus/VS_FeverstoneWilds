@@ -6,6 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="$(VINTAGE_STORY)/Lib/0Harmony.dll" />
+    <Reference Include="$(VINTAGE_STORY)/Lib/cairo-sharp.dll" />
     <ProjectReference Include="../../feverstonewilds/feverstonewilds.csproj" />
     <Reference Include="$(VINTAGE_STORY)/VintagestoryAPI.dll" />
     <Reference Include="$(VINTAGE_STORY)/Mods/VSEssentials.dll" />
