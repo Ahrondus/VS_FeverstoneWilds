@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using Vintagestory.API.Client;
 using Vintagestory.API.Common;
 using Vintagestory.API.Common.Entities;
 using Vintagestory.API.Datastructures;
@@ -20,6 +22,17 @@ public class BehaviorFlight : EntityBehavior
         NoValidGround,
         Water
     }
+
+    private enum MountedFlightTurnPose
+    {
+        None,
+        HoverLeft,
+        HoverRight,
+        MovingLeft,
+        MovingRight
+    }
+
+    private const string MountedFlightTurnPoseAttribute = "feverstonewilds:mountedFlightTurnPose";
 
     public const string FlyingAttribute = "feverstonewilds:isFlying";
     public const string FlightAnimationSourceAttribute = "feverstonewilds:flightAnimationSource";
@@ -112,6 +125,11 @@ public class BehaviorFlight : EntityBehavior
 
     public bool PlayerFlightEnabled => playerFlightEnabled;
 
+    internal bool IsControlledByLocalPlayer =>
+        entity.Api is ICoreClientAPI capi &&
+        capi.World.Player?.Entity?.MountedOn is { CanControl: true } seat &&
+        seat.Entity == entity;
+
     public float PlayerFlightTurnSpeed => GetSyncedPlayerFlightSetting(PlayerFlightTurnSpeedAttribute, playerFlightTurnSpeed);
 
     public override string PropertyName() => "flight";
@@ -181,6 +199,7 @@ public class BehaviorFlight : EntityBehavior
 
     private void OnAfterPhysicsTick()
     {
+        if (entity.World.Side == EnumAppSide.Client && !IsControlledByLocalPlayer) return;
         if (!IsFlying && !clientPlayerFlightActive) return;
 
         // Catch physics overshoot on both sides without ending flight or blocking descent.
@@ -242,6 +261,7 @@ public class BehaviorFlight : EntityBehavior
             playerFlightDescending = false;
             playerFlightSprinting = false;
             playerFlightLandingRequested = false;
+            SetMountedFlightTurnPose(MountedFlightTurnPose.None);
             ResetPlayerFlightAnimationPhase();
             ResetPlayerFlightMotion();
             ClearFlightAnimation();
@@ -352,8 +372,12 @@ public class BehaviorFlight : EntityBehavior
         {
             UpdatePlayerFlightInputTimeout();
             UpdateClientPlayerControlledFlight();
-            SuppressClientGaitAnimation();
+            bool mountedFlightVisuals = clientPlayerFlightActive ||
+                (IsFlying && entity.WatchedAttributes.GetString(FlightAnimationSourceAttribute) == "mountedflight");
+            if (mountedFlightVisuals) SuppressClientGaitAnimation();
+
             UpdateClientFlightAnimation();
+            UpdateClientFlightTurnAnimation(mountedFlightVisuals);
             return;
         }
 
@@ -404,6 +428,7 @@ public class BehaviorFlight : EntityBehavior
                 isPlayerControlledFlight = false;
                 mountedFlightAnimation = null;
                 ClearFlightAnimation("mountedflight");
+                SetMountedFlightTurnPose(MountedFlightTurnPose.None);
                 playerFlightAscending = false;
                 playerFlightDescending = false;
                 playerFlightSprinting = false;
@@ -435,6 +460,7 @@ public class BehaviorFlight : EntityBehavior
 
         if (!IsFlying)
         {
+            SetMountedFlightTurnPose(MountedFlightTurnPose.None);
             mountedFlightAnimation = null;
             ClearFlightAnimation("mountedflight");
             ResetPlayerFlightAnimationPhase();
@@ -466,6 +492,8 @@ public class BehaviorFlight : EntityBehavior
         {
             ResetPlayerFlightAnimationPhase();
         }
+
+        SetMountedFlightTurnPose(GetMountedFlightTurnPose(controls));
 
         string animation = jumping ? playerFlightAscendAnimation : sneaking ? playerFlightDescendAnimation : forwardMovement == 0 ? playerFlightIdleAnimation : GetPlayerFlightCruiseAnimation(sprinting);
         if (animation == mountedFlightAnimation) return;
@@ -555,7 +583,8 @@ public class BehaviorFlight : EntityBehavior
 
     private void UpdateClientPlayerControlledFlight()
     {
-        if (!playerFlightEnabled || entity.GetInterface<IMountable>() is not IMountable mountable || !mountable.IsBeingControlled())
+        if (!playerFlightEnabled || !IsControlledByLocalPlayer ||
+            entity.GetInterface<IMountable>()?.ControllingControls is not EntityControls controls)
         {
             EndClientPlayerControlledFlight();
             return;
@@ -567,16 +596,7 @@ public class BehaviorFlight : EntityBehavior
             return;
         }
 
-        if (!clientPlayerFlightActive)
-        {
-            clientPlayerFlightActive = true;
-            ResetClientFlightAnimationState();
-            StopClientFlightTurnAnimation();
-        }
-
-        UpdateClientFlightTurnAnimation(mountable.ControllingControls);
-
-        EntityControls controls = mountable.ControllingControls;
+        clientPlayerFlightActive = true;
         float forwardMovement = controls.Forward ? 1 : controls.Backward ? -1 : 0;
         float horizontalSpeed = (playerFlightSprinting || controls.Sprint) ? GetPlayerFlightSprintSpeed() : GetPlayerFlightSpeed();
         float desiredX = (float)Math.Sin(entity.Pos.Yaw) * horizontalSpeed * forwardMovement;
@@ -587,101 +607,102 @@ public class BehaviorFlight : EntityBehavior
         entity.Pos.Motion.Y = LimitUpwardMotion(desiredY);
     }
 
-    private void ResetClientFlightAnimationState()
-    {
-        if (entity is not EntityAgent agent) return;
-
-        if (agent.AnimManager != null)
-        {
-            agent.AnimManager.StopAllAnimations();
-            agent.AnimManager.AnimationsDirty = true;
-        }
-        clientAnimationSource = null;
-        clientAnimation = null;
-        clientAnimationSpeed = 0;
-        clientAnimationWeight = 0;
-        clientAnimationEaseInSpeed = 0;
-        clientAnimationEaseOutSpeed = 0;
-        clientAnimationSuppressDefault = false;
-    }
-
     private void EndClientPlayerControlledFlight()
     {
         if (!clientPlayerFlightActive) return;
 
         clientPlayerFlightActive = false;
-        ResetPlayerFlightMotion();
-        StopClientFlightTurnAnimation();
+        playerFlightWalkX = 0;
+        playerFlightWalkZ = 0;
+        if (IsControlledByLocalPlayer) ResetPlayerFlightMotion();
     }
 
-    private void UpdateClientFlightTurnAnimation(EntityControls controls)
+    private static MountedFlightTurnPose GetMountedFlightTurnPose(EntityControls controls)
     {
-        if (controls == null || entity is not EntityAgent agent)
+        if (controls == null || controls.Left == controls.Right) return MountedFlightTurnPose.None;
+
+        if (controls.Forward || controls.Backward)
         {
-            StopClientFlightTurnAnimation();
+            return controls.Left ? MountedFlightTurnPose.MovingLeft : MountedFlightTurnPose.MovingRight;
+        }
+
+        return controls.Left ? MountedFlightTurnPose.HoverLeft : MountedFlightTurnPose.HoverRight;
+    }
+
+    private void SetMountedFlightTurnPose(MountedFlightTurnPose pose)
+    {
+        if (entity.WatchedAttributes.GetInt(MountedFlightTurnPoseAttribute) != (int)pose)
+        {
+            entity.WatchedAttributes.SetInt(MountedFlightTurnPoseAttribute, (int)pose);
+        }
+    }
+
+    private void UpdateClientFlightTurnAnimation(bool mountedFlightVisuals)
+    {
+        if (entity.AnimManager == null) return;
+
+        var pose = MountedFlightTurnPose.None;
+        if (mountedFlightVisuals)
+        {
+            pose = clientPlayerFlightActive
+                ? GetMountedFlightTurnPose(entity.GetInterface<IMountable>()?.ControllingControls)
+                : (MountedFlightTurnPose)entity.WatchedAttributes.GetInt(MountedFlightTurnPoseAttribute);
+        }
+
+        var (turnAnimation, bankAnimation) = pose switch
+        {
+            MountedFlightTurnPose.HoverLeft => ("idle-turn-left", "flightbankleft"),
+            MountedFlightTurnPose.HoverRight => ("idle-turn-right", "flightbankright"),
+            MountedFlightTurnPose.MovingLeft => ("turn-left", "flightbankleft"),
+            MountedFlightTurnPose.MovingRight => ("turn-right", "flightbankright"),
+            _ => ((string)null, (string)null)
+        };
+
+        UpdateClientFlightPose(ref clientFlightTurnAnimation, turnAnimation);
+        UpdateClientFlightPose(ref clientFlightBankAnimation, bankAnimation);
+    }
+
+    private void UpdateClientFlightPose(ref string activeAnimation, string nextAnimation)
+    {
+        var manager = entity.AnimManager;
+        if (nextAnimation == activeAnimation &&
+            (nextAnimation == null || manager.ActiveAnimationsByAnimCode.Values.Any(
+                animation => animation.Code == nextAnimation && animation.ClientSide)))
+        {
             return;
         }
 
-        bool turningLeft = controls.Left && !controls.Right;
-        bool turningRight = controls.Right && !controls.Left;
-        string turnAnimation = null;
-        string bankAnimation = null;
-        if (turningLeft || turningRight)
+        if (activeAnimation != null)
         {
-            bool moving = controls.Forward || controls.Backward;
-            turnAnimation = moving ? (turningLeft ? "turn-left" : "turn-right") : (turningLeft ? "idle-turn-left" : "idle-turn-right");
-            bankAnimation = turningLeft ? "flightbankleft" : "flightbankright";
+            manager.StopAnimation(activeAnimation);
+            manager.AnimationsDirty = true;
+            activeAnimation = null;
         }
 
-        bool turnChanged = turnAnimation != clientFlightTurnAnimation;
-        bool bankChanged = bankAnimation != clientFlightBankAnimation;
-        UpdateClientFlightPose(agent, ref clientFlightTurnAnimation, turnAnimation);
-        UpdateClientFlightPose(agent, ref clientFlightBankAnimation, bankAnimation);
-
-        if (turnChanged || bankChanged)
+        if (nextAnimation != null &&
+            entity.Properties.Client.AnimationsByMetaCode.TryGetValue(nextAnimation, out var configuredAnimation))
         {
-            agent.AnimManager.AnimationsDirty = true;
+            var animation = configuredAnimation.Clone();
+            animation.ClientSide = true;
+            manager.StartAnimation(animation);
+            activeAnimation = nextAnimation;
         }
-    }
-
-    private static void UpdateClientFlightPose(EntityAgent agent, ref string activeAnimation, string nextAnimation)
-    {
-        if (nextAnimation == activeAnimation) return;
-
-        if (!string.IsNullOrEmpty(activeAnimation))
-        {
-            agent.StopAnimation(activeAnimation);
-        }
-
-        if (!string.IsNullOrEmpty(nextAnimation)) agent.StartAnimation(nextAnimation);
-        activeAnimation = nextAnimation;
-    }
-
-    private void StopClientFlightTurnAnimation()
-    {
-        if (entity is not EntityAgent agent) return;
-
-        agent.StopAnimation("turn-left");
-        agent.StopAnimation("turn-right");
-        agent.StopAnimation("idle-turn-left");
-        agent.StopAnimation("idle-turn-right");
-        agent.StopAnimation("flightbankleft");
-        agent.StopAnimation("flightbankright");
-        agent.AnimManager.AnimationsDirty = true;
-        clientFlightTurnAnimation = null;
-        clientFlightBankAnimation = null;
     }
 
     private void SuppressClientGaitAnimation()
     {
-        if (!clientPlayerFlightActive || entity is not EntityAgent agent) return;
+        var manager = entity.AnimManager;
+        if (manager == null) return;
 
-        agent.AnimManager?.StopAnimation("gait");
-        agent.AnimManager?.StopAnimation("idle");
-        agent.AnimManager?.StopAnimation("walk");
-        agent.AnimManager?.StopAnimation("walkback");
-        agent.AnimManager?.StopAnimation("sprint");
-        agent.AnimManager?.StopAnimation("run");
+        manager.StopAnimation("gait");
+        manager.StopAnimation("idle");
+        manager.StopAnimation("walk");
+        manager.StopAnimation("walkback");
+        manager.StopAnimation("trot");
+        manager.StopAnimation("sprint");
+        manager.StopAnimation("run");
+        manager.StopAnimation("swim");
+        manager.StopAnimation("jump");
     }
 
     private void UpdateFlightFacing(Vec3d direction)
@@ -844,37 +865,41 @@ public class BehaviorFlight : EntityBehavior
         float animationEaseOutSpeed = entity.WatchedAttributes.GetFloat(FlightAnimationEaseOutSpeedAttribute, 6f);
         bool suppressDefaultAnimation = entity.WatchedAttributes.GetBool(FlightAnimationSuppressDefaultAttribute);
 
-        if (source == clientAnimationSource && animation == clientAnimation && animationSpeed == clientAnimationSpeed && animationWeight == clientAnimationWeight && animationEaseInSpeed == clientAnimationEaseInSpeed && animationEaseOutSpeed == clientAnimationEaseOutSpeed && suppressDefaultAnimation == clientAnimationSuppressDefault) return;
+        var manager = entity.AnimManager;
+        if (manager == null) return;
 
-        if (entity is EntityAgent agent)
+        bool hasFlightAnimation = !string.IsNullOrEmpty(source) && !string.IsNullOrEmpty(animation);
+        if (source == clientAnimationSource && animation == clientAnimation && animationSpeed == clientAnimationSpeed &&
+            animationWeight == clientAnimationWeight && animationEaseInSpeed == clientAnimationEaseInSpeed &&
+            animationEaseOutSpeed == clientAnimationEaseOutSpeed && suppressDefaultAnimation == clientAnimationSuppressDefault &&
+            (!hasFlightAnimation || (manager.ActiveAnimationsByAnimCode.TryGetValue(animation, out var active) &&
+                active.ClientSide && active.Code == source)))
         {
-            if (!string.IsNullOrEmpty(clientAnimationSource))
+            return;
+        }
+
+        if (!string.IsNullOrEmpty(clientAnimation) &&
+            manager.ActiveAnimationsByAnimCode.TryGetValue(clientAnimation, out var previous) &&
+            previous.ClientSide && previous.Code == clientAnimationSource)
+        {
+            manager.StopAnimation(clientAnimation);
+            manager.AnimationsDirty = true;
+        }
+
+        if (hasFlightAnimation)
+        {
+            manager.StartAnimation(new AnimationMetaData
             {
-                agent.AnimManager?.StopAnimation(clientAnimationSource);
-            }
-
-            if (!string.IsNullOrEmpty(clientAnimation))
-            {
-                agent.AnimManager?.StopAnimation(clientAnimation);
-            }
-
-            if (!string.IsNullOrEmpty(source) && !string.IsNullOrEmpty(animation))
-            {
-                agent.AnimManager?.StartAnimation(new AnimationMetaData
-                {
-                    Animation = animation,
-                    Code = source,
-                    AnimationSpeed = animationSpeed,
-                    Weight = animationWeight,
-                    BlendMode = EnumAnimationBlendMode.Average,
-                    EaseInSpeed = animationEaseInSpeed,
-                    EaseOutSpeed = animationEaseOutSpeed,
-                    SupressDefaultAnimation = suppressDefaultAnimation
-                });
-
-            }
-
-            agent.AnimManager.AnimationsDirty = true;
+                Animation = animation,
+                Code = source,
+                AnimationSpeed = animationSpeed,
+                Weight = animationWeight,
+                BlendMode = EnumAnimationBlendMode.Average,
+                EaseInSpeed = animationEaseInSpeed,
+                EaseOutSpeed = animationEaseOutSpeed,
+                SupressDefaultAnimation = suppressDefaultAnimation,
+                ClientSide = true
+            });
         }
 
         clientAnimationSource = source;
