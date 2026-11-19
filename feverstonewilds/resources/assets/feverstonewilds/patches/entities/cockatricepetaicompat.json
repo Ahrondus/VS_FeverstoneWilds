@@ -92,7 +92,7 @@
     },
     {
         "op": "remove",
-        "path": "/server/behaviors/11",
+        "path": "/server/behaviors/13",
         "file": "feverstonewilds:entities/land/tame-cockatrice-chick.json",
         "dependsOn": [ {"modid": "petai"} ],
         "condition": { "when": "FSWTameCockatriceEnabled", "isValue": "true" }
@@ -107,7 +107,7 @@
     },
     {
         "op": "addeach",
-        "path": "/server/behaviors/9/aitasks/0",
+        "path": "/server/behaviors/11/aitasks/0",
         "value": [
                     {
                         "code": "simplecommand",
@@ -241,7 +241,7 @@
     },
     {
         "op": "remove",
-        "path": "/server/behaviors/12",
+        "path": "/server/behaviors/14",
         "file": "feverstonewilds:entities/land/tame-cockatrice.json",
         "dependsOn": [ {"modid": "petai"} ],
         "condition": { "when": "FSWTameCockatriceEnabled", "isValue": "true" }
@@ -256,7 +256,7 @@
     },
     {
         "op": "addeach",
-        "path": "/server/behaviors/10/aitasks/0",
+        "path": "/server/behaviors/12/aitasks/0",
         "value": [
                     {
                         "code": "petmeleeattack",

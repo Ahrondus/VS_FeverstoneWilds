@@ -134,7 +134,7 @@
     },
     {
         "op": "addeach",
-        "path": "/server/behaviors/12/aitasks/0",
+        "path": "/server/behaviors/14/aitasks/0",
         "value": [ 
                 {
                     "code": "followmaster",
@@ -165,7 +165,7 @@
     },
     {
         "op": "addeach",
-        "path": "/server/behaviors/11/aitasks/0",
+        "path": "/server/behaviors/13/aitasks/0",
         "value": [ 
                 {
                     "code": "followmaster",
@@ -196,14 +196,14 @@
     },
     {
         "op": "remove",
-        "path": "/server/behaviors/13",
+        "path": "/server/behaviors/15",
         "file": "feverstonewilds:entities/land/horse.json",
         "dependsOn": [ {"modid": "petai"} ],
         "condition": { "when": "FSWHorseEnabled", "isValue": "true" }
     },
     {
         "op": "remove",
-        "path": "/server/behaviors/13",
+        "path": "/server/behaviors/15",
         "file": "feverstonewilds:entities/land/foal.json",
         "dependsOn": [ {"modid": "petai"} ],
         "condition": { "when": "FSWFoalEnabled", "isValue": "true" }
