@@ -72,13 +72,6 @@
     },
     {
         "op": "add",
-        "path": "/skipVariants",
-        "value": ["*-donkey"],
-        "file": "feverstonewilds:entities/land/horse.json",
-        "condition": { "when": "FSWDonkeyEnabled", "isValue": "false" }
-    },
-    {
-        "op": "add",
         "path": "/enabled",
         "value": false,
         "file": "feverstonewilds:entities/land/faunling.json",

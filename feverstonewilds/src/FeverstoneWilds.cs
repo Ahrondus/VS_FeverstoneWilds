@@ -34,7 +34,7 @@ namespace FeverstoneWilds
 			api.RegisterEntityBehaviorClass("fswentitylight", typeof(BehaviorEntityLight));
 			api.RegisterEntityBehaviorClass("flight", typeof(BehaviorFlight));
 			api.RegisterEntityBehaviorClass("flightrideable", typeof(BehaviorFlightRideable));
-            api.RegisterEntityBehaviorClass("direwolfrideable", typeof(FeverstoneWilds.Commands.DirewolfRideable));
+            api.RegisterEntityBehaviorClass("direwolfrideable", typeof(Commands.DirewolfRideable));
 			api.RegisterEntity("FlyingEntityAgent", typeof(FlyingEntityAgent));
 
 			if (api is ICoreServerAPI serverApi)
