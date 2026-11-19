@@ -1,0 +1,726 @@
+[
+    {
+        "op": "add",
+        "path": "/server/behaviors/11/aitasks/3/entityCodes/-",
+        "value": "griffon-wild-*",
+        "file": "game:entities/animal/mammal/fox-adult.json",
+        "condition": {
+            "when": "FSWGriffonEnabled",
+            "isValue": "true"
+        }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/11/aitasks/3/entityCodes/-",
+        "value": "griffon-adolescent-wild-*",
+        "file": "game:entities/animal/mammal/fox-adult.json",
+        "condition": {
+            "when": "FSWGriffonEnabled",
+            "isValue": "true"
+        }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/11/aitasks/-",
+        "value": {
+            "code": "fleeentity",
+            "priority": 3.5,
+            "priorityForCancel": 3.5,
+            "movespeed": 0.05,
+            "seekingRange": 18,
+            "fleeingDistance": 28,
+            "fleeDurationMs": 9000,
+            "mincooldown": 1000,
+            "maxcooldown": 2000,
+            "entityCodes": [
+                "griffon-tamed-*",
+                "griffon-adolescent-tamed-*"
+            ],
+            "retaliateAttacks": false,
+            "animation": "run",
+            "animationSpeed": 1.2,
+            "tamingGenerations": 1,
+            "maxGeneration": 0
+        },
+        "file": "game:entities/animal/mammal/fox-adult.json",
+        "condition": {
+            "when": "FSWGriffonEnabled",
+            "isValue": "true"
+        }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/11/aitasks/0/entityCodes/-",
+        "value": "griffon-wild-*",
+        "file": "game:entities/animal/mammal/fox-baby.json",
+        "condition": {
+            "when": "FSWGriffonEnabled",
+            "isValue": "true"
+        }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/11/aitasks/0/entityCodes/-",
+        "value": "griffon-adolescent-wild-*",
+        "file": "game:entities/animal/mammal/fox-baby.json",
+        "condition": {
+            "when": "FSWGriffonEnabled",
+            "isValue": "true"
+        }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/11/aitasks/-",
+        "value": {
+            "code": "fleeentity",
+            "priority": 3.5,
+            "priorityForCancel": 3.5,
+            "movespeed": 0.05,
+            "seekingRange": 18,
+            "fleeingDistance": 28,
+            "fleeDurationMs": 9000,
+            "mincooldown": 1000,
+            "maxcooldown": 2000,
+            "entityCodes": [
+                "griffon-tamed-*",
+                "griffon-adolescent-tamed-*"
+            ],
+            "retaliateAttacks": false,
+            "animation": "run",
+            "animationSpeed": 1.2,
+            "tamingGenerations": 1,
+            "maxGeneration": 0
+        },
+        "file": "game:entities/animal/mammal/fox-baby.json",
+        "condition": {
+            "when": "FSWGriffonEnabled",
+            "isValue": "true"
+        }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/11/aitasks/0/entityCodes/-",
+        "value": "griffon-wild-*",
+        "file": "game:entities/animal/mammal/hare-adult.json",
+        "condition": {
+            "when": "FSWGriffonEnabled",
+            "isValue": "true"
+        }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/11/aitasks/0/entityCodes/-",
+        "value": "griffon-adolescent-wild-*",
+        "file": "game:entities/animal/mammal/hare-adult.json",
+        "condition": {
+            "when": "FSWGriffonEnabled",
+            "isValue": "true"
+        }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/11/aitasks/-",
+        "value": {
+            "code": "fleeentity",
+            "priority": 3.5,
+            "priorityForCancel": 3.5,
+            "movespeed": 0.05,
+            "seekingRange": 18,
+            "fleeingDistance": 28,
+            "fleeDurationMs": 9000,
+            "mincooldown": 1000,
+            "maxcooldown": 2000,
+            "entityCodes": [
+                "griffon-tamed-*",
+                "griffon-adolescent-tamed-*"
+            ],
+            "retaliateAttacks": false,
+            "animation": "run",
+            "animationSpeed": 1.2,
+            "tamingGenerations": 1,
+            "maxGeneration": 0
+        },
+        "file": "game:entities/animal/mammal/hare-adult.json",
+        "condition": {
+            "when": "FSWGriffonEnabled",
+            "isValue": "true"
+        }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/9/aitasks/0/entityCodes/-",
+        "value": "griffon-wild-*",
+        "file": "game:entities/animal/mammal/hare-baby.json",
+        "condition": {
+            "when": "FSWGriffonEnabled",
+            "isValue": "true"
+        }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/9/aitasks/0/entityCodes/-",
+        "value": "griffon-adolescent-wild-*",
+        "file": "game:entities/animal/mammal/hare-baby.json",
+        "condition": {
+            "when": "FSWGriffonEnabled",
+            "isValue": "true"
+        }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/9/aitasks/-",
+        "value": {
+            "code": "fleeentity",
+            "priority": 3.5,
+            "priorityForCancel": 3.5,
+            "movespeed": 0.05,
+            "seekingRange": 18,
+            "fleeingDistance": 28,
+            "fleeDurationMs": 9000,
+            "mincooldown": 1000,
+            "maxcooldown": 2000,
+            "entityCodes": [
+                "griffon-tamed-*",
+                "griffon-adolescent-tamed-*"
+            ],
+            "retaliateAttacks": false,
+            "animation": "run",
+            "animationSpeed": 1.2,
+            "tamingGenerations": 1,
+            "maxGeneration": 0
+        },
+        "file": "game:entities/animal/mammal/hare-baby.json",
+        "condition": {
+            "when": "FSWGriffonEnabled",
+            "isValue": "true"
+        }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/10/aitasks/2/entityCodes/-",
+        "value": "griffon-wild-*",
+        "file": "game:entities/animal/mammal/hooved/deer-adult.json",
+        "condition": {
+            "when": "FSWGriffonEnabled",
+            "isValue": "true"
+        }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/10/aitasks/2/entityCodes/-",
+        "value": "griffon-adolescent-wild-*",
+        "file": "game:entities/animal/mammal/hooved/deer-adult.json",
+        "condition": {
+            "when": "FSWGriffonEnabled",
+            "isValue": "true"
+        }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/10/aitasks/-",
+        "value": {
+            "code": "fleeentity",
+            "priority": 3.5,
+            "priorityForCancel": 3.5,
+            "movespeed": 0.05,
+            "seekingRange": 18,
+            "fleeingDistance": 28,
+            "fleeDurationMs": 9000,
+            "mincooldown": 1000,
+            "maxcooldown": 2000,
+            "entityCodes": [
+                "griffon-tamed-*",
+                "griffon-adolescent-tamed-*"
+            ],
+            "retaliateAttacks": false,
+            "animation": "run",
+            "animationSpeed": 1.2,
+            "tamingGenerations": 1,
+            "maxGeneration": 0
+        },
+        "file": "game:entities/animal/mammal/hooved/deer-adult.json",
+        "condition": {
+            "when": "FSWGriffonEnabled",
+            "isValue": "true"
+        }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/11/aitasks/0/entityCodes/-",
+        "value": "griffon-wild-*",
+        "file": "game:entities/animal/mammal/hooved/deer-baby.json",
+        "condition": {
+            "when": "FSWGriffonEnabled",
+            "isValue": "true"
+        }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/11/aitasks/0/entityCodes/-",
+        "value": "griffon-adolescent-wild-*",
+        "file": "game:entities/animal/mammal/hooved/deer-baby.json",
+        "condition": {
+            "when": "FSWGriffonEnabled",
+            "isValue": "true"
+        }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/11/aitasks/-",
+        "value": {
+            "code": "fleeentity",
+            "priority": 3.5,
+            "priorityForCancel": 3.5,
+            "movespeed": 0.05,
+            "seekingRange": 18,
+            "fleeingDistance": 28,
+            "fleeDurationMs": 9000,
+            "mincooldown": 1000,
+            "maxcooldown": 2000,
+            "entityCodes": [
+                "griffon-tamed-*",
+                "griffon-adolescent-tamed-*"
+            ],
+            "retaliateAttacks": false,
+            "animation": "run",
+            "animationSpeed": 1.2,
+            "tamingGenerations": 1,
+            "maxGeneration": 0
+        },
+        "file": "game:entities/animal/mammal/hooved/deer-baby.json",
+        "condition": {
+            "when": "FSWGriffonEnabled",
+            "isValue": "true"
+        }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/12/aitasks/2/entityCodes/-",
+        "value": "griffon-wild-*",
+        "file": "game:entities/animal/mammal/hooved/goat-adult.json",
+        "condition": {
+            "when": "FSWGriffonEnabled",
+            "isValue": "true"
+        }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/12/aitasks/2/entityCodes/-",
+        "value": "griffon-adolescent-wild-*",
+        "file": "game:entities/animal/mammal/hooved/goat-adult.json",
+        "condition": {
+            "when": "FSWGriffonEnabled",
+            "isValue": "true"
+        }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/12/aitasks/-",
+        "value": {
+            "code": "fleeentity",
+            "priority": 3.5,
+            "priorityForCancel": 3.5,
+            "movespeed": 0.05,
+            "seekingRange": 18,
+            "fleeingDistance": 28,
+            "fleeDurationMs": 9000,
+            "mincooldown": 1000,
+            "maxcooldown": 2000,
+            "entityCodes": [
+                "griffon-tamed-*",
+                "griffon-adolescent-tamed-*"
+            ],
+            "retaliateAttacks": false,
+            "animation": "run",
+            "animationSpeed": 1.2,
+            "tamingGenerations": 1,
+            "maxGeneration": 0
+        },
+        "file": "game:entities/animal/mammal/hooved/goat-adult.json",
+        "condition": {
+            "when": "FSWGriffonEnabled",
+            "isValue": "true"
+        }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/11/aitasks/0/entityCodes/-",
+        "value": "griffon-wild-*",
+        "file": "game:entities/animal/mammal/hooved/goat-baby.json",
+        "condition": {
+            "when": "FSWGriffonEnabled",
+            "isValue": "true"
+        }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/11/aitasks/0/entityCodes/-",
+        "value": "griffon-adolescent-wild-*",
+        "file": "game:entities/animal/mammal/hooved/goat-baby.json",
+        "condition": {
+            "when": "FSWGriffonEnabled",
+            "isValue": "true"
+        }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/11/aitasks/-",
+        "value": {
+            "code": "fleeentity",
+            "priority": 3.5,
+            "priorityForCancel": 3.5,
+            "movespeed": 0.05,
+            "seekingRange": 18,
+            "fleeingDistance": 28,
+            "fleeDurationMs": 9000,
+            "mincooldown": 1000,
+            "maxcooldown": 2000,
+            "entityCodes": [
+                "griffon-tamed-*",
+                "griffon-adolescent-tamed-*"
+            ],
+            "retaliateAttacks": false,
+            "animation": "run",
+            "animationSpeed": 1.2,
+            "tamingGenerations": 1,
+            "maxGeneration": 0
+        },
+        "file": "game:entities/animal/mammal/hooved/goat-baby.json",
+        "condition": {
+            "when": "FSWGriffonEnabled",
+            "isValue": "true"
+        }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/10/aitasks/2/entityCodes/-",
+        "value": "griffon-wild-*",
+        "file": "game:entities/animal/mammal/hooved/sheep-adult.json",
+        "condition": {
+            "when": "FSWGriffonEnabled",
+            "isValue": "true"
+        }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/10/aitasks/2/entityCodes/-",
+        "value": "griffon-adolescent-wild-*",
+        "file": "game:entities/animal/mammal/hooved/sheep-adult.json",
+        "condition": {
+            "when": "FSWGriffonEnabled",
+            "isValue": "true"
+        }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/10/aitasks/9/entityCodes/-",
+        "value": "griffon-wild-*",
+        "file": "game:entities/animal/mammal/hooved/sheep-adult.json",
+        "condition": {
+            "when": "FSWGriffonEnabled",
+            "isValue": "true"
+        }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/10/aitasks/9/entityCodes/-",
+        "value": "griffon-adolescent-wild-*",
+        "file": "game:entities/animal/mammal/hooved/sheep-adult.json",
+        "condition": {
+            "when": "FSWGriffonEnabled",
+            "isValue": "true"
+        }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/10/aitasks/11/entityCodes/-",
+        "value": "griffon-wild-*",
+        "file": "game:entities/animal/mammal/hooved/sheep-adult.json",
+        "condition": {
+            "when": "FSWGriffonEnabled",
+            "isValue": "true"
+        }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/10/aitasks/11/entityCodes/-",
+        "value": "griffon-adolescent-wild-*",
+        "file": "game:entities/animal/mammal/hooved/sheep-adult.json",
+        "condition": {
+            "when": "FSWGriffonEnabled",
+            "isValue": "true"
+        }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/10/aitasks/-",
+        "value": {
+            "code": "fleeentity",
+            "priority": 3.5,
+            "priorityForCancel": 3.5,
+            "movespeed": 0.05,
+            "seekingRange": 18,
+            "fleeingDistance": 28,
+            "fleeDurationMs": 9000,
+            "mincooldown": 1000,
+            "maxcooldown": 2000,
+            "entityCodes": [
+                "griffon-tamed-*",
+                "griffon-adolescent-tamed-*"
+            ],
+            "retaliateAttacks": false,
+            "animation": "run",
+            "animationSpeed": 1.2,
+            "tamingGenerations": 1,
+            "maxGeneration": 0
+        },
+        "file": "game:entities/animal/mammal/hooved/sheep-adult.json",
+        "condition": {
+            "when": "FSWGriffonEnabled",
+            "isValue": "true"
+        }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/10/aitasks/0/entityCodes/-",
+        "value": "griffon-wild-*",
+        "file": "game:entities/animal/mammal/hooved/sheep-baby.json",
+        "condition": {
+            "when": "FSWGriffonEnabled",
+            "isValue": "true"
+        }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/10/aitasks/0/entityCodes/-",
+        "value": "griffon-adolescent-wild-*",
+        "file": "game:entities/animal/mammal/hooved/sheep-baby.json",
+        "condition": {
+            "when": "FSWGriffonEnabled",
+            "isValue": "true"
+        }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/10/aitasks/1/entityCodes/-",
+        "value": "griffon-wild-*",
+        "file": "game:entities/animal/mammal/hooved/sheep-baby.json",
+        "condition": {
+            "when": "FSWGriffonEnabled",
+            "isValue": "true"
+        }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/10/aitasks/1/entityCodes/-",
+        "value": "griffon-adolescent-wild-*",
+        "file": "game:entities/animal/mammal/hooved/sheep-baby.json",
+        "condition": {
+            "when": "FSWGriffonEnabled",
+            "isValue": "true"
+        }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/10/aitasks/-",
+        "value": {
+            "code": "fleeentity",
+            "priority": 3.5,
+            "priorityForCancel": 3.5,
+            "movespeed": 0.05,
+            "seekingRange": 18,
+            "fleeingDistance": 28,
+            "fleeDurationMs": 9000,
+            "mincooldown": 1000,
+            "maxcooldown": 2000,
+            "entityCodes": [
+                "griffon-tamed-*",
+                "griffon-adolescent-tamed-*"
+            ],
+            "retaliateAttacks": false,
+            "animation": "run",
+            "animationSpeed": 1.2,
+            "tamingGenerations": 1,
+            "maxGeneration": 0
+        },
+        "file": "game:entities/animal/mammal/hooved/sheep-baby.json",
+        "condition": {
+            "when": "FSWGriffonEnabled",
+            "isValue": "true"
+        }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/10/aitasks/2/entityCodes/-",
+        "value": "griffon-wild-*",
+        "file": "game:entities/animal/mammal/raccoon-adult.json",
+        "condition": {
+            "when": "FSWGriffonEnabled",
+            "isValue": "true"
+        }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/10/aitasks/2/entityCodes/-",
+        "value": "griffon-adolescent-wild-*",
+        "file": "game:entities/animal/mammal/raccoon-adult.json",
+        "condition": {
+            "when": "FSWGriffonEnabled",
+            "isValue": "true"
+        }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/10/aitasks/-",
+        "value": {
+            "code": "fleeentity",
+            "priority": 3.5,
+            "priorityForCancel": 3.5,
+            "movespeed": 0.05,
+            "seekingRange": 18,
+            "fleeingDistance": 28,
+            "fleeDurationMs": 9000,
+            "mincooldown": 1000,
+            "maxcooldown": 2000,
+            "entityCodes": [
+                "griffon-tamed-*",
+                "griffon-adolescent-tamed-*"
+            ],
+            "retaliateAttacks": false,
+            "animation": "walk",
+            "animationSpeed": 1.2,
+            "tamingGenerations": 1,
+            "maxGeneration": 0
+        },
+        "file": "game:entities/animal/mammal/raccoon-adult.json",
+        "condition": {
+            "when": "FSWGriffonEnabled",
+            "isValue": "true"
+        }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/10/aitasks/0/entityCodes/-",
+        "value": "griffon-wild-*",
+        "file": "game:entities/animal/mammal/raccoon-baby.json",
+        "condition": {
+            "when": "FSWGriffonEnabled",
+            "isValue": "true"
+        }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/10/aitasks/0/entityCodes/-",
+        "value": "griffon-adolescent-wild-*",
+        "file": "game:entities/animal/mammal/raccoon-baby.json",
+        "condition": {
+            "when": "FSWGriffonEnabled",
+            "isValue": "true"
+        }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/10/aitasks/-",
+        "value": {
+            "code": "fleeentity",
+            "priority": 3.5,
+            "priorityForCancel": 3.5,
+            "movespeed": 0.05,
+            "seekingRange": 18,
+            "fleeingDistance": 28,
+            "fleeDurationMs": 9000,
+            "mincooldown": 1000,
+            "maxcooldown": 2000,
+            "entityCodes": [
+                "griffon-tamed-*",
+                "griffon-adolescent-tamed-*"
+            ],
+            "retaliateAttacks": false,
+            "animation": "run",
+            "animationSpeed": 1.2,
+            "tamingGenerations": 1,
+            "maxGeneration": 0
+        },
+        "file": "game:entities/animal/mammal/raccoon-baby.json",
+        "condition": {
+            "when": "FSWGriffonEnabled",
+            "isValue": "true"
+        }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/10/aitasks/3/entityCodes/-",
+        "value": "griffon-wild-*",
+        "file": "game:entities/animal/mammal/wolf-adult.json",
+        "condition": {
+            "when": "FSWGriffonEnabled",
+            "isValue": "true"
+        }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/10/aitasks/-",
+        "value": {
+            "code": "fleeentity",
+            "priority": 3.5,
+            "priorityForCancel": 3.5,
+            "movespeed": 0.05,
+            "seekingRange": 18,
+            "fleeingDistance": 28,
+            "fleeDurationMs": 9000,
+            "mincooldown": 1000,
+            "maxcooldown": 2000,
+            "entityCodes": [
+                "griffon-tamed-*"
+            ],
+            "retaliateAttacks": false,
+            "animation": "run",
+            "animationSpeed": 1.2,
+            "tamingGenerations": 1,
+            "maxGeneration": 0
+        },
+        "file": "game:entities/animal/mammal/wolf-adult.json",
+        "condition": {
+            "when": "FSWGriffonEnabled",
+            "isValue": "true"
+        }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/10/aitasks/0/entityCodes/-",
+        "value": "griffon-wild-*",
+        "file": "game:entities/animal/mammal/wolf-baby.json",
+        "condition": {
+            "when": "FSWGriffonEnabled",
+            "isValue": "true"
+        }
+    },
+    {
+        "op": "add",
+        "path": "/server/behaviors/10/aitasks/-",
+        "value": {
+            "code": "fleeentity",
+            "priority": 3.5,
+            "priorityForCancel": 3.5,
+            "movespeed": 0.05,
+            "seekingRange": 18,
+            "fleeingDistance": 28,
+            "fleeDurationMs": 9000,
+            "mincooldown": 1000,
+            "maxcooldown": 2000,
+            "entityCodes": [
+                "griffon-tamed-*"
+            ],
+            "retaliateAttacks": false,
+            "animation": "run",
+            "animationSpeed": 1.2,
+            "tamingGenerations": 1,
+            "maxGeneration": 0
+        },
+        "file": "game:entities/animal/mammal/wolf-baby.json",
+        "condition": {
+            "when": "FSWGriffonEnabled",
+            "isValue": "true"
+        }
+    }
+]
