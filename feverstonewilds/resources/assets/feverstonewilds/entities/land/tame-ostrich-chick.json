@@ -33,7 +33,7 @@
 		"sizeGrowthFactor": 0.3,
 		"behaviors": [
             { "code": "fswildsbehavior" },
-            { "code": "nametag" },
+            { "code": "nametag", "showtagonlywhentargeted": true },
 			{ "code": "controlledphysics", "stepHeight": 1.1251 }, 
 			{ "code": "floatupwhenstuck", "onlyWhenDead": true },
 			{ "code": "interpolateposition" },
@@ -103,7 +103,7 @@
 		},
 		"behaviors": [
             { "code": "fswildsbehavior" },
-            { "code": "nametag" },
+            { "code": "nametag", "showtagonlywhentargeted": true },
 			{ "code": "repulseagents" }, 
 			{ "code": "controlledphysics", "stepHeight": 1.1251 },
 			{ "code": "despawn", "enabledByType": { "*": false }, "minPlayerDistance": 8, "belowLightLevel": 8, "minSeconds": 300 },

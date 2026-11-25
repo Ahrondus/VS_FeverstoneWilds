@@ -1,0 +1,268 @@
+{
+  "code": "fsw-taxidermy-fish",
+  "maxstacksize": 1,
+  "behaviors": [
+    {
+      "name": "GroundStorable",
+      "properties": {
+        "layout": "SingleCenter",
+        "collisionBox": {
+          "y1": 0,
+          "z1": 0,
+          "z2": 1,
+          "y2": 0.125,
+          "x1": 0,
+          "x2": 1
+        }
+      }
+    }
+  ],
+  "variantgroups": [
+    {
+      "states": [
+        "reef-discus",
+        "freshwater-buromenfish",
+        "freshwater-ghostfish",
+        "freshwater-eel",
+        "freshwater-stingray",
+        "saltwater-buromenfish",
+        "saltwater-ghostfish",
+        "saltwater-eel",
+        "saltwater-stingray"
+      ],
+      "code": "fish"
+    }
+  ],
+  "shapeByType": {
+    "fsw-taxidermy-fish-reef-discus": {
+      "base": "entity/water/discus"
+    },
+    "fsw-taxidermy-fish-freshwater-buromenfish": {
+      "base": "entity/water/buromenfish"
+    },
+    "fsw-taxidermy-fish-freshwater-ghostfish": {
+      "base": "entity/water/ghostfish"
+    },
+    "fsw-taxidermy-fish-freshwater-eel": {
+      "base": "entity/water/eel"
+    },
+    "fsw-taxidermy-fish-freshwater-stingray": {
+      "base": "entity/water/stingray"
+    },
+    "fsw-taxidermy-fish-saltwater-buromenfish": {
+      "base": "entity/water/buromenfish"
+    },
+    "fsw-taxidermy-fish-saltwater-ghostfish": {
+      "base": "entity/water/ghostfish"
+    },
+    "fsw-taxidermy-fish-saltwater-eel": {
+      "base": "entity/water/eel"
+    },
+    "fsw-taxidermy-fish-saltwater-stingray": {
+      "base": "entity/water/stingray"
+    }
+  },
+  "texturesByType": {
+    "fsw-taxidermy-fish-reef-discus": {
+      "null": {
+        "base": "feverstonewilds:entity/water/discus/discus1"
+      },
+      "discus1": {
+        "base": "feverstonewilds:entity/water/discus/discus1"
+      }
+    },
+    "fsw-taxidermy-fish-freshwater-buromenfish": {
+      "buromenfish1": {
+        "base": "feverstonewilds:entity/water/buromenfish/buromenfish1"
+      }
+    },
+    "fsw-taxidermy-fish-freshwater-ghostfish": {
+      "ghostfish": {
+        "base": "feverstonewilds:entity/water/ghostfish/ghostfish"
+      }
+    },
+    "fsw-taxidermy-fish-freshwater-eel": {
+      "eelskin5": {
+        "base": "feverstonewilds:entity/water/eel/eelskin5"
+      },
+      "null": {
+        "base": "feverstonewilds:entity/water/eel/eelskin1"
+      }
+    },
+    "fsw-taxidermy-fish-freshwater-stingray": {
+      "stingrayskin1": {
+        "base": "feverstonewilds:entity/water/stingray/stingrayskin1"
+      },
+      "null": {
+        "base": "feverstonewilds:entity/water/stingray/stingrayskin1"
+      }
+    },
+    "fsw-taxidermy-fish-saltwater-buromenfish": {
+      "buromenfish1": {
+        "base": "feverstonewilds:entity/water/buromenfish/buromenfish1"
+      }
+    },
+    "fsw-taxidermy-fish-saltwater-ghostfish": {
+      "ghostfish": {
+        "base": "feverstonewilds:entity/water/ghostfish/ghostfish"
+      }
+    },
+    "fsw-taxidermy-fish-saltwater-eel": {
+      "eelskin5": {
+        "base": "feverstonewilds:entity/water/eel/eelskin5"
+      },
+      "null": {
+        "base": "feverstonewilds:entity/water/eel/eelskin1"
+      }
+    },
+    "fsw-taxidermy-fish-saltwater-stingray": {
+      "stingrayskin1": {
+        "base": "feverstonewilds:entity/water/stingray/stingrayskin1"
+      },
+      "null": {
+        "base": "feverstonewilds:entity/water/stingray/stingrayskin1"
+      }
+    }
+  },
+  "attributes": {
+    "onAntlerMountTransformByType": {
+      "fsw-taxidermy-fish-reef-discus": {
+        "scale": 1.0,
+        "rotation": { "x": 0, "y": 90, "z": 0 },
+        "translation": { "x": -0.36, "y": 0.3, "z": 0.05 },
+        "origin": {
+          "y": 0.5,
+          "x": 0.5,
+          "z": 0.5
+        }
+      },
+      "fsw-taxidermy-fish-freshwater-buromenfish": {
+        "scale": 0.8,
+        "rotation": { "x": 0, "y": 90, "z": 0 },
+        "translation": { "x": -0.36, "y": 0.3, "z": 0.1 },
+        "origin": {
+          "y": 0.5,
+          "x": 0.5,
+          "z": 0.5
+        }
+      },
+      "fsw-taxidermy-fish-freshwater-ghostfish": {
+        "scale": 0.8,
+        "rotation": { "x": 0, "y": 90, "z": 0 },
+        "translation": { "x": -0.36, "y": 0.3, "z": 0.05 },
+        "origin": { "x": 0.5, "y": 0.2, "z": 0.5 }
+      },
+      "fsw-taxidermy-fish-freshwater-eel": {
+        "scale": 0.5,
+        "rotation": { "x": 0, "y": 97, "z": 0 },
+        "translation": { "x": -0.37, "y": 0, "z": 0.1 },
+        "origin": {
+          "y": 0.5,
+          "x": 0.5,
+          "z": 0.5
+        }
+      },
+      "fsw-taxidermy-fish-freshwater-stingray": {
+        "scale": 0.5,
+        "rotation": { "x": 0, "y": 0, "z": -91 },
+        "translation": { "x": -0.35, "y": 0, "z": -0.015 },
+        "origin": {
+          "y": 0.5,
+          "x": 0.5,
+          "z": 0.5
+        }
+      },
+      "fsw-taxidermy-fish-saltwater-buromenfish": {
+        "scale": 0.8,
+        "rotation": { "x": 0, "y": 90, "z": 0 },
+        "translation": { "x": -0.36, "y": 0.3, "z": 0.1 },
+        "origin": {
+          "y": 0.5,
+          "x": 0.5,
+          "z": 0.5
+        }
+      },
+      "fsw-taxidermy-fish-saltwater-ghostfish": {
+        "scale": 0.8,
+        "rotation": { "x": 0, "y": 90, "z": 0 },
+        "translation": { "x": -0.36, "y": 0.3, "z": 0.05 },
+        "origin": { "x": 0.5, "y": 0.2, "z": 0.5 }
+      },
+      "fsw-taxidermy-fish-saltwater-eel": {
+        "scale": 0.5,
+        "rotation": { "x": 0, "y": 97, "z": 0 },
+        "translation": { "x": -0.37, "y": 0, "z": 0.1 },
+        "origin": {
+          "y": 0.5,
+          "x": 0.5,
+          "z": 0.5
+        }
+      },
+      "fsw-taxidermy-fish-saltwater-stingray": {
+        "scale": 0.5,
+        "rotation": { "x": 0, "y": 0, "z": -91 },
+        "translation": { "x": -0.35, "y": 0, "z": -0.015 },
+        "origin": {
+          "y": 0.5,
+          "x": 0.5,
+          "z": 0.5
+        }
+      }
+    },
+    "antlerMountable": true,
+    "handbook": {
+      "groupBy": [
+        "fsw-taxidermy-fish-*"
+      ]
+    },
+    "groundStorageTransformByType": { "*-stingray": {"translation":{"x":0,"y":-0.3,"z":0},"rotation":{"x":0,"y":90,"z":-1},"origin":{"x":0.5,"y":0.2,"z":0.5},"scale":0.5}, "*": {
+      "rotation": {
+        "y": 1,
+        "x": -90,
+        "z": 30
+      },
+      "translation": {
+        "y": -0.16,
+        "x": 0,
+        "z": 0
+      },
+      "origin": {
+        "y": 0.2,
+        "x": 0.5,
+        "z": 0.5
+      }
+    } }
+  },
+  "creativeinventory": {
+    "general": [
+      "*"
+    ],
+    "decorative": [
+      "*"
+    ],
+    "fswilds": [
+      "*"
+    ]
+  },
+  "guiTransform": {
+    "rotation": {
+      "y": -69,
+      "x": 180,
+      "z": 15
+    },
+    "scale": 1.73,
+    "origin": {
+      "y": 0.2,
+      "x": 0.4,
+      "z": 0.55
+    }
+  },
+  "groundTransform": {
+    "rotation": {
+      "y": 0,
+      "x": 90,
+      "z": 0
+    },
+    "scale": 1.5
+  }
+}

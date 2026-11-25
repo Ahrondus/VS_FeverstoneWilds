@@ -1,0 +1,2035 @@
+{
+  "behaviors": [
+    { "name": "GroundStorable", "properties": {
+      "layout": "SingleCenter",
+      "collisionBox": { "x1": 0, "y1": 0, "z1": 0, "x2": 1, "y2": 0.75, "z2": 1 }
+    } }
+  ],
+  "code": "griffon-head",
+  "maxstacksize": 1,
+  "variantgroups": [
+    {
+      "code": "skin",
+      "states": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8"
+      ]
+    },
+    {
+      "code": "eye",
+      "states": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ]
+    },
+    {
+      "code": "spots",
+      "states": [
+        "plain",
+        "spotted"
+      ]
+    }
+  ],
+  "shape": {
+    "base": "block/bodyparts/griffon-head"
+  },
+  "texturesByType": {
+    "griffon-head-0-0-plain": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin1"
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin1Wing"
+      }
+    },
+    "griffon-head-0-0-spotted": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin1",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-spots",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin1Wing"
+      }
+    },
+    "griffon-head-0-1-plain": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin1",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-gray",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin1Wing"
+      }
+    },
+    "griffon-head-0-1-spotted": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin1",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-spots",
+            "blendMode": "Normal"
+          },
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-gray",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin1Wing"
+      }
+    },
+    "griffon-head-0-2-plain": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin1",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-red",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin1Wing"
+      }
+    },
+    "griffon-head-0-2-spotted": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin1",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-spots",
+            "blendMode": "Normal"
+          },
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-red",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin1Wing"
+      }
+    },
+    "griffon-head-0-3-plain": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin1",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-yellow",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin1Wing"
+      }
+    },
+    "griffon-head-0-3-spotted": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin1",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-spots",
+            "blendMode": "Normal"
+          },
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-yellow",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin1Wing"
+      }
+    },
+    "griffon-head-0-4-plain": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin1",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-gold",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin1Wing"
+      }
+    },
+    "griffon-head-0-4-spotted": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin1",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-spots",
+            "blendMode": "Normal"
+          },
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-gold",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin1Wing"
+      }
+    },
+    "griffon-head-0-5-plain": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin1",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-blue",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin1Wing"
+      }
+    },
+    "griffon-head-0-5-spotted": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin1",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-spots",
+            "blendMode": "Normal"
+          },
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-blue",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin1Wing"
+      }
+    },
+    "griffon-head-0-6-plain": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin1",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-green",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin1Wing"
+      }
+    },
+    "griffon-head-0-6-spotted": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin1",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-spots",
+            "blendMode": "Normal"
+          },
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-green",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin1Wing"
+      }
+    },
+    "griffon-head-1-0-plain": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin2"
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin2Wing"
+      }
+    },
+    "griffon-head-1-0-spotted": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin2",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-spots",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin2Wing"
+      }
+    },
+    "griffon-head-1-1-plain": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin2",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-gray",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin2Wing"
+      }
+    },
+    "griffon-head-1-1-spotted": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin2",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-spots",
+            "blendMode": "Normal"
+          },
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-gray",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin2Wing"
+      }
+    },
+    "griffon-head-1-2-plain": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin2",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-red",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin2Wing"
+      }
+    },
+    "griffon-head-1-2-spotted": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin2",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-spots",
+            "blendMode": "Normal"
+          },
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-red",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin2Wing"
+      }
+    },
+    "griffon-head-1-3-plain": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin2",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-yellow",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin2Wing"
+      }
+    },
+    "griffon-head-1-3-spotted": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin2",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-spots",
+            "blendMode": "Normal"
+          },
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-yellow",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin2Wing"
+      }
+    },
+    "griffon-head-1-4-plain": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin2",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-gold",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin2Wing"
+      }
+    },
+    "griffon-head-1-4-spotted": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin2",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-spots",
+            "blendMode": "Normal"
+          },
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-gold",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin2Wing"
+      }
+    },
+    "griffon-head-1-5-plain": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin2",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-blue",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin2Wing"
+      }
+    },
+    "griffon-head-1-5-spotted": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin2",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-spots",
+            "blendMode": "Normal"
+          },
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-blue",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin2Wing"
+      }
+    },
+    "griffon-head-1-6-plain": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin2",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-green",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin2Wing"
+      }
+    },
+    "griffon-head-1-6-spotted": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin2",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-spots",
+            "blendMode": "Normal"
+          },
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-green",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin2Wing"
+      }
+    },
+    "griffon-head-2-0-plain": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin3"
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin3Wing"
+      }
+    },
+    "griffon-head-2-0-spotted": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin3",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-spots",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin3Wing"
+      }
+    },
+    "griffon-head-2-1-plain": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin3",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-gray",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin3Wing"
+      }
+    },
+    "griffon-head-2-1-spotted": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin3",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-spots",
+            "blendMode": "Normal"
+          },
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-gray",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin3Wing"
+      }
+    },
+    "griffon-head-2-2-plain": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin3",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-red",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin3Wing"
+      }
+    },
+    "griffon-head-2-2-spotted": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin3",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-spots",
+            "blendMode": "Normal"
+          },
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-red",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin3Wing"
+      }
+    },
+    "griffon-head-2-3-plain": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin3",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-yellow",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin3Wing"
+      }
+    },
+    "griffon-head-2-3-spotted": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin3",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-spots",
+            "blendMode": "Normal"
+          },
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-yellow",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin3Wing"
+      }
+    },
+    "griffon-head-2-4-plain": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin3",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-gold",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin3Wing"
+      }
+    },
+    "griffon-head-2-4-spotted": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin3",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-spots",
+            "blendMode": "Normal"
+          },
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-gold",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin3Wing"
+      }
+    },
+    "griffon-head-2-5-plain": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin3",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-blue",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin3Wing"
+      }
+    },
+    "griffon-head-2-5-spotted": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin3",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-spots",
+            "blendMode": "Normal"
+          },
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-blue",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin3Wing"
+      }
+    },
+    "griffon-head-2-6-plain": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin3",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-green",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin3Wing"
+      }
+    },
+    "griffon-head-2-6-spotted": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin3",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-spots",
+            "blendMode": "Normal"
+          },
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-green",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin3Wing"
+      }
+    },
+    "griffon-head-3-0-plain": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin4"
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin4Wing"
+      }
+    },
+    "griffon-head-3-0-spotted": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin4",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-spots",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin4Wing"
+      }
+    },
+    "griffon-head-3-1-plain": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin4",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-gray",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin4Wing"
+      }
+    },
+    "griffon-head-3-1-spotted": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin4",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-spots",
+            "blendMode": "Normal"
+          },
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-gray",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin4Wing"
+      }
+    },
+    "griffon-head-3-2-plain": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin4",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-red",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin4Wing"
+      }
+    },
+    "griffon-head-3-2-spotted": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin4",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-spots",
+            "blendMode": "Normal"
+          },
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-red",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin4Wing"
+      }
+    },
+    "griffon-head-3-3-plain": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin4",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-yellow",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin4Wing"
+      }
+    },
+    "griffon-head-3-3-spotted": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin4",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-spots",
+            "blendMode": "Normal"
+          },
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-yellow",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin4Wing"
+      }
+    },
+    "griffon-head-3-4-plain": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin4",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-gold",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin4Wing"
+      }
+    },
+    "griffon-head-3-4-spotted": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin4",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-spots",
+            "blendMode": "Normal"
+          },
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-gold",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin4Wing"
+      }
+    },
+    "griffon-head-3-5-plain": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin4",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-blue",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin4Wing"
+      }
+    },
+    "griffon-head-3-5-spotted": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin4",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-spots",
+            "blendMode": "Normal"
+          },
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-blue",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin4Wing"
+      }
+    },
+    "griffon-head-3-6-plain": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin4",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-green",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin4Wing"
+      }
+    },
+    "griffon-head-3-6-spotted": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin4",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-spots",
+            "blendMode": "Normal"
+          },
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-green",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin4Wing"
+      }
+    },
+    "griffon-head-4-0-plain": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin5"
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin5Wing"
+      }
+    },
+    "griffon-head-4-0-spotted": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin5",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-spots",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin5Wing"
+      }
+    },
+    "griffon-head-4-1-plain": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin5",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-gray",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin5Wing"
+      }
+    },
+    "griffon-head-4-1-spotted": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin5",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-spots",
+            "blendMode": "Normal"
+          },
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-gray",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin5Wing"
+      }
+    },
+    "griffon-head-4-2-plain": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin5",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-red",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin5Wing"
+      }
+    },
+    "griffon-head-4-2-spotted": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin5",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-spots",
+            "blendMode": "Normal"
+          },
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-red",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin5Wing"
+      }
+    },
+    "griffon-head-4-3-plain": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin5",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-yellow",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin5Wing"
+      }
+    },
+    "griffon-head-4-3-spotted": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin5",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-spots",
+            "blendMode": "Normal"
+          },
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-yellow",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin5Wing"
+      }
+    },
+    "griffon-head-4-4-plain": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin5",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-gold",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin5Wing"
+      }
+    },
+    "griffon-head-4-4-spotted": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin5",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-spots",
+            "blendMode": "Normal"
+          },
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-gold",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin5Wing"
+      }
+    },
+    "griffon-head-4-5-plain": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin5",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-blue",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin5Wing"
+      }
+    },
+    "griffon-head-4-5-spotted": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin5",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-spots",
+            "blendMode": "Normal"
+          },
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-blue",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin5Wing"
+      }
+    },
+    "griffon-head-4-6-plain": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin5",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-green",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin5Wing"
+      }
+    },
+    "griffon-head-4-6-spotted": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin5",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-spots",
+            "blendMode": "Normal"
+          },
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-green",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin5Wing"
+      }
+    },
+    "griffon-head-5-0-plain": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin6"
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin6Wing"
+      }
+    },
+    "griffon-head-5-0-spotted": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin6",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-spots",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin6Wing"
+      }
+    },
+    "griffon-head-5-1-plain": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin6",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-gray",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin6Wing"
+      }
+    },
+    "griffon-head-5-1-spotted": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin6",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-spots",
+            "blendMode": "Normal"
+          },
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-gray",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin6Wing"
+      }
+    },
+    "griffon-head-5-2-plain": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin6",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-red",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin6Wing"
+      }
+    },
+    "griffon-head-5-2-spotted": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin6",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-spots",
+            "blendMode": "Normal"
+          },
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-red",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin6Wing"
+      }
+    },
+    "griffon-head-5-3-plain": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin6",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-yellow",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin6Wing"
+      }
+    },
+    "griffon-head-5-3-spotted": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin6",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-spots",
+            "blendMode": "Normal"
+          },
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-yellow",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin6Wing"
+      }
+    },
+    "griffon-head-5-4-plain": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin6",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-gold",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin6Wing"
+      }
+    },
+    "griffon-head-5-4-spotted": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin6",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-spots",
+            "blendMode": "Normal"
+          },
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-gold",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin6Wing"
+      }
+    },
+    "griffon-head-5-5-plain": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin6",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-blue",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin6Wing"
+      }
+    },
+    "griffon-head-5-5-spotted": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin6",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-spots",
+            "blendMode": "Normal"
+          },
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-blue",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin6Wing"
+      }
+    },
+    "griffon-head-5-6-plain": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin6",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-green",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin6Wing"
+      }
+    },
+    "griffon-head-5-6-spotted": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin6",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-spots",
+            "blendMode": "Normal"
+          },
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-green",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin6Wing"
+      }
+    },
+    "griffon-head-6-0-plain": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin7"
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin7Wing"
+      }
+    },
+    "griffon-head-6-0-spotted": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin7",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-spots",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin7Wing"
+      }
+    },
+    "griffon-head-6-1-plain": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin7",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-gray",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin7Wing"
+      }
+    },
+    "griffon-head-6-1-spotted": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin7",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-spots",
+            "blendMode": "Normal"
+          },
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-gray",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin7Wing"
+      }
+    },
+    "griffon-head-6-2-plain": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin7",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-red",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin7Wing"
+      }
+    },
+    "griffon-head-6-2-spotted": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin7",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-spots",
+            "blendMode": "Normal"
+          },
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-red",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin7Wing"
+      }
+    },
+    "griffon-head-6-3-plain": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin7",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-yellow",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin7Wing"
+      }
+    },
+    "griffon-head-6-3-spotted": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin7",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-spots",
+            "blendMode": "Normal"
+          },
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-yellow",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin7Wing"
+      }
+    },
+    "griffon-head-6-4-plain": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin7",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-gold",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin7Wing"
+      }
+    },
+    "griffon-head-6-4-spotted": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin7",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-spots",
+            "blendMode": "Normal"
+          },
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-gold",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin7Wing"
+      }
+    },
+    "griffon-head-6-5-plain": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin7",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-blue",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin7Wing"
+      }
+    },
+    "griffon-head-6-5-spotted": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin7",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-spots",
+            "blendMode": "Normal"
+          },
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-blue",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin7Wing"
+      }
+    },
+    "griffon-head-6-6-plain": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin7",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-green",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin7Wing"
+      }
+    },
+    "griffon-head-6-6-spotted": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin7",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-spots",
+            "blendMode": "Normal"
+          },
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-green",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin7Wing"
+      }
+    },
+    "griffon-head-7-0-plain": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin8"
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin8Wing"
+      }
+    },
+    "griffon-head-7-0-spotted": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin8",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-spots",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin8Wing"
+      }
+    },
+    "griffon-head-7-1-plain": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin8",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-gray",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin8Wing"
+      }
+    },
+    "griffon-head-7-1-spotted": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin8",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-spots",
+            "blendMode": "Normal"
+          },
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-gray",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin8Wing"
+      }
+    },
+    "griffon-head-7-2-plain": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin8",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-red",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin8Wing"
+      }
+    },
+    "griffon-head-7-2-spotted": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin8",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-spots",
+            "blendMode": "Normal"
+          },
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-red",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin8Wing"
+      }
+    },
+    "griffon-head-7-3-plain": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin8",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-yellow",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin8Wing"
+      }
+    },
+    "griffon-head-7-3-spotted": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin8",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-spots",
+            "blendMode": "Normal"
+          },
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-yellow",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin8Wing"
+      }
+    },
+    "griffon-head-7-4-plain": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin8",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-gold",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin8Wing"
+      }
+    },
+    "griffon-head-7-4-spotted": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin8",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-spots",
+            "blendMode": "Normal"
+          },
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-gold",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin8Wing"
+      }
+    },
+    "griffon-head-7-5-plain": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin8",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-blue",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin8Wing"
+      }
+    },
+    "griffon-head-7-5-spotted": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin8",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-spots",
+            "blendMode": "Normal"
+          },
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-blue",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin8Wing"
+      }
+    },
+    "griffon-head-7-6-plain": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin8",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-green",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin8Wing"
+      }
+    },
+    "griffon-head-7-6-spotted": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin8",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-spots",
+            "blendMode": "Normal"
+          },
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-green",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin8Wing"
+      }
+    },
+    "griffon-head-8-0-plain": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin9"
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin9Wing"
+      }
+    },
+    "griffon-head-8-0-spotted": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin9",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-spots",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin9Wing"
+      }
+    },
+    "griffon-head-8-1-plain": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin9",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-gray",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin9Wing"
+      }
+    },
+    "griffon-head-8-1-spotted": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin9",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-spots",
+            "blendMode": "Normal"
+          },
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-gray",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin9Wing"
+      }
+    },
+    "griffon-head-8-2-plain": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin9",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-red",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin9Wing"
+      }
+    },
+    "griffon-head-8-2-spotted": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin9",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-spots",
+            "blendMode": "Normal"
+          },
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-red",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin9Wing"
+      }
+    },
+    "griffon-head-8-3-plain": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin9",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-yellow",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin9Wing"
+      }
+    },
+    "griffon-head-8-3-spotted": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin9",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-spots",
+            "blendMode": "Normal"
+          },
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-yellow",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin9Wing"
+      }
+    },
+    "griffon-head-8-4-plain": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin9",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-gold",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin9Wing"
+      }
+    },
+    "griffon-head-8-4-spotted": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin9",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-spots",
+            "blendMode": "Normal"
+          },
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-gold",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin9Wing"
+      }
+    },
+    "griffon-head-8-5-plain": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin9",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-blue",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin9Wing"
+      }
+    },
+    "griffon-head-8-5-spotted": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin9",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-spots",
+            "blendMode": "Normal"
+          },
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-blue",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin9Wing"
+      }
+    },
+    "griffon-head-8-6-plain": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin9",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-green",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin9Wing"
+      }
+    },
+    "griffon-head-8-6-spotted": {
+      "griffonskin8": {
+        "base": "entity/land/griffon/griffonskin9",
+        "blendedOverlays": [
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-spots",
+            "blendMode": "Normal"
+          },
+          {
+            "base": "feverstonewilds:entity/land/griffon/griffon-eye-green",
+            "blendMode": "Normal"
+          }
+        ]
+      },
+      "griffonskin8Wing": {
+        "base": "entity/land/griffon/griffonskin9Wing"
+      }
+    }
+  },
+  "attributes": {
+    "groundStorageTransform": {
+      "translation": { "x": 0, "y": -0.3, "z": 0 },
+      "rotation": { "x": 84, "y": -90, "z": 60 },
+      "origin": { "x": 0.5, "y": 0, "z": 0.5 },
+      "scale": 1.02
+    },
+    "onAntlerMountTransform": {
+      "rotation": {
+        "x": 0,
+        "z": 0,
+        "y": 0
+      },
+      "origin": {
+        "x": 0.5,
+        "z": 0.5,
+        "y": 0.5
+      },
+      "translation": { "x": 0.02, "y": -0.08, "z": 0 },
+      "scale": 0.87
+    },
+    "handbook": {
+      "groupBy": [
+        "griffon-head-*"
+      ]
+    },
+    "antlerMountable": true
+  },
+  "creativeinventory": {
+    "fswilds": [
+      "griffon-head-0-0-plain"
+    ],
+    "general": [
+      "griffon-head-0-0-plain"
+    ]
+  },
+  "guiTransform": {
+  "origin": {
+    "x": 0.5,
+    "z": 0.5,
+    "y": 0.5
+  },
+  "scale": 1.09,
+  "translation": {
+    "z": 0,
+    "x": 8,
+    "y": 8
+  },
+  "rotation": {
+    "z": 180,
+    "x": -1,
+    "y": 1
+  }
+},
+  "tpHandTransform": {
+    "translation": { "x": -1, "y": -1.2, "z": -0.8 },
+    "rotation": { "x": 0, "y": 18, "z": 18 },
+    "scale": 0.67
+  }
+}

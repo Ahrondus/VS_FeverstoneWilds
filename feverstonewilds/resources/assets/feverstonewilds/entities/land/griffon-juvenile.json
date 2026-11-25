@@ -62,7 +62,7 @@
                    "behaviors": [
             { "code": "griffongrowthsize", "baseSize": 1.45, "growthSize": 1.940692, "hoursToGrow": 216 },
             { "code": "fswildsbehavior", "enabledByType": { "*-tamed-*": true, "*-tamed": true, "*": false } },
-            { "code": "nametag", "enabledByType": { "*-tamed-*": true, "*-tamed": true, "*": false } },
+            { "code": "nametag", "showtagonlywhentargeted": true, "enabledByType": { "*-tamed-*": true, "*-tamed": true, "*": false } },
             { "code": "griffonmarkings" },
                                      {
                                          "code":  "mouthinventory",
@@ -294,7 +294,7 @@
     "server":  {
                    "behaviors": [
             { "code": "fswildsbehavior", "enabledByType": { "*-tamed-*": true, "*-tamed": true, "*": false } },
-            { "code": "nametag", "enabledByType": { "*-tamed-*": true, "*-tamed": true, "*": false } },
+            { "code": "nametag", "showtagonlywhentargeted": true, "enabledByType": { "*-tamed-*": true, "*-tamed": true, "*": false } },
             { "code": "griffonmarkings" },
                                      {
                                          "code":  "mouthinventory",

@@ -1275,7 +1275,7 @@
             { "code": "mortallywoundable", "enabledByType": { "*-tamed-*": true, "*": false }, "whenBelowHealth": 6 },
             { "code": "multiplybase", "enabledByType": { "*-tamed-female": true, "*": false }, "portionsEatenForMultiply": 3 },
             { "code": "fswildsbehavior", "enabledByType": { "*-tamed-*": true, "*-tamed": true, "*": false } },
-            { "code": "nametag", "enabledByType": { "*-tamed-*": true, "*-tamed": true, "*": false } },
+            { "code": "nametag", "showtagonlywhentargeted": true, "enabledByType": { "*-tamed-*": true, "*-tamed": true, "*": false } },
             { "code": "griffonmarkings" },
             { "code": "griffonfeathervariant", "chance": 0.4, "shape": "feverstonewilds:entity/land/mammal/griffon-armfeathers" },
             { "code": "repulseagents" },
@@ -1534,7 +1534,7 @@
         "behaviors": [
             { "code": "mortallywoundable", "enabledByType": { "*-tamed-*": true, "*": false }, "whenBelowHealth": 6 },
             { "code": "fswildsbehavior", "enabledByType": { "*-tamed-*": true, "*-tamed": true, "*": false } },
-            { "code": "nametag", "enabledByType": { "*-tamed-*": true, "*-tamed": true, "*": false } },
+            { "code": "nametag", "showtagonlywhentargeted": true, "enabledByType": { "*-tamed-*": true, "*-tamed": true, "*": false } },
             { "code": "griffonmarkings" },
             { "code": "griffonfeathervariant", "chance": 0.4, "shape": "feverstonewilds:entity/land/mammal/griffon-armfeathers" },
 { "code": "multiplybase", "enabledByType": { "*-tamed-female": true, "*": false }, "portionsEatenForMultiply": 3, "multiplyCooldownDaysMin": 0, "multiplyCooldownDaysMax": 3 },

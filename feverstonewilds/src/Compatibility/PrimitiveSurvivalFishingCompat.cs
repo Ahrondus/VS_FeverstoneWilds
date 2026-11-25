@@ -24,7 +24,7 @@ public class PrimitiveSurvivalFishingCompat : ModSystem
 
     internal static readonly Dictionary<string, string> FishItems = new Dictionary<string, string>
     {
-        ["feverstonewilds:discus"] = "feverstonewilds:fsw-fishraw-reef-discus",
+        ["feverstonewilds:discus-freshwater"] = "feverstonewilds:fsw-fishraw-reef-discus",
         ["feverstonewilds:buromenfish-freshwater"] = "feverstonewilds:fsw-fishraw-freshwater-buromenfish",
         ["feverstonewilds:buromenfish-saltwater"] = "feverstonewilds:fsw-fishraw-saltwater-buromenfish",
         ["feverstonewilds:ghostfish-freshwater"] = "feverstonewilds:fsw-fishraw-freshwater-ghostfish",
