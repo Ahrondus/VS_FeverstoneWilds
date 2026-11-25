@@ -1,0 +1,134 @@
+{
+  "code": "armor-head-direwolfskull",
+  "shape": {
+    "base": "entity/humanoid/seraph/armor/direwolf-skull-helmet"
+  },
+  "textures": {
+    "skullandsaddledirewolf": {
+      "base": "feverstonewilds:items/skullandsaddledirewolf"
+    },
+    "null": {
+      "base": "game:block/transparent"
+    },
+    "seraph": {
+      "base": "game:block/transparent"
+    }
+  },
+  "storageFlags": 128,
+  "behaviors": [
+    {
+      "name": "Wearable"
+    }
+  ],
+  "attributes": {
+    "visibleDamageEffect": true,
+    "footStepSound": "game:wearable/leather*",
+    "clothesCategory": "armorhead",
+    "warmth": 0,
+    "attachableToEntity": {
+      "categoryCode": "armorhead",
+      "disableElements": [
+        "hidehat",
+        "ponytailhigh",
+        "hair-uncovered",
+        "sidehigh",
+        "sidelow",
+        "bangs",
+        "Hair tile upper part"
+      ]
+    },
+    "defaultProtLoss": {
+      "perTierRelativeProtectionLoss": [
+        0.03,
+        0.15
+      ],
+      "perTierFlatDamageReductionLoss": [
+        0.1,
+        0.2
+      ]
+    },
+    "protectionModifiers": {
+      "relativeProtection": 0.7,
+      "flatDamageReduction": 0.7,
+      "protectionTier": 2,
+      "perTierRelativeProtectionLoss": [
+        0.015,
+        0.075
+      ],
+      "perTierFlatDamageReductionLoss": [
+        0.05,
+        0.1
+      ]
+    },
+    "statModifiers": {
+      "rangedWeaponsAcc": 0.05,
+      "hungerrate": -0.02,
+      "walkspeed": 0.03
+    }
+  },
+  "creativeinventory": {
+    "general": [
+      "*"
+    ],
+    "items": [
+      "*"
+    ],
+    "clothing": [
+      "*"
+    ],
+    "fswilds": [
+      "*"
+    ]
+  },
+  "renderAlphaTest": 0.25,
+  "durability": 450,
+  "combustibleProps": {},
+  "fpHandTransform": {
+    "translation": {
+      "x": 0.4,
+      "y": -1.9,
+      "z": -0.5
+    },
+    "rotation": {
+      "x": 163,
+      "y": -111,
+      "z": -180
+    },
+    "origin": {
+      "x": 0.5,
+      "y": 1.7,
+      "z": 0.5
+    },
+    "scale": 2.15
+  },
+  "tpHandTransform": {
+    "translation": { "x": -0.5, "y": -2, "z": -0.6 },
+    "rotation": { "x": -26, "y": 122, "z": 27 },
+    "origin": { "x": 0.5, "y": 1.7, "z": 0.5 },
+    "scale": 0.88
+  },
+  "guiTransform": {
+    "translation": { "x": -9, "y": -9, "z": 1 },
+    "rotation": { "x": -26, "y": -46, "z": -180 },
+    "origin": { "x": 0.6, "y": 1.72, "z": 0.5 },
+    "scale": 2.78
+  },
+  "groundTransform": {
+    "translation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "rotation": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "origin": {
+      "x": 0.34,
+      "y": 1.71,
+      "z": 0.5
+    },
+    "scale": 3.1
+  }
+}

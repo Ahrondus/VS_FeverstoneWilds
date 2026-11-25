@@ -35,7 +35,7 @@
         "sizeGrowthFactor": 0.2,
         "behaviors": [
             { "code": "fswildsbehavior" },
-            { "code": "nametag" },
+            { "code": "nametag", "showtagonlywhentargeted": true },
             { "code": "mouthinventory",
                 "acceptStacks": [
                     { "type": "item", "code": "bone" },
@@ -105,7 +105,7 @@
     "server": {
         "behaviors": [
             { "code": "fswildsbehavior" },
-            { "code": "nametag" },
+            { "code": "nametag", "showtagonlywhentargeted": true },
             { "code": "mouthinventory",
                 "acceptStacks": [
                     { "type": "item", "code": "bone" },

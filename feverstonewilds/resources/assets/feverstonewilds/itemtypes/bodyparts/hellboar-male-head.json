@@ -1,0 +1,156 @@
+{
+  "behaviors": [
+    { "name": "GroundStorable", "properties": {
+      "layout": "SingleCenter",
+      "collisionBox": { "x1": 0, "y1": 0, "z1": 0, "x2": 1, "y2": 0.75, "z2": 1 }
+    } }
+  ],
+  "code": "hellboar-male-head",
+  "maxstacksize": 1,
+  "variantgroups": [
+    {
+      "states": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "code": "skin"
+    }
+  ],
+  "shape": {
+    "base": "block/bodyparts/hellboar-male-head"
+  },
+  "texturesByType": {
+    "hellboar-male-head-0": {
+      "hellboarskin4": {
+        "base": "feverstonewilds:entity/land/hellboar/hellboarskin1"
+      },
+      "null": {
+        "base": "feverstonewilds:entity/land/hellboar/hellboarskin1"
+      }
+    },
+    "hellboar-male-head-1": {
+      "hellboarskin4": {
+        "base": "feverstonewilds:entity/land/hellboar/hellboarskin2"
+      },
+      "null": {
+        "base": "feverstonewilds:entity/land/hellboar/hellboarskin2"
+      }
+    },
+    "hellboar-male-head-2": {
+      "hellboarskin4": {
+        "base": "feverstonewilds:entity/land/hellboar/hellboarskin3"
+      },
+      "null": {
+        "base": "feverstonewilds:entity/land/hellboar/hellboarskin3"
+      }
+    },
+    "hellboar-male-head-3": {
+      "hellboarskin4": {
+        "base": "feverstonewilds:entity/land/hellboar/hellboarskin4"
+      },
+      "null": {
+        "base": "feverstonewilds:entity/land/hellboar/hellboarskin4"
+      }
+    },
+    "hellboar-male-head-4": {
+      "hellboarskin4": {
+        "base": "feverstonewilds:entity/land/hellboar/hellboarskin5"
+      },
+      "null": {
+        "base": "feverstonewilds:entity/land/hellboar/hellboarskin5"
+      }
+    },
+    "hellboar-male-head-5": {
+      "hellboarskin4": {
+        "base": "feverstonewilds:entity/land/hellboar/hellboarskin6"
+      },
+      "null": {
+        "base": "feverstonewilds:entity/land/hellboar/hellboarskin6"
+      }
+    },
+    "hellboar-male-head-6": {
+      "hellboarskin4": {
+        "base": "feverstonewilds:entity/land/hellboar/hellboarskin7"
+      },
+      "null": {
+        "base": "feverstonewilds:entity/land/hellboar/hellboarskin7"
+      }
+    },
+    "hellboar-male-head-7": {
+      "hellboarskin4": {
+        "base": "feverstonewilds:entity/land/hellboar/hellboarskin8"
+      },
+      "null": {
+        "base": "feverstonewilds:entity/land/hellboar/hellboarskin8"
+      }
+    }
+  },
+  "attributes": {
+    "groundStorageTransform": {
+      "rotation": { "x": 0, "y": -90, "z": 0 },
+      "origin": { "x": 0.5, "y": 0, "z": 0.5 },
+      "scale": 0.9
+    },
+    "onAntlerMountTransform": {
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "origin": {
+        "x": 0.5,
+        "y": 0.5,
+        "z": 0.5
+      },
+      "scale": 0.9,
+      "translation": {
+        "x": 0.05,
+        "y": 0.07,
+        "z": 0
+      }
+    },
+    "antlerMountable": true,
+    "handbook": {
+      "groupBy": [
+        "hellboar-male-head-*"
+      ]
+    }
+  },
+  "creativeinventory": {
+    "general": [
+      "hellboar-male-head-0"
+    ],
+    "fswilds": [
+      "hellboar-male-head-0"
+    ]
+  },
+  "guiTransform": {
+  "origin": {
+    "x": 0.5,
+    "y": 0.5,
+    "z": 0.5
+  },
+  "scale": 1.33,
+  "translation": {
+    "z": 0,
+    "x": 5,
+    "y": -2
+  },
+  "rotation": {
+    "z": 180,
+    "x": -15,
+    "y": 53
+  }
+},
+  "tpHandTransform": {
+    "translation": { "x": -0.8, "y": -0.6, "z": -0.6 },
+    "rotation": { "x": 0, "y": -9, "z": -22 },
+    "scale": 0.9
+  }
+}

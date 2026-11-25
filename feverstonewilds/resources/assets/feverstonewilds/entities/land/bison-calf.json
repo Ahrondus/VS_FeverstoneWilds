@@ -40,7 +40,7 @@
 		"sizeGrowthFactor": 0.2,
 		"behaviors": [
             { "code": "fswildsbehavior", "enabledByType": { "*-tamed-*": true, "*-tamed": true, "*": false } },
-            { "code": "nametag", "enabledByType": { "*-tamed-*": true, "*-tamed": true, "*": false } },
+            { "code": "nametag", "showtagonlywhentargeted": true, "enabledByType": { "*-tamed-*": true, "*-tamed": true, "*": false } },
 			{ "code": "mouthinventory",
 				"acceptStacks": [
 					{ "type": "item", "code": "vegetable-carrot" },
@@ -127,7 +127,7 @@
 		},
 		"behaviors": [
             { "code": "fswildsbehavior", "enabledByType": { "*-tamed-*": true, "*-tamed": true, "*": false } },
-            { "code": "nametag", "enabledByType": { "*-tamed-*": true, "*-tamed": true, "*": false } },
+            { "code": "nametag", "showtagonlywhentargeted": true, "enabledByType": { "*-tamed-*": true, "*-tamed": true, "*": false } },
                 { "code": "mouthinventory",
                     "acceptStacks": [
                         { "type": "item", "code": "vegetable-carrot" },

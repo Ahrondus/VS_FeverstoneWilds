@@ -429,7 +429,7 @@
 		},
 		"behaviors": [
             { "code": "fswildsbehavior", "enabledByType": { "*-tamed-*": true, "*-tamed": true, "*": false } },
-            { "code": "nametag", "enabledByType": { "*-tamed-*": true, "*-tamed": true, "*": false } },
+            { "code": "nametag", "showtagonlywhentargeted": true, "enabledByType": { "*-tamed-*": true, "*-tamed": true, "*": false } },
 			{ "code": "gait",
             	"enabledByType": { "*-tamed-*": true, "*": false } },
 			{ "code": "rideable",
@@ -539,7 +539,7 @@
 		},
 		"behaviors": [
             { "code": "fswildsbehavior", "enabledByType": { "*-tamed-*": true, "*-tamed": true, "*": false } },
-            { "code": "nametag", "enabledByType": { "*-tamed-*": true, "*-tamed": true, "*": false } },
+            { "code": "nametag", "showtagonlywhentargeted": true, "enabledByType": { "*-tamed-*": true, "*-tamed": true, "*": false } },
 			{ "code": "gait",
             	"enabledByType": { "*-tamed-*": true, "*": false } },
 			{ "code": "rideable",

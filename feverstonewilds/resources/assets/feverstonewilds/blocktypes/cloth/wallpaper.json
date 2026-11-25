@@ -1,0 +1,140 @@
+{
+  "code": "wallpaper",
+  "behaviors": [
+    {
+      "properties": {
+        "thickness": 0.0,
+        "sides": [
+          "north",
+          "east",
+          "south",
+          "west",
+          "up",
+          "down"
+        ]
+      },
+      "name": "Decor"
+    }
+  ],
+  "variantgroups": [
+    {
+      "states": [
+        "moonphase-black",
+        "moonphase-white",
+        "pinstripes-dark",
+        "pinstripes-white",
+        "pinstripes-yellow",
+        "royal-black",
+        "royal-gold-runes",
+        "royal-gray",
+        "royal-graygold",
+        "royal-purple-runes",
+        "royal-red",
+        "royal-red-runes",
+        "royal-white",
+        "royal-white-runes",
+        "snakeroses"
+      ],
+      "code": "type"
+    }
+  ],
+  "attributes": {
+    "ignoreSounds": true
+  },
+  "drawtype": "surfacelayer",
+  "shapeInventory": {
+    "rotateX": 90,
+    "base": "game:block/basic/layers/0voxel-up"
+  },
+  "sidesolid": {
+    "all": false
+  },
+  "sideopaque": {
+    "all": false
+  },
+  "blockmaterial": "Cloth",
+  "creativeinventory": {
+    "decorative": [
+      "*"
+    ],
+    "general": [
+      "*"
+    ],
+    "fswilds": [
+      "*"
+    ]
+  },
+  "replaceable": 5500,
+  "resistance": 0,
+  "lightAbsorption": 0,
+  "textures": {
+    "all": {
+      "base": "feverstonewilds:block/wallpaper/{type}"
+    }
+  },
+  "vertexflags": {
+    "zOffset": 1
+  },
+  "drops": [],
+  "combustibleProps": {
+    "burnDuration": 2,
+    "burnTemperature": 150
+  },
+  "guiTransform": {
+    "origin": {
+      "z": 0,
+      "y": 0.5,
+      "x": 0.5
+    },
+    "scale": 1.5,
+    "rotation": {
+      "z": 0,
+      "y": -42,
+      "x": 15
+    },
+    "rotate": false
+  },
+  "groundTransform": {
+    "scale": 2.5,
+    "origin": {
+      "z": -0.02,
+      "y": 0.5,
+      "x": 0.5
+    },
+    "translation": {
+      "z": 0,
+      "y": 0,
+      "x": 0
+    },
+    "rotation": {
+      "z": 0,
+      "y": 1,
+      "x": -90
+    }
+  },
+  "tpHandTransform": {
+    "scale": 0.45,
+    "origin": {
+      "z": 0,
+      "y": 0.5,
+      "x": 0.5
+    },
+    "translation": {
+      "z": 0.1,
+      "y": -0.7,
+      "x": -1.2
+    },
+    "rotation": {
+      "z": -25,
+      "y": -12,
+      "x": 5
+    }
+  },
+  "sounds": {
+    "break": "game:block/cloth",
+    "place": "game:block/cloth",
+    "walk": "game:walk/cloth",
+    "hit": "game:block/cloth"
+  },
+  "materialDensity": 400
+}
