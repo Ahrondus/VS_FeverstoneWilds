@@ -584,7 +584,7 @@
         },
         "behaviors": [
             { "code": "fswildsbehavior", "enabledByType": { "*-tamed-*": true, "*-tamed": true, "*": false } },
-            { "code": "nametag", "enabledByType": { "*-tamed-*": true, "*-tamed": true, "*": false } }, 
+            { "code": "nametag", "showtagonlywhentargeted": true, "enabledByType": { "*-tamed-*": true, "*-tamed": true, "*": false } }, 
                 { "code": "repulseagents" },
                 { "code": "controlledphysics" },
                 { "code": "mortallywoundable" },
@@ -818,7 +818,7 @@
         },
         "behaviors": [
             { "code": "fswildsbehavior", "enabledByType": { "*-tamed-*": true, "*-tamed": true, "*": false } },
-            { "code": "nametag", "enabledByType": { "*-tamed-*": true, "*-tamed": true, "*": false } },
+            { "code": "nametag", "showtagonlywhentargeted": true, "enabledByType": { "*-tamed-*": true, "*-tamed": true, "*": false } },
                 { "code": "repulseagents" },
                 { "code": "controlledphysics" },
                 { "code": "mortallywoundable",

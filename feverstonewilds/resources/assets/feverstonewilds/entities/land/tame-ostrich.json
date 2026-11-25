@@ -358,7 +358,7 @@
 							{ "base": "entity/land/ostrich/ostrichskin10" } ] },
 		"behaviors": [
             { "code": "fswildsbehavior" },
-            { "code": "nametag" },
+            { "code": "nametag", "showtagonlywhentargeted": true },
 			{ "code": "repulseagents" },
 			{ "code": "harvestable" }, 
 			{ "code": "controlledphysics", "stepHeight": 1.1251 }, 
@@ -466,7 +466,7 @@
 		},
 		"behaviors": [
             { "code": "fswildsbehavior" },
-            { "code": "nametag" },
+            { "code": "nametag", "showtagonlywhentargeted": true },
 			{ "code": "multiplybase",
 				"enabledByType": { "*-female": true, "*-male": false },
 				"multiplyCooldownDaysMin": 0,

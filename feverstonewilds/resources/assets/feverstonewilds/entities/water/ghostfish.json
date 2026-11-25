@@ -16,7 +16,7 @@
 			"*-saltwater": 0.85
 		},
 		"shape": { "base": "entity/water/ghostfish" },
-		"texture": { "base": "entity/water/ghostfish/ghostfish" },
+		"textures": { "ghostfish": { "base": "feverstonewilds:entity/water/ghostfish/ghostfish" } },
 		"behaviors": [
             { "code": "fswentitylight", "lightHsv": [0, 0, 3] },
 			{ "code": "repulseagents" }, 

@@ -23,11 +23,11 @@
 					"fsw-fishraw-*-stingray": 5
 				},
 				"processedStacksByType": {
-					"fsw-fishraw-reef-discus": [{ "type": "item", "code": "fish-raw", "quantity": { "avg": 1 } }],
-					"fsw-fishraw-*-buromenfish": [{ "type": "item", "code": "fish-raw", "quantity": { "avg": 7 } }],
-					"fsw-fishraw-*-ghostfish": [{ "type": "item", "code": "fish-raw", "quantity": { "avg": 6 } }],
-					"fsw-fishraw-*-eel": [{ "type": "item", "code": "fish-raw", "quantity": { "avg": 14 } }],
-					"fsw-fishraw-*-stingray": [{ "type": "item", "code": "fish-raw", "quantity": { "avg": 4 } }]
+					"fsw-fishraw-reef-discus": [{ "type": "item", "code": "game:fish-raw", "quantity": { "avg": 2 } }],
+					"fsw-fishraw-*-buromenfish": [{ "type": "item", "code": "game:fish-raw", "quantity": { "avg": 7 } }],
+					"fsw-fishraw-*-ghostfish": [{ "type": "item", "code": "game:fish-raw", "quantity": { "avg": 7 } }],
+					"fsw-fishraw-*-eel": [{ "type": "item", "code": "game:fish-raw", "quantity": { "avg": 15 } }],
+					"fsw-fishraw-*-stingray": [{ "type": "item", "code": "game:fish-raw", "quantity": { "avg": 4 } }]
 				},
 				"toolDurabilityCostByType": {
 					"fsw-fishraw-reef-discus": 1,
@@ -37,6 +37,14 @@
 					"fsw-fishraw-*-stingray": 3
 				},
 				"remainingItem": { "type": "item", "code": "bone-fish", "quantity": 1 },
+				"remainingItemByType": {
+                    "fsw-fishraw-*-buromenfish": { "type": "item", "code": "game:bone-fish", "quantity": 3 },
+                    "fsw-fishraw-*-ghostfish": { "type": "item", "code": "game:bone-fish", "quantity": 3 },
+                    "fsw-fishraw-*-eel": { "type": "item", "code": "game:bone-fish", "quantity": 6 },
+                    "fsw-fishraw-*-stingray": { "type": "item", "code": "game:bone-fish", "quantity": 2 },
+					"fsw-fishraw-reef-discus": { "type": "item", "code": "game:bone-fish", "quantity": 1 },
+					"*": { "type": "item", "code": "bone-fish", "quantity": 1 }
+				},
 				"tool": "knife",
 				"processsingSound": "player/scrape",
 				"interactionHelpCode": "groundstoredaction-flay",
@@ -50,6 +58,7 @@
 		{ "code": "type", "states": [ "discus", "buromenfish", "ghostfish", "eel", "stingray" ] }
 	],
 	"shape": { "base": "entity/water/{type}" },
+	"texturesByType": { "*-ghostfish": { "skin": { "base": "feverstonewilds:entity/water/ghostfish/ghostfish" }, "ghostfish": { "base": "feverstonewilds:entity/water/ghostfish/ghostfish" } } },
 	"textures": { "skin": { "base": "entity/water/{type}/{type}*"} },
 	"allowedVariants": [
 		"fsw-fishraw-reef-discus",
@@ -63,6 +72,28 @@
 		"fsw-fishraw-saltwater-stingray"
 	],
 	"attributes": {
+		"inFirePitPropsByType": {
+			"fsw-fishraw-reef-discus": {
+				"transform": { "translation": { "x": 0, "y": 0.15, "z": 0 }, "rotation": { "x": 0, "y": 45, "z": 0 }, "origin": { "x": 0.5, "y": 0.5, "z": 0.5 }, "scale": 0.95 },
+				"useFirepitModel": "Spit"
+			},
+			"fsw-fishraw-*-buromenfish": {
+				"transform": { "translation": { "x": 0, "y": 0.15, "z": 0 }, "rotation": { "x": 0, "y": 45, "z": 0 }, "origin": { "x": 0.5, "y": 0.5, "z": 0.5 }, "scale": 0.8 },
+				"useFirepitModel": "Spit"
+			},
+			"fsw-fishraw-*-ghostfish": {
+				"transform": { "translation": { "x": 0, "y": 0.15, "z": 0 }, "rotation": { "x": 0, "y": 45, "z": 0 }, "origin": { "x": 0.5, "y": 0.5, "z": 0.5 }, "scale": 0.8 },
+				"useFirepitModel": "Spit"
+			},
+			"fsw-fishraw-*-eel": {
+				"transform": { "translation": { "x": 0, "y": 0.15, "z": 0 }, "rotation": { "x": 0, "y": 45, "z": 0 }, "origin": { "x": 0.5, "y": 0.5, "z": 0.5 }, "scale": 0.5 },
+				"useFirepitModel": "Spit"
+			},
+			"fsw-fishraw-*-stingray": {
+				"transform": { "translation": { "x": 0, "y": 0.15, "z": 0 }, "rotation": { "x": 0, "y": 45, "z": 0 }, "origin": { "x": 0.5, "y": 0.5, "z": 0.5 }, "scale": 0.5 },
+				"useFirepitModel": "Spit"
+			}
+		},
         "handbook": {
             "groupBy": [ "fsw-fishraw-*" ]
         },
@@ -76,17 +107,26 @@
 				"origin": { "x": 0.5, "y": 0.2, "z": 0.5 },
 				"scale": 0.6
 			},
-			"*-stingray": {
-				"translation": { "x": 0, "y": -0.16, "z": 0 },
-				"rotation": { "x": -90, "y": 1, "z": 30 },
-				"origin": { "x": 0.5, "y": 0.2, "z": 0.5 },
-				"scale": 0.5
-			},
+			"*-stingray": {"translation":{"x":0,"y":-0.3,"z":0},"rotation":{"x":0,"y":90,"z":-1},"origin":{"x":0.5,"y":0.2,"z":0.5},"scale":0.5},
 			"*": {
 				"translation": { "x": 0, "y": -0.16, "z": 0 },
 				"rotation": { "x": -90, "y": 1, "z": 30 },
 				"origin": { "x": 0.5, "y": 0.2, "z": 0.5 }
 			}
+		}
+	},
+	"combustiblePropsByType": {
+        "fsw-fishraw-*-buromenfish": { "meltingPoint": 150, "meltingDuration": 330, "smeltedRatio": 1, "smeltingType": "cook", "smeltedStack": { "type": "item", "code": "game:fishchunk-long-7-cooked" }, "requiresContainer": false },
+        "fsw-fishraw-*-ghostfish": { "meltingPoint": 150, "meltingDuration": 330, "smeltedRatio": 1, "smeltingType": "cook", "smeltedStack": { "type": "item", "code": "game:fishchunk-long-7-cooked" }, "requiresContainer": false },
+        "fsw-fishraw-*-stingray": { "meltingPoint": 150, "meltingDuration": 150, "smeltedRatio": 1, "smeltingType": "cook", "smeltedStack": { "type": "item", "code": "game:fishchunk-standard-4-cooked" }, "requiresContainer": false },
+        "fsw-fishraw-*-eel": { "meltingPoint": 150, "meltingDuration": 500, "smeltedRatio": 1, "smeltingType": "cook", "smeltedStack": { "type": "item", "code": "game:fishchunk-standard-9-cooked" }, "requiresContainer": false },
+		"fsw-fishraw-reef-discus": {
+			"meltingPoint": 150,
+			"meltingDuration": 90,
+			"smeltedRatio": 1,
+			"smeltingType": "cook",
+			"smeltedStack": { "type": "item", "code": "game:fishchunk-standard-2-cooked" },
+			"requiresContainer": false
 		}
 	},
 	"storageFlags": 257,

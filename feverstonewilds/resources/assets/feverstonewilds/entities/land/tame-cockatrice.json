@@ -54,7 +54,7 @@
     },
     "behaviors": [
             { "code": "fswildsbehavior" },
-            { "code": "nametag" },
+            { "code": "nametag", "showtagonlywhentargeted": true },
 			{ "code": "multiplybase",
 				"enabledByType": { "*-male": false, "*-female": true } },
       {
@@ -127,7 +127,7 @@
   "server": {
     "behaviors": [
             { "code": "fswildsbehavior" },
-            { "code": "nametag" },
+            { "code": "nametag", "showtagonlywhentargeted": true },
 			{ "code": "multiplybase",
 				"enabledByType": { "*-female": true, "*-male": false },
 				"multiplyCooldownDaysMin": 0,

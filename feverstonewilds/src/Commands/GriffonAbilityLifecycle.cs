@@ -24,10 +24,19 @@ public partial class GriffonMountedAbilities
 
     void RegisterAbilityInput()
     {
-        capi.Input.RegisterHotKeyFirst("fsw-griffon-attack", "FS Wilds mount: attack", GlKeys.F, HotkeyType.CharacterControls);
-        capi.Input.RegisterHotKeyFirst("fsw-griffon-grab", "FS Wilds mount: grab/release", GlKeys.R, HotkeyType.CharacterControls);
-        capi.Input.SetHotKeyHandler("fsw-griffon-attack", _ => RequestAbility(false, true));
-        capi.Input.SetHotKeyHandler("fsw-griffon-grab", _ => RequestAbility(true, true));
+        RegisterAbilityInput(capi.Input, _ => RequestAbility(false, true), _ => RequestAbility(true, true));
+    }
+
+    public static void RegisterAbilityInput(IInputAPI input, ActionConsumable<KeyCombination> attack,
+        ActionConsumable<KeyCombination> grab)
+    {
+        // Hotkeys outlive a world/mod-system instance. Preserve their mappings on restart.
+        if (input.GetHotKeyByCode("fsw-griffon-attack") == null)
+            input.RegisterHotKeyFirst("fsw-griffon-attack", "FS Wilds mount: attack", GlKeys.F, HotkeyType.CharacterControls);
+        if (input.GetHotKeyByCode("fsw-griffon-grab") == null)
+            input.RegisterHotKeyFirst("fsw-griffon-grab", "FS Wilds mount: grab/release", GlKeys.R, HotkeyType.CharacterControls);
+        input.SetHotKeyHandler("fsw-griffon-attack", attack);
+        input.SetHotKeyHandler("fsw-griffon-grab", grab);
     }
 
     long nextInputTrace;

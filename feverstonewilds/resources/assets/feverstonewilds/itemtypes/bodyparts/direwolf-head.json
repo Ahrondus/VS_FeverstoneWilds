@@ -1,0 +1,171 @@
+{
+  "behaviors": [
+    { "name": "GroundStorable", "properties": {
+      "layout": "SingleCenter",
+      "collisionBox": { "x1": 0, "y1": 0, "z1": 0, "x2": 1, "y2": 0.75, "z2": 1 }
+    } },
+    { "name": "GroundStoredProcessable", "properties": {
+      "processTime": 4,
+      "remainingItem": { "type": "item", "code": "feverstonewilds:companionhelmet-skullhelmetdirewolf", "quantity": 1 },
+      "tool": "knife",
+      "toolDurabilityCost": 1,
+      "processingSound": "game:sounds/tool/groundcrafting/hidescrape*",
+      "processingAnimationCode": "knifescrape",
+      "interactionHelpCode": "groundstoredaction-flay",
+      "handbookProcessIntoTitle": "groundstoredflaydesc-title",
+      "handbookCreatedByTitle": "handbook-createdby-groundstoredflaying"
+    } }
+  ],
+  "code": "direwolf-head",
+  "maxstacksize": 1,
+  "variantgroups": [
+    {
+      "states": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13"
+      ],
+      "code": "skin"
+    }
+  ],
+  "shape": {
+    "base": "block/bodyparts/direwolf-head"
+  },
+  "texturesByType": {
+    "direwolf-head-0": {
+      "direwolf6": {
+        "base": "feverstonewilds:entity/land/direwolf/direwolf1"
+      }
+    },
+    "direwolf-head-1": {
+      "direwolf6": {
+        "base": "feverstonewilds:entity/land/direwolf/direwolf2"
+      }
+    },
+    "direwolf-head-2": {
+      "direwolf6": {
+        "base": "feverstonewilds:entity/land/direwolf/direwolf3"
+      }
+    },
+    "direwolf-head-3": {
+      "direwolf6": {
+        "base": "feverstonewilds:entity/land/direwolf/direwolf4"
+      }
+    },
+    "direwolf-head-4": {
+      "direwolf6": {
+        "base": "feverstonewilds:entity/land/direwolf/direwolf5"
+      }
+    },
+    "direwolf-head-5": {
+      "direwolf6": {
+        "base": "feverstonewilds:entity/land/direwolf/direwolf6"
+      }
+    },
+    "direwolf-head-6": {
+      "direwolf6": {
+        "base": "feverstonewilds:entity/land/direwolf/direwolf7"
+      }
+    },
+    "direwolf-head-7": {
+      "direwolf6": {
+        "base": "feverstonewilds:entity/land/direwolf/direwolf8"
+      }
+    },
+    "direwolf-head-8": {
+      "direwolf6": {
+        "base": "feverstonewilds:entity/land/direwolf/direwolf9"
+      }
+    },
+    "direwolf-head-9": {
+      "direwolf6": {
+        "base": "feverstonewilds:entity/land/direwolf/direwolf10"
+      }
+    },
+    "direwolf-head-10": {
+      "direwolf6": {
+        "base": "feverstonewilds:entity/land/direwolf/direwolf11"
+      }
+    },
+    "direwolf-head-11": {
+      "direwolf6": {
+        "base": "feverstonewilds:entity/land/direwolf/direwolf12"
+      }
+    },
+    "direwolf-head-12": {
+      "direwolf6": {
+        "base": "feverstonewilds:entity/land/direwolf/direwolf13"
+      }
+    },
+    "direwolf-head-13": {
+      "direwolf6": {
+        "base": "feverstonewilds:entity/land/direwolf/direwolf14"
+      }
+    }
+  },
+  "attributes": {
+    "groundStorageTransform": {
+      "translation": { "x": 0, "y": -0.04, "z": 0.3 },
+      "rotation": { "x": 0, "y": -90, "z": 18 },
+      "origin": { "x": 0.5, "y": 0, "z": 0.5 },
+      "scale": 1.1
+    },
+    "onAntlerMountTransform": {
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "origin": {
+        "x": 0.5,
+        "y": 0.5,
+        "z": 0.5
+      },
+      "scale": 0.95,
+      "translation": { "x": 0.1, "y": 0.025, "z": 0.025 }
+    },
+    "antlerMountable": true,
+    "handbook": {
+      "groupBy": [
+        "direwolf-head-*"
+      ]
+    }
+  },
+  "creativeinventory": {
+    "general": [
+      "direwolf-head-0"
+    ],
+    "fswilds": [
+      "direwolf-head-0"
+    ]
+  },
+  "guiTransform": {
+  "origin": {
+    "x": 0.5,
+    "y": 0.5,
+    "z": 0.5
+  },
+  "scale": 1.57,
+  "rotation": {
+    "z": 175,
+    "x": 9,
+    "y": 47
+  }
+},
+  "tpHandTransform": {
+    "translation": { "x": -1.1, "y": -0.9, "z": -0.85 },
+    "rotation": { "x": 0, "y": -30, "z": -20 },
+    "scale": 0.8
+  }
+}
